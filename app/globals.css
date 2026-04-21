@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --d2-forest: #1F3D2E;
+  --d2-aubergine: #4A2E52;
+  --d2-stone: #7A756A;
+  --d2-warmgray: #6B6860;
+  --d2-ink: #1A1A1A;
+}
+
+html, body {
+  background: #FFFFFF;
+  color: var(--d2-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  font-family: var(--font-body), Calibri, "Source Sans 3", "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), Cambria, Lora, Georgia, serif;
+}
