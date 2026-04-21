@@ -10,14 +10,30 @@ Pinned versions for this project. Mirrors the `hello-world` living reference as 
 - **Tailwind CSS** — ^4 (CSS-first config; no `tailwind.config.ts`)
 - **@tailwindcss/postcss** — ^4
 
+## Stack now (2026-04-21)
+
+Next 16.2.4 static export + **Supabase** (added 2026-04-21 for future Contact form bridge). The site still builds and deploys as a static export (`output: 'export'`, `out/` is the shippable artifact); Supabase is reserved-but-unused at the app level today — no client library installed, no DB reads/writes. The project is wired at the env-var + CLI level so the Contact form bridge can land without a re-plumbing round.
+
+## Current Supabase project
+
+- **Project ref:** `adkwtkhvbntreznhwzxu`
+- **URL:** https://adkwtkhvbntreznhwzxu.supabase.co
+- **Tier / region:** Pro (Micro) / West US (Oregon) — us-west-2
+- **Env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local` (gitignored).
+- **Migrations:** none yet — empty DB. Contact form bridge will land the first migration.
+
+## Orchestration-tree note
+
+`C:\Users\Paddo\OneDrive\Desktop\k2s\idigdata\.claude\CLAUDE.md` (in the orchestration tree, not this code tree) still says "No Supabase — static export site" as of 2026-04-21. That file is stale relative to the wiring above and is flagged for a Cowork-side update (Task #6 in the region-migration closeout). Not edited from CC by cross-tree guardrail.
+
 ## Deliberate drift from hello-world
 
-- **No `@supabase/supabase-js`.** idigdata is a static marketing site (`output: 'export'`); no persistent state. Stripped from clone-set.
+- **No `@supabase/supabase-js`.** Not yet installed in `package.json`. Reserved at the env/CLI level (see above) until the Contact form bridge lands; strips cleanly until then.
 - **No ESLint.** Kept minimal; hello-world doesn't carry lint either. Add per-project if signal starts to pay for itself.
 
 ## Last verified
 
-- **2026-04-21** — Tailwind 3 → 4 + Next 15 → 16 realign landed. Host `npm install && npm run dev` passed: server ready in 324ms, HTTP 200 on http://localhost:3100 (Turbopack).
+- **2026-04-21** — Region-migration wiring verified. `.env.local` created, CLI linked to new project; `pnpm dev` boots on :3100 (`GET /` → 200) and `pnpm build` static-exports cleanly (8 routes). No migrations applied — fresh empty DB. (Prior Tailwind 3→4 + Next 15→16 realign was also verified 2026-04-21 earlier; that round-trip stands.)
 
 ## Verification checklist (run after any future upgrade)
 
