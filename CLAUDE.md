@@ -62,8 +62,8 @@ Place static assets (resume PDF, favicon, logo files, open-graph images) under `
 
 ## Current state
 - **Scaffolded by:** dispatch 001 (2026-04-21). Next/Tailwind versions bumped in-loop after scaffold (see Stack section for current versions).
-- **Git:** initialized locally on `main` (initial commit `0c87fea`). **No remote configured. No GitHub, no Vercel, no DNS.** Do not re-init; do not add a remote without an explicit dispatch instruction.
-- **Routes:** `/` (home, full content from `website-home-v1.md`, BOSS paragraph at v4 "agentic MDM" copy) · `/about` (placeholder — "Coming soon.") · `/contact` (placeholder — email only)
+- **Git:** remote `origin` pushed to `github.com/loop-smith/idigdata` (public, dispatch 003, 2026-04-21). Initial commit `0c87fea` (scaffold, dispatch 001). **No Vercel project, no DNS.** Vercel deploy deferred pending `idigdata-app` scaffold + website contact-form bridge.
+- **Routes:** `/` (home, `website-home-v1.md`, BOSS paragraph v4 "agentic MDM") · `/about` (rendered from `website-about-v2.md` — buyer-first page order, Three Chapters framing dropped) · `/contact` (rendered from `website-contact-v1.md` — mailto CTA, no form)
 - **Chrome:** shared `SiteHeader` + `SiteFooter` in `components/`. Footer has `LinkedIn` and `BOSS on GitHub` as disabled-looking placeholders pending later dispatches.
-- **Favicon:** not yet created — browser 404s. Pending dispatch for favicon + logo work.
+- **Favicon + icons:** `app/icon.svg` (Next 16 auto-registered), `public/favicon.ico` (multi-res 16/32/48, Lora server-rasterized), `public/apple-icon.png` (180×180). OG card at `public/og-image.png` (1200×630).
 - Run: `npm install && npm run dev` → `http://localhost:3100`
