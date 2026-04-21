@@ -12,7 +12,7 @@ export default function HomePage() {
           Thirty years across five industries. Mid-market operators. Designed
           and driven — not handed off with the deck.
         </p>
-        <p className="mt-4 font-body italic text-[15px] text-d2-warmgray">
+        <p className="mt-4 font-body italic text-[15px] text-d2-ink">
           Robert Paddock <span className="not-italic text-d2-stone px-1">·</span>
           Contract CIO <span className="not-italic text-d2-stone px-1">·</span>
           Business transformation{" "}
@@ -41,7 +41,7 @@ export default function HomePage() {
         <div className="mt-12 flex justify-center">
           <a
             href="mailto:robert@idigdata.com?subject=Start%20a%20conversation"
-            className="inline-block bg-d2-forest text-white font-body font-semibold text-[16px] px-7 py-3.5 hover:bg-d2-forest/90 transition-colors"
+            className="inline-block bg-d2-forest text-white font-body font-semibold text-[16px] px-7 py-3.5 hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
           >
             Start a conversation →
           </a>
@@ -184,10 +184,12 @@ export default function HomePage() {
               Business Operating System Suite
             </span>{" "}
             — the framework carried into every engagement. Thirty years of ERP,
-            WMS, and data-warehouse strategy, extended by applied agentics.
-            Proven at scale; unprecedented in digital transformation.
+            WMS, and data-warehouse strategy, extended by applied agentics —
+            including agentic MDM: annotation and curation turning decades of
+            disparate master data into a unified common data model. Proven at
+            scale; unprecedented in digital transformation.
           </p>
-          <p className="mt-4 text-d2-warmgray">
+          <p className="mt-4 text-d2-ink" aria-hidden="true">
             <span className="opacity-60 cursor-not-allowed" title="Link coming soon">
               → BOSS on GitHub
             </span>
@@ -222,16 +224,13 @@ export default function HomePage() {
             the enterprise agentics framework built in live production.
           </p>
         </div>
-        <div className="mt-10 flex flex-col md:flex-row gap-4 md:gap-8 text-[15px]">
+        <div className="mt-10 text-[15px]">
           <a
             href="/about"
             className="font-body text-d2-forest hover:underline"
           >
             → Read the full career story
           </a>
-          <span className="opacity-60 text-d2-warmgray cursor-not-allowed" title="PDF coming soon">
-            → Download the resume
-          </span>
         </div>
       </section>
 
@@ -244,7 +243,7 @@ export default function HomePage() {
           <p className="mt-6 text-[18px] text-white/80">One email. No form.</p>
           <a
             href="mailto:robert@idigdata.com?subject=idigdata%20inquiry"
-            className="mt-10 inline-block font-body font-bold text-[22px] md:text-[26px] tracking-wide border-b-2 border-white/60 hover:border-white pb-1"
+            className="mt-10 inline-block font-body font-bold text-[22px] md:text-[26px] tracking-wide border-b-2 border-white/60 hover:border-white pb-1 focus:outline-2 focus:outline-white focus:outline-offset-4"
           >
             robert@idigdata.com
           </a>

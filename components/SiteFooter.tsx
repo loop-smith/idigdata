@@ -12,7 +12,7 @@ export default function SiteFooter() {
               robert@idigdata.com
             </a>
           </p>
-          <p className="text-d2-warmgray">
+          <p className="text-d2-ink" aria-hidden="true">
             <span className="opacity-60 cursor-not-allowed" title="Link coming soon">
               LinkedIn
             </span>
@@ -21,7 +21,7 @@ export default function SiteFooter() {
               BOSS on GitHub
             </span>
           </p>
-          <p className="text-d2-warmgray text-[13px]">© 2026 idigdata LLC</p>
+          <p className="text-d2-ink text-[13px]">© 2026 idigdata LLC</p>
         </div>
       </div>
     </footer>
