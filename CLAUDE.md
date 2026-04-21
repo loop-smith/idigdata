@@ -6,16 +6,20 @@ Marketing / positioning website for **idigdata LLC** — Robert Paddock's indepe
 ## Filesystem context — two separate roots
 - **Codebase (this repo, git-tracked):** `C:\2026_agentic_projects\idigdata\`
 - **Content / workfront / cowork-project folder:** `C:\Users\Paddo\OneDrive\Desktop\k2s\idigdata\`
-  - Holds: positioning drafts, pipeline, dispatches, README (project charter).
+  - `positioning/` — all marketing copy sources (one markdown file per page surface)
+  - `pipeline/` — internal sales material
+  - `dispatches/` — orchestration briefs from the Cowork session to this codebase
+  - `.claude/CLAUDE.md` — workfront-side project charter (different file from this one; if you need fuller context on idigdata the practice, read it)
+  - `README.md` — general project readme
 - **Code never lands under `k2s\`.** **Content never lands under `2026_agentic_projects\`.** Keep the split clean.
 
 ## Stack
-- Next.js 15 (App Router) · React 19 · TypeScript (strict)
-- Tailwind CSS 3 · `next/font` Google Fonts (Lora + Source Sans 3)
-- `output: 'export'` — static HTML. No CMS, no DB, no forms, no server runtime.
+Next.js App Router + React + TypeScript (strict) + Tailwind 4 (CSS-first, `@theme` in `app/globals.css`) + `next/font` Google Fonts (Lora / Source Sans 3) + static export. No CMS, no DB, no forms, no server runtime.
+
+**Pinned versions + verification checklist + migration history live in `STACK.md`** (lane root, alongside this file). Update `STACK.md` on any framework upgrade; it's the single source of truth for this project's pins. The estate-wide pin block lives at `paved/REGISTRY.md`.
 
 ## Design system (D2 — authoritative)
-Source of truth: `tailwind.config.ts` (`colors.d2.*`) + `app/globals.css`.
+Source of truth: `app/globals.css` — Tailwind 4 uses CSS-first config, so D2 tokens live inside `@theme { --color-d2-* ... }` there. (`tailwind.config.ts` is a legacy stub from the v3 scaffold — not read, safe to delete whenever convenient.)
 
 Colors (Tailwind: `bg-d2-forest`, `text-d2-ink`, etc.):
 - `forest` `#1F3D2E` · `aubergine` `#4A2E52` · `stone` `#7A756A`
@@ -30,7 +34,9 @@ No other colors. No gradients. No shadows. No images. No icons beyond favicon. N
 ## Copy source (authoritative)
 **All page copy lives in `C:\Users\Paddo\OneDrive\Desktop\k2s\idigdata\positioning\`.** Do NOT write new marketing copy in code. If copy feels wrong when rendered, flag it in the dispatch return summary — the orchestrator updates the markdown source and a later dispatch pulls it into code.
 
-Current home-page copy source: `positioning\website-home-v1.md`.
+Filename convention: `website-<page>-v<N>.md` — e.g., `website-home-v1.md`, `website-about-v1.md`, `website-contact-v1.md`. Read whichever matches the page the dispatch is touching.
+
+**When a copy source is updated after a page has already been rendered, future dispatches must re-read the markdown and sync the rendered page.** Copy can drift silently if a dispatch skips re-verification — always verify rendered output matches current source when the dispatch asks you to touch that page.
 
 ## Workflow
 This codebase is driven by **dispatches** from the `idigdata` Cowork session.
@@ -46,8 +52,18 @@ This codebase is driven by **dispatches** from the `idigdata` Cowork session.
 - No animations, scroll effects, or interaction sugar.
 - No CMS, headless service, or database.
 
+## Ports
+This project runs on **port 3100** (`npm run dev`). The canonical registry of local-dev ports across all projects on this machine is `C:\2026_agentic_projects\PORTS.md` — check it before starting any new port-consuming process, and register changes there.
+
+**Collision behavior:** Next.js 16+ hard-fails on `EADDRINUSE` (not configurable — silent fallback was removed in v16). If 3100 is held by a zombie, the dev server will not start. Fix: `netstat -ano | findstr :3100` then `taskkill //F //PID <pid>`.
+
+## Static assets
+Place static assets (resume PDF, favicon, logo files, open-graph images) under `public/`. Everything in `public/` is served at the site root at build time (e.g., `public/Paddock-Resume.pdf` → `/Paddock-Resume.pdf`). Folder is created lazily — if it doesn't exist yet, create it when the first asset lands.
+
 ## Current state
-- **Scaffolded by:** dispatch 001 (2026-04-21)
-- **Routes:** `/` (home, full content from `website-home-v1.md`) · `/about` (placeholder — "Coming soon.") · `/contact` (placeholder — email only)
+- **Scaffolded by:** dispatch 001 (2026-04-21). Next/Tailwind versions bumped in-loop after scaffold (see Stack section for current versions).
+- **Git:** initialized locally on `main` (initial commit `0c87fea`). **No remote configured. No GitHub, no Vercel, no DNS.** Do not re-init; do not add a remote without an explicit dispatch instruction.
+- **Routes:** `/` (home, full content from `website-home-v1.md`, BOSS paragraph at v4 "agentic MDM" copy) · `/about` (placeholder — "Coming soon.") · `/contact` (placeholder — email only)
 - **Chrome:** shared `SiteHeader` + `SiteFooter` in `components/`. Footer has `LinkedIn` and `BOSS on GitHub` as disabled-looking placeholders pending later dispatches.
-- Run: `npm install && npm run dev` → `http://localhost:3000`
+- **Favicon:** not yet created — browser 404s. Pending dispatch for favicon + logo work.
+- Run: `npm install && npm run dev` → `http://localhost:3100`
