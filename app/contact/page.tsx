@@ -1,17 +1,43 @@
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import JsonLdScript from "@/components/analytics/JsonLdScript";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Start a conversation",
   description:
-    "Two ways to reach me. Both reach me directly. Email or use the form.",
+    "Two ways to reach Robert: direct email at robert@idigdata.com or the form below. Both reach him directly.",
   alternates: {
-    canonical: "/contact",
+    canonical: "/contact/",
   },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/contact/",
+    title: "Contact — idigdata",
+    description: "Two ways to reach Robert. Both reach him directly.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+      },
+    ],
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://idigdata.com/contact/" },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-content px-6">
+      <JsonLdScript data={breadcrumbJsonLd} />
       {/* Header */}
       <section className="pt-20 pb-10 md:pt-24 md:pb-12 text-center">
         <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[48px] leading-[1.05] tracking-tight">

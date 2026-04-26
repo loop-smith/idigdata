@@ -1,12 +1,91 @@
+import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
+import JsonLdScript from "@/components/analytics/JsonLdScript";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Capabilities",
   description:
-    "Three offering lines. One operator. Business transformation, Transformative CIO, and Agentic adoption.",
+    "Three offering lines from one operator: business transformation (data-core first), transformative CIO (full scope, embedded), agentic adoption (enterprise framework, production systems).",
   alternates: {
-    canonical: "/capabilities",
+    canonical: "/capabilities/",
   },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/capabilities/",
+    title: "Capabilities — idigdata",
+    description:
+      "Business transformation. Transformative CIO. Agentic adoption.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+      },
+    ],
+  },
+};
+
+const provider = {
+  "@type": "Organization",
+  name: "idigdata, LLC",
+  url: "https://idigdata.com",
+};
+
+const serviceBT = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Business Transformation Consulting",
+  name: "Business Transformation",
+  description:
+    "Data-core first transformation that institutionalizes. Greenfield architecture, operating-model redesign, 50+ mid-market transformations delivered.",
+  provider,
+  areaServed: "United States",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Mid-market operators, PE-backed and founder-led companies",
+  },
+};
+
+const serviceTCO = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Fractional / Embedded CIO",
+  name: "Transformative CIO",
+  description:
+    "Full CIO scope, embedded. Strategy, operations, vendor portfolio, risk, governance. Transformer, not caretaker.",
+  provider,
+  areaServed: "United States",
+  audience: {
+    "@type": "Audience",
+    audienceType: "Boards, PE, C-Suite executives",
+  },
+};
+
+const serviceAA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Agentic AI Adoption Advisory",
+  name: "Agentic Adoption",
+  description:
+    "Enterprise agentic framework. Five production systems shipped at brand scale. Governance, security, onboarding, operator training, empowerment, beehive.",
+  provider,
+  areaServed: "United States",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Capabilities",
+      item: "https://idigdata.com/capabilities/",
+    },
+  ],
 };
 
 const COLUMNS = [
@@ -90,6 +169,10 @@ const SYSTEMS = [
 export default function CapabilitiesPage() {
   return (
     <div className="mx-auto max-w-content px-6">
+      <JsonLdScript data={serviceBT} />
+      <JsonLdScript data={serviceTCO} />
+      <JsonLdScript data={serviceAA} />
+      <JsonLdScript data={breadcrumbJsonLd} />
       {/* Header */}
       <section className="pt-20 pb-10 md:pt-24 md:pb-14">
         <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[48px] leading-[1.05] tracking-tight">

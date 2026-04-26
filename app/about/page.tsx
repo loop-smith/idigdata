@@ -1,17 +1,72 @@
+import type { Metadata } from "next";
 import SectionHeader from "@/components/SectionHeader";
+import JsonLdScript from "@/components/analytics/JsonLdScript";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Robert",
   description:
     "Operator. Builder. Thirty years. Three chapters, one through-line — commonize the master data, own the core, apps and agents plug in.",
   alternates: {
-    canonical: "/about",
+    canonical: "/about/",
   },
+  openGraph: {
+    type: "profile",
+    url: "https://idigdata.com/about/",
+    title: "About Robert Paddock — idigdata",
+    description: "Operator. Builder. Thirty years.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+      },
+    ],
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Robert Paddock",
+  jobTitle: "Transformative CIO",
+  description:
+    "Battle-hardened transformative CIO. Thirty years moving mid-market businesses through systems.",
+  url: "https://idigdata.com/about/",
+  image: "https://idigdata.com/og-image.png",
+  worksFor: {
+    "@type": "Organization",
+    name: "idigdata, LLC",
+    url: "https://idigdata.com",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Nevada, Reno",
+  },
+  knowsAbout: [
+    "Business Transformation",
+    "Enterprise Resource Planning",
+    "Agentic AI",
+    "Master Data Management",
+    "CIO Leadership",
+    "Mid-Market Operations",
+  ],
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://idigdata.com/about/" },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-content px-6">
+      <JsonLdScript data={personJsonLd} />
+      <JsonLdScript data={breadcrumbJsonLd} />
       {/* Header */}
       <section className="pt-20 pb-10 md:pt-24 md:pb-14">
         <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[48px] leading-[1.05] tracking-tight">

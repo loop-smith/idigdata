@@ -1,11 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 
-export const metadata = {
+export const metadata: Metadata = {
+  title: { absolute: "idigdata — Transformative CIO + agentic adoption" },
   description:
     "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/",
+    title: "idigdata — Transformative CIO + agentic adoption",
+    description:
+      "Battle-hardened transformative CIO. Thirty years moving mid-market businesses.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+      },
+    ],
   },
 };
 
