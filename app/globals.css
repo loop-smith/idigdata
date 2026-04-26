@@ -2,6 +2,7 @@
 
 @theme {
   --color-d2-forest: #1F3D2E;
+  --color-d2-copper: #B04E2A;
   --color-d2-aubergine: #4A2E52;
   --color-d2-stone: #7A756A;
   --color-d2-warmgray: #6B6860;
@@ -20,6 +21,7 @@
 
 :root {
   --d2-forest: #1F3D2E;
+  --d2-copper: #B04E2A;
   --d2-aubergine: #4A2E52;
   --d2-stone: #7A756A;
   --d2-warmgray: #6B6860;

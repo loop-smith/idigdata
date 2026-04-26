@@ -19,7 +19,7 @@ Next.js App Router + React + TypeScript (strict) + Tailwind 4 (CSS-first, `@them
 **Pinned versions + verification checklist + migration history live in `STACK.md`** (lane root, alongside this file). Update `STACK.md` on any framework upgrade; it's the single source of truth for this project's pins. The estate-wide pin block lives at `paved/REGISTRY.md`.
 
 ## Design system (D2 — authoritative)
-Source of truth: `app/globals.css` — Tailwind 4 uses CSS-first config, so D2 tokens live inside `@theme { --color-d2-* ... }` there. (`tailwind.config.ts` is a legacy stub from the v3 scaffold — not read, safe to delete whenever convenient.)
+Source of truth: `app/globals.css` — Tailwind 4 uses CSS-first config, so D2 tokens live inside `@theme { --color-d2-* ... }` there.
 
 Colors (Tailwind: `bg-d2-forest`, `text-d2-ink`, etc.):
 - `forest` `#1F3D2E` · `aubergine` `#4A2E52` · `stone` `#7A756A`
@@ -44,13 +44,22 @@ This codebase is driven by **dispatches** from the `idigdata` Cowork session.
 - Each dispatch is self-contained: read top to bottom, execute, return a summary per the format at its bottom.
 - No GitHub remote yet. No Vercel project yet. No DNS. Scoped additions only.
 
-## Explicit project-wide non-goals
-- No analytics tracking, no third-party scripts.
-- No user data collection. No forms. No CRM integration.
+## Design non-goals (still enforced)
 - No images / photos / logo walls — typography + palette IS the design.
 - No decorative icons (lucide, heroicons, etc.). Favicon is fine.
-- No animations, scroll effects, or interaction sugar.
-- No CMS, headless service, or database.
+- No animations, scroll effects, or interaction sugar beyond the intake modal chrome (backdrop fade is fine).
+- No CMS or headless service — page copy lives in markdown sources under `k2s\idigdata\positioning\`, rendered at build.
+
+## Analytics + data (what is wired or approved)
+- **Intake form** → website Supabase `adkwtkhvbntreznhwzxu.supabase.co`. Table `prospects_inbound` (schema pending — dispatch will define it). Cross-codebase bridge into `idigdata-app`'s Supabase is a separate pipeline, gated on the app-side plumbing being ready; for now the website just writes and stores.
+- **Conversion analytics — PostHog Cloud** (free tier). Funnel: pageview → CTA click → modal open → form submit. UTM capture on inbound links. All instrumentation routes through a thin `track(event, props)` helper so the vendor is swappable. Session replay enabled for conversion debugging.
+- **Visit analytics baseline — Vercel Web Analytics** (zero-config on Vercel, privacy-first, no cookie banner).
+- **No Google Analytics. No ad pixels. No retargeting scripts. No marketing tags** beyond the PostHog + Vercel Analytics stack above.
+
+## Privacy posture
+- Form collects: name, email, company (optional), engagement-shape radio, optional context text. No sensitive personal, health, or financial data.
+- Analytics are cookie-free where possible — Vercel Web Analytics is; PostHog configured cookieless.
+- `/privacy` page documenting collection + retention is a pending dispatch (not blocking launch).
 
 ## Ports
 This project runs on **port 3100** (`npm run dev`). The canonical registry of local-dev ports across all projects on this machine is `C:\2026_agentic_projects\PORTS.md` — check it before starting any new port-consuming process, and register changes there.

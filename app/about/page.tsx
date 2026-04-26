@@ -1,9 +1,9 @@
 import SectionHeader from "@/components/SectionHeader";
 
 export const metadata = {
-  title: "About",
+  title: "About Robert",
   description:
-    "Robert Paddock — Contract CIO, business transformation, agentic adoption. A decade running idigdata independently. Thirty years transforming mid-market businesses through their systems.",
+    "Operator. Builder. Thirty years. Three chapters, one through-line — commonize the master data, own the core, apps and agents plug in.",
   alternates: {
     canonical: "/about",
   },
@@ -12,189 +12,138 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-content px-6">
-      {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-24 md:pb-20">
-        <h1 className="font-display font-bold text-d2-forest text-[36px] md:text-[48px] leading-[1.05] tracking-tight">
-          Robert Paddock
+      {/* Header */}
+      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+        <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[48px] leading-[1.05] tracking-tight">
+          About Robert
         </h1>
-        <p className="mt-6 font-body italic text-[15px] text-d2-ink">
-          Contract CIO
-          <span className="not-italic text-d2-stone px-2">·</span>
-          Business transformation
-          <span className="not-italic text-d2-stone px-2">·</span>
-          Agentic adoption
-          <span className="not-italic text-d2-stone px-2">·</span>
-          Principal, idigdata LLC
+        <p className="mt-4 font-display italic text-d2-stone text-[18px]">
+          Operator. Builder. Thirty years.
+        </p>
+      </section>
+
+      {/* Three Chapters */}
+      <section className="pt-4">
+        <SectionHeader>Three chapters, one through-line</SectionHeader>
+        <p className="max-w-[820px] text-[16px] text-d2-ink leading-relaxed">
+          Commonize the master data, own the core, apps and agents plug in.
+          Designed and driven. Not handed off with the deck.
         </p>
 
-        <figure className="mt-12 mx-auto max-w-[820px] text-center">
-          <blockquote className="relative font-display italic text-d2-ink text-[20px] md:text-[22px] leading-snug px-8">
-            <span
-              aria-hidden
-              className="font-display text-d2-stone text-[56px] leading-none align-top pr-2"
-            >
-              &ldquo;
-            </span>
-            Mid-market operators hire Robert when they want operating-model
-            change that institutionalizes. A decade running idigdata
-            independently. Thirty years transforming businesses through their
-            systems. No handoffs, no shelfware.
-            <span
-              aria-hidden
-              className="font-display text-d2-stone text-[56px] leading-none align-bottom pl-2"
-            >
-              &rdquo;
-            </span>
-          </blockquote>
-        </figure>
-      </section>
-
-      {/* THE PRACTICE */}
-      <section className="pt-16 md:pt-20">
-        <SectionHeader>The Practice</SectionHeader>
-        <div className="max-w-[820px] text-[17px] text-d2-ink">
-          <p>
-            idigdata is the vehicle. Robert is the operator. A decade
-            established, fully insured, a going concern — not a net-new shop.
-          </p>
-          <ul className="mt-8 space-y-4">
-            <li className="pl-5 relative">
-              <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-d2-forest rounded-full" />
-              <span className="font-body font-semibold text-d2-forest">
-                Transformative CIO engagements
+        <ol className="mt-10 max-w-[820px] space-y-8">
+          <li>
+            <p className="font-display italic text-d2-ink text-[18px] leading-relaxed pl-6 border-l-2 border-d2-forest/20">
+              <span className="font-bold not-italic text-d2-forest">First.</span>{" "}
+              Sixteen years at Timberline Architectural Openings as CEO and
+              CTO. His first business transformation. Grew revenue from $250K
+              in Year 1 to $130M by Year 10 across US and China operations.{" "}
+              <span className="text-d2-warmgray">
+                Built proprietary software systems to drive the scale-up. The
+                conceptual origin of BOSS.
+              </span>
+            </p>
+          </li>
+          <li>
+            <p className="font-display italic text-d2-ink text-[18px] leading-relaxed pl-6 border-l-2 border-d2-forest/20">
+              <span className="font-bold not-italic text-d2-forest">
+                Second.
               </span>{" "}
-              — fractional (2–3 days/week), part-time, or full-time exclusive.
-              Six to twelve months typical; twelve to twenty-four for full-time
-              residencies.
-            </li>
-            <li className="pl-5 relative">
-              <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-d2-forest rounded-full" />
-              <span className="font-body font-semibold text-d2-forest">
-                Business systems leadership
+              Full-cycle enterprise systems delivery at AccessIT, then a
+              decade as principal at idigdata. 50+ ERP implementations across
+              construction, manufacturing, distribution, and services.
+            </p>
+          </li>
+          <li>
+            <p className="font-display italic text-d2-ink text-[18px] leading-relaxed pl-6 border-l-2 border-d2-forest/20">
+              <span className="font-bold not-italic text-d2-forest">
+                Third.
               </span>{" "}
-              — Microsoft Dynamics D365 specialization. Two to three concurrent
-              engagements at a time. The bedrock service line.
-            </li>
-            <li className="pl-5 relative">
-              <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-d2-forest rounded-full" />
-              <span className="font-body font-semibold text-d2-forest">
-                Agentic adoption advisory
-              </span>{" "}
-              — strategy, platform selection, deployment planning. For
-              operators moving past pilots.
-            </li>
-          </ul>
-          <p className="mt-8">
-            <span className="font-body font-semibold text-d2-forest">
-              Business Operating System Suite
-            </span>{" "}
-            — the framework carried into every engagement. Thirty years of ERP,
-            WMS, and data-warehouse strategy, extended by applied agentics —
-            including agentic MDM: annotation and curation turning decades of
-            disparate master data into a unified common data model. Proven at
-            scale; unprecedented in digital transformation.
-          </p>
-        </div>
+              A two-year full-scope CIO residency at Sierra Nevada Brewing
+              Company. Digital transformation, IT transformation, and
+              enterprise agentics framework deployment and adoption.
+            </p>
+          </li>
+        </ol>
       </section>
 
-      {/* Credentials */}
-      <section className="pt-16 md:pt-20">
-        <SectionHeader>Studies · Disciplines</SectionHeader>
-        <div className="max-w-[820px] space-y-3 text-[17px] text-d2-ink">
-          <p>
-            University of Nevada, Reno
-            <span className="text-d2-stone px-2">·</span>
-            Computer Science &amp; Finance.
-          </p>
-          <p>
-            Microsoft Certified Professional
-            <span className="text-d2-stone px-2">·</span>
-            NVIDIA Agentic AI LLMs Professional (in progress)
-            <span className="text-d2-stone px-2">·</span>
-            Scrum Master
-            <span className="text-d2-stone px-2">·</span>
-            PMBOK
-            <span className="text-d2-stone px-2">·</span>
-            LEED AP.
-          </p>
-        </div>
+      {/* Who I work with */}
+      <section className="pt-20 md:pt-24">
+        <SectionHeader>Who I work with</SectionHeader>
+        <p className="max-w-[820px] text-[16px] text-d2-ink leading-relaxed">
+          Mid-market operators in complex industries. PE-backed and
+          founder-led. $100M–$750M revenue. CPG and food &amp; beverage,
+          specialty manufacturing, distribution and logistics, AEC
+          (architecture, engineering, construction), operations-heavy
+          services.
+        </p>
+
+        <p className="mt-6 max-w-[820px] font-body font-bold text-d2-forest text-[17px] leading-relaxed">
+          Leaders who want the data core fixed first. So transformation
+          institutionalizes.
+        </p>
+
+        <ul className="mt-8 max-w-[820px] space-y-4 text-[16px] text-d2-ink">
+          <li className="pl-5 relative">
+            <span className="absolute left-0 top-2.5 w-1.5 h-1.5 bg-d2-forest rounded-full" />
+            <span className="font-body font-bold text-d2-forest">
+              Boards and Private Equity
+            </span>{" "}
+            hiring an embedded Transformative CIO to run operating-model
+            change.
+          </li>
+          <li className="pl-5 relative">
+            <span className="absolute left-0 top-2.5 w-1.5 h-1.5 bg-d2-forest rounded-full" />
+            <span className="font-body font-bold text-d2-forest">
+              C-Suite executives
+            </span>{" "}
+            modernizing the business-systems landscape.
+          </li>
+          <li className="pl-5 relative">
+            <span className="absolute left-0 top-2.5 w-1.5 h-1.5 bg-d2-forest rounded-full" />
+            <span className="font-body font-bold text-d2-forest">
+              Leadership teams
+            </span>{" "}
+            executing transformation on the ground.
+          </li>
+          <li className="pl-5 relative">
+            <span className="absolute left-0 top-2.5 w-1.5 h-1.5 bg-d2-forest rounded-full" />
+            <span className="font-body font-bold text-d2-forest">
+              Agentic adoption.
+            </span>{" "}
+            For all three tiers: strategy at the mandate level, portfolio
+            integration at the executive level, deployment past the pilot
+            stage in the work.
+          </li>
+        </ul>
       </section>
 
-      {/* THE PATH HERE */}
-      <section className="pt-16 md:pt-20">
-        <SectionHeader>The Path Here</SectionHeader>
-        <div className="max-w-[820px] space-y-6 text-[17px] text-d2-ink">
-          <p>
-            Three decades across five industries — construction and
-            engineering, specialty manufacturing, distribution and logistics,
-            operations-heavy services, and food and beverage — transforming
-            businesses through their systems.
-          </p>
-          <p>
-            Sixteen years at Timberline Architectural Openings (1996–2012) as
-            CEO and CTO — the first business transformation, growing revenue{" "}
-            <span className="font-body font-bold text-d2-forest">
-              from $250,000 in Year 1 to $130 million by Year 10
-            </span>{" "}
-            across US, Mexico, and China operations. Concurrent VP role at
-            Leighton Asia / China State Joint Ventures in Macau (2004–2007),
-            exporting engineered assemblies into the China
-            commercial-construction market. Before Timberline, a decade at PCD
-            Group (1986–1996) as a commercial design-build contractor —
-            carpenter to multi-discipline project manager across $5M–$75M
-            projects. Where the operating-model instinct, and the execution
-            discipline, started.
-          </p>
-          <p>
-            Four years at AccessIT (2012–2016) running full-cycle enterprise
-            systems delivery — Microsoft Dynamics partner with proprietary IP
-            on top of the ERP, delivering client implementations and helping
-            build the product. In 2016, launched{" "}
-            <span className="font-body font-semibold text-d2-forest">
-              idigdata LLC
-            </span>{" "}
-            as an independent practice. Eight years as principal;{" "}
-            <span className="font-body font-bold text-d2-forest">
-              50+ full-cycle ERP implementations
-            </span>{" "}
-            across construction, manufacturing, distribution, and
-            operations-heavy services. Two to three concurrent engagements at
-            any time — the rhythm that still runs today.
-          </p>
-          <p>
-            A{" "}
-            <span className="font-body font-bold text-d2-forest">
-              25-month full Chief Information Officer residency
-            </span>{" "}
-            at Sierra Nevada Brewing Company (2024–2026), contracted through
-            idigdata. Full CIO scope — technology strategy, vendor portfolio,
-            risk and governance, operating-model transformation — plus a
-            greenfield, data-centric, vendor-agnostic enterprise architecture,
-            a rebuilt Information Systems function, and the enterprise
-            agentics framework built in live production. Governance, security,
-            onboarding, operator training, empowerment — with production
-            applications running on the framework: operational decisioning,
-            institutional-knowledge retrieval, document-to-structured-data
-            intake, cross-system orchestration, operator decision-support. The
-            framework itself is the rare credential; most &ldquo;AI
-            advisors&rdquo; are prompt engineers or pilot-runners.
-          </p>
-        </div>
+      {/* How I plug in */}
+      <section className="pt-20 md:pt-24">
+        <SectionHeader>How I plug in</SectionHeader>
+        <p className="max-w-[820px] text-[16px] text-d2-ink leading-relaxed">
+          Pick the intensity. Fractional, part-time, or full embedded. A bench
+          if needed: developers, data analysts, system analysts, implementers,
+          project managers. The network that rebuilt a national-brand IS
+          function, bolted on or placed permanently. Plus a working vendor and
+          partner Rolodex. 30 years of vendor and partner relationships across
+          ERP, WMS, data, and agentics.
+        </p>
       </section>
 
-      {/* Closing CTA */}
-      <section className="mt-20 md:mt-24 mb-8">
-        <div className="text-center">
-          <a
-            href="mailto:robert@idigdata.com?subject=idigdata%20inquiry"
-            className="inline-block bg-d2-forest text-white font-body font-semibold text-[16px] px-7 py-3.5 hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
-          >
-            → Start a conversation
-          </a>
-          <p className="mt-6 text-[14px] text-d2-ink italic">
-            Resume sent on request.
-          </p>
-        </div>
+      {/* Where I'm looking next — blockchain */}
+      <section className="pt-20 md:pt-24 pb-12">
+        <SectionHeader>Where I&rsquo;m looking next</SectionHeader>
+        <p className="max-w-[820px] text-[16px] text-d2-ink leading-relaxed">
+          <span className="text-d2-copper italic">
+            The next frontier worth following:
+          </span>{" "}
+          blockchain as a substrate for trust between businesses that
+          don&rsquo;t share a database. Most adoption has been
+          speculation-shaped; the operator opportunity is interoperability
+          — provenance, contracts, multi-party data exchange. Watching it for
+          the same reason agentic AI was worth watching three years before it
+          became commercial.
+        </p>
       </section>
     </div>
   );
