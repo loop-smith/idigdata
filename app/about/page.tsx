@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
@@ -186,7 +187,7 @@ export default function AboutPage() {
       </section>
 
       {/* Where I'm looking next — blockchain */}
-      <section className="pt-20 md:pt-24 pb-12">
+      <section className="pt-20 md:pt-24">
         <SectionHeader>Where I&rsquo;m looking next</SectionHeader>
         <p className="max-w-[820px] text-[16px] text-d2-ink leading-relaxed">
           <span className="text-d2-copper italic">
@@ -199,6 +200,32 @@ export default function AboutPage() {
           the same reason agentic AI was worth watching three years before it
           became commercial.
         </p>
+      </section>
+
+      {/* Dual CTA */}
+      <section className="mt-24 mb-16 md:mb-24">
+        <div className="text-center px-6 py-16 md:py-20">
+          <h2 className="font-display font-medium text-d2-forest text-[28px] md:text-[36px] leading-tight">
+            Two ways to reach me.
+          </h2>
+          <p className="mt-4 text-d2-ink text-[16px]">
+            Both reach me directly.
+          </p>
+          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
+            <a
+              href="mailto:robert@idigdata.com"
+              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-d2-forest text-white hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+            >
+              Email Robert directly
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 border border-d2-forest text-d2-forest hover:bg-d2-forest hover:text-white transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+            >
+              Or start a conversation
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );

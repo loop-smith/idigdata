@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
@@ -117,7 +118,6 @@ const COLUMNS = [
       "Agentic MDM at the core. Master data curation is the gate.",
       "Adoption is the moat. Operator empowerment is the layer most AI advisors skip.",
     ],
-    emphasizeIndex: 1,
   },
 ];
 
@@ -201,11 +201,7 @@ export default function CapabilitiesPage() {
                 {col.bullets.map((b, i) => (
                   <li key={i} className="pl-5 relative">
                     <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-d2-forest rounded-full" />
-                    {col.emphasizeIndex === i ? (
-                      <span className="text-d2-copper">{b}</span>
-                    ) : (
-                      b
-                    )}
+                    {b}
                   </li>
                 ))}
               </ul>
@@ -222,7 +218,10 @@ export default function CapabilitiesPage() {
           Sierra Nevada. One of mid-market&rsquo;s earliest full agentic
           deployments. Framework: governance, training, user empowerment, app
           onboarding, beehive. Five domain-experienced apps running in live
-          operations today. Not chatbots. Not pilots.
+          operations today.
+        </p>
+        <p className="mt-4 max-w-[820px] font-display italic text-d2-copper text-[20px] leading-snug">
+          Not chatbots. Not pilots.
         </p>
 
         <ul className="mt-8 max-w-[640px] space-y-2 font-mono text-[14px] text-d2-ink">
@@ -260,7 +259,7 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* SYSTEMS strip */}
-      <section className="pt-20 md:pt-24 pb-12">
+      <section className="pt-20 md:pt-24">
         <SectionHeader>Systems</SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
           {SYSTEMS.map((sys) => (
@@ -282,6 +281,32 @@ export default function CapabilitiesPage() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Dual CTA */}
+      <section className="mt-24 mb-16 md:mb-24">
+        <div className="text-center px-6 py-16 md:py-20">
+          <h2 className="font-display font-medium text-d2-forest text-[28px] md:text-[36px] leading-tight">
+            Two ways to reach me.
+          </h2>
+          <p className="mt-4 text-d2-ink text-[16px]">
+            Both reach me directly.
+          </p>
+          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
+            <a
+              href="mailto:robert@idigdata.com"
+              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-d2-forest text-white hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+            >
+              Email Robert directly
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 border border-d2-forest text-d2-forest hover:bg-d2-forest hover:text-white transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+            >
+              Or start a conversation
+            </Link>
+          </div>
         </div>
       </section>
     </div>

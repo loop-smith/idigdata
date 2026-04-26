@@ -50,10 +50,10 @@ export default function ContactPage() {
 
       {/* Email block */}
       <section className="pt-4 text-center">
-        <p className="font-display text-d2-forest text-[28px] md:text-[32px]">
+        <p className="font-display text-d2-copper text-[28px] md:text-[32px]">
           <a
             href="mailto:robert@idigdata.com"
-            className="hover:text-d2-copper transition-colors"
+            className="hover:underline"
           >
             robert@idigdata.com
           </a>
