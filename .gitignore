@@ -42,6 +42,10 @@ yarn-error.log*
 # local screenshots (dev-only)
 /.screenshots/
 
+# lighthouse — ephemeral score JSONs from launch dispatch
+/lighthouse-*.json
+/_lighthouse/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
