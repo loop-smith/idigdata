@@ -2,6 +2,28 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-05-02 — DNS hosting Bluehost→Vercel + registrar transfer initiated (loopsmith_cw cycles A/B/C, no CC dispatch)
+
+- **Cycle A — DNS hosting transfer Bluehost → Vercel (zone authoritative now on `ns1/ns2.vercel-dns.com`).**
+  - 7 records migrated, character-perfect: Outlook stack (CNAME `autodiscover` + MX `@` `idigdata-com.mail.protection.outlook.com` priority 0 + TXT `@` SPF) + Resend stack (MX `send` `feedback-smtp.us-east-1.amazonses.com` priority 10 + TXT `resend._domainkey` DKIM full value + TXT `send` SPF + TXT `_dmarc` DMARC).
+  - Bluehost Nameservers tab → `NS1.BLUEHOST.COM`/`NS2.BLUEHOST.COM` flipped to `ns1/ns2.vercel-dns.com`.
+  - REJECTED Vercel "Add DNS Preset → Outlook" — generic preset uses default Outlook MX, NOT tenant-specific `idigdata-com.mail.protection.outlook.com`. Manual record adds via Vercel UI form_input. Memory baked: `feedback_vendor_mx_records_are_tenant_specific`.
+- **Cycle B — propagation verification (mxtoolbox-driven).**
+  - NS lookup: `ns1/ns2.vercel-dns.com` authoritative globally within ~5 min. 13/13 standard NS-health checks GREEN. (One cosmetic warning: SOA serial format non-standard — irrelevant to function.)
+  - MX apex `idigdata-com.mail.protection.outlook.com` priority 0 — Outlook email continuous, zero downtime.
+  - DKIM at `resend._domainkey.idigdata.com` — full base64 value resolves character-perfect via Vercel.
+- **Cycle C — Registrar transfer Bluehost → Vercel (initiated; auto-completes 2026-05-06 10:01:43 EDT).**
+  - Bluehost Move & Access tab → Auth Code requested (reason "I want all my products with the same company"). Bluehost auto-unlocked Domain Lock simultaneously. Auth code email arrived to `robert@idigdata.com` within minutes.
+  - Vercel Transfer In form filled: WHOIS contact = Robert Paddock / DATA INTEGRATION GROUP / 4790 CAUGHLIN PKWY # 377 RENO NV 89519-0907 / `robert@idigdata.com` / `+1.7026861544`. $11.25 paid (Visa 0221) — includes 1yr renewal.
+  - **FOA email understood as opt-out (correction landed 2026-05-02 evening):** Bluehost FOA `"DOMAIN NAME TRANSFER"` arrived 2026-05-02 10:01:43 EDT — no APPROVE link, only a cancel option. Text: `"If you want to proceed with this transfer, you do not need to respond to this message."` Auto-completion at **2026-05-06 10:01:43 EDT** (4-day silence-consent window). Memory baked: `feedback_registrar_transfer_foa_models_vary` — losing-registrar FOA models vary; Bluehost is opt-out.
+- **Post-completion expectations:** Vercel becomes registrar of record + WHOIS Privacy auto-applied via Vercel privacy proxy + 60-day ICANN lock. Bluehost account becomes closeable.
+
+## 2026-05-01 — Custom domain attach + same-day takedown (loopsmith_cw cycles 1, 4.5; dispatch-011 + dispatch-012)
+
+- **Cycle 1 — Custom domain attach (dispatch-011).** Vercel project `loop-smith/idigdata` → Settings → Domains → Add `idigdata.com` (Production) + `www.idigdata.com`. Vercel auto-issued Let's Encrypt cert; site briefly live at custom domain.
+- **Cycle 4.5 — Immediate takedown (Rob ask: "now we need the site offline asap, cant have other people seeing this").** Removed `idigdata.com` + `www.idigdata.com` from project Domains. Both custom domains now return `404 DEPLOYMENT_NOT_FOUND`. `idigdata.vercel.app` remains accessible to `loop-smith` team only via Standard Deployment Protection (not paying for Advanced Deployment Protection at this time).
+- **Site stays OFFLINE at `idigdata.com` until flip-on procedure runs** (procedure tracked in `loopsmith/handoff.md` Deferred — three-step Vercel UI flow, <5min).
+
 ## 2026-04-28 — Public launch + contact form bridge (Dispatch 010, includes 008)
 
 - **Dropped `output: "export"`** from `next.config.ts`. Site now runs on Vercel natively (Fluid Compute), not as static export. `images: { unoptimized: true }` also removed (no longer required).
