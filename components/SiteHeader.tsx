@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -17,16 +18,15 @@ export default function SiteHeader() {
   return (
     <header className="border-b border-navy/10">
       <div className="mx-auto max-w-content px-6 py-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group" aria-label="idigdata — home">
-          <img
-            src="/idigdata-mark.svg"
-            alt=""
-            aria-hidden
-            className="h-8 w-8"
+        <Link href="/" className="flex items-center group" aria-label="idigdata — home">
+          <Image
+            src="/idigdata-wordmark-only.svg"
+            alt="idigdata"
+            width={155}
+            height={32}
+            priority
+            className="h-8 w-auto"
           />
-          <span className="font-vollkorn font-bold text-navy text-[22px] leading-none tracking-tight">
-            idigdata
-          </span>
         </Link>
         <nav className="font-body text-[15px] text-navy flex items-center gap-2">
           {NAV.map((item, i) => {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function SiteFooter() {
@@ -65,16 +66,14 @@ export default function SiteFooter() {
 
           {/* Brand mark + tagline */}
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <img
-                src="/idigdata-mark.svg"
-                alt=""
-                aria-hidden
-                className="h-9 w-9"
+            <div className="flex items-center mb-3">
+              <Image
+                src="/idigdata-wordmark-only.svg"
+                alt="idigdata"
+                width={155}
+                height={32}
+                className="h-7 w-auto"
               />
-              <span className="font-vollkorn font-bold text-navy text-[20px] leading-none tracking-tight">
-                idigdata
-              </span>
             </div>
             <p className="font-display italic text-stone text-[14px] leading-relaxed">
               Client-owned data &middot; Vendor-agnostic architecture &middot;
