@@ -176,7 +176,7 @@ export default function ApproachPage() {
         </p>
         <EngagementRoadmapEmbed />
         <p className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
-          Engagement roadmap — Tilray-shape preconfigured. Phases P0 through
+          Engagement roadmap — full-residency-shape preconfigured. Phases P0 through
           P6, agentic-thread overlay, milestones.
         </p>
       </section>

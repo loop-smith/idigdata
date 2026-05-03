@@ -64,7 +64,7 @@ export const ARTICLES: Article[] = [
     thesis:
       "PM, change management, and agile-fall as one practice.",
     opening: [
-      "Most $10–15M business system transformations are run as three parallel workstreams: a Project Management track, a Stakeholder and Change Management track, and a methodology track that lurches between agile and waterfall. The PowerPoint shows neat lanes. The execution shows collisions in week eight. Three workstreams that look organized at the kickoff don't compound under load — they compete for the same calendar, the same stakeholders, and the same decision rights. *Run as one integrated discipline, they multiply. Run as three, they collide.*",
+      "Most board-approval-tier business system transformations are run as three parallel workstreams: a Project Management track, a Stakeholder and Change Management track, and a methodology track that lurches between agile and waterfall. The PowerPoint shows neat lanes. The execution shows collisions in week eight. Three workstreams that look organized at the kickoff don't compound under load — they compete for the same calendar, the same stakeholders, and the same decision rights. *Run as one integrated discipline, they multiply. Run as three, they collide.*",
     ],
     sections: [
       {
@@ -104,7 +104,7 @@ export const ARTICLES: Article[] = [
     thesis:
       "Why most ERP implementations fail to deliver outcomes.",
     opening: [
-      "Most $10–15M ERP and business-system implementations fail to deliver the outcome the operator paid for. Not because the platform was wrong, the data was bad, or the team was weak — those are downstream symptoms. They fail because they were run by the wrong organism: a licensed VAR or systems-integrator partner running the entire program at billable hours. *Vendor-partner-led implementations optimize for partner economics, not client outcomes.* The escape — and the only escape — is structural.",
+      "Most board-approval-tier ERP and business-system implementations fail to deliver the outcome the operator paid for. Not because the platform was wrong, the data was bad, or the team was weak — those are downstream symptoms. They fail because they were run by the wrong organism: a licensed VAR or systems-integrator partner running the entire program at billable hours. *Vendor-partner-led implementations optimize for partner economics, not client outcomes.* The escape — and the only escape — is structural.",
     ],
     sections: [
       {
@@ -122,7 +122,7 @@ export const ARTICLES: Article[] = [
       {
         heading: "The buyer-verifiable claim",
         paragraphs: [
-          "Ask any failed ERP project who was running the show. Almost always it was the vendor partner. Ask any successful complex transformation. Almost always it was a transformation leader operating above the vendors. The pattern is so consistent it is no longer arguable — it is structural. *The organism matters more than the platform.* The platform decision deserves attention; the organism decision deserves more. Most operators evaluating a $10M program spend ninety percent of their pre-engagement diligence on the platform and ten percent on the organism running it. The ratio should invert.",
+          "Ask any failed ERP project who was running the show. Almost always it was the vendor partner. Ask any successful complex transformation. Almost always it was a transformation leader operating above the vendors. The pattern is so consistent it is no longer arguable — it is structural. *The organism matters more than the platform.* The platform decision deserves attention; the organism decision deserves more. Most operators evaluating a multi-year capital program spend ninety percent of their pre-engagement diligence on the platform and ten percent on the organism running it. The ratio should invert.",
         ],
       },
       {
