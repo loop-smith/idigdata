@@ -60,8 +60,9 @@ export default function ApproachPage() {
           Three engagement shapes
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-[860px] space-y-2">
           <EngagementShape
+            variant="editorial"
             marker={<RomanMarker num={1} />}
             name="Embedded"
             lead="Best bang for the buck on a full transformation — short term and long term."
@@ -76,6 +77,7 @@ export default function ApproachPage() {
             }
           />
           <EngagementShape
+            variant="editorial"
             marker={<RomanMarker num={2} />}
             name="Fractional"
             lead="Plug me in at any stage of an existing project."
@@ -89,6 +91,7 @@ export default function ApproachPage() {
             }
           />
           <EngagementShape
+            variant="editorial"
             marker={<RomanMarker num={3} />}
             name="Agentics"
             lead="Standalone, or stacked onto either of the above."

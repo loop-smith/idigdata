@@ -131,86 +131,115 @@ export default function AboutPage() {
 
         <ol className="max-w-[860px] space-y-8">
           <li>
-            <p className="font-vollkorn font-bold text-navy text-[18px]">
-              Sierra Nevada Brewing Company &mdash; Contract CIO
+            <p className="font-vollkorn font-bold text-aubergine text-[18px]">
+              Chief Information Officer (Contract) &mdash; Sierra Nevada Brewing Company
             </p>
-            <p className="font-body text-stone text-[14px] mt-0.5">
-              2024 &ndash; 2025 (two-year residency)
-            </p>
-            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
-              <li>Full-scope embedded executive contractor.</li>
-              <li>Digital transformation, IT transformation.</li>
-              <li>Enterprise agentics framework deployment and adoption.</li>
-            </ul>
-          </li>
-
-          <li>
-            <p className="font-vollkorn font-bold text-navy text-[18px]">
-              idigdata &mdash; Founder &amp; Principal
-            </p>
-            <p className="font-body text-stone text-[14px] mt-0.5">
-              2016 &ndash; present
+            <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
+              Embedded &middot; May 2024 &ndash; April 2026
             </p>
             <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
               <li>
-                Mid-market business system transformation across construction,
-                manufacturing, distribution, and services.
-              </li>
-              <li>BOSS — Business Operating System Suite — productized.</li>
-              <li>
-                Common Data Model, integrated delivery discipline, applied
-                agentics framework.
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <p className="font-vollkorn font-bold text-navy text-[18px]">
-              AccessIT &mdash; Lead Consultant
-            </p>
-            <p className="font-body text-stone text-[14px] mt-0.5">
-              prior to idigdata
-            </p>
-            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
-              <li>Full-cycle enterprise systems delivery.</li>
-              <li>50+ ERP implementations across multiple industries.</li>
-            </ul>
-          </li>
-
-          <li>
-            <p className="font-vollkorn font-bold text-navy text-[18px]">
-              Timberline Architectural Openings &mdash; CEO &amp; CTO
-            </p>
-            <p className="font-body text-stone text-[14px] mt-0.5">
-              sixteen years
-            </p>
-            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
-              <li>
-                First business transformation. Grew revenue from $250K in Year 1
-                to $130M by Year 10.
+                Full senior-leadership scope across the brewery: strategy,
+                operations, vendor portfolio, risk, and governance.
               </li>
               <li>
-                US and China operations. Built proprietary software systems to
-                drive the scale-up — the conceptual origin of BOSS.
+                Digital transformation. Greenfield, data-centric systems
+                landscape with sovereign data fabric. D365 Business Central,
+                WMS, tier-1 systems treated as replaceable services.
+                Vendor-agnostic, no lock-in.
+              </li>
+              <li>
+                IT transformation. Full-scope IT function rebuild. Team,
+                operating model, governance, vendor portfolio, change
+                management.
+              </li>
+              <li>
+                Built, deployed, and drove adoption of the enterprise agentic
+                framework: governance, security, onboarding, operator training.
+                Production applications running on it: operational decisioning,
+                institutional-knowledge retrieval, document-to-structured-data
+                intake, cross-system orchestration, operator decision-support.
               </li>
             </ul>
           </li>
 
           <li>
-            <p className="font-vollkorn font-bold text-navy text-[18px]">
-              PCD Group &mdash; Carpenter to Multi-PM
+            <p className="font-vollkorn font-bold text-aubergine text-[18px]">
+              Founder &amp; Principal &mdash; idigdata LLC
             </p>
-            <p className="font-body text-stone text-[14px] mt-0.5">
-              early career
+            <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
+              Embedded + Fractional &middot; 2016 &ndash; present
             </p>
             <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
               <li>
-                Field operator origin. Carpenter, then estimator, then PM, then
-                multi-PM.
+                50+ full-cycle ERP implementations. The core transformation
+                portfolio. Construction, manufacturing, distribution, and
+                services.
               </li>
               <li>
-                Foundation in physical operations and the discipline of
-                projects-on-the-ground.
+                2024 onward: repositioned toward senior-leadership
+                transformation engagements, applied agentics advisory, and BOSS
+                platform deployment.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p className="font-vollkorn font-bold text-aubergine text-[18px]">
+              Lead Consultant &middot; Solution Architect &mdash; AccessIT / ContractERP
+            </p>
+            <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
+              Fractional &middot; 2012 &ndash; 2016
+            </p>
+            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
+              <li>
+                Full-cycle Dynamics NAV delivery for mid-market operators in
+                construction, distribution, manufacturing, and services.
+              </li>
+              <li>
+                Microsoft Dynamics partner with proprietary IP on top of the
+                ERP. Delivered for clients and helped build the product.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p className="font-vollkorn font-bold text-aubergine text-[18px]">
+              CEO &amp; CTO &mdash; Timberline Architectural Openings, LLC
+            </p>
+            <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
+              1996 &ndash; 2012
+            </p>
+            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
+              <li>
+                Founded and scaled a global
+                contractor-manufacturer-distributor of engineered building
+                systems. US and China operations. The first full business
+                transformation; origin of the practice.
+              </li>
+              <li>
+                Year 1: $250K revenue, 3 staff. Year 10: $130M revenue, 100+
+                staff. Built proprietary software systems to drive the
+                scale-up. The conceptual origin of BOSS.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <p className="font-vollkorn font-bold text-aubergine text-[18px]">
+              Carpenter &rarr; Multi-Discipline, Multi-Project Manager &mdash; PCD Group
+            </p>
+            <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
+              1986 &ndash; 1996
+            </p>
+            <ul className="mt-3 space-y-1.5 text-[15.5px] text-ink leading-relaxed list-disc pl-5">
+              <li>
+                Started on the tools. Hammer-swinger at a family commercial
+                design-build contractor; $5M&ndash;$75M projects. Evolved
+                across trades into multi-discipline, multi-project management.
+                Running crews, vendors, and schedules simultaneously. Where the
+                operating-model instinct, and the execution discipline,
+                started.
               </li>
             </ul>
           </li>

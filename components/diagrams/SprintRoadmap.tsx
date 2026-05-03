@@ -39,7 +39,7 @@ type StoryCardProps = {
 
 function StoryCard({ x, title, items, output }: StoryCardProps) {
   return (
-    <g transform={`translate(${x}, 70)`}>
+    <g transform={`translate(${x}, 60)`}>
       <rect x="0" y="0" width="180" height="135" fill={CREAM} stroke={STONE} strokeWidth="1" rx="2" />
       <rect x="0" y="0" width="6" height="135" fill={NAVY} />
       <text x="14" y="18" fontWeight="bold" fontSize="10" fill={NAVY} letterSpacing="1" fontFamily={SANS}>
@@ -105,9 +105,6 @@ export default function SprintRoadmap({ className = "" }: Props) {
         </text>
 
         <line x1="20" y1="40" x2="580" y2="40" stroke={STONE} strokeWidth="0.5" />
-        <text x="20" y="54" fontSize="9" fill={WARM} fontFamily={SANS}>Day 1</text>
-        <text x="300" y="54" textAnchor="middle" fontSize="9" fill={WARM} fontFamily={SANS}>Day 7</text>
-        <text x="580" y="54" textAnchor="end" fontSize="9" fill={WARM} fontFamily={SANS}>Day 13</text>
 
         <StoryCard
           x={20}
@@ -143,11 +140,11 @@ export default function SprintRoadmap({ className = "" }: Props) {
           output="Output: map v1 (private)"
         />
 
-        <rect x="20" y="220" width="560" height="32" fill={NAVY} rx="2" />
-        <text x="32" y="240" fontWeight="bold" fontSize="10" fill={GOLD} letterSpacing="1.5" fontFamily={SANS}>
+        <rect x="20" y="210" width="560" height="32" fill={NAVY} rx="2" />
+        <text x="32" y="230" fontWeight="bold" fontSize="10" fill={GOLD} letterSpacing="1.5" fontFamily={SANS}>
           PERSISTENCE LAYER
         </text>
-        <text x="160" y="240" fontStyle="italic" fontSize="11" fill={CREAM} fontFamily={SANS}>
+        <text x="160" y="230" fontStyle="italic" fontSize="11" fill={CREAM} fontFamily={SANS}>
           no data lost · every output flows into Sprint 2 as input · registers compound
         </text>
       </g>

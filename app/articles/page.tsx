@@ -43,7 +43,13 @@ export default function ArticlesIndexPage() {
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Peer-reviewed articles
         </h1>
-        <p className="mt-5 max-w-[820px] font-display italic text-stone text-[18px] leading-snug">
+        <div className="inline-flex items-center gap-2 px-3 py-1 mt-3 mb-4 border border-stone rounded-full">
+          <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
+          <span className="font-display italic text-warm-gray text-xs uppercase tracking-widest">
+            In peer review
+          </span>
+        </div>
+        <p className="mt-2 max-w-[820px] font-display italic text-stone text-[18px] leading-snug">
           Six articles authored from 30 years of operator practice. In peer
           review.
         </p>

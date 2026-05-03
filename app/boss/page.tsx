@@ -44,8 +44,14 @@ export default function BossPage() {
 
       <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />
-        <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          BOSS — Business Operating System Suite
+        <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight flex items-center gap-3 flex-wrap">
+          <img
+            src="/idigdata-mark.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-8 h-8 inline-block"
+          />
+          <span>BOSS — Business Operating System Suite</span>
         </h1>
         <p className="mt-5 max-w-[820px] font-display italic text-stone text-[20px] leading-snug">
           The platform that institutionalizes the new model in the
