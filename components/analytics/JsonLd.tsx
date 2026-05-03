@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "Battle-hardened transformative CIO consulting. Mid-market business transformation, fractional or full-embedded CIO engagements, and enterprise agentic adoption advisory.",
+    "Mid-market business system transformation. Embedded transformation residencies, fractional engagements, and enterprise agentics framework deployment. Client-owned data, vendor-agnostic architecture.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",

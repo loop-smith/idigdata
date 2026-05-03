@@ -4,11 +4,39 @@ import { useId, useState } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function ContactForm() {
+export type InterestType =
+  | "general"
+  | "embedded"
+  | "fractional"
+  | "agentics"
+  | "speaking"
+  | "article_request";
+
+type Props = {
+  interestType?: InterestType;
+  articleSlug?: string;
+  showInterestSelect?: boolean;
+};
+
+const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
+  { value: "general", label: "General" },
+  { value: "embedded", label: "Embedded engagement" },
+  { value: "fractional", label: "Fractional engagement" },
+  { value: "agentics", label: "Agentics engagement" },
+  { value: "speaking", label: "Speaking / advisory" },
+  { value: "article_request", label: "Article request" },
+];
+
+export default function ContactForm({
+  interestType = "general",
+  articleSlug,
+  showInterestSelect = false,
+}: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
+  const [interest, setInterest] = useState<InterestType>(interestType);
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
 
@@ -20,6 +48,7 @@ export default function ContactForm() {
   const emailId = `${idBase}-email`;
   const companyId = `${idBase}-company`;
   const roleId = `${idBase}-role`;
+  const interestId = `${idBase}-interest`;
   const messageId = `${idBase}-message`;
   const messageHelpId = `${idBase}-message-help`;
   const hpId = `${idBase}-hp`;
@@ -30,10 +59,20 @@ export default function ContactForm() {
     setStatus("submitting");
 
     try {
+      const payload = {
+        name,
+        email,
+        company,
+        role,
+        message,
+        interestType: interest,
+        articleSlug,
+        _hp: hp,
+      };
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, role, message, _hp: hp }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (res.ok && data.ok) {
@@ -48,24 +87,39 @@ export default function ContactForm() {
   }
 
   const inputClasses =
-    "w-full bg-white text-d2-ink font-body text-[16px] px-3 py-3 border border-d2-stone/60 focus:outline-none focus:border-d2-forest focus:border-2 focus:px-[11px] focus:py-[11px] transition-colors";
-  const labelClasses = "block font-body text-[14px] text-d2-ink mb-1.5";
+    "w-full bg-white text-ink font-body text-[16px] px-3 py-3 border border-stone/60 focus:outline-none focus:border-navy focus:border-2 focus:px-[11px] focus:py-[11px] transition-colors";
+  const labelClasses = "block font-body text-[14px] text-ink mb-1.5";
 
   if (status === "success") {
+    if (interest === "article_request") {
+      return (
+        <div className="space-y-3">
+          <p className="font-display text-navy text-[20px] leading-snug">
+            We&rsquo;ll send the full document within 24 hours. Thanks for
+            reading.
+          </p>
+          {leadId && leadId !== "silenced" ? (
+            <p className="font-body text-[13px] text-stone">
+              Reference: <span className="font-mono">{leadId}</span>
+            </p>
+          ) : null}
+        </div>
+      );
+    }
     return (
       <div className="space-y-3">
-        <p className="font-display text-d2-forest text-[22px] leading-snug">
+        <p className="font-display text-navy text-[22px] leading-snug">
           Thanks. I&rsquo;ll respond from{" "}
           <a
             href="mailto:robert@idigdata.com"
-            className="border-b border-d2-forest/40 hover:border-d2-forest"
+            className="border-b border-navy/40 hover:border-navy"
           >
             robert@idigdata.com
           </a>{" "}
           within 48 hours.
         </p>
         {leadId && leadId !== "silenced" ? (
-          <p className="font-body text-[13px] text-d2-stone">
+          <p className="font-body text-[13px] text-stone">
             Reference: <span className="font-mono">{leadId}</span>
           </p>
         ) : null}
@@ -73,18 +127,21 @@ export default function ContactForm() {
     );
   }
 
+  const isArticleRequest = interest === "article_request";
+  const messageRequired = !isArticleRequest;
+
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {status === "error" ? (
         <div
           role="alert"
-          className="border-l-2 border-d2-copper bg-d2-copper/5 px-4 py-3 font-body text-[14px] text-d2-ink"
+          className="border-l-2 border-aubergine bg-aubergine/5 px-4 py-3 font-body text-[14px] text-ink"
         >
           Something went wrong. Try the direct email above, or try again.
         </div>
       ) : null}
 
-      {/* Honeypot — visually hidden, off-tabflow, hidden from AT */}
+      {/* Honeypot — visually hidden, off-tabflow */}
       <div
         aria-hidden="true"
         style={{
@@ -142,25 +199,8 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor={companyId} className={labelClasses}>
-          Company
-        </label>
-        <input
-          id={companyId}
-          name="company"
-          type="text"
-          required
-          autoComplete="organization"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-          className={inputClasses}
-          disabled={status === "submitting"}
-        />
-      </div>
-
-      <div>
         <label htmlFor={roleId} className={labelClasses}>
-          Role
+          Role / title
         </label>
         <input
           id={roleId}
@@ -176,33 +216,85 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor={companyId} className={labelClasses}>
+          Company <span className="text-stone text-[13px]">(optional)</span>
+        </label>
+        <input
+          id={companyId}
+          name="company"
+          type="text"
+          autoComplete="organization"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          className={inputClasses}
+          disabled={status === "submitting"}
+        />
+      </div>
+
+      {showInterestSelect ? (
+        <div>
+          <label htmlFor={interestId} className={labelClasses}>
+            Interest
+          </label>
+          <select
+            id={interestId}
+            name="interest"
+            value={interest}
+            onChange={(e) => setInterest(e.target.value as InterestType)}
+            className={inputClasses}
+            disabled={status === "submitting"}
+          >
+            {INTEREST_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : null}
+
+      <div>
         <label htmlFor={messageId} className={labelClasses}>
-          What brings you?
+          {isArticleRequest ? (
+            <>Message <span className="text-stone text-[13px]">(optional)</span></>
+          ) : (
+            <>What brings you?{" "}
+            <span className="text-stone text-[13px]">(optional)</span></>
+          )}
         </label>
         <textarea
           id={messageId}
           name="message"
-          rows={5}
-          required
+          rows={isArticleRequest ? 3 : 5}
+          required={messageRequired === false ? false : false}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           aria-describedby={messageHelpId}
           className={`${inputClasses} resize-y`}
           disabled={status === "submitting"}
         />
-        <p id={messageHelpId} className="mt-1.5 font-body text-[13px] text-d2-warmgray">
-          A sentence about the situation. The data core, the transformation
-          question, the agentic readiness gap &mdash; whatever&rsquo;s true.
-        </p>
+        {!isArticleRequest ? (
+          <p
+            id={messageHelpId}
+            className="mt-1.5 font-body text-[13px] text-warm-gray"
+          >
+            A sentence about the situation. The data core, the transformation
+            question, the agentic readiness gap &mdash; whatever&rsquo;s true.
+          </p>
+        ) : null}
       </div>
 
       <div className="pt-2">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-d2-forest text-white hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-navy text-white hover:bg-navy/90 transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {status === "submitting" ? "Sending…" : "Send"}
+          {status === "submitting"
+            ? "Sending…"
+            : isArticleRequest
+            ? "Request the document"
+            : "Send"}
         </button>
       </div>
     </form>

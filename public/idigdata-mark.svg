@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <rect width="128" height="128" fill="#FFFFFF"/>
-  <rect x="54" y="18" width="20" height="20" fill="#B04E2A"/>
-  <rect x="54" y="46" width="20" height="58" rx="2" fill="#1F3D2E"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="idigdata M4 data lattice mark">
+  <title>idigdata - M4 data lattice</title>
+  <desc>3x3 grid: deep navy corners (filled), outlined navy middles, sun gold center cube. Data is gold, structure is navy. v4 final locked 2026-04-29.</desc>
+  <rect x="8"  y="8"  width="32" height="32" fill="#142840"/>
+  <rect x="88" y="8"  width="32" height="32" fill="#142840"/>
+  <rect x="8"  y="88" width="32" height="32" fill="#142840"/>
+  <rect x="88" y="88" width="32" height="32" fill="#142840"/>
+  <rect x="49.5" y="9.5"  width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+  <rect x="9.5"  y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+  <rect x="89.5" y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+  <rect x="49.5" y="89.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+  <rect x="48" y="48" width="32" height="32" fill="#FACC15"/>
 </svg>

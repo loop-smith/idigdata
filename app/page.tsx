@@ -1,149 +1,294 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SectionHeader from "@/components/SectionHeader";
+import ArticleCard from "@/components/ArticleCard";
+import EngagementShape from "@/components/EngagementShape";
+import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: { absolute: "idigdata — Transformative CIO + agentic adoption" },
-  description:
-    "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
-  alternates: {
-    canonical: "/",
+  title: {
+    absolute:
+      "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
   },
+  description:
+    "Embedded for the full transformation. Fractional where a specific lever needs moving. Agentics standalone or stacked. Same architecture, sized to the work — for operators ready to own their data.",
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata — Transformative CIO + agentic adoption",
+    title: "idigdata — Transformation that institutionalizes",
     description:
-      "Battle-hardened transformative CIO. Thirty years moving mid-market businesses.",
+      "Client-owned data. Vendor-agnostic architecture. For operators ready to own their data.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+        alt: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
       },
     ],
   },
 };
 
-const CAPABILITIES = [
-  {
-    title: "Business transformation",
-    claim:
-      "Data-core first. The method that makes transformation institutionalize.",
-  },
-  {
-    title: "Transformative CIO",
-    claim:
-      "Full CIO scope, embedded. Strategy, operations, vendor portfolio, risk, governance.",
-  },
-  {
-    title: "Agentic adoption",
-    claim:
-      "Enterprise agentic framework. Five production systems shipped. Not chatbots. Not pilots.",
-  },
-];
-
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-content px-6">
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-28 md:pb-24 text-center">
-        <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[56px] leading-[1.05] tracking-tight">
-          Battle-hardened transformative CIO.
-          <br />
-          Thirty years moving mid-market businesses.
-        </h1>
+      <section className="pt-16 pb-12 md:pt-24 md:pb-16 text-center">
+        <p className="font-display italic text-navy text-[20px] md:text-[26px] leading-snug">
+          Client-owned data &middot; Vendor-agnostic architecture &middot;
+          Transformation that institutionalizes
+        </p>
+        <p className="mt-3 inline-flex items-center gap-2 font-display italic text-warm-gray text-[15px]">
+          <img
+            src="/idigdata-mark.svg"
+            alt=""
+            aria-hidden
+            className="h-5 w-5 inline-block"
+          />
+          <span>idigdata — Data Integration Group, est. 2016</span>
+        </p>
 
         <figure className="mt-12 mx-auto max-w-[820px]">
-          <blockquote className="relative font-display italic text-d2-copper text-[22px] md:text-[26px] leading-snug px-10">
+          <blockquote className="relative font-vollkorn italic text-navy text-[24px] md:text-[30px] leading-snug px-10">
             <span
               aria-hidden
-              className="font-display text-d2-stone text-[55px] md:text-[65px] leading-none align-top absolute -left-1 -top-3"
+              className="font-vollkorn text-stone text-[44px] md:text-[55px] leading-none align-top absolute -left-1 -top-3"
             >
               &ldquo;
             </span>
-            Commonize the master data. Own the core. Apps and agents plug in.
+            After thirty years, I built the model that gives mid-market
+            operators back their own businesses — and leaves them owning it
+            after I&rsquo;m gone.
             <span
               aria-hidden
-              className="font-display text-d2-stone text-[55px] md:text-[65px] leading-none align-bottom absolute -right-1 -bottom-3"
+              className="font-vollkorn text-stone text-[44px] md:text-[55px] leading-none align-bottom absolute -right-1 -bottom-3"
             >
               &rdquo;
             </span>
           </blockquote>
         </figure>
 
-        <p className="mt-10 font-body italic text-d2-warmgray text-[13px] max-w-[640px] mx-auto">
-          Not a resume. What I can do for you today, grounded in 30 years of
-          doing the work.
+        <p className="mt-12 mx-auto max-w-[820px] font-display italic text-warm-gray text-[18px] leading-relaxed">
+          Embedded for the full transformation. Fractional where a specific
+          lever needs moving. Agentics standalone or stacked on either. Same
+          architecture, sized to the work — for operators ready to own their
+          data.
         </p>
       </section>
 
       {/* Metrics strip */}
-      <section className="py-8 border-y border-d2-forest/20">
-        <p className="text-center text-d2-stone text-[13px] uppercase tracking-section">
-          &ldquo;All businesses are uniquely standard&rdquo;
-          <span aria-hidden className="px-3">
+      <section className="py-6 border-y border-navy/30">
+        <p className="text-center text-[14px]">
+          <em className="font-display italic text-warm-gray">
+            &ldquo;All businesses are uniquely standard&rdquo;
+          </em>
+          <span aria-hidden className="text-warm-gray px-3">
             ·
           </span>
-          50+ mid-market transformations
-          <span aria-hidden className="px-3">
+          <strong className="font-semibold text-navy">50+</strong>{" "}
+          <span className="text-warm-gray">mid-market transformations</span>
+          <span aria-hidden className="text-warm-gray px-3">
             ·
           </span>
-          Agentic framework at brand scale
+          <strong className="font-semibold text-navy">Agentic framework</strong>{" "}
+          <span className="text-warm-gray">at brand scale</span>
         </p>
       </section>
 
-      {/* Capabilities preview */}
+      {/* THE NEW MODEL */}
       <section className="pt-20 md:pt-24">
-        <SectionHeader>Capabilities</SectionHeader>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-          {CAPABILITIES.map((cap) => (
-            <div
-              key={cap.title}
-              className="flex flex-col border-t border-d2-forest pt-6"
-            >
-              <h3 className="font-display font-bold text-d2-forest text-[20px] leading-tight">
-                {cap.title}
-              </h3>
-              <p className="mt-4 font-body text-d2-ink text-[16px] leading-snug">
-                {cap.claim}
-              </p>
-              <p className="mt-6">
-                <Link
-                  href="/capabilities"
-                  className="font-body font-semibold text-d2-forest text-[15px] hover:underline"
-                >
-                  Learn more →
-                </Link>
-              </p>
-            </div>
-          ))}
+        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
+          The new model
+        </h2>
+        <div className="max-w-[820px] space-y-6 text-[16.5px] text-ink leading-relaxed">
+          <p>
+            For thirty years the mid-market has been told one model is the only
+            model: license the platform, hire the partner, integrate on the
+            vendor&rsquo;s calendar, migrate when they say so, pay
+            implementation fees, pay support contracts, pay upgrade cycles, and
+            accept that your data lives inside someone else&rsquo;s product.{" "}
+            <strong className="font-semibold text-navy">
+              That model is &ldquo;we own you and your data.&rdquo;
+            </strong>{" "}
+            It works for the vendors. It works for the implementation partners.
+            It does not work for the operator running the business.
+          </p>
+          <p className="font-display italic text-navy">
+            I built a different one.
+          </p>
+          <p>
+            The client owns the data. The data lives in a Common Data Model the
+            client controls. ERP becomes one app in the ecosystem. CRM becomes
+            another app. WMS, HRIS, FP&amp;A — apps. Replaceable, swappable,
+            contained. Vendor change is a commodity decision, not a
+            transformation.{" "}
+            <strong className="font-semibold text-navy">
+              Sovereignty over data and integrations is structural, not
+              negotiated.
+            </strong>
+          </p>
+          <p>
+            This is what BOSS — Business Operating System Suite — is for. Not
+            another platform competing with SAP, D365, Acumatica, or
+            Salesforce. The architectural layer above them. The one their
+            business model can&rsquo;t offer because their business model{" "}
+            <em>is</em> the lock-in.
+          </p>
         </div>
       </section>
 
-      {/* Dual CTA */}
-      <section className="mt-24 mb-16 md:mb-24">
-        <div className="text-center px-6 py-16 md:py-20">
-          <h2 className="font-display font-medium text-d2-forest text-[28px] md:text-[36px] leading-tight">
-            Two ways to reach me.
-          </h2>
-          <p className="mt-4 text-d2-ink text-[16px]">
-            Both reach me directly.
+      {/* HOW I WORK preview */}
+      <section className="pt-20 md:pt-24">
+        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
+          How I work
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <EngagementShape
+            name="Embedded"
+            lead="Best bang for the buck on a full transformation — short term and long term."
+            body={
+              <p>
+                Full executive scope as contractor. Strategy, operations, vendor
+                portfolio, risk, governance. BOSS deployment + agentic
+                framework included.
+              </p>
+            }
+          />
+          <EngagementShape
+            name="Fractional"
+            lead="Plug me in at any stage of an existing project."
+            body={
+              <p>
+                Specific lever moving — unblock a stalled ERP, deploy a
+                production agent, re-architect the data core while your CIO
+                stays in seat.
+              </p>
+            }
+          />
+          <EngagementShape
+            name="Agentics"
+            lead="Standalone, or stacked on either of the above."
+            body={
+              <p>
+                Enterprise agentic framework. Five production apps in live
+                operations is the proof; the framework is what makes it
+                repeatable.
+              </p>
+            }
+          />
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/approach/"
+            className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+          >
+            Read the full approach →
+          </Link>
+        </div>
+      </section>
+
+      {/* BOSS preview */}
+      <section className="pt-20 md:pt-24">
+        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
+          BOSS
+        </h2>
+        <div className="max-w-[860px] text-[16.5px] text-ink leading-relaxed">
+          <p>
+            <strong className="font-semibold text-navy">
+              Business Operating System Suite.
+            </strong>{" "}
+            The platform that institutionalizes the new model in the
+            client&rsquo;s hands. Three pillars:{" "}
+            <strong className="font-semibold text-navy">Data</strong> (Common
+            Data Model the client owns),{" "}
+            <strong className="font-semibold text-navy">People</strong> (the
+            beehive),{" "}
+            <strong className="font-semibold text-navy">Delivery</strong> (PM +
+            governance + change-mgmt unified). Open source. Productized from 30
+            years of transformation.{" "}
+            <strong className="font-semibold text-navy">
+              What partner-led transformation produces in months, this model
+              produces in weeks — the persistence layer is why.
+            </strong>
           </p>
-          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
-            <a
-              href="mailto:robert@idigdata.com"
-              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-d2-forest text-white hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
-            >
-              Email Robert directly
-            </a>
+        </div>
+        <div className="mt-8">
+          <Link
+            href="/boss/"
+            className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+          >
+            How BOSS works →
+          </Link>
+        </div>
+      </section>
+
+      {/* Articles preview */}
+      <section className="pt-20 md:pt-24">
+        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
+          Peer-reviewed articles
+        </h2>
+        <p className="max-w-[820px] font-display italic text-stone text-[17px] leading-snug mb-8">
+          Six articles authored from 30 years of operator practice. In peer
+          review.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ARTICLES.map((a) => (
+            <ArticleCard
+              key={a.slug}
+              slug={a.slug}
+              title={a.title}
+              thesis={a.thesis}
+            />
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/articles/"
+            className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+          >
+            All articles →
+          </Link>
+        </div>
+      </section>
+
+      {/* Selectivity beat */}
+      <section className="pt-20 md:pt-24">
+        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
+          Who this isn&rsquo;t for
+        </h2>
+        <div className="max-w-[820px] border-l-2 border-stone pl-6 space-y-5 text-[16.5px] text-ink leading-relaxed">
+          <p>
+            Operators comfortable with their partner relationships. Operators
+            paying license stacks, implementation fees, support contracts,
+            upgrade cycles, and migration retrofits on the vendor&rsquo;s
+            calendar. Operators whose users have learned to live with what the
+            system gives them. Operators whose AI claim has outpaced their
+            operating fabric and who think the next vendor pitch will fix it.
+          </p>
+          <p>
+            <em>
+              If the lock-in model is working for you, keep going. The new
+              model has a higher bar of belief and a different shape of work.
+            </em>{" "}
+            <strong className="font-semibold text-navy">
+              It&rsquo;s not a fit for everyone. By design.
+            </strong>
+          </p>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="mt-24 mb-16 md:mb-24">
+        <div className="bg-navy text-white px-6 py-14 md:py-16 text-center">
+          <p className="font-display italic text-[24px] md:text-[28px]">
+            Ready to talk?
+          </p>
+          <div className="mt-8">
             <Link
-              href="/contact"
-              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 border border-d2-forest text-d2-forest hover:bg-d2-forest hover:text-white transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+              href="/contact/"
+              className="inline-block font-body font-semibold text-[16px] px-8 py-3.5 bg-gold text-navy hover:bg-white transition-colors focus:outline-2 focus:outline-white focus:outline-offset-2"
             >
-              Or start a conversation
+              Start a conversation
             </Link>
           </div>
         </div>

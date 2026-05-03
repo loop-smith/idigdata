@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180" width="600" height="180">
-  <rect width="600" height="180" fill="#FFFFFF"/>
-  <text x="294" y="95" font-family="Lora, Cambria, Georgia, serif" font-size="72" font-weight="700" fill="#1F3D2E" text-anchor="end" letter-spacing="-0.01em">idig</text>
-  <circle cx="300" cy="82" r="4" fill="#7A756A"/>
-  <text x="306" y="95" font-family="Lora, Cambria, Georgia, serif" font-size="72" font-weight="700" fill="#1F3D2E" text-anchor="start" letter-spacing="-0.01em">data</text>
-  <line x1="215" y1="118" x2="385" y2="118" stroke="#7A756A" stroke-width="1.5"/>
-  <text x="300" y="148" font-family="'Source Sans 3', Calibri, Inter, system-ui, sans-serif" font-size="14" font-style="italic" fill="#6B6860" text-anchor="middle" letter-spacing="0.02em">Transformative CIO  ·  Business transformation  ·  Agentic adoption</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200" width="700" height="200" role="img" aria-label="idigdata wordmark with tagline">
+  <title>idigdata - primary wordmark, v4 final</title>
+  <desc>Vollkorn Bold idig data with sun gold mid-dot square (echoes M4 lattice center cube), Stone rule, Lora italic v8.5 tagline. Deep navy + sun gold + Vollkorn locked 2026-04-29.</desc>
+
+  <text x="340" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="end" letter-spacing="-1">idig</text>
+
+  <rect x="346" y="74" width="14" height="14" fill="#FACC15"/>
+
+  <text x="370" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="start" letter-spacing="-1">data</text>
+
+  <line x1="220" y1="138" x2="480" y2="138" stroke="#7A756A" stroke-width="1.5"/>
+
+  <text x="350" y="166" font-family="Lora,Liberation Serif,Georgia,serif" font-style="italic" font-weight="400" font-size="13" fill="#6B6860" text-anchor="middle" letter-spacing="0.2">Data and process architecture · Operating-fabric framework · Applied agentics</text>
 </svg>

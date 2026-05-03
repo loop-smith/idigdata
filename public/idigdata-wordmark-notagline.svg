@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 150" width="700" height="150" role="img" aria-label="idigdata wordmark, no tagline">
+  <title>idigdata - wordmark, no tagline variant, v4 final</title>
+  <desc>Vollkorn Bold idig data with sun gold mid-dot square. v4 final locked 2026-04-29.</desc>
+
+  <text x="340" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="end" letter-spacing="-1">idig</text>
+
+  <rect x="346" y="74" width="14" height="14" fill="#FACC15"/>
+
+  <text x="370" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="start" letter-spacing="-1">data</text>
+
+  <line x1="220" y1="138" x2="480" y2="138" stroke="#7A756A" stroke-width="1.5"/>
+</svg>
