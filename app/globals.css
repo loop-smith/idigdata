@@ -23,7 +23,7 @@
 
   --font-display: var(--next-font-display), Cambria, Lora, Georgia, serif;
   --font-body: var(--next-font-body), Calibri, "Source Sans 3", "Inter", system-ui, sans-serif;
-  --font-vollkorn: "Vollkorn", var(--next-font-display), Cambria, Georgia, serif;
+  --font-vollkorn: var(--next-font-vollkorn), "Vollkorn", var(--next-font-display), Cambria, Georgia, serif;
 
   --tracking-section: 0.12em;
 }
