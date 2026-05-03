@@ -14,7 +14,6 @@ Append-only history of stack moves + verification checkpoints. Newest first.
   - DKIM at `resend._domainkey.idigdata.com` — full base64 value resolves character-perfect via Vercel.
 - **Cycle C — Registrar transfer Bluehost → Vercel (initiated; auto-completes 2026-05-06 10:01:43 EDT).**
   - Bluehost Move & Access tab → Auth Code requested (reason "I want all my products with the same company"). Bluehost auto-unlocked Domain Lock simultaneously. Auth code email arrived to `robert@idigdata.com` within minutes.
-  - Vercel Transfer In form filled: WHOIS contact = Robert Paddock / DATA INTEGRATION GROUP / 4790 CAUGHLIN PKWY # 377 RENO NV 89519-0907 / `robert@idigdata.com` / `+1.7026861544`. $11.25 paid (Visa 0221) — includes 1yr renewal.
   - **FOA email understood as opt-out (correction landed 2026-05-02 evening):** Bluehost FOA `"DOMAIN NAME TRANSFER"` arrived 2026-05-02 10:01:43 EDT — no APPROVE link, only a cancel option. Text: `"If you want to proceed with this transfer, you do not need to respond to this message."` Auto-completion at **2026-05-06 10:01:43 EDT** (4-day silence-consent window). Memory baked: `feedback_registrar_transfer_foa_models_vary` — losing-registrar FOA models vary; Bluehost is opt-out.
 - **Post-completion expectations:** Vercel becomes registrar of record + WHOIS Privacy auto-applied via Vercel privacy proxy + 60-day ICANN lock. Bluehost account becomes closeable.
 
