@@ -62,7 +62,7 @@ export default function ContactPage() {
                 Direct
               </p>
               <p className="font-body text-[16px] text-ink leading-relaxed">
-                Reno, NV
+                Pacific Time
                 <br />
                 <a
                   href="mailto:robert@idigdata.com"

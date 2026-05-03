@@ -13,12 +13,6 @@ const organizationSchema = {
   },
   foundingDate: "2016",
   email: "robert@idigdata.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Reno",
-    addressRegion: "NV",
-    addressCountry: "US",
-  },
   areaServed: "United States",
 };
 

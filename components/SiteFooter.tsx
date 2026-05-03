@@ -19,7 +19,7 @@ export default function SiteFooter() {
                 robert@idigdata.com
               </a>
               <br />
-              Reno, NV
+              Pacific Time
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function SiteFooter() {
             <span className="px-2">·</span>
             est. 2016
             <span className="px-2">·</span>
-            Reno, NV
+            Pacific Time
           </p>
         </div>
 
