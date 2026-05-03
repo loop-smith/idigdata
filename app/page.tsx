@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleCard from "@/components/ArticleCard";
 import EngagementShape from "@/components/EngagementShape";
+import M4Watermark from "@/components/M4Watermark";
+import RomanMarker from "@/components/RomanMarker";
+import AccentRule from "@/components/AccentRule";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -33,7 +36,8 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-content px-6">
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 text-center">
+      <section className="relative bg-cream pt-16 pb-12 md:pt-24 md:pb-16 text-center">
+        <M4Watermark position="top-right" />
         <p className="font-display italic text-navy text-[20px] md:text-[26px] leading-snug">
           Client-owned data &middot; Vendor-agnostic architecture &middot;
           Transformation that institutionalizes
@@ -95,8 +99,10 @@ export default function HomePage() {
         </p>
       </section>
 
+      <AccentRule className="mt-16" />
+
       {/* THE NEW MODEL */}
-      <section className="pt-20 md:pt-24">
+      <section className="bg-pale-navy px-8 py-12 md:py-16">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
           The new model
         </h2>
@@ -138,12 +144,13 @@ export default function HomePage() {
       </section>
 
       {/* HOW I WORK preview */}
-      <section className="pt-20 md:pt-24">
+      <section className="bg-cream px-8 pt-20 md:pt-24 pb-16 mt-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
           How I work
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <EngagementShape
+            marker={<RomanMarker num={1} />}
             name="Embedded"
             lead="Best bang for the buck on a full transformation — short term and long term."
             body={
@@ -155,6 +162,7 @@ export default function HomePage() {
             }
           />
           <EngagementShape
+            marker={<RomanMarker num={2} />}
             name="Fractional"
             lead="Plug me in at any stage of an existing project."
             body={
@@ -166,6 +174,7 @@ export default function HomePage() {
             }
           />
           <EngagementShape
+            marker={<RomanMarker num={3} />}
             name="Agentics"
             lead="Standalone, or stacked on either of the above."
             body={
@@ -188,7 +197,7 @@ export default function HomePage() {
       </section>
 
       {/* BOSS preview */}
-      <section className="pt-20 md:pt-24">
+      <section className="bg-pale-navy px-8 pt-20 md:pt-24 pb-16 mt-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
           BOSS
         </h2>
@@ -223,7 +232,7 @@ export default function HomePage() {
       </section>
 
       {/* Articles preview */}
-      <section className="pt-20 md:pt-24">
+      <section className="bg-cream px-8 pt-20 md:pt-24 pb-16 mt-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
           Peer-reviewed articles
         </h2>
@@ -252,7 +261,7 @@ export default function HomePage() {
       </section>
 
       {/* Selectivity beat */}
-      <section className="pt-20 md:pt-24">
+      <section className="bg-pale-navy px-8 pt-20 md:pt-24 pb-16 mt-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-stone pb-2 mb-8">
           Who this isn&rsquo;t for
         </h2>

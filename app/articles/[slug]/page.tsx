@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleRequestForm from "@/components/ArticleRequestForm";
+import AccentRule from "@/components/AccentRule";
+import Beehive from "@/components/diagrams/Beehive";
+import SixConstellations from "@/components/diagrams/SixConstellations";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import { renderInline } from "@/lib/articleRender";
 import {
@@ -99,7 +102,19 @@ export default async function ArticlePage(
         <p className="mt-4 font-display italic text-stone text-[15px]">
           By Robert Paddock &middot; idigdata &middot; In peer review
         </p>
-        <hr className="mt-8 mb-8 border-0 border-t border-stone/40" />
+
+        {article.slug === "beehive" ? (
+          <div className="mt-10 max-w-3xl mx-auto">
+            <Beehive />
+          </div>
+        ) : null}
+        {article.slug === "six-constellations" ? (
+          <div className="mt-10 max-w-3xl mx-auto">
+            <SixConstellations />
+          </div>
+        ) : null}
+
+        <AccentRule className="mt-8 mb-8" />
 
         <div className="space-y-5">
           {article.opening.map((para, i) => (

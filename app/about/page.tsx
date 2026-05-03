@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
+import RomanMarker from "@/components/RomanMarker";
+import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -66,7 +69,8 @@ export default function AboutPage() {
       <JsonLdScript data={personJsonLd} />
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+      <section className="relative pt-20 pb-10 md:pt-24 md:pb-14">
+        <M4Watermark position="top-right" />
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Robert Paddock
         </h1>
@@ -93,6 +97,7 @@ export default function AboutPage() {
           </p>
 
           <p>
+            <RomanMarker num={1} />
             <strong className="font-semibold text-navy">First</strong> — sixteen
             years at Timberline Architectural Openings as CEO and CTO. The
             first business transformation. Grew revenue from $250K in Year 1
@@ -100,6 +105,7 @@ export default function AboutPage() {
           </p>
 
           <p>
+            <RomanMarker num={2} />
             <strong className="font-semibold text-navy">Second</strong> —
             full-cycle enterprise systems delivery at AccessIT, then a decade
             as principal at idigdata; 50+ ERP implementations across
@@ -107,6 +113,7 @@ export default function AboutPage() {
           </p>
 
           <p>
+            <RomanMarker num={3} />
             <strong className="font-semibold text-navy">Third</strong> — a
             two-year full-scope embedded residency at Sierra Nevada Brewing
             Company. Digital transformation, IT transformation, and
@@ -115,7 +122,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pt-20 md:pt-24">
+      <AccentRule className="mt-16" />
+
+      <section className="pt-12 md:pt-16">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
           Experience
         </h2>

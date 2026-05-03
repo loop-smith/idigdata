@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
+import RomanMarker from "@/components/RomanMarker";
+import AccentRule from "@/components/AccentRule";
+import Beehive from "@/components/diagrams/Beehive";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -38,7 +42,8 @@ export default function BossPage() {
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+      <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
+        <M4Watermark position="top-right" />
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           BOSS — Business Operating System Suite
         </h1>
@@ -49,7 +54,7 @@ export default function BossPage() {
         </p>
       </section>
 
-      <section className="pt-4">
+      <section className="bg-cream px-8 pt-4 pb-16">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
           Three pillars
         </h2>
@@ -57,6 +62,7 @@ export default function BossPage() {
         <div className="space-y-10 max-w-[860px]">
           <div>
             <h3 className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] tracking-tight">
+              <RomanMarker num={1} />
               Data
             </h3>
             <p className="mt-3 text-[16px] text-ink leading-relaxed">
@@ -70,6 +76,7 @@ export default function BossPage() {
           </div>
           <div>
             <h3 className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] tracking-tight">
+              <RomanMarker num={2} />
               People
             </h3>
             <p className="mt-3 text-[16px] text-ink leading-relaxed">
@@ -77,9 +84,16 @@ export default function BossPage() {
               departmental functional system groups. Change and stakeholder
               management. Operator empowerment.
             </p>
+            <div className="my-10 max-w-2xl mx-auto">
+              <Beehive />
+              <p className="text-center font-display italic text-[13px] text-warm-gray mt-2">
+                The beehive — universal frame for the people layer.
+              </p>
+            </div>
           </div>
           <div>
             <h3 className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] tracking-tight">
+              <RomanMarker num={3} />
               Delivery
             </h3>
             <p className="mt-3 text-[16px] text-ink leading-relaxed">
@@ -93,7 +107,9 @@ export default function BossPage() {
         </div>
       </section>
 
-      <section className="pt-20 md:pt-24">
+      <AccentRule className="mt-16" />
+
+      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-16 mt-8">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] tracking-tight">
           The SOP Machine
         </h2>
@@ -129,7 +145,7 @@ export default function BossPage() {
         </div>
       </section>
 
-      <section className="pt-20 md:pt-24">
+      <section className="bg-cream px-8 pt-16 md:pt-20 pb-16 mt-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] tracking-tight">
           Persistence-and-sequenced-build
         </h2>

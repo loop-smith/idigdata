@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ArticleCard from "@/components/ArticleCard";
+import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import { ARTICLES } from "@/lib/articles";
 
@@ -48,7 +49,9 @@ export default function ArticlesIndexPage() {
         </p>
       </section>
 
-      <section className="pt-4 pb-20">
+      <AccentRule className="mt-2" />
+
+      <section className="pt-6 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ARTICLES.map((a) => (
             <ArticleCard

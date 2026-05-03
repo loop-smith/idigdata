@@ -9,6 +9,8 @@
   --color-aubergine: #4A2E52;
   --color-ink: #1A1A1A;
   --color-paper: #FFFFFF;
+  --color-cream: #FBF9F4;
+  --color-pale-navy: #F5F5F8;
 
   /* Legacy d2-* tokens (remain for v1 components still in flight) */
   --color-d2-forest: #142840;

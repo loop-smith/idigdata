@@ -92,6 +92,18 @@ export default function SiteFooter() {
             Reno, NV
           </p>
         </div>
+
+        <div className="relative mt-12 pt-8 border-t border-stone/30 overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="font-vollkorn font-bold text-navy text-center leading-none opacity-[0.08] select-none pointer-events-none text-[80px] md:text-[120px]"
+          >
+            idigdata
+          </div>
+          <p className="text-center font-display italic text-warm-gray text-[12px] mt-2">
+            © idigdata · Data Integration Group · est. 2016
+          </p>
+        </div>
       </div>
     </footer>
   );

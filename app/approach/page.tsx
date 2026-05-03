@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import EngagementShape from "@/components/EngagementShape";
 import EngagementRoadmapEmbed from "@/components/EngagementRoadmapEmbed";
+import M4Watermark from "@/components/M4Watermark";
+import RomanMarker from "@/components/RomanMarker";
+import AccentRule from "@/components/AccentRule";
+import SixConstellations from "@/components/diagrams/SixConstellations";
+import SprintRoadmap from "@/components/diagrams/SprintRoadmap";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -40,7 +45,8 @@ export default function ApproachPage() {
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+      <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
+        <M4Watermark position="top-right" />
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           How I plug in
         </h1>
@@ -49,13 +55,14 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="pt-4">
+      <section className="bg-cream px-8 pt-4 pb-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
           Three engagement shapes
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <EngagementShape
+            marker={<RomanMarker num={1} />}
             name="Embedded"
             lead="Best bang for the buck on a full transformation — short term and long term."
             body={
@@ -69,6 +76,7 @@ export default function ApproachPage() {
             }
           />
           <EngagementShape
+            marker={<RomanMarker num={2} />}
             name="Fractional"
             lead="Plug me in at any stage of an existing project."
             body={
@@ -81,6 +89,7 @@ export default function ApproachPage() {
             }
           />
           <EngagementShape
+            marker={<RomanMarker num={3} />}
             name="Agentics"
             lead="Standalone, or stacked onto either of the above."
             body={
@@ -94,7 +103,7 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      <section className="pt-20 md:pt-24">
+      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-12 mt-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Structurally lean
         </h2>
@@ -112,7 +121,7 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="pt-16 md:pt-20">
+      <section className="bg-pale-navy px-8 pt-12 pb-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           The exit is clean
         </h2>
@@ -128,7 +137,7 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="pt-16 md:pt-20">
+      <section className="bg-pale-navy px-8 pt-12 pb-16">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Value-justification
         </h2>
@@ -147,7 +156,10 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section id="engagement-roadmap" className="pt-20 md:pt-24 scroll-mt-20">
+      <section
+        id="engagement-roadmap"
+        className="bg-cream px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
+      >
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Engagement roadmap
         </h2>
@@ -166,7 +178,40 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section id="capital-structure" className="pt-20 md:pt-24 scroll-mt-20">
+      {/* The diagnostic frame — six constellations */}
+      <section className="bg-cream px-8 pt-16 md:pt-20 pb-16">
+        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
+          The diagnostic frame
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
+          Every business maps into six constellations. Phase 1 reads the load
+          on each — Phase 2 architecture builds from there.
+        </p>
+        <div className="mt-8 max-w-4xl mx-auto">
+          <SixConstellations />
+        </div>
+      </section>
+
+      {/* Inside a sprint — sprint roadmap */}
+      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-16 mt-12">
+        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
+          Inside a sprint
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
+          Engagement-level cadence is sprints. 13 days each. Tasks decompose
+          to stories; stories pin to sprints; outputs persist to the next.
+        </p>
+        <div className="mt-8 max-w-4xl mx-auto">
+          <SprintRoadmap />
+        </div>
+      </section>
+
+      <AccentRule className="mt-16" />
+
+      <section
+        id="capital-structure"
+        className="bg-cream px-8 pt-12 md:pt-16 pb-16 scroll-mt-20"
+      >
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           The capital structure
         </h2>
