@@ -70,8 +70,6 @@ export default function ContactPage() {
                 >
                   robert@idigdata.com
                 </a>
-                <br />
-                702-686-1544
               </p>
             </div>
           </aside>

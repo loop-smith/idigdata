@@ -19,8 +19,6 @@ export default function SiteFooter() {
                 robert@idigdata.com
               </a>
               <br />
-              702-686-1544
-              <br />
               Reno, NV
             </p>
           </div>
