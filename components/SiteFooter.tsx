@@ -93,12 +93,14 @@ export default function SiteFooter() {
         </div>
 
         <div className="relative mt-12 pt-8 border-t border-stone/30 overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="font-vollkorn font-bold text-navy text-center leading-none opacity-[0.08] select-none pointer-events-none text-[80px] md:text-[120px]"
-          >
-            idigdata
-          </div>
+          <Image
+            src="/idigdata-wordmark-only.svg"
+            alt=""
+            aria-hidden
+            width={620}
+            height={130}
+            className="block mx-auto h-[80px] md:h-[120px] w-auto opacity-[0.08] select-none pointer-events-none"
+          />
           <p className="text-center font-display italic text-warm-gray text-[12px] mt-2">
             © idigdata · Data Integration Group · est. 2016
           </p>
