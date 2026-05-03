@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora, Source_Sans_3, Vollkorn } from "next/font/google";
+import { Lora, Source_Sans_3 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
@@ -20,14 +20,6 @@ const body = Source_Sans_3({
   variable: "--next-font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
-});
-
-const vollkorn = Vollkorn({
-  subsets: ["latin"],
-  variable: "--next-font-vollkorn",
-  display: "swap",
-  weight: ["600", "700", "800", "900"],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -97,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-body text-d2-ink bg-white">
         <PostHogProvider>
           <JsonLd />
