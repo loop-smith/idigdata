@@ -4,9 +4,10 @@ type Props = {
   slug: string;
   title: string;
   thesis: string;
+  readingMinutes?: number;
 };
 
-export default function ArticleCard({ slug, title, thesis }: Props) {
+export default function ArticleCard({ slug, title, thesis, readingMinutes }: Props) {
   return (
     <Link
       href={`/articles/${slug}/`}
@@ -18,9 +19,16 @@ export default function ArticleCard({ slug, title, thesis }: Props) {
       <p className="mt-3 font-body text-ink text-[15px] leading-relaxed">
         {thesis}
       </p>
-      <p className="mt-5 font-body font-semibold text-navy text-[14px]">
-        Read article →
-      </p>
+      <div className="mt-5 flex items-center justify-between">
+        <p className="font-body font-semibold text-navy text-[14px]">
+          Read article →
+        </p>
+        {readingMinutes ? (
+          <p className="font-body italic text-stone text-[12px]">
+            {readingMinutes} min read
+          </p>
+        ) : null}
+      </div>
     </Link>
   );
 }

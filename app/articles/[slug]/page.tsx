@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ArticleRequestForm from "@/components/ArticleRequestForm";
 import AccentRule from "@/components/AccentRule";
-import Beehive from "@/components/diagrams/Beehive";
-import SixConstellations from "@/components/diagrams/SixConstellations";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import { renderInline } from "@/lib/articleRender";
 import {
@@ -100,19 +97,9 @@ export default async function ArticlePage(
           {article.title}
         </h1>
         <p className="mt-4 font-display italic text-stone text-[15px]">
-          By Robert Paddock &middot; idigdata &middot; In peer review
+          By Robert Paddock &middot; idigdata
+          {article.readingMinutes ? ` · ${article.readingMinutes} min read` : ""}
         </p>
-
-        {article.slug === "beehive" ? (
-          <div className="mt-10 max-w-3xl mx-auto">
-            <Beehive />
-          </div>
-        ) : null}
-        {article.slug === "six-constellations" ? (
-          <div className="mt-10 max-w-3xl mx-auto">
-            <SixConstellations />
-          </div>
-        ) : null}
 
         <AccentRule className="mt-8 mb-8" />
 
@@ -167,16 +154,21 @@ export default async function ArticlePage(
 
         <div className="bg-navy/[0.03] border border-stone/40 p-6 md:p-8">
           <h2 className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] tracking-tight">
-            Want the full document?
+            Where on the path are you?
           </h2>
-          <p className="mt-2 text-[15px] text-ink leading-relaxed">
-            Layer 1 publishes the frame, the thesis, and why it&rsquo;s hard.
-            The full document — mechanism, diagnostic tools, templates — is
-            available on request.
+          <p className="mt-3 text-[15px] text-ink leading-relaxed">
+            The transformation atlas maps the engagement arc phase by phase and
+            marks the moments where Robert plugs in. Locate your position; see
+            the engagement shape that fits.
           </p>
-          <div className="mt-6">
-            <ArticleRequestForm articleSlug={article.slug} />
-          </div>
+          <p className="mt-5">
+            <Link
+              href="/atlas/"
+              className="font-body font-semibold text-navy text-[15px] border-b-2 border-gold pb-0.5 hover:text-navy/80"
+            >
+              Open the atlas →
+            </Link>
+          </p>
         </div>
 
         {related.length > 0 ? (

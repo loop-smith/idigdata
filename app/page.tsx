@@ -62,72 +62,43 @@ function M4Lattice({
 
 const ARTICLE_CARDS = [
   {
-    slug: "architectural-fork",
-    essay: "Essay № I",
+    slug: "transformation-and-the-people-of-it",
+    essay: "Article 01",
     num: "No. 01",
     title: (
       <>
-        The architectural <em className="italic font-semibold">fork.</em>
+        What business transformation{" "}
+        <em className="italic font-semibold">actually is</em> — and who it's
+        done with.
       </>
     ),
-    thesis: "Vendor-agnostic, data-centric. ERPs become apps.",
+    thesis:
+      "The architectural fork — sovereign data, replaceable apps — and the human layer the architecture only holds against.",
     featured: true,
   },
   {
-    slug: "integrated-delivery",
-    essay: "Essay № II",
+    slug: "the-mechanics",
+    essay: "Article 02",
     num: "No. 02",
     title: (
       <>
-        The integrated <em className="italic font-semibold">delivery</em>{" "}
-        discipline.
+        The <em className="italic font-semibold">mechanics.</em>
       </>
     ),
-    thesis: "PM, change management, and agile-fall as one practice.",
+    thesis:
+      "PM, change management, and agile-fall as one delivery discipline. ASC 350-40 capitalization. The structural escape from the vendor-partner trap.",
   },
   {
-    slug: "vendor-partner-trap",
-    essay: "Essay № III",
+    slug: "applied-agentics",
+    essay: "Article 03",
     num: "No. 03",
     title: (
       <>
-        The vendor-partner <em className="italic font-semibold">trap.</em>
+        Applied <em className="italic font-semibold">agentics.</em>
       </>
     ),
-    thesis: "Why most ERP implementations fail to deliver outcomes.",
-  },
-  {
-    slug: "agile-fall",
-    essay: "Essay № IV",
-    num: "No. 04",
-    title: (
-      <>
-        <em className="italic font-semibold">Agile-fall.</em>
-      </>
-    ),
-    thesis: "Hybrid PM for complex business system transformation.",
-  },
-  {
-    slug: "six-constellations",
-    essay: "Essay № V",
-    num: "No. 05",
-    title: (
-      <>
-        The six <em className="italic font-semibold">constellations.</em>
-      </>
-    ),
-    thesis: "Same structure, different surface, every time.",
-  },
-  {
-    slug: "beehive",
-    essay: "Essay № VI",
-    num: "No. 06",
-    title: (
-      <>
-        The <em className="italic font-semibold">beehive.</em>
-      </>
-    ),
-    thesis: "Organizing the people side of transformation.",
+    thesis:
+      "Five domain-experienced production apps in live operations. The framework that makes deployments repeatable. The data foundation precondition.",
   },
 ];
 
@@ -675,12 +646,11 @@ export default function HomePage() {
               <span className="block w-10 h-0.5 bg-gold" />
             </div>
             <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
-              Peer-reviewed{" "}
-              <em className="italic font-semibold">articles.</em>
+              The <em className="italic font-semibold">articles.</em>
             </h2>
             <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              Six pieces from the practice. Each is the long answer to a
-              question CFOs and CIOs keep asking the wrong people.
+              Three pro-level reads from the practice. The long answers to
+              questions CFOs and CIOs keep asking the wrong people.
             </p>
           </header>
 
@@ -692,13 +662,10 @@ export default function HomePage() {
                   a.featured ? "lg:col-span-2 lg:min-h-[420px] lg:px-10" : ""
                 }`}
               >
-                <div className="flex justify-between items-center font-body text-[10px] uppercase tracking-[0.18em] text-warm-gray font-semibold">
+                <div className="font-body text-[10px] uppercase tracking-[0.18em] text-warm-gray font-semibold">
                   <span>
                     {a.essay}
                     {a.featured ? " · The Practice" : ""}
-                  </span>
-                  <span className="font-vollkorn italic font-medium text-stone normal-case tracking-normal text-[12px]">
-                    In peer review
                   </span>
                 </div>
                 {a.featured ? (

@@ -1,25 +1,27 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ArticleCard from "@/components/ArticleCard";
 import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Peer-reviewed articles",
+  title: "Articles",
   description:
-    "Six articles authored from 30 years of operator practice. The architectural fork, integrated delivery, the vendor-partner trap, agile-fall, the six constellations, the beehive.",
+    "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale.",
   alternates: { canonical: "/articles/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/articles/",
-    title: "Peer-reviewed articles — idigdata",
-    description: "Six articles authored from 30 years of operator practice.",
+    title: "Articles — idigdata",
+    description:
+      "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Peer-reviewed articles",
+        alt: "idigdata — Articles",
       },
     ],
   },
@@ -41,30 +43,34 @@ export default function ArticlesIndexPage() {
 
       <section className="pt-20 pb-10 md:pt-24 md:pb-14">
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Peer-reviewed articles
+          Articles
         </h1>
-        <div className="inline-flex items-center gap-2 px-3 py-1 mt-3 mb-4 border border-stone rounded-full">
-          <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-          <span className="font-display italic text-warm-gray text-xs uppercase tracking-widest">
-            In peer review
-          </span>
-        </div>
-        <p className="mt-2 max-w-[820px] font-display italic text-stone text-[18px] leading-snug">
-          Six articles authored from 30 years of operator practice. In peer
-          review.
+        <p className="mt-6 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
+          Three pro-level reads on what business transformation actually is, how
+          it gets delivered, and what real applied agentics looks like at
+          production scale. Build belief at depth, then locate where on the
+          path you fit on the{" "}
+          <Link
+            href="/atlas/"
+            className="not-italic font-body text-navy border-b border-navy/40 hover:border-navy"
+          >
+            atlas
+          </Link>
+          .
         </p>
       </section>
 
       <AccentRule className="mt-2" />
 
-      <section className="pt-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="pt-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {ARTICLES.map((a) => (
             <ArticleCard
               key={a.slug}
               slug={a.slug}
               title={a.title}
               thesis={a.thesis}
+              readingMinutes={a.readingMinutes}
             />
           ))}
         </div>
