@@ -1,284 +1,215 @@
-export type ArticleSection = {
-  heading: string;
-  paragraphs: string[];
+/**
+ * Article landing-page schema (Phase 1: IP-gated distribution).
+ *
+ * Body content is server-only and lives at content/articles/*.md, loaded
+ * via lib/articles-body.ts. This module exposes only the public-safe
+ * landing data — abstract, what-you-learn, who-it-for, key quote,
+ * cross-links — that the public landing page renders.
+ */
+
+export type CrossLinkCard = {
+  slug: string;
+  badge: string;
+  title: string;
+  description: string;
 };
+
+export type AtlasCard = {
+  title: string;
+  description: string;
+};
+
+export type ArticleHeroKey =
+  | "architectural-fork"
+  | "integrated-delivery"
+  | "framework-foundation";
 
 export type Article = {
   slug: string;
   title: string;
-  /** 1-line thesis used on /articles index card and home preview */
-  thesis: string;
-  /** Estimated reading time in minutes */
-  readingMinutes: number;
-  /** Opening paragraphs after the byline divider */
-  opening: string[];
-  sections: ArticleSection[];
-  /** Closing paragraphs */
-  closer: string[];
-  /** 2-3 related slugs for cross-references */
-  related: string[];
+  /** Italic deck under the H1 — engagement-pair framing. */
+  subtitle: string;
+  /** Hex-mark badge label (e.g., "Article 1 · Lens 1 of 2"). */
+  pairBadge: string;
+  readingTimeMin: number;
+  /** "The playbook" or "The rare credential". */
+  category: string;
+  /** First-paragraph hook from the source markdown — visible publicly. */
+  lede: string;
+  /** 4–5 sentence summary — visible publicly, used by /articles cards too. */
+  abstract: string;
+  /** 3–4 bullets — visible publicly. */
+  whatYoullLearn: string[];
+  /** 3 bullets — visible publicly. */
+  whoItsFor: string[];
+  /** Anchor sentence — pull-quote treatment on landing. */
+  keyQuote: string;
+  /** Which hero SVG component to render. */
+  heroKey: ArticleHeroKey;
+  /** Article 1 has the beehive inline; flag here for the landing template. */
+  hasInlineBeehive?: boolean;
+  crossLinks: {
+    /** The Lens-companion partner article (Article 1 ↔ Article 2). */
+    companion?: CrossLinkCard;
+    /** Standalone counterpart (Article 3 from Articles 1/2; or Articles 1+2 from Article 3). */
+    standalone?: CrossLinkCard;
+    /** When the article has TWO substrate articles (Article 3 case), use this in place of companion. */
+    substratePair?: [CrossLinkCard, CrossLinkCard];
+    atlas: AtlasCard;
+  };
 };
 
 export const ARTICLES: Article[] = [
   {
     slug: "transformation-and-the-people-of-it",
-    title: "What business transformation actually is — and who it's done with",
-    thesis:
-      "The architectural fork — sovereign data, replaceable apps — and the human layer the architecture only holds against.",
-    readingMinutes: 13,
-    opening: [
-      "After thirty years and fifty-plus mid-market business-system transformations across construction, manufacturing, distribution, services, beverage, and now cannabis-and-wellness, one observation has held without exception: *no operator has ever walked into the engagement with systems, common data structures, and processes already defined.* That is the market. It is also why most of what gets sold as transformation isn't.",
-      "The dominant model is well-known. License the platform. Hire the partner. Integrate on the vendor's calendar. Accept that your data lives inside someone else's product. Pay the implementation fees, the support contracts, the upgrade cycles, and the migration retrofits the platform vendor will charge you over the next decade. *That model is \"we own you and your data.\"* It works for the vendors. It does not work for the operator running the business. And it has trained an entire generation of mid-market executives to believe that lock-in is the natural shape of business systems — that the alternative does not exist and that the next platform pitch will fix what the last one didn't.",
-      "The alternative does exist. It is structural, field-tested, and produces sovereign clients instead of locked-in ones. The architecture is data-centric: a Common Data Model the client owns, master data managed at the enterprise level, integrations governed by the client, ERP and CRM and WMS and HRIS and FP&A reframed as replaceable apps in the ecosystem rather than the system itself. *Sovereignty over data and integrations is structural, not negotiated.* Vendor change becomes a commodity decision, not a transformation event. The data lives ten years from now where the operator put it, in the schema the operator owns, governed by the cadence the operator decides — not where the platform vendor's product roadmap leaves it.",
-      "This article makes the case for the alternative model and walks through the part of the model most consultants skip: the human layer. Transformation succeeds or decays at the people layer, not the technology layer. Stakeholders, the beehive, end users, change ownership — these are not separate from the architecture. They are part of what *\"client-owned\"* means.",
+    title:
+      "What business transformation actually is — and who it's done with",
+    subtitle:
+      "Lens 1 of 2 on the 24-month engagement — the architecture and the people",
+    pairBadge: "Article 1 · Lens 1 of 2",
+    readingTimeMin: 13,
+    category: "The playbook",
+    lede:
+      "After thirty years and fifty-plus mid-market business-system transformations across construction, manufacturing, distribution, and operations-heavy services, one observation has held without exception: no operator has ever walked into the engagement with systems, common data structures, and processes already defined. That is the market. It is also why most of what gets sold as transformation isn't.",
+    abstract:
+      "Most board-approval-tier business-system transformations get sold inside a vendor-platform model that locks the client's data inside someone else's product. There is an alternative — structural, field-tested, and operator-owned. This article walks through the architectural fork (data sovereignty vs. vendor lock-in) and the human layer that determines whether the architecture institutionalizes or decays back to baseline. The thesis: stakeholders, the beehive, end users, and change ownership are not separate from the architecture — they are part of what “client-owned” means.",
+    whatYoullLearn: [
+      "Why most consultants can't reach data sovereignty — and the structural choice that makes it possible",
+      "The CFO universal in mid-market buying patterns — and why ASC 350-40 awareness is one of the cleanest qualifying signals",
+      "The beehive as the universal frame for the people layer — standard structure, bespoke fill",
+      "The three engagement shapes (Embedded · Fractional · Agentics) and which fits which moment",
     ],
-    sections: [
-      {
-        heading: "What's been sold as transformation",
-        paragraphs: [
-          "The lock-in model is straightforward when named honestly. The platform vendor wants recurring revenue across the customer base on calendars they control. License stacks compound. Implementation fees attach to every deployment. Support contracts and upgrade cycles run perpetually. Migration retrofits get sold every time the vendor releases a new major version or acquires a competitor. The implementation partners are paid per hour, on the vendor's framework, against the vendor's roadmap. *Every incentive in the supply chain points the same direction.*",
-          "The mid-market operator pays for this structurally — not just in license fees, but in the structural assumption that their data lives inside the vendor's product. The customer master is in the ERP's tables. The item master is in the ERP's tables. The price list is in the ERP's tables. When the vendor decides to rev the schema, the customer rev's the schema. When the vendor's product roadmap deprioritizes a capability the operator depends on, the operator pays the partner to build a workaround. When an acquisition arrives with a different ERP, the integration cost is paid every time — because the data architecture was never sovereign in the first place.",
-          "Most consultants don't have the muscle to architect a data-centric model. The discipline takes years of operator practice and an explicit point of view. So they paint over ERP-centric architecture with reports, dashboards, and a service tail that protects their billable position. They tell the operator that the next platform will fix it. The next implementation does not fix it; it rebuilds the same architecture problem with a different vendor's logo. *The structure persists because everyone paid to maintain it benefits from it persisting.*",
-        ],
-      },
-      {
-        heading: "The architectural fork",
-        paragraphs: [
-          "What it would mean to actually own your business systems looks different at the architectural layer. A Common Data Model becomes the substrate. Master data — customers, vendors, items, employees, accounts, products, BOMs, locations — lives in a curated, governed layer the client owns. The ERP becomes a consumer and contributor among other apps: CRM, WMS, HRIS, FP&A, MES, EAM, PLM, agentics. Each app reads from and writes to the CDM through bounded interfaces. The client's data is sovereign by structure, not by negotiation.",
-          "Vendor swap stops being a transformation event and becomes a commodity decision. The BOM lives in the CDM, not in the ERP's tables, so swapping one ERP for another is a connector and migration job — not a re-architecture. M&A integration debt collapses because each acquired entity plugs into the same CDM rather than each one bringing its own ERP-locked data model that has to be reconciled every quarter. The data foundation matures into a balance-sheet asset rather than an operational liability that compounds. *This is the precondition for everything downstream:* master data management at the enterprise level, applied agentics at scale, an operating fabric that lives above the application layer rather than inside any one vendor's platform.",
-          "The strategic implication is large. With sovereign data, the next platform decision is a cost decision, not a strategy decision. The next acquisition's integration is a connector job, not a transformation event. The next AI initiative has a coherent foundation to build against rather than a fragmented data layer that produces theater. The CFO's quarterly close reconciles cleanly because the master data is governed and audit-defensible. The CEO's public commitments — to AI, to operating leverage, to scale — become operationally real rather than aspirational.",
-        ],
-      },
-      {
-        heading: "Why most \"transformation\" can't reach this",
-        paragraphs: [
-          "The structural failure mode is rarely the platform. Almost every major mid-market platform — Acumatica, NetSuite, D365 BC, SAP at appropriate scale — can be configured well or badly. The failure mode is the architecture surrounding the platform, and the organism running the project. Vendor partners run the framework their vendor's playbook gave them. The framework is shaped by what's good for vendor sales, not by what's good for client outcomes. Big-4 transformation practices have the same structural problems with bigger fees: billable-hours economics, shared-staffing model, partner-driven scope expansion, framework drawn from their own assembled processes rather than from operator experience.",
-          "The result is a market in which most board-approval-tier ERP and business-system implementations fail to deliver the outcome the operator paid for. Not because the platform was wrong, the data was bad, or the team was weak. Those are downstream symptoms. They fail because they were run by the wrong organism. *Vendor-partner-led implementations optimize for partner economics, not client outcomes.* Project length stretches because length equals revenue. Scope expands because expansion equals revenue. Stickiness becomes a feature because future revenue lives in the ongoing dependency. The operator pays for an architecture that will need to be rebuilt the next time another platform vendor wins the procurement cycle.",
-          "The escape is structural, not negotiated. A different organism runs the project. The transformation framework runs above the vendors rather than through them. The vendor partners stay productive in their domain expertise; their economics get re-bounded into lanes. Decisions are traced at the transformation layer with full audit defensibility. The CFO sees the program governed end-to-end. *The result is a transformation that compounds, not a vendor program that drifts.*",
-        ],
-      },
-      {
-        heading: "The new model",
-        paragraphs: [
-          "Sovereignty over data is the load-bearing structural choice. Common Data Model the client owns. ERP, CRM, WMS, HRIS, FP&A as commodity apps in the ecosystem. Vendor change becomes a commodity decision, not a transformation event. The architectural layer that institutionalizes this in the client's hands is **BOSS** — Business Operating System Suite. Three pillars: Data (the Common Data Model, MDM at the enterprise level, six-constellation process map), People (the beehive of leads and SMEs by departmental functional groups), Delivery (PM plus governance plus change management as one unified suite, capitalization tracking under ASC 350-40 native to the suite). Open source. Productized from thirty years of transformation practice. Clients own and maintain after the engagement closes — no managed-services tail.",
-          "BOSS is the substrate that makes the new model real, not a product to be sold. It's referenced here the way an engineering article references its toolchain: visible, named, but the article is about the architecture, not the platform. What matters at the operator level is what the substrate enables. *What partner-led transformation produces in months, this model produces in weeks* — because the persistence layer doesn't lose data between phases, the registers compound, and the work flows through one operating fabric rather than starting over each time a workstream rotates leadership.",
-          "The economics work the way they work because the structure is different. The transformation framework runs above the vendors at flat weekly rate rather than through them at billable hours. Vendor lanes get scope-locked. Internal labor capitalizes during the build phase under ASC 350-40 — internal salaries on the project flow to the balance sheet, not the P&L, while the work is in development. The asset depreciates over ten years post-go-live. The CFO doesn't take the full hit during the build years; the impact smooths over a decade. *A transformation program of meaningful scale becomes audit-defensible, board-defensible, and structurally lower total cost than the partner-led alternative.* The full mechanics of this are the subject of Article 2 — the mechanics.",
-        ],
-      },
-      {
-        heading: "This isn't a tech story alone",
-        paragraphs: [
-          "The architectural fork is necessary but not sufficient. The architecture only holds if the people layer holds. *Transformation succeeds or decays at the human layer.* The platform configures, the data migrates, the integrations connect — and the operating model never lands because the people side was an afterthought. Stakeholders, the beehive, end users, change ownership — these are not separate from the architecture. They are part of what *\"client-owned\"* means. A sovereign data foundation in the hands of an organization that cannot operate it is theater. The architecture and the people layer are one system; transformation that treats them as two parallel workstreams produces the failure modes that fill the partner-led case-study graveyard.",
-          "The rest of this article is about the people layer. It is the part most articles like this skip — the substance is harder, the receipts more idiosyncratic, the language closer to operator experience than to consultant abstraction. It is also what determines whether the transformation lands.",
-        ],
-      },
-      {
-        heading: "The CFO universal",
-        paragraphs: [
-          "Across thirty years and fifty-plus engagements, the only universal in the buyer pattern is that **CFO is a core partner.** Every engagement. The engagement-trigger pattern lives in the CFO's seat — finance and accounting need solve first because that's what funds the rest of the transformation arc and what surfaces the ERP-versus-data-architecture decision. The CFO carries the M&A integration burden, the SOX rigor, the multi-entity consolidation pain. The CFO is also the only seat at the C-suite table with the authority to fund the work as a capital investment rather than a P&L expense. *CFO is where scope, budget, and urgency converge.*",
-          "ASC 350-40 awareness is one of the cleanest buyer signals in the diagnostic. A CFO who already knows the build-phase capitalization treatment, the ten-year depreciation period, the internal-labor capitalization mechanism, and the audit-defensibility requirements is operating at the level the transformation needs. A CFO who is hearing the framework for the first time during the engagement conversation often recognizes the funding mechanism in the same conversation as the architectural fork — and the engagement seals itself, because no other consultant has framed the work as a capital investment with build-phase balance-sheet treatment plus ten-year smoothing plus audit-defensible structure. *Most consultants pitch transformation as a P&L hit; the new model pitches it as an asset.*",
-        ],
-      },
-      {
-        heading: "Stakeholders discovered in P0",
-        paragraphs: [
-          "CFO is universal. Beyond CFO, the player set is discovered, not assumed. *Every engagement is different. The political map is never the org chart.* Some clients have a strong CIO who controls the conversation; some have a weak CIO and an EVP-Operations who quietly runs IT through a vendor; some have a board director or PE operating partner who is the real buyer; some have a founder-CTO who functions as decision-maker without the title. Phase 0 — the recon and research phase before the contract is signed — is where the player set gets mapped. By the time the proposal lands, the political layer beneath the org chart is mapped: who decides, who blocks, who carries narrative, who's an internal advocate-in-waiting.",
-          "The diagnostic question is the same across engagements but answers differently each time. Who carries the M&A integration pain? Who has the SOX rigor on their desk? Who owns the operational continuity question for the next eighteen months? Who has political capital to broker the cross-functional standoffs that will fire in Phase 2? Who is the operational truth-source on the systems landscape — the figurehead-CIO answer is defensive by structural incentive; the operational answer is what the proposal needs. The framework for reading this is the six-constellation diagnostic — six universal categories (data architecture, operating model, post-M&A consolidation, applied agentics readiness, IT-function maturity, change-receptivity) that hold across every mid-market operating company in the strike zone. The structure is universal. The population is unique to each client. *Standard frame, bespoke fill.*",
-        ],
-      },
-      {
-        heading: "The beehive",
-        paragraphs: [
-          "The people-fabric question is structural before it is political. Most transformations fail at the people layer not because the executives resisted but because the operating cadence below the executives had no working structure. *The beehive is the organizing model.* Taskforces of leads and SMEs grouped by departmental functional system. Hexagonal grid: each cell holds a taskforce accountable for one functional system group — PLM, Sales, Production MES, Supply Chain, EAM, WMS, HRIS, ERP, Compliance, Sustainability, IT/IS, Data Services, Finance/Accounting. Five process flows ring the grid: Order to Cash, Plan to Manufacture, Procure to Pay, Record to Report, Systems/Data/Security. Adjacent cells share workstreams across the cell boundary. The process-flow ring runs around the grid and surfaces the cross-cell integration points where the flows touch multiple functional systems.",
-          "The hexagonal **structure** is universal across $100M–$750M operating companies. The **population** is unique. *Standard frame, bespoke fill.* The cells exist by function whether the operator has drawn them or not — the process flows exist by transaction whether or not anyone has named them. After thirty years, the same observation holds: no operator has ever walked into a transformation with the beehive already drawn, governed, and maintained as a living artifact. The prevalence of the gap is what creates the market. The transformation makes the implicit explicit, runs against it deliberately, and institutionalizes the operating fabric inside the BOSS People pillar so that the beehive lives as a register the in-house team maintains rather than as a deck that goes stale.",
-          "Generic agile-pod templates fail because the structure has to be respected and the population has to be earned. Pods spun up without the structural frame devolve into disconnected work — the marketing pod, the operations pod, the IT pod, each running its own cadence, each missing the cross-cell flows that the process ring carries. The pod model collapses the structure into a soft hierarchy and loses the geometric integrity that makes the beehive work. The hexagonal grid, by contrast, holds tension across cells deliberately — and the tensions are where the real transformation work lives. Cross-cell standoffs (CFO vs. COO on data ownership, CIO vs. business unit on system selection, sales vs. operations on pipeline-versus-capacity) get brokered at the cells, not at the executive layer in the abstract. The executive coalition can land an MDM lock or a vendor selection only because the cells beneath them have already done the working sessions that produced a defensible position.",
-        ],
-      },
-      {
-        heading: "End users and change ownership",
-        paragraphs: [
-          "*\"Client-owned\"* requires people who can own it. The architecture of sovereignty is meaningless if the operating organization can't operate the architecture after the consultant leaves. Operator empowerment is the layer most AI advisory and most Big-4 transformation practices skip — the slide deck has *\"adoption\"* in the corner but the operator-side training is generic, the post-go-live support model is a managed-services tail, and the in-house team never quite learns to maintain the substrate they inherited. Six months after handoff, the operator-side organization is calling the consultant back to make changes the consultant should have institutionalized.",
-          "The new model treats operator empowerment as structural rather than as a workstream. The beehive lives in the People pillar of BOSS — the cells, the leads, the SMEs, the cross-cell taskforces are persistent identities in the system. The integrated delivery discipline (PM plus governance plus change management) lives in the Delivery pillar with capitalization tracking native to the suite. The Common Data Model and the Systems Register live in the Data pillar with master data governed at the enterprise level. The operator-side team learns to operate the substrate during the engagement, not after. SOPs auto-generate during P4 UAT validation cycles as a byproduct of the test-execution lifecycle — the same data that validates business process steps in UAT becomes the operator-facing SOP after go-live. *Documentation that doesn't drift* is the operator-adoption holy grail; it lands in this engagement because the operating fabric produces it as a side-effect, not as a separate workstream that decays after handoff.",
-        ],
-      },
+    whoItsFor: [
+      "Boards, CEOs, and PE operating partners bringing in senior leadership for operating-model change",
+      "C-Suite executives modernizing the business-systems landscape after M&A or platform sprawl",
+      "Operators in flight who suspect the lock-in model is the structural problem",
     ],
-    closer: [
-      "Mid-market operators who want their data back. Not all do. The lock-in model has a higher comfort level for organizations that prefer vendor-managed risk to operator-managed sovereignty. *That's fine.* The new model has a higher bar of belief and a different shape of work. It's not a fit for everyone. By design.",
-      "For the operators it does fit, the engagement plugs in three ways. **Embedded** — full transformation residency. Full executive scope as contractor: strategy, operations, vendor portfolio, risk, governance. Best fit for boards, CEOs, and PE bringing in senior leadership to run operating-model change. **Fractional** — engagements where a specific lever needs moving: unblock a stalled MDM, deploy a production agent on a critical bottleneck, re-architect the data core while the in-house CIO stays in seat. **Agentics** — standalone, or stacked onto either of the above. The enterprise agentic framework deployed against the data foundation. *Five domain-experienced production apps in live operations is the proof; the framework is what makes it repeatable.*",
-      "Where this fits on the path: this article speaks to the structural choice that runs across every phase of the engagement arc. The full atlas — phase-by-phase, with the engagement shapes Robert plugs into at each entry point — is at the transformation atlas.",
-    ],
-    related: ["the-mechanics", "applied-agentics"],
+    keyQuote:
+      "Sovereignty over data and integrations is structural, not negotiated.",
+    heroKey: "architectural-fork",
+    hasInlineBeehive: true,
+    crossLinks: {
+      companion: {
+        slug: "the-mechanics",
+        badge: "Article 2 · Lens 2",
+        title: "The mechanics — PM, budget, capital structure",
+        description:
+          "The companion lens. How the work gets delivered, governed, and paid for under ASC 350-40.",
+      },
+      standalone: {
+        slug: "applied-agentics",
+        badge: "Article 3 · Standalone",
+        title: "Applied agentics — agents deployed as a business asset",
+        description:
+          "The rare credential. Production agents shipping into operations, structurally dependent on this data foundation.",
+      },
+      atlas: {
+        title: "Where on the path are you?",
+        description:
+          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
+      },
+    },
   },
   {
     slug: "the-mechanics",
     title: "The mechanics — PM, budget, capital structure",
-    thesis:
-      "PM, change management, and agile-fall as one delivery discipline. ASC 350-40 capitalization. Vendor-partner trap and the structural escape.",
-    readingMinutes: 13,
-    opening: [
-      "Most board-approval-tier business-system transformations are sold as strategy. Big-4 transformation practices ship thinking in bound decks, present at the steering committee, and run the actual delivery through layered teams of senior partners who don't touch the floor and junior consultants who do. *This model ships outcomes through a different organism.* The discipline is not the deliverable; the discipline is the operating shape. PM, stakeholder and change management, and agile-fall mode-switching run as one integrated practice, on a persistence substrate, with capitalization tracking under ASC 350-40 native to the delivery layer, with vendor partners contained inside lanes rather than running the program. *The discipline IS the differentiation.* Big-4 sells thinking; this model ships outcomes — and the outcomes land at a fraction of the partner-led cost with audit-defensible structure.",
-      "This article walks through the mechanics. The three sub-disciplines that have to run as one. The persistence substrate that makes the integration real. The capitalization treatment that makes the work fundable as an asset rather than a P&L hit. The vendor-partner trap as the dominant failure mode of partner-led implementations and the structural escape that contains it. SOP auto-generation as the operator-adoption mechanism that closes the loop on documentation drift. The mechanics are the parts most articles like this skip — and the parts that determine whether a transformation lands.",
+    subtitle:
+      "Lens 2 of 2 on the 24-month engagement — the delivery discipline and the financial structure",
+    pairBadge: "Article 2 · Lens 2 of 2",
+    readingTimeMin: 14,
+    category: "The playbook",
+    lede:
+      "Most board-approval-tier business-system transformations are sold as strategy. Big-4 transformation practices ship thinking in bound decks, present at the steering committee, and run the actual delivery through layered teams of senior partners who don't touch the floor and junior consultants who do. This model ships outcomes through a different organism. The discipline is not the deliverable; the discipline is the operating shape.",
+    abstract:
+      "A transformation of meaningful scope is a delivery discipline, not a project — and a capital investment, not a P&L hit. This article walks through the three sub-disciplines that have to run as ONE integrated practice (PM, Stakeholder + Change, Agile-Fall mode-switching), the persistence substrate that makes the integration durable, the capitalization treatment under ASC 350-40 that lets the CFO defend the program as an asset, the ten-year depreciation period field-validated with sitting CFOs, and the vendor-partner trap as the dominant failure mode of $10–15M ERP implementations.",
+    whatYoullLearn: [
+      "Why three sub-disciplines (PM + Change + Agile-Fall) collide when run parallel and compound when run as one",
+      "How transformation capitalizes to the balance sheet under ASC 350-40 — including internal labor",
+      "The ten-year depreciation period and what it means for board defense of multi-year programs",
+      "How the vendor-partner trap kills most $10–15M implementations — and the structural escape",
     ],
-    sections: [
-      {
-        heading: "The three sub-disciplines named",
-        paragraphs: [
-          "A transformation is not a project. It is a delivery discipline. *Three sub-disciplines must run as one integrated practice or the transformation drifts.*",
-          "**Project Management** — sprint cadence, dependencies, milestones, register state. The discipline that makes the work visible. Sprint cadence at the level of the work — thirteen-day sprints aligned with the agile portion of the hybrid methodology, weekends and holidays included, sprint one starting the day the contract is signed. Taskforce assignments tied to beehive cells. Dependency map across taskforces. Milestone calendar tied to the phase model. Status-reporting rhythm built around sprint retrospectives and sprint-launch planning. The discipline holds the calendar and surfaces drift before it becomes program drift.",
-          "**Stakeholder and Change Management** — communications, training, adoption, resistance maps, executive alignment. The discipline that makes the work land. Communications cadence per stakeholder tier — C-suite monthly, sponsor weekly, functional leaders biweekly per their cell, operators per their adoption stage. Training plans tied to the cutover events and the post-go-live operator empowerment work. Adoption metrics defined per cell and per system. Resistance-and-receptivity map of the organization — who's leaning in, who's quietly waiting it out, who's actively resisting. Escalation paths for when adoption stalls. The discipline makes sure the operating fabric absorbs the transformation rather than rejecting it.",
-          "**Agile-Fall mode-switching** — knowing which methodological mode to run, when, by work type. *Pure agile fails in complex business-system transformation because plan-to-manufacture flows, regulated data, complex CPQ logic, and manufacturing sequence have hard physics-of-flow dependencies that don't iterate around. Pure waterfall fails because mid-market clients can't afford eighteen-month big-bang projects with no working surface area until month seventeen.* The hybrid is not a compromise; it is a discipline. Each work type carries an inherent mode signal — read it correctly and the discipline writes itself. Manufacturing flow: waterfall. Process discovery: agile. Data architecture lock and master-data structure: waterfall. Configuration tuning and workflow design: agile. Regulatory compliance: waterfall. Adoption and training: agile. Agentic build: agile. Cutover sequencing: waterfall. Most consultants don't switch — they pick a religion and ride it through every work type, and the work types they got wrong drift.",
-        ],
-      },
-      {
-        heading: "The parallel-workstream failure mode",
-        paragraphs: [
-          "Most board-approval-tier transformations run the three sub-disciplines as parallel workstreams. The PowerPoint shows neat lanes. The execution shows collisions in week eight. The PM tool doesn't know what change-management is dealing with on the ground. Change-management cadence doesn't know which mode this sprint is running in. The agile-fall mode-switch doesn't know what the stakeholder map is signaling. Decisions stall because each workstream waits on context the others have but never share. The vendor partners run their own methodology in a fourth track. By month three, the program has four parallel calendars, four sets of risks, four sets of decisions, and one operator team trying to run a real business while attending all of them.",
-          "*Drift sets in. Adoption decays. Outcomes recede.* The change-management vendor produces communications and training; the artifacts circulate; nothing operational moves because there's no substrate for the artifacts to attach to. The PMO produces sprint-status reports that look organized; sprint velocity is real but the velocity is on items that don't compound because the agile-fall mode is wrong for the work type. The methodology lead picks a religion. The executive coalition stops trusting the program because the PowerPoint and the floor reality have diverged. *The buyer-verifiable test for whether a consultant has done this work end-to-end is simple: can they point to transformations they've actually landed?* Hand-wavers can't.",
-        ],
-      },
-      {
-        heading: "Integrated delivery",
-        paragraphs: [
-          "The integration is what makes the disciplines compound rather than collide. **PM cadence reads from change-management readiness** — the sprint plan reflects what stakeholders can absorb this week, not just what the backlog says is next. The sprint backlog gets re-bounded before sprint launch when the change-management map signals that the operating organization is at saturation; the over-promised sprint produces decay, not velocity. **Agile-fall mode-switch reads from the stakeholder map** — high-resistance work doesn't go agile because iteration accelerates resistance and produces visible chaos that the executive coalition uses to defund; high-discovery work doesn't go waterfall because prescription kills learning and produces a 200-page document the operator team never internalizes. **Register state is visible across all three disciplines and across the vendor lanes** — one shared persistence layer, not three parallel spreadsheets that go stale on different schedules.",
-          "The compound integration is what makes 24-month transformations land instead of decay. The work compounds across phases instead of starting over each time a workstream rotates leadership. *The transformation institutionalizes by construction, not by heroics.* This is the operating shape — not a methodology, a discipline. It is what allows the engagement to run twenty-four months at flat weekly rate, with mutual break-clauses at twelve and eighteen months, and reach its natural end with everything transferred and no managed-services tail.",
-        ],
-      },
-      {
-        heading: "The persistence substrate",
-        paragraphs: [
-          "Integration only works on a persistence substrate. *Without BOSS — or some functional equivalent of register-driven persistence — the three disciplines fall back into parallel workstreams because there is no shared state for them to read from.* Spreadsheets, PowerPoints, and Confluence pages don't carry forward. They go stale and get re-derived. Each phase has to re-build the artifact-of-record because the previous artifact-of-record drifted from operational truth. The result: most consulting tools are static deliverables that age the moment they're saved; the delivery cost compounds because each phase rebuilds rather than reads from the previous; the speed-and-accuracy trade dissolves into one or the other but never both.",
-          "BOSS holds the substrate as the **Delivery pillar** — three sub-modules unified. PM (sprint cadence, taskforces tied to beehive cells, dependency map, status-reporting rhythm). Governance (decision-trace logging, sponsor sign-off workflow, risk register linked to beehive cells, capitalization tracking under ASC 350-40 with audit-defensible documentation). Stakeholder and Change Management (communications cadence, training plan, adoption metrics, resistance maps). Each phase reads from and writes to the registers. Phase 1 work feeds Phase 2 architecture; Phase 2 architecture feeds Phase 3 execution; Phase 3 execution feeds Phase 4 vendor consolidation; Phase 4 work feeds Phase 5 agentics; Phase 6 handoff is the registers themselves plus the BOSS install that maintains them. *No data lost between phases. The framework grows.*",
-          "The interop pattern matters at the procurement layer. Native BOSS PM suite is the recommendation for clients who want maximum leverage. The interop option keeps the client's existing PM tool — Workfront, Monday, Smartsheet, Jira — with BOSS as the orchestration layer above it. Sprint cadence and taskforce structure get reflected from the client's tool into BOSS via integration; BOSS adds the disciplines the client's tool doesn't handle (decision-traces, register-integration, agentic-readiness, capitalization tracking). *The interop pattern eliminates the \"we have to standardize on BOSS\" objection that kills most platform offerings in procurement.*",
-        ],
-      },
-      {
-        heading: "Transformation as capital investment",
-        paragraphs: [
-          "A transformation of meaningful scope is a capital investment, not a P&L hit. **Build-phase costs — including internal labor — capitalize to the balance sheet under ASC 350-40.** This is the load-bearing financial mechanism of the new model, and it is the part most consultants either don't know or don't structure correctly. The accounting standard for internal-use software allows certain costs to capitalize during the build phase — direct external service costs, internal labor directly attributable to the build phase including loaded compensation, certain vendor integration costs, certain testing-phase costs. What does not capitalize: research and feasibility, training-after-go-live, ongoing maintenance, costs incurred after the asset is placed into service.",
-          "The boundary between build and operations is the boundary between CapEx and OpEx, and the audit-defensibility of that boundary is the audit-defensibility of the cap treatment. BOSS Delivery pillar's governance trace tracks every workstream as CapEx or OpEx with rationale and decider; internal labor capitalization is tracked per work item with hour-level granularity and rationale; the audit trail is ready for external auditors at fiscal year-end without a custom Excel reconciliation. *Most consultants don't track this — they pitch transformation as a P&L hit; this model pitches it as an asset with build-phase balance-sheet treatment plus post-go-live ten-year smoothing plus audit-defensible structure.*",
-        ],
-      },
-      {
-        heading: "Internal labor capitalization",
-        paragraphs: [
-          "The internal labor capitalization piece deserves its own paragraph because it is the part most CFOs haven't seen done correctly. Internal salaries on the project — the in-house team members, the SMEs from the beehive, the operator-side leadership working alongside the engagement — flow to the balance sheet as work-in-progress asset, not the P&L, while in development. This is real money. On a multi-year transformation, internal labor often runs into the multi-millions; capitalizing it during the build phase rather than expensing it produces material P&L smoothing across the build years. The framework exists in BOSS — capitalization tracking is native to the Delivery pillar's governance sub-module, audit-defensible, ready for the external auditors who'll review the cap treatment at fiscal year-end. The cap treatment itself is the receiving CFO's ongoing responsibility; the framework gets institutionalized during P1 and the discipline transfers at P6 handoff. *Consistent with the structurally-lean model — the consultant doesn't own the cap treatment forever; the client institutionalizes it.*",
-        ],
-      },
-      {
-        heading: "The depreciation period",
-        paragraphs: [
-          "At go-live, the capitalized investment becomes a fixed asset and depreciation begins. **The standard period for major enterprise transformation is ten years.** Field-validated with sitting CFOs across multiple engagements; consistent with the useful life of the underlying systems and operating fabric. A multi-year transformation that capitalized at twenty to thirty million across build years depreciates over the next decade — the post-go-live P&L impact lands as a smoothed annual depreciation rather than a single front-loaded expense.",
-          "The board sees the math differently. Build-phase: balance-sheet asset, no P&L hit. Go-live moment: asset placed in service. Post-go-live: smoothed depreciation over ten years. The CFO defends the funding artifact at the audit committee with a structure the auditors recognize. The board approves the program because the financial impact lands in the rhythm of operating leverage, not in the rhythm of one-time write-downs. *Most consultants pitch transformation as a P&L hit; this model pitches it as an asset.* The conversational difference at the C-suite table is large.",
-        ],
-      },
-      {
-        heading: "The vendor-partner trap",
-        paragraphs: [
-          "The dominant failure mode of $10–15M ERP and business-system implementations is partner-led delivery. The licensed VAR or systems-integrator partner gets brought in to run the whole program at billable hours. The structural failure mode stacks. *Wrong organism* — vendor-implementation specialists are not transformation specialists. They install the platform; they don't change the operating model. *Wrong economic incentive* — billable-hours partners get paid more for slower, longer, more iterative engagements. *Wrong staffing* — senior consultants are shared across multiple clients; junior consultants do most of the actual work. *Wrong framework* — vendor-economics dressed up as transformation framework. *Wrong governance* — partner consultants cannot govern C-suite standoffs because they have no political capital with the buying organization.",
-          "The pattern is so consistent across industries, vendors, and decades that it is no longer arguable — it is structural. *Ask any failed ERP project who was running the show. Almost always it was the vendor partner. Ask any successful complex transformation. Almost always it was a transformation leader operating above the vendors.* The escape is structural, not negotiated. A different organism runs the project. The transformation framework runs above the vendors. The vendor partners stay productive in their domain expertise; their economics get re-bounded into lanes. The Acumatica VAR runs the Acumatica configuration lane. The Workday partner runs the HRIS lane. The WMS vendor runs the WMS lane. Each is contained to domain expertise. None of them runs the program. *BOSS holds the substrate.* Governance lives at the transformation layer — decisions traced, register-driven, audit-clean — and rolls down to vendor lanes through bounded interfaces.",
-          "The economics implication is large. The transformation-above-vendors model is often **cheaper** on the external program because there are fewer billable hours from senior partners, contained vendor-lane scopes, and no managed-services tail. It is dramatically more favorable on P&L treatment because capitalization tracking is built in correctly. *Big-4 transformation practices have the same structural problems with bigger brand and bigger fees — the organism failure mode does not get smaller as the firm gets bigger.*",
-        ],
-      },
-      {
-        heading: "Documentation as byproduct",
-        paragraphs: [
-          "The operator-adoption holy grail is documentation that doesn't drift. *Most transformations produce SOPs that go stale within a quarter.* Every transformation goes through the same sequence: SOPs authored at end-of-implementation by a documentation team or a change-management workstream, go-live happens, operators reference the SOPs for the first month or two, find errors and gaps, trust collapses by month three, training programs decouple from operational reality, tribal knowledge takes over. The next CIO inherits *\"we have SOPs\"* alongside the unspoken *\"but nobody trusts them.\"*",
-          "Off-the-shelf categories all half-solve a piece and none close the loop. Learning Management platforms ship content delivery infrastructure but don't generate the content. Knowledge Management tools hold whatever someone wrote, until what they wrote stops being true. Business Process Management tools produce process diagrams that don't tell an operator how to run a purchase order. Process Mining looks backward at what happened. RPA documentation reads like a robot wrote it because one did. *None of them connect to the moment the procedure was actually validated in the live system. That moment is the only honest source of \"this is how the work is done.\"*",
-          "BOSS solves this by construction. SOPs auto-generate at the Business Process Step level as a byproduct of UAT validation cycles in P4. As end-to-end and UAT testers execute and sign off on validation cycles, the test execution evidence — step descriptions, screenshots, expected results, tips, warnings — becomes the SOP content. SOPs auto-generate on signoff. Standardized branding per client. Embedded visuals. Version control. Document-control table. On-screen viewing or download. *The SOPs look like the company invested in their training because the company is investing in their training, every cycle.* Once produced, BOSS knows when an underlying step changes and auto-flags the SOP stale. The maintenance loop is automatic. The training material doesn't go on a shelf; the operating procedure of the business stays current as a side effect of the operating system running. *Thirty years of transformation work and nobody else has solved this.* This is the differentiator post-go-live.",
-        ],
-      },
+    whoItsFor: [
+      "CFOs evaluating transformation funding mechanics and audit-defensibility",
+      "CIOs inheriting board-approval-tier programs that need delivery discipline",
+      "COOs and EVP-Operations leaders responsible for operational continuity through 24-month change",
     ],
-    closer: [
-      "The discipline IS the differentiation. PM, stakeholder and change management, and agile-fall mode-switching as one integrated practice. Persistence substrate underneath so the work compounds across phases rather than restarting. Capitalization treatment under ASC 350-40 with audit-defensible structure that lets the CFO defend the program as a capital investment rather than a P&L hit. Ten-year depreciation post-go-live that smooths the financial impact over the useful life of the operating fabric. Vendor partners contained inside lanes, not running the program. SOP machine that closes the loop on documentation drift as a byproduct of validation cycles already running. *Structurally lean by architecture.* No carried bench. No managed-services tail. No client lock-in. Mutual break-clauses, clean exits by design.",
-      "A transformation program of this scope, run this way, is often **lower total cost** than the partner-led alternative — fewer billable hours from senior partners, contained vendor-lane scopes, no managed-services tail, plus internal-labor capitalization tracking that produces material P&L smoothing the partner-led model can't deliver. *CFO wins on three axes: lower total cost, higher outcome certainty, smoothed P&L impact.* Three CFO wins, one structural choice.",
-      "Where this fits on the path: this article speaks to the integrated delivery discipline that runs across all phases of the engagement arc, with the financial mechanics most visible at P1 and P6. The phase-by-phase atlas, with the engagement shapes Robert plugs into at each entry point, is at the transformation atlas.",
-    ],
-    related: ["transformation-and-the-people-of-it", "applied-agentics"],
+    keyQuote:
+      "Most consultants pitch transformation as a P&L hit; this model pitches it as an asset.",
+    heroKey: "integrated-delivery",
+    crossLinks: {
+      companion: {
+        slug: "transformation-and-the-people-of-it",
+        badge: "Article 1 · Lens 1",
+        title:
+          "What business transformation actually is — and who it's done with",
+        description:
+          "The companion lens. The architecture and the people layer of the same 24-month engagement.",
+      },
+      standalone: {
+        slug: "applied-agentics",
+        badge: "Article 3 · Standalone",
+        title: "Applied agentics — agents deployed as a business asset",
+        description:
+          "The rare credential. Production agents that capitalize as operating-fabric assets under the same ASC 350-40 treatment.",
+      },
+      atlas: {
+        title: "Where on the path are you?",
+        description:
+          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
+      },
+    },
   },
   {
     slug: "applied-agentics",
-    title: "Applied agentics",
-    thesis:
-      "Five domain-experienced production apps in live operations. The framework that makes deployments repeatable. The data foundation precondition.",
-    readingMinutes: 12,
-    opening: [
-      "The mid-market is being pitched agentic AI by people who haven't shipped anything. *Most \"AI advisory\" in the market is opinions and slides.* Demos polished for the Zoom call. Pilots that never made it to production. Strategy decks that frame agentics as a transformation theme without naming a single production agent in live operations or a single operator who has been trained against actual production failure modes. The hand-waver pattern is universal: *\"We help organizations think about their AI strategy.\"* No production apps. No operator empowerment layer. No data foundation. No governance framework. The buyer-verifiable test cuts cleanly: *can you point to production apps in live operations today, and tell me what value they delivered last quarter?* The hand-wavers can't answer.",
-      "Real applied agentics looks different. Five domain-experienced production apps in live operations is the proof. The framework is what makes it repeatable. The data foundation is the precondition without which the deployments produce theater. The agentic policy distinct from the AI use policy is the governance recognition that lets the operating organization treat agents as systems behavior rather than as human behavior dressed up in different language. *Agentics is engagement-shape-determining.* Binary at proposal level: this engagement is agentic, or it isn't. It changes how the work gets done — not how email gets read.",
+    title: "Applied agentics — agents deployed as a business asset",
+    subtitle:
+      "The rare credential — knowing what agentics is and how to ship it into operations",
+    pairBadge: "Article 3 · Standalone",
+    readingTimeMin: 13,
+    category: "The rare credential",
+    lede:
+      "The mid-market is being pitched agentic AI by people who haven't shipped anything. Most “AI advisory” in the market is opinions and slides. Demos polished for the Zoom call. Pilots that never made it to production. The buyer-verifiable test cuts cleanly: can you point to production apps in live operations today, and tell me what value they delivered last quarter?",
+    abstract:
+      "Real applied agentics requires shipped framework + production apps + the data foundation that makes them possible. This article walks through what agentics actually means at production scale (not chatbots, not pilots), the five-component framework that makes deployments repeatable, the data foundation precondition that distinguishes real applied agentics from theater, the corporate-IT confusion between AI use policy and agentic policy, and the five production-app patterns deployed across a multi-year engagement.",
+    whatYoullLearn: [
+      "The buyer-verifiable test for whether a consultant has done real applied agentics work",
+      "Why agentic policy is structurally different from AI use policy — and why most mid-market orgs have only the second",
+      "The five production-app patterns that the framework deploys at pattern level",
+      "Why agentics is engagement-shape-determining (binary at proposal level) and how it capitalizes under ASC 350-40",
     ],
-    sections: [
-      {
-        heading: "What \"agentics\" means at production scale",
-        paragraphs: [
-          "Agentics at production scale is not chatbots. Not pilots. Not Slack integrations that pretend to be agents because they wrap an LLM call in a button. Production agentics means **domain-experienced applications running in operations, used by operators, integrated with tier-1 systems, decisioning at sub-process level.** The agent has a defined job in the operating fabric. The operator interacts with the agent the way they interact with any other system. The agent's outputs feed downstream operational decisions or get consumed by other systems. The agent's failure modes are known, governed, and recoverable. The agent's training and onboarding lives inside the same Delivery discipline that governs the rest of the operating fabric.",
-          "The shift from pilot to production is the shift most consultants and most vendors haven't made. Pilots run as experiments in isolated environments with synthetic data and aspirational use cases. Production runs against real operational pressure points with sovereign data and actual operator dependence. The substrate has to exist for production to be possible at all — sovereign data, governed master data, integration topology that lets the agent read coherent state and write traceable changes. *Agentics lives off data. Without sovereign, governed, commoditized data, agentic deployments produce theater.* This is the load-bearing precondition of the entire applied-agentics practice, and it is the part most AI advisory skips.",
-        ],
-      },
-      {
-        heading: "The framework",
-        paragraphs: [
-          "Frameworks travel and bespoke apps don't. Five components — each shipped, each repeatable across clients, each documented inside the operating substrate so the in-house team can extend the framework after the engagement closes.",
-          "**Governance.** The policy layer for what agents can decide, what they must escalate, what they must log. Decision rights at sub-process level — where the agent's decision is final, where it requires operator confirmation, where it triggers human escalation. Audit trail at decision granularity — every agent decision logged with rationale and inputs and outputs and the operator who interacted (if any). Drift signals — automatic detection when agent behavior departs from expected distribution, with operator-side alerts. The governance layer is what allows the CISO and the external auditors to sign off on agents in production at scale; without it, deployment is structurally impossible.",
-          "**Security.** Identity, access, audit, data-handling discipline that satisfies the CISO and the external auditors. Agent identity as a first-class system identity, not a service-account workaround. Access control at the data layer the agent reads against — the agent has a row-level or column-level access policy aligned with the operator role it is augmenting. Data-handling for confidential or regulated data — agents that touch SOX-relevant data run inside a different governance envelope than agents that augment customer service operators on non-sensitive intake. The security layer is what allows agents to deploy at all in regulated industries.",
-          "**Onboarding.** How a new agent gets into production, how it inherits the data substrate, how it gets tested before it touches operator-facing decisions. The onboarding pipeline is what allows the in-house team to deploy agent-six and agent-seven after the engagement closes. New agents inherit the governance layer, the security layer, and the data substrate by construction. UAT cycles validate the agent against production-shaped scenarios before cutover. *No two-month gap between \"the agent is built\" and \"the agent is in production.\"*",
-          "**Training.** Operator-side training so the people working alongside agents know what the agents are doing, how to override, when to flag drift. This is not generic AI literacy training. It is operator-specific training tied to the specific agents the operator interacts with. The customer service operator working alongside the institutional-knowledge retrieval agent is trained against the actual retrieval failure modes of that agent in their specific context. The training material auto-generates from the agent's onboarding documentation and the UAT validation evidence — same mechanism that produces the SOP machine for the operating fabric overall.",
-          "**Operator empowerment.** The layer most AI advisory skips. *Where the agents become tools the operators trust because they understand the failure modes.* Operators learn when to override the agent, when to escalate drift, when to retrain a model component, when to flag a governance gap. The empowerment layer is what makes the agent deployments compound rather than decay — operators who don't trust the agent route around it; operators who understand the failure modes work with it productively. After thirty years of transformation work, the empowerment layer is the consistent differentiator between agents that land and agents that don't.",
-        ],
-      },
-      {
-        heading: "The data foundation precondition",
-        paragraphs: [
-          "Agentics lives off data. The architecture for sovereign data is the architecture for production agentics. Without it, agentic deployments are theater. The Common Data Model the client owns, master data managed at the enterprise level, integration topology governed by the client, six-constellation process map that frames the operating model — these are not separate from the agentics layer. They are the substrate the agentics layer rides on. *BOSS as the data foundation* — Data pillar specifically. The Common Data Model lives there. Master data management lives there. The Systems Register and the Beehive Register that the agents also consume live there. The architectural fork that distinguishes vendor-agnostic data-centric architecture from ERP-centric architecture is the architectural fork that distinguishes real applied agentics from agentic theater.",
-          "The buyer-verifiable test for whether a consultant has done the data-foundation work is the same as for the agentics work. Most *\"AI strategy\"* engagements treat the data foundation as a parallel workstream — the agents will deploy *\"once the data is ready,\"* and the readiness work is scoped as a separate engagement that compounds in cost and rarely converges. The integrated approach treats the data foundation as the substrate the agentics layer is sequenced on top of. Phases 1 through 4 of the engagement build the data and people foundation. Phase 5 is when the agentics layer compounds because the substrate is real. Without that sequence, the agentic deployments produce demos for the steering committee and zero operational impact. *Agentics without the data foundation = theater. Agentics with the foundation = institutionalized operating leverage.*",
-        ],
-      },
-      {
-        heading: "The corporate-IT confusion",
-        paragraphs: [
-          "Most *\"AI policies\"* in mid-market businesses are AI use policies dressed as agentic policies. *\"Employees can use ChatGPT for these purposes. Employees may not paste customer data into public LLM tools. Employees should disclose AI assistance in customer-facing deliverables.\"* All useful — but governing human behavior, not systems behavior. The agentic policy governs systems behavior: agents running in production with framework-level governance, security, training, onboarding, operator empowerment.",
-          "The two policies are not the same and the failure modes are different. AI use policy is HR-adjacent — owned by the CHRO or the legal team, enforced through training and disclosure. Agentic policy is operating-fabric — owned by the CIO and the CISO together, enforced through technical controls and audit trails. *Confusing the two produces an organization with a five-page AI use policy and zero production agents* — which is the position of most of the mid-market right now. The policy work that lets agentic deployment happen at all is operating-fabric work; the policy work that governs employee LLM use is HR work. Both are necessary, neither substitutes for the other.",
-        ],
-      },
-      {
-        heading: "Engagement-shape determination",
-        paragraphs: [
-          "Agentics is binary at proposal level. The work changes. The deliverables change. The cadence changes. The audit treatment changes — agents that touch tier-1 systems are part of the system, not adjacent to it, and they get governed, capitalized, and audit-tracked the same way the systems they ride on do. The capitalization model is the same as for the broader transformation: ASC 350-40 applies to the build-phase of agentic infrastructure including internal labor; the agentic framework, the policy work, and the deployment scaffolding capitalize as build-phase costs; post-go-live the asset depreciates over the same ten-year period as the broader operating fabric.",
-          "The reasoning is structural. An agent that decisions on a customer service intake, decides a credit hold release, allocates inventory across warehouses, retrieves institutional knowledge for an operator handling a complex case, or orchestrates across systems to settle a multi-vendor order — that agent is part of the operating fabric. It is governed by the same audit-defensibility requirements as the systems it touches. It capitalizes during build phase under the same accounting treatment. It depreciates over the same period. *The agent is not adjacent to the system; the agent is part of the system.* The engagement that deploys the agent has to recognize this at proposal level or the financial structure won't hold.",
-        ],
-      },
-      {
-        heading: "Five production apps — at pattern level",
-        paragraphs: [
-          "Five domain-experienced production apps deployed across a multi-year engagement. Each one against a real operational pressure point. Each one compounding on the data foundation built in the prior phases. The patterns are publishable; the specific implementations are IP.",
-          "**Operational decisioning.** The agent makes sub-process operational decisions inside a defined governance envelope. Credit hold releases that don't require senior operator review for routine cases. Inventory allocation across warehouses for multi-line orders against a defined optimization function. Production scheduling exception handling for routine deviations. The agent's job is to take the routine decisions off the operator's plate so the operator focuses on the exception cases the agent escalates. The value compounds because the operator's capacity expands without headcount.",
-          "**Institutional-knowledge retrieval.** The agent retrieves institutional knowledge for an operator handling a complex case — a customer service representative dealing with a product issue that requires history across multiple touchpoints; a finance operator reconciling an unusual transaction that requires context across legal entities; a procurement operator handling a vendor escalation that requires institutional history. The retrieval is grounded in the Common Data Model the client owns; the agent's outputs are traceable to source records the operator can verify. The value compounds because institutional knowledge stops walking out the door when the operator who carried it leaves.",
-          "**Document-to-structured-data intake.** The agent ingests unstructured documents — invoices, purchase orders, contract amendments, regulatory filings, insurance certificates, vendor onboarding paperwork — and produces structured data that flows into the operating systems. The intake quality is bounded by the governance layer; low-confidence extractions route to human review with the agent's interpretation as the starting point rather than the operator typing from scratch. The value compounds because intake throughput expands without proportional headcount.",
-          "**Cross-system orchestration.** The agent orchestrates a multi-step workflow across multiple tier-1 systems — quote-to-order-to-fulfillment that touches CRM, ERP, WMS, and downstream finance; vendor onboarding that touches procurement, legal, finance, and identity; new-hire onboarding that touches HRIS, IT provisioning, training, and access management. The orchestration runs against the integration topology the data foundation provides; the agent's actions are traceable at the decision-point granularity. The value compounds because the multi-step workflows that previously required operator coordination now run as supervised automation.",
-          "**Operator decision-support.** The agent augments the operator's decision-making in real-time with context the operator would have to assemble manually. The customer service representative gets a synthesized view of the customer's history across systems; the finance operator gets a synthesized view of the transaction's risk profile; the procurement operator gets a synthesized view of the vendor's reliability across the prior relationship. The agent does not decide; the agent presents. The value compounds because the operator's effective expertise expands across the breadth of the institutional record.",
-          "The patterns are not exhaustive. Other production-app patterns surface in specific industries — manufacturing routing optimization, regulated-data compliance review, supply-chain exception handling, operator-side training simulation. The framework travels; the apps deploy against the operational pressure points the engagement reveals. *The framework is what makes it repeatable.*",
-        ],
-      },
-      {
-        heading: "Why these aren't chatbots",
-        paragraphs: [
-          "The difference between an agent that retrieves and an agent that decides is the difference between augmentation and decisioning. Chatbots retrieve, route, and surface. Production agents decide inside a governance envelope, log the decision with rationale and audit trail, escalate the exception cases, and integrate their outputs into downstream operational systems. The deployment shape is fundamentally different — chatbots run as front-end widgets; production agents run as system components.",
-          "The deployment cycle is fundamentally different too. A chatbot can deploy in two weeks because it doesn't decision against operating-fabric data and doesn't carry audit-defensibility requirements. A production agent that decisions credit hold releases or allocates inventory across warehouses runs against the data foundation the engagement built; goes through UAT validation cycles inside the same Delivery pillar that governs the rest of the operating fabric; carries an SOP that auto-generates from the validated proof set; ships against an agentic policy ratified by the CIO and the CISO. The deployment cycle is longer because the substrate is real — and the deployments compound because the substrate is real.",
-        ],
-      },
-      {
-        heading: "Engagement shapes for agentics",
-        paragraphs: [
-          "**Standalone agentics.** Where the data foundation is mature — sovereign Common Data Model, MDM at the enterprise level, integration topology governed — the agentics engagement deploys against the existing substrate. Engagement length is typically twelve to eighteen months scoped against the five-app pattern with framework institutionalization. The CIO and the CISO retain their seats; the framework transfers to the in-house IT team and the BOSS open-source community at handoff.",
-          "**Stacked on Embedded or Fractional.** Where the data foundation is being deployed concurrently — full transformation residency or a fractional data-foundation rebuild — the agentics layer sequences after Phases 1 through 4 of the broader engagement and lands in Phase 5. The substrate compounds across the engagement; agentic deployment compounds against the substrate. This is the natural shape for full residency engagements that include applied agentics as the Phase 5 outcome layer.",
-          "**Readiness-prep advisory.** Where the data foundation isn't ready — fragmented master data, ERP-centric architecture, integration debt — agentic deployment is not yet possible at production scale. The engagement shapes as data-foundation rebuild first, agentics after. The agentic engagement does not deploy agents into a substrate that produces theater; the data-foundation engagement deploys agents only when the substrate is real. This is the structural sequencing that distinguishes real applied agentics from the *\"AI strategy\"* engagements that compound in cost without converging on production deployment.",
-        ],
-      },
+    whoItsFor: [
+      "CIOs and CTOs being pitched agentics by hand-wavers without shipped work",
+      "COOs ready to deploy production agents against real operational pressure points",
+      "CFOs evaluating agentics as a capitalizable operating-fabric asset",
     ],
-    closer: [
-      "The framework travels. The data foundation requirement is structural, not preference. The five apps are the proof. *Agentic policy is not AI use policy.* Engagement-shape determining at proposal level. Capitalizes under ASC 350-40 as part of the operating fabric the agents are part of. Depreciates over the same ten-year period as the broader transformation. Operator empowerment as the differentiating layer that makes the deployments compound rather than decay. *Five domain-experienced production apps in live operations is the proof; the framework is what makes it repeatable.*",
-      "The market is past the *\"do we believe?\"* stage. Awareness of agentics is universal. Every CIO, COO, CFO, CEO has been pitched it, sat through demos, read the strategy decks. What is rare — and what creates the buyer's actual pain — is frameworks that ship outcomes of value. Most consultants are selling at the awareness layer. Real applied agentics sells at the framework-plus-outcomes layer, against a data foundation built for the purpose. The buyer-verifiable test cuts cleanly. The hand-wavers can't pass it. A handful of operators can.",
-      "Where this fits on the path: this article speaks to Phase 5 specifically — applied agentics deployment — and to the structural prerequisites in Phases 1 through 4 that the agentics layer depends on. The phase-by-phase atlas, with the engagement shapes at each entry point, is at the transformation atlas.",
-    ],
-    related: ["transformation-and-the-people-of-it", "the-mechanics"],
+    keyQuote:
+      "Agentics lives off data. Without sovereign data, agentic deployments produce theater.",
+    heroKey: "framework-foundation",
+    crossLinks: {
+      // Article 3 is standalone — its substrate is BOTH lens articles, not a single companion.
+      substratePair: [
+        {
+          slug: "transformation-and-the-people-of-it",
+          badge: "Article 1 · Lens 1",
+          title:
+            "What business transformation actually is — and who it's done with",
+          description:
+            "The architectural fork that makes sovereign data possible at all — the precondition this agentics layer rides on.",
+        },
+        {
+          slug: "the-mechanics",
+          badge: "Article 2 · Lens 2",
+          title: "The mechanics — PM, budget, capital structure",
+          description:
+            "The integrated delivery discipline that institutionalizes the framework — the mechanism by which agents capitalize as assets.",
+        },
+      ],
+      atlas: {
+        title: "Where on the path are you?",
+        description:
+          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
+      },
+    },
   },
 ];
 
@@ -286,11 +217,4 @@ export const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return ARTICLES.find((a) => a.slug === slug);
-}
-
-export function getRelatedArticles(slugs: string[]): { slug: string; title: string }[] {
-  return slugs
-    .map((s) => ARTICLES.find((a) => a.slug === s))
-    .filter((a): a is Article => Boolean(a))
-    .map((a) => ({ slug: a.slug, title: a.title }));
 }

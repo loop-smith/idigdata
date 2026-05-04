@@ -8,14 +8,14 @@ import { ARTICLES } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Articles",
   description:
-    "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale.",
+    "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
   alternates: { canonical: "/articles/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/articles/",
     title: "Articles — idigdata",
     description:
-      "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale.",
+      "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
     images: [
       {
         url: "/og-image.png",
@@ -36,6 +36,11 @@ const breadcrumbJsonLd = {
   ],
 };
 
+function firstSentence(text: string): string {
+  const match = text.match(/^.*?[.!?](?=\s|$)/);
+  return match ? match[0] : text;
+}
+
 export default function ArticlesIndexPage() {
   return (
     <div className="mx-auto max-w-content px-6">
@@ -46,10 +51,12 @@ export default function ArticlesIndexPage() {
           Articles
         </h1>
         <p className="mt-6 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          Three pro-level reads on what business transformation actually is, how
-          it gets delivered, and what real applied agentics looks like at
-          production scale. Build belief at depth, then locate where on the
-          path you fit on the{" "}
+          Three pro-level reads on what business transformation actually is,
+          how it gets delivered, and what real applied agentics looks like at
+          production scale. Articles are sent to qualified requesters by
+          request — not posted publicly. Read the summary; if the substance is
+          what you need, request access. Locate where on the path you fit on
+          the{" "}
           <Link
             href="/atlas/"
             className="not-italic font-body text-navy border-b border-navy/40 hover:border-navy"
@@ -68,9 +75,11 @@ export default function ArticlesIndexPage() {
             <ArticleCard
               key={a.slug}
               slug={a.slug}
+              pairBadge={a.pairBadge}
               title={a.title}
-              thesis={a.thesis}
-              readingMinutes={a.readingMinutes}
+              hook={firstSentence(a.abstract)}
+              readingTimeMin={a.readingTimeMin}
+              category={a.category}
             />
           ))}
         </div>

@@ -5,13 +5,49 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const ARTICLE_TITLES: Record<string, string> = {
-  "architectural-fork": "The architectural fork",
-  "integrated-delivery": "The integrated delivery discipline",
-  "vendor-partner-trap": "The vendor-partner trap",
-  "agile-fall": "Agile-fall",
-  "six-constellations": "The six constellations",
-  beehive: "The beehive",
+// Article slug → friendly title + source markdown file. Friendly title is used
+// in the Resend subject; source filename is included in the notification body
+// so Rob has the path to the underlying markdown for the manual Phase-1 PDF
+// send. Slugs match lib/articles.ts and content/articles/*.md filenames.
+const ARTICLE_SLUG_META: Record<string, { title: string; sourceFile: string }> = {
+  "transformation-and-the-people-of-it": {
+    title: "What business transformation actually is — and who it's done with",
+    sourceFile: "01-transformation-and-the-people-of-it.md",
+  },
+  "the-mechanics": {
+    title: "The mechanics — PM, budget, capital structure",
+    sourceFile: "02-the-mechanics.md",
+  },
+  "applied-agentics": {
+    title: "Applied agentics — agents deployed as a business asset",
+    sourceFile: "03-applied-agentics.md",
+  },
+  // Legacy slugs (older landing-page proposals) — kept for backwards-compat
+  // so any link rot before v2-overhaul ships still routes cleanly.
+  "architectural-fork": {
+    title: "The architectural fork",
+    sourceFile: "(legacy slug — see article-01)",
+  },
+  "integrated-delivery": {
+    title: "The integrated delivery discipline",
+    sourceFile: "(legacy slug — see article-02)",
+  },
+  "vendor-partner-trap": {
+    title: "The vendor-partner trap",
+    sourceFile: "(legacy slug)",
+  },
+  "agile-fall": {
+    title: "Agile-fall",
+    sourceFile: "(legacy slug)",
+  },
+  "six-constellations": {
+    title: "The six constellations",
+    sourceFile: "(legacy slug)",
+  },
+  beehive: {
+    title: "The beehive",
+    sourceFile: "(legacy slug)",
+  },
 };
 
 const ContactSchema = z.object({
@@ -60,15 +96,22 @@ export async function POST(req: NextRequest) {
   const { name, email, role, company, message, interestType, articleSlug } =
     parsed.data;
 
-  // The leads table requires non-empty company/role/message. For optional fields
-  // we substitute defaults that the CRM can recognize as "not supplied".
+  const isArticleRequest = interestType === "article_request";
+
+  // The leads table requires non-empty company/role/message. For optional
+  // fields we substitute defaults that the CRM can recognize as "not supplied".
   const companyForDb = company.trim().length > 0 ? company : "(not supplied)";
   const roleForDb = role.trim().length > 0 ? role : "(not supplied)";
 
-  const articleTitle = articleSlug ? ARTICLE_TITLES[articleSlug] : undefined;
+  const articleMeta = articleSlug ? ARTICLE_SLUG_META[articleSlug] : undefined;
+  const articleTitle = articleMeta?.title;
 
   // Compose a metadata-prefixed message body so interestType + articleSlug
-  // survive into the CRM without a schema migration. Format is grep-friendly.
+  // survive into the CRM today (pre-migration), and remain greppable after
+  // the dedicated request_type / article_slug columns land. The migration at
+  // supabase/migrations/20260504_leads_add_request_type_and_article_slug.sql
+  // is queued for manual application; until applied this prefix is the
+  // primary signal carrier.
   const metaLines: string[] = [];
   metaLines.push(`[interestType=${interestType}]`);
   if (articleSlug) {
@@ -81,7 +124,7 @@ export async function POST(req: NextRequest) {
     metaLines.join(" "),
     baseMessage.length > 0
       ? baseMessage
-      : interestType === "article_request" && articleTitle
+      : isArticleRequest && articleTitle
       ? `Article request: ${articleTitle}`
       : "(no message supplied)",
   ].join("\n\n");
@@ -97,10 +140,7 @@ export async function POST(req: NextRequest) {
     company: companyForDb,
     role: roleForDb,
     message: messageForDb,
-    source:
-      interestType === "article_request"
-        ? "website-article-request"
-        : "website-contact",
+    source: isArticleRequest ? "website-article-request" : "website-contact",
     source_url: req.headers.get("referer") ?? "https://idigdata.com/contact",
     user_agent: req.headers.get("user-agent") ?? null,
   });
@@ -109,10 +149,52 @@ export async function POST(req: NextRequest) {
     console.error("contact form db error:", dbError);
   }
 
-  const subject =
-    interestType === "article_request"
-      ? `Article request: ${articleTitle ?? articleSlug ?? "unknown"}`
-      : `New idigdata lead: ${name}`;
+  const subject = isArticleRequest
+    ? `[idigdata] Article request: ${articleTitle ?? articleSlug ?? "unknown"}`
+    : `[idigdata] New lead: ${name}`;
+
+  // Resend notification — Phase 1 manual approval workflow.
+  // Article-request format includes the source markdown filename so Rob has
+  // the pointer to the underlying body when manually preparing the PDF.
+  let textBody: string;
+  if (isArticleRequest) {
+    textBody = [
+      `Article request received.`,
+      ``,
+      `Requester: ${name}`,
+      `Email: ${email}`,
+      `Role: ${roleForDb}`,
+      `Company: ${companyForDb}`,
+      `Article: ${articleTitle ?? articleSlug ?? "—"}`,
+      ``,
+      `Optional context: ${baseMessage.length > 0 ? baseMessage : "—"}`,
+      ``,
+      `Submitted: ${new Date().toISOString()}`,
+      ``,
+      `To approve: send the PDF deliverable manually for now (Phase 1).`,
+      `Article body source: idigdata/positioning/articles/pro/${articleMeta?.sourceFile ?? "(unknown source)"}`,
+      ``,
+      `---`,
+      `Source: website-article-request (${req.headers.get("referer") ?? "unknown"})`,
+      `User-Agent: ${req.headers.get("user-agent") ?? "unknown"}`,
+      `DB insert: ${dbError ? "FAILED — " + dbError.message : "ok"}`,
+    ].join("\n");
+  } else {
+    textBody = [
+      `From: ${name} <${email}>`,
+      `Role: ${roleForDb}`,
+      `Company: ${companyForDb}`,
+      `Interest: ${interestType}`,
+      ``,
+      `Message:`,
+      baseMessage.length > 0 ? baseMessage : "(no message supplied)",
+      ``,
+      `---`,
+      `Source: website-contact (${req.headers.get("referer") ?? "unknown"})`,
+      `User-Agent: ${req.headers.get("user-agent") ?? "unknown"}`,
+      `DB insert: ${dbError ? "FAILED — " + dbError.message : "ok"}`,
+    ].join("\n");
+  }
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY!);
@@ -121,23 +203,7 @@ export async function POST(req: NextRequest) {
       to: process.env.EMAIL_NOTIFY_TO!,
       replyTo: email,
       subject,
-      text: [
-        `From: ${name} <${email}>`,
-        `Role: ${roleForDb}`,
-        `Company: ${companyForDb}`,
-        `Interest: ${interestType}`,
-        articleSlug ? `Article: ${articleTitle ?? articleSlug}` : null,
-        ``,
-        `Message:`,
-        baseMessage.length > 0 ? baseMessage : "(no message supplied)",
-        ``,
-        `---`,
-        `Source: ${interestType === "article_request" ? "website-article-request" : "website-contact"} (${req.headers.get("referer") ?? "unknown"})`,
-        `User-Agent: ${req.headers.get("user-agent") ?? "unknown"}`,
-        `DB insert: ${dbError ? "FAILED — " + dbError.message : "ok"}`,
-      ]
-        .filter((l): l is string => l !== null)
-        .join("\n"),
+      text: textBody,
     });
   } catch (emailError) {
     console.error("contact form email fallback error:", emailError);

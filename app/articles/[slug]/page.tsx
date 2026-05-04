@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
-import { renderInline } from "@/lib/articleRender";
-import {
-  ARTICLES,
-  getArticleBySlug,
-  getRelatedArticles,
-} from "@/lib/articles";
+import ArticleLanding from "@/components/ArticleLanding";
+import { ARTICLES, getArticleBySlug } from "@/lib/articles";
 
 type RouteParams = { slug: string };
 
@@ -24,15 +18,17 @@ export async function generateMetadata(
   if (!article) {
     return { title: "Article not found" };
   }
+  // OG / search description draws from the public abstract — never the body.
+  const description = article.abstract.substring(0, 160);
   return {
     title: article.title,
-    description: article.thesis,
+    description,
     alternates: { canonical: `/articles/${article.slug}/` },
     openGraph: {
       type: "article",
       url: `https://idigdata.com/articles/${article.slug}/`,
       title: article.title,
-      description: article.thesis,
+      description,
       images: [
         {
           url: "/og-image.png",
@@ -52,8 +48,8 @@ export default async function ArticlePage(
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const related = getRelatedArticles(article.related);
-
+  // Article object contains only public-safe landing data; body lives
+  // server-only at content/articles/*.md (see lib/articles-body.ts).
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -83,123 +79,15 @@ export default async function ArticlePage(
       name: "idigdata, LLC",
       url: "https://idigdata.com",
     },
-    description: article.thesis,
+    description: article.abstract,
     url: `https://idigdata.com/articles/${article.slug}/`,
   };
 
   return (
-    <div className="mx-auto max-w-[760px] px-6">
+    <>
       <JsonLdScript data={breadcrumbJsonLd} />
       <JsonLdScript data={articleJsonLd} />
-
-      <article className="pt-16 md:pt-20">
-        <h1 className="font-vollkorn font-bold text-navy text-[34px] md:text-[44px] leading-[1.1] tracking-tight">
-          {article.title}
-        </h1>
-        <p className="mt-4 font-display italic text-stone text-[15px]">
-          By Robert Paddock &middot; idigdata
-          {article.readingMinutes ? ` · ${article.readingMinutes} min read` : ""}
-        </p>
-
-        <AccentRule className="mt-8 mb-8" />
-
-        <div className="space-y-5">
-          {article.opening.map((para, i) => (
-            <p
-              key={`open-${i}`}
-              className="text-[18px] text-ink leading-relaxed"
-            >
-              {renderInline(para)}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-10 space-y-10">
-          {article.sections.map((section, i) => (
-            <section key={`sec-${i}`}>
-              <h2 className="font-vollkorn font-bold text-navy text-[24px] md:text-[28px] tracking-tight">
-                {section.heading}
-              </h2>
-              <div className="mt-4 space-y-4">
-                {section.paragraphs.map((para, j) => (
-                  <p
-                    key={`sec-${i}-${j}`}
-                    className="text-[16.5px] text-ink leading-relaxed"
-                  >
-                    {renderInline(para)}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-
-        <div className="mt-12">
-          <h2 className="font-vollkorn font-bold text-navy text-[24px] md:text-[28px] tracking-tight">
-            Why this matters
-          </h2>
-          <div className="mt-4 space-y-4">
-            {article.closer.map((para, i) => (
-              <p
-                key={`closer-${i}`}
-                className="text-[16.5px] text-ink leading-relaxed"
-              >
-                {renderInline(para)}
-              </p>
-            ))}
-          </div>
-        </div>
-
-        <hr className="mt-12 mb-10 border-0 border-t border-stone/40" />
-
-        <div className="bg-navy/[0.03] border border-stone/40 p-6 md:p-8">
-          <h2 className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] tracking-tight">
-            Where on the path are you?
-          </h2>
-          <p className="mt-3 text-[15px] text-ink leading-relaxed">
-            The transformation atlas maps the engagement arc phase by phase and
-            marks the moments where Robert plugs in. Locate your position; see
-            the engagement shape that fits.
-          </p>
-          <p className="mt-5">
-            <Link
-              href="/atlas/"
-              className="font-body font-semibold text-navy text-[15px] border-b-2 border-gold pb-0.5 hover:text-navy/80"
-            >
-              Open the atlas →
-            </Link>
-          </p>
-        </div>
-
-        {related.length > 0 ? (
-          <div className="mt-12">
-            <p className="font-body uppercase tracking-section text-[12px] text-stone mb-3">
-              Related
-            </p>
-            <ul className="space-y-2">
-              {related.map((r) => (
-                <li key={r.slug}>
-                  <Link
-                    href={`/articles/${r.slug}/`}
-                    className="font-body text-navy text-[15px] border-b border-navy/30 hover:border-navy"
-                  >
-                    {r.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </article>
-
-      <div className="mt-16 mb-20 text-center">
-        <Link
-          href="/articles/"
-          className="font-body text-stone text-[14px] hover:text-navy"
-        >
-          ← All articles
-        </Link>
-      </div>
-    </div>
+      <ArticleLanding article={article} />
+    </>
   );
 }
