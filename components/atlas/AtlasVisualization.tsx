@@ -50,11 +50,18 @@ export default function AtlasVisualization({ defaultExpanded }: Props) {
         <p className="font-body uppercase tracking-section text-[11px] text-stone mb-3">
           Engagement arc — phase bars sized by duration
         </p>
-        <div className="flex w-full gap-px" role="tablist" aria-label="Engagement phases">
+        {/* Mobile: vertical stack */}
+        <div
+          className="md:hidden flex flex-col gap-1"
+          role="tablist"
+          aria-label="Engagement phases"
+        >
           {PHASES.map((phase) => {
-            const widthPct = (phase.durationMonths / TOTAL_MONTHS) * 100;
             const fill = PHASE_FILL[phase.type];
             const isExpanded = expanded === phase.code;
+            const markersHere = PLUGIN_ENTRY_POINTS.filter((m) =>
+              m.phaseCodes.includes(phase.code),
+            );
             return (
               <button
                 key={phase.code}
@@ -62,54 +69,99 @@ export default function AtlasVisualization({ defaultExpanded }: Props) {
                 role="tab"
                 aria-selected={isExpanded}
                 aria-controls="atlas-phase-detail"
-                onClick={() =>
-                  setExpanded(isExpanded ? null : phase.code)
-                }
-                className={`relative ${fill.bg} ${fill.text} h-16 flex flex-col items-center justify-center transition-all duration-200 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 ${
+                onClick={() => setExpanded(isExpanded ? null : phase.code)}
+                className={`relative ${fill.bg} ${fill.text} w-full px-4 py-3 flex items-center justify-between gap-3 transition-all duration-150 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 ${
                   isExpanded ? "ring-2 ring-gold ring-offset-2 brightness-110" : ""
                 }`}
-                style={{ flexBasis: `${widthPct}%`, minWidth: 0 }}
-                title={`${phase.code} — ${phase.name}`}
               >
-                <span className="font-vollkorn font-bold text-[15px] leading-none">
-                  {phase.code}
+                <span className="flex items-center gap-3 min-w-0">
+                  <span className="font-vollkorn font-bold text-[16px] leading-none flex-shrink-0">
+                    {phase.code}
+                  </span>
+                  <span className="font-body text-[13px] truncate">
+                    {phase.name}
+                  </span>
                 </span>
-                <span className="font-body text-[10px] mt-1 opacity-90 px-1 truncate w-full text-center">
-                  {phase.name}
+                <span className="flex items-center gap-2 flex-shrink-0">
+                  {markersHere.map((m, i) => (
+                    <span
+                      key={`${m.shape}-${i}`}
+                      className={`${SHAPE_COLOR[m.shape]} h-1.5 w-1.5 rounded-full`}
+                      aria-label={`${shapeLabel(m.shape)} entry-point`}
+                    />
+                  ))}
+                  <span className="font-body text-[10.5px] opacity-80 uppercase tracking-wider">
+                    {phase.durationMonths}mo
+                  </span>
                 </span>
               </button>
             );
           })}
         </div>
 
-        {/* Plug-in entry-point markers */}
-        <div className="mt-3 relative h-7">
-          <p className="absolute left-0 top-0 font-body uppercase tracking-section text-[10px] text-stone">
-            Plug-in entry points
-          </p>
-          <div className="flex w-full gap-px mt-4">
+        {/* Desktop: horizontal phase bars */}
+        <div className="hidden md:block">
+          <div className="flex w-full gap-px" role="tablist" aria-label="Engagement phases">
             {PHASES.map((phase) => {
               const widthPct = (phase.durationMonths / TOTAL_MONTHS) * 100;
-              const markersHere = PLUGIN_ENTRY_POINTS.filter((m) =>
-                m.phaseCodes.includes(phase.code),
-              );
+              const fill = PHASE_FILL[phase.type];
+              const isExpanded = expanded === phase.code;
               return (
-                <div
-                  key={`marker-${phase.code}`}
-                  className="flex items-center justify-center gap-1 py-0.5"
+                <button
+                  key={phase.code}
+                  type="button"
+                  role="tab"
+                  aria-selected={isExpanded}
+                  aria-controls="atlas-phase-detail"
+                  onClick={() =>
+                    setExpanded(isExpanded ? null : phase.code)
+                  }
+                  className={`relative ${fill.bg} ${fill.text} h-16 flex flex-col items-center justify-center transition-all duration-200 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 ${
+                    isExpanded ? "ring-2 ring-gold ring-offset-2 brightness-110" : ""
+                  }`}
                   style={{ flexBasis: `${widthPct}%`, minWidth: 0 }}
+                  title={`${phase.code} — ${phase.name}`}
                 >
-                  {markersHere.map((m, i) => (
-                    <span
-                      key={`${m.shape}-${i}`}
-                      className={`${SHAPE_COLOR[m.shape]} h-2 w-2 rounded-full`}
-                      title={`${shapeLabel(m.shape)} — ${m.caption}`}
-                      aria-label={`${shapeLabel(m.shape)} entry-point at ${phase.code}`}
-                    />
-                  ))}
-                </div>
+                  <span className="font-vollkorn font-bold text-[15px] leading-none">
+                    {phase.code}
+                  </span>
+                  <span className="font-body text-[10px] mt-1 opacity-90 px-1 truncate w-full text-center">
+                    {phase.name}
+                  </span>
+                </button>
               );
             })}
+          </div>
+
+          {/* Plug-in entry-point markers (desktop only) */}
+          <div className="mt-3 relative h-7">
+            <p className="absolute left-0 top-0 font-body uppercase tracking-section text-[10px] text-stone">
+              Plug-in entry points
+            </p>
+            <div className="flex w-full gap-px mt-4">
+              {PHASES.map((phase) => {
+                const widthPct = (phase.durationMonths / TOTAL_MONTHS) * 100;
+                const markersHere = PLUGIN_ENTRY_POINTS.filter((m) =>
+                  m.phaseCodes.includes(phase.code),
+                );
+                return (
+                  <div
+                    key={`marker-${phase.code}`}
+                    className="flex items-center justify-center gap-1 py-0.5"
+                    style={{ flexBasis: `${widthPct}%`, minWidth: 0 }}
+                  >
+                    {markersHere.map((m, i) => (
+                      <span
+                        key={`${m.shape}-${i}`}
+                        className={`${SHAPE_COLOR[m.shape]} h-2 w-2 rounded-full`}
+                        title={`${shapeLabel(m.shape)} — ${m.caption}`}
+                        aria-label={`${shapeLabel(m.shape)} entry-point at ${phase.code}`}
+                      />
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 

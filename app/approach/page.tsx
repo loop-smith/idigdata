@@ -55,7 +55,7 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="bg-cream px-8 pt-4 pb-12">
+      <section className="bg-cream px-0 md:px-8 pt-4 pb-12">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
           Three engagement shapes
         </h2>
@@ -106,7 +106,7 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-12 mt-12">
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-12 mt-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Structurally lean
         </h2>
@@ -124,7 +124,7 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="bg-pale-navy px-8 pt-12 pb-12">
+      <section className="bg-pale-navy px-0 md:px-8 pt-12 pb-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           The exit is clean
         </h2>
@@ -140,7 +140,7 @@ export default function ApproachPage() {
         </p>
       </section>
 
-      <section className="bg-pale-navy px-8 pt-12 pb-16">
+      <section className="bg-pale-navy px-0 md:px-8 pt-12 pb-16">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Value-justification
         </h2>
@@ -161,7 +161,7 @@ export default function ApproachPage() {
 
       <section
         id="engagement-roadmap"
-        className="bg-cream px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
+        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
       >
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Engagement roadmap
@@ -182,7 +182,7 @@ export default function ApproachPage() {
       </section>
 
       {/* The diagnostic frame — six constellations */}
-      <section className="bg-cream px-8 pt-16 md:pt-20 pb-16">
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-16">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           The diagnostic frame
         </h2>
@@ -190,13 +190,17 @@ export default function ApproachPage() {
           Every business maps into six constellations. Phase 1 reads the load
           on each — Phase 2 architecture builds from there.
         </p>
-        <div className="mt-8 max-w-4xl mx-auto">
-          <SixConstellations />
+        <div className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
+          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
+            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
+              <SixConstellations />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Inside a sprint — sprint roadmap */}
-      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-16 mt-12">
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-16 mt-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Inside a sprint
         </h2>
@@ -204,8 +208,12 @@ export default function ApproachPage() {
           Engagement-level cadence is sprints. 13 days each. Tasks decompose
           to stories; stories pin to sprints; outputs persist to the next.
         </p>
-        <div className="mt-8 max-w-4xl mx-auto">
-          <SprintRoadmap />
+        <div className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
+          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
+            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
+              <SprintRoadmap />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -213,7 +221,7 @@ export default function ApproachPage() {
 
       <section
         id="capital-structure"
-        className="bg-cream px-8 pt-12 md:pt-16 pb-16 scroll-mt-20"
+        className="bg-cream px-0 md:px-8 pt-12 md:pt-16 pb-16 scroll-mt-20"
       >
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           The capital structure

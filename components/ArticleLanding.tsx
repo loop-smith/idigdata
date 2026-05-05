@@ -106,19 +106,30 @@ export default function ArticleLanding({ article }: Props) {
           {article.lede}
         </p>
 
-        {/* Hero diagram */}
-        <div className="my-11 -mx-6 md:-mx-10 bg-[#F4F1E9] border-y border-[#D6D0C4] px-6 md:px-10 py-7 md:py-8">
-          <HeroByKey heroKey={article.heroKey} />
-        </div>
+        {/* Hero diagram — pannable on mobile, fits container on md+ */}
+        <figure className="my-11 -mx-6 md:-mx-10 bg-[#F4F1E9] border-y border-[#D6D0C4] py-7 md:py-8">
+          <div className="overflow-x-auto px-6 md:px-10 [-webkit-overflow-scrolling:touch]">
+            <div className="min-w-[760px] md:min-w-0">
+              <HeroByKey heroKey={article.heroKey} />
+            </div>
+          </div>
+          <figcaption className="sr-only">
+            Diagram for {article.title}. Scroll horizontally on smaller screens.
+          </figcaption>
+        </figure>
 
         {/* Inline beehive (Article 1 only) */}
         {article.hasInlineBeehive ? (
-          <div className="my-11 -mx-6 md:-mx-10 bg-[#F4F1E9] border-y border-[#D6D0C4] px-6 md:px-10 py-7 md:py-8">
-            <BeehiveDiagram />
-            <p className="mt-5 text-center font-display italic text-warm-gray text-[13.5px]">
+          <figure className="my-11 -mx-6 md:-mx-10 bg-[#F4F1E9] border-y border-[#D6D0C4] py-7 md:py-8">
+            <div className="overflow-x-auto px-6 md:px-10 [-webkit-overflow-scrolling:touch]">
+              <div className="min-w-[760px] md:min-w-0">
+                <BeehiveDiagram />
+              </div>
+            </div>
+            <p className="mt-5 px-6 md:px-10 text-center font-display italic text-warm-gray text-[13.5px]">
               The beehive — universal frame across mid-market. Population is unique to each engagement.
             </p>
-          </div>
+          </figure>
         ) : null}
 
         {/* Key quote (pull-quote treatment) */}

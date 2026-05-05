@@ -60,7 +60,7 @@ export default function BossPage() {
         </p>
       </section>
 
-      <section className="bg-cream px-8 pt-4 pb-16">
+      <section className="bg-cream px-0 md:px-8 pt-4 pb-16">
         <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
           Three pillars
         </h2>
@@ -90,9 +90,13 @@ export default function BossPage() {
               departmental functional system groups. Change and stakeholder
               management. Operator empowerment.
             </p>
-            <div className="my-10 max-w-2xl mx-auto">
-              <Beehive />
-              <p className="text-center font-display italic text-[13px] text-warm-gray mt-2">
+            <div className="my-10 max-w-2xl mx-auto -mx-8 md:mx-auto">
+              <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
+                <div className="min-w-[560px] md:min-w-0 max-w-2xl mx-auto">
+                  <Beehive />
+                </div>
+              </div>
+              <p className="text-center font-display italic text-[13px] text-warm-gray mt-2 px-8 md:px-0">
                 The beehive — universal frame for the people layer.
               </p>
             </div>
@@ -115,7 +119,7 @@ export default function BossPage() {
 
       <AccentRule className="mt-16" />
 
-      <section className="bg-pale-navy px-8 pt-16 md:pt-20 pb-16 mt-8">
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-16 mt-8">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] tracking-tight">
           The SOP Machine
         </h2>
@@ -151,7 +155,7 @@ export default function BossPage() {
         </div>
       </section>
 
-      <section className="bg-cream px-8 pt-16 md:pt-20 pb-16 mt-12">
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-16 mt-12">
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] tracking-tight">
           Persistence-and-sequenced-build
         </h2>
