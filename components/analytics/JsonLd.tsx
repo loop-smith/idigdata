@@ -1,7 +1,7 @@
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "idigdata, LLC",
+  name: "Data Integration Group",
   alternateName: "idigdata",
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",

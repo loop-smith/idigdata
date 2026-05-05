@@ -76,7 +76,7 @@ export default async function ArticlePage(
     },
     publisher: {
       "@type": "Organization",
-      name: "idigdata, LLC",
+      name: "Data Integration Group",
       url: "https://idigdata.com",
     },
     description: article.abstract,

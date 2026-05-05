@@ -95,4 +95,4 @@ Per `k2s/idigdata/memos/memo-002-to-loopsmith-resend-wired.md` (loopsmith absorb
 - Static export config (`output: 'export'`, `images: { unoptimized: true }`, `trailingSlash: true`) was unchanged at the time. Static export was later dropped in Dispatch 008/010 (above).
 - No App Router API changes required for this project.
 - Node 20+ required (was 18+). Confirm with `node -v` before `npm install`.
-- **Port-collision behavior changed.** Next 15 silently hopped to next free port on collision; Next 16 **hard-fails with EADDRINUSE**. On collision, find the zombie and kill it: `netstat -ano | findstr :3100` then `taskkill //F //PID <pid>`. This is a framework-level change, not configurable. See `C:\2026_agentic_projects\PORTS.md` and `loopsmith-hello/.claude/CLAUDE.md` for the project-wide port policy (both may need updating to reflect the Next 16 exception).
+- **Port-collision behavior changed.** Next 15 silently hopped to next free port on collision; Next 16 **hard-fails with EADDRINUSE**. On collision, find the zombie and kill it: `netstat -ano | findstr :3100` then `taskkill //F //PID <pid>`. This is a framework-level change, not configurable.

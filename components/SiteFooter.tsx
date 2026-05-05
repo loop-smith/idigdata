@@ -82,7 +82,7 @@ export default function SiteFooter() {
 
         <div className="mt-10 pt-6 border-t border-stone/30 text-center">
           <p className="text-stone text-[12px] leading-relaxed">
-            idigdata, LLC
+            Data Integration Group
             <span className="px-2">·</span>
             est. 2016
             <span className="px-2">·</span>

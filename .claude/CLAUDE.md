@@ -1,17 +1,17 @@
 # idigdata — codebase brief
 
 ## What this repo is
-Marketing / positioning website for **idigdata LLC** — Robert Paddock's independent consulting practice (Contract CIO, business transformation, agentic adoption). Next.js App Router, statically exported, targets Vercel static hosting at `idigdata.com`.
+Marketing / positioning website for **Data Integration Group** — Robert Paddock's independent consulting practice (Contract CIO, business transformation, agentic adoption). Next.js App Router, statically exported, targets Vercel static hosting at `idigdata.com`.
 
 ## Filesystem context — two separate roots
-- **Codebase (this repo, git-tracked):** `C:\2026_agentic_projects\idigdata\`
+- **Codebase (this repo, git-tracked):** `C:\rig\code\idigdata\`
 - **Content / workfront / cowork-project folder:** `C:\Users\Paddo\OneDrive\Desktop\k2s\idigdata\`
   - `positioning/` — all marketing copy sources (one markdown file per page surface)
   - `pipeline/` — internal sales material
   - `dispatches/` — orchestration briefs from the Cowork session to this codebase
   - `.claude/CLAUDE.md` — workfront-side project charter (different file from this one; if you need fuller context on idigdata the practice, read it)
   - `README.md` — general project readme
-- **Code never lands under `k2s\`.** **Content never lands under `2026_agentic_projects\`.** Keep the split clean.
+- **Code never lands under `k2s\`.** **Content never lands under `rig\code\`.** Keep the split clean.
 
 ## Stack
 Next.js App Router + React + TypeScript (strict) + Tailwind 4 (CSS-first, `@theme` in `app/globals.css`) + `next/font` Google Fonts (Lora / Source Sans 3) + static export. No CMS, no DB, no forms, no server runtime.
@@ -62,7 +62,7 @@ This codebase is driven by **dispatches** from the `idigdata` Cowork session.
 - `/privacy` page documenting collection + retention is a pending dispatch (not blocking launch).
 
 ## Ports
-This project runs on **port 3100** (`npm run dev`). The canonical registry of local-dev ports across all projects on this machine is `C:\2026_agentic_projects\PORTS.md` — check it before starting any new port-consuming process, and register changes there.
+This project runs on **port 3100** (`npm run dev`). The canonical registry of local-dev ports across all projects on this machine is `C:\rig\code\PORTS.md` — check it before starting any new port-consuming process, and register changes there.
 
 **Collision behavior:** Next.js 16+ hard-fails on `EADDRINUSE` (not configurable — silent fallback was removed in v16). If 3100 is held by a zombie, the dev server will not start. Fix: `netstat -ano | findstr :3100` then `taskkill //F //PID <pid>`.
 
@@ -73,7 +73,7 @@ Place static assets (resume PDF, favicon, logo files, open-graph images) under `
 - **Scaffolded by:** dispatch 001 (2026-04-21). Next/Tailwind versions bumped in-loop after scaffold (see Stack section for current versions).
 - **Git:** remote `origin` pushed to `github.com/loop-smith/idigdata` (public, dispatch 003, 2026-04-21). Initial commit `0c87fea` (scaffold, dispatch 001).
 - **Vercel:** production deploy 2026-04-28 (CHANGELOG dispatch 010 — `output:export` dropped, `/api/contact` serverless POST handler with zod + Supabase + Resend). Vercel project `loop-smith/idigdata` in `loop-smith` team (Pro Trial). Custom domains `idigdata.com` + `www.idigdata.com` ATTACHED 2026-05-01 cycle 1 → DETACHED 2026-05-01 cycle 4.5 (Rob immediate-takedown ask). Site returns `404 DEPLOYMENT_NOT_FOUND` at custom domains until flip-on procedure runs (`loopsmith/handoff.md` Deferred). `idigdata.vercel.app` resolves but Standard Deployment Protection auth-gates non-team-members.
-- **DNS + registrar:** DNS hosting flipped Bluehost→Vercel 2026-05-02 cycle A (nameservers `ns1.vercel-dns.com` / `ns2.vercel-dns.com`; 7 records preserved character-perfect — Outlook MX `idigdata-com.mail.protection.outlook.com` + Resend stack). Registrar transfer Bluehost→Vercel initiated 2026-05-02 cycle C; auto-completes **2026-05-06 10:01:43 EDT** (Bluehost FOA opt-out, 4-day silence-consent window — no expedite path). Per `idigdata/CHANGELOG.md` 2026-05-01 + 2026-05-02 entries + `C:\2026_agentic_projects\SYSTEMS.md` §1 Owned-domains sub-table.
+- **DNS + registrar:** DNS hosting flipped Bluehost→Vercel 2026-05-02 cycle A (nameservers `ns1.vercel-dns.com` / `ns2.vercel-dns.com`; 7 records preserved character-perfect — Outlook MX `idigdata-com.mail.protection.outlook.com` + Resend stack). Registrar transfer Bluehost→Vercel initiated 2026-05-02 cycle C; auto-completes **2026-05-06 10:01:43 EDT** (Bluehost FOA opt-out, 4-day silence-consent window — no expedite path). Per `idigdata/CHANGELOG.md` 2026-05-01 + 2026-05-02 entries + `C:\rig\code\SYSTEMS.md` §1 Owned-domains sub-table.
 - **Routes:** `/` (home, `website-home-v1.md`, BOSS paragraph v4 "agentic MDM") · `/about` (rendered from `website-about-v2.md` — buyer-first page order, Three Chapters framing dropped) · `/contact` (rendered from `website-contact-v1.md` — mailto CTA, no form)
 - **Chrome:** shared `SiteHeader` + `SiteFooter` in `components/`. Footer has `LinkedIn` and `BOSS on GitHub` as disabled-looking placeholders pending later dispatches.
 - **Favicon + icons:** `app/icon.svg` (Next 16 auto-registered), `public/favicon.ico` (multi-res 16/32/48, Lora server-rasterized), `public/apple-icon.png` (180×180). OG card at `public/og-image.png` (1200×630).

@@ -37,7 +37,7 @@ const personJsonLd = {
   image: "https://idigdata.com/og-image.png",
   worksFor: {
     "@type": "Organization",
-    name: "idigdata, LLC",
+    name: "Data Integration Group",
     url: "https://idigdata.com",
   },
   alumniOf: {
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
           <li>
             <p className="font-vollkorn font-bold text-aubergine text-[18px]">
-              Founder &amp; Principal &mdash; idigdata LLC
+              Founder &amp; Principal &mdash; Data Integration Group
             </p>
             <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
               Embedded + Fractional &middot; 2016 &ndash; present
@@ -205,7 +205,7 @@ export default function AboutPage() {
 
           <li>
             <p className="font-vollkorn font-bold text-aubergine text-[18px]">
-              CEO &amp; CTO &mdash; Timberline Architectural Openings, LLC
+              CEO &amp; CTO &mdash; Timberline Architectural Openings
             </p>
             <p className="font-display italic text-warm-gray text-[14px] mt-0.5">
               1996 &ndash; 2012
