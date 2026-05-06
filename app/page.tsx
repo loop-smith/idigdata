@@ -131,14 +131,14 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="font-vollkorn font-extrabold text-navy text-[44px] md:text-[64px] lg:text-[88px] leading-[0.98] tracking-[-0.025em] text-balance mb-10 md:mb-12">
+              <h1 className="font-vollkorn font-extrabold text-navy text-[36px] sm:text-[44px] md:text-[64px] lg:text-[88px] leading-[0.98] tracking-[-0.025em] text-balance mb-10 md:mb-12">
                 Client-owned data
                 <span className="text-gold px-1.5">·</span>
-                <br className="hidden md:block" />
+                <br />
                 <em className="italic font-semibold">Vendor-agnostic</em>{" "}
                 architecture
                 <span className="text-gold px-1.5">·</span>
-                <br className="hidden md:block" />
+                <br />
                 Transformation that{" "}
                 <span
                   className="relative inline-block"
