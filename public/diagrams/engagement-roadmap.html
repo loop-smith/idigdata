@@ -146,6 +146,8 @@
   }
   body.view-standalone-transformation .standalone-note,
   body.view-standalone-agentics .standalone-note { display: block; }
+  /* Standalone-agentics hides the bundled engagement summary line — it carries 22-month dates that don't apply to a 60-120 day standalone shape. The standalone-note callout carries the right timeline framing for this view. */
+  body.view-standalone-agentics .dates { display: none; }
 
   /* Diagram container */
   .diagram {
