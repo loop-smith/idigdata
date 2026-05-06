@@ -168,7 +168,7 @@ The buyer-verifiable test for whether a consultant has done the data-foundation 
 
 ## Engagement shapes and close
 
-Three engagement shapes carry the agentics work.
+Three engagement shapes carry the agentics work. *These overlay the practice-wide engagement shapes from [Article 1](/articles/transformation-and-the-people-of-it):* Standalone agentics is the *Agentics — standalone* shape on a mature substrate; Stacked is the *Agentics — stacked* shape sequenced inside *Embedded* or *Fractional*; Readiness-prep is *Embedded* or *Fractional* doing the data-foundation work before agentic deployment becomes possible.
 
 **Standalone agentics.** Where the data foundation is mature — sovereign Common Data Model, MDM constellation governed at the enterprise level, integration topology governed — the agentics engagement deploys against the existing substrate. Engagement length is typically twelve to eighteen months scoped against the five-app pattern with framework institutionalization. The CIO and the CISO retain their seats; the methodology transfers to the in-house IT team and the BOSS open-source community at handoff.
 
