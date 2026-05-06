@@ -58,8 +58,8 @@ export default function BeehiveDiagram() {
     { y: 140, label: "Order to Cash", abbr: "O2C" },
     { y: 184, label: "Plan to Manufacture", abbr: "P2M" },
     { y: 228, label: "Procure to Pay", abbr: "P2P" },
-    { y: 272, label: "Record to Report", abbr: "R2R" },
-    { y: 316, label: "Systems / Data / Security", abbr: "S/D/S" },
+    { y: 272, label: "Data to Reporting", abbr: "D2R" },
+    { y: 316, label: "Systems to Support", abbr: "S2S" },
   ];
 
   const cells: CellProps[] = [
@@ -164,7 +164,7 @@ export default function BeehiveDiagram() {
         PROCESS-FLOW RING
       </text>
       <text x="700" y="198" fontSize="10" fill="#7A756A" fontStyle="italic">
-        Cross-cell integration where
+        Cross-functional integration where
       </text>
       <text x="700" y="212" fontSize="10" fill="#7A756A" fontStyle="italic">
         flows touch multiple cells.

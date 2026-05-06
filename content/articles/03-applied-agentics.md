@@ -160,7 +160,7 @@ The recognition lands quickly with CIOs and CISOs once the distinction is named.
 
 ## The data foundation precondition
 
-Agentics lives off data. The architecture for sovereign data is the architecture for production agentics. The Common Data Model the client owns, the MDM constellation governed at the enterprise level, integration topology governed by the client, the six-constellation spine (P2P, O2C, P2M, S2S, D2R, MDM) that frames the operating model — these are not separate from the agentics layer. *They are the substrate the agentics layer rides on.*
+Agentics lives off data. The architecture for sovereign data is the architecture for production agentics. The Common Data Model the client owns, the MDM constellation governed at the enterprise level, integration topology governed by the client, the six-constellation spine — P2P (Procure to Pay), O2C (Order to Cash), P2M (Plan to Manufacture), S2S (Systems to Support), D2R (Data to Reporting), MDM (Master Data Management) — that exhaustively frames the operating model — these are not separate from the agentics layer. *They are the substrate the agentics layer rides on.*
 
 The buyer-verifiable test for whether a consultant has done the data-foundation work is the same as for the agentics work. Most "AI strategy" engagements treat the data foundation as a parallel workstream — the agents will deploy "once the data is ready," and the readiness work is scoped as a separate engagement that compounds in cost and rarely converges. The integrated approach treats the data foundation as the substrate the agentics layer is sequenced on top of. Phases 1 through 4 of the engagement build the data and people foundation. Phase 5 is when the agentics layer compounds because the substrate is real.
 

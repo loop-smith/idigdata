@@ -71,7 +71,7 @@ export default function Beehive({ className = "" }: Props) {
       </g>
       <g transform="translate(20, 240) rotate(-90)">
         <text x="0" y="0" textAnchor="middle" fontStyle="italic" fontSize="11" fill={WARM} letterSpacing="3" fontFamily={SANS}>
-          RECORD TO REPORT
+          DATA TO REPORTING
         </text>
       </g>
 

@@ -122,7 +122,7 @@ export default function SprintRoadmap({ className = "" }: Props) {
           title="STORY · GROUND-TRUTH"
           items={[
             "Systems Register update",
-            "Beehive cell population",
+            "Taskforce population",
             "Integration topology read",
             "MDM hypothesis v1",
           ]}
