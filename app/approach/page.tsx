@@ -167,17 +167,19 @@ export default function ApproachPage() {
           Engagement roadmap
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          The phase model — outcomes-per-phase from origination through
-          post-engagement persistence. Designed go-live-backwards: P5 is a
-          date (cutover with all systems green), preceded by mock go-lives and
-          UAT preceded by build/test cycles ending in e2e signoff at P4 close.
-          For agentic engagements, agentics threads through Phases 1&ndash;5
-          at rising intensity, peaking at P5.
+          The engagement runs as a portfolio of work moving through 8 stages —
+          PMO (orchestration) plus 7 BOSS delivery stages: Design, Build,
+          Deploy and Test, UAT, Mock Golive, Golive, Stable state. Stage is
+          the unit of promotion, not project phase — hundreds of work units
+          (PEGs) move through gates at their own readiness. Two parallel
+          portfolios — transformation and agentics — promote through identical
+          stages on different time signatures, converging at a single Go-live.
         </p>
         <EngagementRoadmapEmbed />
         <p className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
-          Engagement roadmap — full-residency-shape preconfigured. Phases P0 through
-          P6, agentic-thread overlay, milestones.
+          Engagement roadmap — full-residency shape preconfigured. PMO + 7
+          BOSS delivery stages, two-portfolio overlay, single Go-live
+          convergence.
         </p>
       </section>
 
