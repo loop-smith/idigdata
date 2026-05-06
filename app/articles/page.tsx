@@ -58,10 +58,10 @@ export default function ArticlesIndexPage() {
           what you need, request access. Locate where on the path you fit on
           the{" "}
           <Link
-            href="/atlas/"
+            href="/approach/#engagement-roadmap"
             className="not-italic font-body text-navy border-b border-navy/40 hover:border-navy"
           >
-            atlas
+            engagement roadmap
           </Link>
           .
         </p>

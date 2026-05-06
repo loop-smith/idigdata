@@ -14,11 +14,6 @@ export type CrossLinkCard = {
   description: string;
 };
 
-export type AtlasCard = {
-  title: string;
-  description: string;
-};
-
 export type ArticleHeroKey =
   | "architectural-fork"
   | "integrated-delivery"
@@ -55,7 +50,6 @@ export type Article = {
     standalone?: CrossLinkCard;
     /** When the article has TWO substrate articles (Article 3 case), use this in place of companion. */
     substratePair?: [CrossLinkCard, CrossLinkCard];
-    atlas: AtlasCard;
   };
 };
 
@@ -103,11 +97,6 @@ export const ARTICLES: Article[] = [
         description:
           "The rare credential. Production agents shipping into operations, structurally dependent on this data foundation.",
       },
-      atlas: {
-        title: "Where on the path are you?",
-        description:
-          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
-      },
     },
   },
   {
@@ -151,11 +140,6 @@ export const ARTICLES: Article[] = [
         title: "Applied agentics — agents deployed as a business asset",
         description:
           "The rare credential. Production agents that capitalize as operating-fabric assets under the same ASC 350-40 treatment.",
-      },
-      atlas: {
-        title: "Where on the path are you?",
-        description:
-          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
       },
     },
   },
@@ -204,11 +188,6 @@ export const ARTICLES: Article[] = [
             "The integrated delivery discipline that institutionalizes the framework — the mechanism by which agents capitalize as assets.",
         },
       ],
-      atlas: {
-        title: "Where on the path are you?",
-        description:
-          "The phase-by-phase transformation map, with the engagement shape that fits each entry point.",
-      },
     },
   },
 ];

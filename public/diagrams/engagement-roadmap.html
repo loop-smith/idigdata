@@ -144,7 +144,8 @@
     border-left: 3px solid var(--gold);
     border-radius: 2px;
   }
-  body.standalone .standalone-note { display: block; }
+  body.view-standalone-transformation .standalone-note,
+  body.view-standalone-agentics .standalone-note { display: block; }
 
   /* Diagram container */
   .diagram {
@@ -277,6 +278,9 @@
     .substance .delivers { grid-template-columns: 1fr; gap: 18px; }
     .legend { flex-wrap: wrap; gap: 12px; }
     #roadmap { min-width: 740px; }
+    /* 3-state toggle stacks vertically on mobile (long labels overflow pill) */
+    .toggle { flex-direction: column; align-items: stretch; border-radius: 8px; gap: 2px; width: 100%; max-width: 320px; }
+    .toggle button { text-align: center; }
   }
 
   /* Print */
@@ -298,7 +302,8 @@
   <div class="header-right">
     <div class="toggle" role="tablist" aria-label="View toggle">
       <button id="btn-bundled" class="active" role="tab" aria-selected="true">Bundled</button>
-      <button id="btn-standalone" role="tab" aria-selected="false">Standalone agentics</button>
+      <button id="btn-standalone-transformation" role="tab" aria-selected="false">Standalone transformation</button>
+      <button id="btn-standalone-agentics" role="tab" aria-selected="false">Standalone agentics</button>
     </div>
     <div class="legend" id="legend">
       <div class="legend-item"><span class="legend-swatch" style="background: #142840"></span>Transformation portfolio</div>
@@ -311,9 +316,7 @@
   <h1 id="engagement-name">—</h1>
   <div class="sub" id="engagement-sub">—</div>
   <div class="dates" id="dates">—</div>
-  <div class="standalone-note">
-    Standalone agentics view — agentic portfolio commissioned alone, 60–120 day timeline (90-day shape shown). Transformation portfolio hidden.
-  </div>
+  <div class="standalone-note" id="standalone-note"></div>
 </div>
 
 <div class="diagram">
@@ -577,8 +580,14 @@ function addMonths(s, m) {
    STATE
    ============================================================ */
 
+function hashToView(h) {
+  if (h === "#standalone-agentics") return "standalone-agentics";
+  if (h === "#standalone-transformation") return "standalone-transformation";
+  return "bundled";
+}
+
 let state = {
-  view: window.location.hash === "#standalone" ? "standalone" : "bundled",
+  view: hashToView(window.location.hash),
   selectedLane: null
 };
 
@@ -749,8 +758,8 @@ function renderRoadmap() {
     stroke: "#142840", "stroke-width": 1
   });
 
-  // ---- Axis: bundled (months) vs standalone (days) ----
-  if (state.view === "bundled") {
+  // ---- Axis: 22-month (bundled + standalone-transformation) vs 90-day (standalone-agentics) ----
+  if (state.view !== "standalone-agentics") {
     // 3-month major ticks (months 0, 3, 6, ..., 24)
     for (let m = 0; m <= N_MONTHS_BUNDLED; m += 3) {
       const x = xForSample(m);
@@ -857,27 +866,51 @@ function renderRoadmap() {
 
 function applyViewVisibility() {
   const svg = document.getElementById("roadmap");
-  const isStandalone = state.view === "standalone";
+  const view = state.view;
+  const isAgenticsOnly = view === "standalone-agentics";
+  const isTransformationOnly = view === "standalone-transformation";
 
-  // Hide delivery portfolio curves in standalone
+  // Curve visibility per portfolio. PMO band is data-portfolio="pmo" — never hidden.
   svg.querySelectorAll('[data-portfolio="delivery"]').forEach(el => {
-    el.style.display = isStandalone ? "none" : "";
+    el.style.display = isAgenticsOnly ? "none" : "";
   });
-  // Golive marker: hide in standalone (portfolio-convergence concept doesn't apply)
+  svg.querySelectorAll('[data-portfolio="agentic"]').forEach(el => {
+    el.style.display = isTransformationOnly ? "none" : "";
+  });
+  // Golive marker: hide only in standalone-agentics (portfolio-convergence concept doesn't apply)
   svg.querySelectorAll('[data-marker="golive"]').forEach(el => {
-    el.style.display = isStandalone ? "none" : "";
+    el.style.display = isAgenticsOnly ? "none" : "";
   });
-  // PMO band: keep visible (orchestration runs regardless of portfolio)
 
-  document.body.classList.toggle("standalone", isStandalone);
-  document.getElementById("btn-bundled").classList.toggle("active", !isStandalone);
-  document.getElementById("btn-standalone").classList.toggle("active", isStandalone);
-  document.getElementById("btn-bundled").setAttribute("aria-selected", String(!isStandalone));
-  document.getElementById("btn-standalone").setAttribute("aria-selected", String(isStandalone));
+  // Body class scheme — one class per view
+  document.body.classList.remove("view-bundled", "view-standalone-transformation", "view-standalone-agentics");
+  document.body.classList.add("view-" + view);
 
-  // Toggle legend swatch for delivery
-  const legend = document.getElementById("legend");
-  legend.querySelectorAll(".legend-item")[0].style.opacity = isStandalone ? "0.3" : "1";
+  // Toggle button states
+  ["bundled", "standalone-transformation", "standalone-agentics"].forEach(b => {
+    const btn = document.getElementById("btn-" + b);
+    if (!btn) return;
+    const active = view === b;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", String(active));
+  });
+
+  // Standalone-note copy per view
+  const note = document.getElementById("standalone-note");
+  if (note) {
+    if (isAgenticsOnly) {
+      note.textContent = "Standalone agentics view — agentic portfolio commissioned alone, 60–120 day timeline (90-day shape shown). Transformation portfolio hidden.";
+    } else if (isTransformationOnly) {
+      note.textContent = "Standalone transformation view — transformation portfolio commissioned alone, 22-month engagement window. Agentic portfolio hidden.";
+    } else {
+      note.textContent = "";
+    }
+  }
+
+  // Legend swatch dim — delivery dimmed in standalone-agentics; agentic dimmed in standalone-transformation
+  const legendItems = document.getElementById("legend").querySelectorAll(".legend-item");
+  if (legendItems[0]) legendItems[0].style.opacity = isAgenticsOnly ? "0.3" : "1";
+  if (legendItems[1]) legendItems[1].style.opacity = isTransformationOnly ? "0.3" : "1";
 }
 
 /* ============================================================
@@ -957,9 +990,14 @@ function setView(v) {
   renderRoadmap();
   renderSubstance(null);
 
-  if (v === "standalone") {
-    if (window.location.hash !== "#standalone") {
-      history.replaceState(null, "", "#standalone");
+  // Hash sync per view. Bundled clears the hash; standalones write theirs.
+  let targetHash = "";
+  if (v === "standalone-agentics") targetHash = "#standalone-agentics";
+  else if (v === "standalone-transformation") targetHash = "#standalone-transformation";
+
+  if (targetHash) {
+    if (window.location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
     }
   } else {
     if (window.location.hash) {
@@ -995,10 +1033,11 @@ function init() {
   applyViewVisibility();
 
   document.getElementById("btn-bundled").addEventListener("click", () => setView("bundled"));
-  document.getElementById("btn-standalone").addEventListener("click", () => setView("standalone"));
+  document.getElementById("btn-standalone-transformation").addEventListener("click", () => setView("standalone-transformation"));
+  document.getElementById("btn-standalone-agentics").addEventListener("click", () => setView("standalone-agentics"));
 
   window.addEventListener("hashchange", () => {
-    const v = window.location.hash === "#standalone" ? "standalone" : "bundled";
+    const v = hashToView(window.location.hash);
     if (v !== state.view) setView(v);
   });
 }

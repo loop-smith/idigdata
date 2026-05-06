@@ -23,7 +23,7 @@ type Props = {
 
 export default function ArticleLanding({ article }: Props) {
   const crossLinkCards = (() => {
-    const cards: { key: string; href: string | null; badge: string; title: string; description: string; isAtlas?: boolean }[] = [];
+    const cards: { key: string; href: string | null; badge: string; title: string; description: string }[] = [];
 
     if (article.crossLinks.substratePair) {
       const [first, second] = article.crossLinks.substratePair;
@@ -63,15 +63,6 @@ export default function ArticleLanding({ article }: Props) {
         });
       }
     }
-
-    cards.push({
-      key: "atlas",
-      href: "/atlas/",
-      badge: "The atlas",
-      title: article.crossLinks.atlas.title,
-      description: article.crossLinks.atlas.description,
-      isAtlas: true,
-    });
 
     return cards;
   })();
@@ -198,10 +189,10 @@ export default function ArticleLanding({ article }: Props) {
         <section className="mt-20 pt-9 border-t-[1.5px] border-stone">
           <p className="font-body uppercase tracking-section text-[11.5px] text-stone mb-6">
             {article.crossLinks.substratePair
-              ? "The two-lens substrate · the path"
-              : "The companion lens · the standalone credential · the path"}
+              ? "The two-lens substrate"
+              : "The companion lens · the standalone credential"}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {crossLinkCards.map((card) => (
               <Link
                 key={card.key}
@@ -209,9 +200,7 @@ export default function ArticleLanding({ article }: Props) {
                 className="block bg-[#F4F1E9] border border-[#D6D0C4] px-5 py-5 transition-[border-color,transform] duration-150 hover:border-navy hover:-translate-y-px"
               >
                 <span
-                  className={`block font-body font-semibold text-[11px] uppercase tracking-[0.18em] mb-2 ${
-                    card.isAtlas ? "text-stone" : "text-gold"
-                  }`}
+                  className="block font-body font-semibold text-[11px] uppercase tracking-[0.18em] mb-2 text-gold"
                 >
                   {card.badge}
                 </span>
