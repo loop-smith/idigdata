@@ -44,6 +44,11 @@ The compound integration is what makes 24-month transformations land instead of 
 
 ## The map: constellations, clusters, PEGs
 
+<figure>
+  <img src="/diagrams/six-constellations.svg" alt="The six constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation" />
+  <figcaption><em>The six constellations — universal spine · one data core · same six every install</em></figcaption>
+</figure>
+
 The map is BOSS's organizing principle for the operating company. It runs in a strict hierarchy: **Constellation → Cluster → PEG → Steps + Schema availability.** Each level has a different job; each level has a different relationship to "uniquely standard."
 
 **The six constellations — the universal spine.** Six categories, fixed across every install, every industry, every operator scale. *Standard everywhere.* P2P (Procure to Pay). O2C (Order to Cash). P2M (Plan to Manufacture). S2S (Systems to Support — the catch-all for operations-supporting work that doesn't slot cleanly into the other five: identity, access, security, integration plumbing, anything operating-model-adjacent). D2R (Data to Reporting). MDM (Master Data Management). *Same six, every company.* The six are *exhaustive by construction* — every operating process AND every business-intelligence surface maps to one of them. The constellation is the categorical home for any piece of work in the engagement: a sales-order PEG belongs to O2C; a vendor-master mastering process belongs to MDM; a margin report belongs to D2R; an intercompany consolidation step belongs to D2R + MDM at the boundary; an access-provisioning workflow belongs to S2S. The spine is what makes "uniquely standard" claim resolvable: the categories are the same; the *makeup* — which PEGs, which clusters, which BPSc fill each constellation — differs per operator.

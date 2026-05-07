@@ -1,93 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 720 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
-  <title id="six-title">The six constellations — diagnostic frame</title>
-  <desc id="six-desc">Six structural domains every mid-market operating company maps into: data architecture, operating model, post-M&amp;A consolidation, applied agentics readiness, IT-function maturity, change-receptivity. Each carries 5 clusters (sub-elements). Universal frame, bespoke fill.</desc>
+<svg viewBox="0 0 810 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
+  <title id="six-title">The six constellations — universal spine</title>
+  <desc id="six-desc">A radial diagram with six labeled constellation nodes (D2R, O2C, P2M, MDM, P2P, S2S) arranged hexagonally around a central data core. Each constellation is ringed by a BPSc density band — varying gradient opacity along the arc signals density variation across the constellation's clusters. The band gap on each constellation faces the data core and marks the constellation→cluster connector port. Hierarchy: Constellation → Cluster → BPSc → PEG → Steps + Schema availability. Same six in every install; makeup differs per operator.</desc>
+
+  <!-- Background -->
+  <rect width="810" height="940" fill="#FAFAF7"/>
+
+  <!-- Gradient defs for BPSc density bands. Color separation: navy=transactional, gold=strategic/value, gray=supporting. Opacity stops add density shape. -->
+  <defs>
+    <!-- Monochrome navy gradients (option A: aligned to beehive's solid-stroke style; opacity-only density variation) -->
+    <linearGradient id="band-d2r" gradientUnits="userSpaceOnUse" x1="300" y1="110" x2="500" y2="310">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.78"/>
+      <stop offset="25%" stop-color="#142840" stop-opacity="0.42"/>
+      <stop offset="50%" stop-color="#142840" stop-opacity="0.78"/>
+      <stop offset="75%" stop-color="#142840" stop-opacity="0.50"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="band-o2c" gradientUnits="userSpaceOnUse" x1="540" y1="245" x2="745" y2="445">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.55"/>
+      <stop offset="22%" stop-color="#142840" stop-opacity="0.78"/>
+      <stop offset="44%" stop-color="#142840" stop-opacity="0.45"/>
+      <stop offset="68%" stop-color="#142840" stop-opacity="0.70"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="band-p2m" gradientUnits="userSpaceOnUse" x1="745" y1="515" x2="540" y2="715">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.62"/>
+      <stop offset="22%" stop-color="#142840" stop-opacity="0.40"/>
+      <stop offset="48%" stop-color="#142840" stop-opacity="0.78"/>
+      <stop offset="72%" stop-color="#142840" stop-opacity="0.50"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="band-mdm" gradientUnits="userSpaceOnUse" x1="300" y1="650" x2="500" y2="850">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.50"/>
+      <stop offset="32%" stop-color="#142840" stop-opacity="0.38"/>
+      <stop offset="62%" stop-color="#142840" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.42"/>
+    </linearGradient>
+    <linearGradient id="band-p2p" gradientUnits="userSpaceOnUse" x1="60" y1="515" x2="265" y2="715">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.60"/>
+      <stop offset="25%" stop-color="#142840" stop-opacity="0.78"/>
+      <stop offset="50%" stop-color="#142840" stop-opacity="0.45"/>
+      <stop offset="75%" stop-color="#142840" stop-opacity="0.68"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="band-s2s" gradientUnits="userSpaceOnUse" x1="60" y1="245" x2="265" y2="445">
+      <stop offset="0%" stop-color="#142840" stop-opacity="0.42"/>
+      <stop offset="35%" stop-color="#142840" stop-opacity="0.55"/>
+      <stop offset="65%" stop-color="#142840" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#142840" stop-opacity="0.50"/>
+    </linearGradient>
+  </defs>
 
   <!-- Title block -->
-  <text x="360" y="38" text-anchor="middle" font-weight="bold" font-size="24" fill="#142840" font-family="Vollkorn, Cambria, Georgia, serif">The six constellations</text>
-  <text x="360" y="62" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">Universal frame · bespoke fill · diagnostic in one read</text>
+  <text x="400" y="50" text-anchor="middle" font-weight="bold" font-size="24" fill="#142840" font-family="Vollkorn, Cambria, Georgia, serif">The six constellations</text>
+  <text x="400" y="78" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">Six universal constellations · one data core · processes populate each</text>
 
-  <!-- Sun gold legend strip -->
-  <rect x="35" y="74" width="14" height="4" fill="#FACC15"/>
-  <text x="55" y="78" font-size="10" font-style="italic" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">gold strip = under load this engagement</text>
-
-  <!-- Card 1: DATA ARCHITECTURE (highlighted) -->
-  <g transform="translate(35, 90)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <rect x="0" y="0" width="210" height="4" fill="#FACC15"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">DATA ARCHITECTURE</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  MDM</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Integration topology</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Data lake / medallion</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Governance model</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Vendor-agnostic posture</text>
-    <text x="20" y="174" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Leads Phase 2 architecture</text>
+  <!-- Spokes (drawn first; nodes overlay) -->
+  <g stroke="#142840" stroke-width="2" stroke-opacity="0.28" fill="none">
+    <line x1="400" y1="385" x2="400" y2="298"/>
+    <line x1="482.27" y1="432.5" x2="557.62" y2="389"/>
+    <line x1="482.27" y1="527.5" x2="557.62" y2="571"/>
+    <line x1="400" y1="575" x2="400" y2="662"/>
+    <line x1="317.73" y1="527.5" x2="242.38" y2="571"/>
+    <line x1="317.73" y1="432.5" x2="242.38" y2="389"/>
   </g>
 
-  <!-- Card 2: OPERATING MODEL -->
-  <g transform="translate(260, 90)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">OPERATING MODEL</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Decision rights</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  RACI structure</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Escalation paths</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Sprint cadence</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Beehive organization</text>
+  <!-- Data Core -->
+  <circle cx="400" cy="480" r="95" fill="#142840" stroke="#FACC15" stroke-width="3"/>
+  <text x="400" y="453" text-anchor="middle" font-weight="bold" font-size="20" fill="#FACC15" letter-spacing="3" font-family="system-ui, -apple-system, sans-serif">DATA CORE</text>
+  <line x1="365" y1="467" x2="435" y2="467" stroke="#FACC15" stroke-width="1.5" opacity="0.7"/>
+  <text x="400" y="485" text-anchor="middle" font-size="12" font-weight="600" fill="#FAFAF7" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
+  <text x="400" y="503" text-anchor="middle" font-size="10.5" fill="#FAFAF7" opacity="0.92" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
+  <text x="400" y="519" text-anchor="middle" font-size="10.5" fill="#FAFAF7" opacity="0.92" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
+
+  <!-- D2R — 12 o'clock + BPSc density band (gap at south, spoke angle 90°) -->
+  <g>
+    <path d="M 374.1 306.6 A 100 100 0 1 1 425.9 306.6" fill="none" stroke="url(#band-d2r)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="400" cy="210" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="400" y="196" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">D2R</text>
+    <text x="400" y="218" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Data to Reporting</text>
+    <text x="400" y="236" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Analytics + awareness</text>
   </g>
 
-  <!-- Card 3: POST-M&A CONSOLIDATION (highlighted) -->
-  <g transform="translate(485, 90)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <rect x="0" y="0" width="210" height="4" fill="#FACC15"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">POST-M&amp;A CONSOLIDATION</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Legal entity rationalization</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Inherited integration debt</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Multi-currency consolidation</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Brand architecture</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Systems inheritance</text>
-    <text x="20" y="174" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Where the trigger pattern fires</text>
+  <!-- O2C — 2 o'clock + band (gap at lower-left, spoke angle 150°) -->
+  <g>
+    <path d="M 537.2 370.9 A 100 100 0 1 1 563.1 415.7" fill="none" stroke="url(#band-o2c)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="633.83" cy="345" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="633.83" y="331" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">O2C</text>
+    <text x="633.83" y="353" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Order to Cash</text>
+    <text x="633.83" y="371" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Outbound value chain</text>
   </g>
 
-  <!-- Card 4: APPLIED AGENTICS READINESS -->
-  <g transform="translate(35, 295)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">APPLIED AGENTICS READINESS</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Data-foundation maturity</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Governance</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Training</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Operator empowerment</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  App-onboarding</text>
+  <!-- P2M — 4 o'clock + band (gap at upper-left, spoke angle 210°) -->
+  <g>
+    <path d="M 563.1 544.3 A 100 100 0 1 1 537.2 589.1" fill="none" stroke="url(#band-p2m)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="633.83" cy="615" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="633.83" y="601" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">P2M</text>
+    <text x="633.83" y="623" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Plan to Manufacture</text>
+    <text x="633.83" y="641" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Transformation core</text>
   </g>
 
-  <!-- Card 5: IT-FUNCTION MATURITY -->
-  <g transform="translate(260, 295)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">IT-FUNCTION MATURITY</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Team capability</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Vendor portfolio</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Infrastructure posture</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Security &amp; cyber</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Change cadence</text>
+  <!-- MDM — 6 o'clock + band (gap at north, spoke angle 270°) -->
+  <g>
+    <path d="M 425.9 653.4 A 100 100 0 1 1 374.1 653.4" fill="none" stroke="url(#band-mdm)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="400" cy="750" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="400" y="736" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">MDM</text>
+    <text x="400" y="758" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Master Data Management</text>
+    <text x="400" y="776" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Cross-cutting foundation</text>
   </g>
 
-  <!-- Card 6: CHANGE-RECEPTIVITY -->
-  <g transform="translate(485, 295)">
-    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
-    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">CHANGE-RECEPTIVITY</text>
-    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
-    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Stakeholder appetite</text>
-    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Prior-transformation scar</text>
-    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Sponsor air-cover</text>
-    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Communications discipline</text>
-    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Training-and-adoption</text>
+  <!-- P2P — 8 o'clock + band (gap at upper-right, spoke angle 330°) -->
+  <g>
+    <path d="M 262.8 589.1 A 100 100 0 1 1 236.9 544.3" fill="none" stroke="url(#band-p2p)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="166.17" cy="615" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="166.17" y="601" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">P2P</text>
+    <text x="166.17" y="623" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Procure to Pay</text>
+    <text x="166.17" y="641" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Inbound value chain</text>
   </g>
+
+  <!-- S2S — 10 o'clock + band (gap at lower-right, spoke angle 30°) -->
+  <g>
+    <path d="M 236.9 415.7 A 100 100 0 1 1 262.8 370.9" fill="none" stroke="url(#band-s2s)" stroke-width="10" stroke-linecap="butt"/>
+    <circle cx="166.17" cy="345" r="88" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <text x="166.17" y="331" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" letter-spacing="2" font-family="system-ui, -apple-system, sans-serif">S2S</text>
+    <text x="166.17" y="353" text-anchor="middle" font-size="12" font-weight="600" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Systems to Support</text>
+    <text x="166.17" y="371" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">IT ops + agentic apps</text>
+  </g>
+
+  <!-- Legend (top-right corner) -->
+  <text x="745" y="115" text-anchor="end" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Business processes ring each constellation</text>
+  <text x="745" y="132" text-anchor="end" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">density = scale · gap = cluster connector</text>
 
   <!-- Stone rule + caption -->
-  <line x1="120" y1="510" x2="600" y2="510" stroke="#7A756A" stroke-width="0.8"/>
-  <text x="360" y="528" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Phase 1 reads the load on each · MDM near-locked by Sprint 4 · others first-cut</text>
+  <line x1="200" y1="895" x2="600" y2="895" stroke="#7A756A" stroke-width="0.8"/>
+  <text x="400" y="915" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">All companies are uniquely standard. The mechanics is the how.</text>
 </svg>

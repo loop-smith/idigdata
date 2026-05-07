@@ -160,6 +160,35 @@ export default function ApproachPage() {
       </section>
 
       <section
+        id="future-state-systems-map"
+        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-12 scroll-mt-20 mt-12"
+      >
+        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
+          The future-state systems map
+        </h2>
+        <p className="mt-5 max-w-[820px] font-display italic text-stone text-[16px] leading-relaxed">
+          The first major outcome of every engagement — the architecture
+          you&rsquo;ll receive at the end of Phase 1.
+        </p>
+        <figure className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
+          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
+            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/diagrams/system-verse.svg"
+                alt="The system-verse — future-state systems map; sovereign Data Core at center, integration mesh, application layer of 16 functional system groups"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+          <figcaption className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
+            Concentric layers · operator-owned data core · vendor-agnostic
+            application stack
+          </figcaption>
+        </figure>
+      </section>
+
+      <section
         id="engagement-roadmap"
         className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
       >
