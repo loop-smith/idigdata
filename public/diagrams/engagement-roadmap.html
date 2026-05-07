@@ -346,7 +346,7 @@
    ============================================================ */
 
 const config = {
-  engagementName: "Tilray Brands",
+  engagementName: "Mid-market beverage operator",
   engagementSubtitle: "Transformation engagement",
   startDate: "2026-07-01",
   goLiveDate: "2028-03-01",
@@ -752,7 +752,7 @@ function renderRoadmap() {
     "font-family": "Inter, sans-serif", "font-weight": 700,
     "font-size": 11, fill: "#142840",
     "data-marker": "golive"
-  }, `${escapeXml(config.goLiveMarker.label)} · ${escapeXml(fmtFull(config.goLiveMarker.date))}`);
+  }, `${escapeXml(config.goLiveMarker.label)} · Month ${config.goLiveMarker.monthIndex}`);
 
   // ---- X axis line ----
   s += svgEl("line", {
@@ -768,13 +768,12 @@ function renderRoadmap() {
       const x = xForSample(m);
       s += svgEl("line", { x1: x, y1: PLOT_BOTTOM, x2: x, y2: PLOT_BOTTOM + 6, stroke: "#142840", "stroke-width": 1 });
       s += svgEl("line", { x1: x, y1: PLOT_TOP, x2: x, y2: PLOT_BOTTOM, stroke: "#E8E5DA", "stroke-width": 1, "stroke-dasharray": "2,3" });
-      const dateStr = addMonths(config.startDate, m);
       s += svgEl("text", {
         x: x, y: PLOT_BOTTOM + 20,
         "text-anchor": "middle",
         "font-family": "Inter, sans-serif", "font-weight": 500,
         "font-size": 11, fill: "#6B7280"
-      }, escapeXml(fmtMY(dateStr)));
+      }, `Month ${m}`);
     }
 
     // Sprint hash marks (13-day cadence) — render as small ticks beneath axis
@@ -1018,11 +1017,11 @@ function renderMeta() {
   document.getElementById("engagement-name").textContent = config.engagementName;
   document.getElementById("engagement-sub").textContent = config.engagementSubtitle;
 
-  const startD = fmtFull(config.startDate);
-  const goLiveD = fmtFull(config.goLiveDate);
-  const endD = fmtFull(config.endDate);
   const totalMonths = Math.round(monthsBetween(config.startDate, config.endDate));
   const goLiveMonths = Math.round(monthsBetween(config.startDate, config.goLiveDate));
+  const startD = "Month 0";
+  const goLiveD = `Month ${goLiveMonths}`;
+  const endD = `Month ${totalMonths}`;
 
   document.getElementById("dates").innerHTML =
     `Engagement: <strong>${startD}</strong> &rarr; <strong>${endD}</strong>` +
