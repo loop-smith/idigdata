@@ -160,30 +160,68 @@ export default function ApproachPage() {
       </section>
 
       <section
-        id="future-state-systems-map"
-        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-12 scroll-mt-20 mt-12"
+        id="architecture-views"
+        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
       >
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          The future-state systems map
+          The architecture we build to
         </h2>
         <p className="mt-5 max-w-[820px] font-display italic text-stone text-[16px] leading-relaxed">
-          The first major outcome of every engagement — the architecture
-          you&rsquo;ll receive at the end of Phase 1.
+          Three views of the same operating fabric — same operator, three
+          angles. The people layer, the work layer, the substrate.
         </p>
-        <figure className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
-          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
-            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/diagrams/system-verse.svg"
-                alt="The system-verse — future-state systems map; sovereign Data Core at center, integration mesh, application layer of 16 functional system groups"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-          <figcaption className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
-            Concentric layers · operator-owned data core · vendor-agnostic
-            application stack
+
+        <figure className="mt-12 max-w-2xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/diagrams/beehive.svg"
+            alt="The beehive — process flows × functional groups; six BPFs feed the operating fabric, MDM and the Common Data Model at the gold-on-navy center hex"
+            width={540}
+            height={700}
+            className="w-full h-auto"
+          />
+          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
+            <strong className="font-semibold not-italic text-navy">
+              The beehive
+            </strong>{" "}
+            &mdash; process flows &times; functional groups · the people
+            fabric
+          </figcaption>
+        </figure>
+
+        <figure className="mt-12 max-w-2xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/diagrams/six-constellations.svg"
+            alt="The six constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation"
+            width={810}
+            height={940}
+            className="w-full h-auto"
+          />
+          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
+            <strong className="font-semibold not-italic text-navy">
+              The six constellations
+            </strong>{" "}
+            &mdash; universal spine · same six every install
+          </figcaption>
+        </figure>
+
+        <figure className="mt-12 max-w-2xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/diagrams/system-verse.svg"
+            alt="The system-verse — future-state systems map; sovereign Data Core at center, integration mesh, application layer of 16 functional system groups"
+            width={800}
+            height={900}
+            className="w-full h-auto"
+          />
+          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
+            <strong className="font-semibold not-italic text-navy">
+              The system-verse
+            </strong>{" "}
+            &mdash; future-state systems map · the first major outcome of
+            every engagement, the architecture you receive at the end of
+            Phase 1
           </figcaption>
         </figure>
       </section>
