@@ -95,7 +95,7 @@ export default function ContactForm({
       return (
         <div className="space-y-3">
           <p className="font-display text-navy text-[20px] leading-snug">
-            We&rsquo;ll send the full document within 24 hours. Thanks for
+            I&rsquo;ll send the full document within 24 hours. Thanks for
             reading.
           </p>
           {leadId && leadId !== "silenced" ? (
@@ -288,7 +288,7 @@ export default function ContactForm({
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-navy text-white hover:bg-navy/90 transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-3.5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] hover:bg-aubergine transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === "submitting"
             ? "Sending…"

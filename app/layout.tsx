@@ -33,11 +33,12 @@ const vollkorn = Vollkorn({
 export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
-    default: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
-    template: "%s — idigdata",
+    default:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+    template: "%s · Forward-Deployed Operator",
   },
   description:
-    "Embedded for the full transformation. Fractional where a specific lever needs moving. Agentics standalone or stacked. Same architecture, sized to the work — for operators ready to own their data.",
+    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -55,23 +56,25 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+    title:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
     description:
-      "Embedded for the full transformation. Fractional where a specific lever needs moving. Agentics standalone or stacked. Same architecture, sized to the work — for operators ready to own their data.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+        alt: "idigdata — Forward-Deployed Operator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+    title:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
     description:
-      "Embedded for the full transformation. Fractional where a specific lever needs moving. Agentics standalone or stacked. Same architecture, sized to the work — for operators ready to own their data.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",

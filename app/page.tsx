@@ -4,23 +4,23 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
   },
   description:
-    "A boutique transformation practice for $100M – $750M operating companies whose ERP is a tax, not a tool. Embedded, Fractional, or Agentics — same architecture, sized to the work.",
+    "A boutique transformation practice for $100M – $750M operating companies whose ERP is a tax, not a tool. Forward-Deployed Operator — Embedded, Fractional, or Agentics, sized to the work.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata — Transformation that institutionalizes",
+    title: "idigdata — Forward-Deployed Operator",
     description:
-      "Client-owned data. Vendor-agnostic architecture. For operators ready to own their data.",
+      "I work inside the customer environment, see with operator eyes, and ship against operator outcomes. Operator-owned. Vendor-agnostic. Exit-by-design.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+        alt: "idigdata — Forward-Deployed Operator",
       },
     ],
   },
@@ -131,15 +131,16 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="font-vollkorn font-extrabold text-navy text-[36px] sm:text-[44px] md:text-[64px] lg:text-[88px] leading-[0.98] tracking-[-0.025em] text-balance mb-10 md:mb-12">
-                Client-owned data
+              <h1 className="font-vollkorn font-extrabold text-navy text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] leading-[1.0] tracking-[-0.025em] text-balance mb-10 md:mb-12">
+                I work inside the customer environment
                 <span className="text-gold px-1.5">·</span>
                 <br />
-                <em className="italic font-semibold">Vendor-agnostic</em>{" "}
-                architecture
+                <em className="italic font-semibold">
+                  see with operator eyes
+                </em>
                 <span className="text-gold px-1.5">·</span>
                 <br />
-                Transformation that{" "}
+                ship against{" "}
                 <span
                   className="relative inline-block"
                   style={{
@@ -148,7 +149,7 @@ export default function HomePage() {
                     padding: "0 4px",
                   }}
                 >
-                  institutionalizes
+                  operator outcomes
                 </span>
                 .
               </h1>
@@ -157,6 +158,15 @@ export default function HomePage() {
                 idigdata — Data Integration Group, established 2016. A boutique
                 transformation practice for $100M – $750M operating companies
                 whose ERP is a tax, not a tool.
+              </p>
+
+              {/* v9.4 thesis preserved as secondary beat */}
+              <p className="mt-5 max-w-[520px] font-vollkorn font-medium text-navy text-[13px] md:text-[14px] tracking-[0.02em]">
+                Client-owned data{" "}
+                <span className="text-gold">·</span>{" "}
+                Vendor-agnostic architecture{" "}
+                <span className="text-gold">·</span>{" "}
+                Transformation that institutionalizes
               </p>
             </div>
 
@@ -500,9 +510,9 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/approach/"
-              className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
             >
-              Read the full approach →
+              Read the full approach <span aria-hidden>→</span>
             </Link>
           </div>
         </div>
@@ -548,9 +558,9 @@ export default function HomePage() {
               },
               {
                 num: "02",
-                title: "Personal substrate",
+                title: "The rig",
                 tag: "Self-application is the credibility.",
-                body: "The agentic operating substrate I architect for my own work. Receipts produced on it; not described by it.",
+                body: "My agentic operating environment. Receipts produced on it; not described by it.",
               },
               {
                 num: "03",
@@ -586,7 +596,7 @@ export default function HomePage() {
           <div className="mt-12 lg:pl-[112px]">
             <Link
               href="/agentics/"
-              className="inline-flex items-center gap-2 font-body font-semibold text-gold text-[13px] uppercase tracking-[0.18em] border-b border-gold/40 hover:border-gold pb-1"
+              className="inline-flex items-center gap-2 bg-transparent text-cream px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-cream/40 hover:border-cream hover:bg-cream/5 transition-colors"
             >
               See the Applied Agentics page <span aria-hidden>→</span>
             </Link>
@@ -660,9 +670,9 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/articles/"
-              className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
             >
-              All articles →
+              All articles <span aria-hidden>→</span>
             </Link>
           </div>
         </div>
@@ -741,9 +751,9 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] max-w-[560px] border-t border-navy/15 pt-5">
-                A first conversation is ninety minutes, off-record, and on the
-                operator&rsquo;s terms. We end either with a clear next step,
-                or a clear answer that this isn&rsquo;t the right fit. Both are
+                A first conversation is short, off-record, and on the
+                operator&rsquo;s terms. I end either with a clear next step,
+                or a clear answer this isn&rsquo;t the right fit. Both are
                 useful.
               </p>
             </div>
@@ -751,14 +761,14 @@ export default function HomePage() {
             <div className="flex flex-col gap-4">
               <Link
                 href="/contact/"
-                className="bg-navy text-cream px-7 py-5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-navy hover:bg-aubergine transition-colors"
+                className="bg-navy text-cream px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center hover:bg-aubergine transition-colors"
               >
                 Begin a Conversation{" "}
                 <span className="text-gold text-[18px]">→</span>
               </Link>
               <Link
                 href="/approach/"
-                className="bg-transparent text-navy px-7 py-5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-navy hover:bg-navy hover:text-cream transition-colors"
+                className="bg-transparent text-navy px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-navy hover:bg-navy hover:text-cream transition-colors"
               >
                 Read the Practice Letter{" "}
                 <span className="text-gold text-[18px]">↗</span>

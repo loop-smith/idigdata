@@ -47,8 +47,8 @@ export default function Article3V2Page() {
           </p>
           <p className="font-body text-navy text-[16px] leading-[1.65] mb-8">
             Until then: the FDE-vs-FDO distinction, the BOSS platform, and
-            the personal substrate the work runs on are all on the Applied
-            Agentics page.
+            the rig &mdash; my agentic operating environment &mdash; are all
+            on the Applied Agentics page.
           </p>
           <p className="font-body text-[15px]">
             <Link

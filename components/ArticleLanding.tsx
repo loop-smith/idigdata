@@ -80,16 +80,20 @@ export default function ArticleLanding({ article }: Props) {
           <span>{article.category}</span>
         </div>
 
-        {/* H1 + subtitle + byline + stone rule */}
+        {/* H1 + subtitle + magazine metadata strip + stone rule */}
         <h1 className="font-vollkorn font-semibold text-navy text-[34px] md:text-[44px] leading-[1.13] tracking-[-0.012em]">
           {article.title}
         </h1>
         <p className="mt-3.5 font-display italic text-warm-gray text-[16px]">
           {article.subtitle}
         </p>
-        <p className="mt-3.5 font-display italic text-warm-gray text-[15px]">
-          By Robert Paddock · idigdata
-        </p>
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-[10.5px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+          <span>By Robert Paddock</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>{article.category}</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>{article.readingTimeMin} min read</span>
+        </div>
         <hr className="mt-9 mb-11 border-0 border-t-[1.5px] border-stone w-16" />
 
         {/* Lede */}

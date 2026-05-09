@@ -1,0 +1,9 @@
+<svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RIG flow accent">
+  <title>RIG flow accent</title>
+  <desc>RIG flow accent v0 — a single graceful curve that pairs with the rigid mark in compositions. Visual counter to the mark's rigidity: where the mark is the frame, the flow is what moves through it. Used as decorative element in brand surfaces (docs headers, plugin cards, web sections). Color: Steel (subtle) or Oxblood (warm accent). Authored 2026-04-26 in ops_cw.</desc>
+  <path d="M 10 30 C 60 10, 100 50, 150 30 C 180 18, 210 42, 230 30"
+        stroke="#7c2d12"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"/>
+</svg>

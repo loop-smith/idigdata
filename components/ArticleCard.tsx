@@ -29,17 +29,19 @@ export default function ArticleCard({
       <h3 className="mt-4 font-vollkorn font-semibold text-navy text-[20px] leading-tight tracking-tight">
         {title}
       </h3>
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-body text-[10.5px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+        <span>{category}</span>
+        <span aria-hidden className="text-stone">·</span>
+        <span>{readingTimeMin} min read</span>
+        <span aria-hidden className="text-stone">·</span>
+        <span>By request</span>
+      </div>
       <p className="mt-3 font-body text-ink text-[15px] leading-relaxed">
         {hook}
       </p>
-      <div className="mt-5 flex items-center justify-between">
-        <p className="font-body font-semibold text-navy text-[13.5px]">
-          Read summary + request access →
-        </p>
-        <p className="font-body italic text-stone text-[12px]">
-          {readingTimeMin} min · {category}
-        </p>
-      </div>
+      <p className="mt-5 font-body font-semibold text-navy text-[13.5px]">
+        Read summary + request access →
+      </p>
     </Link>
   );
 }

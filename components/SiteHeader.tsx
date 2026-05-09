@@ -49,10 +49,10 @@ export default function SiteHeader() {
           <Image
             src="/idigdata-wordmark-only.svg"
             alt="idigdata"
-            width={155}
-            height={32}
+            width={620}
+            height={130}
             priority
-            className="h-7 md:h-8 w-auto"
+            className="h-12 md:h-14 w-auto"
           />
         </Link>
 

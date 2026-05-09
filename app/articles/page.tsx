@@ -6,14 +6,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Articles",
+  title: "Articles — idigdata",
   description:
     "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
   alternates: { canonical: "/articles/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/articles/",
-    title: "Articles — idigdata",
+    title: "Articles — idigdata · Forward-Deployed Operator",
     description:
       "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
     images: [

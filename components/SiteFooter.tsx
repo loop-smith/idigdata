@@ -6,10 +6,10 @@ export default function SiteFooter() {
     <footer className="mt-24 border-t border-navy">
       <div className="mx-auto max-w-content px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Contact */}
+          {/* Reach out */}
           <div>
             <p className="font-body uppercase tracking-section text-[12px] text-stone mb-3">
-              Contact
+              Reach out
             </p>
             <p className="font-body text-[15px] text-ink leading-relaxed">
               <a
@@ -69,8 +69,7 @@ export default function SiteFooter() {
               />
             </div>
             <p className="font-display italic text-stone text-[14px] leading-relaxed">
-              Client-owned data &middot; Vendor-agnostic architecture &middot;
-              Transformation that institutionalizes
+              Operator-owned &middot; Vendor-agnostic &middot; Exit-by-design
             </p>
           </div>
         </div>

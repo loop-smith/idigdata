@@ -3,14 +3,14 @@ import ContactForm from "@/components/ContactForm";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Reach out",
+  title: "Reach out — idigdata",
   description:
     "First conversation is operator-to-operator — no commitment, no proposal-deck. Just talking shape. For embedded residencies, fractional engagements, and agentic deployments.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
-    title: "Reach out — idigdata",
+    title: "Reach out — idigdata · Forward-Deployed Operator",
     description:
       "First conversation is operator-to-operator. Just talking shape.",
     images: [
@@ -48,7 +48,7 @@ export default function ContactPage() {
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
           First conversation is operator-to-operator — no commitment, no
           proposal-deck. There&rsquo;s no charge for the first conversation;
-          it&rsquo;s how we both qualify whether the work is a fit.
+          it&rsquo;s how both sides qualify whether the work is a fit.
         </p>
       </section>
 

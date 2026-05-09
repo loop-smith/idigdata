@@ -10,14 +10,14 @@ import SprintRoadmap from "@/components/diagrams/SprintRoadmap";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Approach",
+  title: "Approach — idigdata",
   description:
-    "How Robert plugs in. Three engagement shapes — embedded, fractional, agentics. Structurally lean. Clean exit. Engagement roadmap and capital structure.",
+    "How I plug in. Three engagement shapes — embedded, fractional, agentics. Structurally lean. Exit by design. Engagement roadmap and capital structure.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/approach/",
-    title: "Approach — idigdata",
+    title: "Approach — idigdata · Forward-Deployed Operator",
     description:
       "Three engagement shapes. Same architecture. Sized to the work.",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Client-owned data. Vendor-agnostic architecture. Transformation that institutionalizes.",
+        alt: "idigdata — Forward-Deployed Operator",
       },
     ],
   },
@@ -161,17 +161,34 @@ export default function ApproachPage() {
 
       <section
         id="architecture-views"
-        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
+        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-12 md:pb-16 scroll-mt-20 mt-12"
       >
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          The architecture we build to
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
+          The trinity · three views of the operating fabric
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] lg:text-[60px] leading-[1.02] tracking-[-0.02em] text-balance">
+          The architecture{" "}
+          <em className="italic font-semibold">I build to.</em>
         </h2>
-        <p className="mt-5 max-w-[820px] font-display italic text-stone text-[16px] leading-relaxed">
+        <p className="mt-6 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] leading-snug">
           Three views of the same operating fabric — same operator, three
           angles. The people layer, the work layer, the substrate.
         </p>
+      </section>
 
-        <figure className="mt-12 max-w-2xl mx-auto">
+      {/* Trinity panel I — The beehive */}
+      <section className="bg-cream px-0 md:px-8 pt-12 md:pt-16 pb-24 md:pb-28 border-t border-navy/15">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Diagram I · the people fabric
+        </p>
+        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
+          The <em className="italic font-semibold">beehive.</em>
+        </h3>
+        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
+          Process flows × functional groups — six BPFs feed the operating
+          fabric, MDM and the Common Data Model at the center.
+        </p>
+        <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/beehive.svg"
@@ -180,16 +197,29 @@ export default function ApproachPage() {
             height={700}
             className="w-full h-auto"
           />
-          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
-            <strong className="font-semibold not-italic text-navy">
-              The beehive
-            </strong>{" "}
-            &mdash; process flows &times; functional groups · the people
-            fabric
-          </figcaption>
         </figure>
+        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+          <span>Diagram I</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>Universal frame</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>Live in every engagement</span>
+        </div>
+      </section>
 
-        <figure className="mt-12 max-w-2xl mx-auto">
+      {/* Trinity panel II — Six constellations */}
+      <section className="bg-pale-navy px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Diagram II · the work layer
+        </p>
+        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
+          The <em className="italic font-semibold">six constellations.</em>
+        </h3>
+        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
+          Universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign
+          Data Core. BPSc density bands ring each constellation.
+        </p>
+        <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/six-constellations.svg"
@@ -198,15 +228,29 @@ export default function ApproachPage() {
             height={940}
             className="w-full h-auto"
           />
-          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
-            <strong className="font-semibold not-italic text-navy">
-              The six constellations
-            </strong>{" "}
-            &mdash; universal spine · same six every install
-          </figcaption>
         </figure>
+        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+          <span>Diagram II</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>Universal spine</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>Same six every install</span>
+        </div>
+      </section>
 
-        <figure className="mt-12 max-w-2xl mx-auto">
+      {/* Trinity panel III — System-verse */}
+      <section className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Diagram III · the substrate
+        </p>
+        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
+          The <em className="italic font-semibold">system-verse.</em>
+        </h3>
+        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
+          Future-state systems map — sovereign Data Core at center, integration
+          mesh, application layer of 16 functional system groups.
+        </p>
+        <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/system-verse.svg"
@@ -215,15 +259,14 @@ export default function ApproachPage() {
             height={900}
             className="w-full h-auto"
           />
-          <figcaption className="mt-3 font-display italic text-stone text-[14px]">
-            <strong className="font-semibold not-italic text-navy">
-              The system-verse
-            </strong>{" "}
-            &mdash; future-state systems map · the first major outcome of
-            every engagement, the architecture you receive at the end of
-            Phase 1
-          </figcaption>
         </figure>
+        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+          <span>Diagram III</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>Future-state map</span>
+          <span aria-hidden className="text-stone">·</span>
+          <span>The Phase 1 deliverable</span>
+        </div>
       </section>
 
       <section
@@ -327,9 +370,9 @@ export default function ApproachPage() {
           <div className="mt-8">
             <Link
               href="/contact?interest=engagement"
-              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-navy text-white hover:bg-navy/90 transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2"
+              className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-3.5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] hover:bg-aubergine transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2"
             >
-              Start a conversation
+              Start a conversation <span aria-hidden>→</span>
             </Link>
           </div>
         </div>

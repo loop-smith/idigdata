@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Applied Agentics — idigdata",
   description:
-    "Applied agentics at lab and PE altitude. BOSS, the operator-owned platform. The personal substrate the work runs on. The Forward-Deployed Operator alternative to the FDE pattern.",
+    "Applied agentics at lab and PE altitude. BOSS, the operator-owned platform. The rig — my agentic operating environment. The Forward-Deployed Operator alternative to the FDE pattern.",
   alternates: { canonical: "/agentics/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/agentics/",
-    title: "Applied Agentics — idigdata",
+    title: "Applied Agentics — idigdata · Forward-Deployed Operator",
     description:
       "Forward-Deployed Operator at lab and PE altitude. Operator-owned substrate. Exit by design.",
     images: [
@@ -183,57 +184,75 @@ export default function AgenticsPage() {
           <p className="mt-10">
             <Link
               href="/approach/"
-              className="font-body font-semibold text-navy text-[15px] border-b border-navy/40 hover:border-navy"
+              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
             >
-              See how BOSS lands inside an engagement →
+              See how BOSS lands inside an engagement <span aria-hidden>→</span>
             </Link>
           </p>
         </div>
       </section>
 
-      {/* ============== PERSONAL SUBSTRATE ============== */}
-      <section id="substrate" className="bg-pale-navy">
+      {/* ============== THE RIG ============== */}
+      <section id="the-rig" className="bg-pale-navy">
         <div className="mx-auto max-w-content px-6 py-24 md:py-32">
           <header className="mb-12 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
-              Personal substrate
+              The rig · operator&rsquo;s harness
             </p>
-            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance">
-              Self-application is the{" "}
-              <em className="italic font-semibold">credibility.</em>
-            </h2>
+            <div className="mb-8">
+              <Image
+                src="/brand/rig/wordmark.svg"
+                alt="THE RIG"
+                width={400}
+                height={200}
+                className="h-28 md:h-36 w-auto"
+              />
+            </div>
             <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[19px] leading-snug border-t border-navy/15 pt-5 mt-6 max-w-[680px]">
-              The operator building agentic systems for customers is using
-              agentic systems in his own operations.
+              My agentic operating environment. The work runs on it daily &mdash;
+              not as observation, as operating environment.
             </p>
           </header>
 
-          <div className="space-y-6 max-w-[760px] font-body text-[16px] md:text-[17px] leading-[1.65] text-navy">
-            <p>
-              <strong className="font-semibold">What it is.</strong> A personal
-              agentic operating substrate I architect for my own work. The
-              practice runs on it daily &mdash; not as observation, as
-              operating environment.
-            </p>
-            <p>
-              <strong className="font-semibold">What it does.</strong>{" "}
-              Observability across multiple agent lanes. Layer contracts that
-              hold composition discipline. Severity-graded validation. Build-loop
-              discipline that gets agentic work to finish, not loop forever.
-            </p>
-            <p>
-              <strong className="font-semibold">Why it matters.</strong> Receipts
-              produced on the substrate, not described by it. The artifacts on{" "}
-              <Link
-                href="/approach/"
-                className="border-b border-navy/40 hover:border-navy"
-              >
-                Approach
-              </Link>{" "}
-              &mdash; trinity diagrams, engagement roadmap, six-axis readiness
-              &mdash; are produced inside this environment, then handed off to
-              the operator.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-10 lg:gap-16 items-start">
+            <div className="space-y-6 max-w-[760px] font-body text-[16px] md:text-[17px] leading-[1.65] text-navy">
+              <p>
+                <strong className="font-semibold">What it is.</strong> The rig
+                is my agentic operating environment &mdash; the harness the
+                practice runs on, daily.
+              </p>
+              <p>
+                <strong className="font-semibold">What it does.</strong>{" "}
+                Observability across multiple agent lanes. Layer contracts that
+                hold composition discipline. Severity-graded validation.
+                Build-loop discipline that gets agentic work to finish, not
+                loop forever.
+              </p>
+              <p>
+                <strong className="font-semibold">Why it matters.</strong>{" "}
+                The receipts on{" "}
+                <Link
+                  href="/approach/"
+                  className="border-b border-navy/40 hover:border-navy"
+                >
+                  Approach
+                </Link>{" "}
+                &mdash; trinity diagrams, engagement roadmap, six-axis readiness
+                &mdash; are produced on the rig, not described by it.
+              </p>
+            </div>
+            <div
+              aria-hidden="true"
+              className="hidden lg:flex justify-center pt-4 opacity-90"
+            >
+              <Image
+                src="/brand/rig/mark.svg"
+                alt=""
+                width={300}
+                height={300}
+                className="h-44 w-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -289,10 +308,9 @@ export default function AgenticsPage() {
             <li className="grid grid-cols-[16px_1fr] gap-4">
               <span className="font-vollkorn italic font-bold text-gold text-[20px] leading-[1.2]">·</span>
               <span>
-                <strong className="font-semibold">Personal substrate:</strong>{" "}
-                agentic operating infrastructure I architect for my own work
-                &mdash; observability, layer contracts, severity-graded
-                validation, build-loop discipline.
+                <strong className="font-semibold">The rig:</strong>{" "}
+                my agentic operating environment &mdash; observability, layer
+                contracts, severity-graded validation, build-loop discipline.
               </span>
             </li>
           </ul>
@@ -312,21 +330,21 @@ export default function AgenticsPage() {
                 <em className="italic font-semibold">No deck.</em>
               </h2>
               <p className="font-vollkorn italic font-medium text-cream/80 text-[17px] md:text-[19px] leading-snug border-t border-gold/30 pt-5 mt-6 max-w-[560px]">
-                First conversation is ninety minutes, off the record.
-                We end either with a clear next step, or a clear answer that
-                this isn&rsquo;t the right fit. Both are useful.
+                First conversation is short, off the record. I end either with a
+                clear next step, or a clear answer this isn&rsquo;t the right
+                fit. Both are useful.
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <Link
                 href="/contact/"
-                className="bg-gold text-navy px-7 py-5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center hover:bg-cream transition-colors"
+                className="bg-gold text-navy px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center hover:bg-cream transition-colors"
               >
                 Reach out <span aria-hidden className="text-[18px]">→</span>
               </Link>
               <Link
                 href="/articles/03-applied-agentics-v2/"
-                className="bg-transparent text-cream px-7 py-5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-cream/40 hover:border-cream hover:bg-cream/5 transition-colors"
+                className="bg-transparent text-cream px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-cream/40 hover:border-cream hover:bg-cream/5 transition-colors"
               >
                 Read Article 03 v2 <span aria-hidden className="text-[18px]">↗</span>
               </Link>
