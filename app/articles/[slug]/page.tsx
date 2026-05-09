@@ -72,7 +72,7 @@ export default async function ArticlePage(
     author: {
       "@type": "Person",
       name: "Robert Paddock",
-      url: "https://idigdata.com/about/",
+      url: "https://idigdata.com/",
     },
     publisher: {
       "@type": "Organization",

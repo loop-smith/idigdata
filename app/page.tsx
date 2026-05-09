@@ -127,7 +127,7 @@ export default function HomePage() {
               <div className="flex items-center gap-3.5 mb-10 md:mb-12">
                 <span className="block w-1.5 h-1.5 rounded-full bg-gold" />
                 <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-                  A Practice for Mid-Market Operators
+                  Forward-Deployed Operator · A Practice for Mid-Market Operators
                 </span>
               </div>
 
@@ -508,8 +508,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== IV — BOSS (full-bleed navy) ===================== */}
-      <section id="boss" className="relative overflow-hidden bg-navy text-cream">
+      {/* ===================== IV — APPLIED AGENTICS (teaser, full-bleed navy) ===================== */}
+      <section id="agentics" className="relative overflow-hidden bg-navy text-cream">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-10 top-20 opacity-[0.07]"
@@ -521,118 +521,74 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-28 md:py-40 relative">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-20 md:mb-24">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32 relative">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-14 md:mb-16">
             <div className="hidden lg:block pt-2">
               <span className="block w-10 h-0.5 bg-gold" />
             </div>
-            <h2 className="font-vollkorn font-extrabold text-cream text-[72px] md:text-[104px] lg:text-[128px] leading-[0.9] tracking-[-0.04em]">
-              B<span className="text-gold">·</span>O
-              <span className="text-gold">·</span>S
-              <span className="text-gold">·</span>S
+            <h2 className="font-vollkorn font-extrabold text-cream text-[44px] md:text-[64px] lg:text-[80px] leading-[0.98] tracking-[-0.025em]">
+              Applied{" "}
+              <em className="italic font-semibold">agentics.</em>
             </h2>
-            <p className="font-vollkorn italic font-medium text-cream/80 text-[19px] md:text-[22px] leading-[1.45] text-pretty">
-              The platform that{" "}
-              <strong className="not-italic font-semibold text-cream">
-                institutionalizes the new model
-              </strong>{" "}
-              in the client&rsquo;s hands. Three pillars, one operating
-              discipline — engineered so the company keeps running it long
-              after the residency ends.
+            <p className="font-vollkorn italic font-medium text-cream/80 text-[18px] md:text-[20px] leading-[1.45] text-pretty">
+              The same FDO posture at lab and PE altitude. Operator-altitude
+              help with operator-owned substrate &mdash; a different corner
+              of the market than the lab FDE programs and the consulting
+              industry.
             </p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-gold/40 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-gold/40">
             {[
               {
-                pnum: "Pillar I",
-                pname: "Data.",
-                ptag: "The layer the client owns.",
-                pbody:
-                  "Curation, transformation, annotation, quality, and governance pulling a company’s disparate data into one Common Data Model the client owns. Systems and data inventory. Six-constellation current-state process map. Data-to-Reports framework collapsing thousands of ad-hoc reports into one coherent model.",
-                items: [
-                  ["01", "Common Data Model", "The client owns it. Day one and day one-thousand."],
-                  ["02", "Systems & data inventory", "The map of what the company actually runs on."],
-                  ["03", "Data-to-Reports framework", "Thousands of ad-hoc reports, collapsed."],
-                ] as const,
+                num: "01",
+                title: "BOSS",
+                tag: "Operator-owned platform.",
+                body: "The platform that institutionalizes the new model in the operator's hands. Per-engagement deployment. Owned by the operator at handoff.",
               },
               {
-                pnum: "Pillar II",
-                pname: "People.",
-                ptag: "The team that carries it forward.",
-                pbody:
-                  "The beehive — organizing taskforces of leads and SMEs by departmental functional system groups. Change and stakeholder management. Operator empowerment. The deliverable is institutional capacity, not a binder.",
-                items: [
-                  ["01", "The beehive", "Taskforces by functional system group."],
-                  ["02", "Stakeholder & change management", "Cadence the company learns to run."],
-                  ["03", "Operator empowerment", "The team carries it after the residency ends."],
-                ] as const,
+                num: "02",
+                title: "Personal substrate",
+                tag: "Self-application is the credibility.",
+                body: "The agentic operating substrate I architect for my own work. Receipts produced on it; not described by it.",
               },
               {
-                pnum: "Pillar III",
-                pname: (
-                  <>
-                    <em className="italic font-semibold">Delivery.</em>
-                  </>
-                ),
-                ptag: "The discipline that ships, audits, and repeats.",
-                pbody:
-                  "Project Management, Governance, and Stakeholder/Change Management as one unified suite. Sprint cadence, decision-traces, capitalization tracking (CFO-defensible per ASC 350-40), vendor-lane orchestration. Native or interop with the client’s existing PM tool — adoption barrier collapses.",
-                items: [
-                  ["01", "Unified PM + governance + change", "One suite, one cadence, one rhythm."],
-                  ["02", "Capitalization tracking", "CFO-defensible per ASC 350-40."],
-                  ["03", "Vendor-lane orchestration", "Vendors stay in their lanes — by structure."],
-                ] as const,
+                num: "03",
+                title: "Agentic stack",
+                tag: "Multi-lab, multi-vendor by design.",
+                body: "Modern agentic stack daily — Anthropic primary, OpenAI in active rotation, multi-vendor council pattern, MCP, Agent SDK, Vercel + Supabase + GitHub.",
               },
-            ].map((p, i, arr) => (
+            ].map((c, i, arr) => (
               <div
-                key={p.pnum}
-                className={`px-8 md:px-9 pt-12 pb-2 flex flex-col gap-6 ${
+                key={c.num}
+                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-4 ${
                   i < arr.length - 1
                     ? "md:border-r border-cream/15 border-b md:border-b-0"
                     : ""
                 }`}
               >
-                <span className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.1em]">
-                  {p.pnum}
+                <span className="font-mono text-gold text-[11px] tracking-[0.16em]">
+                  No. {c.num}
                 </span>
-                <h3 className="font-vollkorn font-extrabold text-cream text-[44px] md:text-[56px] leading-none tracking-[-0.02em]">
-                  {p.pname}
+                <h3 className="font-vollkorn font-extrabold text-cream text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
+                  {c.title}
                 </h3>
-                <p className="font-vollkorn italic font-medium text-gold text-[16px] md:text-[17px] leading-[1.35]">
-                  {p.ptag}
+                <p className="font-vollkorn italic font-medium text-gold text-[15px] md:text-[16px] leading-[1.35]">
+                  {c.tag}
                 </p>
                 <p className="font-body text-cream/80 text-[14.5px] leading-[1.65]">
-                  {p.pbody}
+                  {c.body}
                 </p>
-                <ul className="mt-2 flex flex-col gap-3 pt-6 border-t border-cream/15">
-                  {p.items.map(([ix, head, sub]) => (
-                    <li
-                      key={ix}
-                      className="grid grid-cols-[28px_1fr] gap-3 text-[13px] leading-[1.5]"
-                    >
-                      <span className="font-mono text-gold text-[10px] tracking-[0.1em] pt-1">
-                        {ix}
-                      </span>
-                      <span className="text-cream/90">
-                        <b className="block font-vollkorn font-bold text-cream mb-0.5 text-[14px]">
-                          {head}
-                        </b>
-                        {sub}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 lg:pl-[112px]">
+          <div className="mt-12 lg:pl-[112px]">
             <Link
-              href="/boss/"
+              href="/agentics/"
               className="inline-flex items-center gap-2 font-body font-semibold text-gold text-[13px] uppercase tracking-[0.18em] border-b border-gold/40 hover:border-gold pb-1"
             >
-              How BOSS works <span aria-hidden>→</span>
+              See the Applied Agentics page <span aria-hidden>→</span>
             </Link>
           </div>
         </div>

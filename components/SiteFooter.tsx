@@ -40,8 +40,8 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/boss" className="hover:text-aubergine transition-colors">
-                  BOSS
+                <Link href="/agentics" className="hover:text-aubergine transition-colors">
+                  Agentics
                 </Link>
               </li>
               <li>
@@ -50,13 +50,8 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-aubergine transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-aubergine transition-colors">
-                  Contact
+                  Reach out
                 </Link>
               </li>
             </ul>

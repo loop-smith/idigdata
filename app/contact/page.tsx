@@ -3,22 +3,22 @@ import ContactForm from "@/components/ContactForm";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Get in touch",
+  title: "Reach out",
   description:
-    "For full-transformation residencies, fractional engagements, agentic deployments, and standing for board / PE conversations.",
+    "First conversation is operator-to-operator — no commitment, no proposal-deck. Just talking shape. For embedded residencies, fractional engagements, and agentic deployments.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
-    title: "Contact — idigdata",
+    title: "Reach out — idigdata",
     description:
-      "For full-transformation residencies, fractional engagements, agentic deployments, and standing for board / PE conversations.",
+      "First conversation is operator-to-operator. Just talking shape.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Get in touch",
+        alt: "idigdata — Reach out",
       },
     ],
   },
@@ -29,7 +29,7 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
-    { "@type": "ListItem", position: 2, name: "Contact", item: "https://idigdata.com/contact/" },
+    { "@type": "ListItem", position: 2, name: "Reach out", item: "https://idigdata.com/contact/" },
   ],
 };
 
@@ -39,12 +39,16 @@ export default function ContactPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
 
       <section className="pt-20 pb-8 md:pt-24 md:pb-10">
+        <p className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
+          Reach out
+        </p>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Get in touch
+          Just talking shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          For full-transformation residencies, fractional engagements, agentic
-          deployments, and standing for board / PE conversations.
+          First conversation is operator-to-operator — no commitment, no
+          proposal-deck. There&rsquo;s no charge for the first conversation;
+          it&rsquo;s how we both qualify whether the work is a fit.
         </p>
       </section>
 

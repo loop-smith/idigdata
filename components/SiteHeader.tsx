@@ -7,10 +7,9 @@ import { useEffect, useState } from "react";
 
 const NAV = [
   { href: "/approach", label: "Approach" },
-  { href: "/boss", label: "BOSS" },
+  { href: "/agentics", label: "Agentics" },
   { href: "/articles", label: "Articles" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Reach out" },
 ];
 
 export default function SiteHeader() {
