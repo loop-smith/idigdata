@@ -1,6 +1,6 @@
 # idigdata
 
-Marketing / positioning website for **idigdata LLC** — Robert Paddock's independent consulting practice (Contract CIO, business transformation, agentic adoption).
+Marketing / positioning website for **Data Integration Group** — Robert Paddock's independent consulting practice (Contract CIO, business transformation, agentic adoption).
 
 Next.js App Router + React + TypeScript + Tailwind 4. Deploys to Vercel. Domain: `idigdata.com`.
 
@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-Boots on `http://localhost:3100`. Port assignment is registered at `C:\2026_agentic_projects\PORTS.md`.
+Boots on `http://localhost:3100`. Port assignment is registered at `C:\rig\code\PORTS.md`.
 
 If port 3100 is held by a zombie, Next 16 hard-fails with `EADDRINUSE`. Find and kill:
 

@@ -2,6 +2,16 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-05-02 evening — Vercel project deploy PAUSED via git-disconnect (loopsmith_cw via Chrome MCP, no CC dispatch)
+
+- **Trigger:** Rob hit `idigdata.vercel.app`, saw the marketing site live, asked to "turn off the idigdata-app form deploying via vercel." Naming clarification surfaced: `idigdata.vercel.app` IS this codebase (marketing site), not the separate `idigdata-app` CRM project (which has no Vercel deployment yet and is paused mid-build at `C:\2026_agentic_projects\idigdata-app\`).
+- **Action: Git integration DISCONNECTED via Vercel Dashboard** → `loop-smith/idigdata` → Settings → Git → Disconnect → Continue. No further auto-deploys will fire from GitHub pushes (including any `v2-overhaul` preview branch deploys — `7XKy5cJeN` was the last preview before disconnect).
+- **State preserved (intentionally — flip-on path):** Vercel project, env vars (RESEND_API_KEY + IDIGDATA_APP_SUPABASE_URL/ANON_KEY + EMAIL_NOTIFY_TO + others per `SYSTEMS.md` §6), Standard Deployment Protection settings, Skew Protection, Project Members, all settings.
+- **Existing production deployment** (latest commit `9e2eb21` "Privacy: strip WHOIS contact PII from CHANGELOG audit note") still serves at `idigdata.vercel.app` to `loop-smith` team only — non-team-members hit Vercel auth wall via Standard Protection. (Pro Trial Vercel Authentication "All Deployments" scope requires paid Advanced Deployment Protection at $150/mo; declined.)
+- **Custom domains** `idigdata.com` + `www.idigdata.com` remain DETACHED (since 2026-05-01 cycle 4.5); site returns `404 DEPLOYMENT_NOT_FOUND` at those URLs.
+- **Reactivation flow when content ready for public:** Vercel Dashboard → `loop-smith/idigdata` → Settings → Git → Connect Repository → `loop-smith/idigdata`. Then re-attach custom domains per the flip-on procedure in `loopsmith/handoff.md` Deferred.
+- **CRM `idigdata-app` (separate codebase) unaffected** — distinct project at `C:\2026_agentic_projects\idigdata-app\`, GitHub `loop-smith/idigdata-app` (private), no Vercel project yet. When CRM build resumes, it gets its own new Vercel project at deploy-time.
+
 ## 2026-05-02 — DNS hosting Bluehost→Vercel + registrar transfer initiated (loopsmith_cw cycles A/B/C, no CC dispatch)
 
 - **Cycle A — DNS hosting transfer Bluehost → Vercel (zone authoritative now on `ns1/ns2.vercel-dns.com`).**

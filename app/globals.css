@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-d2-forest: #1F3D2E;
-  --color-d2-copper: #B04E2A;
+  /* Brand v4 (canonical going forward) */
+  --color-navy: #142840;
+  --color-gold: #FACC15;
+  --color-stone: #7A756A;
+  --color-warm-gray: #6B6860;
+  --color-aubergine: #4A2E52;
+  --color-ink: #1A1A1A;
+  --color-paper: #FFFFFF;
+  --color-cream: #FBF9F4;
+  --color-pale-navy: #F5F5F8;
+
+  /* Legacy d2-* tokens (remain for v1 components still in flight) */
+  --color-d2-forest: #142840;
+  --color-d2-copper: #4A2E52;
   --color-d2-aubergine: #4A2E52;
   --color-d2-stone: #7A756A;
   --color-d2-warmgray: #6B6860;
@@ -11,6 +23,7 @@
 
   --font-display: var(--next-font-display), Cambria, Lora, Georgia, serif;
   --font-body: var(--next-font-body), Calibri, "Source Sans 3", "Inter", system-ui, sans-serif;
+  --font-vollkorn: var(--next-font-vollkorn), "Vollkorn", var(--next-font-display), Cambria, Georgia, serif;
 
   --tracking-section: 0.12em;
 }
@@ -20,8 +33,15 @@
 }
 
 :root {
-  --d2-forest: #1F3D2E;
-  --d2-copper: #B04E2A;
+  --navy: #142840;
+  --gold: #FACC15;
+  --aubergine: #4A2E52;
+  --stone: #7A756A;
+  --warm-gray: #6B6860;
+  --ink: #1A1A1A;
+  /* Legacy aliases */
+  --d2-forest: #142840;
+  --d2-copper: #4A2E52;
   --d2-aubergine: #4A2E52;
   --d2-stone: #7A756A;
   --d2-warmgray: #6B6860;

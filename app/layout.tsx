@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Lora, Source_Sans_3 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Lora, Source_Sans_3, Vollkorn } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
@@ -22,14 +22,23 @@ const body = Source_Sans_3({
   weight: ["400", "500", "600", "700"],
 });
 
+const vollkorn = Vollkorn({
+  subsets: ["latin"],
+  variable: "--next-font-vollkorn",
+  display: "swap",
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
-    default: "idigdata — Transformative CIO + agentic adoption",
-    template: "%s — idigdata",
+    default:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+    template: "%s · Forward-Deployed Operator",
   },
   description:
-    "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
+    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -47,23 +56,25 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "idigdata — Transformative CIO + agentic adoption",
+    title:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
     description:
-      "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+        alt: "idigdata — Forward-Deployed Operator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "idigdata — Transformative CIO + agentic adoption",
+    title:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
     description:
-      "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
@@ -83,13 +94,21 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#142840",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
       <body className="font-body text-d2-ink bg-white">
         <PostHogProvider>
           <JsonLd />

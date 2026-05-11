@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="THE RIG wordmark">
+  <title>THE RIG wordmark</title>
+  <desc>THE RIG wordmark v1 — "THE" in Steel, letter-spaced wide, regular weight; "RIG" in Navy, heavy black weight, tight kerning. The hierarchy carries the rigid+flow duality: THE breathes (the article, the wider spacing); RIG holds (the structure, the heavy mass). Authored 2026-04-26 in ops_cw.</desc>
+  <text x="200" y="58"
+        text-anchor="middle"
+        font-family="Inter, Helvetica Neue, Arial, sans-serif"
+        font-size="30"
+        font-weight="500"
+        letter-spacing="14"
+        fill="#64748b">THE</text>
+  <text x="200" y="170"
+        text-anchor="middle"
+        font-family="Inter, Helvetica Neue, Arial, sans-serif"
+        font-size="128"
+        font-weight="900"
+        letter-spacing="-5"
+        fill="#0f172a">RIG</text>
+</svg>

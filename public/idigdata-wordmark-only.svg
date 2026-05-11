@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 130" width="620" height="130" role="img" aria-label="idigdata wordmark, minimal">
+  <title>idigdata - wordmark only, v4.3</title>
+  <desc>Minimal wordmark. v4.3 (2026-05-03): connector approach - dot tight to letters (2px gap), centered on x-height.</desc>
+  <text x="322" y="100" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="100" fill="#142840" text-anchor="end" letter-spacing="-1">idig</text>
+  <rect x="324" y="63" width="20" height="20" fill="#FACC15"/>
+  <text x="346" y="100" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="100" fill="#142840" text-anchor="start" letter-spacing="-1">data</text>
+</svg>

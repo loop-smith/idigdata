@@ -1,0 +1,54 @@
+# idigdata
+
+> Independent practice for operator-owned business system transformation. Forward-Deployed Operator at mid-market scale (V1) and applied agentics at lab/PE altitude (V2). Founded 2016 by Robert Paddock.
+
+idigdata is the independent practice of Robert Paddock — a Forward-Deployed Operator (FDO) with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. The practice ships operator-owned, vendor-agnostic transformations for $100M–$1B operators across three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare (electronic health records / EHR). Two core threads run under every engagement: ERP as the financial and accounting backbone, and compliance and risk as the foundation. System breadth covers ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS.
+
+The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engineer (FDE) that Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) ship. FDE is engineering altitude with platform tie-in and default-forever-embedded posture. FDO is senior-leadership altitude with operator-owned substrate and exit-by-design — a different corner of the same emerging market. idigdata sits at a third corner that neither lab-FDE programs nor McKinsey-style consulting occupies: operator-altitude help, operator-owned deliverable, structurally lean firm, defined exit at engagement close.
+
+## Primary Pages
+
+- [Home](https://idigdata.com/): asset overview, three industry specialties, two core threads, system breadth, meta-thesis register
+- [Approach](https://idigdata.com/approach/): the FDO engagement shape, two-thread structural discipline, exit-by-design as deliverable form
+- [Agentics](https://idigdata.com/agentics/): applied agentics at lab and PE altitude, the data-substrate thread under everything, five shipped agentic builds at brand scale
+- [Articles](https://idigdata.com/articles/): three reads from the practice — transformation and the people of it, the mechanics, applied agentics
+- [Contact](https://idigdata.com/contact/): first-conversation surface — no commitment, no proposal-deck
+
+## Agent Resources
+
+- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 20 questions answering buyer-side operator research (identity, differentiation, practice scope, engagement shape, practical)
+
+## Key Substance
+
+**FDO primitive.** Forward-Deployed Operator — senior leader who works inside the customer environment, sees with operator eyes, ships against operator outcomes. Operator-owned. Vendor-agnostic. No managed-services tail. Exit-by-design — the FDO embeds, builds, and develops the systems and people to leave it. The deliverable at engagement close is a fully deployed and maintained operator-owned data substrate.
+
+**Three-corner positioning.** Lab-originated FDE programs (engineer altitude, platform-tied, default-forever-embedded — Palantir-originated; Anthropic-Goldman-Blackstone JV May 2026; OpenAI Deployment Company May 2026 with TPG anchor + 17.5% guaranteed return + portfolio-company target). McKinsey and Big 4 consulting (consultant altitude, recommendation-only, project-shaped, premium fees). idigdata FDO (operator altitude, operator-owned substrate, structurally lean economics, exit-by-design). idigdata sits at the third corner — neither lab-FDE nor consulting-industry occupies it.
+
+**Six Process Constellations.** Exhaustive operating-process spine used across every transformation. P2P (procure-to-pay — buys), O2C (order-to-cash — sells), P2M (plan-to-make — makes), D2R (data-to-report — true business intelligence), MDM (master data management — substrate), S2S (systems-to-support — everything-else infrastructure). Same six in every install; the makeup differs per operator.
+
+**System breadth.** ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft D365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI. The Common Data Model and master data discipline thread through every engagement.
+
+**Two worlds collided.** 30 years business systems plus 2 years applied agentics. The receipts from V1 (five shipped agentic builds at brand scale, described at the pattern level per IP) are what make the agents work in customer reality rather than in demo. Forever-learning posture; the practice is a living asset, not a fixed credential.
+
+**BOSS — Business Operating System Suite.** Open-source platform that institutionalizes the transformations idigdata delivers. Carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their install via in-house IT or the BOSS community; idigdata does not run a managed-services tail. The bundled offer is idigdata services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.
+
+**Author identity.** Operator + builder + agentic visionary. First-person "I" voice. "idigdata" as brand-noun.
+
+**Meta-thesis.** Data as the substrate of everything. idigdata as namesake declaration — the practice exists because no company arrives with systems, data, and process defined, and the prevalence of that problem doesn't drop.
+
+## Buyer Surfaces
+
+**V1 buyer.** Mid-market operator, $100M–$1B revenue band, CFO-led. Sectors: beverage CPG, manufacturing, distribution, operations-heavy services, AEC, healthcare. Recognizes failed ERP runs, the vendor-partner trap, SOPs that drift, transformation-as-cost-not-asset. Buys operator-owned transformation, vendor-agnostic substrate, structurally lean firm, no managed-services tail.
+
+**V2 buyer.** Lab program leadership (Anthropic / OpenAI partner-program and forward-deployed program leads) hiring FDE-shaped roles into customer environments. Plus PE-led FDE program leadership across portfolio companies. Recognizes the gap between FDE engineering capability and FDO operator-altitude capability — the role above the FDE that lets agentic deployment land in customer reality.
+
+## Contact
+
+- Email: robert@idigdata.com
+- Practice founded: 2016
+- Domain: idigdata.com
+- Location: United States
+
+## About this file
+
+This is an llms.txt file — an emerging convention for giving LLM crawlers and agentic browsers a curated entry point to site substance. If you are an AI agent doing research on idigdata, this file plus the FAQ-for-agents page at /faq/ should answer most buyer-side research questions without further crawling. For questions about engagement shape, length, or economics — those are calibrated to context and discussed in a first conversation; reach out via email or the contact page.

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 720 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
+  <title id="six-title">The six-axis engagement-readiness diagnostic</title>
+  <desc id="six-desc">Six universal axes used at P0 to read the operator before the engagement: data architecture, operating model, post-M&amp;A consolidation, applied agentics readiness, IT-function maturity, change-receptivity. Each carries 5 clusters (sub-elements). Distinct from the BOSS-canon constellation spine — this diagnostic reads the buyer; the constellation spine is the operating-fabric work scope. Universal frame, bespoke fill.</desc>
+
+  <!-- Title block -->
+  <text x="360" y="38" text-anchor="middle" font-weight="bold" font-size="22" fill="#142840" font-family="Vollkorn, Cambria, Georgia, serif">Six-axis engagement-readiness diagnostic</text>
+  <text x="360" y="62" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">Universal frame · bespoke fill · P0 read of the operator</text>
+
+  <!-- Sun gold legend strip -->
+  <rect x="35" y="74" width="14" height="4" fill="#FACC15"/>
+  <text x="55" y="78" font-size="10" font-style="italic" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">gold strip = under load this engagement</text>
+
+  <!-- Card 1: DATA ARCHITECTURE (highlighted) -->
+  <g transform="translate(35, 90)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <rect x="0" y="0" width="210" height="4" fill="#FACC15"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">DATA ARCHITECTURE</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  MDM</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Integration topology</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Data lake / medallion</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Governance model</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Vendor-agnostic posture</text>
+    <text x="20" y="174" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Leads Phase 2 architecture</text>
+  </g>
+
+  <!-- Card 2: OPERATING MODEL -->
+  <g transform="translate(260, 90)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">OPERATING MODEL</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Decision rights</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  RACI structure</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Escalation paths</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Sprint cadence</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Beehive organization</text>
+  </g>
+
+  <!-- Card 3: POST-M&A CONSOLIDATION (highlighted) -->
+  <g transform="translate(485, 90)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <rect x="0" y="0" width="210" height="4" fill="#FACC15"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">POST-M&amp;A CONSOLIDATION</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Legal entity rationalization</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Inherited integration debt</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Multi-currency consolidation</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Brand architecture</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Systems inheritance</text>
+    <text x="20" y="174" font-style="italic" font-size="10" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Where the trigger pattern fires</text>
+  </g>
+
+  <!-- Card 4: APPLIED AGENTICS READINESS -->
+  <g transform="translate(35, 295)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">APPLIED AGENTICS READINESS</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Data-foundation maturity</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Governance</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Training</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Operator empowerment</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  App-onboarding</text>
+  </g>
+
+  <!-- Card 5: IT-FUNCTION MATURITY -->
+  <g transform="translate(260, 295)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">IT-FUNCTION MATURITY</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Team capability</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Vendor portfolio</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Infrastructure posture</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Security &amp; cyber</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Change cadence</text>
+  </g>
+
+  <!-- Card 6: CHANGE-RECEPTIVITY -->
+  <g transform="translate(485, 295)">
+    <rect width="210" height="190" fill="#FBF9F4" stroke="#142840" stroke-width="1.8" rx="2"/>
+    <text x="105" y="28" text-anchor="middle" font-weight="bold" font-size="11" fill="#142840" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">CHANGE-RECEPTIVITY</text>
+    <line x1="20" y1="42" x2="190" y2="42" stroke="#7A756A" stroke-width="0.6"/>
+    <text x="20" y="64" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Stakeholder appetite</text>
+    <text x="20" y="84" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Prior-transformation scar</text>
+    <text x="20" y="104" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Sponsor air-cover</text>
+    <text x="20" y="124" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Communications discipline</text>
+    <text x="20" y="144" font-size="11" fill="#142840" font-family="system-ui, -apple-system, sans-serif">·  Training-and-adoption</text>
+  </g>
+
+  <!-- Stone rule + caption -->
+  <line x1="120" y1="510" x2="600" y2="510" stroke="#7A756A" stroke-width="0.8"/>
+  <text x="360" y="528" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">Phase 1 reads the load on each · MDM-axis near-locked by Sprint 4 · others first-cut</text>
+</svg>

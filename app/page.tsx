@@ -1,150 +1,873 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
-  title: { absolute: "idigdata — Transformative CIO + agentic adoption" },
-  description:
-    "Battle-hardened transformative CIO. Thirty years moving mid-market businesses. Commonize the master data, own the core, apps and agents plug in.",
-  alternates: {
-    canonical: "/",
+  title: {
+    absolute:
+      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
   },
+  description:
+    "A boutique transformation practice for $100M – $750M operating companies whose ERP is a tax, not a tool. Forward-Deployed Operator — Embedded, Fractional, or Agentics, sized to the work.",
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata — Transformative CIO + agentic adoption",
+    title: "idigdata — Forward-Deployed Operator",
     description:
-      "Battle-hardened transformative CIO. Thirty years moving mid-market businesses.",
+      "I work inside the customer environment, see with operator eyes, and ship against operator outcomes. Operator-owned. Vendor-agnostic. Exit-by-design.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Commonize the master data. Own the core. Apps and agents plug in.",
+        alt: "idigdata — Forward-Deployed Operator",
       },
     ],
   },
 };
 
-const CAPABILITIES = [
+function M4Lattice({
+  size = 28,
+  cellColor = "var(--color-navy)",
+  centerColor = "var(--color-gold)",
+  className = "",
+  ariaHidden = true,
+}: {
+  size?: number;
+  cellColor?: string;
+  centerColor?: string;
+  className?: string;
+  ariaHidden?: boolean;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 28 28"
+      aria-hidden={ariaHidden}
+      className={className}
+    >
+      <rect fill={cellColor} x="0" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="10" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="0" y="10" width="8" height="8" />
+      <rect fill={centerColor} x="10" y="10" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="10" width="8" height="8" />
+      <rect fill={cellColor} x="0" y="20" width="8" height="8" />
+      <rect fill={cellColor} x="10" y="20" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="20" width="8" height="8" />
+    </svg>
+  );
+}
+
+const ARTICLE_CARDS = [
   {
-    title: "Business transformation",
-    claim:
-      "Data-core first. The method that makes transformation institutionalize.",
+    slug: "transformation-and-the-people-of-it",
+    essay: "Article 01",
+    num: "No. 01",
+    title: (
+      <>
+        What business transformation{" "}
+        <em className="italic font-semibold">actually is</em> — and who it's
+        done with.
+      </>
+    ),
+    thesis:
+      "The architectural fork — sovereign data, replaceable apps — and the human layer the architecture only holds against.",
+    featured: true,
   },
   {
-    title: "Transformative CIO",
-    claim:
-      "Full CIO scope, embedded. Strategy, operations, vendor portfolio, risk, governance.",
+    slug: "the-mechanics",
+    essay: "Article 02",
+    num: "No. 02",
+    title: (
+      <>
+        The <em className="italic font-semibold">mechanics.</em>
+      </>
+    ),
+    thesis:
+      "PM, change management, and agile-fall as one delivery discipline. ASC 350-40 capitalization. The structural escape from the vendor-partner trap.",
   },
   {
-    title: "Agentic adoption",
-    claim:
-      "Enterprise agentic framework. Five production systems shipped. Not chatbots. Not pilots.",
+    slug: "applied-agentics",
+    essay: "Article 03",
+    num: "No. 03",
+    title: (
+      <>
+        Applied <em className="italic font-semibold">agentics.</em>
+      </>
+    ),
+    thesis:
+      "Five domain-experienced production apps in live operations. The framework that makes deployments repeatable. The data foundation precondition.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-content px-6">
-      {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-28 md:pb-24 text-center">
-        <h1 className="font-display font-medium text-d2-forest text-[36px] md:text-[56px] leading-[1.05] tracking-tight">
-          Battle-hardened transformative CIO.
-          <br />
-          Thirty years moving mid-market businesses.
-        </h1>
+    <div className="font-body bg-cream text-navy">
+      {/* ===================== HERO ===================== */}
+      <section className="relative overflow-hidden bg-cream">
+        {/* Background giant lattice */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 top-[420px] opacity-[0.10]"
+        >
+          <M4Lattice size={640} />
+        </div>
 
-        <figure className="mt-12 mx-auto max-w-[820px]">
-          <blockquote className="relative font-display italic text-d2-copper text-[22px] md:text-[26px] leading-snug px-10">
-            <span
-              aria-hidden
-              className="font-display text-d2-stone text-[55px] md:text-[65px] leading-none align-top absolute -left-1 -top-3"
-            >
-              &ldquo;
-            </span>
-            Commonize the master data. Own the core. Apps and agents plug in.
-            <span
-              aria-hidden
-              className="font-display text-d2-stone text-[55px] md:text-[65px] leading-none align-bottom absolute -right-1 -bottom-3"
-            >
-              &rdquo;
-            </span>
-          </blockquote>
-        </figure>
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 pt-16 md:pt-24 pb-24 md:pb-32 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr_480px] gap-8 lg:gap-12 items-start">
+            {/* Left rule */}
+            <div className="hidden lg:flex flex-col gap-6 pt-2">
+              <span className="block w-px h-60 bg-navy/15" />
+            </div>
 
-        <p className="mt-10 font-body italic text-d2-warmgray text-[13px] max-w-[640px] mx-auto">
-          Not a resume. What I can do for you today, grounded in 30 years of
-          doing the work.
-        </p>
-      </section>
+            {/* Main hero */}
+            <div className="pt-2">
+              <div className="flex items-center gap-3.5 mb-10 md:mb-12">
+                <span className="block w-1.5 h-1.5 rounded-full bg-gold" />
+                <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+                  Forward-Deployed Operator · A Practice for Mid-Market Operators
+                </span>
+              </div>
 
-      {/* Metrics strip */}
-      <section className="py-8 border-y border-d2-forest/20">
-        <p className="text-center text-d2-stone text-[13px] uppercase tracking-section">
-          &ldquo;All businesses are uniquely standard&rdquo;
-          <span aria-hidden className="px-3">
-            ·
-          </span>
-          50+ mid-market transformations
-          <span aria-hidden className="px-3">
-            ·
-          </span>
-          Agentic framework at brand scale
-        </p>
-      </section>
-
-      {/* Capabilities preview */}
-      <section className="pt-20 md:pt-24">
-        <SectionHeader>Capabilities</SectionHeader>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-          {CAPABILITIES.map((cap) => (
-            <div
-              key={cap.title}
-              className="flex flex-col border-t border-d2-forest pt-6"
-            >
-              <h3 className="font-display font-bold text-d2-forest text-[20px] leading-tight">
-                {cap.title}
-              </h3>
-              <p className="mt-4 font-body text-d2-ink text-[16px] leading-snug">
-                {cap.claim}
-              </p>
-              <p className="mt-6">
-                <Link
-                  href="/capabilities"
-                  className="font-body font-semibold text-d2-forest text-[15px] hover:underline"
+              <h1 className="font-vollkorn font-extrabold text-navy text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] leading-[1.0] tracking-[-0.025em] text-balance mb-10 md:mb-12">
+                I work inside the customer environment
+                <span className="text-gold px-1.5">·</span>
+                <br />
+                <em className="italic font-semibold">
+                  see with operator eyes
+                </em>
+                <span className="text-gold px-1.5">·</span>
+                <br />
+                ship against{" "}
+                <span
+                  className="relative inline-block"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, transparent 64%, var(--color-gold) 64%, var(--color-gold) 92%, transparent 92%)",
+                    padding: "0 4px",
+                  }}
                 >
-                  Learn more →
-                </Link>
+                  operator outcomes
+                </span>
+                .
+              </h1>
+
+              <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[18px] leading-snug max-w-[520px] border-t border-navy/15 pt-5">
+                idigdata — Data Integration Group, established 2016. A boutique
+                transformation practice for $100M – $750M operating companies
+                whose ERP is a tax, not a tool.
+              </p>
+
+              {/* v9.4 thesis preserved as secondary beat */}
+              <p className="mt-5 max-w-[520px] font-vollkorn font-medium text-navy text-[13px] md:text-[14px] tracking-[0.02em]">
+                Client-owned data{" "}
+                <span className="text-gold">·</span>{" "}
+                Vendor-agnostic architecture{" "}
+                <span className="text-gold">·</span>{" "}
+                Transformation that institutionalizes
               </p>
             </div>
-          ))}
+
+            {/* Right pull-quote card */}
+            <aside
+              aria-label="Founder pull quote"
+              className="relative bg-navy text-cream px-8 md:px-10 pt-12 pb-10 mt-8 lg:mt-2"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute top-7 left-7 font-vollkorn text-gold text-[120px] md:text-[140px] leading-[0.6] opacity-95"
+              >
+                &ldquo;
+              </span>
+              <p className="font-vollkorn italic font-semibold text-[20px] md:text-[22px] leading-[1.35] tracking-[-0.005em] mt-12 text-pretty">
+                After thirty years, I built the model that gives mid-market
+                operators back their own businesses — and leaves them owning it
+                after I&rsquo;m gone.
+              </p>
+              <div className="mt-8 pt-5 border-t border-gold/35 flex justify-between items-center">
+                <span className="font-vollkorn font-bold text-[15px]">
+                  Robert — Founder
+                </span>
+                <span className="font-body text-[11px] uppercase tracking-[0.16em] text-gold">
+                  Letter № I
+                </span>
+              </div>
+            </aside>
+          </div>
+
+          {/* Metrics strip */}
+          <div className="mt-20 md:mt-24 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr] border-t border-navy border-b border-navy/15">
+            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+                Operating Premise
+              </span>
+              <span className="font-vollkorn italic font-semibold text-navy text-[20px] md:text-[24px] leading-tight tracking-[-0.02em]">
+                &ldquo;All businesses are uniquely standard.&rdquo;
+              </span>
+            </div>
+            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+                Engagements
+              </span>
+              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
+                50<span className="text-gold">+</span>
+              </span>
+              <span className="font-vollkorn italic text-warm-gray text-[12px]">
+                mid-market transformations
+              </span>
+            </div>
+            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+                Framework
+              </span>
+              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
+                Agentic
+              </span>
+              <span className="font-vollkorn italic text-warm-gray text-[12px]">
+                at brand scale
+              </span>
+            </div>
+            <div className="px-6 md:px-8 py-6 md:py-7 flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
+                Tenure
+              </span>
+              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
+                30 yrs
+              </span>
+              <span className="font-vollkorn italic text-warm-gray text-[12px]">
+                single operator practice
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Dual CTA */}
-      <section className="mt-24 mb-16 md:mb-24">
-        <div className="text-center px-6 py-16 md:py-20">
-          <h2 className="font-display font-medium text-d2-forest text-[28px] md:text-[36px] leading-tight">
-            Two ways to reach me.
-          </h2>
-          <p className="mt-4 text-d2-ink text-[16px]">
-            Both reach me directly.
+      {/* ===================== II — THE NEW MODEL ===================== */}
+      <section id="model" className="bg-pale-navy">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16 md:mb-20">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
+              The architectural
+              <br />
+              <em className="italic font-semibold">fork</em> in the road.
+            </h2>
+            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
+              The dominant model in mid-market software is lock-in. The
+              platforms know it. Their partners enforce it. The operator pays
+              the rent — in license, in data, in optionality — for the rest of
+              the company&rsquo;s life.
+            </p>
+          </header>
+
+          <blockquote className="mb-16 md:mb-20 lg:pl-32 lg:pr-20">
+            <p className="font-vollkorn italic font-bold text-navy text-[26px] md:text-[34px] lg:text-[36px] leading-[1.25] tracking-[-0.012em] text-balance">
+              &ldquo;Their model is{" "}
+              <span
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, transparent 62%, var(--color-gold) 62%, var(--color-gold) 90%, transparent 90%)",
+                  padding: "0 4px",
+                }}
+              >
+                &lsquo;we own you and your data.&rsquo;
+              </span>{" "}
+              I built a different one — where the client owns the data and the
+              ERP is just an app.&rdquo;
+            </p>
+          </blockquote>
+
+          {/* Comparison diagram */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_80px_1fr] bg-cream border border-navy/15">
+            {/* Them */}
+            <div className="px-8 md:px-10 py-10 md:py-12 bg-cream">
+              <h4 className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-warm-gray mb-2">
+                The Incumbent Architecture
+              </h4>
+              <h3 className="font-vollkorn font-extrabold text-navy text-[26px] md:text-[32px] leading-[1.1] tracking-[-0.015em] mb-6">
+                Vendor at the{" "}
+                <em className="italic font-semibold">center.</em>
+              </h3>
+              <div className="flex flex-wrap gap-2 mt-5 mb-7">
+                {["SAP", "Microsoft D365", "Acumatica", "Salesforce"].map(
+                  (v) => (
+                    <span
+                      key={v}
+                      className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-warm-gray border border-navy/15 px-3 py-1.5"
+                    >
+                      {v}
+                    </span>
+                  ),
+                )}
+              </div>
+              <ul className="flex flex-col gap-3.5">
+                {[
+                  "License the platform, hire the partner, integrate on the vendor’s calendar, migrate when they say so.",
+                  "Implementation fees, support contracts, upgrade cycles, migration retrofits — paid forever, on the vendor’s timeline.",
+                  "Your data lives inside the product. Their model is, plainly, “we own you and your data.”",
+                  "Vendor change is a transformation event — paid for again, in full, at the next cycle.",
+                ].map((b, i) => (
+                  <li
+                    key={i}
+                    className="grid grid-cols-[14px_1fr] gap-3.5 text-[15px] leading-[1.5] text-warm-gray"
+                  >
+                    <span className="font-vollkorn italic font-bold text-stone leading-[1.4]">
+                      ·
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* vs */}
+            <div
+              aria-hidden="true"
+              className="hidden lg:flex items-center justify-center bg-cream border-l border-r border-navy/15"
+            >
+              <span className="font-vollkorn italic font-semibold text-warm-gray text-[14px] tracking-[0.1em]">
+                vs.
+              </span>
+            </div>
+            <div
+              aria-hidden="true"
+              className="lg:hidden flex items-center justify-center bg-cream py-4 border-t border-b border-navy/15"
+            >
+              <span className="font-vollkorn italic font-semibold text-warm-gray text-[14px] tracking-[0.1em]">
+                vs.
+              </span>
+            </div>
+
+            {/* Us */}
+            <div className="px-8 md:px-10 py-10 md:py-12 bg-navy text-cream">
+              <h4 className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-gold mb-2">
+                The idigdata Architecture
+              </h4>
+              <h3 className="font-vollkorn font-extrabold text-cream text-[26px] md:text-[32px] leading-[1.1] tracking-[-0.015em] mb-6">
+                Client at the <em className="italic font-semibold">center.</em>
+              </h3>
+              <div className="flex flex-wrap gap-2 mt-5 mb-7">
+                {[
+                  "Data layer · owned",
+                  "ERPs · interchangeable apps",
+                  "Agentic · stacked",
+                ].map((v) => (
+                  <span
+                    key={v}
+                    className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-cream border border-gold/30 px-3 py-1.5"
+                  >
+                    {v}
+                  </span>
+                ))}
+              </div>
+              <ul className="flex flex-col gap-3.5">
+                {[
+                  "The client owns the data — a Common Data Model the client controls. ERP, CRM, WMS, HRIS, FP&A become apps.",
+                  "Replaceable, swappable, contained. Vendor change is a commodity decision, not a transformation.",
+                  "Sovereignty over data and integrations is structural, not negotiated.",
+                  "BOSS is the architectural layer above SAP, D365, Acumatica, Salesforce — not a competitor to them.",
+                ].map((b, i) => (
+                  <li
+                    key={i}
+                    className="grid grid-cols-[14px_1fr] gap-3.5 text-[15px] leading-[1.5]"
+                  >
+                    <span className="font-vollkorn italic font-bold text-gold leading-[1.4]">
+                      ·
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== II.5 — WHERE I WORK ===================== */}
+      <section id="where" className="bg-cream">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
+              Three industry specialties.
+              <br />
+              <em className="italic font-semibold">Two core threads.</em>
+            </h2>
+            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
+              Industry depth and system breadth, unified by what every
+              mid-market operating company at scale carries underneath: ERP as
+              financial and accounting backbone, and compliance and risk as
+              foundation.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-navy mb-16">
+            {[
+              {
+                name: "AEC",
+                tag: "Architecture · Engineering · Construction",
+                body: "Decades-deep specialty. Multi-entity project costing, job-cost accounting, OSHA regulatory, contract compliance, bonding and insurance discipline.",
+              },
+              {
+                name: "Beverage CPG",
+                tag: "Wine · Beer · Spirits",
+                body: "Eight-year recent specialty. TTB regulatory, multi-entity intercompany, cost rollups, lab testing, quality control, distributor channel, route-to-market mechanics.",
+              },
+              {
+                name: "Healthcare",
+                tag: "EHR · Regulated · Compliance-heavy",
+                body: "HIPAA, revenue cycle, regulatory rigor, patient safety. The same ERP + compliance threads that hold AEC and beverage CPG hold here.",
+              },
+            ].map((s, i, arr) => (
+              <article
+                key={s.name}
+                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-3 ${
+                  i < arr.length - 1
+                    ? "md:border-r border-navy/15 border-b md:border-b-0"
+                    : ""
+                }`}
+              >
+                <h3 className="font-vollkorn font-extrabold text-navy text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
+                  {s.name}
+                </h3>
+                <p className="font-vollkorn italic font-medium text-warm-gray text-[15px] md:text-[16px] leading-[1.35] pb-5 border-b border-navy/15">
+                  {s.tag}
+                </p>
+                <p className="font-body text-navy text-[14.5px] leading-[1.65]">
+                  {s.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="bg-pale-navy px-8 md:px-10 py-10 md:py-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start">
+            <div className="flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+                In the trenches, leading teams
+              </span>
+              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
+                Every operating-system class deployed.
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2.5 self-center">
+              {["ERP", "WMS", "LIMS", "QMS", "CPQ", "CRM", "MDM", "HRIS"].map(
+                (s) => (
+                  <span
+                    key={s}
+                    className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-navy border border-navy/30 px-3.5 py-2 bg-cream"
+                  >
+                    {s}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+
+          <p className="mt-12 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[16px] md:text-[18px] leading-[1.55] text-pretty">
+            Every uniquely standard business has the same shape underneath.
+            They buy, they sell, some make. The intelligence that lets them
+            buy, sell, and make better is true business intelligence. Underneath
+            it all is the substrate — master data, the everything-else
+            infrastructure. Six Process Constellations, exhaustive by
+            construction. The thread under everything is data: clean, curated,
+            governed, high-quality. The practice is named for it.
           </p>
-          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5">
-            <a
-              href="mailto:robert@idigdata.com"
-              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 bg-d2-forest text-white hover:bg-d2-forest/90 transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
-            >
-              Email Robert directly
-            </a>
+        </div>
+      </section>
+
+      {/* ===================== III — HOW I WORK ===================== */}
+      <section id="how" className="bg-cream">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
+              Three engagement{" "}
+              <em className="italic font-semibold">shapes.</em>
+            </h2>
+            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
+              One operator. One practice. Three ways to plug in — depending on
+              what the business needs and where the lever is.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-navy">
+            {[
+              {
+                num: "No. 01",
+                name: "Embedded.",
+                tag: "Best bang for the buck on a full transformation — short term and long term.",
+                body: (
+                  <>
+                    Full transformation residency. Full executive scope as
+                    contractor: strategy, operations, vendor portfolio, risk,
+                    governance. Inside-out: team-building, full lifecycle
+                    delivery, operating-model change, IT-department shore-up,
+                    BOSS deployment, agentic framework.
+                  </>
+                ),
+                rows: [
+                  ["Cadence", "12 – 24 months", true],
+                  ["Footprint", "On-site, full operating depth", false],
+                  ["Outcome", "Owned platform · trained team", false],
+                ] as const,
+              },
+              {
+                num: "No. 02",
+                name: "Fractional.",
+                tag: "Plug me in at any stage of an existing project.",
+                body: (
+                  <>
+                    Engagements where a specific lever needs moving: unblock a
+                    stalled ERP, deploy a production agent on a critical
+                    bottleneck, stand up the operator-owned data substrate
+                    alongside the existing tier-1 stack.
+                  </>
+                ),
+                rows: [
+                  ["Cadence", "90 – 180 days", true],
+                  ["Footprint", "Targeted · lever-specific", false],
+                  ["Outcome", "One problem, retired permanently", false],
+                ] as const,
+              },
+              {
+                num: "No. 03",
+                name: "Agentics.",
+                tag: "Standalone, or stacked on either of the above.",
+                body: (
+                  <>
+                    The enterprise agentic framework deployed against the data
+                    foundation. Five production apps in live operations is the
+                    proof; the framework is what makes it repeatable.
+                  </>
+                ),
+                rows: [
+                  ["Cadence", "60 – 120 days", true],
+                  ["Footprint", "Function-scoped · platform-aware", false],
+                  ["Outcome", "Operating leverage, audited end-to-end", false],
+                ] as const,
+              },
+            ].map((card, i, arr) => (
+              <article
+                key={card.num}
+                className={`relative px-8 py-10 md:py-12 flex flex-col gap-5 min-h-[520px] border-b border-navy/15 ${
+                  i < arr.length - 1
+                    ? "md:border-r border-b md:border-b-0 border-navy/15"
+                    : ""
+                }`}
+              >
+                <span className="font-vollkorn italic font-semibold text-gold text-[18px] tracking-[0.02em]">
+                  {card.num}
+                </span>
+                <span className="absolute top-6 right-6 opacity-85">
+                  <M4Lattice size={20} />
+                </span>
+                <h3 className="font-vollkorn font-extrabold text-navy text-[34px] md:text-[38px] leading-[1.05] tracking-[-0.018em] mt-1">
+                  {card.name}
+                </h3>
+                <p className="font-vollkorn italic font-medium text-warm-gray text-[16px] pb-6 border-b border-navy/15">
+                  {card.tag}
+                </p>
+                <p className="font-body text-navy text-[15px] leading-[1.6]">
+                  {card.body}
+                </p>
+                <div className="mt-auto flex flex-col gap-2.5 pt-6">
+                  {card.rows.map(([k, v, italic]) => (
+                    <div
+                      key={k}
+                      className="grid grid-cols-[80px_1fr] gap-4 text-[12px] leading-[1.4]"
+                    >
+                      <span className="font-body text-[10px] font-bold uppercase tracking-[0.18em] text-warm-gray pt-0.5">
+                        {k}
+                      </span>
+                      <span
+                        className={`font-vollkorn font-semibold text-navy text-[14px] ${
+                          italic ? "italic font-medium" : ""
+                        }`}
+                      >
+                        {v}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
             <Link
-              href="/contact"
-              className="inline-block font-body font-semibold text-[16px] px-7 py-3.5 border border-d2-forest text-d2-forest hover:bg-d2-forest hover:text-white transition-colors focus:outline-2 focus:outline-d2-stone focus:outline-offset-2"
+              href="/approach/"
+              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
             >
-              Or start a conversation
+              Read the full approach <span aria-hidden>→</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== IV — APPLIED AGENTICS (teaser, full-bleed navy) ===================== */}
+      <section id="agentics" className="relative overflow-hidden bg-navy text-cream">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 top-20 opacity-[0.07]"
+        >
+          <M4Lattice
+            size={560}
+            cellColor="var(--color-cream)"
+            centerColor="var(--color-gold)"
+          />
+        </div>
+
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32 relative">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-14 md:mb-16">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-cream text-[44px] md:text-[64px] lg:text-[80px] leading-[0.98] tracking-[-0.025em]">
+              Applied{" "}
+              <em className="italic font-semibold">agentics.</em>
+            </h2>
+            <p className="font-vollkorn italic font-medium text-cream/80 text-[18px] md:text-[20px] leading-[1.45] text-pretty">
+              The same FDO posture at lab and PE altitude. Operator-altitude
+              help with operator-owned substrate &mdash; a different corner
+              of the market than the lab FDE programs and the consulting
+              industry.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-gold/40">
+            {[
+              {
+                num: "01",
+                title: "BOSS",
+                tag: "Operator-owned platform.",
+                body: "The platform that institutionalizes the new model in the operator's hands. Per-engagement deployment. Owned by the operator at handoff.",
+              },
+              {
+                num: "02",
+                title: "The rig",
+                tag: "Self-application is the credibility.",
+                body: "My agentic operating environment. Receipts produced on it; not described by it.",
+              },
+              {
+                num: "03",
+                title: "Agentic stack",
+                tag: "Multi-lab, multi-vendor by design.",
+                body: "Modern agentic stack daily — Anthropic primary, OpenAI in active rotation, multi-vendor council pattern, MCP, Agent SDK, Vercel + Supabase + GitHub.",
+              },
+            ].map((c, i, arr) => (
+              <div
+                key={c.num}
+                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-4 ${
+                  i < arr.length - 1
+                    ? "md:border-r border-cream/15 border-b md:border-b-0"
+                    : ""
+                }`}
+              >
+                <span className="font-mono text-gold text-[11px] tracking-[0.16em]">
+                  No. {c.num}
+                </span>
+                <h3 className="font-vollkorn font-extrabold text-cream text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
+                  {c.title}
+                </h3>
+                <p className="font-vollkorn italic font-medium text-gold text-[15px] md:text-[16px] leading-[1.35]">
+                  {c.tag}
+                </p>
+                <p className="font-body text-cream/80 text-[14.5px] leading-[1.65]">
+                  {c.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 lg:pl-[112px]">
+            <Link
+              href="/agentics/"
+              className="inline-flex items-center gap-2 bg-transparent text-cream px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-cream/40 hover:border-cream hover:bg-cream/5 transition-colors"
+            >
+              See the Applied Agentics page <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== V — ARTICLES ===================== */}
+      <section id="articles" className="bg-cream">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
+              The <em className="italic font-semibold">articles.</em>
+            </h2>
+            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
+              Three reads from the practice. The long answers to questions
+              CFOs and CIOs keep asking the wrong people.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-navy border-l border-navy/15">
+            {ARTICLE_CARDS.map((a) => (
+              <article
+                key={a.slug}
+                className={`relative bg-cream border-r border-b border-navy/15 transition-colors hover:bg-white px-8 py-10 flex flex-col gap-5 min-h-[380px] ${
+                  a.featured ? "lg:col-span-2 lg:min-h-[420px] lg:px-10" : ""
+                }`}
+              >
+                <div className="font-body text-[10px] uppercase tracking-[0.18em] text-warm-gray font-semibold">
+                  <span>
+                    {a.essay}
+                    {a.featured ? " · The Practice" : ""}
+                  </span>
+                </div>
+                {a.featured ? (
+                  <p className="font-body text-warm-gray text-[15px] md:text-[16px] leading-[1.55] text-pretty max-w-[560px]">
+                    {a.thesis}
+                  </p>
+                ) : null}
+                <span className="font-vollkorn italic font-semibold text-gold text-[14px] tracking-[0.04em]">
+                  {a.num}
+                </span>
+                <h3
+                  className={`font-vollkorn font-extrabold text-navy leading-[1.1] tracking-[-0.012em] text-balance mt-auto ${
+                    a.featured
+                      ? "text-[32px] md:text-[42px] max-w-[680px] leading-[1.05]"
+                      : "text-[24px] md:text-[26px]"
+                  }`}
+                >
+                  {a.title}
+                </h3>
+                {!a.featured ? (
+                  <p className="font-body text-warm-gray text-[14px] leading-[1.55] text-pretty">
+                    {a.thesis}
+                  </p>
+                ) : null}
+                <Link
+                  href={`/articles/${a.slug}/`}
+                  className="flex items-center gap-2.5 font-body text-[11px] uppercase tracking-[0.18em] font-semibold text-navy pt-3 border-t border-navy/15 hover:text-aubergine"
+                >
+                  {a.featured ? "Read the essay" : "Read"}{" "}
+                  <span className="text-gold text-[14px]">→</span>
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/articles/"
+              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
+            >
+              All articles <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== VI — WHO THIS ISN'T FOR ===================== */}
+      <section className="bg-pale-navy">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-28 md:py-40">
+          <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+
+            <h2 className="font-vollkorn font-extrabold text-navy text-[44px] md:text-[60px] lg:text-[72px] leading-[0.98] tracking-[-0.025em] text-balance">
+              It&rsquo;s not a fit for{" "}
+              <em className="italic font-semibold">everyone.</em>
+              <span className="block font-vollkorn italic font-semibold text-warm-gray text-[34px] md:text-[44px] lg:text-[54px] mt-2">
+                By design.
+              </span>
+            </h2>
+
+            <ul className="flex flex-col">
+              {[
+                "Operators comfortable with their partner relationships.",
+                "Operators paying license stacks, implementation fees, support contracts, upgrade cycles, and migration retrofits on the vendor’s calendar.",
+                "Operators whose users have learned to live with what the system gives them.",
+                "Operators whose AI claim has outpaced their operating fabric and who think the next vendor pitch will fix it.",
+              ].map((line, i) => (
+                <li
+                  key={i}
+                  className="grid grid-cols-[24px_1fr] gap-4 py-5 border-b border-navy/15 font-vollkorn text-navy text-[17px] md:text-[18px] leading-[1.4]"
+                >
+                  <span className="font-vollkorn font-bold text-stone text-[18px] pt-0.5">
+                    ×
+                  </span>
+                  <span className="line-through decoration-stone decoration-[1px]">
+                    {line}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="lg:col-start-2 lg:col-span-2 mt-12 pt-8 border-t-2 border-gold max-w-[820px] flex flex-col gap-6">
+              <p className="font-vollkorn italic font-semibold text-navy text-[20px] md:text-[24px] leading-[1.4] text-pretty">
+                The practice is one operator, one engagement at a time. The
+                selection is deliberate, and — for the right operator — the
+                most consequential procurement decision of the decade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== VII — FINAL CTA ===================== */}
+      <section id="contact" className="relative overflow-hidden bg-cream">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-28 md:py-36 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-24 items-center">
+            <div>
+              <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+                A Conversation, Not a Proposal
+              </p>
+              <h2 className="font-vollkorn font-extrabold text-navy text-[48px] md:text-[72px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] text-balance mb-8">
+                Begin where the{" "}
+                <em className="italic font-semibold">model</em>
+                <br className="hidden md:block" />
+                actually{" "}
+                <span
+                  className="inline-block"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, transparent 64%, var(--color-gold) 64%, var(--color-gold) 92%, transparent 92%)",
+                    padding: "0 6px",
+                  }}
+                >
+                  institutionalizes.
+                </span>
+              </h2>
+              <p className="font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] max-w-[560px] border-t border-navy/15 pt-5">
+                A first conversation is short, off-record, and on the
+                operator&rsquo;s terms. I end either with a clear next step,
+                or a clear answer this isn&rsquo;t the right fit. Both are
+                useful.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <Link
+                href="/contact/"
+                className="bg-navy text-cream px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center hover:bg-aubergine transition-colors"
+              >
+                Begin a Conversation{" "}
+                <span className="text-gold text-[18px]">→</span>
+              </Link>
+              <Link
+                href="/approach/"
+                className="bg-transparent text-navy px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-navy hover:bg-navy hover:text-cream transition-colors"
+              >
+                Read the Practice Letter{" "}
+                <span className="text-gold text-[18px]">↗</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
