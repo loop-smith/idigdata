@@ -5,14 +5,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Reach out — idigdata",
   description:
-    "First conversation is operator-to-operator — no commitment, no proposal-deck. Just talking shape. For embedded residencies, fractional engagements, and agentic deployments.",
+    "No commitment, no proposal-deck. Just talking shape. For embedded residencies, fractional engagements, and agentic deployments.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
     title: "Reach out — idigdata · Forward-Deployed Operator",
     description:
-      "First conversation is operator-to-operator. Just talking shape.",
+      "No commitment, no proposal-deck. Just talking shape.",
     images: [
       {
         url: "/og-image.png",
@@ -46,9 +46,18 @@ export default function ContactPage() {
           Just talking shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          First conversation is operator-to-operator — no commitment, no
-          proposal-deck. There&rsquo;s no charge for the first conversation;
-          it&rsquo;s how both sides qualify whether the work is a fit.
+          No commitment, no proposal-deck. There&rsquo;s no charge for the
+          first conversation; it&rsquo;s how both sides qualify whether the
+          work is a fit.
+        </p>
+        <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
+          Operator and builder. Three industry specialties &mdash; AEC,
+          beverage CPG, healthcare (EHR). Two core threads &mdash; ERP as
+          financial backbone, compliance and risk as foundation. Agentic
+          builder and visionary, with five production agentic applications
+          shipped into the operating fabric of a billion-dollar operator. The
+          common thread under everything is data: clean, curated, governed,
+          high-quality. The practice is named for it.
         </p>
       </section>
 

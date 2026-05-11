@@ -143,6 +143,46 @@ export default function AgenticsPage() {
         </div>
       </section>
 
+      {/* ============== DATA SUBSTRATE — meta-thesis weave ============== */}
+      <section id="data-substrate" className="bg-cream">
+        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
+          <header className="mb-10 max-w-[820px]">
+            <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+              The thread under everything
+            </p>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+              Under the harness, the substrate.{" "}
+              <em className="italic font-semibold">Data.</em>
+            </h2>
+            <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[19px] leading-snug border-t border-navy/15 pt-5 mt-6 max-w-[700px]">
+              Three decades inside business-system transformation across AEC,
+              beverage CPG, and healthcare. Two years inside applied agentics.
+              The load-bearing thing has not moved.
+            </p>
+          </header>
+
+          <div className="space-y-5 max-w-[760px] font-body text-[16px] md:text-[17px] leading-[1.65] text-navy">
+            <p>
+              Agentic systems read state, reason against it, and write back
+              to it. Every link in the chain depends on the state being
+              coherent. Coherent means a sovereign Common Data Model the
+              operator owns, governed at enterprise altitude, written through
+              controlled topology, with provenance preserved at row level.
+              Where the substrate is real, agentics compounds the value.
+              Where the substrate is absent, agentics produces theater.
+            </p>
+            <p>
+              The thread under everything &mdash; under transformation, under
+              BOSS, under applied agentics, under AI itself &mdash; is data.{" "}
+              <strong className="font-semibold text-navy">
+                Clean, curated, governed, high-quality data.
+              </strong>{" "}
+              The practice is named for it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ============== BOSS ============== */}
       <section id="boss" className="bg-cream">
         <div className="mx-auto max-w-content px-6 py-24 md:py-32">

@@ -8,14 +8,14 @@ import { ARTICLES } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Articles — idigdata",
   description:
-    "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
+    "Three reads from the practice on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
   alternates: { canonical: "/articles/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/articles/",
     title: "Articles — idigdata · Forward-Deployed Operator",
     description:
-      "Three pro-level reads on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
+      "Three reads from the practice on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
     images: [
       {
         url: "/og-image.png",
@@ -51,12 +51,12 @@ export default function ArticlesIndexPage() {
           Articles
         </h1>
         <p className="mt-6 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          Three pro-level reads on what business transformation actually is,
-          how it gets delivered, and what real applied agentics looks like at
-          production scale. Articles are sent to qualified requesters by
-          request — not posted publicly. Read the summary; if the substance is
-          what you need, request access. Locate where on the path you fit on
-          the{" "}
+          Three reads from the practice on what business transformation
+          actually is, how it gets delivered, and what real applied agentics
+          looks like at production scale. Articles are sent to qualified
+          requesters by request — not posted publicly. Read the summary; if
+          the substance is what you need, request access. Locate where on the
+          path you fit on the{" "}
           <Link
             href="/approach/#engagement-roadmap"
             className="not-italic font-body text-navy border-b border-navy/40 hover:border-navy"

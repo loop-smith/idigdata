@@ -53,6 +53,13 @@ export default function ApproachPage() {
         <p className="mt-5 max-w-[820px] text-[18px] text-ink leading-relaxed">
           Three engagement shapes. Same architecture. Sized to the work.
         </p>
+        <p className="mt-4 max-w-[820px] font-display italic text-stone text-[16px] leading-snug">
+          Three industry specialties &mdash; AEC, beverage CPG (wine, beer,
+          spirits), and healthcare (EHR) &mdash; unified by two core threads:
+          ERP as financial and accounting backbone, and compliance and risk as
+          foundation. Every major operating-system class deployed in the
+          trenches: ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS.
+        </p>
       </section>
 
       <section className="bg-cream px-0 md:px-8 pt-4 pb-12">
@@ -85,8 +92,9 @@ export default function ApproachPage() {
               <p>
                 Engagements where a specific lever needs moving: unblock a
                 stalled ERP, deploy a production agent on a critical
-                bottleneck, re-architect the data core while your CIO stays in
-                seat. Same architecture, sized to the work.
+                bottleneck, stand up the operator-owned data substrate
+                alongside the existing tier-1 stack. Same architecture, sized
+                to the work.
               </p>
             }
           />

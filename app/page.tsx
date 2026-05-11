@@ -387,6 +387,100 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===================== II.5 — WHERE I WORK ===================== */}
+      <section id="where" className="bg-cream">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
+          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
+            <div className="hidden lg:block pt-2">
+              <span className="block w-10 h-0.5 bg-gold" />
+            </div>
+            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
+              Three industry specialties.
+              <br />
+              <em className="italic font-semibold">Two core threads.</em>
+            </h2>
+            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
+              Industry depth and system breadth, unified by what every
+              mid-market operating company at scale carries underneath: ERP as
+              financial and accounting backbone, and compliance and risk as
+              foundation.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-navy mb-16">
+            {[
+              {
+                name: "AEC",
+                tag: "Architecture · Engineering · Construction",
+                body: "Decades-deep specialty. Multi-entity project costing, job-cost accounting, OSHA regulatory, contract compliance, bonding and insurance discipline.",
+              },
+              {
+                name: "Beverage CPG",
+                tag: "Wine · Beer · Spirits",
+                body: "Eight-year recent specialty. TTB regulatory, multi-entity intercompany, cost rollups, lab testing, quality control, distributor channel, route-to-market mechanics.",
+              },
+              {
+                name: "Healthcare",
+                tag: "EHR · Regulated · Compliance-heavy",
+                body: "HIPAA, revenue cycle, regulatory rigor, patient safety. The same ERP + compliance threads that hold AEC and beverage CPG hold here.",
+              },
+            ].map((s, i, arr) => (
+              <article
+                key={s.name}
+                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-3 ${
+                  i < arr.length - 1
+                    ? "md:border-r border-navy/15 border-b md:border-b-0"
+                    : ""
+                }`}
+              >
+                <h3 className="font-vollkorn font-extrabold text-navy text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
+                  {s.name}
+                </h3>
+                <p className="font-vollkorn italic font-medium text-warm-gray text-[15px] md:text-[16px] leading-[1.35] pb-5 border-b border-navy/15">
+                  {s.tag}
+                </p>
+                <p className="font-body text-navy text-[14.5px] leading-[1.65]">
+                  {s.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="bg-pale-navy px-8 md:px-10 py-10 md:py-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start">
+            <div className="flex flex-col gap-2">
+              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+                In the trenches, leading teams
+              </span>
+              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
+                Every operating-system class deployed.
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2.5 self-center">
+              {["ERP", "WMS", "LIMS", "QMS", "CPQ", "CRM", "MDM", "HRIS"].map(
+                (s) => (
+                  <span
+                    key={s}
+                    className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-navy border border-navy/30 px-3.5 py-2 bg-cream"
+                  >
+                    {s}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+
+          <p className="mt-12 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[16px] md:text-[18px] leading-[1.55] text-pretty">
+            Every uniquely standard business has the same shape underneath.
+            They buy, they sell, some make. The intelligence that lets them
+            buy, sell, and make better is true business intelligence. Underneath
+            it all is the substrate — master data, the everything-else
+            infrastructure. Six Process Constellations, exhaustive by
+            construction. The thread under everything is data: clean, curated,
+            governed, high-quality. The practice is named for it.
+          </p>
+        </div>
+      </section>
+
       {/* ===================== III — HOW I WORK ===================== */}
       <section id="how" className="bg-cream">
         <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
@@ -433,8 +527,8 @@ export default function HomePage() {
                   <>
                     Engagements where a specific lever needs moving: unblock a
                     stalled ERP, deploy a production agent on a critical
-                    bottleneck, re-architect the data core while your CIO stays
-                    in seat.
+                    bottleneck, stand up the operator-owned data substrate
+                    alongside the existing tier-1 stack.
                   </>
                 ),
                 rows: [
@@ -615,8 +709,8 @@ export default function HomePage() {
               The <em className="italic font-semibold">articles.</em>
             </h2>
             <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              Three pro-level reads from the practice. The long answers to
-              questions CFOs and CIOs keep asking the wrong people.
+              Three reads from the practice. The long answers to questions
+              CFOs and CIOs keep asking the wrong people.
             </p>
           </header>
 
