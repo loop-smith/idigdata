@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import M4Watermark from "@/components/M4Watermark";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -38,7 +39,8 @@ export default function ContactPage() {
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-8 md:pt-24 md:pb-10">
+      <section className="relative pt-20 pb-8 md:pt-24 md:pb-10">
+        <M4Watermark position="top-right" />
         <p className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
           Reach out
         </p>

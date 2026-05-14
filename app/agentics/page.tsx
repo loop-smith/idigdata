@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
 
 export const metadata: Metadata = {
   title: "Applied Agentics — idigdata",
@@ -29,7 +30,8 @@ export default function AgenticsPage() {
     <div className="font-body bg-cream text-navy">
       {/* ============== HERO ============== */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-content px-6 pt-20 md:pt-24 pb-12 md:pb-16">
+        <div className="relative mx-auto max-w-content px-6 pt-20 md:pt-24 pb-12 md:pb-16">
+          <M4Watermark position="top-right" />
           <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
             Applied Agentics · V2
           </p>

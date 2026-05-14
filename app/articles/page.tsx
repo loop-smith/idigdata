@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
 import ArticleCard from "@/components/ArticleCard";
 import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
@@ -46,7 +47,8 @@ export default function ArticlesIndexPage() {
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+      <section className="relative pt-20 pb-10 md:pt-24 md:pb-14">
+        <M4Watermark position="top-right" />
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Articles
         </h1>

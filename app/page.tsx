@@ -76,9 +76,9 @@ export default function HomePage() {
   return (
     <div className="font-body bg-cream text-navy">
       {/* ===================== Block 1 · HERO ===================== */}
-      <section className="relative overflow-hidden px-6 md:px-12 lg:px-24 pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
-        <M4Watermark position="top-right" />
-        <div className="mx-auto max-w-[1180px]">
+      <section className="px-6 md:px-12 lg:px-24 pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
+        <div className="relative mx-auto max-w-[1180px]">
+          <M4Watermark position="top-right" />
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
             Forward-Deployed Operator · A practice for mid-market operators
           </p>
