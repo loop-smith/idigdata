@@ -74,11 +74,10 @@ const CONDITIONS = [
 
 export default function HomePage() {
   return (
-    <div className="font-body bg-cream text-navy">
+    <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
       {/* ===================== Block 1 · HERO ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
-        <div className="relative mx-auto max-w-[1180px]">
-          <M4Watermark position="top-right" />
+      <section className="relative pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
+        <M4Watermark position="top-right" />
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
             Forward-Deployed Operator · A practice for mid-market operators
           </p>
@@ -123,15 +122,13 @@ export default function HomePage() {
               </p>
             </aside>
           </div>
-        </div>
       </section>
 
       {/* ===================== Block 2 · WHAT YOU'RE UP AGAINST ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-            What you&rsquo;re up against
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          What you&rsquo;re up against
+        </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-6 max-w-[26ch]">
             Sixty percent of transformations fail. The rest rarely survive
             go-live.
@@ -142,15 +139,13 @@ export default function HomePage() {
             and scope expansion. Advisory firms bill by milestone. They all
             exit at go-live. None ships the post-go-live transformation.
           </p>
-        </div>
       </section>
 
       {/* ===================== Block 3 · WHAT I USUALLY WALK INTO ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-            What I usually walk into
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          What I usually walk into
+        </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[28ch]">
             The pattern across fifty engagements barely changes.
           </h2>
@@ -192,15 +187,13 @@ export default function HomePage() {
               them at the center.
             </span>
           </p>
-        </div>
       </section>
 
       {/* ===================== Block 4 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-            How the work fits together
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          How the work fits together
+        </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-2">
             Where the work converges.
           </h2>
@@ -451,15 +444,13 @@ export default function HomePage() {
               </span>
             </span>
           </p>
-        </div>
       </section>
 
       {/* ===================== Block 5 · V1 + V2 (two value props) ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-6">
-            What I do · two value props, one practice
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-6">
+          What I do · two value props, one practice
+        </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
             {/* V1 card */}
@@ -556,15 +547,13 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* ===================== Block 6 · RECEIPTS ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-            Where I&rsquo;ve lived this
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          Where I&rsquo;ve lived this
+        </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[32ch]">
             Three industry specialties. Five primary system families. The
             workflows underneath.
@@ -671,15 +660,13 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-        </div>
       </section>
 
       {/* ===================== Block 7 · ENGAGEMENT PROCESS ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 py-14 md:py-16 border-t border-navy/15">
-        <div className="mx-auto max-w-[1180px]">
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-            How an engagement runs
-          </p>
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          How an engagement runs
+        </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-7">
             Phase zero to handoff.
           </h2>
@@ -742,18 +729,16 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
       </section>
 
       {/* ===================== Block 8 · CTA ===================== */}
       <section
         id="contact"
-        className="bg-navy text-cream px-6 md:px-12 lg:px-24 py-14 md:py-20"
+        className="bg-navy text-cream py-14 md:py-20"
       >
-        <div className="mx-auto max-w-[1180px]">
-          <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-4">
-            Plug me in.
-          </h2>
+        <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-4">
+          Plug me in.
+        </h2>
           <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-[#DCD9CC] max-w-[58ch] mb-7">
             If your business is sitting on three different ERPs, a WMS the
             floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
@@ -767,7 +752,6 @@ export default function HomePage() {
           >
             Start a conversation →
           </Link>
-        </div>
       </section>
     </div>
   );
