@@ -71,11 +71,51 @@ const CONDITIONS = [
   },
 ];
 
+function M4Lattice({
+  size = 28,
+  cellColor = "var(--color-navy)",
+  centerColor = "var(--color-gold)",
+  className = "",
+  ariaHidden = true,
+}: {
+  size?: number;
+  cellColor?: string;
+  centerColor?: string;
+  className?: string;
+  ariaHidden?: boolean;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 28 28"
+      aria-hidden={ariaHidden}
+      className={className}
+    >
+      <rect fill={cellColor} x="0" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="10" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="0" width="8" height="8" />
+      <rect fill={cellColor} x="0" y="10" width="8" height="8" />
+      <rect fill={centerColor} x="10" y="10" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="10" width="8" height="8" />
+      <rect fill={cellColor} x="0" y="20" width="8" height="8" />
+      <rect fill={cellColor} x="10" y="20" width="8" height="8" />
+      <rect fill={cellColor} x="20" y="20" width="8" height="8" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="font-body bg-cream text-navy">
       {/* ===================== Block 1 · HERO ===================== */}
-      <section className="px-6 md:px-12 lg:px-24 pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
+      <section className="relative overflow-hidden px-6 md:px-12 lg:px-24 pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 top-[420px] opacity-[0.10]"
+        >
+          <M4Lattice size={640} />
+        </div>
         <div className="mx-auto max-w-[1180px]">
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
             Forward-Deployed Operator · A practice for mid-market operators
