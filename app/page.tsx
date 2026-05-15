@@ -98,13 +98,13 @@ export default function HomePage() {
 
               <div className="mt-7 md:mt-8 space-y-1.5">
                 <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
-                  The Stack ·{" "}
+                  The Systems Stack ·{" "}
                   <span className="text-navy">
                     ERP · WMS · MES · EMR · CRM/CPQ · GRC
                   </span>
                 </p>
                 <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
-                  The Labs ·{" "}
+                  The AI Labs ·{" "}
                   <span className="text-navy">
                     Anthropic · OpenAI · Google · Open Source
                   </span>
