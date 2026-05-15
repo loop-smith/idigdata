@@ -5,17 +5,17 @@ import M4Watermark from "@/components/M4Watermark";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata — Forward-Deployed Operator. Data. Workflows. People.",
+      "idigdata — Forward-Deployed Operator. Data. Processes. People.",
   },
   description:
-    "From ERP spine to agentic edge — built where data lives. A boutique transformation practice for mid-market operators. I leave a living asset — owned, operating, yours.",
+    "I lead implementations to outcomes — built where data lives. A practice for mid-market business transformations. A living asset that compounds — owned, operating, growing.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "idigdata — Forward-Deployed Operator",
     description:
-      "Data. Workflows. People. From ERP spine to agentic edge — built where data lives. I leave a living asset — owned, operating, yours.",
+      "Data. Processes. People. I lead implementations to outcomes — built where data lives. A living asset that compounds — owned, operating, growing.",
     images: [
       {
         url: "/og-image.png",
@@ -79,29 +79,37 @@ export default function HomePage() {
       <section className="relative pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
         <M4Watermark position="top-right" />
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
-            Forward-Deployed Operator · A practice for mid-market operators
+            Forward-Deployed Operator · A practice for mid-market business transformations
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
             {/* Left column — three serif beats */}
             <div>
               <p className="font-vollkorn font-bold text-navy text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-0.01em] mb-5">
-                Data. Workflows. People.
+                Data. Processes. People.
               </p>
               <p className="font-vollkorn italic font-normal text-navy text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] leading-[1.18] tracking-[-0.005em] mb-5">
-                From ERP spine to agentic edge — built where data lives.
+                I lead implementations to outcomes — built where data lives.
               </p>
               <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
-                I leave a living asset — owned, operating,{" "}
-                <span style={goldUnderlineStyle}>yours</span>.
+                A living asset that compounds — owned, operating,{" "}
+                <span style={goldUnderlineStyle}>growing</span>.
               </p>
 
-              <p className="mt-7 md:mt-8 font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
-                Multi-platform · multi-vendor ·{" "}
-                <span className="text-navy">
-                  ERP · WMS · MES · EMR · CRM/CPQ
-                </span>
-              </p>
+              <div className="mt-7 md:mt-8 space-y-1.5">
+                <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
+                  The Stack ·{" "}
+                  <span className="text-navy">
+                    ERP · WMS · MES · EMR · CRM/CPQ
+                  </span>
+                </p>
+                <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
+                  The Labs ·{" "}
+                  <span className="text-navy">
+                    Anthropic · OpenAI · Google · Open Source
+                  </span>
+                </p>
+              </div>
             </div>
 
             {/* Right column — letter card */}
@@ -113,9 +121,9 @@ export default function HomePage() {
                 A note from Rob
               </p>
               <p className="font-vollkorn font-normal text-navy text-[18px] md:text-[19px] leading-[1.5]">
-                After thirty years, I built the model that gives mid-market
-                operators back their own businesses — and leaves them owning
-                it after I&rsquo;m gone.
+                After thirty years leading the deployment end-to-end, I built
+                the model that gives mid-market operators back their own
+                businesses — and leaves them owning it after I&rsquo;m gone.
               </p>
               <p className="mt-6 pt-4 border-t border-navy/15 font-body text-warm-gray text-[12.5px] tracking-[0.04em]">
                 Robert Paddock · idigdata
