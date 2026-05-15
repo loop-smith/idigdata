@@ -86,7 +86,7 @@ export default function HomePage() {
             {/* Left column — three serif beats */}
             <div>
               <p className="font-vollkorn font-bold text-navy text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-0.01em] mb-5">
-                Data. Processes. People.
+                One operator. Multi-party teams. One delivery.
               </p>
               <p className="font-vollkorn italic font-normal text-navy text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] leading-[1.18] tracking-[-0.005em] mb-5">
                 I lead implementations to outcomes — built where data lives.
