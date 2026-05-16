@@ -140,84 +140,16 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 2 · WHAT YOU'RE UP AGAINST ===================== */}
+      {/* ===================== Block 2 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          What you&rsquo;re up against
-        </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-6 max-w-[26ch]">
-            Sixty percent of transformations fail. The rest rarely survive
-            go-live.
-          </h2>
-          <p className="font-body text-navy text-[15px] md:text-[16px] leading-[1.65] max-w-[68ch]">
-            The platform isn&rsquo;t the variable — the economics are. Vendor
-            partners run vendor playbooks. Big-four runs staffing economics
-            and scope expansion. Advisory firms bill by milestone. They all
-            exit at go-live. None ships the post-go-live transformation.
-          </p>
-      </section>
-
-      {/* ===================== Block 3 · WHAT I USUALLY WALK INTO ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          What I usually walk into
-        </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[28ch]">
-            The pattern across fifty engagements barely changes.
-          </h2>
-          <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
-            Every mid-market operator I&rsquo;ve engaged with arrives at the
-            same set of conditions — accumulated over years of vendor-driven
-            decisions, partner-led implementations, and the discipline that
-            quietly never landed. Sound familiar?
-          </p>
-
-          <div className="border-t border-navy/15 max-w-[860px]">
-            {CONDITIONS.map((c) => (
-              <div
-                key={c.n}
-                className="grid grid-cols-[56px_1fr] md:grid-cols-[72px_1fr] gap-4 md:gap-6 py-5 md:py-6 border-b border-navy/15"
-              >
-                <div className="font-vollkorn font-bold text-gold text-[26px] md:text-[30px] leading-none pt-1">
-                  {c.n}
-                </div>
-                <div>
-                  <h3 className="font-vollkorn font-bold text-navy text-[18px] md:text-[20px] leading-[1.3] mb-1.5">
-                    {c.h}
-                  </h3>
-                  <p className="font-body text-navy text-[14.5px] md:text-[15.5px] leading-[1.6]">
-                    {c.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.55] max-w-[64ch]">
-            <b className="not-italic font-bold">
-              If two or three of these are sitting on your desk right now,
-            </b>{" "}
-            the model below is what fixes them —{" "}
-            <span style={goldUnderlineStyle}>
-              one operator, six business process flows, the people who run
-              them at the center.
-            </span>
-          </p>
-      </section>
-
-      {/* ===================== Block 4 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          How the work fits together
+          The model
         </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-2">
-            Where the work converges.
+            Data, systems, processes — and the workforce.
           </h2>
-          <p className="font-vollkorn italic font-normal text-warm-gray text-[15px] md:text-[17px] leading-[1.5] mb-6">
-            Data, systems, processes — and the workforce that runs them.
-          </p>
 
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-center mt-6 md:mt-8">
             <svg
               viewBox="0 0 700 600"
               xmlns="http://www.w3.org/2000/svg"
@@ -347,6 +279,14 @@ export default function HomePage() {
             </svg>
           </div>
 
+          <div className="md:hidden mt-6 font-body text-navy text-[14px] leading-[1.65]">
+            <p className="mb-2"><span className="font-semibold">Data</span> at the apex — the substrate.</p>
+            <p className="mb-2"><span className="font-semibold">Systems</span> bottom-left — the stack.</p>
+            <p className="mb-2"><span className="font-semibold">Processes</span> bottom-right — the workflows.</p>
+            <p className="mb-2"><span className="font-semibold">Workforce</span> at the center — the users that run them.</p>
+            <p className="mt-3 pt-3 border-t border-navy/10 italic text-warm-gray text-[13px]">Above the substrate: the human-in-the-loop layer — observe, validate, approve.</p>
+          </div>
+
           <p className="mt-5 pt-5 border-t border-navy/15 font-vollkorn font-bold text-navy text-[16px] md:text-[18px] leading-[1.55] text-center max-w-[58ch] mx-auto">
             Every transformation that failed put a system at the center.
             <span className="block font-normal italic mt-1.5">
@@ -354,6 +294,71 @@ export default function HomePage() {
               <span style={goldUnderlineStyle}>
                 the workforce.
               </span>
+            </span>
+          </p>
+      </section>
+
+      {/* ===================== Block 3 · WHAT YOU'RE UP AGAINST ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          What you&rsquo;re up against
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-6 max-w-[26ch]">
+            Sixty percent of transformations fail. The rest rarely survive
+            go-live.
+          </h2>
+          <p className="font-body text-navy text-[15px] md:text-[16px] leading-[1.65] max-w-[68ch]">
+            The platform isn&rsquo;t the variable — the economics are. Vendor
+            partners run vendor playbooks. Big-four runs staffing economics
+            and scope expansion. Advisory firms bill by milestone. They all
+            exit at go-live. None ships the post-go-live transformation.
+          </p>
+      </section>
+
+      {/* ===================== Block 4 · WHAT I USUALLY WALK INTO ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          What I usually walk into
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[28ch]">
+            The pattern across fifty engagements barely changes.
+          </h2>
+          <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
+            Every mid-market operator I&rsquo;ve engaged with arrives at the
+            same set of conditions — accumulated over years of vendor-driven
+            decisions, partner-led implementations, and the discipline that
+            quietly never landed. Sound familiar?
+          </p>
+
+          <div className="border-t border-navy/15 max-w-[860px]">
+            {CONDITIONS.map((c) => (
+              <div
+                key={c.n}
+                className="grid grid-cols-[56px_1fr] md:grid-cols-[72px_1fr] gap-4 md:gap-6 py-5 md:py-6 border-b border-navy/15"
+              >
+                <div className="font-vollkorn font-bold text-gold text-[26px] md:text-[30px] leading-none pt-1">
+                  {c.n}
+                </div>
+                <div>
+                  <h3 className="font-vollkorn font-bold text-navy text-[18px] md:text-[20px] leading-[1.3] mb-1.5">
+                    {c.h}
+                  </h3>
+                  <p className="font-body text-navy text-[14.5px] md:text-[15.5px] leading-[1.6]">
+                    {c.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.55] max-w-[64ch]">
+            <b className="not-italic font-bold">
+              If two or three of these are sitting on your desk right now,
+            </b>{" "}
+            the model below is what fixes them —{" "}
+            <span style={goldUnderlineStyle}>
+              one operator, six business process flows, the people who run
+              them at the center.
             </span>
           </p>
       </section>
