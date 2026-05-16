@@ -79,17 +79,17 @@ export default function HomePage() {
       <section className="relative pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
         <M4Watermark position="top-right" />
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
-            Forward-Deployed Operator · A practice for mid-market business transformations
+            Forward-Deployed Operator for mid-market business transformations
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
             {/* Left column — three serif beats */}
             <div>
               <p className="font-vollkorn font-bold text-navy text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-0.01em] mb-5">
-                One operator. Multi-party teams. One delivery.
+                Stalled implementations. Vendor lock-in. Systems that don&rsquo;t talk.
               </p>
               <p className="font-vollkorn italic font-normal text-navy text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] leading-[1.18] tracking-[-0.005em] mb-5">
-                I lead implementations to outcomes — built where data lives.
+                I lead implementations end-to-end — built where data lives, owned by you.
               </p>
               <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
                 A living asset that compounds — owned, operating,{" "}
@@ -98,9 +98,9 @@ export default function HomePage() {
 
               <div className="mt-7 md:mt-8 space-y-1.5">
                 <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
-                  The Systems Stack ·{" "}
+                  The Core Systems Stack ·{" "}
                   <span className="text-navy">
-                    ERP · WMS · MES · EMR · CRM/CPQ · GRC
+                    ERP · CRM/CPQ · WMS · MES · EMR · GRC
                   </span>
                 </p>
                 <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
@@ -121,9 +121,11 @@ export default function HomePage() {
                 A note from Rob
               </p>
               <p className="font-vollkorn font-normal text-navy text-[18px] md:text-[19px] leading-[1.5]">
-                After thirty years leading the deployment end-to-end, I built
-                the model that gives mid-market operators back their own
-                businesses — and leaves them owning it after I&rsquo;m gone.
+                After thirty years leading deployments end-to-end, this is
+                what a successful business system transformation is: multiple
+                deployments over time to a planned end state. Systems work.
+                Users have adopted. The ecosystem becomes a living asset —
+                happy people, happy systems. Yours, after I&rsquo;m gone.
               </p>
               <p className="mt-6 pt-4 border-t border-navy/15 font-body text-warm-gray text-[12.5px] tracking-[0.04em]">
                 Robert Paddock · idigdata
