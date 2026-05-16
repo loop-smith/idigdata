@@ -298,36 +298,23 @@ export default function HomePage() {
           </p>
       </section>
 
-      {/* ===================== Block 3 · WHAT YOU'RE UP AGAINST ===================== */}
+      {/* ===================== Block 3 · THE PROBLEM ISN'T EFFORT ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          What you&rsquo;re up against
+          The problem isn&rsquo;t effort
         </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-6 max-w-[26ch]">
-            Sixty percent of transformations fail. The rest rarely survive
-            go-live.
-          </h2>
-          <p className="font-body text-navy text-[15px] md:text-[16px] leading-[1.65] max-w-[68ch]">
-            The platform isn&rsquo;t the variable — the economics are. Vendor
-            partners run vendor playbooks. Big-four runs staffing economics
-            and scope expansion. Advisory firms bill by milestone. They all
-            exit at go-live. None ships the post-go-live transformation.
-          </p>
-      </section>
-
-      {/* ===================== Block 4 · WHAT I USUALLY WALK INTO ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          What I usually walk into
-        </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[28ch]">
-            The pattern across fifty engagements barely changes.
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
+            Sixty percent of transformations fail. The effort was there. The orchestration wasn&rsquo;t.
           </h2>
           <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
-            Every mid-market operator I&rsquo;ve engaged with arrives at the
-            same set of conditions — accumulated over years of vendor-driven
-            decisions, partner-led implementations, and the discipline that
-            quietly never landed. Sound familiar?
+            Every operator&rsquo;s team I walk into is working hard. The
+            transformation isn&rsquo;t stuck because effort is missing —
+            it&rsquo;s stuck because nobody is unifying the work. Fifty smart
+            people, three vendors, two finance teams, six process flows — all
+            moving, none aligned. The structural headwinds don&rsquo;t help:
+            subscription economics keeps the platforms rigid, data sovereignty
+            slows every decision, partner playbooks pull each workstream toward
+            the partner&rsquo;s commercial outcomes instead of the operator&rsquo;s.
           </p>
 
           <div className="border-t border-navy/15 max-w-[860px]">
@@ -355,15 +342,14 @@ export default function HomePage() {
             <b className="not-italic font-bold">
               If two or three of these are sitting on your desk right now,
             </b>{" "}
-            the model below is what fixes them —{" "}
+            the question isn&rsquo;t whether your team is working hard enough —{" "}
             <span style={goldUnderlineStyle}>
-              one operator, six business process flows, the people who run
-              them at the center.
+              it&rsquo;s whether anyone is unifying the work.
             </span>
           </p>
       </section>
 
-      {/* ===================== Block 5 · V1 + V2 (two value props) ===================== */}
+      {/* ===================== Block 4 · V1 + V2 (two value props) ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-6">
           What I do · two value props, one practice
@@ -466,7 +452,7 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 6 · RECEIPTS ===================== */}
+      {/* ===================== Block 5 · RECEIPTS ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
           Where I&rsquo;ve lived this
@@ -579,7 +565,7 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 7 · ENGAGEMENT PROCESS ===================== */}
+      {/* ===================== Block 6 · ENGAGEMENT PROCESS ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
           How an engagement runs
@@ -648,7 +634,7 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 8 · CTA ===================== */}
+      {/* ===================== Block 7 · CTA ===================== */}
       <section
         id="contact"
         className="bg-navy text-cream py-14 md:py-20"
