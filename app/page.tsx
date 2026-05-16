@@ -214,25 +214,26 @@ export default function HomePage() {
             Where the work converges.
           </h2>
           <p className="font-vollkorn italic font-normal text-warm-gray text-[15px] md:text-[17px] leading-[1.5] mb-6">
-            Data, systems, processes — and the people who run them.
+            Data, systems, processes — and the workforce that runs them.
           </p>
 
           <div className="flex justify-center mt-2">
             <svg
-              viewBox="0 0 700 620"
+              viewBox="0 0 700 600"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
               aria-labelledby="tri-title tri-desc"
               className="block w-full h-auto max-w-[680px]"
             >
               <title id="tri-title">
-                Substrate triangle with workflow users at the center.
+                Substrate triangle below Architectural Datum · active-triplet headline.
               </title>
               <desc id="tri-desc">
-                Equilateral triangle. Data at the top vertex, Systems at the
-                bottom-left, Processes at the bottom-right. A gold dimensional
-                disk at the centroid labeled workflow users — the people who
-                run the work.
+                Horizontal navy datum line near top of canvas labeled Observe Validate
+                Approve with sub the human-in-the-loop layer. Three thin warm-gray vertical
+                plumb lines descend from datum to vertex orbs of substrate triangle.
+                Vertices labeled Data the substrate, Systems the stack, Processes the
+                workflows. Center disk labeled Workforce the users that run the workflows.
               </desc>
               <defs>
                 <radialGradient id="goldOrb" cx="36%" cy="30%" r="75%">
@@ -256,197 +257,92 @@ export default function HomePage() {
                   <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
                 </linearGradient>
               </defs>
+
+              {/* ARCHITECTURAL DATUM · observability layer · active-triplet headline */}
+              <text
+                x="350"
+                y="42"
+                textAnchor="middle"
+                fontFamily="Vollkorn, Georgia, serif"
+                fontSize="22"
+                fontWeight="700"
+                fill="#142840"
+              >
+                Observe · Validate · Approve
+              </text>
+              <text
+                x="350"
+                y="60"
+                textAnchor="middle"
+                fontFamily="Source Sans 3, sans-serif"
+                fontSize="13"
+                fontStyle="italic"
+                fill="#6B6860"
+              >
+                the human-in-the-loop layer
+              </text>
+
+              {/* Horizontal navy datum line */}
+              <line x1="20" y1="80" x2="680" y2="80" stroke="#142840" strokeWidth="1.2" />
+
+              {/* 3 warm-gray plumb lines descending from datum to vertex orbs */}
+              <line x1="350" y1="80" x2="350" y2="168" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+              <line x1="80" y1="80" x2="80" y2="508" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+              <line x1="620" y1="80" x2="620" y2="508" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+
+              {/* SUBSTRATE TRIANGLE · apex (350,180) · BL (80,520) · BR (620,520) · centroid (350,407) */}
+              <polygon points="354,186 84,526 624,526" fill="#08182C" opacity="0.12" />
               <polygon
-                points="354,138 84,478 624,478"
-                fill="#08182C"
-                opacity="0.12"
-              />
-              <polygon
-                points="350,132 80,472 620,472"
+                points="350,180 80,520 620,520"
                 fill="url(#triFace)"
                 stroke="#142840"
                 strokeWidth="1.6"
               />
-              <line
-                x1="350"
-                y1="132"
-                x2="350"
-                y2="362"
-                stroke="#142840"
-                strokeWidth="0.9"
-                strokeDasharray="3,5"
-                opacity="0.45"
-              />
-              <line
-                x1="80"
-                y1="472"
-                x2="350"
-                y2="362"
-                stroke="#142840"
-                strokeWidth="0.9"
-                strokeDasharray="3,5"
-                opacity="0.45"
-              />
-              <line
-                x1="620"
-                y1="472"
-                x2="350"
-                y2="362"
-                stroke="#142840"
-                strokeWidth="0.9"
-                strokeDasharray="3,5"
-                opacity="0.45"
-              />
-              <circle
-                cx="350"
-                cy="132"
-                r="12"
-                fill="url(#navyOrb)"
-                stroke="#08182C"
-                strokeWidth="0.8"
-              />
-              <circle cx="345" cy="128" r="4" fill="#FFFFFF" opacity="0.4" />
-              <circle
-                cx="80"
-                cy="472"
-                r="12"
-                fill="url(#navyOrb)"
-                stroke="#08182C"
-                strokeWidth="0.8"
-              />
-              <circle cx="75" cy="468" r="4" fill="#FFFFFF" opacity="0.4" />
-              <circle
-                cx="620"
-                cy="472"
-                r="12"
-                fill="url(#navyOrb)"
-                stroke="#08182C"
-                strokeWidth="0.8"
-              />
-              <circle cx="615" cy="468" r="4" fill="#FFFFFF" opacity="0.4" />
-              <text
-                x="350"
-                y="95"
-                textAnchor="middle"
-                fontFamily="Vollkorn, Georgia, serif"
-                fontSize="26"
-                fontWeight="700"
-                fill="#142840"
-              >
+
+              {/* Dashed convergence lines to centroid */}
+              <line x1="350" y1="180" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+              <line x1="80" y1="520" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+              <line x1="620" y1="520" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+
+              {/* Vertex orbs */}
+              <circle cx="350" cy="180" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="345" cy="176" r="4" fill="#FFFFFF" opacity="0.4" />
+              <circle cx="80" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="75" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+              <circle cx="620" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="615" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+
+              {/* Vertex labels — v7 short-form subs */}
+              <text x="350" y="143" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
                 Data
               </text>
-              <text
-                x="350"
-                y="106"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="10"
-                fill="#6B6860"
-              >
-                <tspan x="350" dy="0">Common Data Model · golden schemas</tspan>
-                <tspan x="350" dy="11">master data governance</tspan>
+              <text x="350" y="163" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the substrate
               </text>
-              <text
-                x="80"
-                y="510"
-                textAnchor="middle"
-                fontFamily="Vollkorn, Georgia, serif"
-                fontSize="22"
-                fontWeight="700"
-                fill="#142840"
-              >
+
+              <text x="80" y="558" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="22" fontWeight="700" fill="#142840">
                 Systems
               </text>
-              <text
-                x="80"
-                y="528"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="11"
-                fill="#6B6860"
-              >
-                ERP · WMS · MES · EMR · CRM/CPQ
+              <text x="80" y="576" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the stack
               </text>
-              <text
-                x="80"
-                y="543"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="10"
-                fill="#6B6860"
-                fontStyle="italic"
-              >
-                multi-platform · multi-vendor
-              </text>
-              <text
-                x="620"
-                y="510"
-                textAnchor="middle"
-                fontFamily="Vollkorn, Georgia, serif"
-                fontSize="22"
-                fontWeight="700"
-                fill="#142840"
-              >
+
+              <text x="620" y="558" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="22" fontWeight="700" fill="#142840">
                 Processes
               </text>
-              <text
-                x="620"
-                y="528"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="11"
-                fill="#6B6860"
-              >
-                Six business process flows · workflows
+              <text x="620" y="576" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the workflows
               </text>
-              <text
-                x="620"
-                y="543"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="10"
-                fill="#6B6860"
-                fontStyle="italic"
-              >
-                P2P · O2C · P2M · D2R · MDM · S2S
+
+              {/* Center disk · Workforce */}
+              <circle cx="354" cy="410" r="95" fill="#08182C" opacity="0.14" />
+              <circle cx="350" cy="407" r="95" fill="url(#goldOrb)" stroke="#142840" strokeWidth="1.8" />
+              <ellipse cx="322" cy="378" rx="48" ry="30" fill="url(#goldHighlight)" />
+              <text x="350" y="403" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
+                Workforce
               </text>
-              <circle cx="354" cy="365" r="100" fill="#08182C" opacity="0.14" />
-              <circle
-                cx="350"
-                cy="362"
-                r="100"
-                fill="url(#goldOrb)"
-                stroke="#142840"
-                strokeWidth="1.8"
-              />
-              <ellipse
-                cx="320"
-                cy="330"
-                rx="50"
-                ry="32"
-                fill="url(#goldHighlight)"
-              />
-              <text
-                x="350"
-                y="358"
-                textAnchor="middle"
-                fontFamily="Vollkorn, Georgia, serif"
-                fontSize="22"
-                fontWeight="700"
-                fill="#142840"
-              >
-                Workflow users
-              </text>
-              <text
-                x="350"
-                y="383"
-                textAnchor="middle"
-                fontFamily="Source Sans 3, sans-serif"
-                fontSize="12"
-                fill="#142840"
-                fontStyle="italic"
-              >
-                the people who run the work
+              <text x="350" y="425" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="12" fontStyle="italic" fill="#142840">
+                the users that run the workflows
               </text>
             </svg>
           </div>
@@ -456,7 +352,7 @@ export default function HomePage() {
             <span className="block font-normal italic mt-1.5">
               I put{" "}
               <span style={goldUnderlineStyle}>
-                the people who run the work.
+                the workforce.
               </span>
             </span>
           </p>
