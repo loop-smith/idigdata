@@ -8,14 +8,14 @@ export const metadata: Metadata = {
       "idigdata — Forward-Deployed Operator for mid-market business transformations",
   },
   description:
-    "Forward-Deployed Operator for mid-market business transformations. I lead implementations end-to-end — built where data lives, owned by you.",
+    "Forward-Deployed Operator for mid-market business transformations. Business systems — data, workflows, and people. A living asset that compounds.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "idigdata — Forward-Deployed Operator",
     description:
-      "Forward-Deployed Operator for mid-market business transformations. I lead implementations end-to-end — built where data lives, owned by you.",
+      "Forward-Deployed Operator for mid-market business transformations. Business systems — data, workflows, and people. A living asset that compounds.",
     images: [
       {
         url: "/og-image.png",
@@ -82,18 +82,22 @@ export default function HomePage() {
             Forward-Deployed Operator for mid-market business transformations
           </p>
 
+          <p className="font-vollkorn font-bold text-navy text-[44px] sm:text-[54px] md:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.015em] mb-3">
+            Business Systems
+          </p>
+          <p className="font-vollkorn italic font-normal text-navy text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] leading-[1.1] tracking-[-0.005em] mb-10 md:mb-12">
+            Data, Workflows &amp; People
+          </p>
+
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
-            {/* Left column — three serif beats */}
+            {/* Left column — two serif beats */}
             <div>
-              <p className="font-vollkorn font-bold text-navy text-[36px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.1] tracking-[-0.01em] mb-5">
-                Stalled implementations. Vendor lock-in. Systems that don&rsquo;t talk.
-              </p>
-              <p className="font-vollkorn italic font-normal text-navy text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] leading-[1.18] tracking-[-0.005em] mb-5">
-                I lead implementations end-to-end — built where data lives, owned by you.
+              <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em] mb-5">
+                Half-shipped systems. Vendors running the play. Data nobody trusts.
               </p>
               <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
-                A living asset that compounds — owned, operating,{" "}
-                <span style={goldUnderlineStyle}>growing</span>.
+                A living asset. Compounding across{" "}
+                <span style={goldUnderlineStyle}>data, workflows, and people</span>.
               </p>
 
               <div className="mt-7 md:mt-8 space-y-1.5">
@@ -121,11 +125,13 @@ export default function HomePage() {
                 A note from Rob
               </p>
               <p className="font-vollkorn font-normal text-navy text-[18px] md:text-[19px] leading-[1.5]">
-                After thirty years leading deployments end-to-end, this is
-                what a successful business system transformation is: multiple
-                deployments over time to a planned end state. Systems work.
-                Users have adopted. The ecosystem becomes a living asset —
-                happy people, happy systems. Yours, after I&rsquo;m gone.
+                After thirty years, here&rsquo;s what a successful business
+                system transformation is: multiple deployments over time to
+                a planned end state. Systems work. Users have adopted. The
+                ecosystem becomes a living asset — happy people, happy systems.
+              </p>
+              <p className="mt-4 font-vollkorn italic font-semibold text-navy text-[16px] md:text-[17px] leading-[1.4]">
+                My measure of success.
               </p>
               <p className="mt-6 pt-4 border-t border-navy/15 font-body text-warm-gray text-[12.5px] tracking-[0.04em]">
                 Robert Paddock · idigdata
