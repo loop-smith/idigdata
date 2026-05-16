@@ -5,17 +5,17 @@ import M4Watermark from "@/components/M4Watermark";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata — Forward-Deployed Operator. Data. Processes. People.",
+      "idigdata — Forward-Deployed Operator for mid-market business transformations",
   },
   description:
-    "I lead implementations to outcomes — built where data lives. A practice for mid-market business transformations. A living asset that compounds — owned, operating, growing.",
+    "Forward-Deployed Operator for mid-market business transformations. I lead implementations end-to-end — built where data lives, owned by you.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "idigdata — Forward-Deployed Operator",
     description:
-      "Data. Processes. People. I lead implementations to outcomes — built where data lives. A living asset that compounds — owned, operating, growing.",
+      "Forward-Deployed Operator for mid-market business transformations. I lead implementations end-to-end — built where data lives, owned by you.",
     images: [
       {
         url: "/og-image.png",
@@ -76,7 +76,7 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
       {/* ===================== Block 1 · HERO ===================== */}
-      <section className="relative pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-24">
+      <section className="relative pt-6 md:pt-8 lg:pt-10 pb-20 md:pb-24">
         <M4Watermark position="top-right" />
           <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
             Forward-Deployed Operator for mid-market business transformations
