@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ConditionsAccordion from "@/components/ConditionsAccordion";
 import M4Watermark from "@/components/M4Watermark";
 
 export const metadata: Metadata = {
@@ -140,7 +141,39 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 2 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
+      {/* ===================== Block 2 · THE PROBLEM ISN'T EFFORT ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          The problem isn&rsquo;t effort
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
+            Sixty percent of transformations fail. The effort was there. The orchestration wasn&rsquo;t.
+          </h2>
+          <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
+            Every operator&rsquo;s team I walk into is working hard. The
+            transformation isn&rsquo;t stuck because effort is missing —
+            it&rsquo;s stuck because nobody is unifying the work. Fifty smart
+            people, three vendors, two finance teams, six process flows — all
+            moving, none aligned. The structural headwinds don&rsquo;t help:
+            subscription economics keeps the platforms rigid, data sovereignty
+            slows every decision, partner playbooks pull each workstream toward
+            the partner&rsquo;s commercial outcomes instead of the operator&rsquo;s.
+          </p>
+
+          <ConditionsAccordion conditions={CONDITIONS} />
+
+          <p className="mt-8 font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.55] max-w-[64ch]">
+            <b className="not-italic font-bold">
+              If two or three of these are sitting on your desk right now,
+            </b>{" "}
+            the question isn&rsquo;t whether your team is working hard enough —{" "}
+            <span style={goldUnderlineStyle}>
+              it&rsquo;s whether anyone is unifying the work.
+            </span>
+          </p>
+      </section>
+
+      {/* ===================== Block 3 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
           The model
@@ -298,161 +331,7 @@ export default function HomePage() {
           </p>
       </section>
 
-      {/* ===================== Block 3 · THE PROBLEM ISN'T EFFORT ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          The problem isn&rsquo;t effort
-        </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
-            Sixty percent of transformations fail. The effort was there. The orchestration wasn&rsquo;t.
-          </h2>
-          <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
-            Every operator&rsquo;s team I walk into is working hard. The
-            transformation isn&rsquo;t stuck because effort is missing —
-            it&rsquo;s stuck because nobody is unifying the work. Fifty smart
-            people, three vendors, two finance teams, six process flows — all
-            moving, none aligned. The structural headwinds don&rsquo;t help:
-            subscription economics keeps the platforms rigid, data sovereignty
-            slows every decision, partner playbooks pull each workstream toward
-            the partner&rsquo;s commercial outcomes instead of the operator&rsquo;s.
-          </p>
-
-          <div className="border-t border-navy/15 max-w-[860px]">
-            {CONDITIONS.map((c) => (
-              <div
-                key={c.n}
-                className="grid grid-cols-[56px_1fr] md:grid-cols-[72px_1fr] gap-4 md:gap-6 py-5 md:py-6 border-b border-navy/15"
-              >
-                <div className="font-vollkorn font-bold text-gold text-[26px] md:text-[30px] leading-none pt-1">
-                  {c.n}
-                </div>
-                <div>
-                  <h3 className="font-vollkorn font-bold text-navy text-[18px] md:text-[20px] leading-[1.3] mb-1.5">
-                    {c.h}
-                  </h3>
-                  <p className="font-body text-navy text-[14.5px] md:text-[15.5px] leading-[1.6]">
-                    {c.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.55] max-w-[64ch]">
-            <b className="not-italic font-bold">
-              If two or three of these are sitting on your desk right now,
-            </b>{" "}
-            the question isn&rsquo;t whether your team is working hard enough —{" "}
-            <span style={goldUnderlineStyle}>
-              it&rsquo;s whether anyone is unifying the work.
-            </span>
-          </p>
-      </section>
-
-      {/* ===================== Block 4 · V1 + V2 (two value props) ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-6">
-          What I do · two value props, one practice
-        </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
-            {/* V1 card */}
-            <div className="bg-navy text-cream rounded-[4px] px-7 md:px-8 py-8 md:py-9">
-              <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
-                V1 · Transformation
-              </p>
-              <h3 className="font-vollkorn font-bold text-cream text-[20px] md:text-[23px] leading-[1.3] mb-4">
-                I deliver business transformation as a forward-deployed asset
-                — not as a firm running on billings.
-              </h3>
-              <div className="font-body text-[14.5px] md:text-[15px] leading-[1.65] text-[#DCD9CC] space-y-3">
-                <p>
-                  <em className="not-italic italic font-normal text-white">
-                    I run the inversion.
-                  </em>{" "}
-                  One forward-deployed operator with a virtual bench of senior
-                  independent specialists assembled across fifty-plus
-                  engagements — fifteen of them full multi-year
-                  transformations. Flat-rate weekly economics tied to
-                  outcomes. Exit-by-design at handoff. No managed-services
-                  tail. No vendor commissions. No partner-channel pressure.{" "}
-                  <em className="not-italic italic font-normal text-white">
-                    Continuity discipline:
-                  </em>{" "}
-                  every workstream is documented and shadow-staffed across the
-                  bench from week one — the practice does not depend on me
-                  being in the room.
-                </p>
-                <p>
-                  I live inside the operator. I breathe the pain. I know the
-                  workflows the operator runs every day — across ERP, WMS,
-                  MES, EMR, CRM/CPQ. Multi-platform, multi-vendor versed. I
-                  know the systems and I know the people who use them — their
-                  pain points, their unmet needs, what makes a transformation
-                  land for them or stall.
-                </p>
-                <p>
-                  What makes the handoff stick: every workflow documented in
-                  SOPs the operator&rsquo;s team can run; every data model
-                  governed and vendor-portable; every system talking to a
-                  Common Data Model the operator owns — not the consultant,
-                  not the ERP vendor. Vendor-agnostic isn&rsquo;t a marketing
-                  posture. It&rsquo;s a structural consequence of putting the
-                  operator at the center of the data graph instead of the ERP
-                  vendor at the center.
-                </p>
-                <p>
-                  <span className="text-gold font-semibold">
-                    Start with the end in mind
-                  </span>{" "}
-                  — the operator&rsquo;s asset, fully built and operating. My
-                  data-centric structure reduces the repeating noise that
-                  consumes most transformations, adds clarity at every
-                  cross-functional decision point, and gives the operator
-                  command and control over delivery and user adoption —
-                  better and faster than any vendor partner can manage.
-                  That&rsquo;s the FDO model.
-                </p>
-              </div>
-            </div>
-
-            {/* V2 card */}
-            <div className="bg-navy text-cream rounded-[4px] px-7 md:px-8 py-8 md:py-9">
-              <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
-                V2 · Applied agentics
-              </p>
-              <h3 className="font-vollkorn font-bold text-cream text-[20px] md:text-[23px] leading-[1.3] mb-4">
-                I deploy agentic workflows on top of a substrate that&rsquo;s
-                real — not a demo.
-              </h3>
-              <div className="font-body text-[14.5px] md:text-[15px] leading-[1.65] text-[#DCD9CC] space-y-3">
-                <p>
-                  Agentic workflows are being deployed at scale right now.
-                  Most implementations will fail for the same reason every
-                  business-system transformation has failed for decades: they
-                  don&rsquo;t solve the fragmented data and undocumented
-                  workflow problem first. Engineers know how to write model
-                  code. Very few know how to architect the unsexy data
-                  schemas, documented workflows, and governance protocols a
-                  business actually runs on. If the substrate is garbage, the
-                  AI is vaporware.
-                </p>
-                <p>
-                  <em className="not-italic italic font-normal text-white">
-                    I fix the substrate so the agents work.
-                  </em>{" "}
-                  Five production agentic systems already shipped at a
-                  mid-market beverage CPG operator — named functions in
-                  supply chain, finance, and operations. Not demos.
-                  Production.
-                </p>
-                <p>Same operator across both. Two value props, one practice.</p>
-              </div>
-            </div>
-          </div>
-      </section>
-
-      {/* ===================== Block 5 · RECEIPTS ===================== */}
+      {/* ===================== Block 4 · RECEIPTS ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
         <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
           Where I&rsquo;ve lived this
@@ -565,80 +444,24 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 6 · ENGAGEMENT PROCESS ===================== */}
-      <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
-          How an engagement runs
-        </p>
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-7">
-            Phase zero to handoff.
-          </h2>
-
-          <div className="grid grid-cols-[36px_1fr] md:grid-cols-[48px_1fr] gap-x-4 md:gap-x-5 gap-y-4 max-w-[820px]">
-            {[
-              {
-                n: "01",
-                body: (
-                  <>
-                    <b className="font-bold">Read the operator.</b> Six-axis
-                    diagnostic before contract — data architecture, operating
-                    model, post-M&amp;A consolidation, agentic readiness, IT
-                    maturity, change-receptivity. The political map is never
-                    the org chart.
-                  </>
-                ),
-              },
-              {
-                n: "02",
-                body: (
-                  <>
-                    <b className="font-bold">Build the substrate.</b> Common
-                    Data Model. Governed master data. Documented workflows
-                    across ERP, WMS, MES, EMR, CRM/CPQ. Working taskforces of
-                    the people who actually run those workflows. Mock
-                    go-lives. UAT cycles. SOPs auto-generate during
-                    validation, not as a separate workstream.
-                  </>
-                ),
-              },
-              {
-                n: "03",
-                body: (
-                  <>
-                    <b className="font-bold">Cutover.</b> A date, not a vibe.
-                    Tested, validated, ready.
-                  </>
-                ),
-              },
-              {
-                n: "04",
-                body: (
-                  <>
-                    <b className="font-bold">Handoff and exit.</b>{" "}
-                    Operator&rsquo;s team runs the substrate. Asset is owned,
-                    documented, and maintained in-house. I leave. The work
-                    compounds.
-                  </>
-                ),
-              },
-            ].map((p) => (
-              <div key={p.n} className="contents">
-                <div className="font-vollkorn font-bold text-gold text-[18px] md:text-[20px] leading-[1.55]">
-                  {p.n}
-                </div>
-                <div className="font-body text-navy text-[14.5px] md:text-[15.5px] leading-[1.6]">
-                  {p.body}
-                </div>
-              </div>
-            ))}
-          </div>
-      </section>
-
-      {/* ===================== Block 7 · CTA ===================== */}
+      {/* ===================== Block 5 · CTA ===================== */}
       <section
         id="contact"
         className="bg-navy text-cream py-14 md:py-20"
       >
+        <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
+          Embedded · Fractional · Agentics — sized to the work
+        </p>
+        <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[16px] md:text-[18px] leading-[1.55] max-w-[58ch] mb-8">
+          Three engagement shapes, one practice. See the full architecture, the roadmap, and how I plug in →{" "}
+          <Link
+            href="/approach/"
+            className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic"
+          >
+            /approach
+          </Link>
+        </p>
+
         <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-4">
           Plug me in.
         </h2>
