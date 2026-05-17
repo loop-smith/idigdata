@@ -449,35 +449,45 @@ export default function HomePage() {
         id="contact"
         className="bg-navy text-cream py-14 md:py-20"
       >
+        {/* Gold accent rule · climax punctuation */}
+        <div aria-hidden="true" className="h-[2px] bg-gold w-[120px] mb-8 md:mb-10" />
+
         <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
           Embedded · Fractional · Agentics — sized to the work
         </p>
-        <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[16px] md:text-[18px] leading-[1.55] max-w-[58ch] mb-8">
-          Three engagement shapes, one practice. See the full architecture, the roadmap, and how I plug in →{" "}
+        <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[16px] md:text-[18px] leading-[1.55] max-w-[64ch] mb-10">
+          Three engagement shapes, one practice. See the full architecture, the roadmap, and how I plug in:{" "}
           <Link
             href="/approach/"
-            className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic"
+            className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
           >
-            /approach
+            /approach →
           </Link>
         </p>
 
-        <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-4">
-          Plug me in.
+        <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-5">
+          Let&rsquo;s talk shape.
         </h2>
-          <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-[#DCD9CC] max-w-[58ch] mb-7">
-            If your business is sitting on three different ERPs, a WMS the
-            floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
-            landed in production, or a transformation that stalled before it
-            landed — I&rsquo;m one operator-to-operator conversation away. No
-            deck. No proposal. Just talking shape.
-          </p>
-          <Link
-            href="/contact/"
-            className="inline-block bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.06em] px-6 py-3 rounded-[4px] hover:bg-[#FFD740] transition-colors"
-          >
-            Start a conversation →
-          </Link>
+
+        {/* Pull-quote · the visual peak of the page closer */}
+        <p className="font-vollkorn italic font-medium text-cream text-[24px] md:text-[30px] lg:text-[34px] leading-[1.25] mb-8 max-w-[24ch]">
+          No deck. No proposal.{" "}
+          <span className="text-gold">Just talking shape.</span>
+        </p>
+
+        <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-[#DCD9CC] max-w-[62ch] mb-8">
+          If your business is sitting on three different ERPs, a WMS the
+          floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
+          landed in production, or a transformation that stalled before it
+          landed — I&rsquo;m one operator-to-operator conversation away.
+        </p>
+
+        <Link
+          href="/contact/"
+          className="inline-block bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.06em] px-8 py-4 rounded-[4px] hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
+        >
+          Start a conversation →
+        </Link>
       </section>
     </div>
   );
