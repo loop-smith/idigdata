@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
     default:
-      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     template: "%s · Forward-Deployed Operator",
   },
   description:
-    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
+    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     url: "https://idigdata.com",
     siteName: "idigdata",
     title:
-      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
-      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
-      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
+      "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
@@ -109,7 +109,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
-      <body className="font-body text-d2-ink bg-white">
+      <body className="font-body text-d2-ink bg-cream">
         <PostHogProvider>
           <JsonLd />
           <SiteHeader />
