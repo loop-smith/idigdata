@@ -22,8 +22,20 @@ const ContactSchema = z.object({
     .optional()
     .default("general"),
   articleSlug: z.string().max(80).optional(),
+  articleSlugs: z.array(z.string().max(80)).max(10).optional(),
   _hp: z.string().max(0).optional(),
 });
+
+const ARTICLE_TITLES: Record<string, string> = {
+  "transformation-and-the-people-of-it":
+    "You Don't Buy a Transformation. You Build One.",
+  "the-mechanics": "The Mechanics of the Build",
+  "applied-agentics": "Applied Agentics — The Business Asset",
+};
+
+function humanTitleFor(slug: string): string {
+  return ARTICLE_TITLES[slug] ?? slug;
+}
 
 export async function POST(req: NextRequest) {
   let body: unknown;
@@ -49,8 +61,32 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { name, email, role, company, message, interestType, articleSlug } =
-    parsed.data;
+  const {
+    name,
+    email,
+    role,
+    company,
+    message,
+    interestType,
+    articleSlug,
+    articleSlugs,
+  } = parsed.data;
+
+  const isArticleRequest = interestType === "article_request";
+
+  let normalizedSlugs: string[] = [];
+  if (articleSlugs && articleSlugs.length > 0) {
+    normalizedSlugs = articleSlugs;
+  } else if (articleSlug) {
+    normalizedSlugs = [articleSlug];
+  }
+
+  if (isArticleRequest && normalizedSlugs.length === 0) {
+    return NextResponse.json(
+      { ok: false, error: "no_articles_specified" },
+      { status: 400 },
+    );
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   const notifyTo = process.env.EMAIL_NOTIFY_TO ?? "robert@idigdata.com";
@@ -65,17 +101,30 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const isArticleRequest = interestType === "article_request";
-  const subject = isArticleRequest
-    ? `[idigdata] Article request: ${articleSlug ?? "unknown"} — ${name}`
-    : `[idigdata] Reach out: ${name} / ${email}`;
+  let subject: string;
+  if (isArticleRequest) {
+    if (normalizedSlugs.length === 1) {
+      subject = `[idigdata] Article request: ${normalizedSlugs[0]} — ${name}`;
+    } else {
+      subject = `[idigdata] Article request: ${normalizedSlugs.length} articles — ${name}`;
+    }
+  } else {
+    subject = `[idigdata] Reach out: ${name} / ${email}`;
+  }
+
+  const articleLines = normalizedSlugs.map(
+    (slug) => `  • ${humanTitleFor(slug)} (${slug})`,
+  );
 
   const lines = [
     `From: ${name} <${email}>`,
     role ? `Role: ${role}` : null,
     company ? `Company: ${company}` : null,
     `Interest: ${interestType}`,
-    articleSlug ? `Article slug: ${articleSlug}` : null,
+    isArticleRequest && normalizedSlugs.length > 0
+      ? `Articles requested (${normalizedSlugs.length}):`
+      : null,
+    ...(isArticleRequest ? articleLines : []),
     ``,
     `Message:`,
     message.trim().length > 0 ? message : "(no message supplied)",
