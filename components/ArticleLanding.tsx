@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/lib/articles";
 import ArticleRequestForm from "./ArticleRequestForm";
+import ArticleMark from "./ArticleMark";
 import ArchitecturalForkHero from "./article-heroes/ArchitecturalForkHero";
 import IntegratedDeliveryHero from "./article-heroes/IntegratedDeliveryHero";
 import FrameworkFoundationHero from "./article-heroes/FrameworkFoundationHero";
@@ -95,6 +96,11 @@ export default function ArticleLanding({ article }: Props) {
           <span>{article.readingTimeMin} min read</span>
         </div>
         <hr className="mt-9 mb-11 border-0 border-t-[1.5px] border-stone w-16" />
+
+        {/* Article mark — header band */}
+        <div className="flex justify-center mb-11">
+          <ArticleMark slug={article.slug} size={96} />
+        </div>
 
         {/* Lede */}
         <p className="text-[18px] md:text-[19px] leading-[1.65] text-ink mb-8">

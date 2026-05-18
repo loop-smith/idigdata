@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
 import ArticleCard from "@/components/ArticleCard";
 import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
+import ArticlesRequestCTA from "@/components/ArticlesRequestCTA";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Articles — idigdata",
   description:
-    "Three reads from the practice on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
+    "Three gated briefs on transformation as an operator-owned asset — why buying fails, how the build holds, and what agentics becomes when the substrate is real. Sent on request.",
   alternates: { canonical: "/articles/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/articles/",
-    title: "Articles — idigdata · Forward-Deployed Operator",
+    title: "Articles — idigdata",
     description:
-      "Three reads from the practice on what business transformation actually is, how it gets delivered, and what real applied agentics looks like at production scale. Sent to qualified requesters by request.",
+      "Three gated briefs on transformation as an operator-owned asset — why buying fails, how the build holds, and what agentics becomes when the substrate is real. Sent on request.",
     images: [
       {
         url: "/og-image.png",
@@ -36,35 +38,37 @@ const breadcrumbJsonLd = {
   ],
 };
 
-function firstSentence(text: string): string {
-  const match = text.match(/^.*?[.!?](?=\s|$)/);
-  return match ? match[0] : text;
-}
-
 export default function ArticlesIndexPage() {
   return (
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
 
-      <section className="pt-20 pb-10 md:pt-24 md:pb-14">
+      <section className="relative pt-20 pb-10 md:pt-24 md:pb-14">
+        <M4Watermark position="top-right" />
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Articles
         </h1>
         <p className="mt-6 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          Three reads from the practice on what business transformation
-          actually is, how it gets delivered, and what real applied agentics
-          looks like at production scale. Articles are sent to qualified
-          requesters by request — not posted publicly. Read the summary; if
-          the substance is what you need, request access. Locate where on the
-          path you fit on the{" "}
+          Three gated briefs on transformation as an operator-owned asset: why
+          buying fails, how the build holds, and what agentics becomes when the
+          substrate is real.
+        </p>
+        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[15px] leading-snug">
+          Public summaries stay high-level. Full PDFs are sent on request.
+        </p>
+        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[15px] leading-snug">
+          Locate where on the path you fit on the{" "}
           <Link
-            href="/approach/#engagement-roadmap"
-            className="not-italic font-body text-navy border-b border-navy/40 hover:border-navy"
+            href="/engagement/"
+            className="text-navy border-b border-navy/40 hover:border-navy"
           >
             engagement roadmap
           </Link>
           .
         </p>
+        <div className="mt-8">
+          <ArticlesRequestCTA />
+        </div>
       </section>
 
       <AccentRule className="mt-2" />
@@ -77,7 +81,7 @@ export default function ArticlesIndexPage() {
               slug={a.slug}
               pairBadge={a.pairBadge}
               title={a.title}
-              hook={firstSentence(a.abstract)}
+              hook={a.cardHook}
               readingTimeMin={a.readingTimeMin}
               category={a.category}
             />

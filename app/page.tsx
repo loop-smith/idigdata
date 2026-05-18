@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ConditionsAccordion from "@/components/ConditionsAccordion";
+import M4Watermark from "@/components/M4Watermark";
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata — Forward-Deployed Operator. Operator-owned. Vendor-agnostic. Exit-by-design.",
+      "idigdata — Forward-Deployed Operator for mid-market business transformations",
   },
   description:
-    "A boutique transformation practice for $100M – $750M operating companies whose ERP is a tax, not a tool. Forward-Deployed Operator — Embedded, Fractional, or Agentics, sized to the work.",
+    "Forward-Deployed Operator for mid-market business transformations. Business systems — data, workflows, and people. A living asset that compounds.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "idigdata — Forward-Deployed Operator",
     description:
-      "I work inside the customer environment, see with operator eyes, and ship against operator outcomes. Operator-owned. Vendor-agnostic. Exit-by-design.",
+      "Forward-Deployed Operator for mid-market business transformations. Business systems — data, workflows, and people. A living asset that compounds.",
     images: [
       {
         url: "/og-image.png",
@@ -26,850 +28,466 @@ export const metadata: Metadata = {
   },
 };
 
-function M4Lattice({
-  size = 28,
-  cellColor = "var(--color-navy)",
-  centerColor = "var(--color-gold)",
-  className = "",
-  ariaHidden = true,
-}: {
-  size?: number;
-  cellColor?: string;
-  centerColor?: string;
-  className?: string;
-  ariaHidden?: boolean;
-}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 28 28"
-      aria-hidden={ariaHidden}
-      className={className}
-    >
-      <rect fill={cellColor} x="0" y="0" width="8" height="8" />
-      <rect fill={cellColor} x="10" y="0" width="8" height="8" />
-      <rect fill={cellColor} x="20" y="0" width="8" height="8" />
-      <rect fill={cellColor} x="0" y="10" width="8" height="8" />
-      <rect fill={centerColor} x="10" y="10" width="8" height="8" />
-      <rect fill={cellColor} x="20" y="10" width="8" height="8" />
-      <rect fill={cellColor} x="0" y="20" width="8" height="8" />
-      <rect fill={cellColor} x="10" y="20" width="8" height="8" />
-      <rect fill={cellColor} x="20" y="20" width="8" height="8" />
-    </svg>
-  );
-}
+const goldUnderlineStyle = {
+  backgroundImage:
+    "linear-gradient(180deg, transparent 60%, var(--color-gold) 60%, var(--color-gold) 92%, transparent 92%)",
+  padding: "0 3px",
+};
 
-const ARTICLE_CARDS = [
+const CONDITIONS = [
   {
-    slug: "transformation-and-the-people-of-it",
-    essay: "Article 01",
-    num: "No. 01",
-    title: (
-      <>
-        What business transformation{" "}
-        <em className="italic font-semibold">actually is</em> — and who it's
-        done with.
-      </>
-    ),
-    thesis:
-      "The architectural fork — sovereign data, replaceable apps — and the human layer the architecture only holds against.",
-    featured: true,
+    n: "01",
+    h: "Disparate legacy systems",
+    body:
+      "Accumulated through years of point solutions and acquisitions. ERP, WMS, MES, CRM, EMR — none of them quite talk to each other. Each rollout left another integration debt.",
   },
   {
-    slug: "the-mechanics",
-    essay: "Article 02",
-    num: "No. 02",
-    title: (
-      <>
-        The <em className="italic font-semibold">mechanics.</em>
-      </>
-    ),
-    thesis:
-      "PM, change management, and agile-fall as one delivery discipline. ASC 350-40 capitalization. The structural escape from the vendor-partner trap.",
+    n: "02",
+    h: "No common data model",
+    body:
+      "Every system carries its own version of master data. The same customer has five different records. The CFO knows. The auditor will too.",
   },
   {
-    slug: "applied-agentics",
-    essay: "Article 03",
-    num: "No. 03",
-    title: (
-      <>
-        Applied <em className="italic font-semibold">agentics.</em>
-      </>
-    ),
-    thesis:
-      "Five domain-experienced production apps in live operations. The framework that makes deployments repeatable. The data foundation precondition.",
+    n: "03",
+    h: "Ungoverned, dirty data",
+    body:
+      "Integrity issues compound silently. Three-way match exception rates climb. Intercompany reconciliation eats senior controller time. The financial impact lands downstream where nobody traces it back to the data layer.",
+  },
+  {
+    n: "04",
+    h: "Partners selling ERP-centric, customer-for-life",
+    body:
+      "PowerPoints pitching the vendor's roadmap. Implementation-partner channel running on billable hours. Managed-services tail baked into the close. They sell tooling. They don't sell operator outcomes.",
+  },
+  {
+    n: "05",
+    h: "Vendors who never learned the business",
+    body:
+      "Configuration expertise, not operating expertise. They know the platform's switches. They don't know your workflows, your people, your real cost structures, or your stakeholder politics.",
+  },
+  {
+    n: "06",
+    h: "Sparse PM, sparse change, sparse stakeholder discipline",
+    body:
+      "Project management thin. Change management treated as an afterthought. The people who actually run the work aren't in the taskforces. Stakeholders disengage. Adoption decays after go-live — if go-live ever lands.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="font-body bg-cream text-navy">
-      {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden bg-cream">
-        {/* Background giant lattice */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-20 top-[420px] opacity-[0.10]"
-        >
-          <M4Lattice size={640} />
-        </div>
+    <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
+      {/* ===================== Block 1 · HERO ===================== */}
+      <section className="relative pt-6 md:pt-8 lg:pt-10 pb-20 md:pb-24">
+        <M4Watermark position="top-right" />
+          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
+            Forward-Deployed Operator for mid-market business transformations
+          </p>
 
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 pt-16 md:pt-24 pb-24 md:pb-32 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr_480px] gap-8 lg:gap-12 items-start">
-            {/* Left rule */}
-            <div className="hidden lg:flex flex-col gap-6 pt-2">
-              <span className="block w-px h-60 bg-navy/15" />
-            </div>
+          <p className="font-vollkorn font-bold text-navy text-[44px] sm:text-[54px] md:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.015em] mb-3">
+            Business Systems
+          </p>
+          <p className="font-vollkorn italic font-normal text-navy text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] leading-[1.1] tracking-[-0.005em] mb-10 md:mb-12">
+            Data, Workflows &amp; People
+          </p>
 
-            {/* Main hero */}
-            <div className="pt-2">
-              <div className="flex items-center gap-3.5 mb-10 md:mb-12">
-                <span className="block w-1.5 h-1.5 rounded-full bg-gold" />
-                <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-                  Forward-Deployed Operator · A Practice for Mid-Market Operators
-                </span>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
+            {/* Left column — two serif beats */}
+            <div>
+              <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em] mb-5">
+                Half-shipped systems. Vendors running the play. Data nobody trusts.
+              </p>
+              <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
+                A living asset. Compounding across{" "}
+                <span style={goldUnderlineStyle}>data, workflows, and people</span>.
+              </p>
+
+              <div className="mt-7 md:mt-8 space-y-1.5">
+                <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
+                  The Core Systems Stack ·{" "}
+                  <span className="text-navy">
+                    ERP · CRM/CPQ · WMS · MES · EMR · GRC
+                  </span>
+                </p>
+                <p className="font-body font-semibold uppercase text-warm-gray text-[12px] md:text-[13px] tracking-[0.16em]">
+                  The AI Labs ·{" "}
+                  <span className="text-navy">
+                    Anthropic · OpenAI · Google · Open Source
+                  </span>
+                </p>
               </div>
-
-              <h1 className="font-vollkorn font-extrabold text-navy text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] leading-[1.0] tracking-[-0.025em] text-balance mb-10 md:mb-12">
-                I work inside the customer environment
-                <span className="text-gold px-1.5">·</span>
-                <br />
-                <em className="italic font-semibold">
-                  see with operator eyes
-                </em>
-                <span className="text-gold px-1.5">·</span>
-                <br />
-                ship against{" "}
-                <span
-                  className="relative inline-block"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, transparent 64%, var(--color-gold) 64%, var(--color-gold) 92%, transparent 92%)",
-                    padding: "0 4px",
-                  }}
-                >
-                  operator outcomes
-                </span>
-                .
-              </h1>
-
-              <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[18px] leading-snug max-w-[520px] border-t border-navy/15 pt-5">
-                idigdata — Data Integration Group, established 2016. A boutique
-                transformation practice for $100M – $750M operating companies
-                whose ERP is a tax, not a tool.
-              </p>
-
-              {/* v9.4 thesis preserved as secondary beat */}
-              <p className="mt-5 max-w-[520px] font-vollkorn font-medium text-navy text-[13px] md:text-[14px] tracking-[0.02em]">
-                Client-owned data{" "}
-                <span className="text-gold">·</span>{" "}
-                Vendor-agnostic architecture{" "}
-                <span className="text-gold">·</span>{" "}
-                Transformation that institutionalizes
-              </p>
             </div>
 
-            {/* Right pull-quote card */}
+            {/* Right column — letter card */}
             <aside
-              aria-label="Founder pull quote"
-              className="relative bg-navy text-cream px-8 md:px-10 pt-12 pb-10 mt-8 lg:mt-2"
+              aria-label="Founder note"
+              className="bg-white border border-navy/15 rounded-[4px] px-7 md:px-8 py-7 md:py-8"
             >
-              <span
-                aria-hidden="true"
-                className="absolute top-7 left-7 font-vollkorn text-gold text-[120px] md:text-[140px] leading-[0.6] opacity-95"
-              >
-                &ldquo;
-              </span>
-              <p className="font-vollkorn italic font-semibold text-[20px] md:text-[22px] leading-[1.35] tracking-[-0.005em] mt-12 text-pretty">
-                After thirty years, I built the model that gives mid-market
-                operators back their own businesses — and leaves them owning it
-                after I&rsquo;m gone.
+              <p className="font-body font-semibold uppercase text-warm-gray text-[10px] md:text-[11px] tracking-[0.24em] mb-4">
+                A note from Rob
               </p>
-              <div className="mt-8 pt-5 border-t border-gold/35 flex justify-between items-center">
-                <span className="font-vollkorn font-bold text-[15px]">
-                  Robert — Founder
-                </span>
-                <span className="font-body text-[11px] uppercase tracking-[0.16em] text-gold">
-                  Letter № I
-                </span>
-              </div>
+              <p className="font-vollkorn font-normal text-navy text-[18px] md:text-[19px] leading-[1.5]">
+                After thirty years, here&rsquo;s what a successful business
+                system transformation is: multiple deployments over time to
+                a planned end state. Systems work. Users have adopted. The
+                ecosystem becomes a living asset — happy people, happy systems.
+              </p>
+              <p className="mt-4 font-vollkorn italic font-semibold text-navy text-[16px] md:text-[17px] leading-[1.4]">
+                My measure of success.
+              </p>
+              <p className="mt-6 pt-4 border-t border-navy/15 font-body text-warm-gray text-[12.5px] tracking-[0.04em]">
+                Robert Paddock · idigdata
+              </p>
             </aside>
           </div>
-
-          {/* Metrics strip */}
-          <div className="mt-20 md:mt-24 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr] border-t border-navy border-b border-navy/15">
-            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
-              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-                Operating Premise
-              </span>
-              <span className="font-vollkorn italic font-semibold text-navy text-[20px] md:text-[24px] leading-tight tracking-[-0.02em]">
-                &ldquo;All businesses are uniquely standard.&rdquo;
-              </span>
-            </div>
-            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
-              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-                Engagements
-              </span>
-              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
-                50<span className="text-gold">+</span>
-              </span>
-              <span className="font-vollkorn italic text-warm-gray text-[12px]">
-                mid-market transformations
-              </span>
-            </div>
-            <div className="px-6 md:px-8 py-6 md:py-7 border-r border-navy/10 flex flex-col gap-2">
-              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-                Framework
-              </span>
-              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
-                Agentic
-              </span>
-              <span className="font-vollkorn italic text-warm-gray text-[12px]">
-                at brand scale
-              </span>
-            </div>
-            <div className="px-6 md:px-8 py-6 md:py-7 flex flex-col gap-2">
-              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-                Tenure
-              </span>
-              <span className="font-vollkorn font-bold text-navy text-[28px] md:text-[32px] tracking-[-0.02em]">
-                30 yrs
-              </span>
-              <span className="font-vollkorn italic text-warm-gray text-[12px]">
-                single operator practice
-              </span>
-            </div>
-          </div>
-        </div>
       </section>
 
-      {/* ===================== II — THE NEW MODEL ===================== */}
-      <section id="model" className="bg-pale-navy">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16 md:mb-20">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
-              The architectural
-              <br />
-              <em className="italic font-semibold">fork</em> in the road.
-            </h2>
-            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              The dominant model in mid-market software is lock-in. The
-              platforms know it. Their partners enforce it. The operator pays
-              the rent — in license, in data, in optionality — for the rest of
-              the company&rsquo;s life.
-            </p>
-          </header>
-
-          <blockquote className="mb-16 md:mb-20 lg:pl-32 lg:pr-20">
-            <p className="font-vollkorn italic font-bold text-navy text-[26px] md:text-[34px] lg:text-[36px] leading-[1.25] tracking-[-0.012em] text-balance">
-              &ldquo;Their model is{" "}
-              <span
-                style={{
-                  backgroundImage:
-                    "linear-gradient(180deg, transparent 62%, var(--color-gold) 62%, var(--color-gold) 90%, transparent 90%)",
-                  padding: "0 4px",
-                }}
-              >
-                &lsquo;we own you and your data.&rsquo;
-              </span>{" "}
-              I built a different one — where the client owns the data and the
-              ERP is just an app.&rdquo;
-            </p>
-          </blockquote>
-
-          {/* Comparison diagram */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_80px_1fr] bg-cream border border-navy/15">
-            {/* Them */}
-            <div className="px-8 md:px-10 py-10 md:py-12 bg-cream">
-              <h4 className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-warm-gray mb-2">
-                The Incumbent Architecture
-              </h4>
-              <h3 className="font-vollkorn font-extrabold text-navy text-[26px] md:text-[32px] leading-[1.1] tracking-[-0.015em] mb-6">
-                Vendor at the{" "}
-                <em className="italic font-semibold">center.</em>
-              </h3>
-              <div className="flex flex-wrap gap-2 mt-5 mb-7">
-                {["SAP", "Microsoft D365", "Acumatica", "Salesforce"].map(
-                  (v) => (
-                    <span
-                      key={v}
-                      className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-warm-gray border border-navy/15 px-3 py-1.5"
-                    >
-                      {v}
-                    </span>
-                  ),
-                )}
-              </div>
-              <ul className="flex flex-col gap-3.5">
-                {[
-                  "License the platform, hire the partner, integrate on the vendor’s calendar, migrate when they say so.",
-                  "Implementation fees, support contracts, upgrade cycles, migration retrofits — paid forever, on the vendor’s timeline.",
-                  "Your data lives inside the product. Their model is, plainly, “we own you and your data.”",
-                  "Vendor change is a transformation event — paid for again, in full, at the next cycle.",
-                ].map((b, i) => (
-                  <li
-                    key={i}
-                    className="grid grid-cols-[14px_1fr] gap-3.5 text-[15px] leading-[1.5] text-warm-gray"
-                  >
-                    <span className="font-vollkorn italic font-bold text-stone leading-[1.4]">
-                      ·
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* vs */}
-            <div
-              aria-hidden="true"
-              className="hidden lg:flex items-center justify-center bg-cream border-l border-r border-navy/15"
-            >
-              <span className="font-vollkorn italic font-semibold text-warm-gray text-[14px] tracking-[0.1em]">
-                vs.
-              </span>
-            </div>
-            <div
-              aria-hidden="true"
-              className="lg:hidden flex items-center justify-center bg-cream py-4 border-t border-b border-navy/15"
-            >
-              <span className="font-vollkorn italic font-semibold text-warm-gray text-[14px] tracking-[0.1em]">
-                vs.
-              </span>
-            </div>
-
-            {/* Us */}
-            <div className="px-8 md:px-10 py-10 md:py-12 bg-navy text-cream">
-              <h4 className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-gold mb-2">
-                The idigdata Architecture
-              </h4>
-              <h3 className="font-vollkorn font-extrabold text-cream text-[26px] md:text-[32px] leading-[1.1] tracking-[-0.015em] mb-6">
-                Client at the <em className="italic font-semibold">center.</em>
-              </h3>
-              <div className="flex flex-wrap gap-2 mt-5 mb-7">
-                {[
-                  "Data layer · owned",
-                  "ERPs · interchangeable apps",
-                  "Agentic · stacked",
-                ].map((v) => (
-                  <span
-                    key={v}
-                    className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-cream border border-gold/30 px-3 py-1.5"
-                  >
-                    {v}
-                  </span>
-                ))}
-              </div>
-              <ul className="flex flex-col gap-3.5">
-                {[
-                  "The client owns the data — a Common Data Model the client controls. ERP, CRM, WMS, HRIS, FP&A become apps.",
-                  "Replaceable, swappable, contained. Vendor change is a commodity decision, not a transformation.",
-                  "Sovereignty over data and integrations is structural, not negotiated.",
-                  "BOSS is the architectural layer above SAP, D365, Acumatica, Salesforce — not a competitor to them.",
-                ].map((b, i) => (
-                  <li
-                    key={i}
-                    className="grid grid-cols-[14px_1fr] gap-3.5 text-[15px] leading-[1.5]"
-                  >
-                    <span className="font-vollkorn italic font-bold text-gold leading-[1.4]">
-                      ·
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== II.5 — WHERE I WORK ===================== */}
-      <section id="where" className="bg-cream">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
-              Three industry specialties.
-              <br />
-              <em className="italic font-semibold">Two core threads.</em>
-            </h2>
-            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              Industry depth and system breadth, unified by what every
-              mid-market operating company at scale carries underneath: ERP as
-              financial and accounting backbone, and compliance and risk as
-              foundation.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-navy mb-16">
-            {[
-              {
-                name: "AEC",
-                tag: "Architecture · Engineering · Construction",
-                body: "Decades-deep specialty. Multi-entity project costing, job-cost accounting, OSHA regulatory, contract compliance, bonding and insurance discipline.",
-              },
-              {
-                name: "Beverage CPG",
-                tag: "Wine · Beer · Spirits",
-                body: "Eight-year recent specialty. TTB regulatory, multi-entity intercompany, cost rollups, lab testing, quality control, distributor channel, route-to-market mechanics.",
-              },
-              {
-                name: "Healthcare",
-                tag: "EHR · Regulated · Compliance-heavy",
-                body: "HIPAA, revenue cycle, regulatory rigor, patient safety. The same ERP + compliance threads that hold AEC and beverage CPG hold here.",
-              },
-            ].map((s, i, arr) => (
-              <article
-                key={s.name}
-                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-3 ${
-                  i < arr.length - 1
-                    ? "md:border-r border-navy/15 border-b md:border-b-0"
-                    : ""
-                }`}
-              >
-                <h3 className="font-vollkorn font-extrabold text-navy text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
-                  {s.name}
-                </h3>
-                <p className="font-vollkorn italic font-medium text-warm-gray text-[15px] md:text-[16px] leading-[1.35] pb-5 border-b border-navy/15">
-                  {s.tag}
-                </p>
-                <p className="font-body text-navy text-[14.5px] leading-[1.65]">
-                  {s.body}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="bg-pale-navy px-8 md:px-10 py-10 md:py-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 items-start">
-            <div className="flex flex-col gap-2">
-              <span className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-                In the trenches, leading teams
-              </span>
-              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
-                Every operating-system class deployed.
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-2.5 self-center">
-              {["ERP", "WMS", "LIMS", "QMS", "CPQ", "CRM", "MDM", "HRIS"].map(
-                (s) => (
-                  <span
-                    key={s}
-                    className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-navy border border-navy/30 px-3.5 py-2 bg-cream"
-                  >
-                    {s}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-
-          <p className="mt-12 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[16px] md:text-[18px] leading-[1.55] text-pretty">
-            Every uniquely standard business has the same shape underneath.
-            They buy, they sell, some make. The intelligence that lets them
-            buy, sell, and make better is true business intelligence. Underneath
-            it all is the substrate — master data, the everything-else
-            infrastructure. Six Process Constellations, exhaustive by
-            construction. The thread under everything is data: clean, curated,
-            governed, high-quality. The practice is named for it.
+      {/* ===================== Block 2 · THE PROBLEM ISN'T EFFORT ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          The problem isn&rsquo;t effort
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
+            Sixty percent of transformations fail. The effort was there. The orchestration wasn&rsquo;t.
+          </h2>
+          <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
+            Every operator&rsquo;s team I walk into is working hard. The
+            transformation isn&rsquo;t stuck because effort is missing —
+            it&rsquo;s stuck because nobody is unifying the work. Fifty smart
+            people, three vendors, two finance teams, six process flows — all
+            moving, none aligned. The structural headwinds don&rsquo;t help:
+            subscription economics keeps the platforms rigid, data sovereignty
+            slows every decision, partner playbooks pull each workstream toward
+            the partner&rsquo;s commercial outcomes instead of the operator&rsquo;s.
           </p>
-        </div>
+
+          <ConditionsAccordion conditions={CONDITIONS} />
+
+          <p className="mt-8 font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.55] max-w-[64ch]">
+            <b className="not-italic font-bold">
+              If two or three of these are sitting on your desk right now,
+            </b>{" "}
+            the question isn&rsquo;t whether your team is working hard enough —{" "}
+            <span style={goldUnderlineStyle}>
+              it&rsquo;s whether anyone is unifying the work.
+            </span>
+          </p>
       </section>
 
-      {/* ===================== III — HOW I WORK ===================== */}
-      <section id="how" className="bg-cream">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
-              Three engagement{" "}
-              <em className="italic font-semibold">shapes.</em>
-            </h2>
-            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              One operator. One practice. Three ways to plug in — depending on
-              what the business needs and where the lever is.
-            </p>
-          </header>
+      {/* ===================== Block 3 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          The model
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-2">
+            Data, systems, processes — and the workforce.
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-navy">
-            {[
-              {
-                num: "No. 01",
-                name: "Embedded.",
-                tag: "Best bang for the buck on a full transformation — short term and long term.",
-                body: (
-                  <>
-                    Full transformation residency. Full executive scope as
-                    contractor: strategy, operations, vendor portfolio, risk,
-                    governance. Inside-out: team-building, full lifecycle
-                    delivery, operating-model change, IT-department shore-up,
-                    BOSS deployment, agentic framework.
-                  </>
-                ),
-                rows: [
-                  ["Cadence", "12 – 24 months", true],
-                  ["Footprint", "On-site, full operating depth", false],
-                  ["Outcome", "Owned platform · trained team", false],
-                ] as const,
-              },
-              {
-                num: "No. 02",
-                name: "Fractional.",
-                tag: "Plug me in at any stage of an existing project.",
-                body: (
-                  <>
-                    Engagements where a specific lever needs moving: unblock a
-                    stalled ERP, deploy a production agent on a critical
-                    bottleneck, stand up the operator-owned data substrate
-                    alongside the existing tier-1 stack.
-                  </>
-                ),
-                rows: [
-                  ["Cadence", "90 – 180 days", true],
-                  ["Footprint", "Targeted · lever-specific", false],
-                  ["Outcome", "One problem, retired permanently", false],
-                ] as const,
-              },
-              {
-                num: "No. 03",
-                name: "Agentics.",
-                tag: "Standalone, or stacked on either of the above.",
-                body: (
-                  <>
-                    The enterprise agentic framework deployed against the data
-                    foundation. Five production apps in live operations is the
-                    proof; the framework is what makes it repeatable.
-                  </>
-                ),
-                rows: [
-                  ["Cadence", "60 – 120 days", true],
-                  ["Footprint", "Function-scoped · platform-aware", false],
-                  ["Outcome", "Operating leverage, audited end-to-end", false],
-                ] as const,
-              },
-            ].map((card, i, arr) => (
-              <article
-                key={card.num}
-                className={`relative px-8 py-10 md:py-12 flex flex-col gap-5 min-h-[520px] border-b border-navy/15 ${
-                  i < arr.length - 1
-                    ? "md:border-r border-b md:border-b-0 border-navy/15"
-                    : ""
-                }`}
-              >
-                <span className="font-vollkorn italic font-semibold text-gold text-[18px] tracking-[0.02em]">
-                  {card.num}
-                </span>
-                <span className="absolute top-6 right-6 opacity-85">
-                  <M4Lattice size={20} />
-                </span>
-                <h3 className="font-vollkorn font-extrabold text-navy text-[34px] md:text-[38px] leading-[1.05] tracking-[-0.018em] mt-1">
-                  {card.name}
-                </h3>
-                <p className="font-vollkorn italic font-medium text-warm-gray text-[16px] pb-6 border-b border-navy/15">
-                  {card.tag}
-                </p>
-                <p className="font-body text-navy text-[15px] leading-[1.6]">
-                  {card.body}
-                </p>
-                <div className="mt-auto flex flex-col gap-2.5 pt-6">
-                  {card.rows.map(([k, v, italic]) => (
-                    <div
-                      key={k}
-                      className="grid grid-cols-[80px_1fr] gap-4 text-[12px] leading-[1.4]"
-                    >
-                      <span className="font-body text-[10px] font-bold uppercase tracking-[0.18em] text-warm-gray pt-0.5">
-                        {k}
-                      </span>
-                      <span
-                        className={`font-vollkorn font-semibold text-navy text-[14px] ${
-                          italic ? "italic font-medium" : ""
-                        }`}
-                      >
-                        {v}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              href="/approach/"
-              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
+          <div className="flex justify-center mt-6 md:mt-8">
+            <svg
+              viewBox="0 0 700 600"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-labelledby="tri-title tri-desc"
+              className="block w-full h-auto max-w-[680px]"
             >
-              Read the full approach <span aria-hidden>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+              <title id="tri-title">
+                Substrate triangle below Architectural Datum · active-triplet headline.
+              </title>
+              <desc id="tri-desc">
+                Horizontal navy datum line near top of canvas labeled Observe Validate
+                Approve with sub the human-in-the-loop layer. Three thin warm-gray vertical
+                plumb lines descend from datum to vertex orbs of substrate triangle.
+                Vertices labeled Data the substrate, Systems the stack, Processes the
+                workflows. Center disk labeled Workforce the users that run the workflows.
+              </desc>
+              <defs>
+                <radialGradient id="goldOrb" cx="36%" cy="30%" r="75%">
+                  <stop offset="0%" stopColor="#FFF0A8" />
+                  <stop offset="38%" stopColor="#FACC15" />
+                  <stop offset="85%" stopColor="#D9A800" />
+                  <stop offset="100%" stopColor="#9E7900" />
+                </radialGradient>
+                <radialGradient id="navyOrb" cx="34%" cy="28%" r="80%">
+                  <stop offset="0%" stopColor="#4A6788" />
+                  <stop offset="55%" stopColor="#1F3D5C" />
+                  <stop offset="100%" stopColor="#08182C" />
+                </radialGradient>
+                <linearGradient id="triFace" x1="20%" y1="0%" x2="80%" y2="100%">
+                  <stop offset="0%" stopColor="#FFFDF5" />
+                  <stop offset="60%" stopColor="#F3EBD7" />
+                  <stop offset="100%" stopColor="#E5DBC0" />
+                </linearGradient>
+                <linearGradient id="goldHighlight" x1="20%" y1="15%" x2="50%" y2="55%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.55" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+                </linearGradient>
+              </defs>
 
-      {/* ===================== IV — APPLIED AGENTICS (teaser, full-bleed navy) ===================== */}
-      <section id="agentics" className="relative overflow-hidden bg-navy text-cream">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-10 top-20 opacity-[0.07]"
-        >
-          <M4Lattice
-            size={560}
-            cellColor="var(--color-cream)"
-            centerColor="var(--color-gold)"
-          />
-        </div>
-
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32 relative">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-14 md:mb-16">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-            <h2 className="font-vollkorn font-extrabold text-cream text-[44px] md:text-[64px] lg:text-[80px] leading-[0.98] tracking-[-0.025em]">
-              Applied{" "}
-              <em className="italic font-semibold">agentics.</em>
-            </h2>
-            <p className="font-vollkorn italic font-medium text-cream/80 text-[18px] md:text-[20px] leading-[1.45] text-pretty">
-              The same FDO posture at lab and PE altitude. Operator-altitude
-              help with operator-owned substrate &mdash; a different corner
-              of the market than the lab FDE programs and the consulting
-              industry.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-gold/40">
-            {[
-              {
-                num: "01",
-                title: "BOSS",
-                tag: "Operator-owned platform.",
-                body: "The platform that institutionalizes the new model in the operator's hands. Per-engagement deployment. Owned by the operator at handoff.",
-              },
-              {
-                num: "02",
-                title: "The rig",
-                tag: "Self-application is the credibility.",
-                body: "My agentic operating environment. Receipts produced on it; not described by it.",
-              },
-              {
-                num: "03",
-                title: "Agentic stack",
-                tag: "Multi-lab, multi-vendor by design.",
-                body: "Modern agentic stack daily — Anthropic primary, OpenAI in active rotation, multi-vendor council pattern, MCP, Agent SDK, Vercel + Supabase + GitHub.",
-              },
-            ].map((c, i, arr) => (
-              <div
-                key={c.num}
-                className={`px-7 md:px-8 pt-10 pb-12 flex flex-col gap-4 ${
-                  i < arr.length - 1
-                    ? "md:border-r border-cream/15 border-b md:border-b-0"
-                    : ""
-                }`}
+              {/* ARCHITECTURAL DATUM · observability layer · active-triplet headline */}
+              <text
+                x="350"
+                y="42"
+                textAnchor="middle"
+                fontFamily="Vollkorn, Georgia, serif"
+                fontSize="22"
+                fontWeight="700"
+                fill="#142840"
               >
-                <span className="font-mono text-gold text-[11px] tracking-[0.16em]">
-                  No. {c.num}
-                </span>
-                <h3 className="font-vollkorn font-extrabold text-cream text-[28px] md:text-[32px] leading-[1.05] tracking-[-0.015em]">
-                  {c.title}
-                </h3>
-                <p className="font-vollkorn italic font-medium text-gold text-[15px] md:text-[16px] leading-[1.35]">
-                  {c.tag}
-                </p>
-                <p className="font-body text-cream/80 text-[14.5px] leading-[1.65]">
-                  {c.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 lg:pl-[112px]">
-            <Link
-              href="/agentics/"
-              className="inline-flex items-center gap-2 bg-transparent text-cream px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-cream/40 hover:border-cream hover:bg-cream/5 transition-colors"
-            >
-              See the Applied Agentics page <span aria-hidden>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== V — ARTICLES ===================== */}
-      <section id="articles" className="bg-cream">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-24 md:py-32">
-          <header className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12 items-end mb-16">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-            <h2 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] lg:text-[64px] leading-none tracking-[-0.02em] text-balance">
-              The <em className="italic font-semibold">articles.</em>
-            </h2>
-            <p className="font-vollkorn font-medium text-navy text-[18px] md:text-[20px] leading-[1.5] border-l-2 border-gold pl-6 text-pretty">
-              Three reads from the practice. The long answers to questions
-              CFOs and CIOs keep asking the wrong people.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-navy border-l border-navy/15">
-            {ARTICLE_CARDS.map((a) => (
-              <article
-                key={a.slug}
-                className={`relative bg-cream border-r border-b border-navy/15 transition-colors hover:bg-white px-8 py-10 flex flex-col gap-5 min-h-[380px] ${
-                  a.featured ? "lg:col-span-2 lg:min-h-[420px] lg:px-10" : ""
-                }`}
+                Observe · Validate · Approve
+              </text>
+              <text
+                x="350"
+                y="60"
+                textAnchor="middle"
+                fontFamily="Source Sans 3, sans-serif"
+                fontSize="13"
+                fontStyle="italic"
+                fill="#6B6860"
               >
-                <div className="font-body text-[10px] uppercase tracking-[0.18em] text-warm-gray font-semibold">
-                  <span>
-                    {a.essay}
-                    {a.featured ? " · The Practice" : ""}
-                  </span>
-                </div>
-                {a.featured ? (
-                  <p className="font-body text-warm-gray text-[15px] md:text-[16px] leading-[1.55] text-pretty max-w-[560px]">
-                    {a.thesis}
-                  </p>
-                ) : null}
-                <span className="font-vollkorn italic font-semibold text-gold text-[14px] tracking-[0.04em]">
-                  {a.num}
-                </span>
-                <h3
-                  className={`font-vollkorn font-extrabold text-navy leading-[1.1] tracking-[-0.012em] text-balance mt-auto ${
-                    a.featured
-                      ? "text-[32px] md:text-[42px] max-w-[680px] leading-[1.05]"
-                      : "text-[24px] md:text-[26px]"
-                  }`}
-                >
-                  {a.title}
-                </h3>
-                {!a.featured ? (
-                  <p className="font-body text-warm-gray text-[14px] leading-[1.55] text-pretty">
-                    {a.thesis}
-                  </p>
-                ) : null}
-                <Link
-                  href={`/articles/${a.slug}/`}
-                  className="flex items-center gap-2.5 font-body text-[11px] uppercase tracking-[0.18em] font-semibold text-navy pt-3 border-t border-navy/15 hover:text-aubergine"
-                >
-                  {a.featured ? "Read the essay" : "Read"}{" "}
-                  <span className="text-gold text-[14px]">→</span>
-                </Link>
-              </article>
-            ))}
+                the human-in-the-loop layer
+              </text>
+
+              {/* Horizontal navy datum line */}
+              <line x1="20" y1="80" x2="680" y2="80" stroke="#142840" strokeWidth="1.2" />
+
+              {/* 3 warm-gray plumb lines descending from datum to vertex orbs */}
+              <line x1="350" y1="80" x2="350" y2="168" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+              <line x1="80" y1="80" x2="80" y2="508" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+              <line x1="620" y1="80" x2="620" y2="508" stroke="#6B6860" strokeWidth="0.6" opacity="0.45" />
+
+              {/* SUBSTRATE TRIANGLE · apex (350,180) · BL (80,520) · BR (620,520) · centroid (350,407) */}
+              <polygon points="354,186 84,526 624,526" fill="#08182C" opacity="0.12" />
+              <polygon
+                points="350,180 80,520 620,520"
+                fill="url(#triFace)"
+                stroke="#142840"
+                strokeWidth="1.6"
+              />
+
+              {/* Dashed convergence lines to centroid */}
+              <line x1="350" y1="180" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+              <line x1="80" y1="520" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+              <line x1="620" y1="520" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
+
+              {/* Vertex orbs */}
+              <circle cx="350" cy="180" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="345" cy="176" r="4" fill="#FFFFFF" opacity="0.4" />
+              <circle cx="80" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="75" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+              <circle cx="620" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="615" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+
+              {/* Vertex labels — v7 short-form subs */}
+              <text x="350" y="143" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
+                Data
+              </text>
+              <text x="350" y="163" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the substrate
+              </text>
+
+              <text x="80" y="558" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="22" fontWeight="700" fill="#142840">
+                Systems
+              </text>
+              <text x="80" y="576" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the stack
+              </text>
+
+              <text x="620" y="558" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="22" fontWeight="700" fill="#142840">
+                Processes
+              </text>
+              <text x="620" y="576" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
+                the workflows
+              </text>
+
+              {/* Center disk · Workforce */}
+              <circle cx="354" cy="410" r="95" fill="#08182C" opacity="0.14" />
+              <circle cx="350" cy="407" r="95" fill="url(#goldOrb)" stroke="#142840" strokeWidth="1.8" />
+              <ellipse cx="322" cy="378" rx="48" ry="30" fill="url(#goldHighlight)" />
+              <text x="350" y="403" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
+                Workforce
+              </text>
+              <text x="350" y="425" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="12" fontStyle="italic" fill="#142840">
+                the users that run the workflows
+              </text>
+            </svg>
           </div>
 
-          <div className="mt-12 text-center">
-            <Link
-              href="/articles/"
-              className="inline-flex items-center gap-2 bg-transparent text-navy px-7 py-3 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] border border-navy hover:bg-navy hover:text-cream transition-colors"
-            >
-              All articles <span aria-hidden>→</span>
-            </Link>
+          <div className="md:hidden mt-6 font-body text-navy text-[14px] leading-[1.65]">
+            <p className="mb-2"><span className="font-semibold">Data</span> at the apex — the substrate.</p>
+            <p className="mb-2"><span className="font-semibold">Systems</span> bottom-left — the stack.</p>
+            <p className="mb-2"><span className="font-semibold">Processes</span> bottom-right — the workflows.</p>
+            <p className="mb-2"><span className="font-semibold">Workforce</span> at the center — the users that run them.</p>
+            <p className="mt-3 pt-3 border-t border-navy/10 italic text-warm-gray text-[13px]">Above the substrate: the human-in-the-loop layer — observe, validate, approve.</p>
           </div>
-        </div>
-      </section>
 
-      {/* ===================== VI — WHO THIS ISN'T FOR ===================== */}
-      <section className="bg-pale-navy">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-28 md:py-40">
-          <div className="grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-8 lg:gap-12">
-            <div className="hidden lg:block pt-2">
-              <span className="block w-10 h-0.5 bg-gold" />
-            </div>
-
-            <h2 className="font-vollkorn font-extrabold text-navy text-[44px] md:text-[60px] lg:text-[72px] leading-[0.98] tracking-[-0.025em] text-balance">
-              It&rsquo;s not a fit for{" "}
-              <em className="italic font-semibold">everyone.</em>
-              <span className="block font-vollkorn italic font-semibold text-warm-gray text-[34px] md:text-[44px] lg:text-[54px] mt-2">
-                By design.
+          <p className="mt-5 pt-5 border-t border-navy/15 font-vollkorn font-bold text-navy text-[16px] md:text-[18px] leading-[1.55] text-center max-w-[58ch] mx-auto">
+            Every transformation that failed put a system at the center.
+            <span className="block font-normal italic mt-1.5">
+              I put{" "}
+              <span style={goldUnderlineStyle}>
+                the workforce.
               </span>
-            </h2>
-
-            <ul className="flex flex-col">
-              {[
-                "Operators comfortable with their partner relationships.",
-                "Operators paying license stacks, implementation fees, support contracts, upgrade cycles, and migration retrofits on the vendor’s calendar.",
-                "Operators whose users have learned to live with what the system gives them.",
-                "Operators whose AI claim has outpaced their operating fabric and who think the next vendor pitch will fix it.",
-              ].map((line, i) => (
-                <li
-                  key={i}
-                  className="grid grid-cols-[24px_1fr] gap-4 py-5 border-b border-navy/15 font-vollkorn text-navy text-[17px] md:text-[18px] leading-[1.4]"
-                >
-                  <span className="font-vollkorn font-bold text-stone text-[18px] pt-0.5">
-                    ×
-                  </span>
-                  <span className="line-through decoration-stone decoration-[1px]">
-                    {line}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="lg:col-start-2 lg:col-span-2 mt-12 pt-8 border-t-2 border-gold max-w-[820px] flex flex-col gap-6">
-              <p className="font-vollkorn italic font-semibold text-navy text-[20px] md:text-[24px] leading-[1.4] text-pretty">
-                The practice is one operator, one engagement at a time. The
-                selection is deliberate, and — for the right operator — the
-                most consequential procurement decision of the decade.
-              </p>
-            </div>
-          </div>
-        </div>
+            </span>
+          </p>
       </section>
 
-      {/* ===================== VII — FINAL CTA ===================== */}
-      <section id="contact" className="relative overflow-hidden bg-cream">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-28 md:py-36 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-24 items-center">
-            <div>
-              <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
-                A Conversation, Not a Proposal
-              </p>
-              <h2 className="font-vollkorn font-extrabold text-navy text-[48px] md:text-[72px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] text-balance mb-8">
-                Begin where the{" "}
-                <em className="italic font-semibold">model</em>
-                <br className="hidden md:block" />
-                actually{" "}
-                <span
-                  className="inline-block"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, transparent 64%, var(--color-gold) 64%, var(--color-gold) 92%, transparent 92%)",
-                    padding: "0 6px",
-                  }}
-                >
-                  institutionalizes.
-                </span>
-              </h2>
-              <p className="font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] max-w-[560px] border-t border-navy/15 pt-5">
-                A first conversation is short, off-record, and on the
-                operator&rsquo;s terms. I end either with a clear next step,
-                or a clear answer this isn&rsquo;t the right fit. Both are
-                useful.
-              </p>
-            </div>
+      {/* ===================== Block 4 · RECEIPTS ===================== */}
+      <section className="py-14 md:py-16 border-t border-navy/15">
+        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+          Where I&rsquo;ve lived this
+        </p>
+          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[32ch]">
+            Three industry specialties. Five primary system families. The
+            workflows underneath.
+          </h2>
+          <p className="font-body text-navy text-[15px] md:text-[16px] leading-[1.65] max-w-[68ch] mb-8">
+            AEC (architecture, engineering, construction). Beverage CPG (wine,
+            beer, spirits). Healthcare (EHR). Multi-platform and multi-vendor
+            versed across ERP, WMS, MES, EMR, and CRM/CPQ — the five primary
+            system families where mid-market operators run their work.
+            Fifty-plus engagements, fifteen of them full multi-year
+            transformations, plus five production agentic systems shipped in
+            the most recent program.
+          </p>
 
-            <div className="flex flex-col gap-4">
-              <Link
-                href="/contact/"
-                className="bg-navy text-cream px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center hover:bg-aubergine transition-colors"
+          <p className="font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.45] mb-6 pt-6 border-t border-navy/15">
+            Selected outcomes — across the range, with the orchestration
+            discipline that lands them.
+          </p>
+
+          <div className="flex flex-col gap-4">
+            {[
+              {
+                kicker: "RECOVERY ENGAGEMENT",
+                h: "Took an $8M stalled ERP from month seventeen to done/done in six.",
+                body: (
+                  <>
+                    Mid-market operator. $8M ERP implementation stalled at
+                    month seventeen of an eighteen-month plan. Partner running
+                    the vendor playbook. Stakeholders disengaged. No go-live
+                    in sight. Brought in mid-stride as forward-deployed lead.{" "}
+                    <b className="font-bold">
+                      Six months later: go-live on the operator&rsquo;s
+                      calendar, with the operator&rsquo;s team running the
+                      asset.
+                    </b>
+                  </>
+                ),
+                orch:
+                  "Orchestrated: operator's PMO, in-house IT, vendor PS, and two specialty consultancies — under unified governance.",
+              },
+              {
+                kicker: "FORWARD-DEPLOYED BUILD",
+                h: "Vendor quoted twenty-four months and $10M. Delivered in eighteen months for $5M.",
+                body: (
+                  <>
+                    Mid-market operator. Full business transformation — core
+                    ERP, WMS, and specialty software, multi-site. Vendor
+                    proposal: twenty-four months, $10M, vendor-led delivery
+                    with a managed-services tail. Ran instead as
+                    forward-deployed operator above the vendors.{" "}
+                    <b className="font-bold">
+                      All systems to go-live in eighteen months for $5M. Same
+                      scope. Half the spend. Six months faster.
+                    </b>{" "}
+                    The operator&rsquo;s team owned the asset from day one.
+                  </>
+                ),
+                orch:
+                  "Orchestrated: ERP vendor implementation partner, two specialty software vendors, internal IT, and operator-side functional taskforces — single delivery org, single governance cadence.",
+              },
+              {
+                kicker: "POST-M&A CONSOLIDATION",
+                h: "Two ERPs to one. Month-end close from eighteen days to four.",
+                body: (
+                  <>
+                    Mid-market operator post-acquisition — combined revenue
+                    around $350M. Two parallel ERPs. A WMS that didn&rsquo;t
+                    talk to either. Finance teams in two cities operating on
+                    incompatible chart-of-accounts. Built a single delivery
+                    organization across both entities. Consolidated to a
+                    unified ERP with integrated WMS in eleven months. Master
+                    data governed in one place under a Common Data Model the
+                    operator owns.{" "}
+                    <b className="font-bold">
+                      Month-end close from eighteen days to four. Intercompany
+                      reconciliation from a three-day controller burden to
+                      overnight.
+                    </b>
+                  </>
+                ),
+                orch:
+                  "Orchestrated: two acquired-entity finance teams, two IT shops, ERP vendor and integration partner, WMS specialty firm — consolidated under one transformation governance from week one.",
+              },
+            ].map((o) => (
+              <article
+                key={o.kicker}
+                className="bg-white border border-navy/15 border-l-[3px] border-l-gold rounded-[4px] px-6 md:px-7 py-6 md:py-7"
               >
-                Begin a Conversation{" "}
-                <span className="text-gold text-[18px]">→</span>
-              </Link>
-              <Link
-                href="/approach/"
-                className="bg-transparent text-navy px-8 py-5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] flex justify-between items-center border border-navy hover:bg-navy hover:text-cream transition-colors"
-              >
-                Read the Practice Letter{" "}
-                <span className="text-gold text-[18px]">↗</span>
-              </Link>
-            </div>
+                <p
+                  className="font-body font-semibold uppercase text-[10px] md:text-[11px] tracking-[0.26em] mb-2"
+                  style={{ color: "#6B5408" }}
+                >
+                  {o.kicker}
+                </p>
+                <h3 className="font-vollkorn font-bold text-navy text-[19px] md:text-[22px] leading-[1.3] mb-3">
+                  {o.h}
+                </h3>
+                <p className="font-body text-navy text-[14.5px] md:text-[15.5px] leading-[1.6]">
+                  {o.body}
+                </p>
+                <p className="mt-3 pt-3 border-t border-navy/10 font-body italic text-warm-gray text-[12.5px] md:text-[13px] leading-[1.5]">
+                  {o.orch}
+                </p>
+              </article>
+            ))}
           </div>
-        </div>
+      </section>
+
+      {/* ===================== Block 5 · CTA ===================== */}
+      <section
+        id="contact"
+        className="bg-navy text-cream py-14 md:py-20"
+      >
+        {/* Gold accent rule · climax punctuation */}
+        <div aria-hidden="true" className="h-[2px] bg-gold w-[120px] mb-8 md:mb-10" />
+
+        <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
+          Embedded · Fractional · Agentics — sized to the work
+        </p>
+        <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[16px] md:text-[18px] leading-[1.55] max-w-[64ch] mb-10">
+          Three engagement shapes, one practice. See the full architecture, the roadmap, and how I plug in:{" "}
+          <Link
+            href="/approach/"
+            className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
+          >
+            /approach →
+          </Link>
+        </p>
+
+        <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-5">
+          Let&rsquo;s talk shape.
+        </h2>
+
+        {/* Pull-quote · the visual peak of the page closer */}
+        <p className="font-vollkorn italic font-medium text-cream text-[24px] md:text-[30px] lg:text-[34px] leading-[1.25] mb-8 max-w-[24ch]">
+          No deck. No proposal.{" "}
+          <span className="text-gold">Just talking shape.</span>
+        </p>
+
+        <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-[#DCD9CC] max-w-[62ch] mb-8">
+          If your business is sitting on three different ERPs, a WMS the
+          floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
+          landed in production, or a transformation that stalled before it
+          landed — I&rsquo;m one operator-to-operator conversation away.
+        </p>
+
+        <Link
+          href="/contact/"
+          className="inline-block bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.06em] px-8 py-4 rounded-[4px] hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
+        >
+          Start a conversation →
+        </Link>
       </section>
     </div>
   );

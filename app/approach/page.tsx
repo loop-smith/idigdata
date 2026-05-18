@@ -74,13 +74,38 @@ export default function ApproachPage() {
             name="Embedded"
             lead="Best bang for the buck on a full transformation — short term and long term."
             body={
-              <p>
-                Full transformation residency. Full executive scope as
-                contractor: strategy, operations, vendor portfolio, risk,
-                governance. Inside-out: team-building, full lifecycle delivery,
-                operating-model change, IT-department shore-up, BOSS
-                deployment, agentic framework.
-              </p>
+              <>
+                <p>
+                  Full transformation residency. One forward-deployed operator
+                  with a virtual bench of senior independent specialists
+                  assembled across fifty-plus engagements — fifteen of them full
+                  multi-year transformations. Full executive scope as contractor:
+                  strategy, operations, vendor portfolio, risk, governance.
+                  Inside-out: team-building, full lifecycle delivery,
+                  operating-model change, IT-department shore-up, BOSS
+                  deployment, agentic framework.
+                </p>
+                <p className="mt-3">
+                  Flat-rate weekly economics tied to outcomes. Exit-by-design at
+                  handoff. No managed-services tail. No vendor commissions. No
+                  partner-channel pressure.{" "}
+                  <em className="not-italic italic font-normal">
+                    Continuity discipline:
+                  </em>{" "}
+                  every workstream is documented and shadow-staffed across the
+                  bench from week one — the practice does not depend on me being
+                  in the room.
+                </p>
+                <p className="mt-3">
+                  Start with the end in mind — the operator&rsquo;s asset, fully
+                  built and operating. The data-centric structure reduces the
+                  repeating noise that consumes most transformations, adds
+                  clarity at every cross-functional decision point, and gives the
+                  operator unified governance over delivery and user adoption —
+                  better and faster than any vendor partner can manage.
+                  That&rsquo;s the FDO model.
+                </p>
+              </>
             }
           />
           <EngagementShape
@@ -89,13 +114,21 @@ export default function ApproachPage() {
             name="Fractional"
             lead="Plug me in at any stage of an existing project."
             body={
-              <p>
-                Engagements where a specific lever needs moving: unblock a
-                stalled ERP, deploy a production agent on a critical
-                bottleneck, stand up the operator-owned data substrate
-                alongside the existing tier-1 stack. Same architecture, sized
-                to the work.
-              </p>
+              <>
+                <p>
+                  Engagements where a specific lever needs moving: unblock a
+                  stalled ERP, deploy a production agent on a critical
+                  bottleneck, stand up the operator-owned data substrate
+                  alongside the existing tier-1 stack. Same architecture, sized
+                  to the work.
+                </p>
+                <p className="mt-3">
+                  I live inside the operator and breathe the pain — the workflows
+                  run every day across ERP, WMS, MES, EMR, CRM/CPQ.
+                  Multi-platform, multi-vendor versed. I know the systems and the
+                  people who use them.
+                </p>
+              </>
             }
           />
           <EngagementShape
@@ -104,11 +137,31 @@ export default function ApproachPage() {
             name="Agentics"
             lead="Standalone, or stacked onto either of the above."
             body={
-              <p>
-                The enterprise agentic framework deployed against the data
-                foundation. Five production apps in live operations is the
-                proof; the framework is what makes it repeatable.
-              </p>
+              <>
+                <p>
+                  Agentic workflows are being deployed at scale right now. Most
+                  implementations will fail for the same reason every
+                  business-system transformation has failed for decades: they
+                  don&rsquo;t solve the fragmented data and undocumented workflow
+                  problem first. Engineers know how to write model code. Very
+                  few know how to architect the unsexy data schemas, documented
+                  workflows, and governance protocols a business actually runs
+                  on. If the substrate is garbage, the AI is vaporware.
+                </p>
+                <p className="mt-3">
+                  <em className="not-italic italic font-normal">
+                    I fix the substrate so agents work.
+                  </em>{" "}
+                  Five production agentic systems already shipped at a mid-market
+                  beverage CPG operator — named functions in supply chain,
+                  finance, and operations. Not demos. Production.
+                </p>
+                <p className="mt-3">
+                  The enterprise agentic framework runs on the same staged
+                  delivery discipline as transformation work. Same architecture,
+                  sized to the work.
+                </p>
+              </>
             }
           />
         </div>
@@ -129,6 +182,11 @@ export default function ApproachPage() {
           <strong className="font-semibold text-navy">
             Firm architecture, not firm size.
           </strong>
+        </p>
+        <p className="mt-4 max-w-[820px] text-[16px] text-ink leading-relaxed">
+          Vendor-agnostic isn&rsquo;t a marketing posture. It&rsquo;s a
+          structural consequence of putting the operator at the center of the
+          data graph instead of the ERP vendor at the center.
         </p>
       </section>
 
@@ -179,22 +237,22 @@ export default function ApproachPage() {
           <em className="italic font-semibold">I build to.</em>
         </h2>
         <p className="mt-6 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] leading-snug">
-          Three views of the same operating fabric — same operator, three
-          angles. The people layer, the work layer, the substrate.
+          Three views of the substrate triangle you saw on the homepage — same operator, three lenses. The people lens · the process lens · the systems lens. Together they show how the workforce moves the work across the data substrate.
         </p>
       </section>
 
       {/* Trinity panel I — The beehive */}
       <section className="bg-cream px-0 md:px-8 pt-12 md:pt-16 pb-24 md:pb-28 border-t border-navy/15">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram I · the people fabric
+          Diagram I · the people lens — the beehive
         </p>
         <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
           The <em className="italic font-semibold">beehive.</em>
         </h3>
         <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Process flows × functional groups — six BPFs feed the operating
-          fabric, MDM and the Common Data Model at the center.
+          Unpacking the people lens — how the workforce moves the work. Process
+          flows × functional groups · six BPFs feed the operating fabric · MDM
+          and the Common Data Model at the center.
         </p>
         <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -218,14 +276,15 @@ export default function ApproachPage() {
       {/* Trinity panel II — Six constellations */}
       <section className="bg-pale-navy px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram II · the work layer
+          Diagram II · the process lens — the six constellations
         </p>
         <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
           The <em className="italic font-semibold">six constellations.</em>
         </h3>
         <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign
-          Data Core. BPSc density bands ring each constellation.
+          Unpacking the process lens — the universal spine of operating
+          processes. P2P · O2C · P2M · S2S · D2R · MDM around a sovereign Data
+          Core. BPSc density bands ring each constellation.
         </p>
         <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -249,14 +308,15 @@ export default function ApproachPage() {
       {/* Trinity panel III — System-verse */}
       <section className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram III · the substrate
+          Diagram III · the systems lens — the system-verse
         </p>
         <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
           The <em className="italic font-semibold">system-verse.</em>
         </h3>
         <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Future-state systems map — sovereign Data Core at center, integration
-          mesh, application layer of 16 functional system groups.
+          Unpacking the systems lens — the future-state map operators build to.
+          Sovereign Data Core at center · integration mesh · application layer
+          of 16 functional system groups.
         </p>
         <figure className="max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -281,24 +341,49 @@ export default function ApproachPage() {
         id="engagement-roadmap"
         className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
       >
+        <p className="font-vollkorn italic font-medium text-stone text-[15px] md:text-[17px] leading-snug max-w-[820px] mb-3">
+          The trinity shows what gets built. The roadmap shows when.
+        </p>
         <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
           Engagement roadmap
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          The engagement runs as a portfolio of work moving through 8 stages —
-          PMO (orchestration) plus 7 BOSS delivery stages: Design, Build,
-          Deploy and Test, UAT, Mock Golive, Golive, Stable state. Stage is
-          the unit of promotion, not project phase — hundreds of work units
-          (PEGs) move through gates at their own readiness. Two parallel
-          portfolios — transformation and agentics — promote through identical
-          stages on different time signatures, converging at a single Go-live.
+          This is the time-to-deliverable view. Thirty years of staged
+          delivery — seven BOSS delivery stages with PMO orchestration
+          spanning all of them. Two parallel portfolios — Transformation and
+          Applied Agentics — promote through identical stages on different
+          time signatures, converging at a single Go-live. The framework
+          holds whether the portfolio is ERP, WMS, or agentic apps. Density
+          redistributes as the technology shifts; discipline does not
+          compress. Anyone shipping a full transformation in four months is
+          shipping a workflow, not a transformation. Stage is the unit of
+          promotion — hundreds of work units (PEGs) move through gates at
+          their own readiness. After Go-live: operator-led CI/CD by design —
+          a new build plan opens, in-house.
         </p>
         <EngagementRoadmapEmbed />
         <p className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
-          Engagement roadmap — full-residency shape preconfigured. PMO + 7
-          BOSS delivery stages, two-portfolio overlay, single Go-live
-          convergence.
+          Engagement roadmap — operator-owned substrate · exit-by-design · no
+          managed-services tail · no vendor-platform lock-in. The asset stays
+          with the operator.
         </p>
+
+        <div className="mt-10 max-w-[820px] border-t border-navy/15 pt-6">
+          <p className="font-body text-[15px] md:text-[16px] text-ink leading-relaxed">
+            <strong className="font-semibold text-navy">
+              The full methodology
+            </strong>{" "}
+            — stage substance, agentics density calibration,
+            trinity-to-roadmap mapping, CI/CD handoff pattern — lives in the
+            engagement brief.{" "}
+            <Link
+              href="/contact/"
+              className="text-navy font-semibold underline underline-offset-2 hover:text-aubergine"
+            >
+              Start a conversation →
+            </Link>
+          </p>
+        </div>
       </section>
 
       {/* The diagnostic frame — six constellations */}

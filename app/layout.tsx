@@ -26,7 +26,7 @@ const vollkorn = Vollkorn({
   subsets: ["latin"],
   variable: "--next-font-vollkorn",
   display: "swap",
-  weight: ["600", "700", "800", "900"],
+  weight: ["400", "600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
 

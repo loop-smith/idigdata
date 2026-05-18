@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import M4Watermark from "@/components/M4Watermark";
 
 export const metadata: Metadata = {
   title: "Applied Agentics — idigdata",
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
 
 export default function AgenticsPage() {
   return (
-    <div className="font-body bg-cream text-navy">
+    <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
       {/* ============== HERO ============== */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-content px-6 pt-20 md:pt-24 pb-12 md:pb-16">
+      <section className="relative bg-cream pt-20 md:pt-24 pb-12 md:pb-16">
+        <M4Watermark position="top-right" />
           <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
             Applied Agentics · V2
           </p>
@@ -43,17 +44,15 @@ export default function AgenticsPage() {
             the customer&rsquo;s seat is what makes the agents work in customer
             reality, not in demo.
           </p>
-        </div>
       </section>
 
       {/* ============== THREE-CORNER TRIANGLE — dark navy panel ============== */}
       <section
         id="positioning"
-        className="bg-navy text-cream"
+        className="bg-navy text-cream py-24 md:py-32"
         aria-labelledby="positioning-h"
       >
-        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
-          <header className="mb-12 md:mb-16 max-w-[820px]">
+        <header className="mb-12 md:mb-16 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-gold mb-6">
               FDE vs FDO — three-corner positioning
             </p>
@@ -140,13 +139,11 @@ export default function AgenticsPage() {
             Two practice areas, two altitudes, one thesis. Operator-owned.
             Vendor-agnostic. Commitment, not capture.
           </p>
-        </div>
       </section>
 
       {/* ============== DATA SUBSTRATE — meta-thesis weave ============== */}
-      <section id="data-substrate" className="bg-cream">
-        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
-          <header className="mb-10 max-w-[820px]">
+      <section id="data-substrate" className="bg-cream py-24 md:py-32">
+        <header className="mb-10 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
               The thread under everything
             </p>
@@ -180,13 +177,11 @@ export default function AgenticsPage() {
               The practice is named for it.
             </p>
           </div>
-        </div>
       </section>
 
       {/* ============== BOSS ============== */}
-      <section id="boss" className="bg-cream">
-        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
-          <header className="mb-12 max-w-[820px]">
+      <section id="boss" className="bg-cream py-24 md:py-32">
+        <header className="mb-12 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
               Productized platform
             </p>
@@ -229,13 +224,11 @@ export default function AgenticsPage() {
               See how BOSS lands inside an engagement <span aria-hidden>→</span>
             </Link>
           </p>
-        </div>
       </section>
 
       {/* ============== THE RIG ============== */}
-      <section id="the-rig" className="bg-pale-navy">
-        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
-          <header className="mb-12 max-w-[820px]">
+      <section id="the-rig" className="bg-pale-navy py-24 md:py-32">
+        <header className="mb-12 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
               The rig · operator&rsquo;s harness
             </p>
@@ -294,13 +287,11 @@ export default function AgenticsPage() {
               />
             </div>
           </div>
-        </div>
       </section>
 
       {/* ============== AGENTIC STACK ============== */}
-      <section id="stack" className="bg-cream">
-        <div className="mx-auto max-w-content px-6 py-24 md:py-32">
-          <header className="mb-12 max-w-[820px]">
+      <section id="stack" className="bg-cream py-24 md:py-32">
+        <header className="mb-12 max-w-[820px]">
             <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
               Agentic stack
             </p>
@@ -354,13 +345,11 @@ export default function AgenticsPage() {
               </span>
             </li>
           </ul>
-        </div>
       </section>
 
       {/* ============== CTA ============== */}
-      <section className="bg-navy text-cream">
-        <div className="mx-auto max-w-content px-6 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 items-center">
+      <section className="bg-navy text-cream py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16 items-center">
             <div>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-gold mb-6">
                 A conversation, not a proposal
@@ -390,7 +379,6 @@ export default function AgenticsPage() {
               </Link>
             </div>
           </div>
-        </div>
       </section>
     </div>
   );
