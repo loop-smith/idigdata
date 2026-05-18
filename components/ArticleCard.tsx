@@ -36,7 +36,7 @@ export default function ArticleCard({
         <span aria-hidden className="text-stone">·</span>
         <span>By request</span>
       </div>
-      <p className="mt-3 font-body text-ink text-[15px] leading-relaxed">
+      <p className="mt-3 font-body text-ink text-[14px] leading-relaxed">
         {hook}
       </p>
       <p className="mt-5 font-body font-semibold text-navy text-[13.5px]">
