@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.idigdata.com" }],
+        destination: "https://idigdata.com/:path*/",
+        permanent: true,
+      },
+      {
         source: "/atlas",
         destination: "/approach/#engagement-roadmap",
         permanent: true,

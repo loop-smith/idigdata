@@ -6,14 +6,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Reach out — idigdata",
   description:
-    "If what you see here is relevant to the work in front of you, reach out. A short operator-to-operator conversation is enough to know if there is a fit.",
+    "A short operator-to-operator conversation about the shape of the work: transformation, systems, data, people, and applied agentics.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
     title: "Reach out — idigdata · Forward-Deployed Operator",
     description:
-      "If what you see here is relevant to the work in front of you, reach out.",
+      "A short operator-to-operator conversation about the shape of the work.",
     images: [
       {
         url: "/og-image.png",
@@ -45,18 +45,17 @@ export default function ContactPage() {
           Reach out
         </p>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          If this is the work in front of you, let&rsquo;s talk.
+          Let&rsquo;s talk shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          No deck. No proposal. No performance. Just a short conversation
+          No deck. No proposal. Just a short operator-to-operator conversation
           about the business, the systems, the data, the people, and whether
-          there is a real fit.
+          the work has a real shape.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
-          If something on this site sounds like the shape of the problem on
-          your desk &mdash; a stalled transformation, systems that do not
-          agree, data nobody quite trusts, or agentics that needs to become
-          real operating leverage &mdash; send a note. I read these myself.
+          If the problem on your desk is a stalled transformation, systems that
+          do not agree, data nobody quite trusts, or agentics that needs to
+          become real operating leverage, send a note. I read these myself.
         </p>
       </section>
 

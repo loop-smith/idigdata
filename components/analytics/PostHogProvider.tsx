@@ -20,6 +20,7 @@ export default function PostHogProvider({
       api_host: host,
       capture_pageview: false,
       capture_pageleave: true,
+      request_batching: false,
       autocapture: false,
       advanced_disable_flags: true,
       disable_surveys: true,
@@ -28,9 +29,11 @@ export default function PostHogProvider({
       },
       disable_session_recording: true,
       person_profiles: "identified_only",
+      loaded: (client) => {
+        client.register({ surface: "website" });
+        client.capture("$pageview");
+      },
     });
-    posthog.register({ surface: "website" });
-    posthog.capture("$pageview");
 
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
