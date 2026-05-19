@@ -31,7 +31,9 @@ export type Article = {
   category: string;
   /** First-paragraph hook from the source markdown — visible publicly. */
   lede: string;
-  /** 4–5 sentence summary — visible publicly, used by /articles cards too. */
+  /** Multi-sentence public hook rendered on the /articles index card. */
+  cardHook: string;
+  /** 4–5 sentence summary — visible publicly, used inside the article landing page. */
   abstract: string;
   /** 3–4 bullets — visible publicly. */
   whatYoullLearn: string[];
@@ -56,17 +58,18 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     slug: "transformation-and-the-people-of-it",
-    title:
-      "What business transformation actually is — and who it's done with",
+    title: "You Don't Buy a Transformation. You Build One.",
     subtitle:
-      "Lens 1 of 2 on the 24-month engagement — the architecture and the people",
+      "Lens 1 of 2 — what transformation actually is, and who owns it",
     pairBadge: "Article 1 · Lens 1 of 2",
     readingTimeMin: 13,
     category: "The playbook",
     lede:
       "After thirty years and fifty-plus mid-market business-system transformations across construction, manufacturing, distribution, and operations-heavy services, one observation has held without exception: no operator has ever walked into the engagement with systems, common data structures, and processes already defined. That is the market. It is also why most of what gets sold as transformation isn't.",
+    cardHook:
+      "Eighty-eight percent of business transformations fail (Bain, 2024) — and the reason isn't the technology. It's the misdiagnosis at the top of the market: most buyers are sold a product when what they need to build is an asset. What looks like transformation in a box turns out to be a rental on someone else's platform.",
     abstract:
-      "Most board-approval-tier business-system transformations get sold inside a vendor-platform model that locks the client's data inside someone else's product. There is an alternative — structural, field-tested, and operator-owned. This article walks through the architectural fork (data sovereignty vs. vendor lock-in) and the human layer that determines whether the architecture institutionalizes or decays back to baseline. The thesis: stakeholders, the beehive, end users, and change ownership are not separate from the architecture — they are part of what “client-owned” means.",
+      "Most board-approval-tier business-system transformations get sold inside a vendor-platform model that locks the client's data inside someone else's product. There is an alternative — structural, field-tested, and business-owned. This article walks through the architectural fork (data sovereignty vs. vendor lock-in) and the human layer that determines whether the architecture institutionalizes or decays back to baseline. The thesis: stakeholders, the beehive, end users, and change ownership are not separate from the architecture — they are part of what “client-owned” means.",
     whatYoullLearn: [
       "Why most consultants can't reach data sovereignty — and the structural choice that makes it possible",
       "The CFO universal in mid-market buying patterns — and why ASC 350-40 awareness is one of the cleanest qualifying signals",
@@ -86,14 +89,14 @@ export const ARTICLES: Article[] = [
       companion: {
         slug: "the-mechanics",
         badge: "Article 2 · Lens 2",
-        title: "The mechanics — PM, budget, capital structure",
+        title: "The Mechanics of the Build",
         description:
           "The companion lens. How the work gets delivered, governed, and paid for under ASC 350-40.",
       },
       standalone: {
         slug: "applied-agentics",
         badge: "Article 3 · Standalone",
-        title: "Applied agentics — agents deployed as a business asset",
+        title: "Applied Agentics — The Business Asset",
         description:
           "The rare credential. Production agents shipping into operations, structurally dependent on this data foundation.",
       },
@@ -101,14 +104,16 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "the-mechanics",
-    title: "The mechanics — PM, budget, capital structure",
+    title: "The Mechanics of the Build",
     subtitle:
-      "Lens 2 of 2 on the 24-month engagement — the delivery discipline and the financial structure",
+      "Lens 2 of 2 — how the build runs, gets capitalized, and holds",
     pairBadge: "Article 2 · Lens 2 of 2",
     readingTimeMin: 14,
     category: "The playbook",
     lede:
       "Most board-approval-tier business-system transformations are sold as strategy. Big-4 transformation practices ship thinking in bound decks, present at the steering committee, and run the actual delivery through layered teams of senior partners who don't touch the floor and junior consultants who do. This model ships outcomes through a different organism. The discipline is not the deliverable; the discipline is the operating shape.",
+    cardHook:
+      "A real transformation runs on delivery discipline, capital logic, and ownership clarity — not a loose project plan. The mechanics that separate the build from the buy — who owns what, how the asset is treated, and what the board is actually approving — are where most board-tier programs go sideways before the work even begins.",
     abstract:
       "A transformation of meaningful scope is a delivery discipline, not a project — and a capital investment, not a P&L hit. This article walks through the three sub-disciplines that have to run as ONE integrated practice (PM, Stakeholder + Change, Agile-Fall mode-switching), the persistence substrate that makes the integration durable, the capitalization treatment under ASC 350-40 that lets the CFO defend the program as an asset, the ten-year depreciation period field-validated with sitting CFOs, and the vendor-partner trap as the dominant failure mode of $10–15M ERP implementations.",
     whatYoullLearn: [
@@ -129,15 +134,14 @@ export const ARTICLES: Article[] = [
       companion: {
         slug: "transformation-and-the-people-of-it",
         badge: "Article 1 · Lens 1",
-        title:
-          "What business transformation actually is — and who it's done with",
+        title: "You Don't Buy a Transformation. You Build One.",
         description:
-          "The companion lens. The architecture and the people layer of the same 24-month engagement.",
+          "The companion lens. The architecture and the people layer of the same engagement.",
       },
       standalone: {
         slug: "applied-agentics",
         badge: "Article 3 · Standalone",
-        title: "Applied agentics — agents deployed as a business asset",
+        title: "Applied Agentics — The Business Asset",
         description:
           "The rare credential. Production agents that capitalize as operating-fabric assets under the same ASC 350-40 treatment.",
       },
@@ -145,14 +149,16 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "applied-agentics",
-    title: "Applied agentics — agents deployed as a business asset",
+    title: "Applied Agentics — The Business Asset",
     subtitle:
-      "The rare credential — knowing what agentics is and how to ship it into operations",
+      "Standalone — what agentics becomes when the substrate is real",
     pairBadge: "Article 3 · Standalone",
     readingTimeMin: 13,
     category: "The rare credential",
     lede:
       "The mid-market is being pitched agentic AI by people who haven't shipped anything. Most “AI advisory” in the market is opinions and slides. Demos polished for the Zoom call. Pilots that never made it to production. The buyer-verifiable test cuts cleanly: can you point to production apps in live operations today, and tell me what value they delivered last quarter?",
+    cardHook:
+      "Most \"applied agentics\" you'll see this year never makes it past the pilot — sold as a production system, delivered as a demo. What turns agents into a business asset is what sits underneath: production workflow, governed data, and a foundation the operator owns. Without that, the buyer ends up owning someone else's experiment.",
     abstract:
       "Real applied agentics requires shipped framework + production apps + the data foundation that makes them possible. This article walks through what agentics actually means at production scale (not chatbots, not pilots), the five-component framework that makes deployments repeatable, the data foundation precondition that distinguishes real applied agentics from theater, the corporate-IT confusion between AI use policy and agentic policy, and the five production-app patterns deployed across a multi-year engagement.",
     whatYoullLearn: [
@@ -175,15 +181,14 @@ export const ARTICLES: Article[] = [
         {
           slug: "transformation-and-the-people-of-it",
           badge: "Article 1 · Lens 1",
-          title:
-            "What business transformation actually is — and who it's done with",
+          title: "You Don't Buy a Transformation. You Build One.",
           description:
             "The architectural fork that makes sovereign data possible at all — the precondition this agentics layer rides on.",
         },
         {
           slug: "the-mechanics",
           badge: "Article 2 · Lens 2",
-          title: "The mechanics — PM, budget, capital structure",
+          title: "The Mechanics of the Build",
           description:
             "The integrated delivery discipline that institutionalizes the framework — the mechanism by which agents capitalize as assets.",
         },

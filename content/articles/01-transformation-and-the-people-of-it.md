@@ -1,6 +1,6 @@
-# What business transformation actually is — and who it's done with
+# You Don't Buy a Transformation. You Build One.
 
-*Lens 1 of 2 on the 24-month engagement — the architecture and the people*
+*Lens 1 of 2 — what transformation actually is, and who owns it*
 
 By Robert Paddock · idigdata
 

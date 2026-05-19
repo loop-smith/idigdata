@@ -40,6 +40,11 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/engagement" className="hover:text-aubergine transition-colors">
+                  Engagement
+                </Link>
+              </li>
+              <li>
                 <Link href="/agentics" className="hover:text-aubergine transition-colors">
                   Agentics
                 </Link>
@@ -69,19 +74,9 @@ export default function SiteFooter() {
               />
             </div>
             <p className="font-display italic text-stone text-[14px] leading-relaxed">
-              Operator-owned &middot; Vendor-agnostic &middot; Exit-by-design
+              Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
             </p>
           </div>
-        </div>
-
-        <div className="mt-10 pt-6 border-t border-stone/30 text-center">
-          <p className="text-stone text-[12px] leading-relaxed">
-            Data Integration Group
-            <span className="px-2">·</span>
-            est. 2016
-            <span className="px-2">·</span>
-            Pacific Time
-          </p>
         </div>
 
         <div className="relative mt-12 pt-8 border-t border-stone/30 overflow-hidden">

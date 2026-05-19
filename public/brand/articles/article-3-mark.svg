@@ -1,0 +1,13 @@
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="a3-title a3-desc">
+  <title id="a3-title">Article 3 mark — the datum over substrate</title>
+  <desc id="a3-desc">Substrate triangle silhouette with the Architectural Datum line above, plumb lines descending into the substrate, and three sun gold agent-points on the datum. Visual restatement of "Applied Agentics — The Business Asset" — agents only work because of the operator-owned substrate underneath.</desc>
+  <polygon points="100,90 40,160 160,160" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="97" y="134" width="6" height="6" fill="#142840"/>
+  <line x1="60" y1="50" x2="60" y2="160" stroke="#6B6860" stroke-width="1"/>
+  <line x1="100" y1="50" x2="100" y2="160" stroke="#6B6860" stroke-width="1"/>
+  <line x1="140" y1="50" x2="140" y2="160" stroke="#6B6860" stroke-width="1"/>
+  <line x1="30" y1="50" x2="170" y2="50" stroke="#142840" stroke-width="2"/>
+  <rect x="55" y="45" width="10" height="10" fill="#FACC15"/>
+  <rect x="95" y="45" width="10" height="10" fill="#FACC15"/>
+  <rect x="135" y="45" width="10" height="10" fill="#FACC15"/>
+</svg>

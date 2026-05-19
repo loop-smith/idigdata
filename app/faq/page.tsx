@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "FAQ — idigdata",
   description:
-    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — operator-owned, vendor-agnostic, exit-by-design.",
+    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
   alternates: { canonical: "/faq/" },
 };
 
@@ -15,31 +15,31 @@ type QA = { q: string; a: string; aHtml?: React.ReactNode };
 const FAQ: QA[] = [
   {
     q: "Who is Robert Paddock?",
-    a: "Forward-Deployed Operator with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. I founded idigdata in 2016 — an independent practice running operator-owned, vendor-agnostic transformations for $100M–$1B operators. Three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare (electronic health records / EHR). Two core threads under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. I work as one person plus a 30-year virtual network — no carried bench, no standing overhead.",
+    a: "Forward-Deployed Operator with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. I founded idigdata in 2016 — an independent practice running business-owned, vendor-agnostic transformations for $100M–$1B operators. Three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare (electronic health records / EHR). Two core threads under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. I work as one person plus a 30-year virtual network — no carried bench, no standing overhead.",
   },
   {
     q: "What is idigdata?",
-    a: "An independent practice for operator-owned business system transformation. Founded 2016 — decade-long operating history. The practice works with mid-market operators ($100M–$1B revenue) running enterprise-scale transformations across ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS. Two core threads run under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. The deliverable at engagement close is a fully deployed and maintained operator-owned data substrate; the exit is part of the shape, not a bug to manage.",
+    a: "An independent practice for business system transformation. Founded 2016 — decade-long operating history. The practice works with mid-market operators ($100M–$1B revenue) running enterprise-scale transformations across ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS. Two core threads run under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. The deliverable at engagement close is a fully deployed and maintained business-owned data substrate; the exit is part of the shape, not a bug to manage.",
   },
   {
     q: "What is a Forward-Deployed Operator?",
-    a: "Senior leader who works inside the customer environment, sees with operator eyes, and ships against operator outcomes. The Forward-Deployed Operator (FDO) sits at the senior-leadership altitude — distinct from a Forward-Deployed Engineer (FDE), which sits at the engineering altitude. The FDO embeds, builds, and develops the systems and people to leave it. Two practice areas at two altitudes of one thesis: V1 mid-market operator transformation, V2 applied agentics at lab and PE altitude. Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) both ship engineer-altitude help with platform tie-in; the FDO is operator-altitude help with operator-owned substrate and a defined exit.",
+    a: "Senior leader who works inside the customer environment, sees with operator eyes, and ships against operator outcomes. The Forward-Deployed Operator (FDO) sits at the senior-leadership altitude — distinct from a Forward-Deployed Engineer (FDE), which sits at the engineering altitude. The FDO embeds, builds, and develops the systems and people to leave it. Two practice areas at two altitudes of one thesis: V1 mid-market operator transformation, V2 applied agentics at lab and PE altitude. Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) both ship engineer-altitude help with platform tie-in; the FDO is operator-altitude help with a business-owned substrate and a defined exit.",
   },
   {
     q: "How is idigdata different from McKinsey or the Big 4?",
-    a: "McKinsey and the Big 4 ship consultant-altitude recommendations. idigdata ships operator-altitude deliverables — the systems, the data substrate, the people layer that owns it. The substantive difference: at engagement close they hand you a deck; idigdata hands you a deployed, maintained, operator-owned system. Structurally idigdata carries no bench, no managed-services tail, no client lock-in. Pricing reflects the structural lean — no premium fees subsidizing infrastructure idigdata doesn't carry.",
+    a: "McKinsey and the Big 4 ship consultant-altitude recommendations. idigdata ships operator-altitude deliverables — the systems, the data substrate, the people layer that owns it. The substantive difference: at engagement close they hand you a deck; idigdata hands you a deployed, maintained, business-owned system. Structurally idigdata carries no bench, no managed-services tail, no client lock-in. Pricing reflects the structural lean — no premium fees subsidizing infrastructure idigdata doesn't carry.",
   },
   {
     q: "How is idigdata different from Anthropic's FDE program or OpenAI's Deployment Company?",
-    a: "Both lab programs ship Forward-Deployed Engineers — engineering altitude, platform-tied, default-forever-embedded. idigdata's FDO is at senior-leadership altitude, with operator-owned substrate and exit-by-design. Different corner of the same emerging market. The lab programs solve \"we need engineers fluent in this model\"; the FDO solves \"we need someone with 30 years inside the customer's reality to make this land in the operating business and walk out clean.\" idigdata sits at a third corner the lab JVs and traditional consulting both leave open.",
+    a: "Both lab programs ship Forward-Deployed Engineers — engineering altitude, platform-tied, default-forever-embedded. idigdata's FDO is at senior-leadership altitude, with a business-owned substrate and exit-by-design. Different corner of the same emerging market. The lab programs solve \"we need engineers fluent in this model\"; the FDO solves \"we need someone with 30 years inside the customer's reality to make this land in the operating business and walk out clean.\" idigdata sits at a third corner the lab JVs and traditional consulting both leave open.",
   },
   {
     q: "What does \"exit-by-design\" mean?",
-    a: "The engagement has a defined exit. The deliverable is a fully deployed and maintained asset, owned by the operator at handoff — not an engineer who stays forever. Exit is the shape of the work, not a bug to manage. This is structurally distinct from the Palantir-originated FDE pattern that Anthropic and OpenAI are now scaling, which embeds permanently by default. The positive value proposition is the asset transfer — not the absence of capture.",
+    a: "The engagement has a defined exit. The deliverable is a fully deployed and maintained asset, owned by the business at handoff — not an engineer who stays forever. Exit is the shape of the work, not a bug to manage. This is structurally distinct from the Palantir-originated FDE pattern that Anthropic and OpenAI are now scaling, which embeds permanently by default. The positive value proposition is the asset transfer — not the absence of capture.",
   },
   {
-    q: "What does \"operator-owned substrate\" mean?",
-    a: "The data, the systems, the people layer, and the operational knowledge all sit with the operator at engagement close. Nothing is vendor-locked, nothing requires the FDO to come back to operate it, nothing is captured by a third-party platform. The operator owns the substrate because the operator runs the business — anyone else owning it creates a structural extraction surface. This is the architectural difference behind the structurally lean firm thesis.",
+    q: "What does \"business-owned substrate\" mean?",
+    a: "The data, the systems, the people layer, and the operational knowledge all sit with the business at engagement close. Nothing is vendor-locked, nothing requires the FDO to come back to operate it, nothing is captured by a third-party platform. The business owns the substrate because the business runs the operation — anyone else owning it creates a structural extraction surface. This is the architectural difference behind the structurally lean firm thesis.",
   },
   {
     q: "What industries does idigdata work in?",
@@ -68,7 +68,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What does an idigdata engagement look like?",
-    a: "One person embedded inside the operator's environment as senior leadership for the transformation. The 30-year virtual network activates per-engagement for vendor coordination, implementation, change management — no standing bench overhead. Two-thread structural discipline (ERP backbone + compliance/risk foundation). Phased through envisioning, architecture, build, validation, and cutover. Living SOPs generated as a byproduct of test-and-validate. Defined exit with operator-owned substrate at handoff.",
+    a: "One person embedded inside the operator's environment as senior leadership for the transformation. The 30-year virtual network activates per-engagement for vendor coordination, implementation, change management — no standing bench overhead. Two-thread structural discipline (ERP backbone + compliance/risk foundation). Phased through envisioning, architecture, build, validation, and cutover. Living SOPs generated as a byproduct of test-and-validate. Defined exit with business-owned substrate at handoff.",
   },
   {
     q: "How long does an engagement run?",
@@ -92,7 +92,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Does idigdata work with private equity portfolio companies?",
-    a: "Yes. PE-led FDE program leadership and PE operating partners are part of the V2 buyer surface. PE portcos at mid-market scale also fit V1 directly. The FDO posture — senior-leadership altitude, operator-owned substrate, defined exit — calibrates cleanly to PE portfolio-company dynamics: defined value-creation window, no standing overhead extraction, asset stays with the company at handoff.",
+    a: "Yes. PE-led FDE program leadership and PE operating partners are part of the V2 buyer surface. PE portcos at mid-market scale also fit V1 directly. The FDO posture — senior-leadership altitude, business-owned substrate, defined exit — calibrates cleanly to PE portfolio-company dynamics: defined value-creation window, no standing overhead extraction, asset stays with the company at handoff.",
   },
   {
     q: "How do I get in touch?",

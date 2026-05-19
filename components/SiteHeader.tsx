@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/approach", label: "Approach" },
+  { href: "/engagement", label: "Engagement" },
   { href: "/agentics", label: "Agentics" },
   { href: "/articles", label: "Articles" },
   { href: "/contact", label: "Reach out" },
@@ -44,7 +45,7 @@ export default function SiteHeader() {
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
-    <header className="border-b border-navy/10 relative z-30">
+    <header className="sticky top-0 border-b border-navy/10 bg-cream z-40">
       <div className="mx-auto max-w-content px-6 py-5 md:py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center group" aria-label="idigdata — home">
           <Image
