@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="t d">
+  <title id="t">BOSS — primary mark · the constellation orbit (v2)</title>
+  <desc id="d">Six charcoal constellation dots arranged hexagonally on a charcoal orbit ring around a sun-gold data core. Thin charcoal spokes (faded to opacity 0.22) connect each constellation to the data core. Distills the BOSS architecture — six universal business domains around one data core — into a single brand primitive. Brand v2 lock 2026-05-09. v2 changes from v1: structure shifts navy → charcoal, gold core upsized r=22 → r=32 (visual dominance), spokes opacity 0.32 → 0.22 (recede further into background structure).</desc>
+
+  <!-- Outer orbit ring -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#1F2937" stroke-width="2.5"/>
+
+  <!-- Spokes (drawn before dots and core, opacity 0.22) -->
+  <g stroke="#1F2937" stroke-width="1.4" stroke-opacity="0.22">
+    <line x1="100" y1="100" x2="100" y2="20"/>
+    <line x1="100" y1="100" x2="169.28" y2="60"/>
+    <line x1="100" y1="100" x2="169.28" y2="140"/>
+    <line x1="100" y1="100" x2="100" y2="180"/>
+    <line x1="100" y1="100" x2="30.72" y2="140"/>
+    <line x1="100" y1="100" x2="30.72" y2="60"/>
+  </g>
+
+  <!-- Six constellation dots, hex positions starting at 12 o'clock -->
+  <g fill="#1F2937">
+    <circle cx="100" cy="20" r="14"/>
+    <circle cx="169.28" cy="60" r="14"/>
+    <circle cx="169.28" cy="140" r="14"/>
+    <circle cx="100" cy="180" r="14"/>
+    <circle cx="30.72" cy="140" r="14"/>
+    <circle cx="30.72" cy="60" r="14"/>
+  </g>
+
+  <!-- Sun-gold data core, oversized r=32 (was r=22 in v1) -->
+  <circle cx="100" cy="100" r="32" fill="#FACC15"/>
+</svg>

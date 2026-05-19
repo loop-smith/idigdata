@@ -1,6 +1,6 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="THE RIG wordmark reverse">
-  <title>THE RIG wordmark — reverse</title>
-  <desc>Reverse wordmark for navy or dark backgrounds.</desc>
-  <text x="200" y="58" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="14" fill="#cbd5e1">THE</text>
-  <text x="200" y="170" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="128" font-weight="900" letter-spacing="-5" fill="#fafaf7">RIG</text>
+<svg viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="THE RIG wordmark reverse">
+  <title>THE RIG wordmark v0.3 reverse</title>
+  <desc>Reverse wordmark for Navy/dark backgrounds. THE in Slate #cbd5e1 (was Steel) · RIG in Bone #fafaf7 (was Navy).</desc>
+  <text x="0" y="20" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="9" fill="#cbd5e1">THE</text>
+  <text x="0" y="68" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="900" letter-spacing="-2.5" fill="#fafaf7">RIG</text>
 </svg>

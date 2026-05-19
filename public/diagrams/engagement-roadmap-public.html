@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AV-07 · Engagement Roadmap · brand-v2 · author-v2 · 2026-05-17</title>
+<title>AV-07 · Engagement Roadmap · PUBLIC TIER variant · brand-v2 · author-v1 · 2026-05-17</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -167,8 +167,8 @@
     display: block;
   }
 
-  /* Lane click target cursor */
-  .lane-target { cursor: pointer; }
+  /* Public-tier variant: lane-target no longer interactive · no pointer cursor */
+  .lane-target { cursor: default; }
   .lane-target:hover + .lane-hover-bg,
   .lane-target.selected + .lane-hover-bg {
     fill: rgba(20, 40, 64, 0.04);
@@ -317,7 +317,7 @@
 <div class="header">
   <div class="header-left">
     <div class="wordmark">BOSS · Engagement Roadmap</div>
-    <div class="kicker">PM Suite Layer 6 · Live render · 8 stage lanes</div>
+    <div class="kicker">AV-07 · PM Suite Layer 6 · PUBLIC TIER variant · 8 stage lanes</div>
   </div>
   <div class="header-right">
     <div class="toggle" role="tablist" aria-label="View toggle">
@@ -345,12 +345,12 @@
   </svg>
 </div>
 
-<p class="hint">Click a lane to expand its delivers and value-prop. Click again to collapse.</p>
+<p class="hint">Per-lane delivers + value-prop available via the full canonical version · distributed through Article 02 + Phase 0 engagement intake (gated).</p>
 
-<div id="substance" class="substance" role="region" aria-live="polite"></div>
+<!-- Substance panel removed in public-tier variant · per-lane delivers + value-prop are gated -->
 
 <div class="footer">
-  BOSS &middot; Engagement Roadmap &middot; PM Suite Layer 6 &middot; Generated <span id="generated-date"></span>
+  BOSS &middot; Engagement Roadmap &middot; AV-07 PUBLIC TIER variant &middot; PM Suite Layer 6 &middot; brand v2.4.6 &middot; author-v1 &middot; Generated <span id="generated-date"></span>
 </div>
 
 <script>
@@ -362,154 +362,14 @@ const config = {
   endDate:    "2028-11-01",
 
   lanes: [
-    {
-      id: "pmo",
-      name: "PMO",
-      continuous: true,
-      delivers: [
-        "Sprint cadence sustained across both portfolios (14-day sprints per locked sprint discipline)",
-        "Dependency mapping across PEGs and stages — every promotion gate has its blockers visible",
-        "Stage-gate reviews documented",
-        "Capital-treatment audit trail (ASC 350-40 hour-level discipline; capitalization-eligible work tagged at boundary)",
-        "Capacity allocation across delivery + agentic",
-        "Stories→PEGs binding integrity maintained — every story-push advances a real PEG through a real gate"
-      ],
-      valueProp: "Per-PEG promotion at portfolio scale doesn't run itself. PMO is what turns the 7-stage substrate from architecture into operating fabric. Without PMO, BOSS is an unowned promotion track; with it, thousands of changes promote through deterministic gates with continuous audit-defensibility."
-    },
-    {
-      id: "design",
-      name: "1. Design",
-      delivers: {
-        delivery: [
-          "CDM defined and ratified",
-          "Cluster + PEG + step shapes drafted across the tier-1 portfolio",
-          "Six-axis engagement-readiness diagnostic complete",
-          "Beehive design ratified",
-          "First-wave SOPs roll up into BPFs as Design clears requirements"
-        ],
-        agentic: [
-          "Agentic PEG candidates identified",
-          "Data-readiness assessment per agentic app (which CDM elements must be live before this app builds)",
-          "Agentic policy + framework + stack selected (the policy work that's <em>not</em> an AI use policy)",
-          "Integration-into-data-core architecture drafted"
-        ]
-      },
-      valueProp: "Design is where sovereignty over data and integrations gets decided. Most consultants spend Design painting requirements onto someone else's ERP; this engagement uses Design to define a Common Data Model the operator will own. Get this right and everything downstream compounds; get it wrong and downstream stages thrash."
-    },
-    {
-      id: "build",
-      name: "2. Build",
-      delivers: {
-        delivery: [
-          "PE-connected steps wired to fire actions in tier-1 systems",
-          "Validation steps and business-rule steps authored",
-          "Integrations built against the CDM",
-          "Golden Schemas + Data Collections defined",
-          "MDM big three operational (customers, vendors, items+locations)"
-        ],
-        agentic: [
-          "Agentic apps implemented against the CDM (not against tier-1 directly — the data core mediates)",
-          "Integration wiring between agentic outputs and tier-1 actions",
-          "Validation flows authored for agentic outputs",
-          "SOP rollups for agentic-augmented workflows"
-        ]
-      },
-      valueProp: "Build is where the substrate becomes real. The discipline isn't “implement what Design specified” — it's “implement against the CDM so every piece of work feeds the data core.” Vendors do their part inside their domain expertise; the substrate runs above them."
-    },
-    {
-      id: "deploy_test",
-      name: "3. Deploy and Test",
-      delivers: {
-        delivery: [
-          "PEGs land in test environments across all tier-1 dependencies",
-          "Smoke + integration tests against dev/test instances",
-          "Integration gaps that paper-design missed surface here"
-        ],
-        agentic: [
-          "Agentic apps land in test",
-          "Data-flow validation against CDM in test",
-          "Agentic-specific testing for output quality, drift signals, exception handling under fault conditions"
-        ]
-      },
-      valueProp: "Deploy and Test makes integration debt legible before UAT inherits it. The unified blocking cascade in the IDE points at the actual culprit dependency — not “the integration is broken,” but “the integration to NetSuite UAT is degraded because the customer-master sync is failing.”"
-    },
-    {
-      id: "uat",
-      name: "4. UAT",
-      delivers: {
-        delivery: [
-          "User Acceptance Testing across the tier-1 portfolio",
-          "Running-log SOP generation kicks in (every step execution accumulates into the SOP)",
-          "Validation flows run hardest here",
-          "Operator readiness measurable for the first time"
-        ],
-        agentic: [
-          "Operator UAT for agentic workflows",
-          "SOP generation for agentic processes (operators learn the new agentic-augmented workflow as they use it)",
-          "Agentic output validation against ground truth across realistic case mix"
-        ]
-      },
-      valueProp: "UAT is where the operating fabric proves it operates — and where the SOP library auto-generates as a side-effect of running the work. By UAT close, every business process step has a current, branded, version-controlled SOP authored by execution, not by a documentation team. This is the holy-grail differentiator: documentation that doesn't drift because the system that runs the work writes it."
-    },
-    {
-      id: "mock_golive",
-      name: "5. Mock Golive",
-      delivers: {
-        delivery: [
-          "Production-shaped dress rehearsal at prod-equivalent data volumes",
-          "Rollback rehearsal",
-          "Cutover plan run on simulated data",
-          "Final environment-health verification across every dependency",
-          "Load-induced failure modes caught before real cutover"
-        ],
-        agentic: [
-          "Agentic apps run against prod-equivalent volumes",
-          "Agentic exception-handling proven under load",
-          "Mock-cutover for agentic workflows"
-        ]
-      },
-      valueProp: "Mock Golive buys cutover confidence. The kinds of failures that only surface under real load surface here, on a date where they're cheap to fix instead of on a date where they cost the business."
-    },
-    {
-      id: "golive",
-      name: "6. Golive",
-      delivers: {
-        delivery: [
-          "Production cutover executed",
-          "Real users on real data in real prod env",
-          "Tier-1 systems landscape live",
-          "CDM operational at scale across the new landscape",
-          "Vendor lock-in eliminated by structure (data-centric, not ERP-centric)"
-        ],
-        agentic: [
-          "Agentic apps live in production",
-          "Agentic outputs feeding tier-1 actions and operator decisions",
-          "The CEO's AI claim operationally real"
-        ]
-      },
-      valueProp: "Go-live is the moment the new operating fabric IS the operating fabric. Every thread that ran through the prior six lanes — data core, tier-1 systems, agentics, beehive, governance, SOPs — converges into production at the same time. The operator-facing SOP library is already on every screen, fresher than the system itself."
-    },
-    {
-      id: "stable_state",
-      name: "7. Stable state",
-      delivers: {
-        delivery: [
-          "Post-go-live stable operation",
-          "CI loop active",
-          "Issue Tracker + Enhancement Tracker bound to PEGs/BPSc/BPFs feeding change requests back through the full track (Design → Build → Deploy and Test → UAT → Mock Golive → Golive on every CI change)",
-          "Framework documented; registers handed off",
-          "In-house IT operational on BOSS substrate",
-          "Cap-treatment discipline transferred",
-          "No managed-services tail"
-        ],
-        agentic: [
-          "Agentic apps stable",
-          "Agentic CI loop active (drift monitoring, exception-rate trending, output-quality assessment)",
-          "Agentic enhancement requests cycle back through Design via the same trackers"
-        ]
-      },
-      valueProp: "Stable state is not the end — it's the gate into Continuous Improvement, the long-arc operating mode that runs forever. Every CI change re-promotes its affected PEGs through the same 7-stage track. Documentation stays current as a side-effect of operating. The substrate gets stronger over time, not stale. There's no Layer 8 by design — CI is what comes next, and it never stops."
-    }
+    { id: "pmo",          name: "PMO",                  continuous: true },
+    { id: "design",       name: "1. Design" },
+    { id: "build",        name: "2. Build" },
+    { id: "deploy_test",  name: "3. Deploy and Test" },
+    { id: "uat",          name: "4. UAT" },
+    { id: "mock_golive",  name: "5. Mock Golive" },
+    { id: "golive",       name: "6. Golive" },
+    { id: "stable_state", name: "7. Stable state · CI/CD" }
   ],
 
   portfolios: [
@@ -937,62 +797,14 @@ function listToHTML(items) {
   return "<ul>" + items.map(i => `<li>${i}</li>`).join("") + "</ul>";
 }
 
-function renderSubstance(laneId) {
-  const panel = document.getElementById("substance");
-  if (!laneId) {
-    panel.classList.remove("open");
-    panel.innerHTML = "";
-    return;
-  }
-  const lane = LANES.find(l => l.id === laneId);
-  if (!lane) return;
-
-  const isSingle = lane.continuous;
-  panel.classList.toggle("single-list", isSingle);
-
-  let deliversBlock;
-  if (isSingle) {
-    deliversBlock = `
-      <div>
-        <div class="col-label">Delivers</div>
-        ${listToHTML(lane.delivers)}
-      </div>
-    `;
-  } else {
-    deliversBlock = `
-      <div>
-        <div class="col-label delivery">Transformation Portfolio</div>
-        ${listToHTML(lane.delivers.delivery)}
-      </div>
-      <div>
-        <div class="col-label agentic">Applied Agentics Portfolio</div>
-        ${listToHTML(lane.delivers.agentic)}
-      </div>
-    `;
-  }
-
-  panel.innerHTML = `
-    <div class="lane-kicker">${isSingle ? "Orchestration lane" : "BOSS delivery stage"}</div>
-    <div class="lane-name">${lane.name}</div>
-    <div class="delivers">${deliversBlock}</div>
-    <div class="vp">${lane.valueProp}</div>
-  `;
-  panel.classList.add("open");
+function renderSubstance(_laneId) {
+  // Public-tier variant: substance rendering disabled · per-lane delivers + value-prop are gated
+  return;
 }
 
-function toggleLane(laneId) {
-  if (state.selectedLane === laneId) {
-    state.selectedLane = null;
-  } else {
-    state.selectedLane = laneId;
-  }
-  renderRoadmap();
-  renderSubstance(state.selectedLane);
-
-  if (state.selectedLane) {
-    const panel = document.getElementById("substance");
-    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
+function toggleLane(_laneId) {
+  // Public-tier variant: lane clicks do nothing · substance panel is gated
+  return;
 }
 
 function setView(v) {

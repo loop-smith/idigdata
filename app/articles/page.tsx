@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import ArticleCard from "@/components/ArticleCard";
+import ArticleRequestForm from "@/components/ArticleRequestForm";
 import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
-import { ARTICLES } from "@/lib/articles";
+import { ARTICLES, getArticleBySlug } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Articles — idigdata",
@@ -42,7 +43,15 @@ function firstSentence(text: string): string {
   return match ? match[0] : text;
 }
 
-export default function ArticlesIndexPage() {
+type PageProps = {
+  searchParams?: Promise<{ article?: string }>;
+};
+
+export default async function ArticlesIndexPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const selectedArticle =
+    params?.article ? getArticleBySlug(params.article) : undefined;
+
   return (
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
@@ -85,6 +94,29 @@ export default function ArticlesIndexPage() {
             />
           ))}
         </div>
+      </section>
+
+      <section
+        id="request-article"
+        className="scroll-mt-24 border-t border-stone/40 pt-10 pb-24"
+      >
+        <p className="font-body font-semibold uppercase tracking-section text-[11.5px] text-warm-gray mb-4">
+          Request access
+        </p>
+        <h2 className="font-vollkorn font-semibold text-navy text-[28px] md:text-[34px] leading-tight tracking-tight">
+          {selectedArticle
+            ? selectedArticle.title
+            : "Select an article above to request the full PDF."}
+        </h2>
+        <p className="mt-4 max-w-[760px] font-body text-[16px] text-ink leading-relaxed">
+          The public summaries stay high-level. Full PDFs are sent by request
+          after a quick qualification pass.
+        </p>
+        {selectedArticle ? (
+          <div className="mt-8 max-w-[720px]">
+            <ArticleRequestForm articleSlug={selectedArticle.slug} />
+          </div>
+        ) : null}
       </section>
     </div>
   );

@@ -6,14 +6,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Reach out — idigdata",
   description:
-    "No commitment, no proposal-deck. Just talking shape. For embedded residencies, fractional engagements, and agentic deployments.",
+    "If what you see here is relevant to the work in front of you, reach out. A short operator-to-operator conversation is enough to know if there is a fit.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
     title: "Reach out — idigdata · Forward-Deployed Operator",
     description:
-      "No commitment, no proposal-deck. Just talking shape.",
+      "If what you see here is relevant to the work in front of you, reach out.",
     images: [
       {
         url: "/og-image.png",
@@ -45,21 +45,18 @@ export default function ContactPage() {
           Reach out
         </p>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Just talking shape.
+          If this is the work in front of you, let&rsquo;s talk.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          No commitment, no proposal-deck. There&rsquo;s no charge for the
-          first conversation; it&rsquo;s how both sides qualify whether the
-          work is a fit.
+          No deck. No proposal. No performance. Just a short conversation
+          about the business, the systems, the data, the people, and whether
+          there is a real fit.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
-          Operator and builder. Three industry specialties &mdash; AEC,
-          beverage CPG, healthcare (EHR). Two core threads &mdash; ERP as
-          financial backbone, compliance and risk as foundation. Agentic
-          builder and visionary, with five production agentic applications
-          shipped into the operating fabric of a billion-dollar operator. The
-          common thread under everything is data: clean, curated, governed,
-          high-quality. The practice is named for it.
+          If something on this site sounds like the shape of the problem on
+          your desk &mdash; a stalled transformation, systems that do not
+          agree, data nobody quite trusts, or agentics that needs to become
+          real operating leverage &mdash; send a note. I read these myself.
         </p>
       </section>
 
@@ -85,6 +82,10 @@ export default function ContactPage() {
                 >
                   robert@idigdata.com
                 </a>
+              </p>
+              <p className="font-body text-[14px] text-stone leading-relaxed">
+                A sentence or two is enough. If it is not the right fit, I will
+                say that cleanly.
               </p>
             </div>
           </aside>

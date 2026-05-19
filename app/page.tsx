@@ -321,11 +321,11 @@ export default function HomePage() {
           </div>
 
           <p className="mt-5 pt-5 border-t border-navy/15 font-vollkorn font-bold text-navy text-[16px] md:text-[18px] leading-[1.55] text-center max-w-[58ch] mx-auto">
-            Every transformation that failed put a system at the center.
+            Workforce at the center. Human-in-the-loop above.
             <span className="block font-normal italic mt-1.5">
-              I put{" "}
+              A living asset that compounds{" "}
               <span style={goldUnderlineStyle}>
-                the workforce.
+                over time.
               </span>
             </span>
           </p>
@@ -444,50 +444,49 @@ export default function HomePage() {
           </div>
       </section>
 
-      {/* ===================== Block 5 · CTA ===================== */}
-      <section
-        id="contact"
-        className="bg-navy text-cream py-14 md:py-20"
-      >
-        {/* Gold accent rule · climax punctuation */}
-        <div aria-hidden="true" className="h-[2px] bg-gold w-[120px] mb-8 md:mb-10" />
+      {/* ===================== Block 5 · CTA · card-inset (Hero variant) ===================== */}
+      <section id="contact" className="py-20 md:py-28">
+        <div className="mx-auto max-w-[680px] bg-navy text-cream font-body rounded-[6px] shadow-[0_2px_24px_rgba(20,40,64,0.08)] border-l-[4px] border-l-gold px-8 md:px-10 lg:px-12 py-10 md:py-12 lg:py-14">
 
-        <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-3">
-          Embedded · Fractional · Agentics — sized to the work
-        </p>
-        <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[16px] md:text-[18px] leading-[1.55] max-w-[64ch] mb-10">
-          Three engagement shapes, one practice. See the full architecture, the roadmap, and how I plug in:{" "}
+          <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-6">
+            Embedded · Fractional · Agentics — sized to the work
+          </p>
+
+          <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.18] mb-5">
+            Let&rsquo;s talk shape.
+          </h2>
+
+          {/* Pull-quote · the emotional center */}
+          <p className="font-vollkorn italic font-medium text-cream text-[20px] md:text-[24px] lg:text-[26px] leading-[1.3] mb-6 max-w-[26ch]">
+            No deck. No proposal.{" "}
+            <span className="text-gold">Just talking shape.</span>
+          </p>
+
+          <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[14.5px] md:text-[15.5px] leading-[1.6] mb-8">
+            If your business is sitting on three different ERPs, a WMS the
+            floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
+            landed in production, or a transformation that stalled — I&rsquo;m
+            one operator-to-operator conversation away.
+          </p>
+
           <Link
-            href="/approach/"
-            className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
+            href="/contact/"
+            className="inline-flex items-center gap-2 bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.18em] px-8 py-4 rounded-full hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
           >
-            /approach →
+            Start a conversation <span aria-hidden>→</span>
           </Link>
-        </p>
 
-        <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.25] mb-5">
-          Let&rsquo;s talk shape.
-        </h2>
+          <p className="mt-8 pt-6 border-t border-cream/15 font-body italic text-[#9EA0A6] text-[13px] md:text-[13.5px] leading-[1.5]">
+            Three engagement shapes, one practice —{" "}
+            <Link
+              href="/approach/"
+              className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
+            >
+              /approach →
+            </Link>
+          </p>
 
-        {/* Pull-quote · the visual peak of the page closer */}
-        <p className="font-vollkorn italic font-medium text-cream text-[24px] md:text-[30px] lg:text-[34px] leading-[1.25] mb-8 max-w-[24ch]">
-          No deck. No proposal.{" "}
-          <span className="text-gold">Just talking shape.</span>
-        </p>
-
-        <p className="font-body text-[15px] md:text-[16px] leading-[1.65] text-[#DCD9CC] max-w-[62ch] mb-8">
-          If your business is sitting on three different ERPs, a WMS the
-          floor doesn&rsquo;t trust, agentic pilots that haven&rsquo;t
-          landed in production, or a transformation that stalled before it
-          landed — I&rsquo;m one operator-to-operator conversation away.
-        </p>
-
-        <Link
-          href="/contact/"
-          className="inline-block bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.06em] px-8 py-4 rounded-[4px] hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
-        >
-          Start a conversation →
-        </Link>
+        </div>
       </section>
     </div>
   );

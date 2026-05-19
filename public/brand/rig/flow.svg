@@ -1,8 +1,8 @@
-<svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RIG flow accent">
-  <title>RIG flow accent</title>
-  <desc>RIG flow accent v0 — a single graceful curve that pairs with the rigid mark in compositions. Visual counter to the mark's rigidity: where the mark is the frame, the flow is what moves through it. Used as decorative element in brand surfaces (docs headers, plugin cards, web sections). Color: Steel (subtle) or Oxblood (warm accent). Authored 2026-04-26 in ops_cw.</desc>
+<svg viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="THE RIG flow accent">
+  <title>THE RIG flow accent v0.3</title>
+  <desc>THE RIG flow accent v0.3 lock 2026-05-12. Single graceful curve · used as decorative counterpoint to the rigid mark · the work that moves through the rig frame. Color: Steel (subtle) for general use. Used in compositions where flow needs to be acknowledged without overpowering the structural mark.</desc>
   <path d="M 10 30 C 60 10, 100 50, 150 30 C 180 18, 210 42, 230 30"
-        stroke="#7c2d12"
+        stroke="#64748b"
         stroke-width="3"
         fill="none"
         stroke-linecap="round"/>

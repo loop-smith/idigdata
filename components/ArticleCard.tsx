@@ -19,7 +19,7 @@ export default function ArticleCard({
 }: Props) {
   return (
     <Link
-      href={`/articles/${slug}/`}
+      href={`/articles/?article=${slug}#request-article`}
       className="group block border border-stone/50 p-6 bg-cream h-full transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-gold hover:shadow-[0_4px_12px_rgba(20,40,64,0.08)]"
     >
       <span className="inline-flex items-center gap-1.5 bg-navy text-cream px-2.5 py-1 font-body font-semibold text-[10.5px] uppercase tracking-section">
@@ -40,7 +40,7 @@ export default function ArticleCard({
         {hook}
       </p>
       <p className="mt-5 font-body font-semibold text-navy text-[13.5px]">
-        Read summary + request access →
+        Request the full article →
       </p>
     </Link>
   );

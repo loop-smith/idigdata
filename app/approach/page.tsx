@@ -1,31 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import EngagementShape from "@/components/EngagementShape";
-import EngagementRoadmapEmbed from "@/components/EngagementRoadmapEmbed";
 import M4Watermark from "@/components/M4Watermark";
-import RomanMarker from "@/components/RomanMarker";
 import AccentRule from "@/components/AccentRule";
-import SixConstellations from "@/components/diagrams/SixConstellations";
-import SprintRoadmap from "@/components/diagrams/SprintRoadmap";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
   title: "Approach — idigdata",
   description:
-    "How I plug in. Three engagement shapes — embedded, fractional, agentics. Structurally lean. Exit by design. Engagement roadmap and capital structure.",
+    "A transformation that compounds. Build. Observe. Iterate. Five interlocking layers, one loop — the framework that turns business reality into a transformation system the business owns.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/approach/",
     title: "Approach — idigdata · Forward-Deployed Operator",
     description:
-      "Three engagement shapes. Same architecture. Sized to the work.",
+      "A transformation that compounds. Build. Observe. Iterate. Five interlocking layers, one loop. The business owns the asset.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Forward-Deployed Operator",
+        alt: "idigdata — The Practice",
       },
     ],
   },
@@ -35,226 +30,111 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
-    { "@type": "ListItem", position: 2, name: "Approach", item: "https://idigdata.com/approach/" },
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://idigdata.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Approach",
+      item: "https://idigdata.com/approach/",
+    },
   ],
 };
 
 export default function ApproachPage() {
   return (
-    <div className="mx-auto max-w-content px-6">
+    <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
       <JsonLdScript data={breadcrumbJsonLd} />
 
+      {/* ===== HERO ===== */}
       <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />
-        <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          How I plug in
-        </h1>
-        <p className="mt-5 max-w-[820px] text-[18px] text-ink leading-relaxed">
-          Three engagement shapes. Same architecture. Sized to the work.
-        </p>
-        <p className="mt-4 max-w-[820px] font-display italic text-stone text-[16px] leading-snug">
-          Three industry specialties &mdash; AEC, beverage CPG (wine, beer,
-          spirits), and healthcare (EHR) &mdash; unified by two core threads:
-          ERP as financial and accounting backbone, and compliance and risk as
-          foundation. Every major operating-system class deployed in the
-          trenches: ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS.
-        </p>
-      </section>
-
-      <section className="bg-cream px-0 md:px-8 pt-4 pb-12">
-        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
-          Three engagement shapes
-        </h2>
-
-        <div className="max-w-[860px] space-y-2">
-          <EngagementShape
-            variant="editorial"
-            marker={<RomanMarker num={1} />}
-            name="Embedded"
-            lead="Best bang for the buck on a full transformation — short term and long term."
-            body={
-              <>
-                <p>
-                  Full transformation residency. One forward-deployed operator
-                  with a virtual bench of senior independent specialists
-                  assembled across fifty-plus engagements — fifteen of them full
-                  multi-year transformations. Full executive scope as contractor:
-                  strategy, operations, vendor portfolio, risk, governance.
-                  Inside-out: team-building, full lifecycle delivery,
-                  operating-model change, IT-department shore-up, BOSS
-                  deployment, agentic framework.
-                </p>
-                <p className="mt-3">
-                  Flat-rate weekly economics tied to outcomes. Exit-by-design at
-                  handoff. No managed-services tail. No vendor commissions. No
-                  partner-channel pressure.{" "}
-                  <em className="not-italic italic font-normal">
-                    Continuity discipline:
-                  </em>{" "}
-                  every workstream is documented and shadow-staffed across the
-                  bench from week one — the practice does not depend on me being
-                  in the room.
-                </p>
-                <p className="mt-3">
-                  Start with the end in mind — the operator&rsquo;s asset, fully
-                  built and operating. The data-centric structure reduces the
-                  repeating noise that consumes most transformations, adds
-                  clarity at every cross-functional decision point, and gives the
-                  operator unified governance over delivery and user adoption —
-                  better and faster than any vendor partner can manage.
-                  That&rsquo;s the FDO model.
-                </p>
-              </>
-            }
-          />
-          <EngagementShape
-            variant="editorial"
-            marker={<RomanMarker num={2} />}
-            name="Fractional"
-            lead="Plug me in at any stage of an existing project."
-            body={
-              <>
-                <p>
-                  Engagements where a specific lever needs moving: unblock a
-                  stalled ERP, deploy a production agent on a critical
-                  bottleneck, stand up the operator-owned data substrate
-                  alongside the existing tier-1 stack. Same architecture, sized
-                  to the work.
-                </p>
-                <p className="mt-3">
-                  I live inside the operator and breathe the pain — the workflows
-                  run every day across ERP, WMS, MES, EMR, CRM/CPQ.
-                  Multi-platform, multi-vendor versed. I know the systems and the
-                  people who use them.
-                </p>
-              </>
-            }
-          />
-          <EngagementShape
-            variant="editorial"
-            marker={<RomanMarker num={3} />}
-            name="Agentics"
-            lead="Standalone, or stacked onto either of the above."
-            body={
-              <>
-                <p>
-                  Agentic workflows are being deployed at scale right now. Most
-                  implementations will fail for the same reason every
-                  business-system transformation has failed for decades: they
-                  don&rsquo;t solve the fragmented data and undocumented workflow
-                  problem first. Engineers know how to write model code. Very
-                  few know how to architect the unsexy data schemas, documented
-                  workflows, and governance protocols a business actually runs
-                  on. If the substrate is garbage, the AI is vaporware.
-                </p>
-                <p className="mt-3">
-                  <em className="not-italic italic font-normal">
-                    I fix the substrate so agents work.
-                  </em>{" "}
-                  Five production agentic systems already shipped at a mid-market
-                  beverage CPG operator — named functions in supply chain,
-                  finance, and operations. Not demos. Production.
-                </p>
-                <p className="mt-3">
-                  The enterprise agentic framework runs on the same staged
-                  delivery discipline as transformation work. Same architecture,
-                  sized to the work.
-                </p>
-              </>
-            }
-          />
-        </div>
-      </section>
-
-      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-12 mt-12">
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          Structurally lean
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          <strong className="font-semibold text-navy">Structurally lean.</strong>{" "}
-          No carried bench (virtual network when one is needed). No
-          managed-services tail (BOSS is open source; clients own and
-          maintain). No client lock-in (mutual break-clauses, clean exits by
-          design). No vendor-economics misalignment (transformation runs above
-          the vendors, not through them). No documentation drift (SOPs
-          auto-maintain — see BOSS).{" "}
-          <strong className="font-semibold text-navy">
-            Firm architecture, not firm size.
-          </strong>
-        </p>
-        <p className="mt-4 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          Vendor-agnostic isn&rsquo;t a marketing posture. It&rsquo;s a
-          structural consequence of putting the operator at the center of the
-          data graph instead of the ERP vendor at the center.
-        </p>
-      </section>
-
-      <section className="bg-pale-navy px-0 md:px-8 pt-12 pb-12">
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          The exit is clean
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          <strong className="font-semibold text-navy">The exit is clean.</strong>{" "}
-          When the transformation institutionalizes, I leave. Open source
-          platform; the client and their in-house team carry it. No
-          managed-services tail. No retainer that quietly becomes the line
-          item nobody can kill. The break-clauses cut both ways.
-          Decision-makers who&rsquo;ve been burned by consultants who never
-          leave can verify this on day one — it&rsquo;s structural, not
-          promised.
-        </p>
-      </section>
-
-      <section className="bg-pale-navy px-0 md:px-8 pt-12 pb-16">
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          Value-justification
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          <strong className="font-semibold text-navy">
-            A fraction of the cost of a Big-4 transformation,
-          </strong>{" "}
-          with outcomes Big-4 doesn&rsquo;t deliver. The bundle: thirty years
-          of operator practice, BOSS platform deployment, the agentic
-          framework, the bench when needed, the clean exit. One engagement,
-          one weekly rate.{" "}
-          <strong className="font-semibold text-navy">
-            A handful of operators can deliver this end-to-end.
-          </strong>{" "}
-          Most of the market gets the partner-led result.
-        </p>
-      </section>
-
-      <section
-        id="architecture-views"
-        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-12 md:pb-16 scroll-mt-20 mt-12"
-      >
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
-          The trinity · three views of the operating fabric
-        </p>
-        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] lg:text-[60px] leading-[1.02] tracking-[-0.02em] text-balance">
-          The architecture{" "}
-          <em className="italic font-semibold">I build to.</em>
-        </h2>
-        <p className="mt-6 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[18px] md:text-[20px] leading-snug">
-          Three views of the substrate triangle you saw on the homepage — same operator, three lenses. The people lens · the process lens · the systems lens. Together they show how the workforce moves the work across the data substrate.
-        </p>
-      </section>
-
-      {/* Trinity panel I — The beehive */}
-      <section className="bg-cream px-0 md:px-8 pt-12 md:pt-16 pb-24 md:pb-28 border-t border-navy/15">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram I · the people lens — the beehive
+          The outcome
         </p>
-        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
-          The <em className="italic font-semibold">beehive.</em>
-        </h3>
-        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Unpacking the people lens — how the workforce moves the work. Process
-          flows × functional groups · six BPFs feed the operating fabric · MDM
-          and the Common Data Model at the center.
+        <h1 className="font-vollkorn font-bold text-navy text-[48px] md:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.015em]">
+          A transformation that{" "}
+          <em className="italic font-semibold">compounds.</em>
+        </h1>
+        <p className="mt-6 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[20px] md:text-[22px] leading-snug">
+          Build. Observe. Iterate. Five interlocking layers, one loop &mdash; the framework that turns business reality into a transformation system the business owns.
         </p>
-        <figure className="max-w-3xl mx-auto">
+        <p className="mt-6 max-w-[820px] text-[16px] text-ink leading-relaxed">
+          Most transformations are linear &mdash; diagnose, design, deploy,
+          hope. Mine runs as a build-observe-iterate loop instead, sized to
+          your cadence.
+        </p>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== SYNTHESIS INTERSTITIAL ===== */}
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Diagnosis &middot; invention
+        </p>
+        <p className="max-w-[820px] font-vollkorn text-navy text-[22px] md:text-[26px] leading-[1.32] tracking-[-0.005em]">
+          Sixty percent of transformations fail. The pattern repeats: people
+          change, systems change, processes change, delivery changes &mdash;
+          each in a different workstream, none binding to the others.{" "}
+          <strong className="font-bold">
+            Thirty years and fifty engagements taught me to stop working that way.
+          </strong>{" "}
+          I built a single operator-grade framework that binds them. It runs as{" "}
+          <em className="italic font-semibold">
+            five interlocking layers
+          </em>{" "}
+          &mdash; the people, the systems they run on today, the universal
+          grammar underneath, the architecture I design against, and the
+          execution layer that drives the loop &mdash; until your operators
+          own the asset and don&rsquo;t need me anymore.
+        </p>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== LAYER 1 · THE BEEHIVE ===== */}
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Layer 1 &middot; The beehive
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Find where the work actually moves.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          I begin with the people. Map the current workflows by functional
+          area. Decompose into the beehive&apos;s taskforce functional groups.
+          Locate the stakeholders who&rsquo;ll fund and approve the change.
+          Locate the SMEs &mdash; the operators who hold the unwritten
+          exception queues and the workarounds no one documented.{" "}
+          <strong className="font-semibold text-navy">
+            They&rsquo;re not &ldquo;resources.&rdquo; They&rsquo;re the atomic
+            units of work.
+          </strong>{" "}
+          Identify the senior operators who&rsquo;ll lead the change inside
+          your business. Read where the work actually moves and where it
+          stalls &mdash; not the org chart, the operating reality.
+        </p>
+        <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          <strong className="font-semibold text-navy">
+            The enablement thread starts here and runs through every layer that follows.
+          </strong>{" "}
+          Each layer transfers capability to your team. By engagement close,
+          your operators own what we built, can extend it, and don&rsquo;t need
+          me to do it. Exit-by-design at the workforce layer.
+        </p>
+        <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          <em className="italic">Scope option:</em>{" "}when the IS department itself
+          needs rebuilding &mdash; under-resourced, organizationally weak, lagging
+          on capability &mdash; that&rsquo;s a second domain expertise I bring.
+          Transformations across business systems AND across the IS
+          organizations supporting them.
+        </p>
+        <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/beehive.svg"
@@ -264,61 +144,108 @@ export default function ApproachPage() {
             className="w-full h-auto"
           />
         </figure>
-        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-          <span>Diagram I</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>Universal frame</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>Live in every engagement</span>
-        </div>
       </section>
 
-      {/* Trinity panel II — Six constellations */}
-      <section className="bg-pale-navy px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
+      <AccentRule className="mt-4" />
+
+      {/* ===== LAYER 2 · CURRENT SYSTEMS ===== */}
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram II · the process lens — the six constellations
+          Layer 2 &middot; The current systems
         </p>
-        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
-          The <em className="italic font-semibold">six constellations.</em>
-        </h3>
-        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Unpacking the process lens — the universal spine of operating
-          processes. P2P · O2C · P2M · S2S · D2R · MDM around a sovereign Data
-          Core. BPSc density bands ring each constellation.
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Expose the system truth.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          Every system the workforce uses today. ERP. CRM. WMS. MES. EMR.
+          Specialty tools. Spreadsheets that became business-critical. Shadow
+          IT no one talks about. The actual AS-IS inventory with the
+          integration topology, the data flow, the trust gaps, the
+          workarounds. No assumptions, no theory &mdash; the operating truth.
         </p>
-        <figure className="max-w-3xl mx-auto">
+        <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          Most engagements discover that the business is running on more
+          systems than anyone realized, in more configurations than anyone
+          documented, with more integration debt than anyone budgeted. The
+          map is the first uncomfortable conversation &mdash; and the first
+          place trust starts compounding.
+        </p>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== LAYER 3 · THE 6 PROCESS CONSTELLATIONS ===== */}
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Layer 3 &middot; The 6 Process Constellations
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Separate uniqueness from mechanics.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          The paradox of mid-market operations:{" "}
+          <strong className="font-semibold text-navy">
+            your culture is fiercely unique. Your operating mechanics are entirely standard.
+          </strong>{" "}
+          Every business runs on the same six process flows:{" "}
+          <strong className="font-bold">P2P</strong> (procure-to-pay),{" "}
+          <strong className="font-bold">O2C</strong> (order-to-cash),{" "}
+          <strong className="font-bold">P2M</strong> (plan-to-make),{" "}
+          <strong className="font-bold">S2S</strong> (systems-to-support),{" "}
+          <strong className="font-bold">D2R</strong> (data-to-reporting), and{" "}
+          <strong className="font-bold">MDM</strong>{" "}(master data
+          management). Different industries, different software stacks &mdash;
+          same six constellations every time.
+        </p>
+        <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          Same six every install. The makeup of process-element groups,
+          clusters, and components differs per operator. The 6 Process
+          Constellations are the grammar for reading where load is, where
+          gaps are, and where the new architecture needs to land.
+        </p>
+        <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/six-constellations.svg"
-            alt="The six constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation"
+            alt="The 6 Process Constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation"
             width={810}
             height={940}
             className="w-full h-auto"
           />
         </figure>
-        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-          <span>Diagram II</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>Universal spine</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>Same six every install</span>
-        </div>
       </section>
 
-      {/* Trinity panel III — System-verse */}
-      <section className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-24 md:pb-28">
+      <AccentRule className="mt-4" />
+
+      {/* ===== LAYER 4 · THE SYSTEM-VERSE ===== */}
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
         <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
-          Diagram III · the systems lens — the system-verse
+          Layer 4 &middot; The system-verse
         </p>
-        <h3 className="font-vollkorn font-extrabold text-navy text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-balance mb-3">
-          The <em className="italic font-semibold">system-verse.</em>
-        </h3>
-        <p className="font-vollkorn italic font-medium text-stone text-[19px] md:text-[22px] leading-snug max-w-[720px] mb-10">
-          Unpacking the systems lens — the future-state map operators build to.
-          Sovereign Data Core at center · integration mesh · application layer
-          of 16 functional system groups.
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Design around the architecture, not the vendor.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          Because the 6 Process Constellations expose where operating load
+          actually lives, the system-verse can be designed around the
+          business instead of around vendors. Sovereign Data Core at center.
+          Integration mesh. Application layer of functional system groups.
+          The system-verse supports the Business Process Flows via the 6
+          Process Constellations &mdash; built TO, not bought-and-hoped-into.
         </p>
-        <figure className="max-w-3xl mx-auto">
+        <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          The architecture is the artifact the business owns and operates after
+          handoff.{" "}
+          <strong className="font-semibold text-navy">
+            This is the plug-and-play architectural inversion: the sovereign
+            Data Core is permanent; the surrounding functional system groups
+            are modular commodities.
+          </strong>{" "}
+          Vendor decisions slot in around the architecture, not the other way
+          around. Apps come and go. The core stays. The vendors stay vendors;
+          the architecture stays yours.
+        </p>
+        <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/diagrams/system-verse.svg"
@@ -328,144 +255,198 @@ export default function ApproachPage() {
             className="w-full h-auto"
           />
         </figure>
-        <div className="mt-10 max-w-3xl mx-auto pt-5 border-t border-navy/15 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
-          <span>Diagram III</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>Future-state map</span>
-          <span aria-hidden className="text-stone">·</span>
-          <span>The Phase 1 deliverable</span>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== LAYER 5 · THE PM SUITE ===== */}
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Layer 5 &middot; The PM Suite
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Drive the loop until it holds.
+        </h2>
+
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          The PM Suite is the operating layer &mdash; the build-observe-iterate
+          loop made concrete. It runs the framework against your reality,
+          directs the bench, and holds the cadence sprint after sprint. The
+          bench is the virtual network of senior independent specialists
+          I&rsquo;ve assembled across fifty engagements &mdash; engineers,
+          data analysts, architects, project managers &mdash; pulled in for
+          the exact scope, off when done.{" "}
+          <strong className="font-semibold text-navy">
+            Firm architecture, not firm size.
+          </strong>{" "}
+          No carried bench. No utilization pressure. The right capacity for
+          the right sprint.
+        </p>
+
+        <div className="mt-8 max-w-[820px] space-y-6">
+          <div>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-1">
+              The Ramrod Effect
+            </p>
+            <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
+              Transformations stall because organizations diffuse
+              accountability. Thirty years taught me where organizational
+              inertia actually forms &mdash; and how to apply force against
+              it. The PM Suite concentrates the force. The ramrod is the
+              operator-pattern that moves the work through resistance until
+              the new architecture holds its own weight.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-1">
+              Agile/Fall discipline
+            </p>
+            <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
+              Agile speed inside fall rigor. Fourteen-day sprints, daily
+              standups, retros, inside capital-defensible gates and
+              audit-clean phase progression. The CFO gets the structure their
+              auditors need. The operators get the iteration speed the work
+              needs.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-1">
+              Agentic acceleration
+            </p>
+            <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
+              Agentics compresses the observe-adjust cycle further. The PM
+              Suite already runs shorter loops than traditional consulting
+              can manage. Agentics shortens them again. See{" "}
+              <Link
+                href="/agentics/"
+                className="text-navy font-semibold underline underline-offset-2 hover:text-aubergine"
+              >
+                Applied Agentics
+              </Link>{" "}
+              for the deeper proof surface.
+            </p>
+          </div>
+        </div>
+
+        <figure className="mt-10 max-w-4xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/diagrams/pm-suite.svg"
+            alt="The PM Suite — four execution altitudes: TASK and STORY peers at the operating level, 14-day AGILE SPRINTS feeding a gold TRANSFER POINT into WATERFALL ROADMAP STAGES, all anchored to the engagement timeline"
+            width={1200}
+            height={720}
+            className="w-full h-auto"
+          />
+        </figure>
+
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== THE LIFECYCLE · AV-07 ENGAGEMENT ROADMAP ===== */}
+      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          The lifecycle
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          What the loop looks like over time.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
+          <strong className="font-semibold text-navy">
+            The loop is not a sixth layer. It is the motion across all five
+            &mdash; build against the map, observe what operators and systems
+            reveal, adjust the architecture, then run the next sprint.
+          </strong>{" "}
+          Five layers running over twenty-four months &mdash; two portfolios
+          (Transformation and Applied Agentics) moving through identical
+          staged discipline, density redistributing under agentics, the
+          CI/CD-by-design loop opening the next build plan after handoff.
+        </p>
+        <div className="mt-10 w-full">
+          <iframe
+            src="/diagrams/engagement-roadmap-public.html"
+            title="The Engagement Roadmap — 8-lane temporal arc with two portfolios, density gradient, and the CI/CD-by-design loop opening the next build plan after handoff (public-tier variant; per-stage delivers + value-props gated via Article 02)"
+            className="w-full block border-0 bg-cream rounded-[6px]"
+            style={{ height: "960px" }}
+            loading="lazy"
+          />
+        </div>
+        <p className="mt-8 max-w-[820px] font-vollkorn italic font-medium text-stone text-[15px] md:text-[16px] leading-snug">
+          Five layers running on the loop. The compounding starts when I leave.
+        </p>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      {/* ===== SUCCESS ===== */}
+      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          Success
+        </p>
+        <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
+          Measured by. <em className="italic font-semibold">Leaves behind.</em>
+        </h2>
+
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+          <div>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-3">
+              Measured by
+            </p>
+            <p className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] leading-[1.25] mb-4">
+              Align. Adapt. Empower.{" "}
+              <em className="italic font-semibold">Repeat.</em>
+            </p>
+            <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
+              The four-beat heartbeat that proves the loop is working. Resources
+              align with the architecture. The architecture adapts to operating
+              reality. The workforce gets empowered to run the new system. The
+              cycle repeats short enough to compound rather than decay.
+            </p>
+          </div>
+          <div>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-3">
+              Leaves behind
+            </p>
+            <p className="font-vollkorn font-bold text-navy text-[22px] md:text-[26px] leading-[1.25] mb-4">
+              A living system the business owns.
+            </p>
+            <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
+              Operator-grade ergonomics. Exit-by-design. Capability transferred
+              to your operators. No managed-services tail. No vendor-platform
+              lock-in. The asset stays with the business, compounding in your
+              favor &mdash; happy people, happy systems.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section
-        id="engagement-roadmap"
-        className="bg-cream px-0 md:px-8 pt-20 md:pt-24 pb-16 scroll-mt-20 mt-12"
-      >
-        <p className="font-vollkorn italic font-medium text-stone text-[15px] md:text-[17px] leading-snug max-w-[820px] mb-3">
-          The trinity shows what gets built. The roadmap shows when.
-        </p>
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          Engagement roadmap
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          This is the time-to-deliverable view. Thirty years of staged
-          delivery — seven BOSS delivery stages with PMO orchestration
-          spanning all of them. Two parallel portfolios — Transformation and
-          Applied Agentics — promote through identical stages on different
-          time signatures, converging at a single Go-live. The framework
-          holds whether the portfolio is ERP, WMS, or agentic apps. Density
-          redistributes as the technology shifts; discipline does not
-          compress. Anyone shipping a full transformation in four months is
-          shipping a workflow, not a transformation. Stage is the unit of
-          promotion — hundreds of work units (PEGs) move through gates at
-          their own readiness. After Go-live: operator-led CI/CD by design —
-          a new build plan opens, in-house.
-        </p>
-        <EngagementRoadmapEmbed />
-        <p className="mt-3 max-w-[820px] font-display italic text-stone text-[14px]">
-          Engagement roadmap — operator-owned substrate · exit-by-design · no
-          managed-services tail · no vendor-platform lock-in. The asset stays
-          with the operator.
-        </p>
-
-        <div className="mt-10 max-w-[820px] border-t border-navy/15 pt-6">
-          <p className="font-body text-[15px] md:text-[16px] text-ink leading-relaxed">
-            <strong className="font-semibold text-navy">
-              The full methodology
-            </strong>{" "}
-            — stage substance, agentics density calibration,
-            trinity-to-roadmap mapping, CI/CD handoff pattern — lives in the
-            engagement brief.{" "}
+      {/* ===== CTA · OPERATOR-STAMP CARD ===== */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[680px] bg-navy text-cream font-body rounded-[6px] shadow-[0_2px_24px_rgba(20,40,64,0.08)] border-l-[4px] border-l-gold px-8 md:px-10 lg:px-12 py-10 md:py-12 lg:py-14">
+          <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-6">
+            More on the approach
+          </p>
+          <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.18] tracking-[-0.01em] mb-5">
+            Let&rsquo;s talk shape &mdash; of the{" "}
+            <em className="italic font-semibold">loop.</em>
+          </h2>
+          <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[14.5px] md:text-[15.5px] leading-[1.6] mb-8">
+            What&rsquo;s on this page is the frame. The mechanic depth
+            &mdash; stage substance, sprint plan, agentics calibration,
+            what your loop actually looks like &mdash; lives in
+            conversation. No deck. No proposal.{" "}
+            <span className="text-gold not-italic font-medium">
+              Just talking shape.
+            </span>
+          </p>
+          <div className="flex flex-col gap-3">
             <Link
               href="/contact/"
-              className="text-navy font-semibold underline underline-offset-2 hover:text-aubergine"
+              className="inline-flex items-center gap-2 bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.18em] px-8 py-4 rounded-full hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
             >
-              Start a conversation →
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* The diagnostic frame — six constellations */}
-      <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-16">
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          The diagnostic frame
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          Every business maps into six constellations. Phase 1 reads the load
-          on each — Phase 2 architecture builds from there.
-        </p>
-        <div className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
-          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
-            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
-              <SixConstellations />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Inside a sprint — sprint roadmap */}
-      <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-16 mt-12">
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          Inside a sprint
-        </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed">
-          Engagement-level cadence is sprints. 13 days each. Tasks decompose
-          to stories; stories pin to sprints; outputs persist to the next.
-        </p>
-        <div className="mt-8 max-w-4xl mx-auto -mx-8 md:mx-auto">
-          <div className="overflow-x-auto px-8 md:px-0 [-webkit-overflow-scrolling:touch]">
-            <div className="min-w-[640px] md:min-w-0 max-w-4xl mx-auto">
-              <SprintRoadmap />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <AccentRule className="mt-16" />
-
-      <section
-        id="capital-structure"
-        className="bg-cream px-0 md:px-8 pt-12 md:pt-16 pb-16 scroll-mt-20"
-      >
-        <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-          The capital structure
-        </h2>
-        <div className="mt-5 max-w-[820px] text-[16px] text-ink leading-relaxed space-y-5">
-          <p>
-            A transformation of this scope is a capital investment, not a P&amp;L
-            hit. Build-phase costs — including internal labor — capitalize to
-            the balance sheet under ASC 350-40 / equivalent. At go-live, the
-            asset moves to depreciation; the standard period for major
-            enterprise transformation is{" "}
-            <strong className="font-semibold text-navy">ten years</strong>,
-            field-validated. The implication: a multi-year investment
-            doesn&rsquo;t crater two years of earnings during the build, and
-            post-go-live impact smooths over a decade.
-          </p>
-          <p>
-            <strong className="font-semibold text-navy">
-              CFO-defensible. Audit-clean. Built into BOSS&rsquo;s Delivery
-              pillar from day one.
-            </strong>{" "}
-            The cap treatment is real, traceable, and the receiving CFO carries
-            it forward post-handoff — no consultant in the loop on permanent
-            accounting decisions.
-          </p>
-        </div>
-      </section>
-
-      <section className="mt-24 mb-16 md:mb-24">
-        <div className="text-center px-6 py-12 md:py-16 border-t border-navy">
-          <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[34px] tracking-tight">
-            Talk to Robert
-          </h2>
-          <div className="mt-8">
-            <Link
-              href="/contact?interest=engagement"
-              className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-3.5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] hover:bg-aubergine transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2"
-            >
-              Start a conversation <span aria-hidden>→</span>
+              Start a conversation <span aria-hidden>&rarr;</span>
             </Link>
           </div>
         </div>
