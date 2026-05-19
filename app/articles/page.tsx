@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
-import ArticleCard from "@/components/ArticleCard";
-import AccentRule from "@/components/AccentRule";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
-import ArticlesRequestCTA from "@/components/ArticlesRequestCTA";
+import ArticlesIndexInteractive from "@/components/ArticlesIndexInteractive";
 import { ARTICLES } from "@/lib/articles";
 
 export const metadata: Metadata = {
@@ -66,27 +64,8 @@ export default function ArticlesIndexPage() {
           </Link>
           .
         </p>
-        <div className="mt-8">
-          <ArticlesRequestCTA />
-        </div>
-      </section>
 
-      <AccentRule className="mt-2" />
-
-      <section className="pt-8 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {ARTICLES.map((a) => (
-            <ArticleCard
-              key={a.slug}
-              slug={a.slug}
-              pairBadge={a.pairBadge}
-              title={a.title}
-              hook={a.cardHook}
-              readingTimeMin={a.readingTimeMin}
-              category={a.category}
-            />
-          ))}
-        </div>
+        <ArticlesIndexInteractive articles={ARTICLES} />
       </section>
     </div>
   );

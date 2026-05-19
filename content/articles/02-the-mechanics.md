@@ -1,6 +1,6 @@
-# The mechanics — PM, budget, capital structure
+# The Mechanics of the Build
 
-*Lens 2 of 2 on the 24-month engagement — the delivery discipline and the financial structure*
+*Lens 2 of 2 — how the build runs, gets capitalized, and holds*
 
 By Robert Paddock · idigdata
 

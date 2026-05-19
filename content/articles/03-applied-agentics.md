@@ -1,6 +1,6 @@
-# Applied agentics — agents deployed as a business asset
+# Applied Agentics — The Business Asset
 
-*The rare credential — knowing what agentics is, how to ship it into operations, and how to make work better while doing it*
+*Standalone — what agentics becomes when the substrate is real*
 
 By Robert Paddock · idigdata
 

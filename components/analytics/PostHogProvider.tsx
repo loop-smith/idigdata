@@ -21,11 +21,15 @@ export default function PostHogProvider({
       capture_pageview: true,
       capture_pageleave: true,
       autocapture: false,
+      advanced_disable_flags: true,
+      disable_surveys: true,
       session_recording: {
         maskAllInputs: true,
       },
+      disable_session_recording: true,
       person_profiles: "identified_only",
     });
+    posthog.register({ surface: "website" });
 
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
