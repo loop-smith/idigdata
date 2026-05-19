@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import posthog from "posthog-js";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -149,6 +150,14 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
       });
       const data = await res.json();
       if (res.ok && data.ok) {
+        if (data.lead_id !== "silenced") {
+          posthog.identify(email, {
+            email,
+            name,
+            company: company || undefined,
+            surface: "website",
+          });
+        }
         setLeadId(data.lead_id ?? null);
         setStatus("success");
       } else {

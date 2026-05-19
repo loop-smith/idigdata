@@ -45,6 +45,12 @@ yarn-error.log*
 # local screenshots (dev-only)
 /.screenshots/
 
+# local agent/worktree emits
+.claude/worktrees/
+.claude/settings.local.json
+/_emit/
+.env.local.*
+
 # lighthouse — ephemeral score JSONs from launch dispatch
 /lighthouse-*.json
 /_lighthouse/

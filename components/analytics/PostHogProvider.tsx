@@ -18,7 +18,7 @@ export default function PostHogProvider({
 
     posthog.init(key, {
       api_host: host,
-      capture_pageview: true,
+      capture_pageview: false,
       capture_pageleave: true,
       autocapture: false,
       advanced_disable_flags: true,
@@ -30,6 +30,7 @@ export default function PostHogProvider({
       person_profiles: "identified_only",
     });
     posthog.register({ surface: "website" });
+    posthog.capture("$pageview");
 
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console

@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import posthog from "posthog-js";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -76,6 +77,14 @@ export default function ContactForm({
       });
       const data = await res.json();
       if (res.ok && data.ok) {
+        if (data.lead_id !== "silenced") {
+          posthog.identify(email, {
+            email,
+            name,
+            company: company || undefined,
+            surface: "website",
+          });
+        }
         setLeadId(data.lead_id ?? null);
         setStatus("success");
       } else {
