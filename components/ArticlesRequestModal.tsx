@@ -7,6 +7,8 @@ type Status = "idle" | "submitting" | "success" | "error";
 type Props = {
   open: boolean;
   onClose: () => void;
+  /** If provided when the modal opens, this article's checkbox starts pre-checked. */
+  prefilledSlug?: string;
 };
 
 type ArticleChoice = {
@@ -29,7 +31,7 @@ const ARTICLE_CHOICES: ArticleChoice[] = [
   },
 ];
 
-export default function ArticlesRequestModal({ open, onClose }: Props) {
+export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
@@ -54,6 +56,13 @@ export default function ArticlesRequestModal({ open, onClose }: Props) {
   const hpId = `${idBase}-hp`;
   const articlesLegendId = `${idBase}-articles-legend`;
   const articlesErrorId = `${idBase}-articles-error`;
+
+  useEffect(() => {
+    if (open && prefilledSlug) {
+      setSelectedSlugs(new Set([prefilledSlug]));
+      setValidationError(null);
+    }
+  }, [open, prefilledSlug]);
 
   useEffect(() => {
     if (!open) return;
