@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 140" role="img" aria-labelledby="t d">
+  <title id="t">BOSS — text-only wordmark (v2)</title>
+  <desc id="d">"BOSS" set in heavy geometric sans (Helvetica Neue / Arial Black approximation pending licensed Druk Wide Super, Söhne Breit Kraftig, or Founders Grotesk Black), font-weight 900, charcoal #1F2937 on transparent. For text-only contexts where the integrated wordmark (with constellation O) isn't appropriate. The PRIMARY brand wordmark per v2 is the integrated version — see boss-integrated-wordmark.svg. v2 changes: typography shifts from Vollkorn old-style serif to heavy geometric sans; structure color shifts navy → charcoal. Brand v2 lock 2026-05-09.</desc>
+
+  <text x="190" y="108" text-anchor="middle" font-family="Helvetica Neue, Arial Black, Helvetica, Arial, sans-serif" font-weight="900" font-size="140" fill="#1F2937" letter-spacing="-5">BOSS</text>
+</svg>

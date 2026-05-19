@@ -1,66 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sv-title sv-desc">
-  <title id="sv-title">The system-verse — future-state systems map</title>
-  <desc id="sv-desc">A celestial composition. Data core at the gravitational center; 16 functional system groups form a tightly-packed ring (touching, no gaps) at the application orbit — each circle carries a unique navy/gold/warm-gray gradient stroke for visual differentiation. Soft atmosphere between core and the application orbit communicates the integration substrate (implicit, not a discrete layer). The substrate the constellations and data core run on. Same shape every install; bespoke fill per operator. First major engagement deliverable: the future-state systems map handed to the operator at end of Phase 1.</desc>
+  <title id="sv-title">AV-03 · The Systemverse · brand-v2 · author-v2.2 · 2026-05-09</title>
+  <desc id="sv-desc">A celestial composition. Data core at the gravitational center; 16 functional system groups form a tightly-packed ring (touching, no gaps) at the application orbit. Sixteen thin connectivity spokes radiate from each system group to the data core, signaling the constant traffic between every system and the core. An integration fabric annulus (charcoal mesh pattern at low opacity) overlays the spokes — explicit connectivity (spokes) + implicit substrate (mesh) together communicate the integration layer. Same shape every install; bespoke fill per operator. First major engagement deliverable: the future-state systems map handed to the operator at end of Phase 1. Brand v2: charcoal structure, sun-gold data core, cream substrate.</desc>
 
-  <!-- Definitions: integration-mesh pattern (matches beehive fabric-mesh). Functional group strokes are solid navy (option A: aligned to beehive's clean-stroke style). -->
   <defs>
-    <pattern id="integration-mesh" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-      <rect width="6" height="6" fill="#FAFAF7"/>
-      <line x1="0" y1="0" x2="0" y2="6" stroke="#142840" stroke-width="0.5" stroke-opacity="0.28"/>
+    <!-- Integration fabric · cross-hatch pattern weaving charcoal + sun-gold. Tile rotates 45° so lines read as diagonal weave. Charcoal carries structure; sun-gold carries brand cohesion (same device used for BPSc bands in AV-02). The substrate is no longer empty space. -->
+    <pattern id="integration-fabric" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#FBF9F4"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1F2937" stroke-width="0.7" stroke-opacity="0.45"/>
+      <line x1="0" y1="0" x2="8" y2="0" stroke="#FACC15" stroke-width="0.6" stroke-opacity="0.70"/>
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="900" fill="#FAFAF7"/>
+  <!-- Background · cream substrate (brand v2 §3) -->
+  <rect width="800" height="900" fill="#FBF9F4"/>
 
-  <!-- Title block -->
-  <text x="400" y="48" text-anchor="middle" font-weight="bold" font-size="24" fill="#142840" font-family="Vollkorn, Cambria, Georgia, serif">The system-verse</text>
-  <text x="400" y="73" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">Future-state systems map · what runs the constellations and data core</text>
+  <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
+  <text x="400" y="50" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SYSTEMVERSE</text>
+  <text x="400" y="76" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Future-state systems map · what runs the constellations and data core</text>
 
   <!-- Application Layer label (floating just above the orbit) -->
-  <text x="400" y="200" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="3" font-family="system-ui, -apple-system, sans-serif">APPLICATION LAYER</text>
+  <text x="400" y="200" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">APPLICATION LAYER</text>
 
-  <!-- Integration mesh — fills annulus between data core (r=95) and application orbit inner edge (r=165) -->
-  <circle cx="400" cy="470" r="130" fill="none" stroke="url(#integration-mesh)" stroke-width="70"/>
-  <!-- Subtle boundary strokes on the integration annulus -->
-  <circle cx="400" cy="470" r="165" fill="none" stroke="#142840" stroke-width="1" stroke-opacity="0.30"/>
-  <circle cx="400" cy="470" r="95" fill="none" stroke="#142840" stroke-width="1" stroke-opacity="0.30"/>
-  <!-- Four cardinal integration-layer pillars on the radial centerline (r=130). Connectivity is implied by the mesh pattern itself. -->
-  <text x="400" y="343" text-anchor="middle" font-style="italic" font-size="11" fill="#142840" letter-spacing="2" font-weight="600" font-family="system-ui, -apple-system, sans-serif">DATA FLOW</text>
-  <text x="530" y="473" text-anchor="middle" font-style="italic" font-size="11" fill="#142840" letter-spacing="2" font-weight="600" font-family="system-ui, -apple-system, sans-serif">IDENTITY</text>
-  <text x="400" y="603" text-anchor="middle" font-style="italic" font-size="11" fill="#142840" letter-spacing="2" font-weight="600" font-family="system-ui, -apple-system, sans-serif">SECURITY</text>
-  <text x="270" y="473" text-anchor="middle" font-style="italic" font-size="11" fill="#142840" letter-spacing="2" font-weight="600" font-family="system-ui, -apple-system, sans-serif">AUDIT</text>
+  <!-- Integration fabric annulus · cross-hatch (charcoal + sun-gold) fills the substrate between data core (r=95) and application orbit inner edge (r=165). Implicit connectivity layer; spokes overlay it. -->
+  <circle cx="400" cy="470" r="130" fill="none" stroke="url(#integration-fabric)" stroke-width="70"/>
+  <circle cx="400" cy="470" r="165" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
+  <circle cx="400" cy="470" r="95" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
 
-  <!-- Data Core — matches constellation -->
-  <circle cx="400" cy="470" r="95" fill="#142840" stroke="#FACC15" stroke-width="3"/>
-  <text x="400" y="443" text-anchor="middle" font-weight="bold" font-size="20" fill="#FACC15" letter-spacing="3" font-family="system-ui, -apple-system, sans-serif">DATA CORE</text>
-  <line x1="365" y1="457" x2="435" y2="457" stroke="#FACC15" stroke-width="1.5" opacity="0.7"/>
-  <text x="400" y="475" text-anchor="middle" font-size="12" font-weight="600" fill="#FAFAF7" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
-  <text x="400" y="493" text-anchor="middle" font-size="10.5" fill="#FAFAF7" opacity="0.92" font-family="system-ui, -apple-system, sans-serif">Lakes · Integrations</text>
-  <text x="400" y="509" text-anchor="middle" font-size="10.5" fill="#FAFAF7" opacity="0.92" font-family="system-ui, -apple-system, sans-serif">BI · Data Tools</text>
+  <!-- Connectivity spokes · 16 thin charcoal lines from each system group center to the data core center. Drawn ABOVE the mesh so they read explicitly across the substrate; under data core + groups so the visible portion is just the segment crossing the fabric annulus. -->
+  <g stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.55" fill="none">
+    <line x1="400" y1="265" x2="400" y2="470"/>
+    <line x1="478.5" y1="280.5" x2="400" y2="470"/>
+    <line x1="545" y1="325" x2="400" y2="470"/>
+    <line x1="589.5" y1="391.5" x2="400" y2="470"/>
+    <line x1="605" y1="470" x2="400" y2="470"/>
+    <line x1="589.5" y1="548.5" x2="400" y2="470"/>
+    <line x1="545" y1="615" x2="400" y2="470"/>
+    <line x1="478.5" y1="659.5" x2="400" y2="470"/>
+    <line x1="400" y1="675" x2="400" y2="470"/>
+    <line x1="321.5" y1="659.5" x2="400" y2="470"/>
+    <line x1="255" y1="615" x2="400" y2="470"/>
+    <line x1="210.5" y1="548.5" x2="400" y2="470"/>
+    <line x1="195" y1="470" x2="400" y2="470"/>
+    <line x1="210.5" y1="391.5" x2="400" y2="470"/>
+    <line x1="255" y1="325" x2="400" y2="470"/>
+    <line x1="321.5" y1="280.5" x2="400" y2="470"/>
+  </g>
 
-  <!-- 16 functional system groups, tightly packed (touching) at orbit r=205, each r=40 -->
-  <!-- Gradient strokes rotate ga1→ga6 around the ring for visual variety -->
+  <!-- Integration fabric label (single, BOSS vocabulary) · drawn above spokes so it stays readable -->
+  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">INTEGRATION FABRIC</text>
 
-  <g><circle cx="400" cy="265" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="400" y="269" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">PLM</text></g>
-  <g><circle cx="478.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="478.5" y="278" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Production</text><text x="478.5" y="289" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">MES</text></g>
-  <g><circle cx="545" cy="325" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="545" y="322" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">QMS /</text><text x="545" y="333" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">LIMS</text></g>
-  <g><circle cx="589.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="589.5" y="395" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Compliance</text></g>
-  <g><circle cx="605" cy="470" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="605" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">WMS</text></g>
-  <g><circle cx="589.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="589.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">TMS</text></g>
-  <g><circle cx="545" cy="615" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="545" y="619" text-anchor="middle" font-size="9" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Sustainability</text></g>
-  <g><circle cx="478.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="478.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Safety</text></g>
-  <g><circle cx="400" cy="675" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="400" y="679" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">EAM</text></g>
-  <g><circle cx="321.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="321.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">ERP</text></g>
-  <g><circle cx="255" cy="615" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="255" y="619" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">HRIS</text></g>
-  <g><circle cx="210.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="210.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Procurement</text></g>
-  <g><circle cx="195" cy="470" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="195" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">FP&amp;A</text></g>
-  <g><circle cx="210.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="210.5" y="395" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Documents</text></g>
-  <g><circle cx="255" cy="325" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="255" y="329" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">Productivity</text></g>
-  <g><circle cx="321.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#142840" stroke-width="1.5"/><text x="321.5" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#142840" font-family="system-ui, -apple-system, sans-serif">CRM</text></g>
+  <!-- Data Core · sun-gold fill (matches AV-02 v2 treatment); charcoal text inside -->
+  <circle cx="400" cy="470" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
+  <text x="400" y="443" text-anchor="middle" font-weight="900" font-size="20" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA CORE</text>
+  <line x1="365" y1="457" x2="435" y2="457" stroke="#1F2937" stroke-width="1.5" opacity="0.5"/>
+  <text x="400" y="475" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
+  <text x="400" y="493" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
+  <text x="400" y="509" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
 
-  <!-- Stone rule + caption -->
+  <!-- 16 functional system groups · tightly packed (touching) at orbit r=205, each r=40 · cream fill, charcoal stroke -->
+  <g>
+    <g><circle cx="400" cy="265" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="400" y="269" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">PLM</text></g>
+    <g><circle cx="478.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="478.5" y="278" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Production</text><text x="478.5" y="289" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">MES</text></g>
+    <g><circle cx="545" cy="325" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="545" y="322" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">QMS /</text><text x="545" y="333" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">LIMS</text></g>
+    <g><circle cx="589.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="589.5" y="395" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Compliance</text></g>
+    <g><circle cx="605" cy="470" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="605" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">WMS</text></g>
+    <g><circle cx="589.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="589.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">TMS</text></g>
+    <g><circle cx="545" cy="615" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="545" y="619" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Sustainability</text></g>
+    <g><circle cx="478.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="478.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Safety</text></g>
+    <g><circle cx="400" cy="675" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="400" y="679" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">EAM</text></g>
+    <g><circle cx="321.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="321.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">ERP</text></g>
+    <g><circle cx="255" cy="615" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="619" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">HRIS</text></g>
+    <g><circle cx="210.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procurement</text></g>
+    <g><circle cx="195" cy="470" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="195" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">FP&amp;A</text></g>
+    <g><circle cx="210.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="395" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Documents</text></g>
+    <g><circle cx="255" cy="325" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="329" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Productivity</text></g>
+    <g><circle cx="321.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="321.5" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">CRM</text></g>
+  </g>
+
+  <!-- Stone rule + footer caption -->
   <line x1="180" y1="825" x2="620" y2="825" stroke="#7A756A" stroke-width="0.8"/>
-  <text x="400" y="845" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="system-ui, -apple-system, sans-serif">The substrate the constellations and data core run on · same shape every install</text>
+  <text x="400" y="845" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">The substrate the constellations and data core run on · same shape every install</text>
 </svg>
