@@ -42,24 +42,26 @@ type ParsedContact = z.infer<typeof ContactSchema>;
 
 function getIdigdataAppSupabase() {
   const url = process.env.IDIGDATA_APP_SUPABASE_URL;
-  const key =
-    process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY ??
-    process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
+  const serviceRoleKey = process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
+  const key = serviceRoleKey ?? anonKey;
 
   if (!url || !key) return null;
 
-  return createClient(url, key, {
-    auth: {
-      persistSession: false,
-      autoRefreshToken: false,
-    },
-  });
+  return {
+    canReturnInsertedId: Boolean(serviceRoleKey),
+    client: createClient(url, key, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    }),
+  };
 }
 
-async function writeCrmIntake(
-  data: ParsedContact,
-  normalizedSlugs: string[],
-  req: NextRequest,
+async function insertCrmRow(
+  table: "article_requests" | "contact_submissions",
+  row: Record<string, unknown>,
 ): Promise<string | null> {
   const supabase = getIdigdataAppSupabase();
   if (!supabase) {
@@ -67,26 +69,16 @@ async function writeCrmIntake(
     return null;
   }
 
-  const sourceUrl = req.headers.get("referer");
-  const userAgent = req.headers.get("user-agent");
-
-  if (data.interestType === "article_request") {
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-    const { data: inserted, error } = await supabase
-      .from("article_requests")
-      .insert({
-        requester_name: data.name,
-        requester_email: data.email,
-        requester_company: data.company.trim() || null,
-        requested_articles: normalizedSlugs,
-        expires_at: expiresAt,
-      })
+  if (supabase.canReturnInsertedId) {
+    const { data: inserted, error } = await supabase.client
+      .from(table)
+      .insert(row)
       .select("id")
       .single();
 
     if (error || !inserted) {
       console.error(
-        `contact form: article_requests insert failed: ${
+        `contact form: ${table} insert failed: ${
           error?.message ?? "no row returned"
         }`,
       );
@@ -96,9 +88,35 @@ async function writeCrmIntake(
     return inserted.id as string;
   }
 
-  const { data: inserted, error } = await supabase
-    .from("contact_submissions")
-    .insert({
+  const { error } = await supabase.client.from(table).insert(row);
+
+  if (error) {
+    console.error(`contact form: ${table} insert failed: ${error.message}`);
+  }
+
+  return null;
+}
+
+async function writeCrmIntake(
+  data: ParsedContact,
+  normalizedSlugs: string[],
+  req: NextRequest,
+): Promise<string | null> {
+  const sourceUrl = req.headers.get("referer");
+  const userAgent = req.headers.get("user-agent");
+
+  if (data.interestType === "article_request") {
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+    return insertCrmRow("article_requests", {
+        requester_name: data.name,
+        requester_email: data.email,
+        requester_company: data.company.trim() || null,
+        requested_articles: normalizedSlugs,
+        expires_at: expiresAt,
+      });
+  }
+
+  return insertCrmRow("contact_submissions", {
       name: data.name,
       email: data.email,
       role: data.role.trim() || "(not supplied)",
@@ -107,20 +125,7 @@ async function writeCrmIntake(
       source: `website-${data.interestType}`,
       source_url: sourceUrl,
       user_agent: userAgent,
-    })
-    .select("id")
-    .single();
-
-  if (error || !inserted) {
-    console.error(
-      `contact form: contact_submissions insert failed: ${
-        error?.message ?? "no row returned"
-      }`,
-    );
-    return null;
-  }
-
-  return inserted.id as string;
+    });
 }
 
 export async function POST(req: NextRequest) {
