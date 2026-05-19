@@ -106,26 +106,19 @@ export default function ApproachPage() {
           Find where the work actually moves.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          I begin with the people. Map the current workflows by functional
-          area. Decompose into the beehive&apos;s taskforce functional groups.
-          Locate the stakeholders who&rsquo;ll fund and approve the change.
-          Locate the SMEs &mdash; the operators who hold the unwritten
-          exception queues and the workarounds no one documented.{" "}
+          I begin with the people. The beehive maps where the work actually
+          moves &mdash; not the org chart, the operating reality. The senior
+          operators inside your business who&rsquo;ll lead the change are
+          already in this map. So are the SMEs holding the unwritten exception
+          queues and the workarounds no one documented.{" "}
           <strong className="font-semibold text-navy">
-            They&rsquo;re not &ldquo;resources.&rdquo; They&rsquo;re the atomic
-            units of work.
-          </strong>{" "}
-          Identify the senior operators who&rsquo;ll lead the change inside
-          your business. Read where the work actually moves and where it
-          stalls &mdash; not the org chart, the operating reality.
+            They&rsquo;re not resources. They&rsquo;re the atomic units of
+            work.
+          </strong>
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          <strong className="font-semibold text-navy">
-            The enablement thread starts here and runs through every layer that follows.
-          </strong>{" "}
-          Each layer transfers capability to your team. By engagement close,
-          your operators own what we built, can extend it, and don&rsquo;t need
-          me to do it. Exit-by-design at the workforce layer.
+          Every layer that follows transfers capability to your team. By
+          engagement close, your operators own what we built.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
           <em className="italic">Scope option:</em>{" "}when the IS department itself
@@ -137,8 +130,8 @@ export default function ApproachPage() {
         <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/diagrams/beehive.svg"
-            alt="The beehive — process flows × functional groups; six BPFs feed the operating fabric, MDM and the Common Data Model at the gold-on-navy center hex"
+            src="/diagrams/beehive-teaser.svg"
+            alt="The beehive — workforce and functional groups · operating fabric structural shape (teaser variant · full diagram in Article 01)"
             width={540}
             height={700}
             className="w-full h-auto"
@@ -187,27 +180,26 @@ export default function ApproachPage() {
           <strong className="font-semibold text-navy">
             your culture is fiercely unique. Your operating mechanics are entirely standard.
           </strong>{" "}
-          Every business runs on the same six process flows:{" "}
-          <strong className="font-bold">P2P</strong> (procure-to-pay),{" "}
-          <strong className="font-bold">O2C</strong> (order-to-cash),{" "}
-          <strong className="font-bold">P2M</strong> (plan-to-make),{" "}
-          <strong className="font-bold">S2S</strong> (systems-to-support),{" "}
-          <strong className="font-bold">D2R</strong> (data-to-reporting), and{" "}
-          <strong className="font-bold">MDM</strong>{" "}(master data
-          management). Different industries, different software stacks &mdash;
-          same six constellations every time.
+          Every business runs on the same six.{" "}
+          <strong className="font-bold">P2P</strong>.{" "}
+          <strong className="font-bold">O2C</strong>.{" "}
+          <strong className="font-bold">P2M</strong>.{" "}
+          <strong className="font-bold">S2S</strong>.{" "}
+          <strong className="font-bold">D2R</strong>.{" "}
+          <strong className="font-bold">MDM</strong>. Different industries,
+          different software stacks &mdash; same six constellations every
+          install.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          Same six every install. The makeup of process-element groups,
-          clusters, and components differs per operator. The 6 Process
-          Constellations are the grammar for reading where load is, where
-          gaps are, and where the new architecture needs to land.
+          The makeup differs per operator. Reading where they actually run for{" "}
+          <em className="italic">your</em> business is the diagnosis.
+          That&rsquo;s the conversation.
         </p>
         <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/diagrams/six-constellations.svg"
-            alt="The 6 Process Constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation"
+            src="/diagrams/six-constellations-teaser.svg"
+            alt="The 6 Process Constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core (teaser variant · full diagram in Article 02)"
             width={810}
             height={940}
             className="w-full h-auto"
@@ -226,30 +218,22 @@ export default function ApproachPage() {
           Design around the architecture, not the vendor.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          Because the 6 Process Constellations expose where operating load
-          actually lives, the system-verse can be designed around the
-          business instead of around vendors. Sovereign Data Core at center.
-          Integration mesh. Application layer of functional system groups.
-          The system-verse supports the Business Process Flows via the 6
-          Process Constellations &mdash; built TO, not bought-and-hoped-into.
+          The system-verse is the architecture, not the vendor catalog.
+          Sovereign Data Core at the center &middot; the surrounding
+          functional system groups slot in around it. The architecture is the
+          artifact the business owns and operates after handoff.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          The architecture is the artifact the business owns and operates after
-          handoff.{" "}
           <strong className="font-semibold text-navy">
-            This is the plug-and-play architectural inversion: the sovereign
-            Data Core is permanent; the surrounding functional system groups
-            are modular commodities.
-          </strong>{" "}
-          Vendor decisions slot in around the architecture, not the other way
-          around. Apps come and go. The core stays. The vendors stay vendors;
-          the architecture stays yours.
+            The principle: the architecture stays &middot; the apps are
+            commodities &middot; the vendors stay vendors. Yours, not theirs.
+          </strong>
         </p>
         <figure className="mt-10 max-w-3xl mx-auto">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/diagrams/system-verse.svg"
-            alt="The system-verse — future-state systems map; sovereign Data Core at center, integration mesh, application layer of 16 functional system groups"
+            src="/diagrams/system-verse-teaser.svg"
+            alt="The system-verse — sovereign Data Core at center · integration fabric · application layer (teaser variant · full diagram in Article 02)"
             width={800}
             height={900}
             className="w-full h-auto"
@@ -271,16 +255,14 @@ export default function ApproachPage() {
         <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
           The PM Suite is the operating layer &mdash; the build-observe-iterate
           loop made concrete. It runs the framework against your reality,
-          directs the bench, and holds the cadence sprint after sprint. The
-          bench is the virtual network of senior independent specialists
-          I&rsquo;ve assembled across fifty engagements &mdash; engineers,
-          data analysts, architects, project managers &mdash; pulled in for
-          the exact scope, off when done.{" "}
+          directs the bench, and holds the cadence. The bench is a virtual
+          network of senior independent specialists &mdash; engineers, data
+          analysts, architects, project managers &mdash; pulled in for the
+          exact scope, off when done.{" "}
           <strong className="font-semibold text-navy">
             Firm architecture, not firm size.
           </strong>{" "}
-          No carried bench. No utilization pressure. The right capacity for
-          the right sprint.
+          The right capacity for the right sprint.
         </p>
 
         <div className="mt-8 max-w-[820px] space-y-6">
@@ -290,11 +272,9 @@ export default function ApproachPage() {
             </p>
             <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
               Transformations stall because organizations diffuse
-              accountability. Thirty years taught me where organizational
-              inertia actually forms &mdash; and how to apply force against
-              it. The PM Suite concentrates the force. The ramrod is the
-              operator-pattern that moves the work through resistance until
-              the new architecture holds its own weight.
+              accountability. Thirty years taught me where the inertia forms
+              &mdash; and how to concentrate the force against it. The PM
+              Suite is that concentration.
             </p>
           </div>
 
@@ -303,11 +283,9 @@ export default function ApproachPage() {
               Agile/Fall discipline
             </p>
             <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
-              Agile speed inside fall rigor. Fourteen-day sprints, daily
-              standups, retros, inside capital-defensible gates and
-              audit-clean phase progression. The CFO gets the structure their
-              auditors need. The operators get the iteration speed the work
-              needs.
+              Agile speed inside fall rigor. The CFO gets the audit-clean
+              phase progression their auditors need. The operators get the
+              iteration cadence the work needs.
             </p>
           </div>
 
@@ -316,9 +294,7 @@ export default function ApproachPage() {
               Agentic acceleration
             </p>
             <p className="text-[16px] md:text-[17px] text-ink leading-relaxed">
-              Agentics compresses the observe-adjust cycle further. The PM
-              Suite already runs shorter loops than traditional consulting
-              can manage. Agentics shortens them again. See{" "}
+              Agentics shortens the observe-adjust cycle further. See{" "}
               <Link
                 href="/agentics/"
                 className="text-navy font-semibold underline underline-offset-2 hover:text-aubergine"

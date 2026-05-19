@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sv-teaser-title sv-teaser-desc">
+  <title id="sv-teaser-title">AV-03 · The Systemverse · TEASER variant · brand-v2 · author-v1 · 2026-05-19</title>
+  <desc id="sv-teaser-desc">Public-tier teaser variant of the canonical system-verse. Structural signature only: 3 layers · sovereign gold data core at center · integration fabric annulus surrounding it · outer ring of 16 unnamed system-group circles (number preserved to match canonical · names stripped). Spokes radiate from each ring circle inward to suggest constant traffic to the core. Strips per-group naming (PLM · Production MES · QMS · Compliance · WMS · TMS · Sustainability · Safety · EAM · ERP · HRIS · Procurement · FP&amp;A · Documents · Productivity · CRM) and architectural-inversion mechanic copy present in the canonical. Reader sees the 3-layer architecture exists without leaving with which specific systems sit where. Sibling to canonical system-verse.svg at boss/assets/ which remains the gated-tier home for articles + Phase 0 + engagement. Per idigdata memo-087 IP-gate-fidelity discipline.</desc>
+
+  <defs>
+    <!-- Integration fabric mesh (charcoal cross-hatch at low opacity) -->
+    <pattern id="sv-teaser-mesh" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1F2937" stroke-width="0.7" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Background · cream substrate -->
+  <rect width="800" height="820" fill="#FBF9F4"/>
+
+  <!-- Title block -->
+  <text x="400" y="50" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SYSTEMVERSE</text>
+  <text x="400" y="78" text-anchor="middle" font-style="italic" font-size="14" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Future-state systems landscape · one sovereign core · integration fabric · application orbit</text>
+
+  <!-- Spokes (radial connectivity · system groups → core) · drawn first under everything -->
+  <g>
+    <line x1="400.0" y1="305.0" x2="400.0" y2="278.0" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="463.1" y1="317.6" x2="473.5" y2="292.6" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="516.7" y1="353.3" x2="535.8" y2="334.2" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="552.4" y1="406.9" x2="577.4" y2="396.5" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="565.0" y1="470.0" x2="592.0" y2="470.0" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="552.4" y1="533.1" x2="577.4" y2="543.5" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="516.7" y1="586.7" x2="535.8" y2="605.8" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="463.1" y1="622.4" x2="473.5" y2="647.4" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="400.0" y1="635.0" x2="400.0" y2="662.0" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="336.9" y1="622.4" x2="326.5" y2="647.4" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="283.3" y1="586.7" x2="264.2" y2="605.8" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="247.6" y1="533.1" x2="222.6" y2="543.5" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="235.0" y1="470.0" x2="208.0" y2="470.0" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="247.6" y1="406.9" x2="222.6" y2="396.5" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="283.3" y1="353.3" x2="264.2" y2="334.2" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+    <line x1="336.9" y1="317.6" x2="326.5" y2="292.6" stroke="#1F2937" stroke-width="1" stroke-opacity="0.35"/>
+  </g>
+
+  <!-- Integration fabric annulus (cross-hatch ring around core) -->
+  <circle cx="400" cy="470" r="130" fill="none" stroke="url(#sv-teaser-mesh)" stroke-width="70"/>
+  <circle cx="400" cy="470" r="165" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
+  <circle cx="400" cy="470" r="95" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
+
+  <!-- Sovereign data core (gold · unlabeled mechanically · brand altitude only) -->
+  <circle cx="400" cy="470" r="85" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
+  <text x="400" y="465" text-anchor="middle" font-weight="900" font-size="18" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA</text>
+  <text x="400" y="488" text-anchor="middle" font-weight="900" font-size="18" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">CORE</text>
+
+  <!-- Outer ring · 16 unnamed system-group circles (structural shape · no names) -->
+  <g>
+    <circle cx="400.0" cy="238.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="488.8" cy="255.7" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="564.0" cy="306.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="614.3" cy="381.2" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="632.0" cy="470.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="614.3" cy="558.8" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="564.0" cy="634.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="488.8" cy="684.3" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="400.0" cy="702.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="311.2" cy="684.3" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="236.0" cy="634.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="185.7" cy="558.8" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="168.0" cy="470.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="185.7" cy="381.2" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="236.0" cy="306.0" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+    <circle cx="311.2" cy="255.7" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
+  </g>
+
+  <!-- Bottom rule + caption -->
+  <line x1="200" y1="775" x2="600" y2="775" stroke="#7A756A" stroke-width="0.8"/>
+  <text x="400" y="798" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Standard 3-layer frame · bespoke fill per operator · full landscape available via engagement.</text>
+</svg>

@@ -103,86 +103,13 @@ export default function AgenticsPage() {
             partner economics model, and so the substrate is yours at
             handoff.
           </p>
-          <p className="font-semibold text-navy pt-2">
-            Five questions to ask before you sign:
+          <p className="pt-2">
+            I look for whether the proposal understands the data substrate,
+            whether production observability is real, and whether the
+            commercial model rewards theater or operating value. The other
+            tells only show up once you read the proposal against the
+            business.
           </p>
-          <ol className="space-y-4 pt-1 list-none">
-            <li className="grid grid-cols-[24px_1fr] gap-4">
-              <span className="font-vollkorn italic font-bold text-gold text-[18px] leading-[1.3]">
-                1
-              </span>
-              <span>
-                <strong className="font-semibold">
-                  Are these actually agents, or wrapped prompts?
-                </strong>{" "}
-                Pricing reveals the truth. True autonomous systems tailored
-                to your business can&rsquo;t be delivered at $250 setup fees
-                and $497 monthly retainers. If the pricing looks like SaaS,
-                the product is templated retrieval with system prompts
-                &mdash; not agentic engineering.
-              </span>
-            </li>
-            <li className="grid grid-cols-[24px_1fr] gap-4">
-              <span className="font-vollkorn italic font-bold text-gold text-[18px] leading-[1.3]">
-                2
-              </span>
-              <span>
-                <strong className="font-semibold">
-                  What does the data substrate look like underneath?
-                </strong>{" "}
-                If the proposal doesn&rsquo;t name the semantic-layer work
-                &mdash; mapping database columns to the natural-language
-                business context the agent has to reason against &mdash;
-                the vendor hasn&rsquo;t done it. That&rsquo;s
-                multi-month engineering, not a workshop.
-              </span>
-            </li>
-            <li className="grid grid-cols-[24px_1fr] gap-4">
-              <span className="font-vollkorn italic font-bold text-gold text-[18px] leading-[1.3]">
-                3
-              </span>
-              <span>
-                <strong className="font-semibold">
-                  Where&rsquo;s the dark data?
-                </strong>{" "}
-                Most enterprises have valuable data sitting in low-cost
-                storage that was never structured for agentic consumption.
-                Pre-processing it is real engineering work that aggressive
-                ROI timelines pretend doesn&rsquo;t exist.
-              </span>
-            </li>
-            <li className="grid grid-cols-[24px_1fr] gap-4">
-              <span className="font-vollkorn italic font-bold text-gold text-[18px] leading-[1.3]">
-                4
-              </span>
-              <span>
-                <strong className="font-semibold">
-                  How will you observe the agents themselves?
-                </strong>{" "}
-                Autonomous systems need parallel observability
-                infrastructure &mdash; metrics, logs, traces, audit trails,
-                guardrails against hallucination, the human-in-the-loop
-                layer. If the vendor doesn&rsquo;t name it, you&rsquo;ll be
-                flying blind once the agents are in production.
-              </span>
-            </li>
-            <li className="grid grid-cols-[24px_1fr] gap-4">
-              <span className="font-vollkorn italic font-bold text-gold text-[18px] leading-[1.3]">
-                5
-              </span>
-              <span>
-                <strong className="font-semibold">
-                  What happens when the environment changes?
-                </strong>{" "}
-                &ldquo;Continuous learning loop&rdquo; is marketing
-                language. Operational reality: the moment data structures
-                shift, agents ingest garbage and execute on it. Maintenance
-                is constant. Anyone selling
-                &ldquo;set-and-forget&rdquo; hasn&rsquo;t run autonomous
-                systems in live production.
-              </span>
-            </li>
-          </ol>
           <p className="pt-3">
             Talent design, board-ready ROI, vendor portfolio sequencing
             &mdash; all flow from these. The substrate decides whether the
@@ -459,11 +386,10 @@ export default function AgenticsPage() {
             Multi-lab, multi-vendor by design.
           </p>
           <p className="font-body text-[14.5px] md:text-[15.5px] leading-[1.7] text-navy/80">
-            Cowork &middot; Claude Code &middot; Claude in VS Code &middot;
-            Claude in Chrome &middot; MCP &middot; Agent SDK &middot;
-            Anthropic (primary) &middot; OpenAI (active rotation) &middot;
-            multi-vendor council pattern &middot; Vercel &middot; Supabase
-            &middot; GitHub.
+            Anthropic and OpenAI in active rotation. MCP and Agent SDK as
+            protocols. Multi-vendor council pattern for the harder calls. The
+            tools are how I work the substrate &mdash; but the substrate is
+            what governs.
           </p>
         </div>
       </section>

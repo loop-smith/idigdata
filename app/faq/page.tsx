@@ -51,10 +51,10 @@ const FAQ: QA[] = [
   },
   {
     q: "What are the Six Process Constellations?",
-    a: "The exhaustive operating-process spine idigdata uses across every transformation. Six constellations cover every business operation: P2P (procure-to-pay — buys), O2C (order-to-cash — sells), P2M (plan-to-make — makes), D2R (data-to-report — true business intelligence), MDM (master data management — the substrate), and S2S (systems-to-support — everything-else infrastructure). Same six in every install; the makeup of process-element groups, clusters, and components differs per operator. The constellation framework lets the FDO decompose any business operation cleanly without reinventing the spine each engagement.",
+    a: "The exhaustive operating-process spine idigdata uses across every transformation. Six constellations cover every business operation: P2P (buys), O2C (sells), P2M (makes), D2R (business intelligence), MDM (master data), and S2S (everything-else). Same six in every install; the makeup differs per operator. See Article 02 for how the constellations get applied in an engagement.",
     aHtml: (
       <>
-        The exhaustive operating-process spine idigdata uses across every transformation. Six constellations cover every business operation: <strong>P2P</strong> (procure-to-pay — buys), <strong>O2C</strong> (order-to-cash — sells), <strong>P2M</strong> (plan-to-make — makes), <strong>D2R</strong> (data-to-report — true business intelligence), <strong>MDM</strong> (master data management — the substrate), and <strong>S2S</strong> (systems-to-support — everything-else infrastructure). Same six in every install; the makeup of process-element groups, clusters, and components differs per operator. The constellation framework lets the FDO decompose any business operation cleanly without reinventing the spine each engagement.
+        The exhaustive operating-process spine idigdata uses across every transformation. Six constellations cover every business operation: <strong>P2P</strong> (buys), <strong>O2C</strong> (sells), <strong>P2M</strong> (makes), <strong>D2R</strong> (business intelligence), <strong>MDM</strong> (master data), and <strong>S2S</strong> (everything-else). Same six in every install; the makeup differs per operator. See Article 02 for how the constellations get applied in an engagement.
       </>
     ),
   },

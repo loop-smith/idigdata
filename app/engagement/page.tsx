@@ -263,22 +263,18 @@ export default function EngagementPage() {
           <p>
             A transformation of this scope is a capital investment, not a P&amp;L
             hit. Build-phase costs — including internal labor — capitalize to
-            the balance sheet under ASC 350-40 / equivalent. At go-live, the
-            asset moves to depreciation; the standard period for major
-            enterprise transformation is{" "}
-            <strong className="font-semibold text-navy">ten years</strong>,
-            field-validated. The implication: a multi-year investment
+            the balance sheet. At go-live, the asset moves to depreciation over
+            a long period. The implication: a multi-year investment
             doesn&rsquo;t crater two years of earnings during the build, and
-            post-go-live impact smooths over a decade.
+            the impact smooths across a decade.
           </p>
           <p>
             <strong className="font-semibold text-navy">
               CFO-defensible. Audit-clean. Built into BOSS&rsquo;s Delivery
               pillar from day one.
             </strong>{" "}
-            The cap treatment is real, traceable, and the receiving CFO carries
-            it forward post-handoff — no consultant in the loop on permanent
-            accounting decisions.
+            The cap treatment is the CFO&rsquo;s conversation — I bring the
+            substance, they own the decision.
           </p>
         </div>
       </section>

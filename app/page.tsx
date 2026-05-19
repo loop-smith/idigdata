@@ -38,38 +38,34 @@ const CONDITIONS = [
   {
     n: "01",
     h: "Disparate legacy systems",
-    body:
-      "Accumulated through years of point solutions and acquisitions. ERP, WMS, MES, CRM, EMR — none of them quite talk to each other. Each rollout left another integration debt.",
+    body: "ERP, WMS, MES, CRM, EMR. None of them quite talk to each other.",
   },
   {
     n: "02",
     h: "No common data model",
-    body:
-      "Every system carries its own version of master data. The same customer has five different records. The CFO knows. The auditor will too.",
+    body: "The same customer has five different records. The CFO knows.",
   },
   {
     n: "03",
     h: "Ungoverned, dirty data",
     body:
-      "Integrity issues compound silently. Three-way match exception rates climb. Intercompany reconciliation eats senior controller time. The financial impact lands downstream where nobody traces it back to the data layer.",
+      "Three-way match exceptions climb. Intercompany reconciliation eats controller time.",
   },
   {
     n: "04",
     h: "Partners selling ERP-centric, customer-for-life",
     body:
-      "PowerPoints pitching the vendor's roadmap. Implementation-partner channel running on billable hours. Managed-services tail baked into the close. They sell tooling. They don't sell operator outcomes.",
+      "Implementation-partner billable hours. Managed-services tail baked into the close.",
   },
   {
     n: "05",
     h: "Vendors who never learned the business",
-    body:
-      "Configuration expertise, not operating expertise. They know the platform's switches. They don't know your workflows, your people, your real cost structures, or your stakeholder politics.",
+    body: "Configuration expertise, not operating expertise.",
   },
   {
     n: "06",
     h: "Sparse PM, sparse change, sparse stakeholder discipline",
-    body:
-      "Project management thin. Change management treated as an afterthought. The people who actually run the work aren't in the taskforces. Stakeholders disengage. Adoption decays after go-live — if go-live ever lands.",
+    body: "The people who actually run the work aren't in the taskforces.",
   },
 ];
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 810 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-teaser-title six-teaser-desc">
+  <title id="six-teaser-title">AV-02 · The Six Process Constellations · TEASER variant · brand-v2 · author-v1 · 2026-05-19</title>
+  <desc id="six-teaser-desc">Public-tier teaser variant of the canonical six process constellations. Structural signature only: 6 named constellation circles (P2P · O2C · P2M · S2S · D2R · MDM) arranged hexagonally around a gold sovereign data core at center. Strips BPSc weight bands · per-constellation subtitles (Procure to Pay etc.) · role descriptions · italic captions present in the canonical. Acronyms preserved because they appear at framework altitude elsewhere on idigdata (FAQ #10 · brief) so showing them here is not new exposure · structural arrangement IS the signature without naming what flows through each. Sibling to canonical six-constellations.svg at boss/assets/ (now at author-v2.4 with S2S subtitle + 4-line layout) which remains the gated-tier home for articles + Phase 0 + engagement. Per idigdata memo-087 IP-gate-fidelity discipline.</desc>
+
+  <!-- Background · cream substrate -->
+  <rect width="810" height="800" fill="#FBF9F4"/>
+
+  <!-- Title block -->
+  <text x="405" y="55" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">SIX PROCESS CONSTELLATIONS</text>
+  <text x="405" y="82" text-anchor="middle" font-style="italic" font-size="14" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Six universal categories · one sovereign data core · every business process maps to one</text>
+
+  <!-- Spokes (subtle · same as canonical · charcoal at opacity 0.22) -->
+  <g stroke="#1F2937" stroke-width="2" stroke-opacity="0.22" fill="none">
+    <line x1="405" y1="340" x2="405" y2="262"/>
+    <line x1="478.3" y1="383.5" x2="552.5" y2="345"/>
+    <line x1="478.3" y1="466.5" x2="552.5" y2="505"/>
+    <line x1="405" y1="510" x2="405" y2="588"/>
+    <line x1="331.7" y1="466.5" x2="257.5" y2="505"/>
+    <line x1="331.7" y1="383.5" x2="257.5" y2="345"/>
+  </g>
+
+  <!-- Sovereign data core (gold · unlabeled "DATA CORE" label only · no mechanic detail) -->
+  <circle cx="405" cy="425" r="85" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
+  <text x="405" y="420" text-anchor="middle" font-weight="900" font-size="18" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA</text>
+  <text x="405" y="442" text-anchor="middle" font-weight="900" font-size="18" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">CORE</text>
+
+  <!-- 6 constellation circles · acronyms only · NO weight bands · NO subtitle prose -->
+  <!-- D2R · 12 o'clock -->
+  <circle cx="405" cy="180" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="405" y="190" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">D2R</text>
+
+  <!-- O2C · 2 o'clock -->
+  <circle cx="630.5" cy="310" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="630.5" y="320" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">O2C</text>
+
+  <!-- P2M · 4 o'clock -->
+  <circle cx="630.5" cy="540" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="630.5" y="550" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2M</text>
+
+  <!-- MDM · 6 o'clock -->
+  <circle cx="405" cy="670" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="405" y="680" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text>
+
+  <!-- P2P · 8 o'clock -->
+  <circle cx="179.5" cy="540" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="179.5" y="550" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2P</text>
+
+  <!-- S2S · 10 o'clock -->
+  <circle cx="179.5" cy="310" r="78" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+  <text x="179.5" y="320" text-anchor="middle" font-weight="900" font-size="32" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">S2S</text>
+
+  <!-- Bottom rule + caption -->
+  <line x1="200" y1="755" x2="610" y2="755" stroke="#7A756A" stroke-width="0.8"/>
+  <text x="405" y="778" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Same six categories every install · per-category depth available via engagement.</text>
+</svg>
