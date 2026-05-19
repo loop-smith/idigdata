@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { Resend } from "resend";
 
@@ -35,6 +36,91 @@ const ARTICLE_TITLES: Record<string, string> = {
 
 function humanTitleFor(slug: string): string {
   return ARTICLE_TITLES[slug] ?? slug;
+}
+
+type ParsedContact = z.infer<typeof ContactSchema>;
+
+function getIdigdataAppSupabase() {
+  const url = process.env.IDIGDATA_APP_SUPABASE_URL;
+  const key =
+    process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY ??
+    process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
+
+  if (!url || !key) return null;
+
+  return createClient(url, key, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+    },
+  });
+}
+
+async function writeCrmIntake(
+  data: ParsedContact,
+  normalizedSlugs: string[],
+  req: NextRequest,
+): Promise<string | null> {
+  const supabase = getIdigdataAppSupabase();
+  if (!supabase) {
+    console.warn("contact form: idigdata-app Supabase env not configured");
+    return null;
+  }
+
+  const sourceUrl = req.headers.get("referer");
+  const userAgent = req.headers.get("user-agent");
+
+  if (data.interestType === "article_request") {
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+    const { data: inserted, error } = await supabase
+      .from("article_requests")
+      .insert({
+        requester_name: data.name,
+        requester_email: data.email,
+        requester_company: data.company.trim() || null,
+        requested_articles: normalizedSlugs,
+        expires_at: expiresAt,
+      })
+      .select("id")
+      .single();
+
+    if (error || !inserted) {
+      console.error(
+        `contact form: article_requests insert failed: ${
+          error?.message ?? "no row returned"
+        }`,
+      );
+      return null;
+    }
+
+    return inserted.id as string;
+  }
+
+  const { data: inserted, error } = await supabase
+    .from("contact_submissions")
+    .insert({
+      name: data.name,
+      email: data.email,
+      role: data.role.trim() || "(not supplied)",
+      company: data.company.trim() || null,
+      message: data.message.trim() || "(no message supplied)",
+      source: `website-${data.interestType}`,
+      source_url: sourceUrl,
+      user_agent: userAgent,
+    })
+    .select("id")
+    .single();
+
+  if (error || !inserted) {
+    console.error(
+      `contact form: contact_submissions insert failed: ${
+        error?.message ?? "no row returned"
+      }`,
+    );
+    return null;
+  }
+
+  return inserted.id as string;
 }
 
 export async function POST(req: NextRequest) {
@@ -152,5 +238,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  return NextResponse.json({ ok: true });
+  const crmId = await writeCrmIntake(parsed.data, normalizedSlugs, req);
+
+  return NextResponse.json({ ok: true, lead_id: crmId });
 }
