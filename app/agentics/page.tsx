@@ -322,7 +322,7 @@ export default function AgenticsPage() {
               <strong className="font-semibold">BOSS</strong> productizes
               the customer common data model and the six-constellation
               process map &mdash; institutionalized in code. Built,
-              deployed, runs in production. The operator owns it at
+              implemented, running in production. The operator owns it at
               handoff. No managed-services tail. No platform tie-in.
             </p>
             <p className="font-vollkorn italic font-medium text-navy text-[15px] leading-[1.5] pt-1 border-t border-navy/10">

@@ -115,7 +115,7 @@ export default function EngagementPage() {
               <>
                 <p>
                   Engagements where a specific lever needs moving: unblock a
-                  stalled ERP, deploy a production agent on a critical
+                  stalled ERP, ship a production agent on a critical
                   bottleneck, stand up the business-owned data substrate
                   alongside the existing tier-1 stack.
                 </p>
@@ -147,8 +147,8 @@ export default function EngagementPage() {
                   <em className="not-italic italic font-normal">
                     I fix the substrate so agents work.
                   </em>{" "}
-                  Five production agentic systems already shipped at a mid-market
-                  beverage CPG operator &mdash; named functions in supply chain,
+                  Five production agentic systems shipped at a mid-market
+                  beverage CPG operator, described at pattern level due to IP constraints &mdash; named functions in supply chain,
                   finance, and operations. Not demos. Production.
                 </p>
                 <p className="mt-3">

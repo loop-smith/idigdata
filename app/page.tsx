@@ -143,7 +143,7 @@ export default function HomePage() {
           The problem isn&rsquo;t effort
         </p>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
-            Sixty percent of transformations fail. The effort was there. The orchestration wasn&rsquo;t.
+            Eighty-eight percent of transformations fall short of their ambitions. The effort was there. The orchestration wasn&rsquo;t.
           </h2>
           <p className="font-vollkorn italic font-normal text-warm-gray text-[16px] md:text-[18px] leading-[1.55] mb-8 max-w-[64ch]">
             Every operator&rsquo;s team I walk into is working hard. The
@@ -342,8 +342,7 @@ export default function HomePage() {
             versed across ERP, WMS, MES, EMR, and CRM/CPQ — the five primary
             system families where mid-market operators run their work.
             Fifty-plus engagements, fifteen of them full multi-year
-            transformations, plus five production agentic systems shipped in
-            the most recent program.
+            transformations, plus five production agentic systems shipped at a mid-market beverage CPG operator, described at pattern level due to IP constraints.
           </p>
 
           <p className="font-vollkorn italic font-normal text-navy text-[17px] md:text-[19px] leading-[1.45] mb-6 pt-6 border-t border-navy/15">
@@ -360,7 +359,7 @@ export default function HomePage() {
                   <>
                     Mid-market operator. $8M ERP implementation stalled at
                     month seventeen of an eighteen-month plan. Partner running
-                    the vendor playbook. Stakeholders disengaged. No go-live
+                    the vendor playbook. No go-live
                     in sight. Brought in mid-stride as forward-deployed lead.{" "}
                     <b className="font-bold">
                       Six months later: go-live on the operator&rsquo;s
@@ -385,8 +384,7 @@ export default function HomePage() {
                     <b className="font-bold">
                       All systems to go-live in eighteen months for $5M. Same
                       scope. Half the spend. Six months faster.
-                    </b>{" "}
-                    The operator&rsquo;s team owned the asset from day one.
+                    </b>
                   </>
                 ),
                 orch:
@@ -400,8 +398,7 @@ export default function HomePage() {
                     Mid-market operator post-acquisition — combined revenue
                     around $350M. Two parallel ERPs. A WMS that didn&rsquo;t
                     talk to either. Finance teams in two cities operating on
-                    incompatible chart-of-accounts. Built a single delivery
-                    organization across both entities. Consolidated to a
+                    incompatible chart-of-accounts. Consolidated to a
                     unified ERP with integrated WMS in eleven months. Master
                     data governed in one place under a Common Data Model the
                     operator owns.{" "}

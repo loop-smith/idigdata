@@ -78,7 +78,7 @@ export default function ApproachPage() {
           Diagnosis &middot; invention
         </p>
         <p className="max-w-[820px] font-vollkorn text-navy text-[22px] md:text-[26px] leading-[1.32] tracking-[-0.005em]">
-          Sixty percent of transformations fail. The pattern repeats: people
+          Eighty-eight percent of transformations fall short of their ambitions. The pattern repeats: people
           change, systems change, processes change, delivery changes &mdash;
           each in a different workstream, none binding to the others.{" "}
           <strong className="font-bold">

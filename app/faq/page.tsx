@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "FAQ — idigdata",
   description:
-    "Forward-Deployed Operator for $100M – $750M operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+    "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
   alternates: { canonical: "/faq/" },
 };
 
@@ -19,15 +19,15 @@ const FAQ: QA[] = [
   },
   {
     q: "What is idigdata?",
-    a: "An independent practice for business system transformation. Founded 2016 — decade-long operating history. The practice works with mid-market operators ($100M–$1B revenue) running enterprise-scale transformations across ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS. Two core threads run under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. The deliverable at engagement close is a fully deployed and maintained business-owned data substrate; the exit is part of the shape, not a bug to manage.",
+    a: "An independent practice for business system transformation. Founded 2016 — decade-long operating history. The practice works with mid-market operators ($100M–$1B revenue) running enterprise-scale transformations across ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS. Two core threads run under every engagement: ERP as the financial and accounting backbone, compliance and risk as the foundation. The deliverable at engagement close is a fully implemented, maintained, business-owned data substrate; the exit is part of the shape, not a bug to manage.",
   },
   {
     q: "What is a Forward-Deployed Operator?",
-    a: "Senior leader who works inside the customer environment, sees with operator eyes, and ships against operator outcomes. The Forward-Deployed Operator (FDO) sits at the senior-leadership altitude — distinct from a Forward-Deployed Engineer (FDE), which sits at the engineering altitude. The FDO embeds, builds, and develops the systems and people to leave it. Two practice areas at two altitudes of one thesis: V1 mid-market operator transformation, V2 applied agentics at lab and PE altitude. Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) both ship engineer-altitude help with platform tie-in; the FDO is operator-altitude help with a business-owned substrate and a defined exit.",
+    a: "Senior leader who works inside the customer environment, sees with operator eyes, and ships against operator outcomes. The Forward-Deployed Operator (FDO) sits at the senior-leadership altitude — distinct from a Forward-Deployed Engineer (FDE), which sits at the engineering altitude. The FDO embeds, builds, and develops the systems and people to leave it. Two practice areas at two altitudes of one thesis: V1 mid-market operator transformation, V2 applied agentics at lab and PE altitude. Anthropic's and OpenAI's forward-deployed-engineer programs both ship engineer-altitude help with platform tie-in; the FDO is operator-altitude help with a business-owned substrate and a defined exit.",
   },
   {
     q: "How is idigdata different from McKinsey or the Big 4?",
-    a: "McKinsey and the Big 4 ship consultant-altitude recommendations. idigdata ships operator-altitude deliverables — the systems, the data substrate, the people layer that owns it. The substantive difference: at engagement close they hand you a deck; idigdata hands you a deployed, maintained, business-owned system. Structurally idigdata carries no bench, no managed-services tail, no client lock-in. Pricing reflects the structural lean — no premium fees subsidizing infrastructure idigdata doesn't carry.",
+    a: "McKinsey and the Big 4 ship consultant-altitude recommendations. idigdata ships operator-altitude deliverables — the systems, the data substrate, the people layer that owns it. The substantive difference: at engagement close they hand you a deck; idigdata hands you an implemented, maintained, business-owned system. Structurally idigdata carries no bench, no managed-services tail, no client lock-in. Pricing reflects the structural lean — no premium fees subsidizing infrastructure idigdata doesn't carry.",
   },
   {
     q: "How is idigdata different from Anthropic's FDE program or OpenAI's Deployment Company?",
@@ -35,7 +35,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What does \"exit-by-design\" mean?",
-    a: "The engagement has a defined exit. The deliverable is a fully deployed and maintained asset, owned by the business at handoff — not an engineer who stays forever. Exit is the shape of the work, not a bug to manage. This is structurally distinct from the Palantir-originated FDE pattern that Anthropic and OpenAI are now scaling, which embeds permanently by default. The positive value proposition is the asset transfer — not the absence of capture.",
+    a: "The engagement has a defined exit. The deliverable is a fully operating, maintained asset, owned by the business at handoff — not an engineer who stays forever. Exit is the shape of the work, not a bug to manage. This is structurally distinct from the Palantir-originated FDE pattern that Anthropic and OpenAI are now scaling, which embeds permanently by default. The positive value proposition is the asset transfer — not the absence of capture.",
   },
   {
     q: "What does \"business-owned substrate\" mean?",
@@ -60,11 +60,11 @@ const FAQ: QA[] = [
   },
   {
     q: "Has idigdata actually shipped agentic systems?",
-    a: "Yes. Five shipped agentic builds in production at brand scale, described at the pattern level due to IP constraints. The 2-year applied-agentics arc layers on top of 30 years of business system transformation — the receipts from V1 are what make the agents work in customer reality rather than in demo. This is the rare credential most AI advisory in the market doesn't have. Anthropic's safety research informs how idigdata frames agentic deployment risk; the practice cites the research rather than the lab leadership directly.",
+    a: "Yes. Five production agentic systems shipped at a mid-market beverage CPG operator, described at pattern level due to IP constraints. The 2-year applied-agentics arc layers on top of 30 years of business system transformation — the receipts from V1 are what make the agents work in customer reality rather than in demo. This is the rare credential most AI advisory in the market doesn't have. Anthropic's safety research informs how idigdata frames agentic deployment risk; the practice cites the research rather than the lab leadership directly.",
   },
   {
     q: "What is BOSS?",
-    a: "BOSS — Business Operating System Suite — is the open-source platform that institutionalizes the transformations idigdata delivers. It carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their BOSS install via in-house IT or the BOSS community; idigdata doesn't run a managed-services tail. BOSS is a separate product lane; idigdata services are the leading edge that deploys it. The bundled offer is idigdata transformation services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.",
+    a: "BOSS — Business Operating System Suite — is the open-source platform that institutionalizes the transformations idigdata delivers. It carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their BOSS install via in-house IT or the BOSS community; idigdata doesn't run a managed-services tail. BOSS is a separate product lane; idigdata services are the leading edge that implements it. The bundled offer is idigdata transformation services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.",
   },
   {
     q: "What does an idigdata engagement look like?",
