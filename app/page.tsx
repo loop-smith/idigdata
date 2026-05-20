@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ConditionsAccordion from "@/components/ConditionsAccordion";
+import LatticeMark from "@/components/LatticeMark";
 import M4Watermark from "@/components/M4Watermark";
+import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
   title: {
@@ -26,12 +28,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
-
-const goldUnderlineStyle = {
-  backgroundImage:
-    "linear-gradient(180deg, transparent 60%, var(--color-gold) 60%, var(--color-gold) 92%, transparent 92%)",
-  padding: "0 3px",
 };
 
 const CONDITIONS = [
@@ -75,9 +71,9 @@ export default function HomePage() {
       {/* ===================== Block 1 · HERO ===================== */}
       <section className="relative pt-6 md:pt-8 lg:pt-10 pb-20 md:pb-24">
         <M4Watermark position="top-right" />
-          <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-10 md:mb-12">
+          <SectionKicker className="mb-10 md:mb-12">
             Forward-Deployed Operator for mid-market business transformations
-          </p>
+          </SectionKicker>
 
           <p className="font-vollkorn font-bold text-navy text-[44px] sm:text-[54px] md:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.015em] mb-3">
             Business Systems
@@ -90,11 +86,17 @@ export default function HomePage() {
             {/* Left column — two serif beats */}
             <div>
               <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em] mb-5">
-                Half-shipped systems. Vendors running the play. Data nobody trusts.
+                <span>Half-shipped systems.</span>{" "}
+                <span className="font-normal italic text-[#514D46]">
+                  Vendors running the play.
+                </span>{" "}
+                <span>Data nobody trusts.</span>
               </p>
-              <p className="font-vollkorn font-bold text-navy text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
-                A living asset. Compounding across{" "}
-                <span style={goldUnderlineStyle}>data, workflows, and people</span>.
+              <p className="font-vollkorn font-normal italic text-[#514D46] text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.18] tracking-[-0.01em]">
+                <span className="font-bold not-italic text-navy">
+                  A living asset.
+                </span>{" "}
+                Compounding across data, workflows, and people.<LatticeMark />
               </p>
 
               <div className="mt-7 md:mt-8 space-y-1.5">
@@ -139,9 +141,9 @@ export default function HomePage() {
 
       {/* ===================== Block 2 · THE PROBLEM ISN'T EFFORT ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+        <SectionKicker className="mb-5">
           The problem isn&rsquo;t effort
-        </p>
+        </SectionKicker>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[30ch]">
             Eighty-eight percent of transformations fall short of their ambitions. The effort was there. The orchestration wasn&rsquo;t.
           </h2>
@@ -163,17 +165,15 @@ export default function HomePage() {
               If two or three of these are sitting on your desk right now,
             </b>{" "}
             the question isn&rsquo;t whether your team is working hard enough —{" "}
-            <span style={goldUnderlineStyle}>
-              it&rsquo;s whether anyone is unifying the work.
-            </span>
+            it&rsquo;s whether anyone is unifying the work.<LatticeMark />
           </p>
       </section>
 
       {/* ===================== Block 3 · SUBSTRATE TRIANGLE (LOCKED) ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+        <SectionKicker className="mb-5">
           The model
-        </p>
+        </SectionKicker>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-2">
             Data, systems, processes — and the workforce.
           </h2>
@@ -197,26 +197,6 @@ export default function HomePage() {
                 workflows. Center disk labeled Workforce the users that run the workflows.
               </desc>
               <defs>
-                <radialGradient id="goldOrb" cx="36%" cy="30%" r="75%">
-                  <stop offset="0%" stopColor="#FFF0A8" />
-                  <stop offset="38%" stopColor="#FACC15" />
-                  <stop offset="85%" stopColor="#D9A800" />
-                  <stop offset="100%" stopColor="#9E7900" />
-                </radialGradient>
-                <radialGradient id="navyOrb" cx="34%" cy="28%" r="80%">
-                  <stop offset="0%" stopColor="#4A6788" />
-                  <stop offset="55%" stopColor="#1F3D5C" />
-                  <stop offset="100%" stopColor="#08182C" />
-                </radialGradient>
-                <linearGradient id="triFace" x1="20%" y1="0%" x2="80%" y2="100%">
-                  <stop offset="0%" stopColor="#FFFDF5" />
-                  <stop offset="60%" stopColor="#F3EBD7" />
-                  <stop offset="100%" stopColor="#E5DBC0" />
-                </linearGradient>
-                <linearGradient id="goldHighlight" x1="20%" y1="15%" x2="50%" y2="55%">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-                </linearGradient>
               </defs>
 
               {/* ARCHITECTURAL DATUM · observability layer · active-triplet headline */}
@@ -255,7 +235,7 @@ export default function HomePage() {
               <polygon points="354,186 84,526 624,526" fill="#08182C" opacity="0.12" />
               <polygon
                 points="350,180 80,520 620,520"
-                fill="url(#triFace)"
+                fill="#F3EBD7"
                 stroke="#142840"
                 strokeWidth="1.6"
               />
@@ -266,12 +246,9 @@ export default function HomePage() {
               <line x1="620" y1="520" x2="350" y2="407" stroke="#142840" strokeWidth="0.9" strokeDasharray="3,5" opacity="0.45" />
 
               {/* Vertex orbs */}
-              <circle cx="350" cy="180" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
-              <circle cx="345" cy="176" r="4" fill="#FFFFFF" opacity="0.4" />
-              <circle cx="80" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
-              <circle cx="75" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
-              <circle cx="620" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" strokeWidth="0.8" />
-              <circle cx="615" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+              <circle cx="350" cy="180" r="12" fill="#142840" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="80" cy="520" r="12" fill="#142840" stroke="#08182C" strokeWidth="0.8" />
+              <circle cx="620" cy="520" r="12" fill="#142840" stroke="#08182C" strokeWidth="0.8" />
 
               {/* Vertex labels — v7 short-form subs */}
               <text x="350" y="143" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
@@ -297,8 +274,7 @@ export default function HomePage() {
 
               {/* Center disk · Workforce */}
               <circle cx="354" cy="410" r="95" fill="#08182C" opacity="0.14" />
-              <circle cx="350" cy="407" r="95" fill="url(#goldOrb)" stroke="#142840" strokeWidth="1.8" />
-              <ellipse cx="322" cy="378" rx="48" ry="30" fill="url(#goldHighlight)" />
+              <circle cx="350" cy="407" r="95" fill="#FACC15" stroke="#142840" strokeWidth="1.8" />
               <text x="350" y="403" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="26" fontWeight="700" fill="#142840">
                 Workforce
               </text>
@@ -319,19 +295,16 @@ export default function HomePage() {
           <p className="mt-5 pt-5 border-t border-navy/15 font-vollkorn font-bold text-navy text-[16px] md:text-[18px] leading-[1.55] text-center max-w-[58ch] mx-auto">
             Workforce at the center. Human-in-the-loop above.
             <span className="block font-normal italic mt-1.5">
-              A living asset that compounds{" "}
-              <span style={goldUnderlineStyle}>
-                over time.
-              </span>
+              A living asset that compounds over time.<LatticeMark />
             </span>
           </p>
       </section>
 
       {/* ===================== Block 4 · RECEIPTS ===================== */}
       <section className="py-14 md:py-16 border-t border-navy/15">
-        <p className="font-body font-semibold uppercase text-warm-gray text-[11px] md:text-[12px] tracking-[0.22em] mb-5">
+        <SectionKicker className="mb-5">
           Where I&rsquo;ve lived this
-        </p>
+        </SectionKicker>
           <h2 className="font-vollkorn font-bold text-navy text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] tracking-[-0.01em] mb-5 max-w-[32ch]">
             Three industry specialties. Five primary system families. The
             workflows underneath.

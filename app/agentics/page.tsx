@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
+import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
   title: "Applied Agentics — idigdata",
@@ -31,9 +32,9 @@ export default function AgenticsPage() {
       {/* ============== BLOCK 1 · HERO · It all starts with the data ============== */}
       <section className="relative bg-cream pt-20 md:pt-24 pb-12 md:pb-16">
         <M4Watermark position="top-right" />
-        <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+        <SectionKicker className="mb-6">
           Agentic AI
-        </p>
+        </SectionKicker>
         <h1 className="font-vollkorn font-extrabold text-navy text-[44px] md:text-[64px] lg:text-[80px] leading-[0.98] tracking-[-0.025em] text-balance mb-4 max-w-[1000px]">
           It all starts with the{" "}
           <em className="italic font-semibold">data.</em>
@@ -68,9 +69,9 @@ export default function AgenticsPage() {
       {/* ============== BLOCK 2 · WHAT MID-MARKET ACTUALLY NEEDS ============== */}
       <section className="bg-cream py-24 md:py-32">
         <header className="mb-10 max-w-[820px]">
-          <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+          <SectionKicker className="mb-6">
             The honest read
-          </p>
+          </SectionKicker>
           <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
             Less than the vendor pitches are telling you.{" "}
             <em className="italic font-semibold">More than your team thinks.</em>
@@ -121,9 +122,9 @@ export default function AgenticsPage() {
       {/* ============== BLOCK 3 · WHERE ARE YOU · two diagnostics ============== */}
       <section className="bg-cream py-24 md:py-32">
         <header className="mb-12 max-w-[820px]">
-          <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+          <SectionKicker className="mb-6">
             Where are you
-          </p>
+          </SectionKicker>
           <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
             Two questions{" "}
             <em className="italic font-semibold">before we start.</em>
@@ -212,10 +213,24 @@ export default function AgenticsPage() {
       {/* ============== BLOCK 4 · WHY PILOTS STALL · dark navy panel ============== */}
       <section
         id="substrate"
-        className="bg-navy text-cream py-24 md:py-32"
+        className="relative overflow-hidden bg-navy text-cream px-6 md:px-10 lg:px-14 py-20 md:py-28"
         aria-labelledby="substrate-h"
       >
-        <header className="mb-10 max-w-[820px]">
+        <div
+          aria-hidden="true"
+          className="absolute right-8 top-8 hidden h-28 w-28 grid-cols-3 gap-3 opacity-[0.09] md:grid"
+        >
+          {Array.from({ length: 9 }).map((_, i) => (
+            <span
+              key={i}
+              className={`block border border-cream ${
+                i === 4 ? "bg-gold border-gold" : i % 2 === 0 ? "bg-cream" : ""
+              }`}
+            />
+          ))}
+        </div>
+
+        <header className="relative mb-10 max-w-[820px]">
           <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-gold mb-6">
             The mechanism of failure
           </p>
@@ -228,35 +243,61 @@ export default function AgenticsPage() {
           </h2>
         </header>
 
-        <div className="space-y-5 max-w-[820px] font-body text-[16px] md:text-[17px] leading-[1.65] text-cream/90">
-          <p>
-            Most agentic pilots don&rsquo;t land in production because the
-            data underneath them isn&rsquo;t ready. It lives in three places
-            with three versions of the truth. There&rsquo;s no lineage you
-            can trace. There&rsquo;s no customer common data model agents
-            can reason against. The agents read broken state, write back to
-            broken state, and produce motion without outcome.
-          </p>
-          <p>
-            Where the data is clean, structured, and traceable &mdash; and
-            the customer common data model is real &mdash; agentic AI
-            compounds the value. Where it isn&rsquo;t, theater.
-          </p>
-          <p className="pt-2">
-            <strong className="font-semibold text-cream">
-              This is the thread under everything I do. The practice is
-              named for it.
-            </strong>
-          </p>
+        <div className="relative grid max-w-[1040px] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
+          <div className="space-y-5 max-w-[780px] border-l border-cream/20 pl-5 md:pl-7 font-body text-[16px] md:text-[17px] leading-[1.65] text-cream/90">
+            <p>
+              Most agentic pilots don&rsquo;t land in production because the
+              data underneath them isn&rsquo;t ready. It lives in three places
+              with three versions of the truth. There&rsquo;s no lineage you
+              can trace. There&rsquo;s no customer common data model agents
+              can reason against. The agents read broken state, write back to
+              broken state, and produce motion without outcome.
+            </p>
+            <p>
+              Where the data is clean, structured, and traceable &mdash; and
+              the customer common data model is real &mdash; agentic AI
+              compounds the value. Where it isn&rsquo;t, theater.
+            </p>
+            <p className="pt-2">
+              <strong className="font-semibold text-cream">
+                This is the thread under everything I do. The practice is
+                named for it.
+              </strong>
+            </p>
+          </div>
+
+          <aside
+            aria-label="Agentic failure pattern"
+            className="border border-cream/20 border-l-[3px] border-l-gold bg-cream/[0.04] px-6 py-6"
+          >
+            <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold mb-5">
+              Failure pattern
+            </p>
+            <ol className="space-y-4 font-body text-[13.5px] leading-[1.45] text-cream/85">
+              {[
+                "Fragmented data",
+                "Broken state",
+                "Agent motion",
+                "No outcome",
+              ].map((item, i) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-cream/25 text-[11px] font-semibold text-gold">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </aside>
         </div>
       </section>
 
       {/* ============== BLOCK 5 · PRODUCTION AGENTICS, DAILY · three proof panels ============== */}
       <section id="production" className="bg-cream py-24 md:py-32">
         <header className="mb-12 md:mb-14 max-w-[820px]">
-          <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-6">
+          <SectionKicker className="mb-6">
             Where I&rsquo;ve arrived
-          </p>
+          </SectionKicker>
           <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
             Two years inside.{" "}
             <em className="italic font-semibold">
@@ -373,9 +414,9 @@ export default function AgenticsPage() {
       {/* ============== BLOCK 6 · STACK · compact strip · pale-navy ============== */}
       <section className="bg-pale-navy py-14 md:py-16">
         <div className="max-w-[1080px]">
-          <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+          <SectionKicker className="mb-4">
             The stack I work on daily
-          </p>
+          </SectionKicker>
           <p className="font-vollkorn italic font-medium text-navy text-[18px] md:text-[20px] leading-[1.4] mb-4">
             Multi-lab, multi-vendor by design.
           </p>

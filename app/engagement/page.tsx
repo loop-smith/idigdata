@@ -4,6 +4,7 @@ import EngagementShape from "@/components/EngagementShape";
 import M4Watermark from "@/components/M4Watermark";
 import RomanMarker from "@/components/RomanMarker";
 import AccentRule from "@/components/AccentRule";
+import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -54,9 +55,9 @@ export default function EngagementPage() {
 
       <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           How I plug in
-        </p>
+        </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Three engagement shapes.
         </h1>

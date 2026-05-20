@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import M4Watermark from "@/components/M4Watermark";
+import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -41,9 +42,9 @@ export default function ContactPage() {
 
       <section className="relative pt-20 pb-8 md:pt-24 md:pb-10">
         <M4Watermark position="top-right" />
-        <p className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
+        <SectionKicker className="mb-5">
           Reach out
-        </p>
+        </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Let&rsquo;s talk shape.
         </h1>

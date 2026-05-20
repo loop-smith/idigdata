@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const dynamic = "force-static";
@@ -135,9 +136,9 @@ export default function FaqPage() {
       <JsonLdScript data={faqPageJsonLd} />
 
       <section className="pt-20 pb-8 md:pt-24 md:pb-10">
-        <p className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-5">
+        <SectionKicker className="mb-5">
           FAQ
-        </p>
+        </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           FAQ — idigdata.
         </h1>

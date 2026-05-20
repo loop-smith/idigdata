@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import AccentRule from "@/components/AccentRule";
+import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
@@ -53,9 +54,9 @@ export default function ApproachPage() {
       {/* ===== HERO ===== */}
       <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           The outcome
-        </p>
+        </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[48px] md:text-[64px] lg:text-[76px] leading-[1.02] tracking-[-0.015em]">
           A transformation that{" "}
           <em className="italic font-semibold">compounds.</em>
@@ -74,9 +75,9 @@ export default function ApproachPage() {
 
       {/* ===== SYNTHESIS INTERSTITIAL ===== */}
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Diagnosis &middot; invention
-        </p>
+        </SectionKicker>
         <p className="max-w-[820px] font-vollkorn text-navy text-[22px] md:text-[26px] leading-[1.32] tracking-[-0.005em]">
           Eighty-eight percent of transformations fall short of their ambitions. The pattern repeats: people
           change, systems change, processes change, delivery changes &mdash;
@@ -99,9 +100,9 @@ export default function ApproachPage() {
 
       {/* ===== LAYER 1 · THE BEEHIVE ===== */}
       <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Layer 1 &middot; The beehive
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Find where the work actually moves.
         </h2>
@@ -148,9 +149,9 @@ export default function ApproachPage() {
 
       {/* ===== LAYER 2 · CURRENT SYSTEMS ===== */}
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Layer 2 &middot; The current systems
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Expose the system truth.
         </h2>
@@ -174,9 +175,9 @@ export default function ApproachPage() {
 
       {/* ===== LAYER 3 · THE 6 PROCESS CONSTELLATIONS ===== */}
       <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Layer 3 &middot; The 6 Process Constellations
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Separate uniqueness from mechanics.
         </h2>
@@ -221,9 +222,9 @@ export default function ApproachPage() {
 
       {/* ===== LAYER 4 · THE SYSTEM-VERSE ===== */}
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Layer 4 &middot; The system-verse
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Design around the architecture, not the vendor.
         </h2>
@@ -260,9 +261,9 @@ export default function ApproachPage() {
 
       {/* ===== LAYER 5 · THE PM SUITE ===== */}
       <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Layer 5 &middot; The PM Suite
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Drive the loop until it holds.
         </h2>
@@ -338,9 +339,9 @@ export default function ApproachPage() {
 
       {/* ===== THE LIFECYCLE · AV-07 ENGAGEMENT ROADMAP ===== */}
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           The lifecycle
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           What the loop looks like over time.
         </h2>
@@ -373,9 +374,9 @@ export default function ApproachPage() {
 
       {/* ===== SUCCESS ===== */}
       <section className="bg-cream px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray mb-4">
+        <SectionKicker className="mb-4">
           Success
-        </p>
+        </SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
           Measured by. <em className="italic font-semibold">Leaves behind.</em>
         </h2>
