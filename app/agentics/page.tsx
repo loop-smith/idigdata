@@ -280,8 +280,8 @@ export default function AgenticsPage() {
               <Image
                 src="/brand/rig/logo-horizontal.svg"
                 alt="THE RIG"
-                width={480}
-                height={120}
+                width={330}
+                height={170}
                 className="h-14 md:h-16 w-auto"
               />
             </div>
