@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200" role="img" aria-label="DigOps unified logo · Dig + diamond mark + Ops with Buy · Make · Sell tagline">
+  <title>DigOps · unified logo · v1</title>
+  <desc>Primary brand impression — single unified glyph where the 45° rotated diamond mark sits between "Dig" and "Ops" as the navy→sun-gold color hinge. Mark's navy elements continue from "Dig"; mark's sun-gold center anchors "Ops". Vollkorn Bold 96px navy "Dig" + 96×96 mark (9-cell rotated lattice) + Vollkorn Bold 96px sun-gold "Ops" + stone rule + Lora italic 18px tagline "Buy · Make · Sell". v1 lock 2026-05-19 PM (bp5 Phase 1 carve · v2.2 unified-logo arrival · supersedes v2.1 horizontal lockup which is archived to _archive-2026-05-19-v1/).</desc>
+
+  <!-- "Dig" navy -->
+  <text x="320" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="end" letter-spacing="-1">Dig</text>
+
+  <!-- Mark · 96×96 · vertical center y=82 (text optical center) · immediately abutting both sides -->
+  <g transform="translate(320,34)">
+    <svg width="96" height="96" viewBox="0 0 128 128">
+      <g transform="rotate(45 64 64)">
+        <rect x="8"  y="8"  width="32" height="32" fill="#142840"/>
+        <rect x="88" y="8"  width="32" height="32" fill="#142840"/>
+        <rect x="8"  y="88" width="32" height="32" fill="#142840"/>
+        <rect x="88" y="88" width="32" height="32" fill="#142840"/>
+        <rect x="49.5" y="9.5"  width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+        <rect x="9.5"  y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+        <rect x="89.5" y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+        <rect x="49.5" y="89.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+        <rect x="48" y="48" width="32" height="32" fill="#FACC15"/>
+      </g>
+    </svg>
+  </g>
+
+  <!-- "Ops" sun-gold -->
+  <text x="416" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#FACC15" text-anchor="start" letter-spacing="-1">Ops</text>
+
+  <!-- Stone rule · spans visible width of composition -->
+  <line x1="180" y1="148" x2="580" y2="148" stroke="#7A756A" stroke-width="1.5"/>
+
+  <!-- Tagline · centered on composition midpoint -->
+  <text x="380" y="178" font-family="Lora,Liberation Serif,Georgia,serif" font-style="italic" font-weight="400" font-size="18" fill="#6B6860" text-anchor="middle" letter-spacing="0.5">Buy &#183; Make &#183; Sell</text>
+</svg>

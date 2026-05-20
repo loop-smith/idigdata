@@ -339,38 +339,32 @@ export default function AgenticsPage() {
             </p>
           </article>
 
-          {/* Panel · The idigdata operating application */}
+          {/* Panel · DigOps */}
           <article className="border border-navy/15 bg-cream p-6 md:p-7 flex flex-col gap-5">
             <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
               The proof is what you&rsquo;re reading
             </p>
-            <div className="min-h-[80px] flex items-center gap-4">
+            <div className="min-h-[80px] flex items-center">
               <Image
-                src="/brand/idigdata-app/idigdata-app-mark.svg"
-                alt="The idigdata operating application"
-                width={128}
-                height={128}
-                className="h-12 md:h-14 w-auto flex-shrink-0"
+                src="/brand/digops/digops-logo.svg"
+                alt="DigOps — the operating substrate · Buy · Make · Sell"
+                width={760}
+                height={200}
+                className="h-16 md:h-20 w-auto"
               />
-              <h3 className="font-vollkorn font-extrabold text-navy text-[18px] md:text-[20px] leading-[1.1] tracking-[-0.015em]">
-                The idigdata{" "}
-                <em className="italic font-semibold">
-                  operating application.
-                </em>
-              </h3>
             </div>
             <p className="font-body text-[14.5px] leading-[1.6] text-navy">
-              <strong className="font-semibold">
-                One agentic application
-              </strong>{" "}
-              running every business surface of the practice &mdash; the
-              website you&rsquo;re reading, the CRM and book-of-business,
-              the ERP-light accounting and operations backbone. One
-              customer common data model. Multiple workflows.
+              <strong className="font-semibold">DigOps</strong> &mdash; the operating
+              substrate that runs the practice. CRM for the prospect pipeline. CPQ for
+              engagements + billing. ERP-core for accounting + payments + reporting.
+              One customer common data model. Multiple workflows.{" "}
+              <em className="italic">
+                Hunt &middot; track &middot; close &middot; run &middot; close &middot;
+                own the books.
+              </em>
             </p>
             <p className="font-vollkorn italic font-medium text-navy text-[15px] leading-[1.5] pt-1 border-t border-navy/10">
-              The architectural inversion I tell clients they need
-              &mdash; running on my own business.
+              Shows the actual operating substrate &mdash; running on my own business.
             </p>
           </article>
         </div>
