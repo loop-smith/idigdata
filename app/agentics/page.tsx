@@ -276,13 +276,13 @@ export default function AgenticsPage() {
             <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
               How the work runs
             </p>
-            <div className="min-h-[80px] flex items-center">
+            <div className="h-24 flex items-center justify-center">
               <Image
-                src="/brand/rig/logo-lockup-tagline.svg"
+                src="/brand/rig/logo-lockup-tagline-panel.svg"
                 alt="THE RIG — the human-in-the-loop layer"
-                width={330}
-                height={240}
-                className="h-16 md:h-20 w-auto"
+                width={600}
+                height={210}
+                className="h-20 w-auto"
               />
             </div>
             <p className="font-body text-[14.5px] leading-[1.6] text-navy">
@@ -309,13 +309,13 @@ export default function AgenticsPage() {
             <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
               The substrate, productized
             </p>
-            <div className="min-h-[80px] flex items-center">
+            <div className="h-24 flex items-center justify-center">
               <Image
-                src="/brand/boss/boss-lockup.svg"
+                src="/brand/boss/boss-lockup-panel.svg"
                 alt="BOSS — The business process harness"
-                width={660}
-                height={320}
-                className="h-16 md:h-20 w-auto"
+                width={600}
+                height={210}
+                className="h-20 w-auto"
               />
             </div>
             <p className="font-body text-[14.5px] leading-[1.6] text-navy">
@@ -344,13 +344,13 @@ export default function AgenticsPage() {
             <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
               The proof is what you&rsquo;re reading
             </p>
-            <div className="min-h-[80px] flex items-center">
+            <div className="h-24 flex items-center justify-center">
               <Image
-                src="/brand/digops/digops-logo.svg"
+                src="/brand/digops/digops-logo-panel.svg"
                 alt="DigOps — the operating substrate · Buy · Make · Sell"
-                width={760}
-                height={200}
-                className="h-16 md:h-20 w-auto"
+                width={600}
+                height={210}
+                className="h-20 w-auto"
               />
             </div>
             <p className="font-body text-[14.5px] leading-[1.6] text-navy">

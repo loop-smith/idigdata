@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 210" role="img" aria-labelledby="t d">
+  <title id="t">DigOps · unified logo · /agentics proof-panel reframe</title>
+  <desc id="d">Panel-presentation variant of DigOps v1 unified logo on the shared 600×210 proof-panel canvas (dispatch-084). Wordmark artwork (Dig text + 9-cell rotated diamond mark + Ops text) byte-identical to canonical digops-logo.svg; only the canvas, the wrapping transform, and the uniform stone-rule + italic tagline change so the three /agentics proof-panel logos co-plane at wordmark cap-height 56 and cap-center y=80. Canonical brand file unchanged.</desc>
+
+  <g transform="translate(-16.07,11.86) scale(0.836)">
+    <!-- "Dig" navy · byte-identical to canonical digops-logo.svg -->
+    <text x="320" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#142840" text-anchor="end" letter-spacing="-1">Dig</text>
+
+    <!-- Mark · 96×96 · byte-identical to canonical -->
+    <g transform="translate(320,34)">
+      <svg width="96" height="96" viewBox="0 0 128 128">
+        <g transform="rotate(45 64 64)">
+          <rect x="8"  y="8"  width="32" height="32" fill="#142840"/>
+          <rect x="88" y="8"  width="32" height="32" fill="#142840"/>
+          <rect x="8"  y="88" width="32" height="32" fill="#142840"/>
+          <rect x="88" y="88" width="32" height="32" fill="#142840"/>
+          <rect x="49.5" y="9.5"  width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+          <rect x="9.5"  y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+          <rect x="89.5" y="49.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+          <rect x="49.5" y="89.5" width="29" height="29" fill="none" stroke="#142840" stroke-width="3"/>
+          <rect x="48" y="48" width="32" height="32" fill="#FACC15"/>
+        </g>
+      </svg>
+    </g>
+
+    <!-- "Ops" sun-gold · byte-identical to canonical -->
+    <text x="416" y="115" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="96" fill="#FACC15" text-anchor="start" letter-spacing="-1">Ops</text>
+  </g>
+
+  <line x1="130" y1="160" x2="470" y2="160" stroke="#7A756A" stroke-width="1.5"/>
+  <text x="300" y="192" text-anchor="middle" font-family="Lora, 'Liberation Serif', Georgia, serif" font-style="italic" font-weight="400" font-size="18" fill="#6B6860" letter-spacing="0.3">Buy &#183; Make &#183; Sell</text>
+</svg>
