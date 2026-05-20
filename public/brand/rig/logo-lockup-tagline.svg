@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 240" role="img" aria-labelledby="t d">
+  <title id="t">THE RIG lockup with tagline v0.4 production</title>
+  <desc id="d">Vertical lockup: P4 hidden-R mark + outlined THE RIG wordmark in the upper region (v0.4.1 horizontal pairing preserved), then a stone rule, then italic tagline "the human-in-the-loop layer". ViewBox 330x240 places the mark ink-center at ~38% of total height to match BOSS/DigOps sibling lockups — so the three marks land on a shared horizontal plane when rendered at the same CSS height. Tagline wording Rob-locked 2026-05-20 (memo-108 / dispatch-083).</desc>
+  <defs>
+    <g id="mark">
+      <path d="M48 40H140C156 40 168 52 168 68V80H150V68C150 62 146 58 140 58H66V106H48Z" fill="#0f172a"/>
+      <path d="M152 82H182L166 112Z" fill="#0f172a"/>
+      <path d="M154 116H62C45 116 32 103 32 87V74H50V87C50 94 55 98 62 98H154Z" fill="#0f172a"/>
+      <rect x="54" y="117" width="90" height="14" rx="4" fill="#0f172a"/>
+      <path d="M68 131C62 148 70 164 62 181" fill="none" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+      <path d="M108 131C124 147 140 163 153 181" fill="none" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+      <circle cx="104" cy="67" r="7" fill="#0ea5b7"/>
+      <rect x="84" y="78" width="40" height="8" rx="4" fill="#64748b"/>
+      <rect x="76" y="90" width="56" height="9" rx="4.5" fill="#0ea5b7"/>
+    </g>
+    <g id="wordmark">
+      <path d="M5.79 11.15L2.62 11.15L2.62 9.81L10.52 9.81L10.52 11.15L7.36 11.15L7.36 20L5.79 20" fill="#64748b"/>
+      <path d="M21.83 20L20.27 20L20.27 9.81L21.83 9.81L21.83 14.12L26.87 14.12L26.87 9.81L28.44 9.81L28.44 20L26.87 20L26.87 15.46L21.83 15.46" fill="#64748b"/>
+      <path d="M45.15 20L38.69 20L38.69 9.81L45.10 9.81L45.10 11.15L40.25 11.15L40.25 14.19L44.76 14.19L44.76 15.52L40.25 15.52L40.25 18.66L45.15 18.66" fill="#64748b"/>
+      <path d="M15.02 74L2.42 74L2.42 28.89L21.58 28.89Q26.97 28.89 30.91 30.81Q34.84 32.74 36.98 36.26Q39.11 39.79 39.11 44.63Q39.11 49.33 36.89 52.75Q34.66 56.17 30.59 58.03Q26.52 59.89 20.92 59.89L10.17 59.89L10.17 50.14L20.65 50.14Q22.55 50.14 23.93 49.45Q25.31 48.75 26.07 47.51Q26.82 46.27 26.82 44.63Q26.82 42.97 26.07 41.74Q25.31 40.52 23.93 39.82Q22.55 39.13 20.65 39.13L15.02 39.13L15.02 74M40.51 74L27.40 74L17.59 53.54L30.46 53.54" fill="#0f172a"/>
+      <path d="M40.68 28.89L53.28 28.89L53.28 74L40.68 74" fill="#0f172a"/>
+      <path d="M76.07 74.73Q69.35 74.73 64.37 71.88Q59.39 69.04 56.65 63.81Q53.91 58.59 53.91 51.48Q53.91 43.94 56.82 38.73Q59.72 33.52 64.70 30.85Q69.68 28.17 75.83 28.17Q79.95 28.17 83.58 29.32Q87.21 30.47 90.01 32.63Q92.81 34.80 94.54 37.78Q96.26 40.76 96.57 44.45L83.73 44.45Q83.49 43.18 82.91 42.18Q82.34 41.18 81.41 40.49Q80.49 39.79 79.23 39.43Q77.98 39.06 76.34 39.06Q73.17 39.06 71 40.50Q68.84 41.94 67.73 44.70Q66.63 47.45 66.63 51.48Q66.63 55.47 67.75 58.23Q68.87 60.98 71.08 62.41Q73.29 63.83 76.53 63.83Q79.16 63.83 80.96 63.04Q82.76 62.25 83.69 60.85Q84.61 59.44 84.61 57.56L87.21 57.80L76.43 57.80L76.43 48.81L96.90 48.81L96.90 55.32Q96.90 61.19 94.30 65.55Q91.69 69.91 87.02 72.32Q82.34 74.73 76.07 74.73" fill="#0f172a"/>
+    </g>
+  </defs>
+  <use href="#mark" transform="translate(8 12) scale(.72)"/>
+  <use href="#wordmark" transform="translate(156 34) scale(1.35)"/>
+  <line x1="30" y1="180" x2="290" y2="180" stroke="#7A756A" stroke-width="1.5"/>
+  <text x="159" y="212" text-anchor="middle" font-family="Lora, 'Liberation Serif', Georgia, serif" font-style="italic" font-weight="400" font-size="18" fill="#6B6860" letter-spacing="0.3">the human-in-the-loop layer</text>
+</svg>

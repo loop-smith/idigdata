@@ -278,11 +278,11 @@ export default function AgenticsPage() {
             </p>
             <div className="min-h-[80px] flex items-center">
               <Image
-                src="/brand/rig/logo-horizontal.svg"
-                alt="THE RIG"
+                src="/brand/rig/logo-lockup-tagline.svg"
+                alt="THE RIG — the human-in-the-loop layer"
                 width={330}
-                height={170}
-                className="h-14 md:h-16 w-auto"
+                height={240}
+                className="h-16 md:h-20 w-auto"
               />
             </div>
             <p className="font-body text-[14.5px] leading-[1.6] text-navy">
