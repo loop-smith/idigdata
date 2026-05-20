@@ -127,22 +127,19 @@ export default function ApproachPage() {
           Transformations across business systems AND across the IS
           organizations supporting them.
         </p>
-        <figure className="mt-10 mx-auto max-w-md">
-          <div className="relative bg-white border border-navy/20 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-3">
-            <span className="absolute top-3 right-3 z-10 bg-navy/85 text-gold font-body font-bold uppercase text-[8px] tracking-[0.18em] px-2 py-0.5 rounded-sm">
-              Preview
-            </span>
+        <figure className="mt-10 mx-auto max-w-xl">
+          <div className="bg-white border border-navy/15 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/diagrams/beehive-plate.png"
-              alt="The Beehive — workforce × functional groups · operating-artifact specimen plate (impression-fidelity · full framework built live during engagement)"
-              width={165}
-              height={213}
+              src="/diagrams/beehive.svg"
+              alt="The Beehive — process flows × functional groups · the standard operating frame every operator shares"
+              width={540}
+              height={700}
               className="w-full h-auto block"
             />
           </div>
-          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12px] leading-[1.5] text-center max-w-[40ch] mx-auto">
-            The actual operating artifact &middot; shown as impression only &middot; the full framework is built live during the engagement.
+          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12.5px] leading-[1.5] text-center max-w-[46ch] mx-auto">
+            The standard frame &middot; every operator runs the same groups and flows. The bespoke fill &mdash; your systems, your data, your hundreds of process components &mdash; is built live during the engagement.
           </figcaption>
         </figure>
       </section>
@@ -203,22 +200,19 @@ export default function ApproachPage() {
           <em className="italic">your</em> business is the diagnosis.
           That&rsquo;s the conversation.
         </p>
-        <figure className="mt-10 mx-auto max-w-md">
-          <div className="relative bg-white border border-navy/20 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-3">
-            <span className="absolute top-3 right-3 z-10 bg-navy/85 text-gold font-body font-bold uppercase text-[8px] tracking-[0.18em] px-2 py-0.5 rounded-sm">
-              Preview
-            </span>
+        <figure className="mt-10 mx-auto max-w-xl">
+          <div className="bg-white border border-navy/15 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/diagrams/six-constellations-plate.png"
-              alt="The Six Process Constellations — six universal process categories around a sovereign data core · operating-artifact specimen plate (impression-fidelity)"
-              width={165}
-              height={191}
+              src="/diagrams/six-constellations.svg"
+              alt="The Six Process Constellations — six universal process categories around a sovereign data core"
+              width={810}
+              height={940}
               className="w-full h-auto block"
             />
           </div>
-          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12px] leading-[1.5] text-center max-w-[40ch] mx-auto">
-            The actual operating artifact &middot; shown as impression only &middot; the full framework is built live during the engagement.
+          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12.5px] leading-[1.5] text-center max-w-[46ch] mx-auto">
+            Six constellations &middot; the same six in every install. Where they sit, how they weight, what fills them &mdash; that&rsquo;s mapped to your business during the engagement.
           </figcaption>
         </figure>
       </section>
@@ -245,22 +239,19 @@ export default function ApproachPage() {
             commodities &middot; the vendors stay vendors. Yours, not theirs.
           </strong>
         </p>
-        <figure className="mt-10 mx-auto max-w-md">
-          <div className="relative bg-white border border-navy/20 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-3">
-            <span className="absolute top-3 right-3 z-10 bg-navy/85 text-gold font-body font-bold uppercase text-[8px] tracking-[0.18em] px-2 py-0.5 rounded-sm">
-              Preview
-            </span>
+        <figure className="mt-10 mx-auto max-w-xl">
+          <div className="bg-white border border-navy/15 rounded-md shadow-[0_2px_16px_rgba(20,40,64,0.07)] p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/diagrams/system-verse-plate.png"
-              alt="The Systemverse — future-state systems orbit around a sovereign data core · operating-artifact specimen plate (impression-fidelity)"
-              width={165}
-              height={185}
+              src="/diagrams/system-verse.svg"
+              alt="The Systemverse — future-state systems landscape orbiting a sovereign data core"
+              width={800}
+              height={900}
               className="w-full h-auto block"
             />
           </div>
-          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12px] leading-[1.5] text-center max-w-[40ch] mx-auto">
-            The actual operating artifact &middot; shown as impression only &middot; the full framework is built live during the engagement.
+          <figcaption className="mt-3 font-vollkorn italic text-warm-gray text-[12.5px] leading-[1.5] text-center max-w-[46ch] mx-auto">
+            The standard shape &middot; sovereign data core, systems in orbit. Your actual systemverse &mdash; your stack, your integrations &mdash; is designed and built live during the engagement.
           </figcaption>
         </figure>
       </section>
