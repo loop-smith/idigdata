@@ -70,7 +70,7 @@ export default function ContactForm({
         articleSlug,
         _hp: hp,
       };
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

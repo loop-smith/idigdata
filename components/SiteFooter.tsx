@@ -35,22 +35,22 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/approach" className="hover:text-aubergine transition-colors">
+                <Link href="/approach/" className="hover:text-aubergine transition-colors">
                   Approach
                 </Link>
               </li>
               <li>
-                <Link href="/engagement" className="hover:text-aubergine transition-colors">
+                <Link href="/engagement/" className="hover:text-aubergine transition-colors">
                   Engagement
                 </Link>
               </li>
               <li>
-                <Link href="/agentics" className="hover:text-aubergine transition-colors">
+                <Link href="/agentics/" className="hover:text-aubergine transition-colors">
                   Agentics
                 </Link>
               </li>
               <li>
-                <Link href="/articles" className="hover:text-aubergine transition-colors">
+                <Link href="/articles/" className="hover:text-aubergine transition-colors">
                   Articles
                 </Link>
               </li>

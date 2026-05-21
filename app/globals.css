@@ -53,6 +53,7 @@ html, body {
   color: var(--d2-ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
+  overflow-x: clip;
 }
 
 body {

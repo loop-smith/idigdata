@@ -78,10 +78,6 @@ export default function EngagementPage() {
       </section>
 
       <section className="bg-cream px-0 md:px-8 pt-4 pb-12">
-        <h2 className="font-body font-bold uppercase tracking-section text-[14px] text-navy border-b border-navy pb-2 mb-8">
-          Three engagement shapes
-        </h2>
-
         <div className="max-w-[860px] space-y-2">
           <EngagementShape
             variant="editorial"
