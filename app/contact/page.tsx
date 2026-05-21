@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import ContactForm, { type InterestType } from "@/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
-
-const VALID_INTERESTS: InterestType[] = [
-  "general",
-  "embedded",
-  "fractional",
-  "agentics",
-  "speaking",
-  "article_request",
-];
 
 export const metadata: Metadata = {
   title: "Reach out — idigdata",
@@ -44,17 +35,7 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ interest?: string }>;
-}) {
-  const sp = await searchParams;
-  const raw = typeof sp?.interest === "string" ? sp.interest : "";
-  const initialInterest: InterestType = (VALID_INTERESTS as string[]).includes(raw)
-    ? (raw as InterestType)
-    : "general";
-
+export default function ContactPage() {
   return (
     <div className="mx-auto max-w-content px-6">
       <JsonLdScript data={breadcrumbJsonLd} />
@@ -83,7 +64,7 @@ export default async function ContactPage({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           {/* Form column (2/3) */}
           <div className="md:col-span-2">
-            <ContactForm interestType={initialInterest} showInterestSelect />
+            <ContactForm showInterestSelect />
           </div>
 
           {/* Side block (1/3) */}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useId, useState } from "react";
-import posthog from "posthog-js";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -14,7 +13,6 @@ export type InterestType =
   | "article_request";
 
 type Props = {
-  interestType?: InterestType;
   articleSlug?: string;
   showInterestSelect?: boolean;
 };
@@ -29,7 +27,6 @@ const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
 ];
 
 export default function ContactForm({
-  interestType = "general",
   articleSlug,
   showInterestSelect = false,
 }: Props) {
@@ -37,7 +34,7 @@ export default function ContactForm({
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
-  const [interest, setInterest] = useState<InterestType>(interestType);
+  const [interest, setInterest] = useState<InterestType>("general");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
 
@@ -77,14 +74,6 @@ export default function ContactForm({
       });
       const data = await res.json();
       if (res.ok && data.ok) {
-        if (data.lead_id !== "silenced") {
-          posthog.identify(email, {
-            email,
-            name,
-            company: company || undefined,
-            surface: "website",
-          });
-        }
         setLeadId(data.lead_id ?? null);
         setStatus("success");
       } else {

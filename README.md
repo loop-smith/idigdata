@@ -14,7 +14,6 @@ See `STACK.md` for pinned versions and migration history. Highlights:
 - Tailwind CSS 4 (CSS-first config in `app/globals.css`)
 - Supabase (cross-codebase bridge to `idigdata-app` for contact form leads)
 - Resend (transactional email)
-- PostHog (conversion analytics)
 - Vercel Web Analytics
 
 ## Develop
@@ -50,8 +49,6 @@ Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` i
 |---|---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | Website's own Supabase project (currently unused; reserved) | Supabase dashboard for project `adkwtkhvbntreznhwzxu` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Website's own anon key (public-by-design; RLS-protected) | Supabase dashboard for project `adkwtkhvbntreznhwzxu` |
-| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog project key | PostHog dashboard |
-| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog API host (US cloud default) | `https://us.i.posthog.com` |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console meta verification token | GSC property setup |
 | `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Bing Webmaster Tools meta verification token | BWT property setup |
 | `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact-form leads land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |

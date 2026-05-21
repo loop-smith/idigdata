@@ -15,8 +15,7 @@ Pinned versions for this project. Mirrors the `hello-world` living reference as 
 - **zod** — request-body validation on `/api/contact`
 - **@supabase/supabase-js** — client for the cross-codebase write to `idigdata-app`'s `leads` table
 - **resend** — transactional email for contact-form notifications
-- **posthog-js** — conversion analytics (added in Dispatch 005)
-- **@vercel/analytics** — privacy-first visit analytics (added in Dispatch 005)
+- **@vercel/analytics** — privacy-first visit analytics (added in Dispatch 005; PostHog removed in Dispatch 093)
 
 ## Stack now (2026-04-28)
 

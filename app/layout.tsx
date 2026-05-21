@@ -4,7 +4,6 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import PostHogProvider from "@/components/analytics/PostHogProvider";
 import JsonLd from "@/components/analytics/JsonLd";
 
 const display = Lora({
@@ -110,13 +109,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
       <body className="font-body text-d2-ink bg-cream">
-        <PostHogProvider>
-          <JsonLd />
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-          <Analytics />
-        </PostHogProvider>
+        <JsonLd />
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );

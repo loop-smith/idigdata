@@ -52,13 +52,12 @@ This codebase is driven by **dispatches** from the `idigdata` Cowork session.
 
 ## Analytics + data (what is wired or approved)
 - **Intake forms** (contact + article-request) → `/api/contact` Node serverless route. The route (a) sends a Resend notification to `EMAIL_NOTIFY_TO`, and (b) writes a CRM row to the **idigdata-app** Supabase (`contact_submissions` / `article_requests`) via `IDIGDATA_APP_SUPABASE_*` env vars (service-role preferred; anon insert-only fallback). The website's own `prospects_inbound` table is not used by the current route.
-- **Conversion analytics — PostHog Cloud** (free tier). Funnel: pageview → CTA click → modal open → form submit. UTM capture on inbound links. All instrumentation routes through a thin `track(event, props)` helper so the vendor is swappable. Session replay enabled for conversion debugging.
-- **Visit analytics baseline — Vercel Web Analytics** (zero-config on Vercel, privacy-first, no cookie banner).
-- **No Google Analytics. No ad pixels. No retargeting scripts. No marketing tags** beyond the PostHog + Vercel Analytics stack above.
+- **Visit analytics — Vercel Web Analytics** (sole baseline; zero-config on Vercel, privacy-first, no cookie banner). PostHog was cut in dispatch 093 (2026-05-21) — Vercel covers visits, idigdata-app CRM covers leads.
+- **No Google Analytics. No ad pixels. No retargeting scripts. No marketing tags** beyond Vercel Analytics above.
 
 ## Privacy posture
 - Form collects: name, email, company (optional), engagement-shape radio, optional context text. No sensitive personal, health, or financial data.
-- Analytics are cookie-free where possible — Vercel Web Analytics is; PostHog configured cookieless.
+- Analytics are cookie-free — Vercel Web Analytics is privacy-first.
 - `/privacy` page documenting collection + retention is a pending dispatch (not blocking launch).
 
 ## Ports

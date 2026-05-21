@@ -441,6 +441,16 @@ export default function ApproachPage() {
               Start a conversation <span aria-hidden>&rarr;</span>
             </Link>
           </div>
+
+          <p className="mt-8 pt-6 border-t border-cream/15 font-body italic text-[#9EA0A6] text-[13px] md:text-[13.5px] leading-[1.5]">
+            For how I plug in &mdash; embedded, fractional, agentics &mdash;{" "}
+            <Link
+              href="/engagement/"
+              className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
+            >
+              /engagement &rarr;
+            </Link>
+          </p>
         </div>
       </section>
     </div>
