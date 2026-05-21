@@ -452,7 +452,7 @@ export default function AgenticsPage() {
           </p>
 
           <Link
-            href="/contact?interest=agentics"
+            href="/contact/?interest=agentics"
             className="inline-flex items-center gap-2 bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.18em] px-8 py-4 rounded-full hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
           >
             Start a conversation <span aria-hidden>&rarr;</span>

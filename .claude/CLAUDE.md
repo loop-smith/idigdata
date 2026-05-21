@@ -14,7 +14,7 @@ Marketing / positioning website for **Data Integration Group** — Robert Paddoc
 - **Code never lands under `k2s\`.** **Content never lands under `rig\code\`.** Keep the split clean.
 
 ## Stack
-Next.js App Router + React + TypeScript (strict) + Tailwind 4 (CSS-first, `@theme` in `app/globals.css`) + `next/font` Google Fonts (Lora / Source Sans 3) + static export. No CMS, no DB, no forms, no server runtime.
+Next.js App Router + React + TypeScript (strict) + Tailwind 4 (CSS-first, `@theme` in `app/globals.css`) + `next/font` Google Fonts (Lora / Source Sans 3). Dynamic deploy on Vercel: marketing pages prerender; `/api/contact` Node serverless route (zod + Resend + Supabase) handles form intake. `output:export` was dropped (dispatch 010).
 
 **Pinned versions + verification checklist + migration history live in `STACK.md`** (lane root, alongside this file). Update `STACK.md` on any framework upgrade; it's the single source of truth for this project's pins. The estate-wide pin block lives at `paved/REGISTRY.md`.
 
@@ -51,7 +51,7 @@ This codebase is driven by **dispatches** from the `idigdata` Cowork session.
 - No CMS or headless service — page copy lives in markdown sources under `k2s\idigdata\positioning\`, rendered at build.
 
 ## Analytics + data (what is wired or approved)
-- **Intake form** → website Supabase `adkwtkhvbntreznhwzxu.supabase.co`. Table `prospects_inbound` (schema pending — dispatch will define it). Cross-codebase bridge into `idigdata-app`'s Supabase is a separate pipeline, gated on the app-side plumbing being ready; for now the website just writes and stores.
+- **Intake forms** (contact + article-request) → `/api/contact` Node serverless route. The route (a) sends a Resend notification to `EMAIL_NOTIFY_TO`, and (b) writes a CRM row to the **idigdata-app** Supabase (`contact_submissions` / `article_requests`) via `IDIGDATA_APP_SUPABASE_*` env vars (service-role preferred; anon insert-only fallback). The website's own `prospects_inbound` table is not used by the current route.
 - **Conversion analytics — PostHog Cloud** (free tier). Funnel: pageview → CTA click → modal open → form submit. UTM capture on inbound links. All instrumentation routes through a thin `track(event, props)` helper so the vendor is swappable. Session replay enabled for conversion debugging.
 - **Visit analytics baseline — Vercel Web Analytics** (zero-config on Vercel, privacy-first, no cookie banner).
 - **No Google Analytics. No ad pixels. No retargeting scripts. No marketing tags** beyond the PostHog + Vercel Analytics stack above.
