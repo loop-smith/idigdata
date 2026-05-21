@@ -30,7 +30,7 @@ The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engine
 
 **Two worlds collided.** 30 years business systems plus 2 years applied agentics. The receipts from V1 (five shipped agentic builds at brand scale, described at the pattern level per IP) are what make the agents work in customer reality rather than in demo. Forever-learning posture; the practice is a living asset, not a fixed credential.
 
-**BOSS — Business Operating System Suite.** Open-source platform that institutionalizes the transformations idigdata delivers. Carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their install via in-house IT or the BOSS community; idigdata does not run a managed-services tail. The bundled offer is idigdata services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.
+**BOSS — the business process harness.** Open-source platform that institutionalizes the transformations idigdata delivers. Carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their install via in-house IT or the BOSS community; idigdata does not run a managed-services tail. The bundled offer is idigdata services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.
 
 **Author identity.** Operator + builder + agentic visionary. First-person "I" voice. "idigdata" as brand-noun.
 

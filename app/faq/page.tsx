@@ -65,7 +65,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is BOSS?",
-    a: "BOSS — Business Operating System Suite — is the open-source platform that institutionalizes the transformations idigdata delivers. It carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their BOSS install via in-house IT or the BOSS community; idigdata doesn't run a managed-services tail. BOSS is a separate product lane; idigdata services are the leading edge that implements it. The bundled offer is idigdata transformation services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.",
+    a: "BOSS is the open-source platform that institutionalizes the transformations idigdata delivers — the business process harness. It carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their BOSS install via in-house IT or the BOSS community; idigdata doesn't run a managed-services tail. BOSS is a separate product lane; idigdata services are the leading edge that implements it. The bundled offer is idigdata transformation services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.",
   },
   {
     q: "What does an idigdata engagement look like?",

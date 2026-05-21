@@ -68,7 +68,7 @@ The escape is structural, not negotiated. A different organism runs the project.
 
 ## The new model
 
-Sovereignty over data is the load-bearing structural choice. Common Data Model the client owns. ERP, CRM, WMS, HRIS, FP&A as commodity apps in the ecosystem. Vendor change becomes a commodity decision, not a transformation event. The architectural layer that institutionalizes this in the client's hands is BOSS — Business Operating System Suite. Open source. Three pillars: Data, People, Delivery. Productized from thirty years of transformation practice. Clients own and maintain after the engagement closes — no managed-services tail.
+Sovereignty over data is the load-bearing structural choice. Common Data Model the client owns. ERP, CRM, WMS, HRIS, FP&A as commodity apps in the ecosystem. Vendor change becomes a commodity decision, not a transformation event. The architectural layer that institutionalizes this in the client's hands is BOSS — the business process harness. Open source. Three pillars: Data, People, Delivery. Productized from thirty years of transformation practice. Clients own and maintain after the engagement closes — no managed-services tail.
 
 The operator value is not in the platform itself; it is in what the platform makes possible. *What partner-led transformation produces in months, this model produces in weeks* — because the persistence layer doesn't lose data between phases, the registers compound, and the work flows through one operating fabric rather than starting over each time a workstream rotates leadership.
 
