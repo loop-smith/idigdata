@@ -55,7 +55,7 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-aubergine transition-colors">
+                <Link href="/contact/" className="hover:text-aubergine transition-colors">
                   Reach out
                 </Link>
               </li>

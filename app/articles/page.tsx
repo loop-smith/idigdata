@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
+import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import ArticlesIndexInteractive from "@/components/ArticlesIndexInteractive";
 import { ARTICLES } from "@/lib/articles";
@@ -43,6 +44,9 @@ export default function ArticlesIndexPage() {
 
       <section className="relative pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />
+        <SectionKicker className="mb-5">
+          Field notes
+        </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Articles
         </h1>

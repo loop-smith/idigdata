@@ -365,7 +365,7 @@ export default function ApproachPage() {
             loading="lazy"
           />
         </div>
-        <p className="mt-8 max-w-[820px] font-vollkorn italic font-medium text-stone text-[15px] md:text-[16px] leading-snug">
+        <p className="mt-8 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[15px] md:text-[16px] leading-snug">
           Five layers running on the loop. The compounding starts when I leave.
         </p>
       </section>
