@@ -89,32 +89,11 @@ export default function ContactForm({
   const labelClasses = "block font-body text-[14px] text-ink mb-1.5";
 
   if (status === "success") {
-    if (interest === "article_request") {
-      return (
-        <div className="space-y-3">
-          <p className="font-display text-navy text-[20px] leading-snug">
-            I&rsquo;ll send the full document within 24 hours. Thanks for
-            reading.
-          </p>
-          {leadId && leadId !== "silenced" ? (
-            <p className="font-body text-[13px] text-stone">
-              Reference: <span className="font-mono">{leadId}</span>
-            </p>
-          ) : null}
-        </div>
-      );
-    }
     return (
       <div className="space-y-3">
         <p className="font-display text-navy text-[22px] leading-snug">
-          Thanks. I&rsquo;ll respond from{" "}
-          <a
-            href="mailto:robert@idigdata.com"
-            className="border-b border-navy/40 hover:border-navy"
-          >
-            robert@idigdata.com
-          </a>{" "}
-          within 48 hours.
+          Got it. This lands straight in my inbox &mdash; no bot, no queue. I
+          read every one.
         </p>
         {leadId && leadId !== "silenced" ? (
           <p className="font-body text-[13px] text-stone">

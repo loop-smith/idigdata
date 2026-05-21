@@ -219,7 +219,7 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
           {status === "success" ? (
             <div className="space-y-3 pt-4">
               <p className="font-display text-navy text-[20px] leading-snug">
-                I&rsquo;ll send the requested {selectionCount === 1 ? "document" : "documents"} within 24 hours. Thanks for reading.
+                Thanks for reading. The {selectionCount === 1 ? "document" : "documents"} will come straight from me &mdash; no drip sequence.
               </p>
               {leadId && leadId !== "silenced" ? (
                 <p className="font-body text-[13px] text-stone">
