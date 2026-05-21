@@ -2,7 +2,22 @@
 
 > Independent practice for business system transformation. Forward-Deployed Operator at mid-market scale (V1) and applied agentics at lab/PE altitude (V2). Founded 2016 by Robert Paddock.
 
-idigdata is the independent practice of Robert Paddock — a Forward-Deployed Operator (FDO) with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. The practice ships business-owned, vendor-agnostic transformations for $100M–$1B operators across three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare (electronic health records / EHR). Two core threads run under every engagement: ERP as the financial and accounting backbone, and compliance and risk as the foundation. System breadth covers ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, and HRIS.
+## Key facts
+
+- **Name:** Robert Paddock. **Practice:** idigdata — independent, founded 2016.
+- **Role:** Forward-Deployed Operator (FDO) — senior-leadership-altitude lead for business system transformation and applied agentics. Also serves the queries: contract CIO, fractional CIO, transformation lead, transformative CIO.
+- **Who it's for:** mid-market operators, $100M–$1B revenue.
+- **Industries:** architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare (electronic health records / EHR).
+- **Systems:** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI.
+- **Track record:** 30 years; 50-plus implementations; 15 full multi-year transformations; 5 production agentic systems shipped (mid-market beverage CPG operator, pattern level due to IP).
+- **Model:** one Operator plus a 30-year virtual network; vendor-agnostic; business-owned substrate; exit-by-design; no carried bench, no managed-services tail, no lock-in.
+- **Platform:** BOSS — the business process harness (open-source).
+- **Engagement shapes:** Embedded (full transformation), Fractional (one lever), Agentics (substrate-aware AI program).
+- **Contact:** robert@idigdata.com · idigdata.com/contact
+
+## Overview
+
+idigdata is the independent practice of Robert Paddock — a Forward-Deployed Operator (FDO) with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. The practice ships business-owned, vendor-agnostic transformations for $100M–$1B operators across three industry specialties: AEC, beverage CPG, and healthcare (EHR). Two core threads run under every engagement: ERP as the financial and accounting backbone, and compliance and risk as the foundation. System breadth covers ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, and HRIS.
 
 The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engineer (FDE) that Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) ship. FDE is engineering altitude with platform tie-in and default-forever-embedded posture. FDO is senior-leadership altitude with business-owned substrate and exit-by-design — a different corner of the same emerging market. idigdata sits at a third corner that neither lab-FDE programs nor McKinsey-style consulting occupies: operator-altitude help, business-owned deliverable, structurally lean firm, defined exit at engagement close.
 
@@ -16,7 +31,7 @@ The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engine
 
 ## Agent Resources
 
-- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 20 questions answering buyer-side operator research (identity, differentiation, practice scope, engagement shape, practical)
+- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 21 questions, answer-first and named-entity-forward, covering identity, role, differentiation, engagement shape, systems, industries, and practical contact.
 
 ## Key Substance
 
@@ -26,13 +41,15 @@ The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engine
 
 **Six Process Constellations.** Exhaustive operating-process spine used across every transformation. P2P (procure-to-pay — buys), O2C (order-to-cash — sells), P2M (plan-to-make — makes), D2R (data-to-report — true business intelligence), MDM (master data management — substrate), S2S (systems-to-support — everything-else infrastructure). Same six in every install; the makeup differs per operator.
 
-**System breadth.** ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft D365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI. The Common Data Model and master data discipline thread through every engagement.
+**System breadth.** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI. The Common Data Model and master data discipline thread through every engagement.
+
+**Why transformations fail.** Roughly 88% of business transformations fall short of their ambitions (Bain & Company). It isn't an implementation problem; it's an engineering problem — one Operator orchestrating the systems, the data, and the people against a single planned end state. idigdata also runs ERP recovery: embedding mid-stream as the forward-deployed lead above the vendors to re-orchestrate stalled implementations to go-live on the operator's calendar.
 
 **Two worlds collided.** 30 years business systems plus 2 years applied agentics. The receipts from V1 (five shipped agentic builds at brand scale, described at the pattern level per IP) are what make the agents work in customer reality rather than in demo. Forever-learning posture; the practice is a living asset, not a fixed credential.
 
 **BOSS — the business process harness.** Open-source platform that institutionalizes the transformations idigdata delivers. Carries the data substrate, the Six Process Constellations spine, and the self-maintaining SOP machine. Operators own and maintain their install via in-house IT or the BOSS community; idigdata does not run a managed-services tail. The bundled offer is idigdata services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.
 
-**Author identity.** Operator + builder + agentic visionary. First-person "I" voice. "idigdata" as brand-noun.
+**Author identity.** Operator + builder + agentic visionary. First-person "I" voice on human surfaces; entity-first on machine surfaces (this file, /faq). "idigdata" as brand-noun.
 
 **Meta-thesis.** Data as the substrate of everything. idigdata as namesake declaration — the practice exists because no company arrives with systems, data, and process defined, and the prevalence of that problem doesn't drop.
 
