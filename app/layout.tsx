@@ -5,6 +5,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
+import PageviewBeacon from "@/components/analytics/PageviewBeacon";
 
 const display = Lora({
   subsets: ["latin"],
@@ -114,6 +115,7 @@ export default function RootLayout({
         <main>{children}</main>
         <SiteFooter />
         <Analytics />
+        <PageviewBeacon />
       </body>
     </html>
   );
