@@ -108,7 +108,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
-      <body className="font-body text-d2-ink bg-cream">
+      <body className="font-body text-ink bg-cream">
         <JsonLd />
         <SiteHeader />
         <main>{children}</main>
