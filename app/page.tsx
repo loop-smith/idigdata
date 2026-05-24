@@ -66,25 +66,25 @@ const proofCards = [
 
 const systems = [
   {
-    label: "How Rob thinks",
+    label: "The system I run on",
     title: "DigOps",
     image: "/brand/digops/digops-logo-panel.svg",
     alt: "DigOps — Buy Make Sell",
-    body: "The system Rob runs his own business on: books, pipeline, proposals, billing, and agent-assisted classification with a human on every decision.",
+    body: "The system I run my own business on: books, pipeline, proposals, billing, and agent-assisted classification with a human on every decision.",
   },
   {
-    label: "How Rob works",
+    label: "The machine that builds the machines",
     title: "The Rig",
     image: "/brand/rig/logo-lockup-tagline-panel.svg",
     alt: "The Rig — the human-in-the-loop layer",
     body: "The machine that builds the machines: build plans, full history, tests, acceptance, and observable agent work.",
   },
   {
-    label: "What Rob delivers",
+    label: "What you own at the end",
     title: "BOSS",
     image: "/brand/boss/boss-lockup-panel.svg",
     alt: "BOSS — the business process harness",
-    body: "The business process harness: the transformation delivery asset the client owns at exit.",
+    body: "The business process harness: the transformation delivery asset you own at exit.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function HomePage() {
             </p>
             <p className="mt-5 max-w-[58ch] font-body text-[15.5px] leading-[1.65] text-navy">
               Transformations fail when no one owns the business system above
-              the vendors. Rob owns the path from inside the business: data,
+              the vendors. I own the path from inside the business: data,
               workflows, decisions, people, and the delivery discipline that
               makes the result survive handoff.
             </p>
@@ -245,7 +245,7 @@ export default function HomePage() {
             A senior operator who embeds, builds, transfers, and exits.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
-            Rob sits at operator altitude, not vendor altitude. He coordinates
+            I sit at operator altitude, not vendor altitude. I coordinate
             the vendors, the internal teams, the executives, and the operating
             reality into one delivery frame. Agentics is not the offer by
             itself; it is the unfair advantage inside the operator model.
@@ -323,7 +323,7 @@ export default function HomePage() {
         <SectionKicker className="mb-5">Proof systems</SectionKicker>
         <div className="mb-9 max-w-[760px]">
           <h2 className="font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
-            Rob runs this model before he brings it to you.
+            I run this model before I bring it to you.
           </h2>
           <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
             The systems are not a product taxonomy for the buyer to memorize.
@@ -332,13 +332,11 @@ export default function HomePage() {
             decaying after handoff.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
           {systems.map((system) => (
             <article
               key={system.title}
-              className={`border border-navy/15 bg-white p-6 ${
-                system.title === "BOSS" ? "lg:col-span-1 lg:row-span-2" : ""
-              }`}
+              className="flex h-full flex-col border border-navy/15 bg-white p-6"
             >
               <p className="font-vollkorn text-[14px] italic text-warm-gray">
                 {system.label}

@@ -44,14 +44,14 @@ const camps = [
 const systemProof = [
   {
     name: "DigOps",
-    label: "Rob lives it",
+    label: "I live it",
     image: "/brand/digops/digops-logo-panel.svg",
     alt: "DigOps — Buy Make Sell",
     body: "Agent-assisted workflows run the practice: CRM, proposal flow, billing, books, and human validation on the decisions.",
   },
   {
     name: "The Rig",
-    label: "Rob builds with it",
+    label: "I build with it",
     image: "/brand/rig/logo-lockup-tagline-panel.svg",
     alt: "The Rig — the human-in-the-loop layer",
     body: "The work is observable: plans, tests, histories, acceptance gates, and agent output that can be reviewed.",
@@ -97,7 +97,7 @@ export default function AgenticsPage() {
               Diagnosers explain. Builders demo. Operators deliver.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              Rob is the missing third: a transformation operator who has
+              I am the missing third: a transformation operator who has
               shipped production agentic systems and can transfer the operating
               asset to the client.
             </p>
@@ -154,8 +154,8 @@ export default function AgenticsPage() {
             The valuable person is the one who has tested it against real work.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
-            Rob has. Five production agentic systems, daily operational use,
-            and a business he now runs on an agentic substrate. The point is
+            I have — five production agentic systems, daily operational use,
+            and a business I now run on an agentic substrate. The point is
             not fluency with prompts; it is knowing what agents do and do not
             do once finance, supply chain, operations, governance, and people
             enter the room.
@@ -173,7 +173,7 @@ export default function AgenticsPage() {
             Three systems, one claim: operating practice, not AI theater.
           </h2>
           <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-            The proof is not that Rob knows the tools. The proof is that he has
+            The proof is not that I know the tools. The proof is that I have
             tested the tools against real operating work, built the discipline
             around them, and packaged the delivery asset for handoff.
           </p>
