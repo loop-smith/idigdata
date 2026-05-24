@@ -50,7 +50,7 @@ const proofCards = [
   {
     kicker: "RECOVERY",
     title: "$8M ERP, month seventeen, brought to done/done in six.",
-    body: "A stalled program was reframed above the vendor playbook and put back on the operator's calendar.",
+    body: "A stalled program was re-orchestrated above the vendor playbook and put back on the operator's calendar.",
   },
   {
     kicker: "DELIVERY",
@@ -88,7 +88,7 @@ const systems = [
   },
 ];
 
-function FoundationTriangle() {
+function SubstrateTriangle() {
   return (
     <svg
       viewBox="0 0 700 600"
@@ -97,7 +97,7 @@ function FoundationTriangle() {
       aria-labelledby="tri-title tri-desc"
       className="block h-auto w-full max-w-[680px]"
     >
-      <title id="tri-title">Foundation triangle with human validation layer.</title>
+      <title id="tri-title">Substrate triangle with human validation layer.</title>
       <desc id="tri-desc">
         A triangle connecting data, systems, and processes, with workforce in
         the center and observe validate approve above it.
@@ -140,7 +140,7 @@ function FoundationTriangle() {
         Data
       </text>
       <text x="350" y="163" textAnchor="middle" fontFamily="Source Sans 3, sans-serif" fontSize="13" fontStyle="italic" fill="#6B6860">
-        the data core
+        the substrate
       </text>
       <text x="80" y="558" textAnchor="middle" fontFamily="Vollkorn, Georgia, serif" fontSize="22" fontWeight="700" fill="#142840">
         Systems
@@ -272,7 +272,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex justify-center">
-            <FoundationTriangle />
+            <SubstrateTriangle />
           </div>
         </div>
       </section>

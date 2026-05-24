@@ -155,7 +155,7 @@ export default function AgenticsPage() {
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
             I have — five production agentic systems, daily operational use,
-            and a business I now run on an agentic operating base. The point is
+            and a business I now run on an agentic substrate. The point is
             not fluency with prompts; it is knowing what agents do and do not
             do once finance, supply chain, operations, governance, and people
             enter the room.
