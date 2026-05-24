@@ -135,11 +135,13 @@ export default function AgenticsPage() {
           </div>
           <aside className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-6">
             <p className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-              Dot-chart argument
+              The companies that win
             </p>
             <p className="mt-4 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
-              The chart is not a model leaderboard. It is the warning that
-              capability is outrunning most companies' ability to land it.
+              This isn't a race between models. Capability is already
+              outrunning most companies' ability to land it — and the winners
+              are the operators who lead with it now, not the ones waiting for
+              it to feel safe.
             </p>
           </aside>
         </div>
