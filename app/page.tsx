@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "idigdata — Embedded transformation leadership for the agentic era",
   },
   description:
-    "idigdata embeds Robert Paddock inside 100M-1B operators to deliver agentic-era business-system change and leave behind a business-owned operating asset.",
+    "idigdata embeds Robert Paddock inside $100M-$1B operators to deliver agentic-era business-system change and leave behind a business-owned operating asset.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -49,12 +49,12 @@ const marketStops = [
 const proofCards = [
   {
     kicker: "RECOVERY",
-    title: "8M ERP, month seventeen, brought to done/done in six.",
+    title: "$8M ERP, month seventeen, brought to done/done in six.",
     body: "A stalled program was re-orchestrated above the vendor playbook and put back on the operator's calendar.",
   },
   {
     kicker: "DELIVERY",
-    title: "Vendor quoted twenty-four months and 10M. Delivered in eighteen months for 5M.",
+    title: "Vendor quoted twenty-four months and $10M. Delivered in eighteen months for $5M.",
     body: "Same scope, half the spend, six months faster, with the operator's team owning the asset from day one.",
   },
   {
@@ -182,7 +182,7 @@ export default function HomePage() {
           </div>
           <div className="border-l-0 border-navy/20 lg:border-l lg:pl-8">
             <p className="font-vollkorn text-[21px] italic leading-[1.35] text-warm-gray md:text-[25px]">
-              idigdata embeds Robert Paddock inside 100M-1B businesses to
+              idigdata embeds Robert Paddock inside $100M-$1B businesses to
               deliver agentic-era change, install the operating asset, and
               exit by design.
             </p>

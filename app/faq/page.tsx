@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "FAQ - idigdata",
   description:
-    "Robert Paddock and idigdata: embedded transformation leadership for 100M-1B businesses, agentic-era delivery, DigOps, the Rig, and BOSS.",
+    "Robert Paddock and idigdata: embedded transformation leadership for $100M-$1B businesses, agentic-era delivery, DigOps, the Rig, and BOSS.",
   alternates: { canonical: "/faq/" },
 };
 
@@ -16,7 +16,7 @@ type QA = { q: string; a: string; aHtml?: React.ReactNode };
 const FAQ: QA[] = [
   {
     q: "Who is Robert Paddock?",
-    a: "Robert Paddock is a 30-year business-system transformation operator and the founder of idigdata. He embeds inside 100M-1B businesses to lead agentic-era transformation, align vendors and internal teams, install a business-owned operating asset, and exit by design when the business can carry the result.",
+    a: "Robert Paddock is a 30-year business-system transformation operator and the founder of idigdata. He embeds inside $100M-$1B businesses to lead agentic-era transformation, align vendors and internal teams, install a business-owned operating asset, and exit by design when the business can carry the result.",
   },
   {
     q: "What is idigdata?",
@@ -28,7 +28,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is the value proposition?",
-    a: "idigdata embeds Robert Paddock inside 100M-1B businesses to deliver agentic-era business-system change and leave behind a business-owned operating asset, not another vendor dependency.",
+    a: "idigdata embeds Robert Paddock inside $100M-$1B businesses to deliver agentic-era business-system change and leave behind a business-owned operating asset, not another vendor dependency.",
   },
   {
     q: "Why do transformations fail?",
@@ -52,7 +52,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What size company is the best fit?",
-    a: "100M-1B operators are the best fit. The work fits businesses with enough complexity to need senior embedded ownership: multi-entity, multi-platform, vendor-heavy environments where delivery, data, workflows, and people have to move as one system.",
+    a: "$100M-$1B operators are the best fit. The work fits businesses with enough complexity to need senior embedded ownership: multi-entity, multi-platform, vendor-heavy environments where delivery, data, workflows, and people have to move as one system.",
   },
   {
     q: "What industries does idigdata know best?",
@@ -141,7 +141,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Best fit",
-    body: <>100M-1B operators with complex systems, workflows, vendors, and adoption pressure.</>,
+    body: <>$100M-$1B operators with complex systems, workflows, vendors, and adoption pressure.</>,
   },
   {
     label: "Proof",

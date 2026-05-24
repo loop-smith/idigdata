@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "Independent practice for business system transformation. Forward-Deployed Operator at mid-market scale (100M-1B) across architecture-engineering-construction, beverage consumer packaged goods, and healthcare. Two core threads: ERP as financial and accounting backbone; compliance and risk as foundation. System breadth covers ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS. Business-owned substrate. Vendor-agnostic. Exit-by-design.",
+    "Independent practice for business system transformation. Forward-Deployed Operator at mid-market scale ($100M–$1B) across architecture-engineering-construction, beverage consumer packaged goods, and healthcare. Two core threads: ERP as financial and accounting backbone; compliance and risk as foundation. System breadth covers ERP, WMS, LIMS, QMS, CPQ, CRM, MDM, HRIS. Business-owned substrate. Vendor-agnostic. Exit-by-design.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",

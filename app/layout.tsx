@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s · Forward-Deployed Operator",
   },
   description:
-    "Forward-Deployed Operator for 100M-1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+    "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title:
       "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
-      "Forward-Deployed Operator for 100M-1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+      "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title:
       "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
-      "Forward-Deployed Operator for 100M-1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+      "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
