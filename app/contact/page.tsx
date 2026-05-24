@@ -5,22 +5,22 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Reach out — idigdata",
+  title: "Reach out - idigdata",
   description:
-    "A short operator-to-operator conversation about the shape of the work: transformation, systems, data, people, and applied agentics.",
+    "Send Robert Paddock a note about an embedded transformation, stalled systems work, or agentic-era operating change.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
-    title: "Reach out — idigdata · Forward-Deployed Operator",
+    title: "Reach out - idigdata",
     description:
-      "A short operator-to-operator conversation about the shape of the work.",
+      "A direct note about an embedded transformation, stalled systems work, or agentic-era operating change.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Reach out",
+        alt: "idigdata - Reach out",
       },
     ],
   },
@@ -46,28 +46,30 @@ export default function ContactPage() {
           Reach out
         </SectionKicker>
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Let&rsquo;s talk shape.
+          Send the real shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          No deck. No proposal. Just a short operator-to-operator conversation
-          about the business, the systems, the data, the people, and whether
-          the work has a real shape.
+          I take on a small number of embedded transformations where the
+          mandate is real and the business is ready to own the result.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
-          If the problem on your desk is a stalled transformation, systems that
-          do not agree, data nobody quite trusts, or agentics that needs to
-          become real operating leverage, send a note. I read these myself.
+          If the work needs an owner above the vendors, send a note. The first
+          conversation is not a deck ritual. It is a quick read on mandate,
+          systems, people, timing, and whether I can be useful.
+        </p>
+        <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
+          A sentence or two is enough: the stalled program, the board pressure,
+          the agentic question, the CFO concern, or the operating knot that
+          keeps resurfacing. I read these myself.
         </p>
       </section>
 
       <section className="pt-6 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          {/* Form column (2/3) */}
           <div className="md:col-span-2">
             <ContactForm showInterestSelect />
           </div>
 
-          {/* Side block (1/3) */}
           <aside className="md:col-span-1">
             <div className="border-t border-navy pt-6 space-y-3">
               <p className="font-body uppercase tracking-section text-[12px] text-stone">
@@ -84,8 +86,8 @@ export default function ContactPage() {
                 </a>
               </p>
               <p className="font-body text-[14px] text-stone leading-relaxed">
-                A sentence or two is enough. If it is not the right fit, I will
-                say that cleanly.
+                If the fit is wrong, I will say so plainly. If the mandate is
+                real, we will know the next useful step.
               </p>
             </div>
           </aside>

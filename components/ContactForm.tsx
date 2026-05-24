@@ -255,8 +255,9 @@ export default function ContactForm({
             id={messageHelpId}
             className="mt-1.5 font-body text-[13px] text-warm-gray"
           >
-            A sentence about the situation. The data core, the transformation
-            question, the agentic readiness gap &mdash; whatever&rsquo;s true.
+            A sentence about the situation. The systems knot, the
+            transformation mandate, the agentic question &mdash; whatever&rsquo;s
+            true.
           </p>
         ) : null}
       </div>
