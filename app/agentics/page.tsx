@@ -5,468 +5,231 @@ import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
-  title: "Applied Agentics — idigdata",
+  title: "Agentics — idigdata",
   description:
-    "It all starts with the data. Clean, structured, traceable lineage. A customer common data model the business owns. Production agentics, daily — from a thirty-year business software operator.",
+    "Applied agentics for operators: delivery-first, production-tested, business-owned, and governed by the transformation system it must land inside.",
   alternates: { canonical: "/agentics/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/agentics/",
-    title: "Applied Agentics — idigdata · It all starts with the data",
+    title: "Agentics — idigdata",
     description:
-      "It all starts with the data. Clean, structured, traceable lineage. A customer common data model the business owns. Production agentics, daily.",
+      "Applied agentics for operators: delivery-first, production-tested, business-owned, and governed by the transformation system it must land inside.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Applied Agentics",
+        alt: "idigdata — Agentics",
       },
     ],
   },
 };
 
+const camps = [
+  {
+    title: "Diagnosers",
+    body: "They name the failure, complain about vendors, and leave the operating business to land the change.",
+  },
+  {
+    title: "Builders",
+    body: "They build real AI-native systems for themselves, productized and usually held on their state.",
+  },
+  {
+    title: "Operators",
+    body: "They embed inside the business, make the technology survive contact with operations, and transfer the asset.",
+  },
+];
+
+const systemProof = [
+  {
+    name: "DigOps",
+    label: "Rob lives it",
+    image: "/brand/digops/digops-logo-panel.svg",
+    alt: "DigOps — Buy Make Sell",
+    body: "Agent-assisted workflows run the practice: CRM, proposal flow, billing, books, and human validation on the decisions.",
+  },
+  {
+    name: "The Rig",
+    label: "Rob builds with it",
+    image: "/brand/rig/logo-lockup-tagline-panel.svg",
+    alt: "The Rig — the human-in-the-loop layer",
+    body: "The work is observable: plans, tests, histories, acceptance gates, and agent output that can be reviewed.",
+  },
+  {
+    name: "BOSS",
+    label: "The client owns it",
+    image: "/brand/boss/boss-lockup-panel.svg",
+    alt: "BOSS — the business process harness",
+    body: "The business process harness makes agentics part of the transformation delivery system, not a sidecar demo.",
+  },
+];
+
 export default function AgenticsPage() {
   return (
-    <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
-      {/* ============== BLOCK 1 · HERO · It all starts with the data ============== */}
-      <section className="relative bg-cream pt-20 md:pt-24 pb-12 md:pb-16">
+    <div className="mx-auto max-w-content bg-cream px-6 font-body text-navy">
+      <section className="relative pt-10 pb-20 md:pt-16 md:pb-24">
         <M4Watermark position="top-right" />
-        <SectionKicker className="mb-6">
-          Agentic AI
-        </SectionKicker>
-        <h1 className="font-vollkorn font-extrabold text-navy text-[44px] md:text-[64px] lg:text-[80px] leading-[0.98] tracking-[-0.025em] text-balance mb-4 max-w-[1000px]">
-          It all starts with the{" "}
-          <em className="italic font-semibold">data.</em>
-        </h1>
-        <p className="font-body italic text-warm-gray text-[13px] md:text-[14px] mb-8 max-w-[720px]">
-          &mdash; Marc Benioff, Salesforce CEO &middot; Dreamforce 2025
-        </p>
-        <div className="space-y-5 max-w-[760px] font-body text-[16px] md:text-[17px] leading-[1.65] text-navy border-t border-navy/15 pt-6">
-          <p>
-            Your AI pilots are stalling because the substrate underneath
-            them isn&rsquo;t ready. Three ERPs, two versions of finance
-            truth, a CRM the ops team doesn&rsquo;t trust, and a board
-            asking when the agents land. Without clean, structured,
-            traceable data &mdash; and a customer common data model the
-            business owns &mdash; agentic AI is theater.
+        <SectionKicker className="mb-7">Applied agentics</SectionKicker>
+        <div className="max-w-[880px]">
+          <h1 className="font-vollkorn text-[46px] font-bold leading-[1] tracking-[-0.01em] text-navy sm:text-[58px] md:text-[72px]">
+            Agentics is not an implementation problem. It is a delivery problem.
+          </h1>
+          <p className="mt-7 max-w-[720px] font-vollkorn text-[22px] italic leading-[1.38] text-warm-gray md:text-[26px]">
+            The models are moving fast. The operating business is not.
+            idigdata brings the operator discipline that turns agentic
+            capability into delivered, validated work.
           </p>
-          <p>
-            You&rsquo;ll hear it called an implementation problem. It
-            isn&rsquo;t. It&rsquo;s an{" "}
-            <em className="italic">engineering</em> problem.
-          </p>
-          <p>
-            Three decades inside business-software transformations
-            &mdash; from the dashboard era through AutoML to applied
-            agentics. The output layer keeps evolving. The data problem
-            doesn&rsquo;t. The pattern doesn&rsquo;t change. The
-            technology is new.
+          <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
+            Data matters. But the sharper failure is delivery: no sponsor
+            clearing obstacles, no process redesign, no validation cycle, no
+            owner above the vendors. AI bolted onto a broken process produces
+            faster broken outputs.
           </p>
         </div>
       </section>
 
-      {/* ============== BLOCK 2 · WHAT MID-MARKET ACTUALLY NEEDS ============== */}
-      <section className="bg-cream py-24 md:py-32">
-        <header className="mb-10 max-w-[820px]">
-          <SectionKicker className="mb-6">
-            The honest read
-          </SectionKicker>
-          <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
-            Less than the vendor pitches are telling you.{" "}
-            <em className="italic font-semibold">More than your team thinks.</em>
-          </h2>
-        </header>
-
-        <div className="space-y-6 max-w-[820px] font-body text-[16px] md:text-[17px] leading-[1.65] text-navy">
-          <p>
-            The vendor landscape just bifurcated. Frontier labs are embedding
-            forward-deployed engineers inside PE portfolios at scale &mdash;
-            AI experts who don&rsquo;t know your finance close, your ERP
-            exceptions, or your supply chain edge cases. Big consultancies are
-            running multi-year deployment frameworks that bill against
-            engagement-time, not outcomes. Vertical AI tooling companies are
-            productizing single workflows. All useful &mdash; for some
-            businesses, in some shapes.
-          </p>
-          <p>
-            Most of them will tell you it&rsquo;s an implementation problem
-            and sell you a deployment. It isn&rsquo;t and you don&rsquo;t
-            need one. What you need is the operator who{" "}
-            <strong className="font-semibold">
-              translates between the AI engineers building the agents and
-              the finance, supply chain, and operations teams the work has
-              to land against
-            </strong>{" "}
-            &mdash; so what gets built does what your business actually
-            needs,{" "}
-            <em className="italic">before</em>{" "}you&rsquo;re locked into a
-            partner economics model, and so the substrate is yours at
-            handoff.
-          </p>
-          <p className="pt-2">
-            I look for whether the proposal understands the data substrate,
-            whether production observability is real, and whether the
-            commercial model rewards theater or operating value. The other
-            tells only show up once you read the proposal against the
-            business.
-          </p>
-          <p className="pt-3">
-            Talent design, board-ready ROI, vendor portfolio sequencing
-            &mdash; all flow from these. The substrate decides whether the
-            agentic work compounds or stalls.
-          </p>
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">The honest read</SectionKicker>
+        <div className="grid grid-cols-1 gap-9 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+              Diagnosers explain. Builders demo. Operators deliver.
+            </h2>
+            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
+              Rob is the missing third: a transformation operator who has
+              shipped production agentic systems and can transfer the operating
+              asset to the client.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {camps.map((camp) => (
+              <article key={camp.title} className="border border-navy/15 bg-white p-5">
+                <h3 className="font-vollkorn text-[22px] font-bold leading-tight text-navy">
+                  {camp.title}
+                </h3>
+                <p className="mt-3 font-body text-[14px] leading-[1.55] text-navy/75">
+                  {camp.body}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ============== BLOCK 3 · WHERE ARE YOU · two diagnostics ============== */}
-      <section className="bg-cream py-24 md:py-32">
-        <header className="mb-12 max-w-[820px]">
-          <SectionKicker className="mb-6">
-            Where are you
-          </SectionKicker>
-          <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
-            Two questions{" "}
-            <em className="italic font-semibold">before we start.</em>
-          </h2>
-        </header>
-
-        {/* Workflow shape · adoption vs transformation */}
-        <div className="mb-12 md:mb-14">
-          <p className="font-vollkorn italic font-medium text-warm-gray text-[16px] md:text-[18px] leading-snug mb-6 max-w-[680px]">
-            Workflow shape &mdash; adoption or transformation?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[1080px]">
-            <article className="border border-navy/15 bg-cream p-7 md:p-8 flex flex-col gap-4">
-              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
-                Adoption.
-              </h3>
-              <p className="font-body text-[15.5px] md:text-[16px] leading-[1.6] text-navy">
-                Agentic AI inside the work you already do. Productivity in
-                finance, supply chain, operations. Pilots that land in
-                production &mdash; not slideware. Your team learns the
-                tools without breaking the operating model.
-              </p>
-              <p className="font-body text-[14.5px] leading-[1.5] text-warm-gray pt-2 border-t border-navy/10">
-                Best fit when tier-1 systems run well and agentic AI is the
-                new layer on top &mdash; and the data substrate is ready
-                enough to support it.
-              </p>
-            </article>
-
-            <article className="border border-navy/15 bg-cream p-7 md:p-8 flex flex-col gap-4">
-              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
-                Transformation.
-              </h3>
-              <p className="font-body text-[15.5px] md:text-[16px] leading-[1.6] text-navy">
-                Agentic AI as the reason to rethink the operating model.
-                New workflows. Fewer manual handoffs. Data, processes, and
-                people reorganized around what agents make possible.
-              </p>
-              <p className="font-body text-[14.5px] leading-[1.5] text-warm-gray pt-2 border-t border-navy/10">
-                Best fit when the operating model is already creaky and
-                agentic AI is the catalyst, not the band-aid &mdash; and
-                the data work is part of the program, not an afterthought.
-              </p>
-            </article>
-          </div>
-        </div>
-
-        {/* Capital structure · PE-backed vs Independent */}
-        <div className="mb-8">
-          <p className="font-vollkorn italic font-medium text-warm-gray text-[16px] md:text-[18px] leading-snug mb-6 max-w-[680px]">
-            Capital structure &mdash; PE-backed or independent?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[1080px]">
-            <article className="border border-navy/15 bg-cream p-7 md:p-8 flex flex-col gap-4">
-              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
-                PE-backed.
-              </h3>
-              <p className="font-body text-[15.5px] md:text-[16px] leading-[1.6] text-navy">
-                Forward-deployed engineers are about to land in your
-                operation. You need independent oversight to make sure what
-                gets built survives your owner&rsquo;s exit &mdash; and
-                that the people doing the building understand your
-                industry, not just the tooling.
-              </p>
-            </article>
-
-            <article className="border border-navy/15 bg-cream p-7 md:p-8 flex flex-col gap-4">
-              <h3 className="font-vollkorn font-extrabold text-navy text-[24px] md:text-[28px] leading-[1.1] tracking-[-0.015em]">
-                Independent.
-              </h3>
-              <p className="font-body text-[15.5px] md:text-[16px] leading-[1.6] text-navy">
-                The priority lanes are increasingly closed to companies
-                without PE distribution channels. You need someone who runs
-                the same caliber of work without the captive-distribution
-                model.
-              </p>
-            </article>
-          </div>
-        </div>
-
-        <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[19px] leading-snug max-w-[760px]">
-          Either path on either axis, same gap. Same operator.
-        </p>
-      </section>
-
-      {/* ============== BLOCK 4 · WHY PILOTS STALL · dark navy panel ============== */}
-      <section
-        id="substrate"
-        className="relative overflow-hidden bg-navy text-cream px-6 md:px-10 lg:px-14 py-20 md:py-28"
-        aria-labelledby="substrate-h"
-      >
-        <div
-          aria-hidden="true"
-          className="absolute right-8 top-8 hidden h-28 w-28 grid-cols-3 gap-3 opacity-[0.09] md:grid"
-        >
-          {Array.from({ length: 9 }).map((_, i) => (
-            <span
-              key={i}
-              className={`block border border-cream ${
-                i === 4 ? "bg-gold border-gold" : i % 2 === 0 ? "bg-cream" : ""
-              }`}
-            />
-          ))}
-        </div>
-
-        <header className="relative mb-10 max-w-[820px]">
-          <p className="font-body text-[12px] font-semibold uppercase tracking-[0.22em] text-gold mb-6">
-            The mechanism of failure
-          </p>
-          <h2
-            id="substrate-h"
-            className="font-vollkorn font-extrabold text-cream text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance"
-          >
-            Pilots stall in the{" "}
-            <em className="italic font-semibold">substrate.</em>
-          </h2>
-        </header>
-
-        <div className="relative grid max-w-[1040px] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
-          <div className="space-y-5 max-w-[780px] border-l border-cream/20 pl-5 md:pl-7 font-body text-[16px] md:text-[17px] leading-[1.65] text-cream/90">
-            <p>
-              Most agentic pilots don&rsquo;t land in production because the
-              data underneath them isn&rsquo;t ready. It lives in three places
-              with three versions of the truth. There&rsquo;s no lineage you
-              can trace. There&rsquo;s no customer common data model agents
-              can reason against. The agents read broken state, write back to
-              broken state, and produce motion without outcome.
-            </p>
-            <p>
-              Where the data is clean, structured, and traceable &mdash; and
-              the customer common data model is real &mdash; agentic AI
-              compounds the value. Where it isn&rsquo;t, theater.
-            </p>
-            <p className="pt-2">
-              <strong className="font-semibold text-cream">
-                This is the thread under everything I do. The practice is
-                named for it.
-              </strong>
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">The wave</SectionKicker>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_0.75fr]">
+          <div>
+            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+              The gap is not whether agentics works. It is whether your
+              business can absorb it.
+            </h2>
+            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
+              Stanford's enterprise AI work points to the same conclusion:
+              successful organizations get executive sponsorship, obstacle
+              clearing, workflow redesign, and human validation around the
+              technology. The productivity upside is real; the delivery gap is
+              the bottleneck.
             </p>
           </div>
-
-          <aside
-            aria-label="Agentic failure pattern"
-            className="border border-cream/20 border-l-[3px] border-l-gold bg-cream/[0.04] px-6 py-6"
-          >
-            <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold mb-5">
-              Failure pattern
+          <aside className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-6">
+            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+              Dot-chart argument
             </p>
-            <ol className="space-y-4 font-body text-[13.5px] leading-[1.45] text-cream/85">
-              {[
-                "Fragmented data",
-                "Broken state",
-                "Agent motion",
-                "No outcome",
-              ].map((item, i) => (
-                <li key={item} className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-cream/25 text-[11px] font-semibold text-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ol>
+            <p className="mt-4 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
+              The chart is not a model leaderboard. It is the warning that
+              capability is outrunning most companies' ability to land it.
+            </p>
           </aside>
         </div>
       </section>
 
-      {/* ============== BLOCK 5 · PRODUCTION AGENTICS, DAILY · three proof panels ============== */}
-      <section id="production" className="bg-cream py-24 md:py-32">
-        <header className="mb-12 md:mb-14 max-w-[820px]">
-          <SectionKicker className="mb-6">
-            Where I&rsquo;ve arrived
-          </SectionKicker>
-          <h2 className="font-vollkorn font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-balance">
-            Two years inside.{" "}
-            <em className="italic font-semibold">
-              Production agentics, daily.
-            </em>
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">The production test</SectionKicker>
+        <div className="max-w-[780px]">
+          <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+            The valuable person is the one who has tested it against real work.
           </h2>
-          <p className="font-vollkorn italic font-medium text-warm-gray text-[17px] md:text-[19px] leading-snug border-t border-navy/15 pt-5 mt-6 max-w-[720px]">
-            The page you&rsquo;re reading is part of it. This is not a
-            credential from a past engagement. It is how the practice runs
-            now.
+          <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
+            Rob has. Five production agentic systems, daily operational use,
+            and a business he now runs on an agentic substrate. The point is
+            not fluency with prompts; it is knowing what agents do and do not
+            do once finance, supply chain, operations, governance, and people
+            enter the room.
           </p>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Panel · The Rig */}
-          <article className="border border-navy/15 bg-cream p-6 md:p-7 flex flex-col gap-5">
-            <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
-              How the work runs
-            </p>
-            <div className="h-24 flex items-center justify-center">
-              <Image
-                src="/brand/rig/logo-lockup-tagline-panel.svg"
-                alt="THE RIG — the human-in-the-loop layer"
-                width={600}
-                height={210}
-                className="h-20 w-auto"
-              />
-            </div>
-            <p className="font-body text-[14.5px] leading-[1.6] text-navy">
-              <strong className="font-semibold">The Rig</strong> is my
-              agentic operating environment &mdash; multi-lane
-              orchestration across the active practice. Observability,
-              layer contracts, severity-graded validation, build-loop
-              discipline.
-            </p>
-            <p className="font-body text-[14.5px] leading-[1.6] text-navy pt-1 border-t border-navy/10">
-              The receipts on{" "}
-              <Link href="/approach/" className="border-b border-navy/40 hover:border-navy">
-                Approach
-              </Link>{" "}
-              &mdash; trinity diagrams, engagement roadmap, six-axis
-              readiness &mdash; are produced{" "}
-              <em className="italic">on</em> the rig, not described{" "}
-              <em className="italic">by</em> it.
-            </p>
-          </article>
-
-          {/* Panel · BOSS */}
-          <article className="border border-navy/15 bg-cream p-6 md:p-7 flex flex-col gap-5">
-            <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
-              The substrate, productized
-            </p>
-            <div className="h-24 flex items-center justify-center">
-              <Image
-                src="/brand/boss/boss-lockup-panel.svg"
-                alt="BOSS — The business process harness"
-                width={600}
-                height={210}
-                className="h-20 w-auto"
-              />
-            </div>
-            <p className="font-body text-[14.5px] leading-[1.6] text-navy">
-              <strong className="font-semibold">BOSS</strong> productizes
-              the customer common data model and the six-constellation
-              process map &mdash; institutionalized in code. Built,
-              implemented, running in production. The operator owns it at
-              handoff. No managed-services tail. No platform tie-in.
-            </p>
-            <p className="font-vollkorn italic font-medium text-navy text-[15px] leading-[1.5] pt-1 border-t border-navy/10">
-              Built once. Owned forever.
-            </p>
-            <p>
-              <Link
-                href="/approach/"
-                className="inline-flex items-center gap-1 text-navy text-[13px] font-semibold uppercase tracking-[0.14em] border-b border-navy/40 hover:border-navy pb-1"
-              >
-                See how BOSS lands in an engagement{" "}
-                <span aria-hidden>&rarr;</span>
-              </Link>
-            </p>
-          </article>
-
-          {/* Panel · DigOps */}
-          <article className="border border-navy/15 bg-cream p-6 md:p-7 flex flex-col gap-5">
-            <p className="font-vollkorn italic font-semibold text-gold text-[13px] tracking-[0.04em]">
-              The proof is what you&rsquo;re reading
-            </p>
-            <div className="h-24 flex items-center justify-center">
-              <Image
-                src="/brand/digops/digops-logo-panel.svg"
-                alt="DigOps — the operating substrate · Buy · Make · Sell"
-                width={600}
-                height={210}
-                className="h-20 w-auto"
-              />
-            </div>
-            <p className="font-body text-[14.5px] leading-[1.6] text-navy">
-              <strong className="font-semibold">DigOps</strong> &mdash; the operating
-              substrate that runs the practice. CRM for the prospect pipeline. CPQ for
-              engagements + billing. ERP-core for accounting + payments + reporting.
-              One customer common data model. Multiple workflows.{" "}
-              <em className="italic">
-                Hunt &middot; track &middot; close &middot; run &middot; close &middot;
-                own the books.
-              </em>
-            </p>
-            <p className="font-vollkorn italic font-medium text-navy text-[15px] leading-[1.5] pt-1 border-t border-navy/10">
-              Shows the actual operating substrate &mdash; running on my own business.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* ============== BLOCK 6 · STACK · compact strip · pale-navy ============== */}
-      <section className="bg-pale-navy py-14 md:py-16">
-        <div className="max-w-[1080px]">
-          <SectionKicker className="mb-4">
-            The stack I work on daily
-          </SectionKicker>
-          <p className="font-vollkorn italic font-medium text-navy text-[18px] md:text-[20px] leading-[1.4] mb-4">
-            Multi-lab, multi-vendor by design.
-          </p>
-          <p className="font-body text-[14.5px] md:text-[15.5px] leading-[1.7] text-navy/80">
-            Anthropic and OpenAI in active rotation. MCP and Agent SDK as
-            protocols. Multi-vendor council pattern for the harder calls. The
-            tools are how I work the substrate &mdash; but the substrate is
-            what governs.
+          <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[21px] italic leading-[1.4] text-navy">
+            Agentics amplifies the operator model. It does not replace it.
           </p>
         </div>
       </section>
 
-      {/* ============== BLOCK 7 · CTA · navy card ============== */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[680px] bg-navy text-cream font-body rounded-[6px] shadow-[0_2px_24px_rgba(20,40,64,0.08)] border-l-[4px] border-l-gold px-8 md:px-10 lg:px-12 py-10 md:py-12 lg:py-14">
-          <p className="font-body font-semibold uppercase text-gold text-[10.5px] md:text-[11.5px] tracking-[0.24em] mb-6">
-            A conversation, not a proposal
-          </p>
-
-          <h2 className="font-vollkorn font-bold text-cream text-[28px] md:text-[36px] lg:text-[42px] leading-[1.18] tracking-[-0.01em] mb-5">
-            Let&rsquo;s talk shape &mdash; of your{" "}
-            <em className="italic font-semibold">agentics.</em>
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">Proof stack</SectionKicker>
+        <div className="mb-9 max-w-[760px]">
+          <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+            Three systems, one claim: operating practice, not AI theater.
           </h2>
-
-          <p className="font-vollkorn italic font-normal text-[#DCD9CC] text-[14.5px] md:text-[15.5px] leading-[1.6] mb-8">
-            Where you sit on workflow shape. Where you sit on capital
-            structure. What your data substrate actually looks like. Which
-            of the five questions are sharpest for your business. No deck.
-            No proposal.{" "}
-            <span className="text-gold not-italic font-medium">
-              Just talking shape.
-            </span>
+          <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
+            The proof is not that Rob knows the tools. The proof is that he has
+            tested the tools against real operating work, built the discipline
+            around them, and packaged the delivery asset for handoff.
           </p>
+        </div>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {systemProof.map((system) => (
+            <article key={system.name} className="border border-navy/15 bg-white p-6">
+              <p className="font-vollkorn text-[14px] italic text-warm-gray">
+                {system.label}
+              </p>
+              <div className="my-5 flex h-24 items-center justify-center">
+                <Image
+                  src={system.image}
+                  alt={system.alt}
+                  width={620}
+                  height={220}
+                  className="h-20 w-auto"
+                />
+              </div>
+              <h3 className="font-vollkorn text-[24px] font-bold leading-tight text-navy">
+                {system.name}
+              </h3>
+              <p className="mt-3 font-body text-[14.5px] leading-[1.6] text-navy/75">
+                {system.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
 
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <div className="mx-auto max-w-[680px] border-l-[4px] border-l-gold bg-navy px-8 py-10 text-cream md:px-10 md:py-12">
+          <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.24em] text-gold">
+            Delivery first
+          </p>
+          <h2 className="mt-5 font-vollkorn text-[31px] font-bold leading-[1.18] text-cream md:text-[42px]">
+            Bring the agentic question back to the business system.
+          </h2>
+          <p className="mt-5 font-vollkorn text-[17px] italic leading-[1.55] text-[#DCD9CC]">
+            If your pilots are stuck, your vendor roadmap is moving faster than
+            your operators, or your board wants AI leverage without creating
+            another dependency, start with the delivery frame.
+          </p>
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 bg-gold text-navy font-body font-semibold uppercase text-[13px] md:text-[14px] tracking-[0.18em] px-8 py-4 rounded-full hover:bg-[#FFD740] hover:shadow-lg transition-all duration-200"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
           >
-            Start a conversation <span aria-hidden>&rarr;</span>
+            Start a conversation <span aria-hidden="true">→</span>
           </Link>
-
-          <p className="mt-8 pt-6 border-t border-cream/15 font-body italic text-[#9EA0A6] text-[13px] md:text-[13.5px] leading-[1.5]">
-            For how I plug in &mdash; embedded, fractional, agentics
-            &mdash;{" "}
+          <p className="mt-7 border-t border-cream/15 pt-5 font-body text-[13px] italic leading-[1.5] text-[#DCD9CC]">
+            For the full transformation model, see{" "}
             <Link
-              href="/engagement/"
-              className="text-gold hover:text-[#FFD740] underline underline-offset-2 not-italic whitespace-nowrap"
+              href="/"
+              className="text-gold underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
             >
-              /engagement &rarr;
+              the home page
             </Link>
+            .
           </p>
         </div>
       </section>
