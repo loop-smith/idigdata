@@ -47,8 +47,8 @@ const FAQ: QA[] = [
     a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentics and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path.",
   },
   {
-    q: "How are engagement economics handled?",
-    a: "Engagement economics are handled directly with Robert Paddock after the mandate, scope, urgency, and ownership conditions are clear. The public site is for fit and substance, not a fee sheet.",
+    q: "Does idigdata publish pricing?",
+    a: "No. idigdata does not publish a rate sheet. Engagement shape and business fit are discussed directly with Robert Paddock after the mandate, scope, urgency, and ownership conditions are clear.",
   },
   {
     q: "What size company is the best fit?",
