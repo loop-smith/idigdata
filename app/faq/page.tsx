@@ -97,7 +97,7 @@ const FAQ: QA[] = [
   },
   {
     q: "How is idigdata different from AI advisory firms?",
-    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. idigdata starts with the operating business: sponsorship, workflows, data, validation, controls, and adoption. Robert has shipped production agentic systems: agents in production against real business workflows, with human validation. He uses agents in his own operating stack, so the advice is grounded in real work.",
+    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. idigdata starts with the operating business: sponsorship, workflows, data, validation, controls, and adoption. Robert has shipped agents in production against real business workflows, with human validation. He uses agents in his own operating stack, so the advice is grounded in real work.",
   },
   {
     q: "How does someone contact idigdata?",
@@ -145,7 +145,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Proof",
-    body: <>30 years, 50+ implementations, 15 full transformations, 5 production agentic systems.</>,
+    body: <>30 years, 50+ implementations, 15 full transformations, and agentics in production.</>,
   },
   {
     label: "Systems",

@@ -54,8 +54,9 @@ export default function ContactPage() {
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
           If the work needs an owner above the vendors, send a note. The first
-          conversation is not a deck ritual. It is a quick read on mandate,
-          systems, people, timing, and whether I can be useful.
+          conversation is not a deck ritual — it&apos;s a working call where I walk
+          you through how I&apos;d actually own your situation: a quick read on
+          mandate, systems, people, timing, and whether I can be useful.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,

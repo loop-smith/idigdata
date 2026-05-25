@@ -46,13 +46,36 @@ const proofCards = [
   },
 ];
 
+const groundingStats = [
+  {
+    value: "30 years",
+    label: "in business-system transformation",
+  },
+  {
+    value: "50+ implementations",
+    label: "across AEC, beverage CPG & healthcare",
+  },
+  {
+    value: "15 full transformations",
+    label: "at scale, led end-to-end",
+  },
+  {
+    value: "$100M–$1B",
+    label: "operators, the scale I work at",
+  },
+  {
+    value: "In production",
+    label: "agentics, running my own business on it today",
+  },
+];
+
 const systems = [
   {
     label: "The system I run on",
     title: "DigOps",
     image: "/brand/digops/digops-logo-panel.svg",
     alt: "DigOps — Buy Make Sell",
-    body: "I live it — I run my own practice on DigOps: books, pipeline, proposals, billing, agent-assisted with a human on every decision.",
+    body: "I run my own practice on DigOps — books, pipeline, proposals, billing, agent-assisted with a human on every call. It keeps my overhead near zero so my time goes to your work, and it's a live agentic system I can walk you through, not a slide.",
   },
   {
     label: "The machine that builds the machines",
@@ -192,6 +215,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="pb-14 md:pb-20">
+        <div className="rounded-[14px] bg-navy px-6 py-8 text-cream md:px-8 md:py-10">
+          <dl className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-5">
+            {groundingStats.map((stat) => (
+              <div key={stat.value} className="min-w-0">
+                <div className="mb-4 h-[3px] w-9 rounded-full bg-gold" />
+                <dt className="font-vollkorn text-[25px] font-bold leading-[1.08] text-cream md:text-[29px]">
+                  {stat.value}
+                </dt>
+                <dd className="mt-2 font-body text-[13px] leading-[1.35] text-[#DCD9CC]">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">The broken market</SectionKicker>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -209,6 +250,12 @@ export default function HomePage() {
           </div>
           <div>
             <p className="font-body text-[15.5px] leading-[1.65] text-navy">
+              You know the room. Everyone reports green and nothing moves. Two
+              vendors point at each other while the close slips another month.
+              The board deck says eighty percent complete for the third
+              quarter running. The work is real; the ownership isn&apos;t there.
+            </p>
+            <p className="mt-4 font-body text-[15.5px] leading-[1.65] text-navy">
               The problem is already pre-sold: ERP programs stall,
               transformation workstreams drift, AI pilots demo well and fail in
               operations. Diagnosers explain the failure. Vendors implement
@@ -226,10 +273,11 @@ export default function HomePage() {
             A senior operator who embeds, builds, transfers, and exits.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
-            I sit at operator altitude, not vendor altitude. I coordinate
-            the vendors, the internal teams, the executives, and the operating
-            reality into one delivery frame. Agentics is not the offer by
-            itself; it is the unfair advantage inside the operator model.
+            I work at the level of the business, not the vendor&apos;s slice. I
+            pull the vendors, the internal teams, the executives, and the
+            operating reality into one delivery frame. Agentics is not the
+            offer by itself; it is what sharpens the operator model — not a
+            product I&apos;m selling you.
           </p>
           <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
             No theater. No permanent entourage. The work should survive the
@@ -243,13 +291,19 @@ export default function HomePage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-center">
           <div>
             <h2 className="font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
-              Data, systems, processes, with the workforce in the center.
+              Data, systems, processes — with the workforce in the center.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
               The asset is not a deck and not a rented platform. It is the
               operating system of the transformation: governed data, mapped
               workflows, visible decisions, and operators who can run the
               result.
+            </p>
+            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
+              When it works, the room gets calmer. Executives see the real
+              state of the work. Decisions stop disappearing between meetings.
+              And the business can explain — and keep improving — the system
+              after I leave.
             </p>
           </div>
           <div className="flex justify-center">
@@ -261,7 +315,8 @@ export default function HomePage() {
       <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">Receipts</SectionKicker>
         <h2 className="max-w-[780px] font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
-          Thirty years in the work. Five production agentic systems at the edge.
+          Thirty years in the work. Here&apos;s what it looks like when the work
+          lands.
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {proofCards.map((card) => (
@@ -277,12 +332,9 @@ export default function HomePage() {
         </div>
         <p className="mt-7 max-w-[780px] font-body text-[15.5px] leading-[1.65] text-navy">
           AEC, beverage CPG, healthcare. ERP, WMS, MES, EMR, CRM/CPQ, and the
-          workflows underneath. The rare credential is not AI familiarity; it
-          is testing agentics against real work and knowing what lands.
-        </p>
-        <p className="mt-5 border-t border-navy/20 pt-4 font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-navy">
-          30 years · 50+ implementations · 15 full transformations · 5
-          production agentic systems
+          workflows underneath. What&apos;s scarce isn&apos;t AI familiarity — it&apos;s
+          having tested agentics against real operating work and knowing what
+          holds once finance, supply chain, and people are in the room.
         </p>
       </section>
 
@@ -322,8 +374,8 @@ export default function HomePage() {
         </div>
         <BossJourneyFigure />
         <p className="mt-8 max-w-[760px] border-t border-navy/15 pt-5 font-vollkorn text-[18px] italic leading-[1.45] text-navy">
-          Built as an asset, not an expense — something the business owns and
-          the board can defend as capital, not rented dependency.
+          Built to be owned, not rented — an asset the business carries, not
+          another line of expense.
         </p>
       </section>
 
@@ -369,8 +421,9 @@ export default function HomePage() {
             If the work needs an owner, start there.
           </h2>
           <p className="mt-5 font-vollkorn text-[17px] italic leading-[1.55] text-[#DCD9CC]">
-            No deck. No proposal theater. Bring the situation, the systems,
-            the stalled decision, or the agentic ambition. We will talk shape.
+            No deck. No proposal theater. Bring the real situation — the
+            systems, the stalled decision, the agentic ambition — and I&apos;ll
+            walk you through exactly how I&apos;d own it.
           </p>
           <Link
             href="/contact/"

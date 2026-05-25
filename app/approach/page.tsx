@@ -8,7 +8,7 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Approach - idigdata",
   description:
-    "How I turn transformation into a business-owned operating asset: build, observe, adjust, and transfer the system to the people who run the work.",
+    "How I turn transformation into a business-owned operating asset: build, observe, cycle, and transfer the system to the people who run the work.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
@@ -58,7 +58,7 @@ export default function ApproachPage() {
           I build the transformation as a system the business can own.
         </h1>
         <p className="mt-6 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[20px] md:text-[22px] leading-snug">
-          Build. Observe. Adjust. The loop is simple because the work is not.
+          Build. Observe. Cycle. The loop is simple because the work is not.
         </p>
         <p className="mt-6 max-w-[820px] text-[16px] text-ink leading-relaxed">
           I do not start with a vendor roadmap or a generic change model. I
@@ -208,6 +208,12 @@ export default function ApproachPage() {
           The test is what remains after I leave.
         </h2>
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+          <p className="lg:col-span-2 max-w-[820px] font-vollkorn italic font-medium text-warm-gray text-[20px] md:text-[22px] leading-snug">
+            The drag eases where you feel it most. The close runs faster.
+            Exceptions stop piling up. Vendor meetings stop being standoffs.
+            The board updates stop sounding defensive. Quietly, the business
+            starts running better than it did before I arrived.
+          </p>
           <div>
             <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray mb-3">
               Measured by

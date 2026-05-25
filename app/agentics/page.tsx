@@ -97,9 +97,11 @@ export default function AgenticsPage() {
               Diagnosers explain. Builders demo. Operators deliver.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              I am the missing third: a transformation operator who has
-              shipped production agentic systems and can transfer the operating
-              asset to the client.
+              Plenty of people can name why these programs fail, and plenty can
+              build agents for themselves. The part that usually goes missing
+              is the operator who owns the whole arc — who has shipped
+              production agentic systems and can hand the working asset to you.
+              That&apos;s the part I take.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -154,12 +156,11 @@ export default function AgenticsPage() {
             The valuable person is the one who has tested it against real work.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
-            I have — five production agentic systems: agents in production
-            against real business workflows, with human validation. Daily
-            operational use, and a business I now run on an agentic substrate.
-            The point is not fluency with prompts; it is knowing what agents do
-            and do not do once finance, supply chain, operations, governance,
-            and people enter the room.
+            I have — agents in production against real business workflows, with
+            human validation. Daily operational use, and a business I now run
+            on an agentic substrate. The point is not fluency with prompts; it
+            is knowing what agents do and do not do once finance, supply chain,
+            operations, governance, and people enter the room.
           </p>
           <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[21px] italic leading-[1.4] text-navy">
             Agentics amplifies the operator model. It does not replace it.

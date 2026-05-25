@@ -149,7 +149,7 @@ export default function EngagementPage() {
       <AccentRule className="mt-4" />
 
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <SectionKicker className="mb-4">The bench + continuity</SectionKicker>
+        <SectionKicker className="mb-4">The bench</SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[34px] md:text-[48px] leading-[1.04] tracking-normal text-balance">
           One operator — with continuity built into the work.
         </h2>
@@ -161,13 +161,14 @@ export default function EngagementPage() {
             no overhead you carry, no dependency by design.
           </p>
           <p>
-            The one-person question deserves a real answer. Continuity does not
-            live in my head: delivery state, decisions, workflows, and
-            validations are observable as the work runs; BOSS holds the
-            operating map, validation trail, and SOP memory as an asset the
-            business owns; your own operators are developed through the work so
-            they can carry it; and senior independents are available for scoped
-            packages. If I step away, the system and the people remain.
+            The one-person question deserves a real answer, so here it is. The
+            work is visible as it runs — delivery state, decisions, workflows,
+            validations — none of it trapped in my head. BOSS holds the
+            operating map, the validation trail, and the SOP memory as an asset
+            your business owns. Your own people are developed through the work,
+            so they can carry it. And when a scope needs specialist hands, I
+            bring in senior independents for that package. If I step away, the
+            system and the people remain.
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
