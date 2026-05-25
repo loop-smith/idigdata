@@ -86,7 +86,7 @@ export default function ArticlesIndexPage() {
             Gated diagrams
           </SectionKicker>
           <h2 className="font-vollkorn font-semibold text-navy text-[30px] md:text-[38px] leading-tight tracking-tight">
-            The visuals that came off Approach live in the article layer.
+            The visuals that came off Approach live here.
           </h2>
           <p className="mt-4 max-w-[720px] font-body text-stone text-[15px] leading-relaxed">
             These are the deeper maps I use when the conversation moves from
