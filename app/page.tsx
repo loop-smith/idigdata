@@ -48,24 +48,29 @@ const proofCards = [
 
 const groundingStats = [
   {
-    value: "30 years",
-    label: "in business-system transformation",
+    lead: "30 years",
+    sub: "in business-system transformation",
+    compact: false,
   },
   {
-    value: "50+ implementations",
-    label: "across AEC, beverage CPG & healthcare",
+    lead: "50+",
+    sub: "implementations across AEC, beverage CPG & healthcare",
+    compact: false,
   },
   {
-    value: "15 full transformations",
-    label: "at scale, led end-to-end",
+    lead: "15",
+    sub: "full transformations at scale, led end-to-end",
+    compact: false,
   },
   {
-    value: "$100M–$1B",
-    label: "operators, the scale I work at",
+    lead: "$100M–$1B",
+    sub: "operators, the scale I work at",
+    compact: true,
   },
   {
-    value: "In production",
-    label: "agentics, running my own business on it today",
+    lead: "In production",
+    sub: "agentics, running my own business on it today",
+    compact: true,
   },
 ];
 
@@ -217,15 +222,24 @@ export default function HomePage() {
 
       <section className="pb-14 md:pb-20">
         <div className="rounded-[14px] bg-navy px-6 py-8 text-cream md:px-8 md:py-10">
-          <dl className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-5">
+          <dl className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-x-8 gap-y-8 lg:grid-cols-[repeat(5,minmax(0,1fr))]">
             {groundingStats.map((stat) => (
-              <div key={stat.value} className="min-w-0">
+              <div
+                key={stat.lead}
+                className="min-w-0 overflow-hidden [overflow-wrap:break-word]"
+              >
                 <div className="mb-4 h-[3px] w-9 rounded-full bg-gold" />
-                <dt className="font-vollkorn text-[25px] font-bold leading-[1.08] text-cream md:text-[29px]">
-                  {stat.value}
+                <dt
+                  className={`font-vollkorn font-bold leading-[1.02] text-cream ${
+                    stat.compact
+                      ? "text-[22px] md:text-[24px] lg:text-[21px] xl:text-[23px]"
+                      : "text-[31px] md:text-[36px] lg:text-[31px] xl:text-[35px]"
+                  }`}
+                >
+                  {stat.lead}
                 </dt>
                 <dd className="mt-2 font-body text-[13px] leading-[1.35] text-[#DCD9CC]">
-                  {stat.label}
+                  {stat.sub}
                 </dd>
               </div>
             ))}
