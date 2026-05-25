@@ -7,14 +7,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Agentics — idigdata",
   description:
-    "Applied agentics for operators: delivery-first, production-tested, business-owned, and governed by the transformation system it must land inside.",
+    "Agentic AI that reaches production inside real operations — governed, traceable, human-validated, and owned by the business.",
   alternates: { canonical: "/agentics/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/agentics/",
     title: "Agentics — idigdata",
     description:
-      "Applied agentics for operators: delivery-first, production-tested, business-owned, and governed by the transformation system it must land inside.",
+      "Agentic AI that reaches production inside real operations — governed, traceable, human-validated, and owned by the business.",
     images: [
       {
         url: "/og-image.png",
@@ -26,42 +26,40 @@ export const metadata: Metadata = {
   },
 };
 
-const camps = [
+const questions = [
   {
-    title: "Diagnosers",
-    body: "They name the failure, complain about vendors, and leave the operating business to land the change.",
+    label: "Hold",
+    ask: "Can the business safely hold them?",
+    body: "Governed data, a shared version of reality, clear ownership of what an agent is allowed to touch. Most \"AI readiness\" fails here — quietly, long before the model does.",
   },
   {
-    title: "Builders",
-    body: "They build real AI-native systems for themselves, productized and usually held on their state.",
-  },
-  {
-    title: "Operators",
-    body: "They embed inside the business, make the technology survive contact with operations, and transfer the asset.",
+    label: "Absorb",
+    ask: "Can the business actually absorb them?",
+    body: "People who know how to delegate, verify, and own the output. Workflows redesigned around the work. A human on every consequential call. Capability the organization can't validate will not survive contact with the work.",
   },
 ];
 
 const systemProof = [
   {
     name: "DigOps",
-    label: "I live it",
+    label: "I run my own practice on it.",
     image: "/brand/digops/digops-logo-panel.svg",
     alt: "DigOps — Buy Make Sell",
-    body: "Agent-assisted workflows run the practice: CRM, proposal flow, billing, books, and human validation on the decisions.",
+    body: "I run my own practice on agent-assisted workflows with a human on every consequential call.",
   },
   {
     name: "The Rig",
-    label: "I build with it",
+    label: "Observable, tested, traceable.",
     image: "/brand/rig/logo-lockup-tagline-panel.svg",
     alt: "The Rig — the human-in-the-loop layer",
-    body: "The work is observable: plans, tests, histories, acceptance gates, and agent output that can be reviewed.",
+    body: "The build environment keeps agentic work observable, tested, and traceable — so what happened, and who approved it, is always answerable.",
   },
   {
     name: "BOSS",
-    label: "The client owns it",
+    label: "Owned by the business.",
     image: "/brand/boss/boss-lockup-panel.svg",
     alt: "BOSS — the business process harness",
-    body: "The business process harness makes agentics part of the transformation delivery system, not a sidecar demo.",
+    body: "The client-facing delivery asset makes agentics part of the transformation system the business owns — defensible after I leave, not dependent on me staying.",
   },
 ];
 
@@ -70,82 +68,100 @@ export default function AgenticsPage() {
     <div className="mx-auto max-w-content bg-cream px-6 font-body text-navy">
       <section className="relative pt-10 pb-20 md:pt-16 md:pb-24">
         <M4Watermark position="top-right" />
-        <SectionKicker className="mb-7">Applied agentics</SectionKicker>
+        <SectionKicker className="mb-7">Agentic AI, in production</SectionKicker>
         <div className="max-w-[880px]">
-          <h1 className="font-vollkorn text-[46px] font-bold leading-[1] tracking-[-0.01em] text-navy sm:text-[58px] md:text-[72px]">
-            Agentics is not an implementation problem. It is a delivery problem.
+          <h1 className="max-w-full text-wrap break-words font-vollkorn text-[34px] font-bold leading-[1.12] text-navy sm:text-[52px] md:text-[68px]">
+            The agents are ready. The question is whether your business can hold them — and actually absorb them.
           </h1>
-          <p className="mt-7 max-w-[720px] font-vollkorn text-[22px] italic leading-[1.38] text-warm-gray md:text-[26px]">
-            The models are moving fast. The operating business is not.
-            idigdata brings the operator discipline that turns agentic
-            capability into delivered, validated work.
+          <p className="mt-7 max-w-full text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray sm:max-w-[720px] md:text-[26px]">
+            Capability is already outrunning most companies&apos; ability to land
+            it. Most leadership teams want agents in production; very few have
+            gotten there — and the wall is data, governance, and ownership, not
+            the model. I&apos;m the operator who gets them across that line.
           </p>
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
-            Data matters. But the sharper failure is delivery: no sponsor
-            clearing obstacles, no process redesign, no validation cycle, no
-            owner above the vendors. AI bolted onto a broken process produces
-            faster broken outputs.
+            The upside is real. So is the failure mode: an agent acting on
+            ungoverned data, with no human on the call and no record of who
+            approved what. I build the other kind — agentic work that reaches
+            production and holds up afterward, because it was defensible by
+            design.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">Two questions</SectionKicker>
+        <div className="max-w-[840px]">
+          <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+            Before you put agents in the business, two questions decide everything.
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {questions.map((question) => (
+              <article
+                key={question.label}
+                className="border border-navy/15 border-l-[4px] border-l-gold bg-white p-6"
+              >
+                <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+                  {question.label}
+                </p>
+                <h3 className="mt-3 font-vollkorn text-[25px] font-bold leading-[1.2] text-navy">
+                  {question.ask}
+                </h3>
+                <p className="mt-4 font-body text-[15px] leading-[1.62] text-navy/80">
+                  {question.body}
+                </p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-7 max-w-[760px] font-vollkorn text-[20px] italic leading-[1.45] text-navy">
+            Answer both and agentic capability becomes{" "}
+            <span className="bg-gold/80 px-1 font-bold not-italic">
+              decision integrity
+            </span>{" "}
+            — decisions the business can stand behind, trace, and defend. Skip
+            them and you&apos;ve automated the disagreement at scale.
           </p>
         </div>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">The honest read</SectionKicker>
-        <div className="grid grid-cols-1 gap-9 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-              Diagnosers explain. Builders demo. Operators deliver.
-            </h2>
-            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              Plenty of people can name why these programs fail, and plenty can
-              build agents for themselves. The part that usually goes missing
-              is the operator who owns the whole arc — who has shipped
-              production agentic systems and can hand the working asset to you.
-              That&apos;s the part I take.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {camps.map((camp) => (
-              <article key={camp.title} className="border border-navy/15 bg-white p-5">
-                <h3 className="font-vollkorn text-[22px] font-bold leading-tight text-navy">
-                  {camp.title}
-                </h3>
-                <p className="mt-3 font-body text-[14px] leading-[1.55] text-navy/75">
-                  {camp.body}
-                </p>
-              </article>
-            ))}
-          </div>
+        <div className="max-w-[780px]">
+          <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+            Diagnosers explain. Builders demo. Operators finish.
+          </h2>
+          <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
+            Plenty of people can name why these programs fail, and plenty can
+            build an agent for themselves. The part that goes missing is the
+            operator who owns the whole arc and pushes it to done — who has
+            shipped production agentic systems. Getting business-system
+            transformations across the finish line is the part I take. I
+            started running projects at eighteen, on construction sites; that
+            finishing discipline is older than the technology, and it&apos;s what
+            agentic work is actually missing.
+          </p>
         </div>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">The wave</SectionKicker>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_0.75fr]">
-          <div>
-            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-              The gap is not whether agentics works. It is whether your
-              business can absorb it.
-            </h2>
-            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              Stanford's enterprise AI work points to the same conclusion:
-              successful organizations get executive sponsorship, obstacle
-              clearing, workflow redesign, and human validation around the
-              technology. The productivity upside is real; the delivery gap is
-              the bottleneck.
-            </p>
-          </div>
-          <aside className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-6">
-            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-              The companies that win
-            </p>
-            <p className="mt-4 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
-              This isn&apos;t a race between models. Capability is already
-              outrunning most companies&apos; ability to land it. The advantage
-              goes to the operators who can absorb it into real work — not to
-              whoever buys the most tools.
-            </p>
-          </aside>
+        <div className="border-l-[4px] border-l-gold bg-navy px-7 py-9 text-cream md:px-10 md:py-12">
+          <SectionKicker className="mb-5 [&_span:first-child]:bg-gold [&_span:last-child]:text-gold">
+            Where I start
+          </SectionKicker>
+          <h2 className="max-w-[760px] font-vollkorn text-[32px] font-bold leading-[1.15] text-cream md:text-[44px]">
+            My first two calls are to the CFO and the Compliance Officer.
+          </h2>
+          <p className="mt-6 max-w-[780px] font-body text-[15.5px] leading-[1.68] text-[#DCD9CC]">
+            Not the innovation team — the people who carry the consequences. A
+            vendor can demo capability; they can&apos;t tell you whether it
+            survives an audit, a regulator, or discovery. That answer comes
+            from having sat with those roles through a real transformation —
+            the financial close, the revenue definitions, the controls
+            underneath. Get those two in the room first and agentics stops being
+            a science project and becomes something the business can actually
+            run. This is sharpest in finance, where a wrong number isn&apos;t a
+            bug — it&apos;s a finding.
+          </p>
         </div>
       </section>
 
@@ -153,17 +169,15 @@ export default function AgenticsPage() {
         <SectionKicker className="mb-5">The production test</SectionKicker>
         <div className="max-w-[780px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            What matters is testing it against the real work.
+            What counts is testing it against the real work.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
             I have — agents in production against real business workflows, with
-            human validation. Daily operational use, and a business I now run
-            on an agentic substrate. The point is not fluency with prompts; it
-            is knowing what agents do and do not do once finance, supply chain,
-            operations, governance, and people enter the room.
-          </p>
-          <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[21px] italic leading-[1.4] text-navy">
-            Agentics amplifies the operator model. It does not replace it.
+            human validation, and a practice I now run on an agentic substrate.
+            The point is not fluency with prompts; it&apos;s knowing what agents
+            do and do not do once finance, supply chain, operations,
+            governance, and people are in the room. I&apos;d rather show you a live
+            system than a slide.
           </p>
         </div>
       </section>
@@ -172,21 +186,19 @@ export default function AgenticsPage() {
         <SectionKicker className="mb-5">Proof stack</SectionKicker>
         <div className="mb-9 max-w-[760px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            Three systems, one claim: operating practice, not AI theater.
+            Three systems, one claim: this is operating practice, not AI theater.
           </h2>
-          <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-            The proof is not that I know the tools. The proof is that I have
-            tested the tools against real operating work, built the discipline
-            around them, and packaged the delivery asset for handoff.
-          </p>
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {systemProof.map((system) => (
-            <article key={system.name} className="border border-navy/15 bg-white p-6">
-              <p className="font-vollkorn text-[14px] italic text-warm-gray">
-                {system.label}
+            <article
+              key={system.name}
+              className="flex min-h-[330px] flex-col border border-navy/15 bg-navy p-6 text-cream"
+            >
+              <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold">
+                {system.name}
               </p>
-              <div className="my-5 flex h-24 items-center justify-center">
+              <div className="my-5 flex h-24 items-center justify-center bg-cream/95 px-4">
                 <Image
                   src={system.image}
                   alt={system.alt}
@@ -195,10 +207,10 @@ export default function AgenticsPage() {
                   className="h-20 w-auto"
                 />
               </div>
-              <h3 className="font-vollkorn text-[24px] font-bold leading-tight text-navy">
-                {system.name}
+              <h3 className="font-vollkorn text-[24px] font-bold leading-tight text-cream">
+                {system.label}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.6] text-navy/75">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.6] text-[#DCD9CC]">
                 {system.body}
               </p>
             </article>
@@ -212,12 +224,13 @@ export default function AgenticsPage() {
             Delivery first
           </p>
           <h2 className="mt-5 font-vollkorn text-[31px] font-bold leading-[1.18] text-cream md:text-[42px]">
-            Bring the agentic question back to the business system.
+            Bring the agentic question back to the business.
           </h2>
           <p className="mt-5 font-vollkorn text-[17px] italic leading-[1.55] text-[#DCD9CC]">
-            If your pilots are stuck, your vendor roadmap is moving faster than
-            your operators, or your board wants AI leverage without creating
-            another dependency, start with the delivery frame.
+            If your pilots are stuck, your vendor roadmap is outrunning your
+            operators, or your board wants AI leverage without creating another
+            dependency, start with the operator who gets it to production and
+            leaves it defensible.
           </p>
           <Link
             href="/contact/"
@@ -225,16 +238,6 @@ export default function AgenticsPage() {
           >
             Start a conversation <span aria-hidden="true">→</span>
           </Link>
-          <p className="mt-7 border-t border-cream/15 pt-5 font-body text-[13px] italic leading-[1.5] text-[#DCD9CC]">
-            For the full transformation model, see{" "}
-            <Link
-              href="/"
-              className="text-gold underline decoration-gold/50 underline-offset-4 hover:decoration-gold"
-            >
-              the home page
-            </Link>
-            .
-          </p>
         </div>
       </section>
     </div>
