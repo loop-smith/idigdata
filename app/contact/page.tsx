@@ -49,8 +49,8 @@ export default function ContactPage() {
           Send the real shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          I take on a small number of embedded transformations where the
-          mandate is real and the business is ready to own the result.
+          A quick, direct read on whether this is a real fit — no deck, no
+          proposal theater.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
           If the work needs an owner above the vendors, send a note. The first

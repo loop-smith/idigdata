@@ -72,7 +72,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is BOSS?",
-    a: "BOSS is the business process harness: the transformation delivery asset a client can own at exit. It carries the workflow map, delivery state, validation cycle, SOP memory, and operating knowledge that make the transformation durable after the embedded operator leaves.",
+    a: "BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge. It makes the transformation durable after the embedded operator leaves.",
   },
   {
     q: "How do DigOps, the Rig, and BOSS relate to idigdata?",
@@ -97,7 +97,7 @@ const FAQ: QA[] = [
   },
   {
     q: "How is idigdata different from AI advisory firms?",
-    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. idigdata starts with the operating business: sponsorship, workflows, data, validation, controls, and adoption. Robert has shipped production agentic systems and uses agents in his own operating stack, so the advice is grounded in real work.",
+    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. idigdata starts with the operating business: sponsorship, workflows, data, validation, controls, and adoption. Robert has shipped production agentic systems: agents in production against real business workflows, with human validation. He uses agents in his own operating stack, so the advice is grounded in real work.",
   },
   {
     q: "How does someone contact idigdata?",

@@ -138,10 +138,10 @@ export default function AgenticsPage() {
               The companies that win
             </p>
             <p className="mt-4 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
-              This isn't a race between models. Capability is already
-              outrunning most companies' ability to land it — and the winners
-              are the operators who lead with it now, not the ones waiting for
-              it to feel safe.
+              This isn&apos;t a race between models. Capability is already
+              outrunning most companies&apos; ability to land it. The advantage
+              goes to the operators who can absorb it into real work — not to
+              whoever buys the most tools.
             </p>
           </aside>
         </div>
@@ -154,11 +154,12 @@ export default function AgenticsPage() {
             The valuable person is the one who has tested it against real work.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
-            I have — five production agentic systems, daily operational use,
-            and a business I now run on an agentic substrate. The point is
-            not fluency with prompts; it is knowing what agents do and do not
-            do once finance, supply chain, operations, governance, and people
-            enter the room.
+            I have — five production agentic systems: agents in production
+            against real business workflows, with human validation. Daily
+            operational use, and a business I now run on an agentic substrate.
+            The point is not fluency with prompts; it is knowing what agents do
+            and do not do once finance, supply chain, operations, governance,
+            and people enter the room.
           </p>
           <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[21px] italic leading-[1.4] text-navy">
             Agentics amplifies the operator model. It does not replace it.

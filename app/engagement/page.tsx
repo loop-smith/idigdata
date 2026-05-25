@@ -65,9 +65,9 @@ const entryModes = [
 ];
 
 const benchPoints = [
-  "Senior independent specialists pulled in for the exact work.",
-  "No standing bench overhead or utilization pressure.",
-  "Continuity discipline from week one so the work is not trapped in my head.",
+  "senior independents for scoped packages",
+  "no standing bench overhead",
+  "continuity that survives the operator",
 ];
 
 export default function EngagementPage() {
@@ -149,16 +149,27 @@ export default function EngagementPage() {
       <AccentRule className="mt-4" />
 
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
-        <SectionKicker className="mb-4">The bench</SectionKicker>
+        <SectionKicker className="mb-4">The bench + continuity</SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[34px] md:text-[48px] leading-[1.04] tracking-normal text-balance">
-          One operator, with the right bench only when the work calls for it.
+          One operator — with continuity built into the work.
         </h2>
-        <p className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed">
-          I do not sell a pyramid. I bring a 30-year virtual network of senior
-          specialists across engineering, data, architecture, project
-          leadership, vendor management, and change work. They come in for the
-          exact scope and come off when done.
-        </p>
+        <div className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed space-y-4">
+          <p>
+            I do not carry a standing bench. When the work needs specialist
+            capacity, I bring known senior independents into scoped work
+            packages, and they come off when the package is done. No pyramid,
+            no overhead you carry, no dependency by design.
+          </p>
+          <p>
+            The one-person question deserves a real answer. Continuity does not
+            live in my head: delivery state, decisions, workflows, and
+            validations are observable as the work runs; BOSS holds the
+            operating map, validation trail, and SOP memory as an asset the
+            business owns; your own operators are developed through the work so
+            they can carry it; and senior independents are available for scoped
+            packages. If I step away, the system and the people remain.
+          </p>
+        </div>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
           {benchPoints.map((point) => (
             <div

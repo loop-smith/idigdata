@@ -31,36 +31,18 @@ export const metadata: Metadata = {
   },
 };
 
-const marketStops = [
-  {
-    title: "Diagnosers explain.",
-    body: "They can name why transformation fails, but they do not embed and land the work.",
-  },
-  {
-    title: "Vendors implement.",
-    body: "They ship their slice, their roadmap, and often their managed-services tail.",
-  },
-  {
-    title: "AI builders demo.",
-    body: "They build impressive systems, usually on their state, for their economics.",
-  },
-];
-
 const proofCards = [
   {
-    kicker: "RECOVERY",
-    title: "$8M ERP, month seventeen, brought to done/done in six.",
-    body: "A stalled program was re-orchestrated above the vendor playbook and put back on the operator's calendar.",
+    title: "Stalled ERP recovered under unified governance",
+    body: "A program drifting under vendor control, driven to done/done once one owner held the delivery spine.",
   },
   {
-    kicker: "DELIVERY",
-    title: "Vendor quoted twenty-four months and $10M. Delivered in eighteen months for $5M.",
-    body: "Same scope, half the spend, six months faster, with the operator's team owning the asset from day one.",
+    title: "Vendor-led economics beaten by operator-led delivery",
+    body: "Work scoped at a vendor's price, delivered for less by owning the path above it.",
   },
   {
-    kicker: "CONSOLIDATION",
-    title: "Two ERPs to one. Month-end close from eighteen days to four.",
-    body: "Post-M&A operating reality became a governed system the finance and operations teams could run.",
+    title: "Post-M&A systems consolidated, close cycle compressed",
+    body: "Two operating stacks merged into one governed system, the monthly close materially faster.",
   },
 ];
 
@@ -70,21 +52,21 @@ const systems = [
     title: "DigOps",
     image: "/brand/digops/digops-logo-panel.svg",
     alt: "DigOps — Buy Make Sell",
-    body: "The system I run my own business on: books, pipeline, proposals, billing, and agent-assisted classification with a human on every decision.",
+    body: "I live it — I run my own practice on DigOps: books, pipeline, proposals, billing, agent-assisted with a human on every decision.",
   },
   {
     label: "The machine that builds the machines",
     title: "The Rig",
     image: "/brand/rig/logo-lockup-tagline-panel.svg",
     alt: "The Rig — the human-in-the-loop layer",
-    body: "The machine that builds the machines: build plans, full history, tests, acceptance, and observable agent work.",
+    body: "I can repeat it with discipline — the Rig is my build environment, where every build is observable, tested, and traceable.",
   },
   {
     label: "What you own at the end",
     title: "BOSS",
     image: "/brand/boss/boss-lockup-panel.svg",
     alt: "BOSS — the business process harness",
-    body: "The business process harness: the transformation delivery asset you own at exit.",
+    body: "You own the result — BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge. It is what remains when I exit.",
   },
 ];
 
@@ -218,22 +200,21 @@ export default function HomePage() {
               The technology works. Delivery is where it dies.
             </h2>
             <p className="mt-5 font-vollkorn text-[18px] italic leading-[1.5] text-warm-gray">
-              Bain says 88% of transformations fall short. Stanford's Digital
-              Economy Lab puts the AI version plainly: the challenge is
-              everything else.
+              Bain finds 88% of transformations fall short of their ambitions.
+              Stanford&apos;s Digital Economy Lab reaches the same verdict on the
+              AI version: the bottleneck isn&apos;t the technology, it&apos;s everything
+              around it. That &quot;everything else&quot; — ownership, delivery,
+              adoption — is the work I take.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {marketStops.map((item) => (
-              <article key={item.title} className="border border-navy/15 bg-white p-5">
-                <h3 className="font-vollkorn text-[20px] font-bold leading-tight text-navy">
-                  {item.title}
-                </h3>
-                <p className="mt-3 font-body text-[14px] leading-[1.55] text-navy/75">
-                  {item.body}
-                </p>
-              </article>
-            ))}
+          <div>
+            <p className="font-body text-[15.5px] leading-[1.65] text-navy">
+              The problem is already pre-sold: ERP programs stall,
+              transformation workstreams drift, AI pilots demo well and fail in
+              operations. Diagnosers explain the failure. Vendors implement
+              their slice. AI builders rent you tools on their state. None of
+              them owns the transformation as a business system.
+            </p>
           </div>
         </div>
       </section>
@@ -279,36 +260,13 @@ export default function HomePage() {
 
       <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">Receipts</SectionKicker>
-        <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-          <h2 className="font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
-            Thirty years in the work. Five production agentic systems at the edge.
-          </h2>
-          <div>
-            <dl className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              {["30 years", "50+ implementations", "15 transformations", "5 production agents"].map((metric) => (
-                <div key={metric} className="border-t border-navy/20 pt-3">
-                  <dt className="sr-only">Proof point</dt>
-                  <dd className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-navy">
-                    {metric}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <p className="mt-6 font-body text-[15.5px] leading-[1.65] text-navy">
-              AEC, beverage CPG, healthcare. ERP, WMS, MES, EMR, CRM/CPQ, and
-              the workflows underneath. The rare credential is not AI
-              familiarity; it is testing agentics against real work and knowing
-              what lands.
-            </p>
-          </div>
-        </div>
+        <h2 className="max-w-[780px] font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
+          Thirty years in the work. Five production agentic systems at the edge.
+        </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {proofCards.map((card) => (
-            <article key={card.kicker} className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-5">
-              <p className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-                {card.kicker}
-              </p>
-              <h3 className="mt-3 font-vollkorn text-[20px] font-bold leading-[1.25] text-navy">
+            <article key={card.title} className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-5">
+              <h3 className="font-vollkorn text-[20px] font-bold leading-[1.25] text-navy">
                 {card.title}
               </h3>
               <p className="mt-3 font-body text-[14px] leading-[1.55] text-navy/75">
@@ -317,6 +275,15 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+        <p className="mt-7 max-w-[780px] font-body text-[15.5px] leading-[1.65] text-navy">
+          AEC, beverage CPG, healthcare. ERP, WMS, MES, EMR, CRM/CPQ, and the
+          workflows underneath. The rare credential is not AI familiarity; it
+          is testing agentics against real work and knowing what lands.
+        </p>
+        <p className="mt-5 border-t border-navy/20 pt-4 font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-navy">
+          30 years · 50+ implementations · 15 full transformations · 5
+          production agentic systems
+        </p>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
@@ -325,12 +292,6 @@ export default function HomePage() {
           <h2 className="font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
             I run this model before I bring it to you.
           </h2>
-          <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-            The systems are not a product taxonomy for the buyer to memorize.
-            They are proof that the operating model is real. BOSS is the one
-            you receive: the delivery asset that keeps the transformation from
-            decaying after handoff.
-          </p>
         </div>
         <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
           {systems.map((system) => (
@@ -360,6 +321,10 @@ export default function HomePage() {
           ))}
         </div>
         <BossJourneyFigure />
+        <p className="mt-8 max-w-[760px] border-t border-navy/15 pt-5 font-vollkorn text-[18px] italic leading-[1.45] text-navy">
+          Built as an asset, not an expense — something the business owns and
+          the board can defend as capital, not rented dependency.
+        </p>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
@@ -373,10 +338,6 @@ export default function HomePage() {
               The lead shape is embedded transformation leadership.
               Fractional, recovery, and agentics engagements are entry modes
               into the same operator model, not a menu of unrelated services.
-            </p>
-            <p className="mt-5 border-t border-navy/15 pt-5 font-vollkorn text-[18px] italic leading-[1.45] text-navy">
-              I take on a small number of embedded transformations where the
-              mandate is real and the business is ready to own the result.
             </p>
           </div>
           <div>
