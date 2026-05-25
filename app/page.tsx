@@ -401,9 +401,9 @@ export default function HomePage() {
               One model. Several entry points.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              The lead shape is embedded transformation leadership.
-              Fractional, recovery, and agentics engagements are entry modes
-              into the same operator model, not a menu of unrelated services.
+              Embedded transformation leadership is the core offer.
+              Fractional, recovery, and agentics engagements are ways into the
+              same operator model, not a menu of unrelated services.
             </p>
           </div>
           <div>
@@ -412,9 +412,9 @@ export default function HomePage() {
               Serious buyers need a better map.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              The article layer teaches the mechanics: why transformations
-              fail, how delivery gets governed, and what production agentics
-              requires once it leaves the demo room.
+              The articles teach the mechanics: why transformations fail, how
+              delivery gets governed, and what production agentics requires
+              once it leaves the demo room.
             </p>
             <Link
               href="/articles/"

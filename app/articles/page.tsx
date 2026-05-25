@@ -68,7 +68,7 @@ export default function ArticlesIndexPage() {
           I keep the deeper mechanics here.
         </h1>
         <p className="mt-6 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
-          The main site gives the spine. The article layer holds the maps:
+          The main site gives the spine. The articles hold the maps:
           why business-system change fails, how delivery gets governed, and
           what agentics becomes when it is tied to real operating work.
         </p>

@@ -209,7 +209,7 @@ export default function EngagementPage() {
       <section className="bg-pale-navy px-0 md:px-8 pt-16 md:pt-20 pb-20 md:pb-24">
         <SectionKicker className="mb-4">Commercial logic</SectionKicker>
         <h2 className="font-vollkorn font-extrabold text-navy text-[34px] md:text-[48px] leading-[1.04] tracking-normal text-balance">
-          The economics follow the architecture.
+          Lean by design.
         </h2>
         <div className="mt-5 max-w-[820px] text-[16px] md:text-[17px] text-ink leading-relaxed space-y-4">
           <p>

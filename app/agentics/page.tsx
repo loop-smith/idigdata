@@ -153,7 +153,7 @@ export default function AgenticsPage() {
         <SectionKicker className="mb-5">The production test</SectionKicker>
         <div className="max-w-[780px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            The valuable person is the one who has tested it against real work.
+            What matters is testing it against the real work.
           </h2>
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
             I have — agents in production against real business workflows, with

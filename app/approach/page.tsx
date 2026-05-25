@@ -178,8 +178,8 @@ export default function ApproachPage() {
           operators to act on the same truth.
         </p>
         <p className="mt-8 max-w-[820px] font-vollkorn italic text-warm-gray text-[15px] md:text-[16px] leading-snug">
-          The deeper mechanics belong in the article layer. On the main site,
-          the principle is enough: architecture first,
+          The deeper architecture and delivery mechanics live in the articles.
+          On the main site, the principle is enough: architecture first,
           vendors second, ownership always.
         </p>
       </section>
