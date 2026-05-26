@@ -9,7 +9,7 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata — Embedded transformation leadership for the agentic era",
+      "idigdata - Embedded transformation leadership for the agentic era",
   },
   description:
     "idigdata embeds Robert Paddock inside $100M-$1B operators to deliver agentic-era business-system change and leave behind a business-owned operating asset.",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata — Embedded transformation leadership",
+    title: "idigdata - Embedded transformation leadership",
     description:
       "A 30-year transformation operator who delivers agentic-era business-system change and leaves behind a business-owned operating asset.",
     images: [
@@ -192,9 +192,10 @@ export default function HomePage() {
           </div>
           <div className="border-l-0 border-navy/20 lg:border-l lg:pl-8">
             <p className="font-vollkorn text-[21px] italic leading-[1.35] text-warm-gray md:text-[25px]">
-              idigdata embeds Robert Paddock inside $100M-$1B businesses to
-              deliver agentic-era change, install the operating asset, and
-              exit by design.
+              idigdata embeds Robert Paddock, a 30-year business-system
+              transformation operator, inside $100M-$1B businesses to deliver
+              agentic-era change, install the operating asset, and exit by
+              design.
             </p>
             <p className="mt-5 max-w-[58ch] font-body text-[15.5px] leading-[1.65] text-navy">
               Transformations fail when no one owns the business system above

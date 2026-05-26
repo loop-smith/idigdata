@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
     default:
-      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
-    template: "%s · Forward-Deployed Operator",
+      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
+    template: "%s - Forward-Deployed Operator",
   },
   description:
     "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     url: "https://idigdata.com",
     siteName: "idigdata",
     title:
-      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
+      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
       "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "idigdata — Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
+      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
     description:
       "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
     images: [
