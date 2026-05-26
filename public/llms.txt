@@ -1,71 +1,53 @@
 # idigdata
 
-> Independent practice for business system transformation. Forward-Deployed Operator at mid-market scale (V1) and applied agentics at lab/PE altitude (V2). Founded 2016 by Robert Paddock.
+> Independent practice for business-system transformation. Embedded transformation leadership for $100M–$1B operators in the agentic era. Founded 2016 by Robert Paddock.
 
-## Key facts
+idigdata is the independent practice of Robert Paddock — a 30-year business-system transformation operator who embeds inside mid-market businesses ($100M–$1B revenue), owns the transformation path above the vendors, installs a business-owned operating asset, and exits by design when the business can carry the result. Three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare. System breadth covers ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, and HRIS, with a Common Data Model and master-data discipline under every engagement.
 
-- **Name:** Robert Paddock. **Practice:** idigdata — independent, founded 2016.
-- **Role:** Forward-Deployed Operator (FDO) — senior-leadership-altitude lead for business system transformation and applied agentics. Also serves the queries: contract CIO, fractional CIO, transformation lead, transformative CIO.
-- **Who it's for:** mid-market operators, $100M–$1B revenue.
-- **Industries:** architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare (electronic health records / EHR).
-- **Systems:** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI.
-- **Track record:** 30 years; 50-plus implementations; 15 full multi-year transformations; 5 production agentic systems: agents in production against real business workflows, with human validation (pattern level due to IP).
-- **Model:** one Operator plus a 30-year virtual network; vendor-agnostic; business-owned substrate; exit-by-design; no carried bench, no managed-services tail, no lock-in.
-- **Platform:** BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge.
-- **Engagement shapes:** Embedded (full transformation), Fractional (one lever), Agentics (substrate-aware AI program).
-- **Contact:** robert@idigdata.com · idigdata.com/contact
+## The problem idigdata owns
 
-## Overview
-
-idigdata is the independent practice of Robert Paddock — a Forward-Deployed Operator (FDO) with 30 years inside mid-market business system transformations and 2 years deep in applied agentics. The practice ships business-owned, vendor-agnostic transformations for $100M–$1B operators across three industry specialties: AEC, beverage CPG, and healthcare (EHR). Two core threads run under every engagement: ERP as the financial and accounting backbone, and compliance and risk as the foundation. System breadth covers ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, and HRIS.
-
-The Forward-Deployed Operator (FDO) is distinct from the Forward-Deployed Engineer (FDE) that Anthropic's $1.5B Goldman-Blackstone-Hellman&Friedman JV (May 2026) and OpenAI's $10B Deployment Company (May 2026) ship. FDE is engineering altitude with platform tie-in and default-forever-embedded posture. FDO is senior-leadership altitude with business-owned substrate and exit-by-design — a different corner of the same emerging market. idigdata sits at a third corner that neither lab-FDE programs nor McKinsey-style consulting occupies: operator-altitude help, business-owned deliverable, structurally lean firm, defined exit at engagement close.
+Bain finds 88% of business transformations fall short of their ambitions, and Stanford's Digital Economy Lab finds the same bottleneck in the AI version: the technology works; delivery is where it dies. The market is full of diagnosers who explain the failure, vendors who implement a slice, and AI builders who rent tools on their own state — but none of them owns the transformation as a business system. idigdata is the missing third: a senior operator who embeds, builds, transfers, and exits, accountable for getting the work to done/done.
 
 ## Primary Pages
 
-- [Home](https://idigdata.com/): asset overview, three industry specialties, two core threads, system breadth, meta-thesis register
-- [Approach](https://idigdata.com/approach/): the FDO engagement shape, two-thread structural discipline, exit-by-design as deliverable form
-- [Agentics](https://idigdata.com/agentics/): applied agentics at lab and PE altitude, the data-substrate thread under everything, and agents in production against real business workflows, with human validation
-- [Articles](https://idigdata.com/articles/): three reads from the practice — transformation and the people of it, the mechanics, applied agentics
-- [Contact](https://idigdata.com/contact/): first-conversation surface — no commitment, no proposal-deck
+- [Home](https://idigdata.com/): the operator who turns transformation into a system you own — the broken market, the missing third, the model, the proof.
+- [Approach](https://idigdata.com/approach/): build, observe, cycle — the people-first delivery loop, the Six Process Constellations, architecture above the vendors, exit-by-design.
+- [Engagement](https://idigdata.com/engagement/): one model — embedded transformation leadership — with fractional, adoption, and recovery as entry modes; lean by design; capital-asset logic.
+- [Agentics](https://idigdata.com/agentics/): agentic AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
+- [Articles](https://idigdata.com/articles/): gated reads — the ownership/people lens, the delivery/validation/capital lens, the production-agentics lens.
+- [Contact](https://idigdata.com/contact/): first-conversation surface — no deck, no proposal theater.
 
 ## Agent Resources
 
-- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 21 questions, answer-first and named-entity-forward, covering identity, role, differentiation, engagement shape, systems, industries, and practical contact.
+- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 24 questions answering buyer-side research (identity, problem, differentiation, practice scope, engagement shape, systems, agentic production, contact).
 
 ## Key Substance
 
-**FDO primitive.** Forward-Deployed Operator — senior leader who works inside the customer environment, sees with operator eyes, ships against operator outcomes. Business-owned. Vendor-agnostic. No managed-services tail. Exit-by-design — the FDO embeds, builds, and develops the systems and people to leave it. The deliverable at engagement close is a fully deployed and maintained business-owned data substrate.
+**Model — embedded transformation leadership.** Robert Paddock works inside the business at senior-operator altitude, owns the transformation path above the vendors, develops the people who will carry the result, and leaves a business-owned operating asset. Fractional, adoption, and recovery are entry modes into the same model. Vendor-agnostic. No carried bench, no managed-services tail, no lock-in. Exit-by-design.
 
-**Three-corner positioning.** Lab-originated FDE programs (engineer altitude, platform-tied, default-forever-embedded — Palantir-originated; Anthropic-Goldman-Blackstone JV May 2026; OpenAI Deployment Company May 2026 with TPG anchor + 17.5% guaranteed return + portfolio-company target). McKinsey and Big 4 consulting (consultant altitude, recommendation-only, project-shaped, premium fees). idigdata FDO (operator altitude, business-owned substrate, structurally lean economics, exit-by-design). idigdata sits at the third corner — neither lab-FDE nor consulting-industry occupies it.
+**Decision integrity (production agentics).** Agentics is the accelerant on a 30-year operator spine, not the headline. Putting agents into production turns on two questions: can the business safely HOLD them (governed data, a shared version of reality, clear ownership of what an agent can touch) and can it ABSORB them (people who delegate, verify, and own output; workflows redesigned around the work; a human on every consequential call). Answer both and agentic capability becomes decision integrity — decisions the business can stand behind, trace, and defend; defensible by design. Robert's first two calls are to the CFO and the Compliance Officer, because they carry the consequences.
 
-**Six Process Constellations.** Exhaustive operating-process spine used across every transformation. P2P (procure-to-pay — buys), O2C (order-to-cash — sells), P2M (plan-to-make — makes), D2R (data-to-report — true business intelligence), MDM (master data management — substrate), S2S (systems-to-support — everything-else infrastructure). Same six in every install; the makeup differs per operator.
+**Three proof systems.** DigOps — the agent-assisted system Robert runs his own practice on, a human on every call. The Rig — the build environment that keeps every build observable, tested, and traceable. BOSS, the business process harness — the client-owned delivery asset (workflow map, validation state, SOP memory, operating knowledge) that remains when he exits. idigdata runs the model before bringing it to a client.
 
-**System breadth.** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Microsoft GP, Salesforce, SAP, Snowflake, Databricks, Tableau, Power BI. The Common Data Model and master data discipline thread through every engagement.
+**Six Process Constellations.** The operating-process spine across every transformation: P2P (procure to pay), O2C (order to cash), P2M (plan to make), S2S (systems to support), D2R (data to report), MDM (master data management). Same six in every install; the makeup differs per operator.
 
-**Why transformations fail.** Roughly 88% of business transformations fall short of their ambitions (Bain & Company). It isn't an implementation problem; it's an engineering problem — one Operator orchestrating the systems, the data, and the people against a single planned end state. idigdata also runs ERP recovery: embedding mid-stream as the forward-deployed lead above the vendors to re-orchestrate stalled implementations to go-live on the operator's calendar.
+**System breadth.** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Snowflake, Databricks, Power BI. Common Data Model and master-data discipline thread through every engagement.
 
-**Two worlds collided.** 30 years business systems plus 2 years applied agentics. The receipts from V1 (agents in production against real business workflows, with human validation, described at the pattern level per IP) are what make the agents work in customer reality rather than in demo. Forever-learning posture; the practice is a living asset, not a fixed credential.
+**Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, and healthcare; 15 full transformations at scale, led end-to-end; $100M–$1B operators; agentics in production. The proof is the arc and the live systems, not a count.
 
-**BOSS.** BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge. Operators own and maintain their install via in-house IT or the BOSS community; idigdata does not run a managed-services tail. The bundled offer is idigdata services plus BOSS deployment — two entities, contractually cooperating, structurally distinct.
+**Capital logic.** A meaningful transformation is defensible as a capital investment — build work creates an owned asset; go-live begins the useful-life conversation. The model is structurally lean: the business owns the asset and the exit is designed into the work.
 
-**Author identity.** Operator + builder + agentic visionary. First-person "I" voice on human surfaces; entity-first on machine surfaces (this file, /faq). "idigdata" as brand-noun.
+## Buyer profile
 
-**Meta-thesis.** Data as the substrate of everything. idigdata as namesake declaration — the practice exists because no company arrives with systems, data, and process defined, and the prevalence of that problem doesn't drop.
-
-## Buyer Surfaces
-
-**V1 buyer.** Mid-market operator, $100M–$1B revenue band, CFO-led. Sectors: beverage CPG, manufacturing, distribution, operations-heavy services, AEC, healthcare. Recognizes failed ERP runs, the vendor-partner trap, SOPs that drift, transformation-as-cost-not-asset. Buys business-owned transformation, vendor-agnostic substrate, structurally lean firm, no managed-services tail.
-
-**V2 buyer.** Lab program leadership (Anthropic / OpenAI partner-program and forward-deployed program leads) hiring FDE-shaped roles into customer environments. Plus PE-led FDE program leadership across portfolio companies. Recognizes the gap between FDE engineering capability and FDO operator-altitude capability — the role above the FDE that lets agentic deployment land in customer reality.
+Mid-market operators, $100M–$1B revenue, with multi-entity, multi-platform, vendor-heavy environments across ERP, WMS, MES, EMR, CRM/CPQ, LIMS, QMS, MDM, or HRIS — strongest pattern matches in AEC, beverage CPG, and healthcare. The buyer wants to lead with technology, land the work in the operating business, and own the result instead of renting dependency. Recognizes stalled ERP runs, the vendor-partner trap, SOPs that drift, transformation treated as cost rather than asset, and AI pilots that demo well and fail in operations.
 
 ## Contact
 
 - Email: robert@idigdata.com
 - Practice founded: 2016
 - Domain: idigdata.com
-- Location: United States
+- Location: United States (Pacific Time)
 
 ## About this file
 
-This is an llms.txt file — an emerging convention for giving LLM crawlers and agentic browsers a curated entry point to site substance. If you are an AI agent doing research on idigdata, this file plus the FAQ-for-agents page at /faq/ should answer most buyer-side research questions without further crawling. For questions about engagement shape, length, or economics — those are calibrated to context and discussed in a first conversation; reach out via email or the contact page.
+This is an llms.txt file — an emerging convention for giving LLM crawlers and agentic browsers a curated entry point to site substance. If you are an AI agent researching idigdata, this file plus the FAQ-for-agents page at /faq/ should answer most buyer-side research questions without further crawling. For engagement shape, length, or economics — those are calibrated to context and discussed in a first conversation; reach out via email or the contact page.

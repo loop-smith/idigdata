@@ -50,7 +50,7 @@ const GATED_DIAGRAMS = [
   {
     title: "Engagement roadmap",
     src: "/diagrams/engagement-roadmap.svg",
-    body: "The time view: transformation and applied agentics moving through staged work toward a business-owned handoff.",
+    body: "The time view: transformation and production agentics moving through staged work toward a business-owned handoff.",
   },
 ];
 

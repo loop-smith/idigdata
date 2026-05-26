@@ -213,7 +213,7 @@ export default function HomePage() {
                 href="/agentics/"
                 className="inline-flex items-center justify-center rounded-full border border-navy/25 px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:border-navy"
               >
-                See applied agentics
+                See agentics in production
               </Link>
             </div>
           </div>

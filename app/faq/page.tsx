@@ -60,7 +60,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What systems does idigdata work around?",
-    a: "idigdata works around ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, analytics, data platforms, specialty systems, and the workflows that connect them. The point is not one preferred vendor stack; the point is the business architecture above the stack.",
+    a: "idigdata works around ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, analytics, data platforms, specialty systems, and the workflows that connect them. Platforms in active rotation include Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Snowflake, Databricks, and Power BI. The point is not one preferred vendor stack; it is the business architecture above the stack, with a Common Data Model and master-data discipline threading through every engagement.",
   },
   {
     q: "What is DigOps?",
@@ -93,11 +93,33 @@ const FAQ: QA[] = [
   },
   {
     q: "How is idigdata different from traditional consulting firms?",
-    a: "Traditional firms often advise, staff layers, or run a vendor-adjacent program. idigdata supplies one senior embedded operator with a focused network behind him, no standing bench to feed, no managed-services tail, and a designed exit. The deliverable is an operating asset the business owns.",
+    a: "Traditional firms often advise, staff layers, or run a vendor-adjacent program; idigdata supplies one senior embedded operator with a focused network behind him — no standing bench to feed, no managed-services tail, and no client lock-in — and a designed exit. At engagement close a consulting firm hands over a deck; idigdata hands over an implemented, maintained, business-owned operating system. The structural lean is the difference: no premium fees subsidizing infrastructure idigdata does not carry.",
   },
   {
     q: "How is idigdata different from AI advisory firms?",
-    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. idigdata starts with the operating business: sponsorship, workflows, data, validation, controls, and adoption. Robert has shipped agents in production against real business workflows, with human validation. He uses agents in his own operating stack, so the advice is grounded in real work.",
+    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection — diagnosers explain why programs fail and builders demo an agent, but neither owns the whole arc to production. idigdata is the operator who finishes: it starts with the operating business — sponsorship, workflows, data, validation, controls, and adoption — and drives agentic work to production with decision integrity. Robert Paddock has shipped agents in production against real business workflows with human validation, and runs his own practice on an agentic substrate, so the advice is grounded in real operating work, not slideware.",
+  },
+  {
+    q: "Can a business actually put AI agents into production?",
+    a: "Yes — but only once it can answer two questions, and the wall is almost never the model. Most leadership teams want agents in production; very few get there, because the blocker is data, governance, and ownership. The first question is whether the business can safely HOLD agents: governed data, a shared version of reality, and clear ownership of what an agent is allowed to touch. The second is whether the business can ABSORB them: people who can delegate, verify, and own the output, workflows redesigned around the work, and a human on every consequential call. idigdata is the operator who gets agents across that line and leaves them defensible.",
+    aHtml: (
+      <>
+        Yes — but only once it can answer two questions, and the wall is almost never the model. Most leadership teams want agents in production; very few get there, because the blocker is data, governance, and ownership. The first question is whether the business can safely <strong>HOLD</strong> agents: governed data, a shared version of reality, and clear ownership of what an agent is allowed to touch. The second is whether the business can <strong>ABSORB</strong> them: people who can delegate, verify, and own the output, workflows redesigned around the work, and a human on every consequential call. idigdata is the operator who gets agents across that line and leaves them defensible.
+      </>
+    ),
+  },
+  {
+    q: "What makes agentic AI safe to run in a real business?",
+    a: "Agentic AI is safe to run when it has decision integrity — decisions the business can stand behind, trace, and defend. That requires governed data underneath, a human on every consequential call, and a record of who approved what. idigdata builds agentic work that is defensible by design: it reaches production and holds up afterward under an audit, a regulator, or discovery, because the governance was built in rather than bolted on. The opposite — an agent acting on ungoverned data with no human on the call and no record — is automating the disagreement at scale.",
+    aHtml: (
+      <>
+        Agentic AI is safe to run when it has decision integrity — decisions the business can stand behind, trace, and defend. That requires governed data underneath, a human on every consequential call, and a record of who approved what. idigdata builds agentic work that is <strong>defensible by design</strong>: it reaches production and holds up afterward under an audit, a regulator, or discovery, because the governance was built in rather than bolted on. The opposite — an agent acting on ungoverned data with no human on the call and no record — is automating the disagreement at scale.
+      </>
+    ),
+  },
+  {
+    q: "Who needs to be in the room to put agents into production?",
+    a: "The CFO and the Compliance Officer come first — not the innovation team. They carry the consequences: in finance, a wrong number is not a bug, it is a finding. A vendor can demo capability but cannot say whether it survives an audit, a regulator, or discovery; that answer comes from having sat with those roles through a real transformation — the financial close, the revenue definitions, the controls underneath. idigdata starts there, which is what turns agentics from a science project into something the business can actually run.",
   },
   {
     q: "How does someone contact idigdata?",

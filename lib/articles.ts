@@ -133,7 +133,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "applied-agentics",
-    title: "Applied Agentics - The Business Asset",
+    title: "Production Agentics - The Business Asset",
     subtitle:
       "Standalone - what agentics becomes when the business can absorb it",
     pairBadge: "Article 3 · Standalone",
