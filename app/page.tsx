@@ -392,6 +392,12 @@ export default function HomePage() {
           Built to be owned, not rented — an asset the business carries, not
           another line of expense.
         </p>
+        <Link
+          href="/systems/"
+          className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
+        >
+          See the systems behind the work <span aria-hidden="true" className="ml-2">→</span>
+        </Link>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">

@@ -50,6 +50,11 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/systems/" className="hover:text-aubergine transition-colors">
+                  Systems in Production
+                </Link>
+              </li>
+              <li>
                 <Link href="/articles/" className="hover:text-aubergine transition-colors">
                   Articles
                 </Link>
