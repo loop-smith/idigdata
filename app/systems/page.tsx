@@ -27,19 +27,19 @@ export const metadata: Metadata = {
 
 const operatingProof = [
   {
-    label: "The build environment — a delivery and governance pipeline.",
+    label: "The build environment — how the work gets made.",
     name: "The Rig",
-    body: "Where I build, observably. Every build has a plan, gates, tests, and a record of what happened and who approved it. Repeatable, not heroic. This site was built in it.",
+    body: "The governed environment I build in. Every piece of work carries a plan, gates, tests, and a record of what was done and who approved it — so when I build for you, it's traceable and repeatable, not heroic and undocumented. No black box, no key-man risk in the delivery itself. This site was built in it.",
   },
   {
     label: "The business process harness — the asset the business owns.",
     name: "BOSS",
-    body: "It takes the real operating reality — the data, the systems, the workflows as they actually run — and turns it into one governed, validated, client-owned asset, with the SOPs written as a byproduct of validating the work. I'm proving it now by rebuilding a transformation I already delivered by hand: the original is the control, the rebuild is the test. The output is a catalog you can inspect — the workflows, the validation trail, the decisions, the SOPs, the operating map — and compare against the known-good result to judge whether the machine holds.",
+    body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS is the answer to that: it takes your operating reality — the data, the systems, the workflows as they actually run — and turns it into one governed, validated system the business owns, with the SOPs written as a byproduct of validating the work. I'm proving it holds by rebuilding a transformation I already delivered by hand — the original is the control, the rebuild is the test — and the output is a catalog you can inspect: the workflows, the validation trail, the decisions, the SOPs, the operating map, checked against the known-good result.",
   },
   {
-    label: "The operations layer — where the team runs the work.",
+    label: "The operations layer — the business, run agentically.",
     name: "DigOps",
-    body: "The agent-native workflow system I run my own practice on, with a human on every consequential call. The workflows get built with the people who run them, not handed down. I don't advise from a deck — I operate this every day.",
+    body: "An agent-native workflow machine that runs the operation, with a human on every consequential call and the workflows built alongside the people who run them, not handed down. I run my own practice on it today — so it's a working pattern for running a business agentically, not a slide about one. That is the direction serious operators are reaching for, and I'm one of the few actually operating inside it rather than talking about it.",
   },
 ];
 
