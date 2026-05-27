@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
@@ -36,30 +35,6 @@ const questions = [
     label: "Absorb",
     ask: "Can the business actually absorb them?",
     body: "People who know how to delegate, verify, and own the output. Workflows redesigned around the work. A human on every consequential call. Capability the organization can't validate will not survive contact with the work.",
-  },
-];
-
-const systemProof = [
-  {
-    name: "DigOps",
-    label: "I run my own practice on it.",
-    image: "/brand/digops/digops-logo-panel.svg",
-    alt: "DigOps — Buy Make Sell",
-    body: "I run my own practice on agent-assisted workflows with a human on every consequential call.",
-  },
-  {
-    name: "The Rig",
-    label: "Observable, tested, traceable.",
-    image: "/brand/rig/logo-lockup-tagline-panel.svg",
-    alt: "The Rig — the human-in-the-loop layer",
-    body: "The build environment keeps agentic work observable, tested, and traceable — so what happened, and who approved it, is always answerable.",
-  },
-  {
-    name: "BOSS",
-    label: "Owned by the business.",
-    image: "/brand/boss/boss-lockup-panel.svg",
-    alt: "BOSS — the business process harness",
-    body: "The client-facing delivery asset makes agentics part of the transformation system the business owns — defensible after I leave, not dependent on me staying.",
   },
 ];
 
@@ -192,33 +167,19 @@ export default function AgenticsPage() {
             Three systems, one claim: this is operating practice, not AI theater.
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {systemProof.map((system) => (
-            <article
-              key={system.name}
-              className="flex min-h-[330px] flex-col border border-navy/15 bg-navy p-6 text-cream"
-            >
-              <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold">
-                {system.name}
-              </p>
-              <div className="my-5 flex h-24 items-center justify-center bg-cream/95 px-4">
-                <Image
-                  src={system.image}
-                  alt={system.alt}
-                  width={620}
-                  height={220}
-                  className="h-20 w-auto"
-                />
-              </div>
-              <h3 className="font-vollkorn text-[24px] font-bold leading-tight text-cream">
-                {system.label}
-              </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.6] text-[#DCD9CC]">
-                {system.body}
-              </p>
-            </article>
-          ))}
-        </div>
+        <p className="max-w-[760px] font-body text-[15.5px] leading-[1.65] text-navy">
+          DigOps runs my own practice on agentic workflows, with a human on
+          every consequential call. The Rig keeps the build observable, tested,
+          and traceable. BOSS makes agentics part of the transformation system
+          the business owns — defensible after I leave, not dependent on me
+          staying.
+        </p>
+        <Link
+          href="/systems/"
+          className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
+        >
+          See the systems in production <span aria-hidden="true" className="ml-2">→</span>
+        </Link>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">

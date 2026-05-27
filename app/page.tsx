@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import BossJourneyFigure from "@/components/BossJourneyFigure";
 import LatticeMark from "@/components/LatticeMark";
@@ -71,30 +70,6 @@ const groundingStats = [
     lead: "In production",
     sub: "agentics, running my own business on it today",
     compact: true,
-  },
-];
-
-const systems = [
-  {
-    label: "The system I run on",
-    title: "DigOps",
-    image: "/brand/digops/digops-logo-panel.svg",
-    alt: "DigOps — Buy Make Sell",
-    body: "I run my own practice on DigOps — books, pipeline, proposals, billing, agent-assisted with a human on every call. It keeps my overhead near zero so my time goes to your work, and it's a live agentic system I can walk you through, not a slide.",
-  },
-  {
-    label: "The machine that builds the machines",
-    title: "The Rig",
-    image: "/brand/rig/logo-lockup-tagline-panel.svg",
-    alt: "The Rig — the human-in-the-loop layer",
-    body: "I can repeat it with discipline — the Rig is my build environment, where every build is observable, tested, and traceable.",
-  },
-  {
-    label: "What you own at the end",
-    title: "BOSS",
-    image: "/brand/boss/boss-lockup-panel.svg",
-    alt: "BOSS — the business process harness",
-    body: "You own the result — BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge. It is what remains when I exit.",
   },
 ];
 
@@ -360,33 +335,11 @@ export default function HomePage() {
             I run this model before I bring it to you.
           </h2>
         </div>
-        <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3">
-          {systems.map((system) => (
-            <article
-              key={system.title}
-              className="flex h-full flex-col border border-navy/15 bg-white p-6"
-            >
-              <p className="font-vollkorn text-[14px] italic text-warm-gray">
-                {system.label}
-              </p>
-              <div className="my-5 flex h-24 items-center justify-center">
-                <Image
-                  src={system.image}
-                  alt={system.alt}
-                  width={620}
-                  height={220}
-                  className="h-20 w-auto"
-                />
-              </div>
-              <h3 className="font-vollkorn text-[24px] font-bold leading-tight text-navy">
-                {system.title}
-              </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.6] text-navy/75">
-                {system.body}
-              </p>
-            </article>
-          ))}
-        </div>
+        <p className="max-w-[760px] font-body text-[15px] leading-[1.6] text-navy/80">
+          DigOps runs my own practice. The Rig is where I build it,
+          observably. BOSS is what the business owns at the end. The full proof
+          — how each one runs — is on the systems page.
+        </p>
         <BossJourneyFigure />
         <p className="mt-8 max-w-[760px] border-t border-navy/15 pt-5 font-vollkorn text-[18px] italic leading-[1.45] text-navy">
           Built to be owned, not rented — an asset the business carries, not
@@ -394,9 +347,9 @@ export default function HomePage() {
         </p>
         <Link
           href="/systems/"
-          className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
+          className="mt-6 inline-flex items-center justify-center rounded-full border border-navy/25 px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:border-navy"
         >
-          See the systems behind the work <span aria-hidden="true" className="ml-2">→</span>
+          See the systems in production <span aria-hidden="true" className="ml-2">→</span>
         </Link>
       </section>
 
