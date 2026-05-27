@@ -30,21 +30,6 @@ export const metadata: Metadata = {
   },
 };
 
-const proofCards = [
-  {
-    title: "Stalled ERP recovered under unified governance",
-    body: "A program drifting under vendor control, driven to done/done once one owner held the delivery spine.",
-  },
-  {
-    title: "Vendor-led economics beaten by operator-led delivery",
-    body: "Work scoped at a vendor's price, delivered for less by owning the path above it.",
-  },
-  {
-    title: "Post-M&A systems consolidated, close cycle compressed",
-    body: "Two operating stacks merged into one governed system, the monthly close materially faster.",
-  },
-];
-
 const groundingStats = [
   {
     lead: "30 years",
@@ -68,7 +53,7 @@ const groundingStats = [
   },
   {
     lead: "In production",
-    sub: "agentics, running my own business on it today",
+    sub: "agentics, running my own practice on it today",
     compact: true,
   },
 ];
@@ -186,10 +171,10 @@ export default function HomePage() {
                 Start a conversation <span aria-hidden="true" className="ml-2">→</span>
               </Link>
               <Link
-                href="/agentics/"
+                href="/approach/"
                 className="inline-flex items-center justify-center rounded-full border border-navy/25 px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:border-navy"
               >
-                See agentics in production
+                See how I work
               </Link>
             </div>
           </div>
@@ -225,34 +210,19 @@ export default function HomePage() {
 
       <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">The broken market</SectionKicker>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="max-w-[860px]">
             <h2 className="font-vollkorn text-[32px] font-bold leading-[1.12] text-navy md:text-[42px]">
               The technology works. Delivery is where it dies.
             </h2>
-            <p className="mt-5 font-vollkorn text-[18px] italic leading-[1.5] text-warm-gray">
-              Bain finds 88% of transformations fall short of their ambitions.
-              Stanford&apos;s Digital Economy Lab reaches the same verdict on the
-              AI version: the bottleneck isn&apos;t the technology, it&apos;s everything
-              around it. That &quot;everything else&quot; — ownership, delivery,
-              adoption — is the work I take.
+            <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
+              Bain finds 88% of transformations fall short of their ambitions,
+              and Stanford&apos;s Digital Economy Lab reaches the same verdict on
+              the AI version: the bottleneck isn&apos;t the technology, it&apos;s
+              ownership, delivery, adoption. Diagnosers explain the failure.
+              Vendors implement their slice. AI builders rent you tools on
+              their state. None of them owns the transformation as a business
+              system. That&apos;s the work I take.
             </p>
-          </div>
-          <div>
-            <p className="font-body text-[15.5px] leading-[1.65] text-navy">
-              You know the room. Everyone reports green and nothing moves. Two
-              vendors point at each other while the close slips another month.
-              The board deck says eighty percent complete for the third
-              quarter running. The work is real; the ownership isn&apos;t there.
-            </p>
-            <p className="mt-4 font-body text-[15.5px] leading-[1.65] text-navy">
-              The problem is already pre-sold: ERP programs stall,
-              transformation workstreams drift, AI pilots demo well and fail in
-              operations. Diagnosers explain the failure. Vendors implement
-              their slice. AI builders rent you tools on their state. None of
-              them owns the transformation as a business system.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -265,9 +235,8 @@ export default function HomePage() {
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
             I work at the level of the business, not the vendor&apos;s slice. I
             pull the vendors, the internal teams, the executives, and the
-            operating reality into one delivery frame. Agentics is not the
-            offer by itself; it is what sharpens the operator model — not a
-            product I&apos;m selling you.
+            operating reality into one delivery frame. Agentics sharpens the
+            operator model; it isn&apos;t the offer by itself.
           </p>
           <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[22px] italic leading-[1.35] text-navy">
             No theater. No permanent entourage. The work should survive the
@@ -292,7 +261,7 @@ export default function HomePage() {
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
               When it works, the room gets calmer. Executives see the real
               state of the work. Decisions stop disappearing between meetings.
-              And the business can explain — and keep improving — the system
+              And the business can explain, and keep improving, the system
               after I leave.
             </p>
           </div>
@@ -303,87 +272,31 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Receipts</SectionKicker>
-        <h2 className="max-w-[780px] font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
-          Thirty years in the work. Here&apos;s what it looks like when the work
-          lands.
-        </h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {proofCards.map((card) => (
-            <article key={card.title} className="border border-navy/15 border-l-[3px] border-l-gold bg-white p-5">
-              <h3 className="font-vollkorn text-[20px] font-bold leading-[1.25] text-navy">
-                {card.title}
-              </h3>
-              <p className="mt-3 font-body text-[14px] leading-[1.55] text-navy/75">
-                {card.body}
-              </p>
-            </article>
-          ))}
-        </div>
-        <p className="mt-7 max-w-[780px] font-body text-[15.5px] leading-[1.65] text-navy">
-          AEC, beverage CPG, healthcare. ERP, WMS, MES, EMR, CRM/CPQ, and the
-          workflows underneath. What&apos;s scarce isn&apos;t AI familiarity — it&apos;s
-          having tested agentics against real operating work and knowing what
-          holds once finance, supply chain, and people are in the room.
-        </p>
-      </section>
-
-      <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Proof systems</SectionKicker>
+        <SectionKicker className="mb-5">Proof</SectionKicker>
         <div className="mb-9 max-w-[760px]">
           <h2 className="font-vollkorn text-[32px] font-bold leading-[1.14] text-navy md:text-[42px]">
             I run this model before I bring it to you.
           </h2>
         </div>
         <p className="max-w-[760px] font-body text-[15px] leading-[1.6] text-navy/80">
-          DigOps runs my own practice. The Rig is where I build it,
-          observably. BOSS is what the business owns at the end. The full proof
-          — how each one runs — is on the systems page.
+          I build it in a governed environment, the business owns the asset at
+          the end, and I run my own practice on it today: built, owned, run.
         </p>
         <BossJourneyFigure />
         <p className="mt-8 max-w-[760px] border-t border-navy/15 pt-5 font-vollkorn text-[18px] italic leading-[1.45] text-navy">
           Built to be owned, not rented — an asset the business carries, not
           another line of expense.
         </p>
+        <p className="mt-5 max-w-[760px] font-body text-[15px] font-semibold leading-[1.6] text-navy">
+          I won&apos;t show you a slide. Bring a real situation and I&apos;ll walk you
+          through a live one.
+        </p>
         <Link
           href="/systems/"
           className="mt-6 inline-flex items-center justify-center rounded-full border border-navy/25 px-7 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:border-navy"
         >
-          See the systems in production <span aria-hidden="true" className="ml-2">→</span>
+          See how I run the model <span aria-hidden="true" className="ml-2">→</span>
         </Link>
-      </section>
-
-      <section className="border-t border-navy/15 py-14 md:py-20">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div>
-            <SectionKicker className="mb-5">How I plug in</SectionKicker>
-            <h2 className="font-vollkorn text-[31px] font-bold leading-[1.14] text-navy md:text-[40px]">
-              One model. Several entry points.
-            </h2>
-            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              Embedded transformation leadership is the core offer.
-              Fractional, recovery, and agentics engagements are ways into the
-              same operator model, not a menu of unrelated services.
-            </p>
-          </div>
-          <div>
-            <SectionKicker className="mb-5">Inform</SectionKicker>
-            <h2 className="font-vollkorn text-[31px] font-bold leading-[1.14] text-navy md:text-[40px]">
-              Serious buyers need a better map.
-            </h2>
-            <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              The articles teach the mechanics: why transformations fail, how
-              delivery gets governed, and what production agentics requires
-              once it leaves the demo room.
-            </p>
-            <Link
-              href="/articles/"
-              className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
-            >
-              Read the article briefings <span aria-hidden="true" className="ml-2">→</span>
-            </Link>
-          </div>
-        </div>
       </section>
 
       <section id="contact" className="py-20 md:py-24">

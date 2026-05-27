@@ -6,20 +6,20 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work — the build environment, the client-owned business process harness (BOSS), and the agentic workflow operations layer Robert Paddock runs his own practice on. Proof the operator model runs in production, not on a slide.",
+    "The systems behind the work: the governed build environment, the client-owned transformation asset, and the agentic workflow operations layer Robert Paddock runs his own practice on.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work — the build environment, the client-owned business process harness (BOSS), and the agentic workflow operations layer Robert Paddock runs his own practice on. Proof the operator model runs in production, not on a slide.",
+      "The systems behind the work: the governed build environment, the client-owned transformation asset, and the agentic workflow operations layer Robert Paddock runs his own practice on.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Systems in Production",
+        alt: "idigdata - Systems in Production",
       },
     ],
   },
@@ -27,19 +27,26 @@ export const metadata: Metadata = {
 
 const operatingProof = [
   {
-    label: "The build environment — how the work gets made.",
-    name: "The Rig",
-    body: "The governed environment I build in. Every piece of work carries a plan, gates, tests, and a record of what was done and who approved it — so when I build for you, it's traceable and repeatable, not heroic and undocumented. No black box, no key-man risk in the delivery itself. This site was built in it.",
+    eyebrow: "Built",
+    title: "The Rig = my accelerant",
+    logo: "/brand/rig/mark.svg",
+    alt: "The Rig mark",
+    body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
   {
-    label: "The business process harness — the asset the business owns.",
-    name: "BOSS",
-    body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS is the answer to that: it takes your operating reality — the data, the systems, the workflows as they actually run — and turns it into one governed, validated system the business owns, with the SOPs written as a byproduct of validating the work. I'm proving it holds by rebuilding a transformation I already delivered by hand — the original is the control, the rebuild is the test — and the output is a catalog you can inspect: the workflows, the validation trail, the decisions, the SOPs, the operating map, checked against the known-good result.",
+    eyebrow: "Owned",
+    title: "BOSS = what you own",
+    logo: "/brand/boss/boss-mark.svg",
+    alt: "BOSS mark",
+    body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS turns your operating reality into one governed system the business owns. You keep it.",
+    featured: true,
   },
   {
-    label: "The operations layer — the business, run agentically.",
-    name: "DigOps",
-    body: "An agent-native workflow machine that runs the operation, with a human on every consequential call and the workflows built alongside the people who run them, not handed down. I run my own practice on it today — so it's a working pattern for running a business agentically, not a slide about one. That is the direction serious operators are reaching for, and I'm one of the few actually operating inside it rather than talking about it.",
+    eyebrow: "Run",
+    title: "DigOps = how it runs",
+    logo: "/brand/digops/digops-mark.svg",
+    alt: "DigOps mark",
+    body: "An agent-native workflow machine that runs my practice today, with a human on every consequential call and workflows built alongside the people who run them.",
   },
 ];
 
@@ -55,7 +62,8 @@ export default function SystemsPage() {
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
             Before I bring this to your business, I run it in mine. These are
-            the systems that prove the model holds in production, not on a slide.
+            the systems that prove the model holds in production, not on a
+            slide.
           </p>
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
             Thirty years of landing business-system transformations taught me
@@ -106,9 +114,7 @@ export default function SystemsPage() {
             who can talk about change management. The scarce role is the
             operator who can inspect the technology, own the business system
             around it, and carry the result through finance, compliance,
-            vendors, workflows, and the people until it holds. I can build
-            enough to know what is real. My value is making it survive inside an
-            operating company.
+            vendors, workflows, and the people until it holds.
           </p>
         </div>
       </section>
@@ -117,21 +123,33 @@ export default function SystemsPage() {
         <SectionKicker className="mb-5">Operating proof</SectionKicker>
         <div className="mb-9 max-w-[860px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            Three systems, all running. The proof isn&apos;t a slide — it&apos;s a
-            catalog you can see and a rebuild you can check.
+            Three systems, all running. The proof isn&apos;t a slide; it&apos;s the
+            model in production.
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
           {operatingProof.map((system) => (
             <article
-              key={system.name}
-              className="flex h-full flex-col border border-navy/15 bg-white p-6"
+              key={system.title}
+              className={`flex h-full flex-col border bg-white p-6 ${
+                system.featured
+                  ? "border-gold border-l-[4px] border-l-gold"
+                  : "border-navy/15 border-l-[4px] border-l-navy/20"
+              }`}
             >
-              <p className="font-vollkorn text-[14px] italic leading-[1.35] text-warm-gray">
-                {system.label}
+              <div className="mb-7 flex h-14 items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={system.logo}
+                  alt={system.alt}
+                  className="h-12 w-auto max-w-[150px] object-contain"
+                />
+              </div>
+              <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+                {system.eyebrow}
               </p>
-              <h3 className="mt-5 font-vollkorn text-[27px] font-bold leading-tight text-navy">
-                {system.name}
+              <h3 className="mt-3 font-vollkorn text-[24px] font-bold leading-[1.18] text-navy">
+                {system.title}
               </h3>
               <p className="mt-4 font-body text-[14.5px] leading-[1.62] text-navy/75">
                 {system.body}
@@ -149,11 +167,10 @@ export default function SystemsPage() {
           </h2>
           <div className="mt-6 max-w-[780px] space-y-5 font-body text-[15.5px] leading-[1.65] text-navy">
             <p>
-              At the end you hold the operating system of your transformation —
+              At the end you hold the operating system of your transformation:
               the mapped workflows, the governed data, the validated SOPs, the
-              decision record — documented to your standards so your own team,
-              or any vendor you choose, can run and extend it. No black box, no
-              dependency on me.
+              decision record, documented to your standards so your own team, or
+              any vendor you choose, can run and extend it.
             </p>
             <p>
               Your people run it and extend it, so it keeps getting better after
@@ -165,7 +182,7 @@ export default function SystemsPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">The one-operator question</SectionKicker>
+        <SectionKicker className="mb-5">Continuity</SectionKicker>
         <div className="max-w-[820px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
             One operator, and the work does not live in my head.
@@ -193,13 +210,11 @@ export default function SystemsPage() {
               Your pilots are outrunning your governance. Your vendors are
               moving. Your board is asking about AI. If that&apos;s the room
               you&apos;re in, and the business is serious about owning the result,
-              I can move the work. The strongest version is an embedded mandate
-              measured in quarters, not workshops.
+              I can move the work.
             </p>
             <p>
-              Bring the real situation — the systems, the stalled decision, the
-              agentic ambition — and I&apos;ll walk you through exactly how I&apos;d
-              own it, live.
+              Bring the real situation, and I&apos;ll walk you through exactly how
+              I&apos;d own it, live.
             </p>
           </div>
           <Link
