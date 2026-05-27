@@ -40,15 +40,15 @@ export default function BossJourneyFigure() {
   return (
     <figure
       className="mx-auto mt-7 w-full max-w-3xl border border-navy/15 bg-cream px-4 py-5 md:px-6 md:py-6"
-      aria-labelledby="boss-journey-title"
+      aria-labelledby="asset-journey-title"
     >
       <div className="mb-5 flex flex-col gap-3 border-b border-navy/15 pb-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-            BOSS journey
+            Asset journey
           </p>
           <h3
-            id="boss-journey-title"
+            id="asset-journey-title"
             className="mt-1 font-vollkorn text-[23px] font-bold leading-tight text-navy md:text-[27px]"
           >
             From scattered work to a living asset.
