@@ -49,6 +49,7 @@ yarn-error.log*
 .claude/worktrees/
 .claude/settings.local.json
 /_emit/
+.codex/
 .env.local.*
 
 # lighthouse — ephemeral score JSONs from launch dispatch
