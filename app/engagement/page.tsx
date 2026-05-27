@@ -64,12 +64,6 @@ const entryModes = [
   },
 ];
 
-const benchPoints = [
-  "senior independents for scoped packages",
-  "no standing bench overhead",
-  "continuity that survives the operator",
-];
-
 export default function EngagementPage() {
   return (
     <div className="mx-auto max-w-content px-6 font-body bg-cream text-navy">
@@ -170,16 +164,6 @@ export default function EngagementPage() {
             bring in senior independents for that package. If I step away, the
             system and the people remain.
           </p>
-        </div>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {benchPoints.map((point) => (
-            <div
-              key={point}
-              className="rounded-md border border-navy/15 bg-cream px-5 py-5 shadow-[0_2px_16px_rgba(20,40,64,0.05)]"
-            >
-              <p className="text-[15px] text-ink leading-relaxed">{point}</p>
-            </div>
-          ))}
         </div>
       </section>
 

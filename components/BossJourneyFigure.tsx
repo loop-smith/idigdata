@@ -109,14 +109,9 @@ export default function BossJourneyFigure() {
         })}
       </ol>
 
-      <div className="mt-5 grid grid-cols-1 gap-3 border-t border-navy/15 pt-4 md:grid-cols-2">
-        <p className="font-vollkorn text-[15px] italic leading-snug text-navy">
-          Rent the pipe. Own the synthesis.
-        </p>
-        <p className="font-vollkorn text-[15px] italic leading-snug text-navy md:text-right">
-          No documentation drift, ever.
-        </p>
-      </div>
+      <p className="mt-5 border-t border-navy/15 pt-4 font-vollkorn text-[15px] italic leading-snug text-navy">
+        No documentation drift, ever.
+      </p>
     </figure>
   );
 }
