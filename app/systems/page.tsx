@@ -25,17 +25,13 @@ export const metadata: Metadata = {
   },
 };
 
-// Full lockups (mark + wordmark + tagline) per-logo sized so wordmark letters
-// render at ~22px tall across all three — proportional optical weight despite
-// the three having different aspect ratios (Rig 1.4:1, BOSS 2.1:1, DigOps 3.8:1).
+// Full lockups (mark + wordmark + tagline) rendered uniform-height + center-justified.
 const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
     logo: "/brand/rig/logo-lockup-tagline.svg",
     alt: "The Rig logo",
-    logoHeight: 56,
-    logoMaxWidth: 200,
     body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
   {
@@ -43,8 +39,6 @@ const operatingProof = [
     title: "BOSS = what you own",
     logo: "/brand/boss/boss-lockup.svg",
     alt: "BOSS logo",
-    logoHeight: 48,
-    logoMaxWidth: 200,
     body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS turns your operating reality into one governed system the business owns. You keep it.",
     featured: true,
   },
@@ -53,8 +47,6 @@ const operatingProof = [
     title: "DigOps = how it runs",
     logo: "/brand/digops/digops-logo.svg",
     alt: "DigOps logo",
-    logoHeight: 64,
-    logoMaxWidth: 260,
     body: "An agent-native workflow machine that runs my practice today, with a human on every consequential call and workflows built alongside the people who run them.",
   },
 ];
@@ -146,17 +138,12 @@ export default function SystemsPage() {
                   : "border-navy/15 border-l-[4px] border-l-navy/20"
               }`}
             >
-              <div className="mb-7 flex h-16 items-center">
+              <div className="mb-7 flex h-16 items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={system.logo}
                   alt={system.alt}
-                  style={{
-                    height: `${system.logoHeight}px`,
-                    width: "auto",
-                    maxWidth: `${system.logoMaxWidth}px`,
-                  }}
-                  className="object-contain"
+                  className="h-14 w-auto max-w-[260px] object-contain"
                 />
               </div>
               <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
