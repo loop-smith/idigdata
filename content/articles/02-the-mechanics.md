@@ -1,258 +1,306 @@
-# The Mechanics of the Build
+<div class="article-mark">
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="a2-title a2-desc">
+  <title id="a2-title">Article 2 mark — the vertical scaffold</title>
+  <desc id="a2-desc">Top lattice as completed asset above a sun gold datum line marking the in-service boundary, bottom lattice as in-flight build below.</desc>
+  <rect x="70" y="30" width="18" height="18" fill="#142840"/>
+  <rect x="112" y="30" width="18" height="18" fill="#142840"/>
+  <rect x="70" y="72" width="18" height="18" fill="#142840"/>
+  <rect x="112" y="72" width="18" height="18" fill="#142840"/>
+  <rect x="91" y="30" width="18" height="18" fill="none" stroke="#142840" stroke-width="1.5"/>
+  <rect x="70" y="51" width="18" height="18" fill="none" stroke="#142840" stroke-width="1.5"/>
+  <rect x="112" y="51" width="18" height="18" fill="none" stroke="#142840" stroke-width="1.5"/>
+  <rect x="91" y="72" width="18" height="18" fill="none" stroke="#142840" stroke-width="1.5"/>
+  <rect x="91" y="51" width="18" height="18" fill="#FACC15"/>
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#FACC15" stroke-width="3"/>
+  <rect x="70" y="110" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="91" y="110" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="112" y="110" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="70" y="131" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="91" y="131" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="112" y="131" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="70" y="152" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="91" y="152" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+  <rect x="112" y="152" width="18" height="18" fill="none" stroke="#7A756A" stroke-width="1.5"/>
+</svg>
+</div>
 
-*Lens 2 of 2 — how the build runs, gets capitalized, and holds*
+# You Don't Run a Project. You Build an Asset.
+
+*Lens 2 of 3 — how the work runs, gets governed, gets defended, and becomes an asset*
 
 By Robert Paddock · idigdata
 
----
+After thirty years inside business-system transformations, I have learned to distrust any program that can only explain itself at the steering-committee level.
+
+The deck may be clean. The vendor plan may look orderly. The executive mandate may be real. None of that tells me whether the transformation can survive contact with the work.
+
+The work lives lower.
+
+It lives in item numbers people have memorized for twenty years. It lives in the three-way match exception nobody can make go away. It lives in a spreadsheet an analyst built before the current controller arrived. It lives in a standard-cost rollup that looks financial but is really master data, manufacturing routing, labor assumption, machine time, and human judgment braided together. It lives in approval limits, cutover sequencing, change resistance, shop-floor data, audit trails, and the CFO's question: what are we actually building here, and can we defend it as an asset?
+
+That is the mechanics layer.
+
+Article 1 made the people point: you do not buy a transformation; your people build one. This article makes the mechanics point. The people cannot build what the program cannot run. A transformation is not installed by a vendor. It is run from the operator's bridge until the business can run it itself.
+
+The hopeful part is that the mechanics are knowable. They are not glamorous, but they are visible to anyone willing to look at the work instead of the deck. Again and again, the thing that first presents as a workflow problem, a vendor problem, a training problem, or a reporting problem turns out to be a data problem wearing an operational costume.
+
+## Run It From The Bridge
+
+A transformation has to be run as one integrated operating practice.
+
+Project management makes the work visible. Change management makes the work land. Agile-fall discipline decides which work can iterate and which work must be sequenced. Command-and-control gives the client-side program the authority to halt, redirect, or refuse vendor motion when the business reality is not ready.
+
+Those cannot be four parallel workstreams.
+
+<figure class="wide"><svg viewBox="0 0 760 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="g2-title g2-desc">
+  <title id="g2-title">Agile-fall — the work decides the mode</title>
+  <desc id="g2-desc">Two bands. The top band shows sequence-bound work as a linear chain of stage cards (Design, Build, Test, Cutover, Go-Live) joined by gold chevrons — order matters. The bottom band shows discovery work as a two-week sprint cadence of cards (process discovery, workflow tuning, configuration, operator feedback) that iterate. A navy footer band states the discipline: switch modes by work type.</desc>
+  <defs>
+    <marker id="g2-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0,0 7,3.5 0,7" fill="#FACC15"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="760" height="392" fill="#FAFAF7"/>
+  <text x="380" y="38" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="23" font-weight="700" fill="#142840">Agile-fall — the work decides the mode</text>
+  <line x1="320" y1="50" x2="440" y2="50" stroke="#FACC15" stroke-width="2.5"/>
+  <text x="380" y="70" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="13" font-style="italic" fill="#1F3D5F">Iterate what can iterate. Sequence what must be sequenced.</text>
+  <text x="70" y="102" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="#6B6860">MUST BE SEQUENCED · WATERFALL</text>
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="70" y="112" width="108" height="42" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="70" y="112" width="108" height="3" fill="#FACC15"/>
+    <text x="124" y="138" text-anchor="middle" font-size="11.5" font-weight="700" fill="#142840">Design</text>
+    <polygon points="184,127 191,133 184,139 177,133" fill="#FACC15" stroke="#142840" stroke-width="0.8"/>
+    <rect x="197" y="112" width="108" height="42" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="197" y="112" width="108" height="3" fill="#FACC15"/>
+    <text x="251" y="138" text-anchor="middle" font-size="11.5" font-weight="700" fill="#142840">Build</text>
+    <polygon points="311,127 318,133 311,139 304,133" fill="#FACC15" stroke="#142840" stroke-width="0.8"/>
+    <rect x="324" y="112" width="108" height="42" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="324" y="112" width="108" height="3" fill="#FACC15"/>
+    <text x="378" y="138" text-anchor="middle" font-size="11.5" font-weight="700" fill="#142840">Test</text>
+    <polygon points="438,127 445,133 438,139 431,133" fill="#FACC15" stroke="#142840" stroke-width="0.8"/>
+    <rect x="451" y="112" width="108" height="42" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="451" y="112" width="108" height="3" fill="#FACC15"/>
+    <text x="505" y="138" text-anchor="middle" font-size="11.5" font-weight="700" fill="#142840">Cutover</text>
+    <polygon points="565,127 572,133 565,139 558,133" fill="#FACC15" stroke="#142840" stroke-width="0.8"/>
+    <rect x="578" y="112" width="108" height="42" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="578" y="112" width="108" height="3" fill="#FACC15"/>
+    <text x="632" y="138" text-anchor="middle" font-size="11.5" font-weight="700" fill="#142840">Go-Live</text>
+  </g>
+  <text x="378" y="174" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="11" font-style="italic" fill="#1F3D5F">Manufacturing flow · governed data · cutover · compliance gates — order matters.</text>
+  <text x="380" y="200" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.5" fill="#142840">read the work type  →  choose the mode</text>
+  <text x="70" y="224" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="#6B6860">CAN ITERATE · AGILE</text>
+  <text x="686" y="224" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-style="italic" fill="#6B6860">↻ refine each cycle</text>
+  <line x1="74" y1="232" x2="678" y2="232" stroke="#FACC15" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#g2-arrow)"/>
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="70" y="240" width="142" height="46" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="70" y="240" width="142" height="3" fill="#FACC15"/>
+    <text x="80" y="258" font-size="9" font-weight="700" letter-spacing="0.8" fill="#142840">SPRINT · 2 WKS</text>
+    <text x="80" y="276" font-size="10.5" fill="#142840">Process discovery</text>
+    <rect x="226" y="240" width="142" height="46" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="226" y="240" width="142" height="3" fill="#FACC15"/>
+    <text x="236" y="258" font-size="9" font-weight="700" letter-spacing="0.8" fill="#142840">SPRINT · 2 WKS</text>
+    <text x="236" y="276" font-size="10.5" fill="#142840">Workflow tuning</text>
+    <rect x="382" y="240" width="142" height="46" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="382" y="240" width="142" height="3" fill="#FACC15"/>
+    <text x="392" y="258" font-size="9" font-weight="700" letter-spacing="0.8" fill="#142840">SPRINT · 2 WKS</text>
+    <text x="392" y="276" font-size="10.5" fill="#142840">Configuration</text>
+    <rect x="538" y="240" width="142" height="46" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+    <rect x="538" y="240" width="142" height="3" fill="#FACC15"/>
+    <text x="548" y="258" font-size="9" font-weight="700" letter-spacing="0.8" fill="#142840">SPRINT · 2 WKS</text>
+    <text x="548" y="276" font-size="10.5" fill="#142840">Operator feedback</text>
+  </g>
+  <text x="378" y="304" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="11" font-style="italic" fill="#1F3D5F">Process exploration · workflow tuning · configuration · operator feedback — iteration improves it.</text>
+  <rect x="40" y="320" width="680" height="40" fill="#142840" rx="2"/>
+  <text x="56" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#FACC15">SWITCH MODES BY WORK TYPE</text>
+  <text x="56" y="351" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-style="italic" fill="#FBF9F4">Most programs pick a religion. Real transformations switch modes by work type — and the work they got wrong drifts.</text>
+  <text x="380" y="382" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="11" font-style="italic" fill="#1F3D5F">Agile is the cadence. Waterfall is the trajectory.</text>
+</svg><figcaption>Agile is the cadence; waterfall is the trajectory. The work decides the mode.</figcaption></figure>
 
-Most board-approval-tier business-system transformations are sold as strategy. Big-4 transformation practices ship thinking in bound decks, present at the steering committee, and run the actual delivery through layered teams of senior partners who don't touch the floor and junior consultants who do. *This model ships outcomes through a different organism.*
+Parallel workstreams look mature on a program chart and decay in the room. The PMO is tracking tasks the operators cannot absorb. The change-management lead is hearing resistance the sprint plan does not reflect. The vendor is pushing configuration forward because its lane is green. Finance is still waiting for the definition that determines whether the downstream report is usable. Everyone is working. The transformation is drifting.
 
-*Every company is uniquely standard.* The architecture has to hold both halves at once or it doesn't hold at all.
+The integrated version is different.
 
-- **Spine** — standard. Six constellations, fixed across every operator: P2P, O2C, P2M, S2S, D2R, MDM.
-- **Map** — standard structure, unique content. The cluster is the per-operator layer; PEGs and steps live inside clusters.
-- **Glue** — standard structure, unique content. Data Types and integrations are universal patterns; each operator's specific types and integration topology are bespoke.
-- **Runtime** — standard model, unique content. Systems, Apps, and System Groups are universal categories; each operator's specific roster is bespoke.
-- **Views** — standard catalog, unique content. The view flavors are universal; the data they render is operator-specific.
-- **Delivery** — standard 7 stages, unique engagement content.
-- **People / Governance** — standard framework, unique people.
+The cadence is real. I like a thirteen- or fourteen-day sprint because it forces a program to show its work quickly. Sprint one starts when the engagement starts, not after a ceremonial mobilization period. Early sprints do not pretend the hard stuff is already known. They surface it.
 
-The mechanics article exists to show *the how*: how the universal frame above gets filled in with the specific population of a real engagement, repeatably, at speed, with audit-defensibility. The discipline is not the deliverable; the discipline is the operating shape. PM, stakeholder and change management, and agile-fall mode-switching run as one integrated practice, on a persistence substrate, with capitalization tracking under ASC 350-40 native to the delivery layer, with vendor partners contained inside lanes rather than running the program. *The discipline IS the differentiation.* But the discipline only compounds if the components underneath it are real, named, and operationally instrumented. This article names them.
+Pure agile cannot carry a manufacturing flow, a governed data model, a cutover sequence, or a compliance gate where order matters. Pure waterfall cannot carry process discovery, workflow tuning, operator feedback, or the surprises that always appear when people finally see their work made visible. Most programs pick a religion. Real transformations switch modes by work type.
 
-## The three sub-disciplines named
+Approval mechanics matter here more than most teams admit. It is not enough to ask who approves a purchase order, a customer setup, a vendor change, or a pricing override. The program has to ask the next question: at what limit, under what conditions, with what evidence, and who owns the exception? Approval limits are not administrative trivia. They are governance made executable.
 
-A transformation is not a project. It is a delivery discipline. *Three sub-disciplines must run as one integrated practice or the transformation drifts.*
+The same is true of integrated business planning. Operators do not get to reconcile demand, supply, finance, and operations once a month in a static meeting and call it control. The business needs current inputs from every function against one governed version of reality. When Supply Chain changes demand, Finance needs to know what happened to working capital. When Operations changes a production assumption, Sales needs to know what can still be promised. When the forecast shifts, the business needs to see the operating consequence before the month closes.
 
-**Project Management** — sprint cadence, dependencies, milestones, register state, PEG promotion through delivery stages. The discipline that makes the work visible. Sprint cadence at the level of the work — fourteen-day (two-week) sprints aligned with the agile portion of the hybrid methodology, weekends and holidays included, sprint one starting the day the contract is signed. Taskforce assignments tied to Systematic Functional Groups in the beehive. Dependency map across taskforces. Milestone calendar tied to the phase model. Status-reporting rhythm built around sprint retrospectives and sprint-launch planning. The discipline holds the calendar and surfaces drift before it becomes program drift.
+That is why the program has to sit above the vendor lanes. Vendors are useful. They know their tools. They can configure, integrate, migrate, test, and advise inside their domains. But the transformation cannot be owned by the vendor stack, because the hard calls cross the stack. The operator has to own the bridge.
 
-**Stakeholder and Change Management** — communications, training, adoption, resistance maps, executive alignment. The discipline that makes the work land. Communications cadence per stakeholder tier — C-suite monthly, sponsor weekly, functional leaders biweekly per their taskforce, operators per their adoption stage. Training plans tied to the cutover events and the post-go-live operator empowerment work. Adoption metrics defined per taskforce and per system. Resistance-and-receptivity map of the organization. Escalation paths for when adoption stalls. The discipline makes sure the operating fabric absorbs the transformation rather than rejecting it.
+## The Small Mechanics That Break Big Programs
 
-**Agile-Fall mode-switching** — knowing which methodological mode to run, when, by work type. *Pure agile fails in complex business-system transformation because plan-to-manufacture flows, regulated data, complex CPQ logic, and manufacturing sequence have hard physics-of-flow dependencies that don't iterate around. Pure waterfall fails because mid-market clients can't afford eighteen-month big-bang projects with no working surface area until month seventeen.* The hybrid is not a compromise; it is a discipline. Each work type carries an inherent mode signal — read it correctly and the discipline writes itself. Manufacturing flow: waterfall. Process discovery: agile. Data architecture lock and master-data structure: waterfall. Configuration tuning and workflow design: agile. Regulatory compliance: waterfall. Adoption and training: agile. Agentic build: agile. Cutover sequencing: waterfall. Most consultants don't switch — they pick a religion and ride it through every work type, and the work types they got wrong drift.
+The fastest way to understand a transformation is to inspect the small mechanics everyone wants to skip.
 
-## The parallel-workstream failure mode
+Item numbers are a perfect example.
 
-Most board-approval-tier transformations run the three sub-disciplines as parallel workstreams. The PowerPoint shows neat lanes. The execution shows collisions in week eight. The PM tool doesn't know what change-management is dealing with on the ground. Change-management cadence doesn't know which mode this sprint is running in. The agile-fall mode-switch doesn't know what the stakeholder map is signaling. Decisions stall because each workstream waits on context the others have but never share. The vendor partners run their own methodology in a fourth track. By month three, the program has four parallel calendars, four sets of risks, four sets of decisions, and one operator team trying to run a real business while attending all of them.
+In legacy companies, item numbers often started as a "smart scheme." Someone tried to embed meaning into the number itself. The number carried vendor, color, size, use, category, or some other schema. An operator could look at the item number and know what it was. At the time, that felt practical.
 
-*Drift sets in. Adoption decays. Outcomes recede.* The integrated-delivery discipline is the reason mature operators land what others can't — and it is also why discount-priced consulting routinely fails to compound, regardless of the brand on the deck or the dollars on the engagement.
+Then the company grew.
 
-## Integrated delivery
+New attributes appeared that the original scheme never reserved room for. A two-character vendor code such as "SA" worked until a second vendor arrived that also wanted to be "SA." Now the business has "SAx," a patch on a patch. New employees interpreted the scheme differently. The old convention fractured. The number still looked smart, but the intelligence had already leaked out of it.
 
-The integration is what makes the disciplines compound rather than collide. **PM cadence reads from change-management readiness** — the sprint plan reflects what stakeholders can absorb this week, not just what the backlog says is next. **Agile-fall mode-switch reads from the stakeholder map** — high-resistance work doesn't go agile because iteration accelerates resistance and produces visible chaos that the executive coalition uses to defund. **Register state is visible across all three disciplines and across the vendor lanes** — one shared persistence layer, not three parallel spreadsheets that go stale on different schedules.
+Then comes the proposed fix: renumber the items.
 
-The compound integration is what makes 24-month transformations land instead of decay. The work compounds across phases instead of starting over each time a workstream rotates leadership. *The transformation institutionalizes by construction, not by heroics.*
+That is where the transformation learns what the item master really is.
 
-## The map: constellations, clusters, PEGs
+Third-party services may be locked into the existing number. Warehouse people may have memorized it. Changing the number moves their cheese in a very real way. Operators may have old custom software with item numbers hard-coded in places nobody has inventoried. Multiple departments now have to agree what the new item standard should be, because the item does not belong to one department. It touches purchasing, receiving, manufacturing, inventory, costing, sales, finance, reporting, and customer service.
 
-<figure>
-  <img src="/diagrams/six-constellations.svg" alt="The six constellations — universal spine of P2P, O2C, P2M, S2S, D2R, MDM around a sovereign Data Core; BPSc density bands ring each constellation" />
-  <figcaption><em>The six constellations — universal spine · one data core · same six every install</em></figcaption>
-</figure>
+This is why the right answer is so simple and so hard: stop making the ID smart. It should no longer be a smart scheme, because it turns out that's dumb. Make the item number sequential and let the system's attribute and description fields carry the load.
 
-The map is BOSS's organizing principle for the operating company. It runs in a strict hierarchy: **Constellation → Cluster → PEG → Steps + Schema availability.** Each level has a different job; each level has a different relationship to "uniquely standard."
+That sentence is master data management in its purest form. Meaning belongs in governed attributes, not in the key.
 
-**The six constellations — the universal spine.** Six categories, fixed across every install, every industry, every operator scale. *Standard everywhere.* P2P (Procure to Pay). O2C (Order to Cash). P2M (Plan to Manufacture). S2S (Systems to Support — the kitchen-sink-by-design constellation that houses what doesn't slot cleanly into the value chains or foundational data: IT operations, productivity suites, the agent platform/runtime where agentic apps execute, one-off systems that don't ladder elsewhere, and BOSS itself when installed). D2R (Data to Reporting). MDM (Master Data Management). *Same six, every company.* The six are *exhaustive by construction* — every operating process AND every business-intelligence surface maps to one of them. The constellation is the categorical home for any piece of work in the engagement: a sales-order PEG belongs to O2C; a vendor-master mastering process belongs to MDM; a margin report belongs to D2R; an intercompany consolidation step belongs to D2R + MDM at the boundary; an access-provisioning workflow belongs to S2S. The spine is what makes "uniquely standard" claim resolvable: the categories are the same; the *makeup* — which PEGs, which clusters, which BPSc fill each constellation — differs per operator.
+The same pattern shows up in three-way match. The invoice, the purchase order, and the receipt are supposed to agree. When they do not, people talk about AP efficiency, buyer discipline, vendor behavior, or receiving process. Those may all be involved. But in mid-market operators, a stubborn exception pattern often traces back to vendor-master mismatch, item-master mismatch, unit-of-measure mismatch, entity-boundary mismatch, or a receiving event that is not represented the same way across systems.
 
-**The cluster — the unique-per-client layer.** Inside each constellation, an operator's specific work organizes into clusters. *Standard structure, unique content.* A multi-entity beverage operator's O2C constellation might cluster into wholesale-distributor O2C, direct-to-retail O2C, e-commerce O2C, and intercompany O2C — four clusters under one constellation, each with its own characteristic PEGs. A single-entity manufacturing operator might have one O2C cluster, period. Same constellation; different cluster fill. *The cluster is where bespoke fill lives.* Every "uniquely standard" claim resolves to: same six constellations; different clusters underneath them.
+The exception is not just an AP problem. It is data governance showing up as controller time.
 
-**The PEG — the atomic unit.** Inside each cluster, work decomposes to the PEG level. PEG = Process Event + Schema availability. *PE (Process Event)* is the executable bundle — three step types compose it: PE-connected (fires action in a tier-1 system or app), Validation (confirms expected state), Business rule (enforces logic). The PE is not a single event; it's the smallest executable unit that fires a meaningful business action with its associated checks. *GS (Schema availability)* is the data contract — recursively decomposed into Data Collections (validation gates) and Golden Schema (the semantic model of the data the PE produces and consumes). The PE without the GS is a fire-and-forget action with no contract. The GS without the PE is a schema definition with no emitter. Together — PEG = PE + GS — the bundle has a contract and the contract has an emitter. *That's the atom.* Everything in the substrate composes out of PEGs.
+Standard product costing has the same trap. A manufacturer with three acquired entities may have three item masters, three cost-rollup methods, three routing assumptions, and three versions of what "standard" means. The consolidated variance looks like a financial result. Underneath, it may be a master-data artifact. Finance cannot interpret the variance until the business can trust the item, BOM, route, labor, machine time, overhead, and rollup logic that produced it.
 
-The composition is exact: Constellation → Cluster → PEG → Steps + Schema availability. Move down the tree to find what's executing; move up the tree to find what category and customer-specific population it belongs to. *Both directions matter.*
+Shadow IT is another version of the same truth.
 
-## The work hierarchy: Step → PEG → BPSc → BPF
+Nearly every operating company has an unofficial decision layer. Spreadsheets. Analyst-owned SQL. A PowerApp someone built because the ERP could not do the work. A report exported every Monday, adjusted by hand, and trusted more than the official dashboard. A workbook whose most important tab has a name like "do not touch."
 
-PEGs compose into business processes through a second axis. *The map tree (above) tells you where work lives; this hierarchy tells you what business function it implements.* Same atomic PEG, two orthogonal aggregations.
+The answer is not to shame it or rebuild it blindly. The answer is find, classify, and absorb.
 
-A **Step** is the atomic unit of execution inside a PEG. PE-connected steps fire actions in tier-1 systems and apps. Validation steps confirm that an event produced its expected state. Business-rule steps enforce business logic conditions. Steps are tracked individually because step changes drive SOP staleness — the SOP machine listens at this layer.
+Find it: where is the work really being decided? Classify it: is this workaround protecting the business, creating risk, or both? Absorb it: migrate the logic into governed workflow and governed data where it belongs. Do not rebuild the spreadsheet because it is ugly. Understand what it knows. Then decide what the business should own.
 
-A **PEG** (already defined above) is PE + GS — the atomic functional unit.
+These mechanics are unglamorous. They are also where transformation becomes real. If the program cannot govern item meaning, match exceptions, standard cost, and the shadow decision layer, the steering deck is not describing the business. It is describing a wish.
 
-A **BPSc** (BPS Collection) is roughly a 25-step sequence implementing a specific business function — for example, "Purchase Raw Materials," "Process Customer Return," "Onboard New Vendor," "Close the Books." A BPSc's steps invoke PEGs as the operations engine. *The BPSc is the recognizable business function from the operator's daily reality.* When an operator says "we have a Purchase Raw Materials process," the BPSc is the operator-shaped name for that work.
+## Manufacturing Makes The Boundary Visible
 
-A **BPF** (Business Process Flow) aggregates BPSc per constellation — the set of business functions that compose Procure to Pay, the set that composes Order to Cash, etc. BPFs ring the constellation-level view of the operating company.
+Some mechanics are universal across operating companies. Some are not.
 
-The flow runs both ways. *Bottom-up:* steps invoke PEGs; PEGs implement BPSc steps; BPSc roll into BPFs; BPFs sit inside constellations. *Top-down:* the constellation defines the categorical scope; the BPF lists the in-scope business functions; BPSc decomposes each function into a sequence; PEGs and steps are the units that actually execute. *Map tree + business-process rollup are the two axes of work organization. SOPs roll up into BPFs through the second axis.*
+The IT/OT boundary belongs in the manufacturing and plan-to-make conversation. It should not be universalized.
 
-## The runtime register: Systems, Apps, System Groups
+In a manufacturer, shop-floor reality has to cross into the business systems. Machines, PLCs, sensors, SCADA, MES, quality systems, WMS, production schedules, labor reporting, and ERP do not all live under one owner or one clock. Operations cares about the line running now. IT cares about integration, security, reliability, and recoverability. Finance cares about cost accounting, inventory valuation, variance, and the general ledger. Compliance cares about traceability.
 
-The runtime register is where PEGs touch the real world. Three tabs, all tracked per environment (dev/test/prod) with health status.
+That boundary is not an abstraction. It determines whether production data can become financial truth.
 
-**Systems** — vendor platforms. ERP, HRIS, CRM, WMS, MES, ticketing. Tier-1 platforms the operator licenses from vendors. *Standard model, unique content:* every operator has Systems; the specific vendor list is bespoke.
+A multi-level bill of materials is not just an engineering record. It is the structure that tells the business what a product is made of, what substitutions are allowed, what scrap matters, what quality checks attach, and what costs roll up. A routing is not just an operations document. It is the path by which labor, machine time, and overhead become cost. A work-center master is not just a production setting. It is a financial assumption waiting to be tested by the floor.
 
-**Apps** — operator-owned IP. The work done in Excel and PowerApps today; agentic apps in the age the operator is now entering. *Apps are first-class peers to Systems.* Same per-environment health model. Same promotion through the seven delivery stages. Same green/green requirement on the dual-axis validation. Same taskforce ownership in beehive. *The Apps tab is where the agentic-onramp story stops being aspirational and becomes mechanical.* When the operator commissions an agentic app, it goes into the Apps register with the same governance that applies to a tier-1 system. Build it through the standard mechanics, validate it through the same cycles, run it under the same audit-trail discipline.
+When those records are wrong, the error travels.
 
-**System Groups** — aggregations for financial reporting. How systems and apps roll up for cap-treatment, license accounting, vendor-spend reporting, depreciation grouping. *Standard model:* every install has System Groups. *Unique content:* each operator's specific groupings depend on their consolidation structure and reporting needs.
+The floor may still make the product. The shipment may still leave. The customer may still be served. But the margin is suspect. The inventory value is suspect. The variance is suspect. The GL receives numbers that look official because they passed through an enterprise system, but official is not the same as true.
 
-Every PEG executes against one or more rows in the runtime register. PEG promotion through the delivery stages routes against the appropriate environment of each row — UAT-stage PEGs run against UAT environments; prod-stage PEGs run against prod. *That's how the substrate stays environment-aware without manual coordination.*
+That is why manufacturing transformations cannot treat the shop floor as a downstream integration detail. The data crossing from operational technology into business systems has to be governed as part of the transformation from the beginning. Different owners, different security demands, different timing requirements, and different consequences all meet there.
 
-## The two axes of validation: 7 stages × 3 cycles → green/green
+If the transformation gets that boundary right, the business can see production reality in financial language. If it gets it wrong, the business gets beautifully integrated uncertainty.
 
-PEG progress runs on two orthogonal axes. *Both must be green for the work to count.*
+## The Structural Fork
 
-**The delivered axis — the seven stages.** Design → Build → Deploy and Test → UAT → Mock Golive → Golive → Stable state. Stage gate progression. A PEG is at exactly one delivery stage at any time; advancement is a discrete event tied to gate readiness and Story-push. PMO orchestrates the stage progression at the portfolio level — hundreds of PEGs at different stages on any given day, all tracked in the BOSS PM Suite.
+Every transformation eventually faces a fork.
 
-**The validation axis — the three cycles.** E2E → UAT → Golive flows. The three validation flows each PEG must pass to be considered fully validated. Each cycle exercises the PEG against successively more realistic conditions. *Cycle 1 — E2E flows.* End-to-end pass: the PEG fires correctly through its chain of integrations and validations against test data. *Cycle 2 — UAT flows.* Operator-side users exercise the PEG against realistic data; the running execution log accumulates at the step level; the SOP content emerges. *Cycle 3 — Golive flows.* Production-equivalent verification: the PEG runs against prod-shaped data and volumes; rollback rehearsal completes; the cutover plan executes against the simulated prod environment.
+One path is ERP-to-ERP migration. Move from one vendor center of gravity to another. Let the implementation partner shape the program around the destination platform. Accept the vendor's data model as the operating model. Treat business difference as fit-gap. Treat governance as a migration task. Declare victory at go-live.
 
-PEG **health states** track the validation axis: *Blocked* (waiting on dependency or cycle failure), *Ready* (passed prior cycles, waiting on next), *Cycle validated* (all three cycles passed). The scorecard at the constellation level rolls up both axes: *Green/green* means every PEG in the constellation has both *advanced through all seven delivery stages* (delivered) AND *passed all three validation cycles* (validated). Either alone is insufficient — a PEG can be Golive-stage-deployed but cycle-validation-red (deployed but failing); a PEG can be E2E-validated but still at Build stage (validated but not delivered).
+Sometimes that path is the right technical move. But it is not, by itself, a business-owned transformation.
 
-*Two axes. Both must be green.* This is the load-bearing discipline behind every "delivered + validated" claim in the engagement.
+The other path is data sovereignty — the company, not the ERP vendor, owns the definitions and the decision rights. The ERP stays important, but it is not the owner of the transformation. The operator owns the common meaning of customer, vendor, item, product, location, project, cost, revenue, approval, and decision. Applications sit in their domains. Vendors contribute inside their lanes. The data model, the governance cadence, the decision record, and the workflow logic become the operator's to keep.
 
-## The unified blocking cascade
+Master data management is the floor, not a workstream. A data council that cannot decide is a meeting. A data council with decision rights, executive cover, and business ownership is a transformation instrument. Sales does not get a private definition of customer because it helps the pipeline. Finance does not get a private definition of revenue because the old reports were built that way. Operations does not get to keep item meaning embedded in tribal code because changing it is painful. The business decides what the enterprise meaning is, records the decision, and lives with the consequence.
 
-The unified blocking cascade is the mechanic that makes the substrate legible end-to-end. *One place to look, instead of triaging five tools.* When a PEG isn't running, the IDE renders the whole chain:
+Fit-to-standard belongs here too. The right question is not "Can the new system mimic every old behavior?" It is "Which differences are genuine operator advantage, and which exist only because the old system forced the business to work around it?" A company that keeps every accidental difference carries the old system into the new one. A company that flattens every real difference loses the operating knowledge that made it valuable. The discipline is knowing which is which.
 
-- **Data Type blocked** → integrations using that Data Type can't move data → every PEG that uses those integrations blocks at its current stage.
-- **System (or App) unhealthy in the relevant environment** → PEGs depending on that System block at their BPSc step level.
-- **Step fails validation** → the PEG holds at its current stage gate.
+The vendor-partner trap is structural: partners are paid and organized to deliver their lane, not to own the business result after everyone leaves. They can be excellent and still be the wrong organism to run the transformation.
 
-The cascade renders the dependency chain in the IDE. Not "the integration is broken" — but "the customer-master Data Type is failing validation on records imported from Acquired-Entity-3, which is blocking the customer-master integration from publishing to NetSuite UAT, which is blocking the credit-check PEG in O2C from advancing past Deploy and Test." *That level of legibility is what no tier-1 platform can produce, because no tier-1 platform sits where the whole graph is visible.*
+The trap has a quieter cousin — the customizations a company has hobbled together over the years. Some are junk. Some are the secret sauce: genuinely good logic and workflows the business actually runs on. The discipline is to find that secret sauce early and decide about it on purpose — own the endpoints and define the integration path, or price in phasing it out and rebuilding it inside the new stack. What you cannot do is carry an opaque dependency into the new world and hope it holds.
 
-The cascade is the operative differentiator behind every "transformation legibility" claim in the engagement. The CIO sees the actual blocker. The taskforce lead sees the actual dependency. The CFO sees the actual reason a milestone is slipping. *Decisions get made on the real signal, not on the reconciled-after-the-fact narrative.*
+I learned that the hard way. I once ran a transformation I was proud of, built in part on excellent IP from a third-party strategic partner. A year after go-live, that partner was acquired, and the acquirer forced its customers onto the merged stack. We spent the next stretch in a hasty refactor around endpoints and custom code we should have mapped and owned in the first weeks — instead of scrambling for a new solution after the business was already live. The lesson stuck: a dependency you do not own is a dependency that can move on you. Own the endpoints, or plan their exit, before go-live, not after.
 
-## The SOP machine, in mechanics
+The public record keeps making the broader point. When a large operator's platform migration goes badly, it does not stay an IT story. It becomes an earnings story, a customer story, and a board-governance story — the kind that surfaces in public disclosures and shareholder litigation, not just in postmortems. Lamb Weston's troubled S/4HANA implementation, still in active litigation, is the reminder operators reach for: what the market punished was not framed as a technical failure, it was a business one. The lesson is not "pick a better vendor." It is that the operator, not the partner, has to own the outcome the business will be judged on.
 
-The operator-adoption holy grail is documentation that doesn't drift. *Most transformations produce SOPs that go stale within a quarter.* The mechanics of the SOP machine close the loop by construction.
+There is an obvious objection here, and it points at me as much as at any vendor: an independent operator also leaves. That is exactly the point. The job is not to become the thing the business depends on. It is to leave the business owning its own data, its own definitions, its own endpoints, its own decisions — owning its way past me. A transformation run well makes its own author unnecessary. If the engagement created a new dependency, it failed, however clean the go-live looked.
 
-The mechanism is at the step level. During Cycle 2 (UAT validation flows), end-to-end and UAT testers execute PEGs against the live test system. Each step that fires accumulates an execution log entry — step description, screenshot, expected result, actual result, tester notes, tips and warnings. *The running log IS the SOP.* On signoff of the validation cycle, the accumulated log becomes the published SOP for the BPSc that those steps belong to.
+The modern version of this fork matters even more because agentic systems are arriving alongside ERP, not after it. The practical question is no longer only "Which ERP will run the business?" It is also "What governed substrate will every system, workflow, report, and agent trust?" A business can keep its ERP and build the next operating layer alongside it — but only if the data floor is sovereign.
 
-The maintenance loop runs on the same atomic unit. *Step changes flag the SOP stale.* When a step's logic, validation rule, or system action changes, BOSS automatically marks the SOPs derived from that step as stale. The next CI cycle re-runs the affected PEG through the seven delivery stages including UAT, regenerating the SOP against the new evidence chain. PEG-level changes and BPSc-level changes naturally cascade to step-level changes — but the atomic trigger is the step, and the precision matters because the precision is the credibility.
+## The CFO Mechanics Are Not Optional
 
-SOPs roll up into BPFs through the business-process axis. The Order to Cash BPF carries the SOPs for every BPSc inside it; the constellation-level view aggregates SOPs at the categorical level.
+Start with the boundary I do not cross: the CFO owns the accounting judgment. My job is to make the operating evidence clean enough that the judgment is defendable — every attributable hour, every system's status, every in-service determination traceable to the work that produced it. With that line drawn, here is the discipline that makes a transformation fundable as an asset instead of absorbed as a cost.
 
-The economics: SOPs are not a separately budgeted deliverable. They emerge from validation cycles already running for other reasons. *Documentation cost is structurally zero.* Off-the-shelf categories all half-solve a piece and none close the loop. Learning Management ships content delivery infrastructure but doesn't generate the content. Knowledge Management holds whatever someone wrote, until what they wrote stops being true. Business Process Management produces process diagrams that don't tell an operator how to run a purchase order. Process Mining looks backward at what happened. RPA documentation reads like a robot wrote it because one did. *None connect to the moment the procedure was actually validated in the live system. That moment is the only honest source of "this is how the work is done."* BOSS connects.
+Define the transformation as a capital asset from the beginning — not a stack of separate system projects, not a program reclassified as an asset at the end when someone finally asks the question. One company-wide asset build, framed that way from day one.
 
-*Thirty years of transformation work and nobody else has solved this.* This is the differentiator post-go-live.
+That does not mean the entire program is capitalized. That is the lazy claim auditors reject and CFOs distrust. It means the program has the discipline to separate what creates the asset from what supports, trains, explores, cleans up, or operates around it. The boundary gets drawn at the work, not at the workstream. Development, configuration, certain testing, directly attributable internal labor, and certain vendor integration work may belong in the capital story. Training does not become capital because it happened during the same program. Change management does not become capital because the deck says transformation. Research and feasibility are not build. Post-go-live maintenance is not placing the asset into service.
 
-## The PM Suite: Tasks → Stories → Sprints → Sprint Milestones → Roadmap
+Internal labor is the lever most programs miss. The business puts real people into the build — the beehive of taskforces: finance leads, supply-chain SMEs, IT leads, process owners, data owners, controllers, planners, production experts. On a serious transformation that internal time is significant, and where it is directly attributable to building the asset and documented while the work happens, it can be capitalized. The catch is in that "while the work happens." A project financial tracker turns spend into live data instead of a quarter-end archaeology project: every entry — consultant hour, internal-labor hour, vendor work, testing, configuration, training, change management — carries a rationale, an owner, a timestamp, and a tie back to the asset or the non-capital activity it supports. Reconstruct that story after the fact and the CFO is defending a number nobody captured.
 
-The work hierarchy in the BOSS PM Suite is purpose-built for transformation engagements. First-party — not a Jira integration. *Standard frame:* Task → Story → Sprint → Sprint Milestone → Roadmap. *Bespoke fill:* the specific tasks, stories, sprint contents, and milestone scope are unique per engagement.
+The timing is real, and it is worth showing the CFO early. Qualifying build cost that moves onto the balance sheet during the build comes off the P&L for those years; once the asset is in service, it depreciates over its useful life. The relief in the build years and the depreciation that follows are two halves of one decision — a CFO who sees the whole shape early can plan for it; a CFO who sees only the first half meets the second half as a surprise.
 
-A **Task** is the smallest unit of work assigned to an individual — write a GS for a PEG, configure a workflow rule in the ERP, prepare training content for a taskforce, draft the cap-treatment rationale for a workstream. Tasks are tracked at the assignee level.
+The part that takes real fluency is the in-service date — the moment the asset is placed into service and the depreciation clock starts. The test is not "is a system switched on." It is "has the system realized its intended use." In a transformation, a component's intended use is to run the business as part of the integrated whole. A system that has passed end-to-end and UAT testing at month twelve is tested, not operational — it has not cleared go-live validation, and the business is not yet relying on it. Even a simple system quietly consuming data and producing output someone reviews is in beta until it is hooked into the go-live core and trusted as the system of record. Components clear those validation cycles at different times across the deployment, but none is in service on its own test date, because none is running the business until the whole goes operational together. Done done is when the asset runs the business — at the coordinated go-live. That is the in-service date, and the validation record is the evidence: you can show exactly which cycle every system sits in, integrated or still in parallel, relied upon or still in test. Where a component genuinely does go into independent production early, it clocks in then — that is the CFO's call, made on the evidence, with the auditor's concurrence. But a cohesive transformation is designed so the asset goes into service as one operational whole.
 
-A **Story** is a related set of tasks that compose a deliverable — implement the customer-master mastering workflow, build the O2C UAT test pack, deliver the change-management briefing for the sales taskforce, complete the integration health verification for NetSuite UAT. Stories are tracked at the deliverable level.
+<figure class="wide"><svg viewBox="0 0 760 462" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="g1-title g1-desc">
+  <title id="g1-title">One go-live, one in-service date</title>
+  <desc id="g1-desc">Five systems clear end-to-end and UAT testing at different times across the build, shown as off-white cards of different lengths with a gold top edge. Each then runs dashed (in validation or beta, not in service) until a single sun-gold go-live datum line, where every system turns gold: live, relied upon, and placed in service together. A navy footer band states the in-service test.</desc>
+  <rect x="0" y="0" width="760" height="462" fill="#FAFAF7"/>
+  <text x="380" y="38" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="24" font-weight="700" fill="#142840">One go-live. One in-service date.</text>
+  <line x1="320" y1="50" x2="440" y2="50" stroke="#FACC15" stroke-width="2.5"/>
+  <text x="380" y="70" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="13" font-style="italic" fill="#1F3D5F">Systems clear testing at different times — none is in service until the whole runs the business.</text>
+  <rect x="165" y="92" width="435" height="220" fill="#142840" opacity="0.03"/>
+  <line x1="600" y1="95" x2="600" y2="312" stroke="#FACC15" stroke-width="4"/>
+  <text x="600" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#142840">GO-LIVE</text>
+  <text x="150" y="114" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" fill="#142840">Finance core</text>
+  <rect x="165" y="101" width="155" height="18" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+  <rect x="165" y="101" width="155" height="3" fill="#FACC15"/>
+  <line x1="320" y1="110" x2="596" y2="110" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="601" y="101" width="18" height="18" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="2"/>
+  <text x="150" y="160" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" fill="#142840">Order-to-cash</text>
+  <rect x="165" y="147" width="335" height="18" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+  <rect x="165" y="147" width="335" height="3" fill="#FACC15"/>
+  <line x1="500" y1="156" x2="596" y2="156" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="601" y="147" width="18" height="18" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="2"/>
+  <text x="150" y="206" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" fill="#142840">Warehouse · WMS</text>
+  <rect x="165" y="193" width="225" height="18" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+  <rect x="165" y="193" width="225" height="3" fill="#FACC15"/>
+  <line x1="390" y1="202" x2="596" y2="202" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="601" y="193" width="18" height="18" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="2"/>
+  <text x="150" y="252" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" fill="#142840">Manufacturing · MES</text>
+  <rect x="165" y="239" width="395" height="18" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+  <rect x="165" y="239" width="395" height="3" fill="#FACC15"/>
+  <line x1="560" y1="248" x2="596" y2="248" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="601" y="239" width="18" height="18" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="2"/>
+  <text x="150" y="298" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" fill="#142840">Reporting · BI</text>
+  <rect x="165" y="285" width="275" height="18" fill="#FBF9F4" stroke="#142840" stroke-width="1.2" rx="2"/>
+  <rect x="165" y="285" width="275" height="3" fill="#FACC15"/>
+  <line x1="440" y1="294" x2="596" y2="294" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <rect x="601" y="285" width="18" height="18" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="2"/>
+  <text x="382" y="334" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#6B6860">BUILD PERIOD — COSTS CAPITALIZE</text>
+  <text x="672" y="330" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" fill="#142840">IN SERVICE</text>
+  <text x="672" y="343" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-style="italic" fill="#6B6860">depreciation begins</text>
+  <rect x="165" y="356" width="16" height="13" fill="#FBF9F4" stroke="#142840" stroke-width="1" rx="1"/>
+  <rect x="165" y="356" width="16" height="2.5" fill="#FACC15"/>
+  <text x="187" y="366" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#142840">Passed testing (E2E · UAT)</text>
+  <line x1="372" y1="362" x2="388" y2="362" stroke="#7A756A" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="394" y="366" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#7A756A">In validation / beta — not in service</text>
+  <rect x="601" y="356" width="13" height="13" fill="#FACC15" stroke="#142840" stroke-width="0.8" rx="1"/>
+  <text x="620" y="366" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#142840">Live → in service</text>
+  <rect x="40" y="384" width="680" height="42" fill="#142840" rx="2"/>
+  <text x="56" y="402" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#FACC15">THE IN-SERVICE TEST</text>
+  <text x="56" y="417" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-style="italic" fill="#FBF9F4">Tested ≠ in service. The asset is placed in service when the whole runs the business — one coordinated go-live.</text>
+  <text x="380" y="448" text-anchor="middle" font-family="Vollkorn, Cambria, Georgia, serif" font-size="11" font-style="italic" fill="#1F3D5F">Done done is when the asset runs the business.</text>
+</svg><figcaption>Tested is not in service. The asset is placed in service when the whole runs the business — one coordinated go-live.</figcaption></figure>
 
-A **Sprint** is a fourteen-day (two-week) cadence container that holds stories. The sprint plan reflects what stakeholders can absorb (change-management readiness signal) and what the work types in scope require (agile-fall mode signal).
+There is also a missing line item in many transformation budgets: leadership behavior under pressure. The platform cost is visible. The integrator cost is visible. The licensing and migration costs are visible. What is rarely costed is the meeting where the leader holds the line when every function wants its old definition back, the first failure where the room needs calm instead of blame, the decision to stop a vendor lane because the business is not ready to absorb what is being pushed. Those are not accounting entries. They are asset-protection moments, and they are as load-bearing as any line that is.
 
-A **Sprint Milestone** is a meaningful checkpoint within or across sprints — UAT cycle 2 closes for a constellation, MDM big-three goes from near-locked to locked, P3 entry, the constellation scorecard for post-M&A consolidation flips green/green.
+The board does not fund a transformation because someone has a better implementation vocabulary. It funds it because the business is building something it can carry: governed data, controlled workflows, defensible decisions, traceable spend, cleaner close mechanics, fewer avoidable exceptions, and a platform for future change. The CFO can defend that only when the mechanics produce the evidence.
 
-The **Roadmap** is the rolled-up sprint sequence with milestones, mapped to the phase arc and visible to all three audiences.
+## Compliance Is A Companion From Day One
 
-The PM-PEG binding is the load-bearing wiring. *A Story-push doesn't just close a ticket — it advances the bound PEG through its current stage gate.* Tasks → Stories → Sprints is the work-shape view; PEG stage advancement is what those work units actually accomplish. *That's why BOSS is committed to native PM rather than a Jira integration:* the Story-push-to-PEG-stage binding is load-bearing, not a sync layer. The operator's existing PM tool can stay for tasks they want to keep there; the BOSS PM Suite holds the stories and the PEG advancement and the constellation scorecards.
+Compliance should not be the banner over the transformation. It should be the plumb line through it.
 
-## The beehive: Systematic Functional Groups → Taskforces → People → BPFs → PEGs
+The first serious conversations should include the CFO and the Compliance Officer, because they carry the consequences. If the number is wrong, Finance carries it. If the control fails, Compliance carries it. If a decision cannot be explained, Legal, Audit, Finance, and Operations all feel it in different ways.
 
-The beehive is BOSS's organizing principle for *who does what*. A second universal structure orthogonal to the constellations: every PEG has coordinates on both — the constellation it belongs to (what work) and the taskforce that owns it (who does the work).
+That does not mean compliance slows the work into ceremony. It means auditability is designed into the work while the work is being built. Every master-data decision has an owner. Every approval limit has a rule and an exception path. Every workflow change has a rationale. Every test produces evidence. Every system change is traceable. Every consequential decision is defensible by the people who made it.
 
-**Systematic Functional Groups** are the universal categories of operating-company work — Sales, Production, Supply Chain, Finance & Accounting, IT/IS, HR, Compliance, and so on through the operator's specific functional landscape. *Standard frame.* Every operating company has these groups whether they've named them or not.
+None of this is really about installing software. It is about digging down — to the data, the definitions, the decisions, and the workflows — until the business can see itself clearly enough to govern itself: making disagreement visible, resolving it at the right altitude, and preserving the decision so the business does not have to rediscover it every quarter. The practice is named for exactly what it produces.
 
-**Taskforces** are working teams accountable for a Systematic Functional Group's BPFs. Each taskforce has named roles. The **ELT sponsor** carries executive accountability — the C-suite sponsor for that group's transformation work. The **PST rep** sits on the Program Steering Team representing the taskforce. The **taskforce lead** runs the day-to-day cadence of the taskforce. **SMEs** are the operator-side subject-matter experts who carry the operational truth. *Standard role-set; bespoke fill.* Each operator's specific people in each role are unique, but the role pattern is universal.
+## The Turn Toward Production Agentics
 
-**People → BPFs → PEGs.** The people in the taskforce execute against the BPFs in their Systematic Functional Group. The BPFs decompose to BPSc, BPSc to PEGs. Every PEG has a taskforce owner; every taskforce has named accountability. *No PEG is owned by "the consultant team" generically.* The cross-functional standoffs that wreck most transformations get brokered at the taskforce boundary — CFO vs. COO on data ownership, sales vs. operations on capacity-versus-pipeline, IT vs. business unit on system selection. The executive coalition lands MDM lock or vendor-selection only because the taskforces beneath them have already done the working sessions that produced a defensible position.
+Production agentics does not lower the bar. It raises it.
 
-**Two universal axes.** Constellations × Systematic Functional Groups. Every PEG has coordinates on both. The constellation-axis tells you what category of work; the functional-axis tells you who's accountable. *That's how the substrate carries both "where does this live in the map" and "who does this" without one having to win.* The PST and CM (Change Management) boards ship for governance review off the dual coordinate system.
+An agent moves faster than a report, a workflow queue, or an analyst checking a spreadsheet. That speed is only worth anything when the agent acts on governed data, inside bounded authority, with a traceable decision path and a human owner for the calls that matter. If the customer master is disputed, the agent automates the dispute. If the item number still hides tribal meaning nobody trusts, the agent scales the confusion. If approval limits are informal, the agent guesses where authority lives. If the shadow spreadsheet is the real decision layer, the agent learns from something the business cannot govern.
 
-## Reporting: Views on the spine
+You cannot automate dysfunction. You can only make it move faster.
 
-Reporting work in BOSS maps to the **D2R constellation** — Data to Reporting — the categorical home for every reporting effort. The mechanism that makes reporting actually visible is **Layer 5 Views** — roughly 14 view flavors catalogued in the IDE, the primary surface for operator-facing visibility into the substrate.
+That is why the mechanics come before the agentics. The same work that makes a transformation hold — governed master data, owned workflows, decision records, audit trails, finance discipline, and a client-owned operating fabric — is the work that makes production agents safe enough to matter.
 
-*Standard frame:* every operator has the same view-flavor catalog (constellation health, runtime register status, blocking cascade, PEG progression dashboards, financial structure summaries, audit-trail queries, taskforce action queues, etc.). *Bespoke fill:* the data those views render is operator-specific — their PEGs, their constellations, their integrations, their financial structure.
-
-The IDE is the primary view surface. The runtime register, the unified blocking cascade, the constellation scorecards, the cap-treatment audit trail — all rendered through the view catalog. The CIO and the taskforce lead and the CFO see the same substrate through the views appropriate to their role and altitude.
-
-*Reporting drift — the most common failure mode of operator dashboards — collapses by structure.* The KPI definitions live in the substrate, not in the dashboard tool. The CFO sees an OTIF number on the executive view and the operations view and the controller's view; they're the same number because they read from the same substrate. The argument about which dashboard is right doesn't fire.
-
-## The CFO's mechanics
-
-The persistence substrate produces visible operational change in the CFO's daily reality. The mechanics deserve to be named at the level the CFO actually feels them.
-
-**Multi-entity standard-cost rollups.** The pre-state: three different ERPs from three acquired entities, each with its own item master, its own cost-rollup logic, its own period-close cadence. Standard-cost variances at the consolidated level are reconcilable only by Excel and senior controller time. The post-state: items, BOMs, and cost structures live as governed Data Types with master data handled through the MDM constellation. Each ERP consumes from the governed types rather than holding the source-of-truth. Standard-cost rollups consolidate by structure. *The variance becomes a real signal instead of a master-data artifact.*
-
-**3-way match exception rate.** The pre-state: a 15–20% exception rate on the AP three-way match driven by customer-master and vendor-master mismatches across the entity boundary. Each exception means a controller's-time cost; aggregate exceptions mean a quarterly hit to working-capital efficiency. The post-state: customer-master and vendor-master are governed at the enterprise level through MDM; entity-boundary mismatches don't generate exceptions because the boundary doesn't carry mismatched records. Exception rate compresses to the residual driven by real data quality issues, not architectural ones. *The reduction is structural, not procedural.*
-
-**Month-end close speed.** The pre-state: an eleven-day close where most of the variance traces back to chart-of-accounts misalignment across entities, manual intercompany consolidation entries, and journal-entry reconciliation between the source ERPs and the consolidation tool. The post-state: chart of accounts is consistent across entities, intercompany consolidation rolls up by structure, and journal entries are reduced to genuinely manual exceptions. Close compresses to the boundary set by external-audit cadence and SOX rigor, not by internal data-architecture friction. *The CFO closes faster because the architecture stops fighting the close.*
-
-**Intercompany consolidation.** The pre-state: three days of senior controller time per quarter on the consolidation, two days of audit cleanup behind it, the constant risk of an audit finding triggered by inconsistent intercompany balances. The post-state: intercompany rolls up through the governed Data Types in the MDM constellation. Inter-entity balances reconcile by structure. Audit findings on intercompany become rare because the underlying records don't permit the inconsistency that produced findings before.
-
-*Governed master data resolves each of these by structure — daily pain moves from chronic to bounded.* The CFO feels the change quarter-over-quarter, not just at audit time. The mechanics are the same in every engagement; the specific pain points are bespoke to the operator. *Standard frame, bespoke fill.*
-
-## Transformation as capital investment
-
-The delivery discipline is what allows the financial structure to hold up. A transformation governed end-to-end with decision traces, sponsor sign-offs, capitalization tracking, and audit-defensible documentation is fundable as a capital investment. A transformation run as parallel workstreams is fundable only as a P&L hit, because the audit trail isn't defensible enough for capitalization treatment to survive external review. *The mechanics of the delivery layer determine the mechanics of the financial layer.*
-
-A transformation of meaningful scope is a capital investment, not a P&L hit. *The deliverable is an asset — by accounting and by architecture — not a project that ends with a deck.* **Build-phase costs — including internal labor — capitalize to the balance sheet under ASC 350-40.** This is the load-bearing financial mechanism of the new model, and it is the part most consultants either don't know or don't structure correctly. The discipline is hour-level, not workstream-level. Every consultant hour, every internal-labor hour, every vendor hour gets tagged at the boundary as it's logged.
-
-What capitalizes under ASC 350-40: development work, configuration, certain testing activities, internal labor directly attributable to development/configuration/testing, certain vendor integration costs. What does NOT capitalize: research and feasibility, training, change management, most data-cleanup, post-go-live operations, ongoing maintenance, costs incurred after the asset is placed into service. The over-claim — *"the whole transformation is CapEx"* — is the move auditors flag immediately and CFOs spot before the auditor gets there. The defendable claim is narrower and harder to do well: hour-level boundary discipline plus an audit trail ready before the auditor asks.
-
-## Internal labor capitalization
-
-The internal labor capitalization piece deserves its own paragraph because it is the part most CFOs haven't seen done correctly. Internal salaries on the project — the in-house team members, the SMEs from the taskforces, the operator-side leadership working alongside the engagement — flow to the balance sheet as work-in-progress asset, not the P&L, while in development. This is real money. On a multi-year transformation, internal labor often runs into the multi-millions; capitalizing it during the build phase rather than expensing it produces material P&L smoothing across the build years. The framework exists in BOSS — capitalization tracking is native to the Delivery pillar's governance sub-module, audit-defensible, ready for the external auditors who'll review the cap treatment at fiscal year-end. The cap treatment itself is the receiving CFO's ongoing responsibility; the framework gets institutionalized during P1 and the discipline transfers at P6 handoff. *Consistent with the structurally-lean model — the consultant doesn't own the cap treatment forever; the client institutionalizes it.*
-
-## The depreciation period
-
-At go-live, the capitalized investment becomes a fixed asset and depreciation begins. **The standard period for major enterprise transformation is ten years.** Field-validated with sitting CFOs across multiple engagements; consistent with the useful life of the underlying systems and operating fabric. A multi-year transformation that capitalized at twenty to thirty million across build years depreciates over the next decade — the post-go-live P&L impact lands as a smoothed annual depreciation rather than a single front-loaded expense.
-
-The board sees the math differently. Build-phase: balance-sheet asset, no P&L hit. Go-live moment: asset placed in service. Post-go-live: smoothed depreciation over ten years. The CFO defends the funding artifact at the audit committee with a structure the auditors recognize. The board approves the program because the financial impact lands in the rhythm of operating leverage, not in the rhythm of one-time write-downs. *Most consultants pitch transformation as a P&L hit; this model pitches it as an asset.* The conversational difference at the C-suite table is large.
-
-## PFS — the Project Financial Tracker
-
-The cap-treatment discipline lands operationally through **PFS** — the Project Financial Tracker. PFS is the BOSS-shaped surface that takes CapEx and OpEx live across the project lifecycle. Ships as an `.xlsx` artifact that imports into the BOSS roadmap. *Two-executive adoption story.* The CIO adopts BOSS for the operating mechanics; the CFO adopts PFS for the financial mechanics. The same engagement; two wedges; one substrate.
-
-PFS tracks every consultant hour, internal-labor hour, vendor hour, and external service cost against its CapEx-vs-OpEx classification, its rationale, its decider, its sponsor sign-off, and its timestamp. Working-capital metrics, intercompany flows, multi-currency exposures — all real CFO concerns — surface against the PFS-anchored project spend rather than against a post-facto reconciliation. *Project spend becomes live data instead of a quarter-end exercise.*
-
-## Accounting and finance — beyond CapEx
-
-The capital-investment treatment is the headline financial mechanism, but the deeper accounting mechanics are where the audit-defensibility actually compounds.
-
-**SOX controls.** The decision-trace register in BOSS Delivery pillar's governance sub-module is SOX-control-ready by construction. Every system change, every workflow modification, every master-data update has a traced decider, a sponsor sign-off, and a timestamp. The IT general controls (ITGCs) auditors test — change management, access controls, computer operations — pass on the strength of the audit trail rather than on the strength of the spreadsheet reconciliation prepared the week of the audit.
-
-**Intercompany elimination.** Multi-entity operators carry intercompany transactions. The traditional pain is that each entity's GL holds its own version of the intercompany transaction; reconciling at consolidation requires manual journal entries; mismatches generate audit findings. *With governed master data through the MDM constellation:* intercompany transactions get tagged at source with the consolidation rule. Eliminations roll up by structure. Audit findings on intercompany become rare because the underlying records don't permit the inconsistency that produced findings before.
-
-**Multi-currency.** Functional currency per entity, reporting currency at consolidation, the FX revaluation cycle, the gain/loss accounting. Without governed master data, currency conversion becomes a manual journal-entry workflow at month-end. *With governed Data Types:* exchange rates are governed centrally; functional-to-reporting conversion fires at the transaction level; FX gain/loss accounting flows by structure.
-
-**Chart-of-accounts harmonization.** Each acquired entity arrived with its own chart of accounts. The traditional pain is reconciliation at month-end. *With governed master data:* the consolidated chart lives once; each entity's GL maps into it through the integration layer; mapping decisions are governed centrally; new acquisitions plug in through the same mapping mechanism.
-
-**Working capital metrics.** DSO, DPO, DIO. With governed master data and clean PEG-level transaction logging, these calculate cleanly per entity and roll up cleanly at consolidation. The CFO can drill from the consolidated metric to the entity, to the customer or vendor segment, to the specific outstanding receivable or payable.
-
-**Audit-trail readiness, in full.** The cap-treatment audit trail is one specific case of a broader pattern. Every consequential decision in the engagement is logged with decider, rationale, sponsor, and timestamp. Every master-data change is logged. Every system configuration change is tied to a decision trace. Every PEG promotion through stages is logged. *The fiscal year-end audit becomes a query exercise rather than an artifact-assembly exercise.*
-
-## The vendor-partner trap
-
-The dominant failure mode of $10–15M ERP and business-system implementations is partner-led delivery. The licensed VAR or systems-integrator partner gets brought in to run the whole program at billable hours. The structural failure mode stacks. *Wrong organism* — vendor-implementation specialists are not transformation specialists. *Wrong economic incentive* — billable-hours partners get paid more for slower, longer engagements. *Wrong staffing* — senior consultants shared across multiple clients; junior consultants do most of the actual work. *Wrong framework* — vendor-economics dressed up as transformation framework. *Wrong governance* — partner consultants cannot govern C-suite standoffs.
-
-The pattern is so consistent that it is no longer arguable — it is structural. *Ask any failed ERP project who was running the show. Almost always it was the vendor partner. Ask any successful complex transformation. Almost always it was a transformation leader operating above the vendors.* The escape is structural. A different organism runs the project. The transformation framework runs above the vendors. The vendor partners stay productive in their domain expertise; their economics get re-bounded into lanes. Each is contained. None of them runs the program. *BOSS holds the substrate.* Governance lives at the transformation layer — decisions traced, register-driven, audit-clean — and rolls down to vendor lanes through bounded interfaces.
-
-## Stable state as a gate, not an end
-
-Stable state is not the end of the engagement; it's the gate into Continuous Improvement. *The engagement reaches its natural end when the transition is complete; the operating fabric runs forever.* CI is the long-arc operating mode; it never stops.
-
-CI runs through two distinct backlogs, both bound to PEGs / BPSc / BPFs (not living in a ticketing silo).
-
-**Issue Tracker** holds defects — work that broke, work that didn't validate, work that produced unexpected results in operation. Issues have coordinates on the map: which PEG, which BPSc, which constellation. They re-enter the seven delivery stages from Design or Build (depending on scope) and clear all three validation cycles before returning to Stable state.
-
-**Enhancement Tracker** holds improvement candidates — work that could be better, new capability, scope extensions. Same coordinate-bound structure. Same seven stages, same three validation cycles on re-promotion.
-
-*Every CI change re-promotes its affected PEGs through the same dual-axis validation that applied during the build engagement.* The substrate gets stronger over time, not stale. Documentation stays current as a side-effect of operating. The constellation scorecards stay green/green because the underlying work stays current.
-
-This is the retention mechanism. *Clients can't remove BOSS without giving up their CI capability.* The Issue + Enhancement workflow is bound to the registers; the registers run on BOSS; removing BOSS would mean rebuilding the entire CI machinery on top of generic ticketing systems that don't carry coordinates. The CI capability is what stops the operating fabric from drifting back to baseline.
-
-## Self-application: BOSS builds BOSS
-
-BOSS tracks its own stack inside its own systems_register. *The framework carries its own weight before a paying client trusts it with theirs.* Requirements for BOSS start in BOSS's Design stage; flow through Build, Deploy and Test, UAT, Mock Golive, Golive; land in Stable state; continue under CI through the same dual-axis validation.
-
-This is mechanics, not metaphor. The framework's product roadmap is a roadmap inside BOSS. The defects and enhancements for BOSS itself live in BOSS's Issue and Enhancement Trackers. The PEGs that power BOSS are tracked in BOSS's PEG register. The discipline that ships to a client engagement is the discipline running BOSS itself.
-
-*The dogfooding is the credibility.* A consultant who ships a methodology runs no risk in the methodology — there's nothing to break. A platform that runs itself is exposed to its own failure modes; it gets them right or it doesn't ship. BOSS gets them right because BOSS is the first install.
-
-## The shape of the practice
-
-The discipline IS the differentiation. PM, stakeholder and change management, and agile-fall mode-switching as one integrated practice. The map — Constellation → Cluster → PEG → Steps + Schema availability — as the spine that resolves "uniquely standard." The work hierarchy — Step → PEG → BPSc → BPF — as the business-process axis. The runtime register's Systems / Apps / System Groups as where PEGs touch the world; the Apps tab as the agentic-onramp. The two axes of validation — 7 delivery stages × 3 validation cycles — as the green/green discipline. The unified blocking cascade as transformation legibility. The SOP machine as documentation that doesn't drift. The PM Suite — Tasks → Stories → Sprints → Sprint Milestones → Roadmap — as the work hierarchy with PEG-binding wiring. Beehive — Systematic Functional Groups → Taskforces → People — as who-does-what. Views on the spine as how reporting becomes visible. Capitalization treatment under ASC 350-40 with hour-level boundary discipline. PFS as the CFO wedge. SOX, intercompany, multi-currency mechanics. Continuous Improvement through Issue + Enhancement Trackers. BOSS builds BOSS as the credibility multiplier.
-
-*Structurally lean by architecture.* No carried bench. No managed-services tail. No client lock-in. Mutual break-clauses, clean exits by design. The discipline transfers; the consultant doesn't return.
-
-A transformation program of this scope, run this way, is often **lower total cost** than the partner-led alternative — fewer billable hours from senior partners, contained vendor-lane scopes, no managed-services tail, plus internal-labor capitalization tracking that produces material P&L smoothing the partner-led model can't deliver. *CFO wins on three axes: lower total cost, higher outcome certainty, smoothed P&L impact.* Three CFO wins, one structural choice.
-
-The mechanics tie back to the takeaway from Article 1. *Build for sovereignty.* The CFO can defend the program because the asset is sovereign — owned by the operator, on the balance sheet, audit-defensible, transferable in M&A, deployable against the agentic capabilities the CEO promised the board. *Build for handoff.* The mechanics are designed to transfer — the cap-treatment discipline gets institutionalized in the controllership team during the engagement, the BOSS Delivery pillar is run by in-house IT after handoff, the SOP library maintains itself, no managed-services tail. The discipline IS the differentiation. The structure IS what holds.
-
-*All companies are uniquely standard. The mechanics is the how.*
-
-The companion lens — what this engagement IS and who it's done with, the architecture and the people — is in [Article 1](/articles/transformation-and-the-people-of-it). The applied agentics credential — agents deployed as a business asset, structurally dependent on the data foundation this engagement builds — stands on its own in [Article 3](/articles/applied-agentics). To locate where on the path your operating company is — and the engagement shape that fits that moment — see [the Engagement Roadmap](/diagrams/engagement-roadmap.html).
+Build the asset first. Then the next layer has something solid to stand on.
