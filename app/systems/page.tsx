@@ -30,8 +30,9 @@ const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
-    logo: "/brand/rig/logo-lockup-tagline.svg",
+    logo: "/brand/rig/the-rig-v1-logo-light.png",
     alt: "The Rig logo",
+    logoClassName: "h-28 w-auto max-w-[260px] object-contain",
     body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
   {
@@ -138,12 +139,15 @@ export default function SystemsPage() {
                   : "border-navy/15 border-l-[4px] border-l-navy/20"
               }`}
             >
-              <div className="mb-7 flex h-16 items-center justify-center">
+              <div className="mb-7 flex h-16 items-center justify-center overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={system.logo}
                   alt={system.alt}
-                  className="h-14 w-auto max-w-[260px] object-contain"
+                  className={
+                    system.logoClassName ??
+                    "h-14 w-auto max-w-[260px] object-contain"
+                  }
                 />
               </div>
               <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
