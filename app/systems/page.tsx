@@ -30,25 +30,23 @@ const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
-    logo: "/brand/rig/the-rig-v1-logo-light.png",
-    alt: "The Rig logo",
-    logoClassName: "h-28 w-auto max-w-[260px] object-contain",
+    logo: "/brand/rig/the-rig-v1-lockup-panel.svg",
+    alt: "The Rig lockup — Orchestrate · Monitor · Invent",
     body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
   {
     eyebrow: "Owned",
     title: "BOSS = what you own",
-    logo: "/brand/boss/boss-v1-lockup-light.svg",
-    alt: "BOSS logo",
-    logoClassName: "h-28 w-auto max-w-[260px] object-contain",
+    logo: "/brand/boss/boss-v1-lockup-panel.svg",
+    alt: "BOSS lockup — Business Process Harness",
     body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS turns your operating reality into one governed system the business owns. You keep it.",
     featured: true,
   },
   {
     eyebrow: "Run",
     title: "DigOps = how it runs",
-    logo: "/brand/digops/digops-logo.svg",
-    alt: "DigOps logo",
+    logo: "/brand/digops/digops-logo-panel.svg",
+    alt: "DigOps lockup — Buy · Make · Sell",
     body: "An agent-native workflow machine that runs my practice today, with a human on every consequential call and workflows built alongside the people who run them.",
   },
 ];
@@ -140,15 +138,12 @@ export default function SystemsPage() {
                   : "border-navy/15 border-l-[4px] border-l-navy/20"
               }`}
             >
-              <div className="mb-7 flex h-16 items-center justify-center overflow-hidden">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-cream px-5 py-5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={system.logo}
                   alt={system.alt}
-                  className={
-                    system.logoClassName ??
-                    "h-14 w-auto max-w-[260px] object-contain"
-                  }
+                  className="h-auto w-full max-w-[300px] object-contain"
                 />
               </div>
               <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
