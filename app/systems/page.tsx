@@ -30,7 +30,7 @@ const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
-    logo: "/brand/rig/the-rig-v1-lockup-panel.svg",
+    logo: "/brand/rig/the-rig-v2-lockup-panel.svg",
     alt: "The Rig lockup — Orchestrate · Monitor · Invent",
     body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
@@ -143,7 +143,7 @@ export default function SystemsPage() {
                 <img
                   src={system.logo}
                   alt={system.alt}
-                  className="h-auto w-full max-w-[300px] object-contain"
+                  className="h-auto w-full max-w-[420px] object-contain"
                 />
               </div>
               <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
