@@ -38,8 +38,9 @@ const operatingProof = [
   {
     eyebrow: "Owned",
     title: "BOSS = what you own",
-    logo: "/brand/boss/boss-lockup.svg",
+    logo: "/brand/boss/boss-v1-lockup-light.svg",
     alt: "BOSS logo",
+    logoClassName: "h-28 w-auto max-w-[260px] object-contain",
     body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS turns your operating reality into one governed system the business owns. You keep it.",
     featured: true,
   },
