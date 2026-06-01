@@ -327,7 +327,7 @@
     </div>
     <div class="legend" id="legend">
       <div class="legend-item"><span class="legend-swatch" style="background: #1F2937"></span>Transformation Portfolio</div>
-      <div class="legend-item"><span class="legend-swatch" style="background: #FACC15; opacity: 0.85"></span>Applied Agentics Portfolio</div>
+      <div class="legend-item"><span class="legend-swatch" style="background: #FACC15; opacity: 0.85"></span>Production Agentics Portfolio</div>
     </div>
   </div>
 </div>
@@ -526,7 +526,7 @@ const config = {
       }
     },
     {
-      id: "agentic", label: "Applied Agentics Portfolio", color: "#FACC15",
+      id: "agentic", label: "Production Agentics Portfolio", color: "#FACC15",
       curves: {
         design:       [0,   0,   0,   0.2, 0.4, 0.6, 0.8, 1.0, 1.0, 1.0, 0.9, 0.7, 0.5, 0.4, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
         build:        [0,   0,   0,   0,   0,   0,   0.2, 0.4, 0.6, 0.8, 0.9, 1.0, 1.0, 1.0, 0.9, 0.7, 0.5, 0.4, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2],
@@ -920,9 +920,9 @@ function applyViewVisibility() {
   const note = document.getElementById("standalone-note");
   if (note) {
     if (isAgenticsOnly) {
-      note.textContent = "Standalone applied-agentics view — Applied Agentics Portfolio commissioned alone, 60–120 day timeline (90-day shape shown). Transformation Portfolio hidden.";
+      note.textContent = "Standalone applied-agentics view — Production Agentics Portfolio commissioned alone, 60–120 day timeline (90-day shape shown). Transformation Portfolio hidden.";
     } else if (isTransformationOnly) {
-      note.textContent = "Standalone transformation view — Transformation Portfolio commissioned alone, 22-month engagement window. Applied Agentics Portfolio hidden.";
+      note.textContent = "Standalone transformation view — Transformation Portfolio commissioned alone, 22-month engagement window. Production Agentics Portfolio hidden.";
     } else {
       note.textContent = "";
     }
@@ -965,7 +965,7 @@ function renderSubstance(laneId) {
         ${listToHTML(lane.delivers.delivery)}
       </div>
       <div>
-        <div class="col-label agentic">Applied Agentics Portfolio</div>
+        <div class="col-label agentic">Production Agentics Portfolio</div>
         ${listToHTML(lane.delivers.agentic)}
       </div>
     `;
