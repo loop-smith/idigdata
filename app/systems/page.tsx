@@ -30,7 +30,7 @@ const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
-    logo: "/brand/rig/the-rig-v2-lockup-panel.svg",
+    logo: "/brand/rig/the-rig-v2-1-lockup-panel.svg",
     alt: "The Rig lockup — Orchestrate · Monitor · Invent",
     body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
   },
