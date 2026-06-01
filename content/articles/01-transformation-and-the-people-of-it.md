@@ -159,6 +159,6 @@ For the companies that are ready, the work is worth it.
 
 The people get systems that respect the work instead of fighting it. The business gets governed data, mapped workflows, visible decisions, and an operating model it can extend. Vendors stay useful inside their lanes. The internal team grows stronger through the build. The consultant exits by design.
 
-Article 2, [the mechanics](/articles/the-mechanics), covers how the engagement gets delivered, governed, funded, and defended. Article 3, [Production Agentics: The Business Asset](/articles/applied-agentics), shows how this same people-readiness gate moves one substrate higher.
+Article 2, [the mechanics](/articles/the-mechanics), covers how the engagement gets delivered, governed, funded, and defended. Article 3, [Production Agentics: The Business Asset](/articles/production-agentics), shows how this same people-readiness gate moves one substrate higher.
 
 The test is simple. When I leave, the business can still see the work, govern the data, improve the workflows, and run the next change without starting over. The business keeps the asset. That was always the point.

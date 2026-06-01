@@ -9,7 +9,7 @@ type Props = {
 const SLUG_TO_MARK: Record<string, string> = {
   "transformation-and-the-people-of-it": "/brand/articles/article-1-mark.svg",
   "the-mechanics": "/brand/articles/article-2-mark.svg",
-  "applied-agentics": "/brand/articles/article-3-mark.svg",
+  "production-agentics": "/brand/articles/article-3-mark.svg",
 };
 
 export default function ArticleMark({ slug, size = 64, className }: Props) {

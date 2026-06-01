@@ -29,9 +29,9 @@ const ContactSchema = z.object({
 
 const ARTICLE_TITLES: Record<string, string> = {
   "transformation-and-the-people-of-it":
-    "You Don't Buy a Transformation. You Build One.",
-  "the-mechanics": "The Mechanics of the Build",
-  "applied-agentics": "Applied Agentics — The Business Asset",
+    "You Don't Buy a Transformation. Your People Build One.",
+  "the-mechanics": "You Don't Run a Project. You Build an Asset.",
+  "production-agentics": "Production Agentics: The Business Asset",
 };
 
 function humanTitleFor(slug: string): string {

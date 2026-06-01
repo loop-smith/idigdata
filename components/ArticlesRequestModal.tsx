@@ -19,15 +19,15 @@ type ArticleChoice = {
 const ARTICLE_CHOICES: ArticleChoice[] = [
   {
     slug: "transformation-and-the-people-of-it",
-    label: "Article 1 — You Don't Buy a Transformation. You Build One.",
+    label: "Article 1 — You Don't Buy a Transformation. Your People Build One.",
   },
   {
     slug: "the-mechanics",
-    label: "Article 2 — The Mechanics of the Build",
+    label: "Article 2 — You Don't Run a Project. You Build an Asset.",
   },
   {
-    slug: "applied-agentics",
-    label: "Article 3 — Applied Agentics — The Business Asset",
+    slug: "production-agentics",
+    label: "Article 3 — Production Agentics: The Business Asset",
   },
 ];
 

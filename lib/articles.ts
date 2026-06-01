@@ -42,7 +42,7 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     slug: "transformation-and-the-people-of-it",
-    title: "You Don't Buy a Transformation. You Build One.",
+    title: "You Don't Buy a Transformation. Your People Build One.",
     subtitle:
       "Lens 1 of 2 - what transformation actually is, and who owns it",
     pairBadge: "Article 1 · Lens 1 of 2",
@@ -73,14 +73,14 @@ export const ARTICLES: Article[] = [
       companion: {
         slug: "the-mechanics",
         badge: "Article 2 · Lens 2",
-        title: "The Mechanics of the Build",
+        title: "You Don't Run a Project. You Build an Asset.",
         description:
           "The companion lens. How delivery, validation, and capital logic make the asset hold.",
       },
       standalone: {
-        slug: "applied-agentics",
+        slug: "production-agentics",
         badge: "Article 3 · Standalone",
-        title: "Applied Agentics - The Business Asset",
+        title: "Production Agentics: The Business Asset",
         description:
           "The rare credential. Production agents tied to real operations and business-owned work.",
       },
@@ -88,7 +88,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "the-mechanics",
-    title: "The Mechanics of the Build",
+    title: "You Don't Run a Project. You Build an Asset.",
     subtitle:
       "Lens 2 of 2 - how the build runs, gets defended, and holds",
     pairBadge: "Article 2 · Lens 2 of 2",
@@ -118,22 +118,22 @@ export const ARTICLES: Article[] = [
       companion: {
         slug: "transformation-and-the-people-of-it",
         badge: "Article 1 · Lens 1",
-        title: "You Don't Buy a Transformation. You Build One.",
+        title: "You Don't Buy a Transformation. Your People Build One.",
         description:
           "The companion lens. The architecture and people layer of the same engagement.",
       },
       standalone: {
-        slug: "applied-agentics",
+        slug: "production-agentics",
         badge: "Article 3 · Standalone",
-        title: "Applied Agentics - The Business Asset",
+        title: "Production Agentics: The Business Asset",
         description:
           "The rare credential. Production agents that only matter when tied to real business work.",
       },
     },
   },
   {
-    slug: "applied-agentics",
-    title: "Production Agentics - The Business Asset",
+    slug: "production-agentics",
+    title: "Production Agentics: The Business Asset",
     subtitle:
       "Standalone - what agentics becomes when the business can absorb it",
     pairBadge: "Article 3 · Standalone",
@@ -164,14 +164,14 @@ export const ARTICLES: Article[] = [
         {
           slug: "transformation-and-the-people-of-it",
           badge: "Article 1 · Lens 1",
-          title: "You Don't Buy a Transformation. You Build One.",
+          title: "You Don't Buy a Transformation. Your People Build One.",
           description:
             "The ownership frame that makes agentic work land in the business.",
         },
         {
           slug: "the-mechanics",
           badge: "Article 2 · Lens 2",
-          title: "The Mechanics of the Build",
+          title: "You Don't Run a Project. You Build an Asset.",
           description:
             "The delivery discipline that turns agentic work into an asset.",
         },
