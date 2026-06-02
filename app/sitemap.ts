@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://idigdata.com";
-  const lastModified = new Date("2026-05-18");
+  const lastModified = new Date("2026-06-01");
   return [
     { url: `${base}/`, lastModified, changeFrequency: "monthly", priority: 1.0 },
     { url: `${base}/approach/`, lastModified, changeFrequency: "monthly", priority: 0.9 },

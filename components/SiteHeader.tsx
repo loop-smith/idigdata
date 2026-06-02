@@ -75,7 +75,7 @@ export default function SiteHeader() {
                 <Link
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`hover:text-stone transition-colors ${
+                  className={`hover:text-warm-gray transition-colors ${
                     active
                       ? "border-b-2 border-aubergine pb-0.5 text-aubergine"
                       : ""

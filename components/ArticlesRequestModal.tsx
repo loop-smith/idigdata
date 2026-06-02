@@ -222,7 +222,7 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
                 Thanks for reading. The {selectionCount === 1 ? "document" : "documents"} will come straight from me &mdash; no drip sequence.
               </p>
               {leadId && leadId !== "silenced" ? (
-                <p className="font-body text-[13px] text-stone">
+                <p className="font-body text-[13px] text-warm-gray">
                   Reference: <span className="font-mono">{leadId}</span>
                 </p>
               ) : null}
@@ -258,10 +258,14 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
                 aria-hidden="true"
                 style={{
                   position: "absolute",
-                  left: "-9999px",
                   width: "1px",
                   height: "1px",
+                  padding: 0,
+                  margin: "-1px",
                   overflow: "hidden",
+                  clip: "rect(0, 0, 0, 0)",
+                  whiteSpace: "nowrap",
+                  border: 0,
                 }}
               >
                 <label htmlFor={hpId}>Leave this field empty</label>
@@ -330,7 +334,7 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
 
               <div>
                 <label htmlFor={companyId} className={labelClasses}>
-                  Company <span className="text-stone text-[13px]">(optional)</span>
+                  Company <span className="text-warm-gray text-[13px]">(optional)</span>
                 </label>
                 <input
                   id={companyId}
@@ -397,7 +401,7 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
               <div>
                 <label htmlFor={messageId} className={labelClasses}>
                   Message{" "}
-                  <span className="text-stone text-[13px]">(optional)</span>
+                  <span className="text-warm-gray text-[13px]">(optional)</span>
                 </label>
                 <textarea
                   id={messageId}
@@ -414,7 +418,7 @@ export default function ArticlesRequestModal({ open, onClose, prefilledSlug }: P
                 <button
                   type="button"
                   onClick={onClose}
-                  className="font-body text-[14px] text-stone hover:text-navy transition-colors"
+                  className="font-body text-[14px] text-warm-gray hover:text-navy transition-colors"
                 >
                   Cancel
                 </button>

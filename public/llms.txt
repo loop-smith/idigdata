@@ -14,12 +14,12 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 - [Approach](https://idigdata.com/approach/): build, observe, cycle — the people-first delivery loop, the Six Process Constellations, architecture above the vendors, exit-by-design.
 - [Engagement](https://idigdata.com/engagement/): one model — embedded transformation leadership — with fractional, adoption, and recovery as entry modes; lean by design; capital-asset logic.
 - [Agentics](https://idigdata.com/agentics/): agentic AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
-- [Articles](https://idigdata.com/articles/): gated reads — the ownership/people lens, the delivery/validation/capital lens, the production-agentics lens.
+- [Articles](https://idigdata.com/articles/): gated reads — the ownership/people lens, the delivery/validation/capital lens, the production-agentics lens. Request a piece and idigdata sends the PDF directly; the site captures the request rather than publishing the bodies openly. The gate is a filter, not a paywall.
 - [Contact](https://idigdata.com/contact/): first-conversation surface — no deck, no proposal theater.
 
 ## Agent Resources
 
-- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 24 questions answering buyer-side research (identity, problem, differentiation, practice scope, engagement shape, systems, agentic production, contact).
+- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 25 questions answering buyer-side research (identity, problem, differentiation, practice scope, engagement shape, systems, agentic production, article access, contact).
 
 ## Key Substance
 

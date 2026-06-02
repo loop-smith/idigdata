@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Reach out */}
           <div>
-            <p className="font-body uppercase tracking-section text-[12px] text-stone mb-3">
+            <p className="font-body uppercase tracking-section text-[12px] text-warm-gray mb-3">
               Reach out
             </p>
             <p className="font-body text-[15px] text-ink leading-relaxed">
@@ -25,7 +25,7 @@ export default function SiteFooter() {
 
           {/* Navigation */}
           <div>
-            <p className="font-body uppercase tracking-section text-[12px] text-stone mb-3">
+            <p className="font-body uppercase tracking-section text-[12px] text-warm-gray mb-3">
               Navigation
             </p>
             <ul className="font-body text-[15px] text-ink space-y-1.5">
@@ -73,7 +73,7 @@ export default function SiteFooter() {
                 className="h-7 w-auto"
               />
             </div>
-            <p className="font-display italic text-stone text-[14px] leading-relaxed">
+            <p className="font-display italic text-warm-gray text-[14px] leading-relaxed">
               Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
             </p>
           </div>

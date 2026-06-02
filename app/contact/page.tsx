@@ -48,17 +48,17 @@ export default function ContactPage() {
         <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
           Send the real shape.
         </h1>
-        <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
+        <p className="mt-5 max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
           A quick, direct read on whether this is a real fit — no deck, no
           proposal theater.
         </p>
-        <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
+        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           If the work needs an owner above the vendors, send a note. The first
           conversation is not a deck ritual — it&apos;s a working call where I walk
           you through how I&apos;d actually own your situation: a quick read on
           mandate, systems, people, timing, and whether I can be useful.
         </p>
-        <p className="mt-4 max-w-[760px] font-body text-stone text-[14.5px] leading-relaxed">
+        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,
           the agentic question, the CFO concern, or the operating knot that
           keeps resurfacing. I read these myself.
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
           <aside className="md:col-span-1">
             <div className="border-t border-navy pt-6 space-y-3">
-              <p className="font-body uppercase tracking-section text-[12px] text-stone">
+              <p className="font-body uppercase tracking-section text-[12px] text-warm-gray">
                 Direct
               </p>
               <p className="font-body text-[16px] text-ink leading-relaxed">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   robert@idigdata.com
                 </a>
               </p>
-              <p className="font-body text-[14px] text-stone leading-relaxed">
+              <p className="font-body text-[14px] text-warm-gray leading-relaxed">
                 If the fit is wrong, I will say so plainly. If the mandate is
                 real, we will know the next useful step.
               </p>

@@ -48,9 +48,9 @@ export default function AgenticsPage() {
           <h1 className="max-w-full text-wrap break-words font-vollkorn text-[40px] font-bold leading-[1.12] text-navy min-[480px]:hidden">
             The agents are ready. Can your business hold them?
           </h1>
-          <h1 className="hidden max-w-full text-wrap break-words font-vollkorn text-[40px] font-bold leading-[1.12] text-navy min-[480px]:block sm:text-[52px] md:text-[68px]">
+          <p className="hidden max-w-full text-wrap break-words font-vollkorn text-[40px] font-bold leading-[1.12] text-navy min-[480px]:block sm:text-[52px] md:text-[68px]">
             The agents are ready. The question is whether your business can hold them, and actually absorb them.
-          </h1>
+          </p>
           <p className="mt-7 max-w-full text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray sm:max-w-[720px] md:text-[26px]">
             Capability is already outrunning most companies&apos; ability to land
             it. Most leadership teams want agents in production; very few have

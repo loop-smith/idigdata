@@ -96,7 +96,7 @@ export default function ContactForm({
           read every one.
         </p>
         {leadId && leadId !== "silenced" ? (
-          <p className="font-body text-[13px] text-stone">
+          <p className="font-body text-[13px] text-warm-gray">
             Reference: <span className="font-mono">{leadId}</span>
           </p>
         ) : null}
@@ -123,10 +123,14 @@ export default function ContactForm({
         aria-hidden="true"
         style={{
           position: "absolute",
-          left: "-9999px",
           width: "1px",
           height: "1px",
+          padding: 0,
+          margin: "-1px",
           overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
         }}
       >
         <label htmlFor={hpId}>Leave this field empty</label>
@@ -194,7 +198,7 @@ export default function ContactForm({
 
       <div>
         <label htmlFor={companyId} className={labelClasses}>
-          Company <span className="text-stone text-[13px]">(optional)</span>
+          Company <span className="text-warm-gray text-[13px]">(optional)</span>
         </label>
         <input
           id={companyId}
@@ -233,10 +237,10 @@ export default function ContactForm({
       <div>
         <label htmlFor={messageId} className={labelClasses}>
           {isArticleRequest ? (
-            <>Message <span className="text-stone text-[13px]">(optional)</span></>
+            <>Message <span className="text-warm-gray text-[13px]">(optional)</span></>
           ) : (
             <>What brings you?{" "}
-            <span className="text-stone text-[13px]">(optional)</span></>
+            <span className="text-warm-gray text-[13px]">(optional)</span></>
           )}
         </label>
         <textarea

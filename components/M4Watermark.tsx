@@ -1,9 +1,9 @@
 type Props = { position?: "top-right" | "top-left" | "bottom-right" };
 
 const positionClasses = {
-  "top-right": "top-0 right-0 -translate-y-12 translate-x-12",
-  "top-left": "top-0 left-0 -translate-y-12 -translate-x-12",
-  "bottom-right": "bottom-0 right-0 translate-y-12 translate-x-12",
+  "top-right": "top-0 right-2 -translate-y-12",
+  "top-left": "top-0 left-2 -translate-y-12",
+  "bottom-right": "bottom-0 right-2 translate-y-12",
 };
 
 export default function M4Watermark({ position = "top-right" }: Props) {
