@@ -8,7 +8,7 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata - Embedded transformation leadership for the agentic era",
+      "idigdata - Forward-Deployed Operator for the agentic era",
   },
   description:
     "idigdata embeds Robert Paddock inside $100M-$1B operators to deliver agentic-era business-system change and leave behind a business-owned operating asset.",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata - Embedded transformation leadership",
+    title: "idigdata - Forward-Deployed Operator",
     description:
       "A 30-year transformation operator who delivers agentic-era business-system change and leaves behind a business-owned operating asset.",
     images: [
