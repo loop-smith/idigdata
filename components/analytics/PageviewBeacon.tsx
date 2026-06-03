@@ -20,8 +20,17 @@ function getAnonSessionId(): string | null {
   }
 }
 
+function isTrackableHost(): boolean {
+  if (typeof window === "undefined") return false;
+  const h = window.location.hostname;
+  if (h === "localhost" || h === "127.0.0.1" || h === "::1") return false;
+  if (h.endsWith(".vercel.app")) return false;
+  return true;
+}
+
 function send(path: string) {
   if (typeof window === "undefined") return;
+  if (!isTrackableHost()) return;
   const payload = JSON.stringify({
     path,
     referrer: document.referrer || null,
