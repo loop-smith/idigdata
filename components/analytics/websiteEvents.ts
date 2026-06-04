@@ -76,15 +76,11 @@ export function trackWebsiteEvent(input: WebsiteEventInput) {
   });
 
   try {
-    if (navigator.sendBeacon) {
-      const blob = new Blob([payload], { type: "application/json" });
-      const ok = navigator.sendBeacon(INGEST_URL, blob);
-      if (ok) return;
-    }
     fetch(INGEST_URL, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: payload,
+      credentials: "omit",
       keepalive: true,
     }).catch(() => {});
   } catch {
