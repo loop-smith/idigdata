@@ -2,31 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-
-const SESSION_KEY = "idig_anon_sid";
-
-function getAnonSessionId(): string | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const existing = window.sessionStorage.getItem(SESSION_KEY);
-    if (existing) return existing;
-    const buf = new Uint8Array(16);
-    crypto.getRandomValues(buf);
-    const id = Array.from(buf, (b) => b.toString(16).padStart(2, "0")).join("");
-    window.sessionStorage.setItem(SESSION_KEY, id);
-    return id;
-  } catch {
-    return null;
-  }
-}
-
-function isTrackableHost(): boolean {
-  if (typeof window === "undefined") return false;
-  const h = window.location.hostname;
-  if (h === "localhost" || h === "127.0.0.1" || h === "::1") return false;
-  if (h.endsWith(".vercel.app")) return false;
-  return true;
-}
+import { getAnonSessionId, isTrackableHost, trackWebsiteEvent } from "./websiteEvents";
 
 function send(path: string) {
   if (typeof window === "undefined") return;
@@ -53,6 +29,12 @@ function send(path: string) {
   } catch {
     // analytics never breaks the page
   }
+
+  trackWebsiteEvent({
+    event_type: "pageview_event",
+    path,
+    payload: { legacy_pageview_route: true },
+  });
 }
 
 export default function PageviewBeacon() {
@@ -65,6 +47,33 @@ export default function PageviewBeacon() {
     lastPath.current = pathname;
     send(pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    function handleClick(event: MouseEvent) {
+      const target = event.target instanceof Element ? event.target : null;
+      const anchor = target?.closest("a[href]");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href) return;
+      const text = (anchor.textContent ?? "").trim().slice(0, 120);
+
+      if (href.startsWith("mailto:")) {
+        trackWebsiteEvent({
+          event_type: "mailto_click",
+          payload: { href, text },
+        });
+        return;
+      }
+
+      trackWebsiteEvent({
+        event_type: "cta_click",
+        payload: { href, text },
+      });
+    }
+
+    document.addEventListener("click", handleClick, { capture: true });
+    return () => document.removeEventListener("click", handleClick, true);
+  }, []);
 
   return null;
 }

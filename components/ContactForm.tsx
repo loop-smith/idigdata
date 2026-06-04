@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { trackWebsiteEvent } from "./analytics/websiteEvents";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -75,6 +76,15 @@ export default function ContactForm({
       const data = await res.json();
       if (res.ok && data.ok) {
         setLeadId(data.lead_id ?? null);
+        trackWebsiteEvent({
+          event_type: interest === "article_request" || articleSlug ? "article_request" : "contact_submit",
+          payload: {
+            interest_type: interest,
+            article_slug: articleSlug ?? null,
+            lead_id: data.lead_id ?? null,
+            company_present: Boolean(company.trim()),
+          },
+        });
         setStatus("success");
       } else {
         setStatus("error");
