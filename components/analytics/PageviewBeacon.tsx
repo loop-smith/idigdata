@@ -7,6 +7,12 @@ import { getAnonSessionId, isTrackableHost, trackWebsiteEvent } from "./websiteE
 function send(path: string) {
   if (typeof window === "undefined") return;
   if (!isTrackableHost()) return;
+  trackWebsiteEvent({
+    event_type: "pageview_event",
+    path,
+    payload: { legacy_pageview_route: true },
+  });
+
   const payload = JSON.stringify({
     path,
     referrer: document.referrer || null,
@@ -29,12 +35,6 @@ function send(path: string) {
   } catch {
     // analytics never breaks the page
   }
-
-  trackWebsiteEvent({
-    event_type: "pageview_event",
-    path,
-    payload: { legacy_pageview_route: true },
-  });
 }
 
 export default function PageviewBeacon() {
