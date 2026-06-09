@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work: the governed build environment, the client-owned transformation asset, and the agentic workflow operations layer Robert Paddock runs his own practice on.",
+    "The systems behind the work: the governed build environment, the client-owned operating asset, and the FlowCraft domain that turns owned models into runnable work.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work: the governed build environment, the client-owned transformation asset, and the agentic workflow operations layer Robert Paddock runs his own practice on.",
+      "The systems behind the work: the governed build environment, the client-owned operating asset, and the FlowCraft domain that turns owned models into runnable work.",
     images: [
       {
         url: "/og-image.png",
@@ -25,29 +25,34 @@ export const metadata: Metadata = {
   },
 };
 
-// Full lockups (mark + wordmark + tagline) rendered uniform-height + center-justified.
 const operatingProof = [
   {
     eyebrow: "Built",
     title: "The Rig = my accelerant",
-    logo: "/brand/rig/the-rig-v3-lockup-panel.svg",
-    alt: "The Rig lockup — Orchestrate · Monitor · Invent",
-    body: "The governed build environment I run on. It keeps the work planned, gated, tested, and traceable, so delivery is repeatable instead of heroic and undocumented. This site was built in it.",
+    logo: "/brand/systems/rig-banner-logo.png",
+    logoClass: "max-h-[118px] max-w-[152px]",
+    tagline: "Orchestrate · Monitor · Invent",
+    alt: "The Rig logo",
+    body: "The governed build environment behind the work. It turns ideas into traceable assets with plans, gates, tests, and decision records, so delivery is repeatable instead of heroic.",
   },
   {
     eyebrow: "Owned",
     title: "BOSS = what you own",
-    logo: "/brand/boss/boss-v1-lockup-panel.svg",
-    alt: "BOSS lockup — Business Process Harness",
-    body: "A transformation usually lives in the consultant's head and a stack of slides, then decays the day they leave. BOSS turns your operating reality into one governed system the business owns. You keep it.",
+    logo: "/brand/systems/boss-banner-logo.png",
+    logoClass: "max-h-[82px] max-w-[248px]",
+    tagline: "The Business Workflow Digital Twin",
+    alt: "BOSS logo",
+    body: "The business workflow digital twin. BOSS captures how the operating model actually works: processes, owners, data, controls, and decisions, so the business keeps the system after the build.",
     featured: true,
   },
   {
     eyebrow: "Run",
-    title: "DigOps = how it runs",
-    logo: "/brand/digops/digops-logo-panel.svg",
-    alt: "DigOps lockup — Buy · Make · Sell",
-    body: "An agent-native workflow machine that runs my practice today, with a human on every consequential call and workflows built alongside the people who run them.",
+    title: "FlowCraft = how it runs",
+    logo: "/brand/systems/flowcraft-banner-logo.png",
+    logoClass: "max-h-[118px] max-w-[174px]",
+    tagline: "Build the flow. Run the work.",
+    alt: "FlowCraft logo",
+    body: "The workflow-block engine for the domain. FlowCraft turns the owned model into runnable flows across idigdata, DigOps, and client systems, with agents and people in the same governed grammar.",
   },
 ];
 
@@ -138,18 +143,23 @@ export default function SystemsPage() {
                   : "border-navy/15 border-l-[4px] border-l-navy/20"
               }`}
             >
-              <div className="mb-6 flex items-center justify-center rounded-md bg-cream px-5 py-5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={system.logo}
-                  alt={system.alt}
-                  className="h-auto w-full max-w-[420px] object-contain"
-                />
+              <div className="mb-6 flex h-[190px] items-center justify-center overflow-hidden rounded-md bg-cream px-5 py-5">
+                <div className="grid h-[154px] w-full grid-rows-[118px_28px] items-center justify-items-center gap-y-2 text-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={system.logo}
+                    alt={system.alt}
+                    className={`h-auto w-auto object-contain ${system.logoClass}`}
+                  />
+                  <p className="w-full whitespace-nowrap border-t border-navy/30 pt-[7px] font-vollkorn text-[13px] italic leading-[1.2] text-[#5F554B]">
+                    {system.tagline}
+                  </p>
+                </div>
               </div>
               <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
                 {system.eyebrow}
               </p>
-              <h3 className="mt-3 font-vollkorn text-[24px] font-bold leading-[1.18] text-navy">
+              <h3 className="mt-3 min-h-[68px] font-vollkorn text-[24px] font-bold leading-[1.18] text-navy">
                 {system.title}
               </h3>
               <p className="mt-4 font-body text-[14.5px] leading-[1.62] text-navy/75">
