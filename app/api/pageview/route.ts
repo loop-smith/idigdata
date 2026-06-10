@@ -1,17 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import { guardJsonPost } from "@/lib/server/requestSecurity";
 
 export const runtime = "nodejs";
 
 const PageviewSchema = z.object({
-  path: z.string().min(1).max(2048),
+  path: z.string().min(1).max(2048).refine((value) => value.startsWith("/")),
   referrer: z.string().max(2048).optional().nullable(),
   search: z.string().max(2048).optional().nullable(),
   anon_session_id: z.string().max(128).optional().nullable(),
 });
 
 const NO_CONTENT = new NextResponse(null, { status: 204 });
+type UtmFields = {
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+};
 
 function getIdigdataAppSupabase() {
   const url = process.env.IDIGDATA_APP_SUPABASE_URL;
@@ -26,8 +34,18 @@ function getIdigdataAppSupabase() {
   });
 }
 
-function parseUtms(search: string | null | undefined) {
-  if (!search) return {};
+function emptyUtms(): UtmFields {
+  return {
+    utm_source: null,
+    utm_medium: null,
+    utm_campaign: null,
+    utm_term: null,
+    utm_content: null,
+  };
+}
+
+function parseUtms(search: string | null | undefined): UtmFields {
+  if (!search) return emptyUtms();
   try {
     const params = new URLSearchParams(
       search.startsWith("?") ? search.slice(1) : search,
@@ -44,11 +62,21 @@ function parseUtms(search: string | null | undefined) {
       utm_content: pick("utm_content"),
     };
   } catch {
-    return {};
+    return emptyUtms();
   }
 }
 
 export async function POST(req: NextRequest) {
+  const guard = guardJsonPost(req, {
+    maxBytes: 8 * 1024,
+    rateLimits: [
+      { name: "pageview-minute", windowMs: 60 * 1000, max: 180 },
+      { name: "pageview-hour", windowMs: 60 * 60 * 1000, max: 3000 },
+    ],
+    silent: true,
+  });
+  if (guard) return guard;
+
   let body: unknown;
   try {
     body = await req.json();

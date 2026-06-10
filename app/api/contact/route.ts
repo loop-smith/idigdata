@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { Resend } from "resend";
+import { guardJsonPost } from "@/lib/server/requestSecurity";
 
 export const runtime = "nodejs";
 
@@ -39,6 +40,11 @@ function humanTitleFor(slug: string): string {
 }
 
 type ParsedContact = z.infer<typeof ContactSchema>;
+type CrmInsertResult =
+  | { ok: true; id: string | null }
+  | { ok: false; error: "not_configured" | "insert_failed" };
+
+const KNOWN_ARTICLE_SLUGS = new Set(Object.keys(ARTICLE_TITLES));
 
 function getIdigdataAppSupabase() {
   const url = process.env.IDIGDATA_APP_SUPABASE_URL;
@@ -62,11 +68,11 @@ function getIdigdataAppSupabase() {
 async function insertCrmRow(
   table: "article_requests" | "contact_submissions",
   row: Record<string, unknown>,
-): Promise<string | null> {
+): Promise<CrmInsertResult> {
   const supabase = getIdigdataAppSupabase();
   if (!supabase) {
     console.warn("contact form: idigdata-app Supabase env not configured");
-    return null;
+    return { ok: false, error: "not_configured" };
   }
 
   if (supabase.canReturnInsertedId) {
@@ -82,53 +88,63 @@ async function insertCrmRow(
           error?.message ?? "no row returned"
         }`,
       );
-      return null;
+      return { ok: false, error: "insert_failed" };
     }
 
-    return inserted.id as string;
+    return { ok: true, id: inserted.id as string };
   }
 
   const { error } = await supabase.client.from(table).insert(row);
 
   if (error) {
     console.error(`contact form: ${table} insert failed: ${error.message}`);
+    return { ok: false, error: "insert_failed" };
   }
 
-  return null;
+  return { ok: true, id: null };
 }
 
 async function writeCrmIntake(
   data: ParsedContact,
   normalizedSlugs: string[],
   req: NextRequest,
-): Promise<string | null> {
+): Promise<CrmInsertResult> {
   const sourceUrl = req.headers.get("referer");
   const userAgent = req.headers.get("user-agent");
 
   if (data.interestType === "article_request") {
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
     return insertCrmRow("article_requests", {
-        requester_name: data.name,
-        requester_email: data.email,
-        requester_company: data.company.trim() || null,
-        requested_articles: normalizedSlugs,
-        expires_at: expiresAt,
-      });
+      requester_name: data.name,
+      requester_email: data.email,
+      requester_company: data.company.trim() || null,
+      requested_articles: normalizedSlugs,
+      expires_at: expiresAt,
+    });
   }
 
   return insertCrmRow("contact_submissions", {
-      name: data.name,
-      email: data.email,
-      role: data.role.trim() || "(not supplied)",
-      company: data.company.trim() || null,
-      message: data.message.trim() || "(no message supplied)",
-      source: `website-${data.interestType}`,
-      source_url: sourceUrl,
-      user_agent: userAgent,
-    });
+    name: data.name,
+    email: data.email,
+    role: data.role.trim() || "(not supplied)",
+    company: data.company.trim() || null,
+    message: data.message.trim() || "(no message supplied)",
+    source: `website-${data.interestType}`,
+    source_url: sourceUrl,
+    user_agent: userAgent,
+  });
 }
 
 export async function POST(req: NextRequest) {
+  const guard = guardJsonPost(req, {
+    maxBytes: 16 * 1024,
+    rateLimits: [
+      { name: "contact-10m", windowMs: 10 * 60 * 1000, max: 6 },
+      { name: "contact-hour", windowMs: 60 * 60 * 1000, max: 20 },
+    ],
+  });
+  if (guard) return guard;
+
   let body: unknown;
   try {
     body = await req.json();
@@ -171,6 +187,7 @@ export async function POST(req: NextRequest) {
   } else if (articleSlug) {
     normalizedSlugs = [articleSlug];
   }
+  normalizedSlugs = Array.from(new Set(normalizedSlugs));
 
   if (isArticleRequest && normalizedSlugs.length === 0) {
     return NextResponse.json(
@@ -179,18 +196,20 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  if (
+    isArticleRequest &&
+    normalizedSlugs.some((slug) => !KNOWN_ARTICLE_SLUGS.has(slug))
+  ) {
+    return NextResponse.json(
+      { ok: false, error: "unknown_article" },
+      { status: 400 },
+    );
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const notifyTo = process.env.EMAIL_NOTIFY_TO ?? "robert@idigdata.com";
   const fromAddr =
     process.env.EMAIL_NOTIFY_FROM ?? "idigdata website <noreply@idigdata.com>";
-
-  if (!apiKey) {
-    console.error("contact form: RESEND_API_KEY not set");
-    return NextResponse.json(
-      { ok: false, error: "email_not_configured" },
-      { status: 500 },
-    );
-  }
 
   let subject: string;
   if (isArticleRequest) {
@@ -226,24 +245,36 @@ export async function POST(req: NextRequest) {
     `Timestamp: ${new Date().toISOString()}`,
   ].filter((l): l is string => l !== null);
 
-  try {
-    const resend = new Resend(apiKey);
-    await resend.emails.send({
-      from: fromAddr,
-      to: notifyTo,
-      replyTo: email,
-      subject,
-      text: lines.join("\n"),
-    });
-  } catch (err) {
-    console.error("contact form email error:", err);
+  const crm = await writeCrmIntake(parsed.data, normalizedSlugs, req);
+  if (!crm.ok) {
     return NextResponse.json(
-      { ok: false, error: "email_failed" },
+      { ok: false, error: "crm_failed" },
       { status: 500 },
     );
   }
 
-  const crmId = await writeCrmIntake(parsed.data, normalizedSlugs, req);
+  let notification: "sent" | "not_configured" | "failed" = "sent";
+  if (!apiKey) {
+    notification = "not_configured";
+    console.error("contact form: RESEND_API_KEY not set");
+  } else {
+    try {
+      const resend = new Resend(apiKey);
+      await resend.emails.send({
+        from: fromAddr,
+        to: notifyTo,
+        replyTo: email,
+        subject,
+        text: lines.join("\n"),
+      });
+    } catch (err) {
+      notification = "failed";
+      console.error("contact form email error:", err);
+    }
+  }
 
-  return NextResponse.json({ ok: true, lead_id: crmId });
+  return NextResponse.json(
+    { ok: true, lead_id: crm.id, notification },
+    { status: notification === "sent" ? 200 : 202 },
+  );
 }

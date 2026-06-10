@@ -12,7 +12,7 @@ See `STACK.md` for pinned versions and migration history. Highlights:
 - React 19
 - TypeScript 5
 - Tailwind CSS 4 (CSS-first config in `app/globals.css`)
-- Supabase (cross-codebase bridge to `idigdata-app` for contact form leads)
+- Supabase (cross-codebase bridge to `idigdata-app` CRM intake tables)
 - Resend (transactional email)
 - Vercel Web Analytics
 
@@ -51,10 +51,14 @@ Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` i
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Website's own anon key (public-by-design; RLS-protected) | Supabase dashboard for project `adkwtkhvbntreznhwzxu` |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console meta verification token | GSC property setup |
 | `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Bing Webmaster Tools meta verification token | BWT property setup |
-| `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact-form leads land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
-| `IDIGDATA_APP_SUPABASE_ANON_KEY` | Anon key for `idigdata-app` Supabase. RLS allows insert-only on the `leads` table from the website origin. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
+| `WEBSITE_ALLOWED_ORIGINS` | Optional comma-separated extension to the built-in same-origin allowlist for POST routes. | Only needed for extra deployed hostnames |
+| `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` | Optional credential-free analytics event collector used by `websiteEvents.ts`. | Internal website events ingest endpoint |
+| `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact submissions and article requests land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
+| `IDIGDATA_APP_SUPABASE_ANON_KEY` | Anon key for `idigdata-app` Supabase. RLS must allow insert-only writes from the website origin. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
+| `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` | Optional server-only key. Enables `/api/contact` to return inserted CRM row IDs. Never expose with `NEXT_PUBLIC_`. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
 | `RESEND_API_KEY` | Resend API key for transactional email (contact-form notifications). | https://resend.com/api-keys |
 | `EMAIL_NOTIFY_TO` | Address that receives the lead-notification email. | `robert@idigdata.com` |
+| `EMAIL_NOTIFY_FROM` | Optional verified sender override. Defaults to `idigdata website <noreply@idigdata.com>`. | Resend verified domain |
 
 For Vercel, mirror the same vars in **Project Settings → Environment Variables** (production + preview).
 
@@ -65,9 +69,9 @@ Vercel project: `idigdata`. Production deploys land at `idigdata.com`. Productio
 ## Layout
 
 ```
-app/                 — App Router routes (/, /about/, /capabilities/, /contact/) + /api/contact serverless POST
+app/                 — App Router routes + /api/contact and /api/pageview serverless POST handlers
 components/          — shared UI (SiteHeader, SiteFooter, ContactForm, JsonLdScript, ...)
-lib/                 — utilities (track helper, …)
+lib/                 — utilities and server-side request guards
 public/              — favicon, og-image, resume PDF, etc.
 supabase/            — migrations for the website's own Supabase project (currently empty)
 STACK.md             — pinned versions + migration history
@@ -77,4 +81,4 @@ CHANGELOG.md         — append-only history of stack moves + verification check
 
 ## Cross-codebase context
 
-This website depends on the `idigdata-app` Supabase project for the contact-form bridge. See `STACK.md` "Cross-codebase dependencies" for the schema contract.
+This website depends on the `idigdata-app` Supabase project for contact submissions, article requests, and pageview telemetry. See `STACK.md` "Cross-codebase dependencies" for the schema contract.

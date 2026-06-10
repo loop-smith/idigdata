@@ -4,24 +4,25 @@ Pinned versions for this project. Mirrors the `hello-world` living reference as 
 
 ## Pins
 
-- **Next.js** — 16.2.4 (App Router)
-- **React** — 19.2.4
-- **TypeScript** — ^5
-- **Tailwind CSS** — ^4 (CSS-first config; no `tailwind.config.ts`)
-- **@tailwindcss/postcss** — ^4
+- **Next.js** — 16.2.7 (App Router)
+- **React** — 19.2.7
+- **TypeScript** — 5.9.3
+- **Tailwind CSS** — 4.3.0 (CSS-first config; no `tailwind.config.ts`)
+- **@tailwindcss/postcss** — 4.3.0
+- **PostCSS override** — 8.5.10 via `package.json` `overrides`, to clear the transitive Next-bundled PostCSS advisory while staying on the pinned Next 16.2 line.
 
 ### Runtime dependencies (post-Dispatch 008)
 
-- **zod** — request-body validation on `/api/contact`
-- **@supabase/supabase-js** — client for the cross-codebase write to `idigdata-app`'s `leads` table
-- **resend** — transactional email for contact-form notifications
+- **zod** — request-body validation on `/api/contact` and `/api/pageview`
+- **@supabase/supabase-js** — client for cross-codebase writes to `idigdata-app` CRM/analytics tables
+- **resend** — transactional email for contact-form notifications, now best-effort after durable CRM intake
 - **@vercel/analytics** — privacy-first visit analytics (added in Dispatch 005; PostHog removed in Dispatch 093)
 
 ## Stack now (2026-04-28)
 
-Next 16.2.4 deployed to Vercel **as a serverful App Router app** (Fluid Compute) — the prior `output: "export"` config was dropped in Dispatch 008/010 to enable the `/api/contact` serverless POST handler. The site is no longer a static export.
+Next 16.2.7 deploys to Vercel **as a serverful App Router app** (Fluid Compute) — the prior `output: "export"` config was dropped in Dispatch 008/010 to enable the `/api/contact` serverless POST handler. The site is no longer a static export.
 
-`/api/contact` runs on Node runtime (Resend SDK requirement). Form posts cross-codebase into `idigdata-app`'s Supabase `leads` table; a trigger enqueues a `decision_traces` row that idigdata-app's classify-extract-route pipeline consumes.
+`/api/contact` and `/api/pageview` run on Node runtime. POST routes now pass through a shared guard (`lib/server/requestSecurity.ts`) for same-origin enforcement, JSON content-type enforcement, byte caps, and best-effort per-instance rate limiting. `/api/contact` persists CRM intake first, then attempts Resend notification as a best-effort side effect.
 
 ## Current Supabase project (website's own)
 
@@ -36,10 +37,10 @@ Next 16.2.4 deployed to Vercel **as a serverful App Router app** (Fluid Compute)
 The website now writes to **another** Supabase project owned by `idigdata-app`:
 
 - **Project ref:** `dvjrmozeoakmcaccqqld` (idigdata-app)
-- **Schema contract:** `leads` table (per Memo 001 — composed in `k2s/idigdata/memos/memo-001-to-idigdata-app-leads-schema.md`, executed in idigdata-app lane 2026-04-26).
-- **Trigger:** `leads.AFTER INSERT` enqueues a `decision_traces` row with `kind='classify_lead'` for the idigdata-app pipeline to consume.
-- **Env vars on the website side:** `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY`. Distinct prefix to avoid conflation with the website's own `NEXT_PUBLIC_SUPABASE_*` vars.
-- **RLS posture:** anon key has insert-only on `leads` from the website origin; reads denied. Lead retrieval happens app-side via authenticated reads.
+- **Schema contract:** `contact_submissions`, `article_requests`, and `pageviews` tables in the `idigdata-app` project.
+- **Env vars on the website side:** `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY`, and optional server-only `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY`. Distinct prefix avoids conflation with the website's own `NEXT_PUBLIC_SUPABASE_*` vars.
+- **RLS posture:** anon key must remain insert-only from the website origin; reads denied. If `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` is present, it stays server-only and enables returned row IDs on contact intake.
+- **Origin posture:** browser POSTs must be same-origin to the current deployment origin or match the built-in/domain allowlist. `WEBSITE_ALLOWED_ORIGINS` extends the allowlist only when an extra hostname is intentional.
 
 If the idigdata-app schema changes shape, this website's `/api/contact` route needs to track. Memo cycle is the discipline: schema-affecting change in idigdata-app triggers a memo back to idigdata for the website-side update.
 
@@ -47,9 +48,9 @@ If the idigdata-app schema changes shape, this website's `/api/contact` route ne
 
 Per `k2s/idigdata/memos/memo-002-to-loopsmith-resend-wired.md` (loopsmith absorbed 2026-04-26 with "land in next-code-tree-touch" Open). These deltas close that Open.
 
-- **L4 — Deployment & CI.** Vercel env-var sync is now load-bearing. Production + preview environments must carry `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY`, `RESEND_API_KEY`, `EMAIL_NOTIFY_TO`. Missing any of the four breaks the contact form silently (DB insert fails OR email send fails OR both → 500). Sync gate on every Vercel project change.
-- **L5 — Observability.** Resend dashboard provides email-flow telemetry (sent / delivered / bounced / spam-reported / hard-fail) on the contact-form notification path. Email-side observability covered without Sentry; doesn't substitute for app-level Sentry — that remains a future Layer 5 lift.
-- **L6 — Security & Compliance.** Third-party API key (`RESEND_API_KEY`) lives in `.env.local` (gitignored) + Vercel encrypted env vars. Never appears in `NEXT_PUBLIC_*` namespace. 12-month rotation cadence suggested per memo-002; event-driven rotation on suspected compromise. Public-by-design markings in SYSTEMS.md §6 cover the website's own anon key (intentional publication; rotate only on RLS breach); the idigdata-app anon key is similarly insert-only-by-RLS.
+- **L4 — Deployment & CI.** Vercel env-var sync is load-bearing. Production + preview environments must carry `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY` or service-role key, `RESEND_API_KEY`, `EMAIL_NOTIFY_TO`, and any intentional `WEBSITE_ALLOWED_ORIGINS` extension. Missing CRM env breaks intake; missing Resend env no longer loses the lead but logs `notification: not_configured`.
+- **L5 — Observability.** Resend dashboard provides email-flow telemetry. `/api/pageview` inserts lightweight pageview rows and `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` can send credential-free event payloads to a separate collector. App-level Sentry remains a future Layer 5 lift.
+- **L6 — Security & Compliance.** Third-party API keys live in `.env.local` (gitignored) + Vercel encrypted env vars. Never place service-role or Resend keys in `NEXT_PUBLIC_*`. Baseline CSP, HSTS, frame, permissions, MIME-sniffing, cross-domain policy, same-origin POST guard, byte caps, and in-memory rate buckets are active.
 
 ## Orchestration-tree note
 
@@ -62,6 +63,7 @@ Per `k2s/idigdata/memos/memo-002-to-loopsmith-resend-wired.md` (loopsmith absorb
 
 ## Last verified
 
+- **2026-06-09** — Hardening/spit-shine pass. Upgraded to Next 16.2.7 / React 19.2.7 / Tailwind 4.3.0 / Supabase 2.108.0 / Resend 6.12.4 / zod 4.4.3 and added `postcss@8.5.10` override. `npm audit --omit=dev` clean. `npm run build` clean. Added CSP/security headers, same-origin JSON POST guard, byte caps, best-effort rate limiting, stricter article slug validation, durable CRM-before-email contact flow, env/docs alignment, and project-corpus runtime cleanup.
 - **2026-04-28** — Public launch (Dispatch 010). `output: "export"` removed; `npm install zod @supabase/supabase-js resend` clean (18 packages added). Local `/api/contact` smoke (happy path + honeypot + validation) PASS. First production Vercel deploy successful. Live-URL smoke + Lighthouse captured per dispatch.
 - **2026-04-21** — Region-migration wiring verified. `.env.local` created, CLI linked to new Supabase project; `pnpm dev` boots on :3100 (`GET /` → 200) and `pnpm build` exported cleanly (8 routes). No migrations applied — fresh empty DB. (Prior Tailwind 3→4 + Next 15→16 realign was also verified 2026-04-21 earlier; that round-trip stands.)
 

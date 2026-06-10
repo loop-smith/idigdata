@@ -63,18 +63,38 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    // bp6 O-006: baseline security headers for a static marketing site.
-    // CSP intentionally deferred — a Content-Security-Policy must be authored
-    // against the inline JSON-LD scripts (dangerouslySetInnerHTML) + Vercel
-    // Analytics and verified with a real build + live smoke before shipping,
-    // or it will break structured data / analytics. Tracked in bp6 O-006 receipt.
+    const scriptSrc = [
+      "'self'",
+      "'unsafe-inline'",
+      ...(process.env.NODE_ENV !== "production" ? ["'unsafe-eval'"] : []),
+      "https://va.vercel-scripts.com",
+    ].join(" ");
+    const csp = [
+      "default-src 'self'",
+      "base-uri 'self'",
+      "connect-src 'self' https: wss:",
+      "font-src 'self' data:",
+      "form-action 'self' mailto:",
+      "frame-ancestors 'self'",
+      "frame-src 'self'",
+      "img-src 'self' data: blob: https:",
+      "manifest-src 'self'",
+      "object-src 'none'",
+      `script-src ${scriptSrc}`,
+      "style-src 'self' 'unsafe-inline'",
+      "worker-src 'self' blob:",
+    ].join("; ");
+
     const securityHeaders = [
+      { key: "Content-Security-Policy", value: csp },
       { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
       { key: "X-Content-Type-Options", value: "nosniff" },
       { key: "X-Frame-Options", value: "SAMEORIGIN" },
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
       { key: "X-DNS-Prefetch-Control", value: "on" },
+      { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
+      { key: "Origin-Agent-Cluster", value: "?1" },
     ];
     return [{ source: "/:path*", headers: securityHeaders }];
   },

@@ -2,6 +2,14 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-06-09 — Website hardening + corpus tidy
+
+- **Supply chain:** upgraded exact pins to Next 16.2.7, React/React DOM 19.2.7, Supabase JS 2.108.0, Resend 6.12.4, zod 4.4.3, Tailwind/@tailwindcss-postcss 4.3.0, and TypeScript 5.9.3. Added `postcss@8.5.10` npm override for Next's transitive PostCSS advisory. `npm audit --omit=dev` clean.
+- **Headers:** added enforced Content Security Policy compatible with Next/Vercel/JSON-LD, plus cross-domain policy and Origin-Agent-Cluster headers. Existing HSTS, nosniff, frame, referrer, permissions, and DNS-prefetch headers retained.
+- **API hardening:** added shared JSON POST guard for same-origin checks, body-size caps, content-type enforcement, and best-effort per-instance rate limiting. Applied to `/api/contact` and `/api/pageview`.
+- **Contact flow:** stricter article slug validation, duplicate article slug normalization, CRM intake persists before Resend notification, and Resend failure no longer loses the captured submission.
+- **Docs/env:** removed stale PostHog env example, documented `WEBSITE_ALLOWED_ORIGINS`, `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL`, optional `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY`, and `EMAIL_NOTIFY_FROM`.
+
 ## 2026-05-02 evening — Vercel project deploy PAUSED via git-disconnect (loopsmith_cw via Chrome MCP, no CC dispatch)
 
 - **Trigger:** Rob hit `idigdata.vercel.app`, saw the marketing site live, asked to "turn off the idigdata-app form deploying via vercel." Naming clarification surfaced: `idigdata.vercel.app` IS this codebase (marketing site), not the separate `idigdata-app` CRM project (which has no Vercel deployment yet and is paused mid-build at `C:\2026_agentic_projects\idigdata-app\`).
