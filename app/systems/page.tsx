@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work: the governed build environment, the client-owned operating asset, and the FlowCraft domain that turns owned models into runnable work.",
+    "The systems behind the work: the Rig build environment, the BOSS workflow digital twin, and the FlowCraft runtime that turns owned models into human and agentic workflows.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work: the governed build environment, the client-owned operating asset, and the FlowCraft domain that turns owned models into runnable work.",
+      "The systems behind the work: the Rig build environment, the BOSS workflow digital twin, and the FlowCraft runtime that turns owned models into human and agentic workflows.",
     images: [
       {
         url: "/og-image.png",
@@ -36,7 +36,7 @@ const operatingProof = [
     alt: "The Rig logo",
     accent: "#0ea5b7",
     body: "The governed build environment behind the work. It turns ideas into traceable assets with plans, gates, tests, decision records, and agentic loops so delivery is repeatable instead of heroic.",
-    note: "Rig owns binary current: the forge, monitor, organizer, and harness creator.",
+    note: "Rig owns the build discipline: the forge, monitor, organizer, and machine that builds machines.",
   },
   {
     eyebrow: "Owned",
@@ -48,7 +48,7 @@ const operatingProof = [
     alt: "BOSS logo",
     accent: "#e8762d",
     body: "The organizer of how the company actually works. BOSS maps processes, owners, systems, data, controls, and decisions so the business keeps the operating model after the build.",
-    note: "BOSS owns the six constellations: the structure that turns workflow reality into a governed twin.",
+    note: "BOSS client instances are delivered as owned assets, not rented software.",
   },
   {
     eyebrow: "Run",
@@ -59,8 +59,8 @@ const operatingProof = [
     tagline: "Build the flow. Run the work.",
     alt: "FlowCraft logo",
     accent: "#3ce624",
-    body: "The workflow-block craft layer for the business. FlowCraft turns the owned model into runnable human and agentic workflows across the operating ecosystem.",
-    note: "FlowCraft owns the WFB block: composable business workflows made tangible.",
+    body: "The workflow runtime for the business. FlowCraft turns the owned model into runnable human and agentic workflows across the operating ecosystem.",
+    note: "DigOps is my FlowCraft instance at practice scale; the same pattern now delivers client-owned instances.",
   },
 ];
 
@@ -82,8 +82,8 @@ export default function SystemsPage() {
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
             Thirty years of landing business-system transformations taught me
             one thing: the work dies in delivery, not design. So I built the
-            systems that make delivery hold, and I run my own practice on them.
-            You can watch them work.
+            family of systems that make delivery hold, and I run my own
+            practice on them. You can watch them work.
           </p>
         </div>
       </section>
@@ -189,6 +189,33 @@ export default function SystemsPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">The commercial inversion</SectionKicker>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+              The software is not the subscription. Ownership is the point.
+            </h2>
+          </div>
+          <div className="space-y-5 font-body text-[15.5px] leading-[1.65] text-navy">
+            <p>
+              Rig, BOSS, and FlowCraft are not a trapdoor into another rented
+              platform. For client work, the BOSS and FlowCraft instances are
+              part of the delivered asset. You are not paying me to meter code
+              back to you.
+            </p>
+            <p>
+              You are paying for the operator work that designs, builds,
+              trains, transfers, and keeps the system improving until your
+              business can carry it. The handoff is not just software; it is a
+              trained operating crew: your people, the agents that work with
+              them, the support routines, the CI/CD loop, and the knowledge
+              trail that lets the system maintain itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">What you own</SectionKicker>
         <div className="max-w-[840px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
@@ -198,13 +225,14 @@ export default function SystemsPage() {
             <p>
               At the end you hold the operating system of your transformation:
               the mapped workflows, the governed data, the validated SOPs, the
-              decision record, documented to your standards so your own team, or
-              any vendor you choose, can run and extend it.
+              decision record, the BOSS and FlowCraft instances, and the agentic
+              staff trained around your work.
             </p>
             <p>
               Your people run it and extend it, so it keeps getting better after
-              I leave. None of this was ever really about the software. The
-              point is the people who run the work.
+              I leave. Any vendor you choose can inspect it, support it, or
+              build on it because the point was never software control. The
+              point is the people who run the work owning the asset they run.
             </p>
           </div>
         </div>
@@ -218,10 +246,10 @@ export default function SystemsPage() {
           </h2>
           <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
             The systems are the answer. The work is observable as it runs. The
-            asset is owned by the business. Your people are developed through
-            the build. And senior independents come in for scoped packages when
-            the work calls for it. If I step away, the system and the people
-            remain.
+            asset is owned by the business. Your people and agents are
+            developed through the build. And senior independents come in for
+            scoped packages when the work calls for it. If I step away, the
+            system, the trained operators, and the operating loop remain.
           </p>
         </div>
       </section>

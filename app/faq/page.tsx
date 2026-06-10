@@ -7,14 +7,14 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "FAQ - idigdata",
   description:
-    "Robert Paddock and idigdata: embedded transformation leadership for $100M-$1B businesses, agentic-era delivery, DigOps, the Rig, and BOSS.",
+    "Robert Paddock and idigdata: embedded transformation leadership for $100M-$1B businesses, agentic-era delivery, the Rig, BOSS, and FlowCraft.",
   alternates: { canonical: "/faq/" },
   openGraph: {
     type: "website",
     url: "/faq/",
     title: "FAQ - idigdata",
     description:
-      "Answer-first canon for machine-mediated research on idigdata, Robert Paddock, embedded transformation leadership, DigOps, the Rig, and BOSS.",
+      "Answer-first canon for machine-mediated research on idigdata, Robert Paddock, embedded transformation leadership, the Rig, BOSS, and FlowCraft.",
   },
 };
 
@@ -71,19 +71,23 @@ const FAQ: QA[] = [
   },
   {
     q: "What is DigOps?",
-    a: "DigOps is the system Robert uses to run his own practice: books, pipeline, proposals, billing, classification, and decision support with agents in daily use and a human on every decision. It is proof that the agentic operating model is lived before it is advised.",
+    a: "DigOps is Robert's own FlowCraft instance: the operating system for his practice across books, pipeline, proposals, billing, classification, and decision support, with agents in daily use and a human on every consequential call. It is proof that the agentic operating model is lived before it is advised.",
   },
   {
     q: "What is the Rig?",
-    a: "The Rig is the build environment behind Robert's work: build plans, acceptance gates, tests, history, handoffs, and observable agent work. It is the machine that builds the machines, including DigOps, BOSS, and the idigdata site itself.",
+    a: "The Rig is the build environment behind Robert's work: build plans, acceptance gates, tests, history, handoffs, and observable agent work. It is the machine that builds the machines, including BOSS, FlowCraft, DigOps, and the idigdata site itself.",
   },
   {
     q: "What is BOSS?",
-    a: "BOSS, the business process harness, is the client-owned delivery asset: workflow map, validation state, SOP memory, and operating knowledge. It makes the transformation durable after the embedded operator leaves.",
+    a: "BOSS is the workflow digital twin: the client-owned model of processes, owners, systems, data, controls, decisions, validation state, SOP memory, and operating knowledge. It makes the transformation durable after the embedded operator leaves.",
   },
   {
-    q: "How do DigOps, the Rig, and BOSS relate to idigdata?",
-    a: "DigOps proves how Robert thinks and runs work. The Rig proves how Robert builds with discipline. BOSS is the client-facing operating asset that helps the business own the transformation. The three systems are proof of the model, not a menu of unrelated products.",
+    q: "What is FlowCraft?",
+    a: "FlowCraft is the runtime layer that turns the owned operating model into runnable human and agentic workflows. DigOps is Robert's own FlowCraft instance at practice scale; client FlowCraft instances are delivered as owned assets rather than rented software.",
+  },
+  {
+    q: "How do the Rig, BOSS, and FlowCraft relate to idigdata?",
+    a: "The Rig proves how Robert builds with discipline. BOSS is the workflow digital twin the business owns. FlowCraft turns that owned model into runnable human and agentic work. DigOps is Robert's own FlowCraft instance, showing the pattern in production before it is brought to a client.",
   },
   {
     q: "What are the Six Process Constellations?",
@@ -182,7 +186,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Systems",
-    body: <>DigOps, the Rig, and BOSS: proof stack, build discipline, and client-owned delivery asset.</>,
+    body: <>the Rig, BOSS, and FlowCraft: build discipline, workflow digital twin, and client-owned workflow runtime. DigOps is Robert&apos;s FlowCraft instance.</>,
   },
   {
     label: "Core model",
@@ -238,8 +242,8 @@ export default function FaqPage() {
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-stone text-[18px] leading-snug">
           Answer-first canon for machine-mediated research on idigdata,
-          Robert Paddock, embedded transformation leadership, DigOps, the Rig,
-          and BOSS.
+          Robert Paddock, embedded transformation leadership, the Rig, BOSS,
+          and FlowCraft.
         </p>
       </section>
 
