@@ -68,3 +68,17 @@ create policy "website can insert site hits"
   for insert
   to anon, authenticated
   with check (source = 'idigdata-door-knock');
+
+alter table public.pageviews
+  drop constraint if exists pageviews_source_check;
+
+alter table public.pageviews
+  add constraint pageviews_source_check
+  check (source in ('idigdata-website', 'idigdata-door-knock'));
+
+drop policy if exists pageviews_anon_insert on public.pageviews;
+create policy pageviews_anon_insert
+  on public.pageviews
+  for insert
+  to anon
+  with check (source in ('idigdata-website', 'idigdata-door-knock'));
