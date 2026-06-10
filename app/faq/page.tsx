@@ -71,23 +71,23 @@ const FAQ: QA[] = [
   },
   {
     q: "What is DigOps?",
-    a: "DigOps is Robert's own FlowCraft instance: the operating system for his practice across books, pipeline, proposals, billing, classification, and decision support, with agents in daily use and a human on every consequential call. It is proof that the agentic operating model is lived before it is advised.",
+    a: "DigOps is Robert's own FlowCraft instance: the live operating system for idigdata across books, pipeline, proposals, billing, classification, delivery state, and decision support. It is the reference FlowCraft instance proving the model at practice scale before it is brought to clients.",
   },
   {
     q: "What is the Rig?",
-    a: "The Rig is the build environment behind Robert's work: build plans, acceptance gates, tests, history, handoffs, and observable agent work. It is the machine that builds the machines, including BOSS, FlowCraft, DigOps, and the idigdata site itself.",
+    a: "The Rig is the governed build estate behind Robert's work: build plans, acceptance gates, source checks, write discipline, tests, history, handoffs, observable agent work, and CI/CD. It is the machine that builds the machines, including BOSS, FlowCraft, DigOps, and the idigdata site itself.",
   },
   {
     q: "What is BOSS?",
-    a: "BOSS is the workflow digital twin: the client-owned model of processes, owners, systems, data, controls, decisions, validation state, SOP memory, and operating knowledge. It makes the transformation durable after the embedded operator leaves.",
+    a: "BOSS is the business process harness: a client-owned tier-2 operating fabric above ERP, CRM, HRIS, data, and specialty systems. It models processes, owners, systems, controls, decisions, delivery state, SOP memory, and green/green validation so the transformation remains durable after the embedded operator leaves.",
   },
   {
     q: "What is FlowCraft?",
-    a: "FlowCraft is the runtime layer that turns the owned operating model into runnable human and agentic workflows. DigOps is Robert's own FlowCraft instance at practice scale; client FlowCraft instances are delivered as owned assets rather than rented software.",
+    a: "FlowCraft is the org and instance framework that turns owned operating models into runnable human and agentic workflows. DigOps is Robert's live reference instance. Client FlowCraft instances are delivered as owned assets rather than rented software.",
   },
   {
     q: "How do the Rig, BOSS, and FlowCraft relate to idigdata?",
-    a: "The Rig proves how Robert builds with discipline. BOSS is the workflow digital twin the business owns. FlowCraft turns that owned model into runnable human and agentic work. DigOps is Robert's own FlowCraft instance, showing the pattern in production before it is brought to a client.",
+    a: "Rig is the governed build estate. BOSS is the business process harness the client owns. FlowCraft is the instance and workflow runtime. DigOps is idigdata's live FlowCraft instance. Together they are the delivery architecture behind idigdata's model: build the asset, train the human and agentic operators around it, transfer ownership, and keep the system improving.",
   },
   {
     q: "What are the Six Process Constellations?",
@@ -186,7 +186,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Systems",
-    body: <>the Rig, BOSS, and FlowCraft: build discipline, workflow digital twin, and client-owned workflow runtime. DigOps is Robert&apos;s FlowCraft instance.</>,
+    body: <>Rig, BOSS, and FlowCraft: governed build estate, business process harness, and client-owned workflow runtime. DigOps is Robert&apos;s live FlowCraft instance.</>,
   },
   {
     label: "Core model",
