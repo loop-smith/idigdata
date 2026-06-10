@@ -2,6 +2,14 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-06-10 — Beacon signal hardening
+
+- **Traffic classification:** added shared website signal classification for campaign, external referral, direct, internal, dev, preview, asset, and agent/headless traffic.
+- **Noise suppression:** `PageviewBeacon` now suppresses localhost, preview hosts by default, internal-marked browsers, asset/static paths, and bot/headless user agents before sending. `/api/pageview` repeats suppression server-side.
+- **Internal marker:** `?internal=1` stores a local internal-traffic marker; `?internal=0` or `?clear_internal=1` clears it.
+- **Pageview schema compatibility:** `/api/pageview` attempts richer signal fields first and falls back to the existing lightweight row shape if those columns are not in the Supabase schema yet.
+- **API guard closure:** `/api/contact` and `/api/pageview` now parse bounded raw text before JSON parsing, so the byte cap applies even when `Content-Length` is absent or misleading.
+
 ## 2026-06-09 — Website hardening + corpus tidy
 
 - **Supply chain:** upgraded exact pins to Next 16.2.7, React/React DOM 19.2.7, Supabase JS 2.108.0, Resend 6.12.4, zod 4.4.3, Tailwind/@tailwindcss-postcss 4.3.0, and TypeScript 5.9.3. Added `postcss@8.5.10` npm override for Next's transitive PostCSS advisory. `npm audit --omit=dev` clean.

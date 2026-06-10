@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
-import { guardJsonPost } from "@/lib/server/requestSecurity";
+import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
+import { classifyWebsiteSignal } from "@/lib/traffic/websiteSignals";
 
 export const runtime = "nodejs";
 
@@ -10,6 +11,17 @@ const PageviewSchema = z.object({
   referrer: z.string().max(2048).optional().nullable(),
   search: z.string().max(2048).optional().nullable(),
   anon_session_id: z.string().max(128).optional().nullable(),
+  traffic_class: z.string().max(80).optional().nullable(),
+  source_kind: z.string().max(80).optional().nullable(),
+  source_channel: z.string().max(200).optional().nullable(),
+  source_medium: z.string().max(200).optional().nullable(),
+  source_campaign: z.string().max(200).optional().nullable(),
+  attribution_confidence: z.string().max(80).optional().nullable(),
+  source_refs: z.array(z.record(z.string(), z.string())).max(20).optional(),
+  is_internal: z.boolean().optional(),
+  is_bot: z.boolean().optional(),
+  is_asset: z.boolean().optional(),
+  buyer_signal: z.boolean().optional(),
 });
 
 const NO_CONTENT = new NextResponse(null, { status: 204 });
@@ -77,15 +89,26 @@ export async function POST(req: NextRequest) {
   });
   if (guard) return guard;
 
-  let body: unknown;
-  try {
-    body = await req.json();
-  } catch {
-    return NO_CONTENT;
-  }
+  const bodyResult = await parseBoundedJson(req, 8 * 1024, true);
+  if (!bodyResult.ok) return bodyResult.response;
+  const body = bodyResult.body;
 
   const parsed = PageviewSchema.safeParse(body);
   if (!parsed.success) return NO_CONTENT;
+
+  const ua = req.headers.get("user-agent");
+  const signal = classifyWebsiteSignal({
+    path: parsed.data.path,
+    referrer: parsed.data.referrer,
+    search: parsed.data.search,
+    userAgent: ua,
+    hostname: req.nextUrl.hostname,
+    isInternalMarked: parsed.data.is_internal,
+    trackPreviewTraffic:
+      process.env.NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC === "1" ||
+      process.env.TRACK_PREVIEW_TRAFFIC === "1",
+  });
+  if (signal.suppress_pageview) return NO_CONTENT;
 
   const supabase = getIdigdataAppSupabase();
   if (!supabase) {
@@ -93,10 +116,9 @@ export async function POST(req: NextRequest) {
     return NO_CONTENT;
   }
 
-  const ua = req.headers.get("user-agent");
   const utms = parseUtms(parsed.data.search);
 
-  const row = {
+  const baseRow = {
     source: "idigdata-website",
     path: parsed.data.path,
     referrer: parsed.data.referrer?.slice(0, 2048) || null,
@@ -105,10 +127,41 @@ export async function POST(req: NextRequest) {
     ...utms,
   };
 
+  const row = {
+    ...baseRow,
+    traffic_class: signal.traffic_class,
+    source_kind: signal.source_kind,
+    source_channel: signal.source_channel,
+    source_medium: signal.source_medium,
+    source_campaign: signal.source_campaign,
+    attribution_confidence: signal.attribution_confidence,
+    source_refs: signal.source_refs,
+    is_internal: signal.is_internal,
+    is_bot: signal.is_bot,
+    is_asset: signal.is_asset,
+    buyer_signal: signal.buyer_signal,
+  };
+
   const { error } = await supabase.from("pageviews").insert(row);
   if (error) {
-    console.error(`pageview insert failed: ${error.message}`);
+    if (isSchemaCacheMiss(error)) {
+      const fallback = await supabase.from("pageviews").insert(baseRow);
+      if (fallback.error) {
+        console.error(`pageview fallback insert failed: ${fallback.error.message}`);
+      }
+    } else {
+      console.error(`pageview insert failed: ${error.message}`);
+    }
   }
 
   return NO_CONTENT;
+}
+
+function isSchemaCacheMiss(error: { code?: string; message?: string }): boolean {
+  const message = error.message?.toLowerCase() ?? "";
+  return (
+    error.code === "PGRST204" ||
+    error.code === "42703" ||
+    (message.includes("column") && message.includes("schema cache"))
+  );
 }

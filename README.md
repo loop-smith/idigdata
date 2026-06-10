@@ -53,6 +53,7 @@ Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` i
 | `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Bing Webmaster Tools meta verification token | BWT property setup |
 | `WEBSITE_ALLOWED_ORIGINS` | Optional comma-separated extension to the built-in same-origin allowlist for POST routes. | Only needed for extra deployed hostnames |
 | `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` | Optional credential-free analytics event collector used by `websiteEvents.ts`. | Internal website events ingest endpoint |
+| `NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC` | Optional `1` to include Vercel preview traffic in telemetry. Defaults to suppressing previews. | Only for intentional preview instrumentation |
 | `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact submissions and article requests land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
 | `IDIGDATA_APP_SUPABASE_ANON_KEY` | Anon key for `idigdata-app` Supabase. RLS must allow insert-only writes from the website origin. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
 | `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` | Optional server-only key. Enables `/api/contact` to return inserted CRM row IDs. Never expose with `NEXT_PUBLIC_`. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
@@ -61,6 +62,14 @@ Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` i
 | `EMAIL_NOTIFY_FROM` | Optional verified sender override. Defaults to `idigdata website <noreply@idigdata.com>`. | Resend verified domain |
 
 For Vercel, mirror the same vars in **Project Settings → Environment Variables** (production + preview).
+
+## Traffic telemetry
+
+`PageviewBeacon` sends only buyer-signal pageviews to `/api/pageview`. It suppresses localhost, Vercel preview hosts unless explicitly enabled, known asset/static paths, bot/headless user agents, and internal traffic.
+
+To mark internal traffic, open the site once with `?internal=1`. That stores a browser-local marker and suppresses future beacons from that browser. Clear it with `?internal=0` or `?clear_internal=1`.
+
+The server repeats the classification before Supabase insert. If the `pageviews` table has richer signal columns, the route writes `traffic_class`, source fields, boolean suppression flags, and `buyer_signal`. If those columns are not deployed yet, it falls back to the existing lightweight row shape.
 
 ## Deploy
 

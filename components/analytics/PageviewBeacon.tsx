@@ -2,11 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { getAnonSessionId, isTrackableHost, trackWebsiteEvent } from "./websiteEvents";
+import { getAnonSessionId, getCurrentTrafficSignal, trackWebsiteEvent } from "./websiteEvents";
 
 function send(path: string) {
   if (typeof window === "undefined") return;
-  if (!isTrackableHost()) return;
+  const signal = getCurrentTrafficSignal(path);
+  if (signal.suppress_pageview) return;
+
   trackWebsiteEvent({
     event_type: "pageview_event",
     path,
@@ -18,6 +20,17 @@ function send(path: string) {
     referrer: document.referrer || null,
     search: window.location.search || null,
     anon_session_id: getAnonSessionId(),
+    traffic_class: signal.traffic_class,
+    source_kind: signal.source_kind,
+    source_channel: signal.source_channel,
+    source_medium: signal.source_medium,
+    source_campaign: signal.source_campaign,
+    attribution_confidence: signal.attribution_confidence,
+    source_refs: signal.source_refs,
+    is_internal: signal.is_internal,
+    is_bot: signal.is_bot,
+    is_asset: signal.is_asset,
+    buyer_signal: signal.buyer_signal,
   });
 
   try {

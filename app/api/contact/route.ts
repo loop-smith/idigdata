@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { Resend } from "resend";
-import { guardJsonPost } from "@/lib/server/requestSecurity";
+import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
 
 export const runtime = "nodejs";
 
@@ -145,15 +145,9 @@ export async function POST(req: NextRequest) {
   });
   if (guard) return guard;
 
-  let body: unknown;
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json(
-      { ok: false, error: "invalid_json" },
-      { status: 400 },
-    );
-  }
+  const bodyResult = await parseBoundedJson(req, 16 * 1024);
+  if (!bodyResult.ok) return bodyResult.response;
+  const body = bodyResult.body;
 
   const honeypot = (body as { _hp?: string })?._hp;
   if (honeypot && honeypot.length > 0) {

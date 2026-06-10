@@ -12,6 +12,10 @@ type GuardOptions = {
   silent?: boolean;
 };
 
+type ParseJsonResult =
+  | { ok: true; body: unknown }
+  | { ok: false; response: NextResponse };
+
 type Bucket = {
   count: number;
   resetAt: number;
@@ -43,6 +47,29 @@ export function guardJsonPost(
   if (rateFailure) return rateFailure;
 
   return null;
+}
+
+export async function parseBoundedJson(
+  req: NextRequest,
+  maxBytes: number,
+  silent = false,
+): Promise<ParseJsonResult> {
+  let raw: string;
+  try {
+    raw = await req.text();
+  } catch {
+    return { ok: false, response: reject(400, "invalid_body", silent) };
+  }
+
+  if (new TextEncoder().encode(raw).byteLength > maxBytes) {
+    return { ok: false, response: reject(413, "payload_too_large", silent) };
+  }
+
+  try {
+    return { ok: true, body: JSON.parse(raw) };
+  } catch {
+    return { ok: false, response: reject(400, "invalid_json", silent) };
+  }
 }
 
 function enforceSameOrigin(
@@ -139,13 +166,19 @@ function enforceRateLimits(
 }
 
 function getClientKey(req: NextRequest): string {
-  const forwardedFor = req.headers.get("x-forwarded-for");
-  const firstForwarded = forwardedFor?.split(",")[0]?.trim();
-  const ip =
-    firstForwarded ||
+  const trustedIp =
     req.headers.get("x-real-ip") ||
     req.headers.get("cf-connecting-ip") ||
-    "unknown";
+    req.headers.get("true-client-ip") ||
+    req.headers.get("fly-client-ip") ||
+    req.headers.get("x-vercel-ip");
+  const forwardedFor = req.headers.get("x-forwarded-for");
+  const forwardedChain = forwardedFor
+    ?.split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const fallbackForwarded = forwardedChain?.[forwardedChain.length - 1];
+  const ip = trustedIp || fallbackForwarded || "unknown";
   const ua = req.headers.get("user-agent")?.slice(0, 80) ?? "unknown";
   return `${ip}:${ua}`;
 }
