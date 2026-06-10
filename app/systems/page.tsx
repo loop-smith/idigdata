@@ -28,31 +28,39 @@ export const metadata: Metadata = {
 const operatingProof = [
   {
     eyebrow: "Built",
-    title: "The Rig = my accelerant",
+    title: "The rig = the machine that builds machines",
     logo: "/brand/systems/rig-banner-logo.png",
-    logoClass: "max-h-[92px] max-w-[120px]",
+    logoWidth: 148,
+    logoHeight: 115,
     tagline: "Orchestrate · Monitor · Invent",
     alt: "The Rig logo",
-    body: "The governed build environment behind the work. It turns ideas into traceable assets with plans, gates, tests, and decision records, so delivery is repeatable instead of heroic.",
+    accent: "#0ea5b7",
+    body: "The governed build environment behind the work. It turns ideas into traceable assets with plans, gates, tests, decision records, and agentic loops so delivery is repeatable instead of heroic.",
+    note: "Rig owns binary current: the forge, monitor, organizer, and harness creator.",
   },
   {
     eyebrow: "Owned",
-    title: "BOSS = what you own",
+    title: "BOSS = the workflow digital twin",
     logo: "/brand/systems/boss-banner-logo.png",
-    logoClass: "max-h-[64px] max-w-[188px]",
+    logoWidth: 212,
+    logoHeight: 66,
     tagline: "The Business Workflow Digital Twin",
     alt: "BOSS logo",
-    body: "The business workflow digital twin. BOSS captures how the operating model actually works: processes, owners, data, controls, and decisions, so the business keeps the system after the build.",
-    featured: true,
+    accent: "#e8762d",
+    body: "The organizer of how the company actually works. BOSS maps processes, owners, systems, data, controls, and decisions so the business keeps the operating model after the build.",
+    note: "BOSS owns the six constellations: the structure that turns workflow reality into a governed twin.",
   },
   {
     eyebrow: "Run",
-    title: "FlowCraft = how it runs",
+    title: "FlowCraft = how the work runs",
     logo: "/brand/systems/flowcraft-banner-logo.png",
-    logoClass: "max-h-[98px] max-w-[146px]",
+    logoWidth: 176,
+    logoHeight: 126,
     tagline: "Build the flow. Run the work.",
     alt: "FlowCraft logo",
-    body: "The workflow-block engine for the domain. FlowCraft turns the owned model into runnable flows across idigdata, DigOps, and client systems, with agents and people in the same governed grammar.",
+    accent: "#3ce624",
+    body: "The workflow-block craft layer for the business. FlowCraft turns the owned model into runnable human and agentic workflows across the operating ecosystem.",
+    note: "FlowCraft owns the WFB block: composable business workflows made tangible.",
   },
 ];
 
@@ -137,26 +145,33 @@ export default function SystemsPage() {
           {operatingProof.map((system) => (
             <article
               key={system.title}
-              className={`flex h-full flex-col border bg-white p-6 ${
-                system.featured
-                  ? "border-gold border-l-[4px] border-l-gold"
-                  : "border-navy/15 border-l-[4px] border-l-navy/20"
-              }`}
+              className="flex h-full flex-col border border-navy/15 border-l-[4px] bg-white p-6"
+              style={{ borderLeftColor: system.accent }}
             >
-              <div className="mb-6 flex h-[190px] items-center justify-center overflow-hidden rounded-md bg-cream px-5 py-5">
-                <div className="grid h-[154px] w-full grid-rows-[118px_28px] items-center justify-items-center gap-y-2 text-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={system.logo}
-                    alt={system.alt}
-                    className={`h-auto w-auto object-contain ${system.logoClass}`}
-                  />
-                  <p className="w-full whitespace-nowrap border-t border-navy/30 pt-[7px] font-vollkorn text-[13px] italic leading-[1.2] text-[#5F554B]">
+              <div className="mb-6 grid h-[218px] place-items-center overflow-hidden rounded-md bg-cream px-5 py-5">
+                <div className="grid h-[174px] w-full max-w-[390px] grid-rows-[128px_1px_33px] items-center justify-items-center gap-y-[6px] text-center">
+                  <div className="grid h-[128px] w-full place-items-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={system.logo}
+                      alt={system.alt}
+                      className="block object-contain"
+                      style={{
+                        width: `${system.logoWidth}px`,
+                        height: `${system.logoHeight}px`,
+                      }}
+                    />
+                  </div>
+                  <div className="h-px w-[62%] bg-navy/25" />
+                  <p className="w-full whitespace-nowrap font-vollkorn text-[13px] italic leading-[1.15] text-[#5F554B]">
                     {system.tagline}
                   </p>
                 </div>
               </div>
-              <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+              <p
+                className="font-body text-[10.5px] font-semibold uppercase tracking-[0.22em]"
+                style={{ color: system.accent }}
+              >
                 {system.eyebrow}
               </p>
               <h3 className="mt-3 min-h-[68px] font-vollkorn text-[24px] font-bold leading-[1.18] text-navy">
@@ -164,6 +179,9 @@ export default function SystemsPage() {
               </h3>
               <p className="mt-4 font-body text-[14.5px] leading-[1.62] text-navy/75">
                 {system.body}
+              </p>
+              <p className="mt-6 border-t border-navy/10 pt-4 font-body text-[13px] leading-[1.45] text-navy/60">
+                {system.note}
               </p>
             </article>
           ))}
