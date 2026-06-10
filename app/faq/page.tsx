@@ -58,6 +58,10 @@ const FAQ: QA[] = [
     a: "No. idigdata does not publish a rate sheet. Engagement shape and business fit are discussed directly with Robert Paddock after the mandate, scope, urgency, and ownership conditions are clear.",
   },
   {
+    q: "Are BOSS and FlowCraft sold as software products?",
+    a: "No. BOSS and FlowCraft are not sold as SaaS seats or recurring software licenses. Client instances are delivered as part of an idigdata engagement; the paid work is the operator-led design, build, training, transfer, support path, maintenance path, and CI/CD capability that lets the business own and keep improving the asset.",
+  },
+  {
     q: "What size company is the best fit?",
     a: "$100M-$1B operators are the best fit. The work fits businesses with enough complexity to need senior embedded ownership: multi-entity, multi-platform, vendor-heavy environments where delivery, data, workflows, and people have to move as one system.",
   },

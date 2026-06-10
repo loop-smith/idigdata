@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work: Rig, BOSS, and FlowCraft form a free, open, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
+    "The systems behind the work: Rig, BOSS, and FlowCraft form the client-owned delivery architecture behind idigdata's embedded transformation model.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work: Rig, BOSS, and FlowCraft form a free, open, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
+      "The systems behind the work: Rig, BOSS, and FlowCraft form the client-owned delivery architecture behind idigdata's embedded transformation model.",
     images: [
       {
         url: "/og-image.png",
@@ -36,7 +36,7 @@ const operatingProof = [
     alt: "The Rig logo",
     accent: "#0ea5b7",
     body: "The governed estate where the work is built. Rig carries build plans, source checks, write discipline, evidence, gates, tests, agent routing, and CI/CD so delivery is repeatable instead of heroic.",
-    note: "Rig is its own thing: the forge, monitor, organizer, and operating discipline that makes the other systems real.",
+    note: "Rig remains the governed build estate behind the work: the forge, monitor, organizer, and operating discipline that makes the other systems real.",
   },
   {
     eyebrow: "Owned",
@@ -75,17 +75,25 @@ const constructionModel = [
   },
   {
     title: "One handoff",
-    body: "The delivery includes the people and agents who will run the system: trained roles, support routines, maintenance paths, deployment discipline, and an evidence trail that survives the engagement.",
+    body: "The delivery includes the operating model around the system: trained client roles, controlled agent workflows, support routines, deployment discipline, and an evidence trail that survives the engagement.",
   },
 ];
 
+const demandSignals = [
+  "AI pilots are outrunning governance.",
+  "An ERP or systems program is stalled between vendors and operators.",
+  "The board wants leverage without another dependency.",
+  "The CFO and Compliance Officer need a defensible operating trail.",
+  "The business needs a real handoff instead of a managed-services tail.",
+];
+
 const handoffStack = [
-  "your operators trained through the build",
-  "human-owned agent workflows with a person on consequential calls",
-  "support and maintenance routines attached to the system",
+  "client operators trained through the build",
+  "controlled agent workflows with a person on consequential calls",
+  "support and maintenance routines attached to the operating model",
   "CI/CD and release discipline for future change",
   "decision, validation, and evidence records the business can inspect",
-  "source and configuration that can be transferred, reviewed, and extended",
+  "source and configuration available for transfer, review, and extension under the engagement",
 ];
 
 export default function SystemsPage() {
@@ -99,14 +107,14 @@ export default function SystemsPage() {
             Three systems. One client-owned operating capability.
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
-            Rig, BOSS, and FlowCraft are not subscription products I use to
-            trap a client. They are the delivery architecture I built so a
-            company can own the system it runs on.
+            Rig, BOSS, and FlowCraft are not a SaaS trap or an advisory deck.
+            They are the delivery architecture I use to build a company&apos;s
+            ability to run and improve its own work.
           </p>
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
             I run the model before I bring it to anyone else. DigOps, the
             operating system for idigdata, is now the first live FlowCraft
-            instance. BOSS is becoming the business process harness for client
+            instance. BOSS is the business process harness for client
             transformations. Rig is the governed build estate that makes both
             of them real.
           </p>
@@ -114,33 +122,31 @@ export default function SystemsPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">What changed</SectionKicker>
+        <SectionKicker className="mb-5">The delivery architecture</SectionKicker>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-              This is no longer stale proof copy. The systems have become the
-              delivery model.
+              These are not side projects. They are the architecture behind the
+              work.
             </h2>
           </div>
           <div>
             <p className="font-body text-[15.5px] leading-[1.65] text-navy">
-              The original site language treated the systems like supporting
-              evidence: three things I run behind the scenes. The build has
-              moved past that. Rig, BOSS, and FlowCraft now define how the work
-              is designed, built, transferred, supported, maintained, and
-              improved.
+              Rig, BOSS, and FlowCraft are how I turn a mandate into an owned
+              operating asset: build the system in a governed estate, map the
+              business process fabric above the vendor stack, then leave the
+              client with runnable human and agentic workflows.
             </p>
             <p className="mt-5 border-l-[4px] border-l-gold bg-white px-5 py-4 font-vollkorn text-[22px] font-bold leading-[1.25] text-navy">
-              The software is free and open. My time is not.
+              The client instance is not the meter. The hard part is getting it
+              built, adopted, governed, and owned.
             </p>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              Rig is its own thing. BOSS and FlowCraft client instances are not
-              charged like SaaS licenses. They are part of the delivered asset:
-              open-code, client-owned software that the business can inspect,
-              transfer, support, and extend. The paid work is the operator-led
-              design, build, training, transfer, support path, maintenance
-              path, and CI/CD capability that lets the business own what was
-              built.
+              BOSS and FlowCraft client instances are delivered as part of the
+              engagement, not sold back by the seat. The paid work is the
+              operator-led design, build, training, transfer, support path,
+              maintenance path, and CI/CD capability that lets the business
+              own what was built.
             </p>
           </div>
         </div>
@@ -153,7 +159,7 @@ export default function SystemsPage() {
             Agentics should make companies more sovereign, not more dependent.
           </h2>
           <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-            Most of the software market is still trying to convert capability
+            Much of the software market still tries to convert capability
             into control: host the code, meter the seats, own the state, and
             keep the customer attached. That is the wrong lesson from
             agentics. The power is in building a company&apos;s ability to run and
@@ -166,6 +172,24 @@ export default function SystemsPage() {
             through finance, compliance, vendors, workflows, and people, then
             leave behind a living operating capability.
           </p>
+        </div>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">Where this matters</SectionKicker>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+              The systems matter when the mandate is bigger than a tool.
+            </h2>
+          </div>
+          <ul className="grid grid-cols-1 gap-3 font-body text-[14.5px] leading-[1.45] text-navy md:grid-cols-2">
+            {demandSignals.map((item) => (
+              <li key={item} className="border-l-[4px] border-l-gold bg-white px-5 py-4">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -254,8 +278,8 @@ export default function SystemsPage() {
               firms rent the people. In this model, the business keeps the
               asset. BOSS and FlowCraft instances are delivered with the work,
               and the source, configuration, workflow logic, and operating
-              knowledge are meant to be open, inspectable, transferable, and
-              extensible.
+              knowledge are made available for inspection, transfer, support,
+              and extension under the engagement.
             </p>
             <p>
               What you pay for is the hard part: the senior operator work that
@@ -268,17 +292,18 @@ export default function SystemsPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">The delivered staff</SectionKicker>
+        <SectionKicker className="mb-5">Trained operators and agents</SectionKicker>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div>
             <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-              The handoff is a trained crew, not a folder of documentation.
+              The handoff is an operating model, not a folder of documentation.
             </h2>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
-              The new operating model includes human staff and actual agents.
-              It includes who owns decisions, who verifies outputs, where
-              support goes, how change ships, and how the system keeps telling
-              the truth after the project room closes.
+              The new operating model includes your people and controlled
+              agents working around the same asset. It defines who owns
+              decisions, who verifies outputs, where support goes, how change
+              ships, and how the system keeps telling the truth after the
+              project room closes.
             </p>
           </div>
           <ul className="grid grid-cols-1 gap-3 font-body text-[14.5px] leading-[1.45] text-navy md:grid-cols-2">
@@ -302,13 +327,14 @@ export default function SystemsPage() {
               At the end you hold the operating system of the transformation:
               mapped workflows, governed data, validation trails, SOP memory,
               decision records, the BOSS and FlowCraft instances, and the
-              trained human-and-agent staff around your work.
+              trained human-and-agent operating model around your work.
             </p>
             <p>
-              Your people run it and extend it. Any qualified vendor or
-              internal technologist can inspect it, support it, or build on it
-              because the point was never software control. The point is the
-              people who run the work owning the asset they run.
+              Your people run it and extend it. Qualified vendors and internal
+              technologists can work against the source, configuration, and
+              evidence the engagement transfers because the point was never
+              software control. The point is the people who run the work owning
+              the asset they run.
             </p>
           </div>
         </div>
