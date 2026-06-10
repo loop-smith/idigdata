@@ -46,6 +46,7 @@ type ClassifyInput = {
   hostname?: string | null;
   isInternalMarked?: boolean;
   trackPreviewTraffic?: boolean;
+  suppressBotTraffic?: boolean;
 };
 
 const ASSET_PREFIXES = [
@@ -113,12 +114,21 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
     });
   }
 
-  if (isBot) {
+  if (isBot && input.suppressBotTraffic !== false) {
     return suppressed("agent", "agent", "bot_like_user_agent", {
       is_internal: false,
       is_bot: true,
       is_asset: false,
       source_refs: [{ type: "user_agent_class", value: "agent" }],
+    });
+  }
+
+  if (isBot) {
+    return tracked("agent", "agent", {
+      source_channel: "bot_like_user_agent",
+      source_refs: [{ type: "user_agent_class", value: "agent" }],
+      is_bot: true,
+      buyer_signal: false,
     });
   }
 

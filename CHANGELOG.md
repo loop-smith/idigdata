@@ -2,6 +2,15 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-06-10 — Entrance telemetry pivot
+
+- **Door-knock capture:** added Next 16 `proxy.ts` entrance telemetry before route handling, focused on first meaningful document request rather than inside-site movement.
+- **Richer incoming context:** captures landing path, sanitized URL/query, referrer, UTM params, user agent, selected proxy/IP headers, Vercel/Cloudflare geo headers, fetch metadata, request IDs, and traffic classification. Cookie and authorization headers are intentionally excluded.
+- **Bot visibility:** bot/headless document requests are captured as `agent` traffic with `buyer_signal=false`, rather than dropped from entrance intelligence.
+- **Storage fallback:** attempts rich `site_hits` insert first, then falls back to `pageviews` with `source = "idigdata-door-knock"` so production can start collecting immediately.
+- **Navigation de-prioritized:** client-side page-to-page pageview beacons are disabled by default. Set `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION=1` to re-enable them.
+- **Schema contract:** added `scripts/sql/idigdata-app-site-hits.sql` for the idigdata-app Supabase table needed to store the full payload.
+
 ## 2026-06-10 — Beacon signal hardening
 
 - **Traffic classification:** added shared website signal classification for campaign, external referral, direct, internal, dev, preview, asset, and agent/headless traffic.

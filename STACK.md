@@ -22,7 +22,7 @@ Pinned versions for this project. Mirrors the `hello-world` living reference as 
 
 Next 16.2.7 deploys to Vercel **as a serverful App Router app** (Fluid Compute) — the prior `output: "export"` config was dropped in Dispatch 008/010 to enable the `/api/contact` serverless POST handler. The site is no longer a static export.
 
-`/api/contact` and `/api/pageview` run on Node runtime. POST routes now pass through a shared guard (`lib/server/requestSecurity.ts`) for same-origin enforcement, JSON content-type enforcement, header and actual-byte caps, and best-effort per-instance rate limiting. `/api/contact` persists CRM intake first, then attempts Resend notification as a best-effort side effect.
+`proxy.ts` runs before route handling and captures entrance/door-knock telemetry for the first meaningful document request in a 30-minute browser window, plus bot/headless document requests. `/api/contact` and `/api/pageview` run on Node runtime. POST routes now pass through a shared guard (`lib/server/requestSecurity.ts`) for same-origin enforcement, JSON content-type enforcement, header and actual-byte caps, and best-effort per-instance rate limiting. `/api/contact` persists CRM intake first, then attempts Resend notification as a best-effort side effect.
 
 ## Current Supabase project (website's own)
 
@@ -37,7 +37,7 @@ Next 16.2.7 deploys to Vercel **as a serverful App Router app** (Fluid Compute) 
 The website now writes to **another** Supabase project owned by `idigdata-app`:
 
 - **Project ref:** `dvjrmozeoakmcaccqqld` (idigdata-app)
-- **Schema contract:** `contact_submissions`, `article_requests`, and `pageviews` tables in the `idigdata-app` project.
+- **Schema contract:** `contact_submissions`, `article_requests`, `pageviews`, and optional richer `site_hits` table in the `idigdata-app` project. The website attempts `site_hits` first for entrance telemetry, then falls back to `pageviews` with `source = "idigdata-door-knock"`.
 - **Env vars on the website side:** `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY`, and optional server-only `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY`. Distinct prefix avoids conflation with the website's own `NEXT_PUBLIC_SUPABASE_*` vars.
 - **RLS posture:** anon key must remain insert-only from the website origin; reads denied. If `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` is present, it stays server-only and enables returned row IDs on contact intake.
 - **Origin posture:** browser POSTs must be same-origin to the current deployment origin or match the built-in/domain allowlist. `WEBSITE_ALLOWED_ORIGINS` extends the allowlist only when an extra hostname is intentional.
@@ -49,7 +49,7 @@ If the idigdata-app schema changes shape, this website's `/api/contact` route ne
 Per `k2s/idigdata/memos/memo-002-to-loopsmith-resend-wired.md` (loopsmith absorbed 2026-04-26 with "land in next-code-tree-touch" Open). These deltas close that Open.
 
 - **L4 — Deployment & CI.** Vercel env-var sync is load-bearing. Production + preview environments must carry `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY` or service-role key, `RESEND_API_KEY`, `EMAIL_NOTIFY_TO`, and any intentional `WEBSITE_ALLOWED_ORIGINS` extension. Missing CRM env breaks intake; missing Resend env no longer loses the lead but logs `notification: not_configured`.
-- **L5 — Observability.** Resend dashboard provides email-flow telemetry. `/api/pageview` inserts buyer-signal pageview rows after shared client/server classification suppresses internal, dev, preview, asset, and bot/headless traffic. `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` can send credential-free event payloads to a separate collector with the same signal fields. App-level Sentry remains a future Layer 5 lift.
+- **L5 — Observability.** Resend dashboard provides email-flow telemetry. `proxy.ts` captures door-knock intelligence for incoming document requests: referrer, UTM, UA, selected proxy/IP headers, geo headers, fetch metadata, request IDs, and classification. Client page-to-page pageview beacons are off by default unless `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION=1`. `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` can still send credential-free CTA/form events to a separate collector. App-level Sentry remains a future Layer 5 lift.
 - **L6 — Security & Compliance.** Third-party API keys live in `.env.local` (gitignored) + Vercel encrypted env vars. Never place service-role or Resend keys in `NEXT_PUBLIC_*`. Baseline CSP, HSTS, frame, permissions, MIME-sniffing, cross-domain policy, same-origin POST guard, byte caps, and in-memory rate buckets are active.
 
 ## Orchestration-tree note
@@ -63,6 +63,7 @@ Per `k2s/idigdata/memos/memo-002-to-loopsmith-resend-wired.md` (loopsmith absorb
 
 ## Last verified
 
+- **2026-06-10** — Entrance telemetry pass. `npm run build` clean. Added Next 16 `proxy.ts` door-knock capture, 30-minute entrance session cookie, bot/headless document capture, rich `site_hits` fallback chain, and disabled client page-to-page navigation beacons by default.
 - **2026-06-10** — Beacon signal and API guard pass. `npm run build` clean. Added shared traffic classification, durable internal marker controls, preview/dev/asset/bot suppression, backward-compatible rich pageview insert fields, actual-byte JSON parsing caps, and stronger client-key selection for rate buckets.
 - **2026-06-09** — Hardening/spit-shine pass. Upgraded to Next 16.2.7 / React 19.2.7 / Tailwind 4.3.0 / Supabase 2.108.0 / Resend 6.12.4 / zod 4.4.3 and added `postcss@8.5.10` override. `npm audit --omit=dev` clean. `npm run build` clean. Added CSP/security headers, same-origin JSON POST guard, byte caps, best-effort rate limiting, stricter article slug validation, durable CRM-before-email contact flow, env/docs alignment, and project-corpus runtime cleanup.
 - **2026-04-28** — Public launch (Dispatch 010). `output: "export"` removed; `npm install zod @supabase/supabase-js resend` clean (18 packages added). Local `/api/contact` smoke (happy path + honeypot + validation) PASS. First production Vercel deploy successful. Live-URL smoke + Lighthouse captured per dispatch.

@@ -4,8 +4,12 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { getAnonSessionId, getCurrentTrafficSignal, trackWebsiteEvent } from "./websiteEvents";
 
+const TRACK_PAGE_NAVIGATION = process.env.NEXT_PUBLIC_TRACK_PAGE_NAVIGATION === "1";
+
 function send(path: string) {
   if (typeof window === "undefined") return;
+  if (!TRACK_PAGE_NAVIGATION) return;
+
   const signal = getCurrentTrafficSignal(path);
   if (signal.suppress_pageview) return;
 

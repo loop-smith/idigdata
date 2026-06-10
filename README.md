@@ -54,6 +54,7 @@ Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` i
 | `WEBSITE_ALLOWED_ORIGINS` | Optional comma-separated extension to the built-in same-origin allowlist for POST routes. | Only needed for extra deployed hostnames |
 | `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` | Optional credential-free analytics event collector used by `websiteEvents.ts`. | Internal website events ingest endpoint |
 | `NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC` | Optional `1` to include Vercel preview traffic in telemetry. Defaults to suppressing previews. | Only for intentional preview instrumentation |
+| `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION` | Optional `1` to re-enable client-side page-to-page pageview beacons. Defaults off because entrance capture is primary. | Only if internal journey telemetry becomes useful |
 | `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact submissions and article requests land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
 | `IDIGDATA_APP_SUPABASE_ANON_KEY` | Anon key for `idigdata-app` Supabase. RLS must allow insert-only writes from the website origin. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
 | `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` | Optional server-only key. Enables `/api/contact` to return inserted CRM row IDs. Never expose with `NEXT_PUBLIC_`. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
@@ -65,11 +66,15 @@ For Vercel, mirror the same vars in **Project Settings → Environment Variables
 
 ## Traffic telemetry
 
-`PageviewBeacon` sends only buyer-signal pageviews to `/api/pageview`. It suppresses localhost, Vercel preview hosts unless explicitly enabled, known asset/static paths, bot/headless user agents, and internal traffic.
+The primary signal is server-side entrance capture in `proxy.ts`. It records the first meaningful document request in a 30-minute browser window, plus bot/headless document requests, before client JavaScript is involved.
+
+Captured fields include landing path, sanitized URL/query, referrer, UTM params, user agent, selected proxy/IP headers, Vercel/Cloudflare geo headers when present, fetch metadata headers, request IDs, and traffic classification. Cookie, authorization, and secret-like URL params are not recorded.
+
+`PageviewBeacon` no longer sends page-to-page navigation beacons by default. Set `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION=1` only if internal journey telemetry becomes useful again.
 
 To mark internal traffic, open the site once with `?internal=1`. That stores a browser-local marker and suppresses future beacons from that browser. Clear it with `?internal=0` or `?clear_internal=1`.
 
-The server repeats the classification before Supabase insert. If the `pageviews` table has richer signal columns, the route writes `traffic_class`, source fields, boolean suppression flags, and `buyer_signal`. If those columns are not deployed yet, it falls back to the existing lightweight row shape.
+The server writes rich rows to `site_hits` when that table exists in `idigdata-app`. If it does not exist yet, it falls back to `pageviews` with `source = "idigdata-door-knock"` so entrance capture can start immediately. Apply `scripts/sql/idigdata-app-site-hits.sql` to `idigdata-app` to store the full door-knock payload.
 
 ## Deploy
 
@@ -82,6 +87,8 @@ app/                 — App Router routes + /api/contact and /api/pageview serv
 components/          — shared UI (SiteHeader, SiteFooter, ContactForm, JsonLdScript, ...)
 lib/                 — utilities and server-side request guards
 public/              — favicon, og-image, resume PDF, etc.
+proxy.ts             — server-side entrance/door-knock capture before route handling
+scripts/sql/         — SQL contracts for cross-codebase Supabase tables
 supabase/            — migrations for the website's own Supabase project (currently empty)
 STACK.md             — pinned versions + migration history
 CHANGELOG.md         — append-only history of stack moves + verification checkpoints
