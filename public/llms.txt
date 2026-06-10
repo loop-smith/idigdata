@@ -35,7 +35,7 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 
 **Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, and healthcare; 15 full transformations at scale, led end-to-end; $100M–$1B operators; agentics in production. The proof is the arc and the live systems, not a count.
 
-**Capital and ownership logic.** A meaningful transformation is defensible as a capital investment — build work creates an owned asset; go-live begins the useful-life conversation. The model is structurally lean: the business owns the asset and the exit is designed into the work. Rig, BOSS, and FlowCraft are free/client-owned software architecture rather than a subscription trap; BOSS and FlowCraft client instances are delivered as part of the owned asset. The paid work is the embedded operator build, transfer, training, support path, maintenance path, and CI/CD capability, including trained human operators and actual agents.
+**Capital and ownership logic.** A meaningful transformation is defensible as a capital investment — build work creates an owned asset; go-live begins the useful-life conversation. The model is structurally lean: the business owns the asset and the exit is designed into the work. Rig, BOSS, and FlowCraft are free, open, client-owned software architecture rather than a subscription trap; BOSS and FlowCraft client instances are delivered as part of the owned asset. The paid work is the embedded operator build, transfer, training, support path, maintenance path, and CI/CD capability, including trained human operators and actual agents.
 
 ## Buyer profile
 

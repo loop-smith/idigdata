@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work: Rig, BOSS, and FlowCraft form a free, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
+    "The systems behind the work: Rig, BOSS, and FlowCraft form a free, open, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work: Rig, BOSS, and FlowCraft form a free, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
+      "The systems behind the work: Rig, BOSS, and FlowCraft form a free, open, client-owned delivery architecture with trained human and agentic operators built into the handoff.",
     images: [
       {
         url: "/og-image.png",
@@ -131,14 +131,16 @@ export default function SystemsPage() {
               improved.
             </p>
             <p className="mt-5 border-l-[4px] border-l-gold bg-white px-5 py-4 font-vollkorn text-[22px] font-bold leading-[1.25] text-navy">
-              The software is free. My time is not.
+              The software is free and open. My time is not.
             </p>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
               Rig is its own thing. BOSS and FlowCraft client instances are not
-              charged like SaaS licenses. They are part of the delivered asset.
-              The paid work is the operator-led design, build, training,
-              transfer, support path, maintenance path, and CI/CD capability
-              that lets the business own what was built.
+              charged like SaaS licenses. They are part of the delivered asset:
+              open-code, client-owned software that the business can inspect,
+              transfer, support, and extend. The paid work is the operator-led
+              design, build, training, transfer, support path, maintenance
+              path, and CI/CD capability that lets the business own what was
+              built.
             </p>
           </div>
         </div>
@@ -252,7 +254,8 @@ export default function SystemsPage() {
               firms rent the people. In this model, the business keeps the
               asset. BOSS and FlowCraft instances are delivered with the work,
               and the source, configuration, workflow logic, and operating
-              knowledge are meant to be inspectable and transferable.
+              knowledge are meant to be open, inspectable, transferable, and
+              extensible.
             </p>
             <p>
               What you pay for is the hard part: the senior operator work that
