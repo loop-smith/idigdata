@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: "Systems in Production - idigdata",
   description:
-    "The systems behind the work: Rig, BOSS, and FlowCraft form the client-owned delivery architecture behind idigdata's embedded transformation model.",
+    "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "Systems in Production - idigdata",
     description:
-      "The systems behind the work: Rig, BOSS, and FlowCraft form the client-owned delivery architecture behind idigdata's embedded transformation model.",
+      "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
     images: [
       {
         url: "/og-image.png",
@@ -28,54 +28,54 @@ export const metadata: Metadata = {
 const operatingProof = [
   {
     eyebrow: "Built",
-    title: "The rig = the machine that builds machines",
+    title: "Rig = the operator-owned work fabric",
     logo: "/brand/systems/rig-banner-logo.png",
     logoWidth: 148,
     logoHeight: 115,
-    tagline: "Orchestrate · Monitor · Invent",
+    tagline: "Specify · Route · Prove",
     alt: "The Rig logo",
     accent: "#0ea5b7",
-    body: "The governed estate where the work is built. Rig carries build plans, source checks, write discipline, evidence, gates, tests, agent routing, and CI/CD so delivery is repeatable instead of heroic.",
-    note: "Rig remains the governed build estate behind the work: the forge, monitor, organizer, and operating discipline that makes the other systems real.",
+    body: "The control substrate I use to turn ambiguous work into governed, inspectable progress. Rig holds plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions.",
+    note: "The point is portability: files hold the working memory, git carries integrity, and markdown keeps the handoff inspectable instead of trapped in chat or vendor state.",
   },
   {
     eyebrow: "Owned",
-    title: "BOSS = the business process harness",
+    title: "BOSS = the business operating graph",
     logo: "/brand/systems/boss-banner-logo.png",
     logoWidth: 212,
     logoHeight: 66,
     tagline: "The Business Workflow Digital Twin",
     alt: "BOSS logo",
     accent: "#e8762d",
-    body: "The tier-2 fabric above ERP, CRM, HRIS, data, and specialty systems. BOSS maps processes, owners, systems, controls, decisions, delivery state, SOP memory, and green/green validation.",
-    note: "A client BOSS instance is delivered as a company-owned asset, not sold by the seat.",
+    body: "The client-owned map of how the business actually runs. BOSS models processes, owners, systems, controls, decisions, handoffs, delivery state, SOP memory, and green/green validation above the vendor stack.",
+    note: "A client BOSS instance makes the operating model explicit enough for people, vendors, and agents to work against the same truth.",
   },
   {
     eyebrow: "Run",
-    title: "FlowCraft = the instance and workflow runtime",
+    title: "FlowCraft = the human-and-agent runtime",
     logo: "/brand/systems/flowcraft-banner-logo.png",
     logoWidth: 176,
     logoHeight: 126,
     tagline: "Build the flow. Run the work.",
     alt: "FlowCraft logo",
     accent: "#3ce624",
-    body: "The org and instance framework that turns owned operating models into runnable human and agentic workflows. One firm, one instance, built around how that firm actually works.",
-    note: "DigOps is the first live FlowCraft instance: idigdata's own operating system at practice scale.",
+    body: "The isolated firm runtime that turns the BOSS graph into live workflows. FlowCraft gives a specific firm controlled human-and-agent execution, evidence trails, and support routines around how the work really moves.",
+    note: "DigOps is the first live FlowCraft instance: idigdata's own operating system proving the pattern at practice scale.",
   },
 ];
 
 const constructionModel = [
   {
-    title: "One grammar",
-    body: "The systems share a construction grammar. Reusable workflow blocks, loadable business content, governed build plans, and conformance checks keep client work from turning into one-off software folklore.",
+    title: "One work fabric",
+    body: "Work lives as inspectable files, records, gates, and proof instead of side-channel chat. Human and agent contributions can be routed, checked, remembered, and improved.",
   },
   {
-    title: "One owner",
-    body: "The business owns the asset. Vendors, agents, operators, and specialists can all work on it, but the model, decisions, records, and operating knowledge do not disappear into someone else's platform.",
+    title: "One business map",
+    body: "BOSS names the processes, owners, controls, decisions, systems, exceptions, and validation states that make the operating model legible above the vendor stack.",
   },
   {
-    title: "One handoff",
-    body: "The delivery includes the operating model around the system: trained client roles, controlled agent workflows, support routines, deployment discipline, and an evidence trail that survives the engagement.",
+    title: "One live runtime",
+    body: "FlowCraft turns the owned map into an isolated firm instance with trained client roles, controlled agents, support routines, release discipline, and evidence that survives the engagement.",
   },
 ];
 
@@ -104,19 +104,20 @@ export default function SystemsPage() {
         <SectionKicker className="mb-7">The systems behind the work</SectionKicker>
         <div className="max-w-[880px]">
           <h1 className="max-w-full text-wrap break-words font-vollkorn text-[42px] font-bold leading-[1.08] text-navy sm:text-[54px] md:text-[70px]">
-            Three systems. One client-owned operating capability.
+            Three systems. One way to build, own, and run change.
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
             Rig, BOSS, and FlowCraft are not a SaaS trap or an advisory deck.
-            They are the delivery architecture I use to build a company&apos;s
-            ability to run and improve its own work.
+            They are the working architecture I use to turn transformation into
+            governed, inspectable, client-owned operating capability.
           </p>
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
-            I run the model before I bring it to anyone else. DigOps, the
-            operating system for idigdata, is now the first live FlowCraft
-            instance. BOSS is the business process harness for client
-            transformations. Rig is the governed build estate that makes both
-            of them real.
+            I run the model before I bring it to anyone else. Rig is the
+            operator-owned work fabric where the build is specified, routed, and
+            proven. BOSS is the business operating graph clients own. FlowCraft
+            is the runtime that turns the graph into live human-and-agent work.
+            DigOps is the first live FlowCraft instance, running idigdata at
+            practice scale.
           </p>
         </div>
       </section>
@@ -133,20 +134,22 @@ export default function SystemsPage() {
           <div>
             <p className="font-body text-[15.5px] leading-[1.65] text-navy">
               Rig, BOSS, and FlowCraft are how I turn a mandate into an owned
-              operating asset: build the system in a governed estate, map the
-              business process fabric above the vendor stack, then leave the
-              client with runnable human and agentic workflows.
+              operating asset: govern the work in a portable build fabric, map
+              the business above the vendor stack, then leave the client with a
+              runnable instance for human and agentic workflows.
             </p>
             <p className="mt-5 border-l-[4px] border-l-gold bg-white px-5 py-4 font-vollkorn text-[22px] font-bold leading-[1.25] text-navy">
-              The client instance is not the meter. The hard part is getting it
-              built, adopted, governed, and owned.
+              The client instance is not the meter. The hard part is making the
+              work visible enough to build, adopted enough to run, and portable
+              enough to own.
             </p>
             <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
               BOSS and FlowCraft client instances are delivered as part of the
               engagement, not sold back by the seat. The paid work is the
               operator-led design, build, training, transfer, support path,
               maintenance path, and CI/CD capability that lets the business
-              own what was built.
+              own what was built. Rig is the proof and construction substrate
+              behind that work, not another dependency for the client to rent.
             </p>
           </div>
         </div>
@@ -197,8 +200,8 @@ export default function SystemsPage() {
         <SectionKicker className="mb-5">Operating proof</SectionKicker>
         <div className="mb-9 max-w-[860px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            Three systems, each with a job. Together they build, own, and run
-            the transformation.
+            Three systems, each with a job. Together they turn change into an
+            operating asset.
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
