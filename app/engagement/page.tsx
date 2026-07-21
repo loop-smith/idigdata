@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Engagement - idigdata",
+  title: "Engagement",
   description:
     "One engagement model: embedded transformation leadership, with fractional, adoption, and recovery paths into the same operator-led work.",
   alternates: { canonical: "/engagement/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/engagement/",
-    title: "Engagement - idigdata",
+    title: "Engagement | idigdata",
     description:
       "Embedded transformation leadership for businesses ready to own the result.",
     images: [

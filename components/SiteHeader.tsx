@@ -76,7 +76,7 @@ export default function SiteHeader() {
                   aria-current={active ? "page" : undefined}
                   className={`hover:text-warm-gray transition-colors ${
                     active
-                      ? "border-b-2 border-aubergine pb-0.5 text-aubergine"
+                      ? "border-b-2 border-gold pb-0.5 text-navy font-semibold"
                       : ""
                   }`}
                 >
@@ -155,8 +155,8 @@ export default function SiteHeader() {
                       aria-current={active ? "page" : undefined}
                       className={`block font-body text-[18px] py-3.5 border-b border-navy/10 last:border-b-0 transition-colors ${
                         active
-                          ? "text-aubergine font-semibold"
-                          : "text-navy hover:text-aubergine"
+                          ? "text-navy font-semibold"
+                          : "text-navy hover:text-navy/70"
                       }`}
                     >
                       {item.label}

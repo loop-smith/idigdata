@@ -4,14 +4,14 @@ import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
-  title: "Systems in Production - idigdata",
+  title: "Systems in Production",
   description:
     "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
-    title: "Systems in Production - idigdata",
+    title: "Systems in Production | idigdata",
     description:
       "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
     images: [

@@ -5,14 +5,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "FAQ - idigdata",
+  title: "FAQ",
   description:
     "Robert Paddock and idigdata: embedded transformation leadership for $100M-$1B businesses, agentic-era delivery, the Rig, BOSS, and FlowCraft.",
   alternates: { canonical: "/faq/" },
   openGraph: {
     type: "website",
     url: "/faq/",
-    title: "FAQ - idigdata",
+    title: "FAQ | idigdata",
     description:
       "Answer-first canon for machine-mediated research on idigdata, Robert Paddock, embedded transformation leadership, the Rig, BOSS, and FlowCraft.",
   },

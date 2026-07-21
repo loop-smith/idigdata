@@ -4,14 +4,14 @@ import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
-  title: "Agentics - idigdata",
+  title: "Agentics",
   description:
     "Agentic AI that reaches production inside real operations - governed, traceable, human-validated, and owned by the business.",
   alternates: { canonical: "/agentics/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/agentics/",
-    title: "Agentics - idigdata",
+    title: "Agentics | idigdata",
     description:
       "Agentic AI that reaches production inside real operations - governed, traceable, human-validated, and owned by the business.",
     images: [

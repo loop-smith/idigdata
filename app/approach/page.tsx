@@ -6,14 +6,14 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Approach - idigdata",
+  title: "Approach",
   description:
     "How I turn transformation into a business-owned operating asset: build, observe, cycle, and transfer the system to the people who run the work.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/approach/",
-    title: "Approach - idigdata",
+    title: "Approach | idigdata",
     description:
       "A delivery frame for business-system transformation: ownership above vendors, people-centered validation, and a business-owned asset at exit.",
     images: [
@@ -81,7 +81,7 @@ export default function ApproachPage() {
           </div>
           <div className="space-y-5 text-[16px] leading-relaxed text-ink md:text-[17px]">
             <p>
-              Before business systems, I spent roughly fifteen years as a
+              Before business systems, I spent roughly a decade as a
               general contractor on complex construction projects. That trained
               the habit I still run on: vendors are trades. Someone still has
               to own the build.
