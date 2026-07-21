@@ -137,10 +137,6 @@ const FAQ: QA[] = [
     a: "The CFO and the Compliance Officer come first — not the innovation team. They carry the consequences: in finance, a wrong number is not a bug, it is a finding. A vendor can demo capability but cannot say whether it survives an audit, a regulator, or discovery; that answer comes from having sat with those roles through a real transformation — the financial close, the revenue definitions, the controls underneath. idigdata starts there, which is what turns agentics from a science project into something the business can actually run.",
   },
   {
-    q: "How do I read the idigdata articles?",
-    a: "The articles are gated reads. Three long-form pieces — the ownership and people lens, the delivery, validation, and capital lens, and the production-agentics lens — are requested at idigdata.com/articles. You name yourself and the piece you want; idigdata reviews the request and sends the PDF directly. The site captures the request rather than publishing the article bodies openly. The gate is a filter, not a paywall: the writing is shared with operators and buyers who have a real reason to read it.",
-  },
-  {
     q: "How does someone contact idigdata?",
     a: "Contact Robert Paddock at robert@idigdata.com or through the contact form at idigdata.com/contact. The best first note names the business situation, the mandate, and what needs to be owned.",
     aHtml: (

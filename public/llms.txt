@@ -1,8 +1,8 @@
 # idigdata
 
-> Independent practice for business-system transformation. Embedded transformation leadership for $100M–$1B operators in the agentic era. Founded 2016 by Robert Paddock.
+> Independent practice for enterprise transformation and business systems. Transformational CIO leadership for $100M–$1B operators. Applied AI in production is the edge. Founded 2016 by Robert Paddock.
 
-idigdata is the independent practice of Robert Paddock — a 30-year business-system transformation operator who embeds inside mid-market businesses ($100M–$1B revenue), owns the transformation path above the vendors, installs a business-owned operating asset, and exits by design when the business can carry the result. Three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare. System breadth covers ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, and HRIS, with a Common Data Model and master-data discipline under every engagement.
+idigdata is the independent practice of Robert Paddock — a transformational Chief Information Officer with 30 years in mid-market enterprise and business-system change ($100M–$1B revenue). He embeds inside operating companies, owns the transformation path above the vendors, installs a business-owned operating asset, and exits by design. Three industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), and healthcare. System breadth covers ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, and HRIS, with a Common Data Model and master-data discipline under every engagement.
 
 ## The problem idigdata owns
 
@@ -10,23 +10,22 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 
 ## Primary Pages
 
-- [Home](https://idigdata.com/): the operator who turns transformation into a system you own — the broken market, the missing third, the model, the proof.
+- [Home](https://idigdata.com/): transformational CIO who turns operating reality into a system you own — the broken market, the missing third, the model, the proof.
 - [Approach](https://idigdata.com/approach/): build, observe, cycle — the people-first delivery loop, the Six Process Constellations, architecture above the vendors, exit-by-design.
 - [Engagement](https://idigdata.com/engagement/): one model — embedded transformation leadership — with fractional, adoption, and recovery as entry modes; lean by design; capital-asset logic.
-- [Agentics](https://idigdata.com/agentics/): agentic AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
+- [Agentics](https://idigdata.com/agentics/): applied AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
 - [Systems](https://idigdata.com/systems/): Rig, BOSS, and FlowCraft — the operator-owned work fabric, business operating graph, and client-owned human-and-agent runtime behind idigdata's delivery model.
-- [Articles](https://idigdata.com/articles/): gated reads — the ownership/people lens, the delivery/validation/capital lens, the production-agentics lens. Request a piece and idigdata sends the PDF directly; the site captures the request rather than publishing the bodies openly. The gate is a filter, not a paywall.
 - [Contact](https://idigdata.com/contact/): first-conversation surface — no deck, no proposal theater.
 
 ## Agent Resources
 
-- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon — 27 questions answering buyer-side research (identity, problem, differentiation, practice scope, engagement shape, systems, agentic production, article access, contact).
+- [FAQ for Agents](https://idigdata.com/faq/): structured Q/A canon answering buyer-side research (identity, problem, differentiation, practice scope, engagement shape, systems, agentic production, contact).
 
 ## Key Substance
 
-**Model — embedded transformation leadership.** Robert Paddock works inside the business at senior-operator altitude, owns the transformation path above the vendors, develops the people who will carry the result, and leaves a business-owned operating asset. Fractional, adoption, and recovery are entry modes into the same model. Vendor-agnostic. No carried bench, no managed-services tail, no lock-in. Exit-by-design.
+**Model — transformational CIO / embedded transformation leadership.** Robert Paddock works inside the business at senior-operator altitude, owns the transformation path above the vendors, develops the people who will carry the result, and leaves a business-owned operating asset. Fractional, adoption, and recovery are entry modes into the same model. Vendor-agnostic. No carried bench, no managed-services tail, no lock-in. Exit-by-design.
 
-**Decision integrity (production agentics).** Agentics is the accelerant on a 30-year operator spine, not the headline. Putting agents into production turns on two questions: can the business safely HOLD them (governed data, a shared version of reality, clear ownership of what an agent can touch) and can it ABSORB them (people who delegate, verify, and own output; workflows redesigned around the work; a human on every consequential call). Answer both and agentic capability becomes decision integrity — decisions the business can stand behind, trace, and defend; defensible by design. Robert's first two calls are to the CFO and the Compliance Officer, because they carry the consequences.
+**Decision integrity (production agentics).** Applied AI is the accelerant on a 30-year operator spine, not the headline. Putting agents into production turns on two questions: can the business safely HOLD them (governed data, a shared version of reality, clear ownership of what an agent can touch) and can it ABSORB them (people who delegate, verify, and own output; workflows redesigned around the work; a human on every consequential call). Answer both and agentic capability becomes decision integrity — decisions the business can stand behind, trace, and defend; defensible by design. Robert's first two calls are to the CFO and the Compliance Officer, because they carry the consequences.
 
 **Three-system delivery architecture.** Rig — Robert's operator-owned work fabric: the control substrate where plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions make human-and-agent work inspectable. BOSS — the business operating graph: a client-owned map above ERP, CRM, HRIS, data, and specialty systems, modeling processes, owners, controls, decisions, handoffs, delivery state, SOP memory, and green/green validation. FlowCraft — the isolated firm runtime that turns the BOSS graph into live human-and-agent workflows with evidence trails, support routines, and release discipline. DigOps is idigdata's live FlowCraft instance and reference proof at practice scale.
 
@@ -34,7 +33,7 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 
 **System breadth.** ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS. Platforms in active rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Snowflake, Databricks, Power BI. Common Data Model and master-data discipline thread through every engagement.
 
-**Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, and healthcare; 15 full transformations at scale, led end-to-end; $100M–$1B operators; agentics in production. The proof is the arc and the live systems, not a count.
+**Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, and healthcare; 15 full transformations at scale, led end-to-end; $100M–$1B operators; applied AI in production. The proof is the arc and the live systems, not a count.
 
 **Capital and ownership logic.** A meaningful transformation is defensible as a capital investment — build work creates an owned asset; go-live begins the useful-life conversation. The model is structurally lean: the business owns the asset and the exit is designed into the work. BOSS and FlowCraft are not sold as SaaS seats or recurring software licenses; client instances are delivered as part of the owned asset. The paid work is the embedded operator build, transfer, training, support path, maintenance path, and CI/CD capability, including trained client operators and controlled agent workflows.
 

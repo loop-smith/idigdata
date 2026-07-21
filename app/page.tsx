@@ -8,23 +8,23 @@ import SectionKicker from "@/components/SectionKicker";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "idigdata - Forward-Deployed Operator for the agentic era",
+      "idigdata - Transformational CIO for enterprise transformation",
   },
   description:
-    "idigdata embeds Robert Paddock inside $100M-$1B operators to deliver agentic-era business-system change and leave behind a business-owned operating asset.",
+    "idigdata embeds Robert Paddock, transformational CIO, inside $100M–$1B operators to deliver enterprise transformation and leave behind a business-owned operating asset. Applied AI in production is the edge.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata - Forward-Deployed Operator",
+    title: "idigdata - Transformational CIO",
     description:
-      "A 30-year transformation operator who delivers agentic-era business-system change and leaves behind a business-owned operating asset.",
+      "A transformational CIO who turns operating reality into business systems people use and companies own.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Forward-Deployed Operator",
+        alt: "idigdata — Transformational CIO",
       },
     ],
   },
@@ -142,20 +142,20 @@ export default function HomePage() {
       <section className="relative pt-8 pb-20 md:pt-12 md:pb-24">
         <M4Watermark position="top-right" />
         <SectionKicker className="mb-8">
-          Embedded transformation leadership for the agentic era
+          Transformational CIO · enterprise transformation · applied AI edge
         </SectionKicker>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-end">
           <div>
-            <h1 className="max-w-[11ch] font-vollkorn text-[48px] font-bold leading-[0.98] tracking-[-0.01em] text-navy sm:text-[60px] md:text-[74px]">
-              The operator who turns transformation into a system you own.
+            <h1 className="max-w-[12ch] font-vollkorn text-[48px] font-bold leading-[0.98] tracking-[-0.01em] text-navy sm:text-[60px] md:text-[74px]">
+              The CIO who turns operating reality into a system you own.
             </h1>
           </div>
           <div className="border-l-0 border-navy/20 lg:border-l lg:pl-8">
             <p className="font-vollkorn text-[21px] italic leading-[1.35] text-warm-gray md:text-[25px]">
-              idigdata embeds Robert Paddock, a 30-year business-system
-              transformation operator, inside $100M-$1B businesses to deliver
-              agentic-era change, install the operating asset, and exit by
-              design.
+              idigdata embeds Robert Paddock, a transformational CIO with 30
+              years in business-system change, inside $100M–$1B operators —
+              enterprise transformation, business systems, and applied AI in
+              production, exit by design.
             </p>
             <p className="mt-5 max-w-[58ch] font-body text-[15.5px] leading-[1.65] text-navy">
               Transformations fail when no one owns the business system above
@@ -235,7 +235,7 @@ export default function HomePage() {
           <p className="mt-5 font-body text-[16px] leading-[1.65] text-navy">
             I work at the level of the business, not the vendor&apos;s slice. I
             pull the vendors, the internal teams, the executives, and the
-            operating reality into one delivery frame. Agentics sharpens the
+            operating reality into one delivery frame. Applied AI sharpens the
             operator model; it isn&apos;t the offer by itself.
           </p>
           <p className="mt-6 border-l-[3px] border-l-gold pl-5 font-vollkorn text-[22px] italic leading-[1.35] text-navy">

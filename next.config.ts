@@ -60,6 +60,21 @@ const nextConfig: NextConfig = {
         destination: "/approach/",
         permanent: true,
       },
+      {
+        source: "/articles",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/articles/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/articles/:path*",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   async headers() {

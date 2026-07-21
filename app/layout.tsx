@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
     default:
-      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
-    template: "%s - Forward-Deployed Operator",
+      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
+    template: "%s - idigdata",
   },
   description:
-    "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+    "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -57,24 +57,24 @@ export const metadata: Metadata = {
     url: "https://idigdata.com",
     siteName: "idigdata",
     title:
-      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
+      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
     description:
-      "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+      "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Forward-Deployed Operator",
+        alt: "idigdata — Transformational CIO",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "idigdata - Forward-Deployed Operator. Data-centric. Vendor-agnostic. Exit-by-design.",
+      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
     description:
-      "Forward-Deployed Operator for $100M – $1B operating companies. Embedded, Fractional, or Agentics — data-centric, vendor-agnostic, exit-by-design.",
+      "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
     images: [
       {
         url: "/og-image.png",

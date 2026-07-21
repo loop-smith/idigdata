@@ -45,16 +45,6 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/agentics/" className="hover:text-aubergine transition-colors">
-                  Agentics
-                </Link>
-              </li>
-              <li>
-                <Link href="/articles/" className="hover:text-aubergine transition-colors">
-                  Articles
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact/" className="hover:text-aubergine transition-colors">
                   Reach out
                 </Link>

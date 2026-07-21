@@ -10,11 +10,9 @@ export type InterestType =
   | "embedded"
   | "fractional"
   | "agentics"
-  | "speaking"
-  | "article_request";
+  | "speaking";
 
 type Props = {
-  articleSlug?: string;
   showInterestSelect?: boolean;
 };
 
@@ -24,13 +22,9 @@ const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
   { value: "fractional", label: "Fractional engagement" },
   { value: "agentics", label: "Agentics engagement" },
   { value: "speaking", label: "Speaking / advisory" },
-  { value: "article_request", label: "Article request" },
 ];
 
-export default function ContactForm({
-  articleSlug,
-  showInterestSelect = false,
-}: Props) {
+export default function ContactForm({ showInterestSelect = false }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
@@ -65,7 +59,6 @@ export default function ContactForm({
         role,
         message,
         interestType: interest,
-        articleSlug,
         _hp: hp,
       };
       const res = await fetch("/api/contact/", {
@@ -77,10 +70,9 @@ export default function ContactForm({
       if (res.ok && data.ok) {
         setLeadId(data.lead_id ?? null);
         trackWebsiteEvent({
-          event_type: interest === "article_request" || articleSlug ? "article_request" : "contact_submit",
+          event_type: "contact_submit",
           payload: {
             interest_type: interest,
-            article_slug: articleSlug ?? null,
             lead_id: data.lead_id ?? null,
             company_present: Boolean(company.trim()),
           },
@@ -113,9 +105,6 @@ export default function ContactForm({
       </div>
     );
   }
-
-  const isArticleRequest = interest === "article_request";
-  const messageRequired = !isArticleRequest;
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -246,34 +235,26 @@ export default function ContactForm({
 
       <div>
         <label htmlFor={messageId} className={labelClasses}>
-          {isArticleRequest ? (
-            <>Message <span className="text-warm-gray text-[13px]">(optional)</span></>
-          ) : (
-            <>What brings you?{" "}
-            <span className="text-warm-gray text-[13px]">(optional)</span></>
-          )}
+          What brings you?{" "}
+          <span className="text-warm-gray text-[13px]">(optional)</span>
         </label>
         <textarea
           id={messageId}
           name="message"
-          rows={isArticleRequest ? 3 : 5}
-          required={messageRequired === false ? false : false}
+          rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           aria-describedby={messageHelpId}
           className={`${inputClasses} resize-y`}
           disabled={status === "submitting"}
         />
-        {!isArticleRequest ? (
-          <p
-            id={messageHelpId}
-            className="mt-1.5 font-body text-[13px] text-warm-gray"
-          >
-            A sentence about the situation. The systems knot, the
-            transformation mandate, the agentic question &mdash; whatever&rsquo;s
-            true.
-          </p>
-        ) : null}
+        <p
+          id={messageHelpId}
+          className="mt-1.5 font-body text-[13px] text-warm-gray"
+        >
+          A sentence about the situation. The systems knot, the transformation
+          mandate, the agentic question &mdash; whatever&rsquo;s true.
+        </p>
       </div>
 
       <div className="pt-2">
@@ -282,11 +263,7 @@ export default function ContactForm({
           disabled={status === "submitting"}
           className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-3.5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] hover:bg-aubergine transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {status === "submitting"
-            ? "Sending…"
-            : isArticleRequest
-            ? "Request the document"
-            : "Send"}
+          {status === "submitting" ? "Sending…" : "Send"}
         </button>
       </div>
     </form>
