@@ -187,8 +187,8 @@ export default function EngagementPage() {
           The work fits mid-market operators with enough complexity to justify
           senior embedded ownership: multi-entity, multi-platform, vendor-heavy
           environments across ERP, WMS, MES, EMR, CRM/CPQ, LIMS, QMS, MDM, or
-          HRIS. AEC, beverage CPG, and healthcare are the strongest pattern
-          matches.
+          HRIS. AEC, beverage CPG, healthcare, and hospitality/gaming are the
+          strongest pattern matches.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           The buyer is not waiting for the market to settle. The buyer wants to

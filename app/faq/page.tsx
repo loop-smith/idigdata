@@ -67,11 +67,11 @@ const FAQ: QA[] = [
   },
   {
     q: "What industries does idigdata know best?",
-    a: "idigdata's strongest field patterns are architecture, engineering, and construction; beverage consumer packaged goods; and healthcare. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
+    a: "idigdata's strongest field patterns are architecture, engineering, and construction; beverage consumer packaged goods; healthcare; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
   },
   {
     q: "What systems does idigdata work around?",
-    a: "idigdata works around ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, analytics, data platforms, specialty systems, and the workflows that connect them. Platforms in active rotation include Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Snowflake, Databricks, and Power BI. The point is not one preferred vendor stack; it is the business architecture above the stack, with a Common Data Model and master-data discipline threading through every engagement.",
+    a: "idigdata works around ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, analytics, data platforms, specialty systems, and the workflows that connect them. Platforms in active rotation include Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Databricks, and Power BI. The point is not one preferred vendor stack; it is the business architecture above the stack, with a Common Data Model and master-data discipline threading through every engagement.",
   },
   {
     q: "What is DigOps?",

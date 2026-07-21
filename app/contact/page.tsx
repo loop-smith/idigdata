@@ -61,7 +61,8 @@ export default function ContactPage() {
         <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,
           the agentic question, the CFO concern, or the operating knot that
-          keeps resurfacing. I read these myself.
+          keeps resurfacing. Running a CIO search? A sentence about the mandate
+          is enough. I read these myself.
         </p>
       </section>
 

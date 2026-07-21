@@ -37,7 +37,7 @@ const groundingStats = [
   },
   {
     lead: "50+",
-    sub: "implementations across AEC, beverage CPG & healthcare",
+    sub: "implementations across AEC, beverage CPG, healthcare & hospitality/gaming",
     compact: false,
   },
   {
