@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
     default:
-      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
-    template: "%s - idigdata",
+      "Robert Paddock · Transformational CIO | idigdata",
+    template: "%s | idigdata",
   },
   description:
-    "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
+    "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
   alternates: {
     canonical: "/",
   },
@@ -56,25 +56,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title:
-      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
+    title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
+      "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Transformational CIO",
+        alt: "Robert Paddock — Transformational CIO, idigdata",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "idigdata - Transformational CIO. Enterprise transformation. Applied AI edge.",
+    title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
+      "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production.",
     images: [
       {
         url: "/og-image.png",

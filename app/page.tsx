@@ -7,8 +7,7 @@ import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "idigdata - Transformational CIO for enterprise transformation",
+    absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
     "idigdata embeds Robert Paddock, transformational CIO, inside $100M–$1B operators to deliver enterprise transformation and leave behind a business-owned operating asset. Applied AI in production is the edge.",
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "idigdata - Transformational CIO",
+    title: "Robert Paddock · Transformational CIO | idigdata",
     description:
       "A transformational CIO who turns operating reality into business systems people use and companies own.",
     images: [

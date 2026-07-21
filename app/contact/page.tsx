@@ -5,16 +5,16 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Reach out - idigdata",
+  title: "Reach out",
   description:
-    "Send Robert Paddock a note about an embedded transformation, stalled systems work, or agentic-era operating change.",
+    "Send Robert Paddock a note about a CIO search, embedded transformation, stalled systems work, or agentic-era operating change.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
-    title: "Reach out - idigdata",
+    title: "Reach out | idigdata",
     description:
-      "A direct note about an embedded transformation, stalled systems work, or agentic-era operating change.",
+      "A direct note about a CIO search, embedded transformation, stalled systems work, or agentic-era operating change.",
     images: [
       {
         url: "/og-image.png",
@@ -89,6 +89,18 @@ export default function ContactPage() {
               <p className="font-body text-[14px] text-warm-gray leading-relaxed">
                 If the fit is wrong, I will say so plainly. If the mandate is
                 real, we will know the next useful step.
+              </p>
+              <p className="font-body text-[14px] text-warm-gray leading-relaxed pt-2">
+                <a
+                  href="https://www.linkedin.com/in/robertpaddock"
+                  className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                {" · "}
+                Robert Paddock
               </p>
             </div>
           </aside>

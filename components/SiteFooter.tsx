@@ -40,6 +40,11 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/systems/" className="hover:text-aubergine transition-colors">
+                  Systems
+                </Link>
+              </li>
+              <li>
                 <Link href="/engagement/" className="hover:text-aubergine transition-colors">
                   Engagement
                 </Link>

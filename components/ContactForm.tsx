@@ -7,6 +7,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export type InterestType =
   | "general"
+  | "cio_search"
   | "embedded"
   | "fractional"
   | "agentics"
@@ -18,6 +19,7 @@ type Props = {
 
 const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
   { value: "general", label: "General" },
+  { value: "cio_search", label: "CIO / executive search" },
   { value: "embedded", label: "Embedded engagement" },
   { value: "fractional", label: "Fractional engagement" },
   { value: "agentics", label: "Agentics engagement" },

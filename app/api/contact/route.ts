@@ -15,6 +15,7 @@ const ContactSchema = z.object({
   interestType: z
     .enum([
       "general",
+      "cio_search",
       "embedded",
       "fractional",
       "agentics",
