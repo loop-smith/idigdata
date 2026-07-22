@@ -140,11 +140,19 @@ export default function HomePage() {
               </h2>
               <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
                 Most recent — CIO residency, Sierra Nevada Brewing (~$420M).
-                Led a $15M enterprise transformation on a client-owned data
-                core, rebuilt the IS function into a purpose-built IT
-                organization, and put enterprise agentic AI into production
-                across real operational workflows — with governance, training,
-                and business ownership.
+                Full member of the executive leadership team; presented in all
+                board meetings; worked across the senior leadership team. Led a
+                $15M enterprise transformation on a client-owned data core,
+                rebuilt the IS function into a purpose-built IT organization,
+                and put enterprise agentic AI into production across real
+                operational workflows — with governance, training, and business
+                ownership.
+              </p>
+              <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
+                Across idigdata — custom fintech solutions spanning banking
+                integration and POS integration; expert in xFP&amp;A platforms
+                including Solver and OneStream. Stakeholder set: C-suite, board,
+                SLT, directors, and managers.
               </p>
             </div>
           </div>
@@ -156,6 +164,7 @@ export default function HomePage() {
                 "50+ implementations",
                 "15 full transformations at scale",
                 "$100M–$1B operators",
+                "fintech · xFP&A",
                 "applied AI in production",
               ].map((item, i) => (
                 <span key={item} className="flex items-baseline gap-x-4">
