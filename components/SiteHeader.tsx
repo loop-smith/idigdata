@@ -44,45 +44,37 @@ export default function SiteHeader() {
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
-    <header className="sticky top-0 border-b border-navy/10 bg-cream z-40">
-      <div className="mx-auto max-w-content px-6 py-5 md:py-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center group" aria-label="idigdata — home">
+    <header className="sticky top-0 z-40 border-b border-navy/10 bg-cream/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:py-5">
+        <Link href="/" className="flex items-center" aria-label="idigdata — home">
           <Image
             src="/idigdata-wordmark-only.svg"
             alt="idigdata"
             width={620}
             height={130}
             priority
-            className="h-12 md:h-14 w-auto"
+            className="h-10 w-auto md:h-11"
           />
         </Link>
 
         {/* Desktop nav (md and up) */}
         <nav
-          className="hidden md:flex font-body text-[15px] text-navy items-center gap-2"
+          className="hidden items-center gap-8 font-body text-[14.5px] text-navy md:flex"
           aria-label="Primary"
         >
-          {NAV.map((item, i) => {
+          {NAV.map((item) => {
             const active = isActive(item.href);
             return (
-              <span key={item.href} className="flex items-center gap-2">
-                {i > 0 && (
-                  <span aria-hidden className="text-stone">
-                    ·
-                  </span>
-                )}
-                <Link
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={`hover:text-warm-gray transition-colors ${
-                    active
-                      ? "border-b-2 border-gold pb-0.5 text-navy font-semibold"
-                      : ""
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </span>
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`nav-underline transition-colors hover:text-navy ${
+                  active ? "font-semibold" : "text-navy/75"
+                }`}
+              >
+                {item.label}
+              </Link>
             );
           })}
         </nav>
@@ -90,7 +82,7 @@ export default function SiteHeader() {
         {/* Mobile hamburger toggle (below md) */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -134,18 +126,18 @@ export default function SiteHeader() {
       {open ? (
         <>
           <div
-            className="md:hidden fixed inset-0 top-[64px] bg-navy/40 z-20"
+            className="absolute inset-x-0 top-full z-20 h-screen bg-navy/50 md:hidden"
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
           <nav
             id="mobile-nav"
-            className="md:hidden absolute left-0 right-0 top-full bg-cream border-b border-navy/15 z-30 shadow-lg"
+            className="absolute left-0 right-0 top-full z-30 border-b border-navy/15 bg-cream shadow-lg md:hidden"
             aria-label="Primary"
             role="dialog"
             aria-modal="true"
           >
-            <ul className="mx-auto max-w-content px-6 py-4 flex flex-col">
+            <ul className="mx-auto flex max-w-content flex-col px-6 py-4">
               {NAV.map((item) => {
                 const active = isActive(item.href);
                 return (
@@ -153,12 +145,16 @@ export default function SiteHeader() {
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`block font-body text-[18px] py-3.5 border-b border-navy/10 last:border-b-0 transition-colors ${
-                        active
-                          ? "text-navy font-semibold"
-                          : "text-navy hover:text-navy/70"
+                      className={`flex items-center gap-3 border-b border-navy/10 py-3.5 font-body text-[18px] text-navy transition-colors last:border-b-0 ${
+                        active ? "font-semibold" : "hover:text-navy/70"
                       }`}
                     >
+                      {active && (
+                        <span
+                          aria-hidden="true"
+                          className="inline-block h-[9px] w-[9px] bg-gold"
+                        />
+                      )}
                       {item.label}
                     </Link>
                   </li>

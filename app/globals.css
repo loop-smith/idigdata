@@ -12,9 +12,16 @@
   --color-cream: #FBF9F4;
   --color-pale-navy: #F5F5F8;
 
+  /* Moonshot pass (2026-07): deep-navy hero plane + strata atmosphere */
+  --color-navy-deep: #0C1A2C;
+  --color-navy-mid: #1B3A5C;
+  --color-porcelain: #F7F5EE;
+  --color-tint: #EEF1F6;
+
   --font-display: var(--next-font-display), Cambria, Lora, Georgia, serif;
   --font-body: var(--next-font-body), Calibri, "Source Sans 3", "Inter", system-ui, sans-serif;
   --font-vollkorn: var(--next-font-vollkorn), "Vollkorn", var(--next-font-display), Cambria, Georgia, serif;
+  --font-brand: var(--next-font-brand), "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
 
   --tracking-section: 0.12em;
 }
@@ -43,4 +50,127 @@ html, body {
 body {
   font-size: 17px;
   line-height: 1.55;
+}
+
+::selection {
+  background: #facc15;
+  color: #142840;
+}
+
+/* ---------- Moonshot motion system (home + shell) ---------- */
+
+/* Motion 1 — hero entrance: staggered rise + gold seam draw */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--rise, 0) * 110ms);
+}
+
+@keyframes seam-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.seam-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: seam-draw 2.2s cubic-bezier(0.65, 0, 0.35, 1) 0.5s forwards;
+}
+
+@keyframes underline-grow {
+  from {
+    background-size: 0% 0.09em;
+  }
+  to {
+    background-size: 100% 0.09em;
+  }
+}
+
+.seam-underline {
+  background-image: linear-gradient(#facc15, #facc15);
+  background-repeat: no-repeat;
+  background-position: 0 96%;
+  background-size: 100% 0.09em;
+  animation: underline-grow 1.1s cubic-bezier(0.65, 0, 0.35, 1) 1.1s backwards;
+}
+
+/* Motion 2 — scroll reveal (class applied by Reveal component) */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.reveal-hidden.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.75s ease-out,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Motion 3 — nav underline sweep */
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: #facc15;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-underline:hover::after,
+.nav-underline[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Atmosphere: film grain over navy planes */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .seam-underline {
+    animation: none;
+    opacity: 1;
+  }
+  .seam-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  .nav-underline::after {
+    transition: none;
+  }
 }

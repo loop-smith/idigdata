@@ -1,20 +1,61 @@
-import Image from "next/image";
 import Link from "next/link";
+
+const NAV = [
+  { href: "/", label: "Home" },
+  { href: "/approach/", label: "Approach" },
+  { href: "/systems/", label: "Systems" },
+  { href: "/engagement/", label: "Engagement" },
+  { href: "/contact/", label: "Reach out" },
+];
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-navy">
-      <div className="mx-auto max-w-content px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="relative overflow-hidden border-t border-porcelain/10 bg-navy-deep text-porcelain">
+      <div className="mx-auto max-w-content px-6 pt-14 pb-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <p className="font-vollkorn text-[26px] font-bold tracking-[-0.02em]">
+              idig
+              <span
+                aria-hidden="true"
+                className="mx-[3px] inline-block h-[0.19em] w-[0.19em] bg-gold align-baseline"
+              />
+              data
+            </p>
+            <p className="mt-3 font-display text-[14px] italic leading-relaxed text-porcelain/50">
+              Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
+            </p>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <p className="mb-4 font-brand text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
+              Navigation
+            </p>
+            <ul className="space-y-2 font-body text-[15px]">
+              {NAV.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-porcelain/70 transition-colors hover:text-gold"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Reach out */}
           <div>
-            <p className="font-body uppercase tracking-section text-[12px] text-warm-gray mb-3">
+            <p className="mb-4 font-brand text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
               Reach out
             </p>
-            <p className="font-body text-[15px] text-ink leading-relaxed">
+            <p className="font-body text-[15px] leading-relaxed text-porcelain/70">
               <a
                 href="mailto:robert@idigdata.com"
-                className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                className="border-b border-gold/50 font-semibold text-porcelain transition-colors hover:border-gold hover:text-gold"
               >
                 robert@idigdata.com
               </a>
@@ -22,72 +63,22 @@ export default function SiteFooter() {
               Pacific Time
             </p>
           </div>
-
-          {/* Navigation */}
-          <div>
-            <p className="font-body uppercase tracking-section text-[12px] text-warm-gray mb-3">
-              Navigation
-            </p>
-            <ul className="font-body text-[15px] text-ink space-y-1.5">
-              <li>
-                <Link href="/" className="hover:text-aubergine transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/approach/" className="hover:text-aubergine transition-colors">
-                  Approach
-                </Link>
-              </li>
-              <li>
-                <Link href="/systems/" className="hover:text-aubergine transition-colors">
-                  Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/engagement/" className="hover:text-aubergine transition-colors">
-                  Engagement
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact/" className="hover:text-aubergine transition-colors">
-                  Reach out
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Brand mark + tagline */}
-          <div>
-            <div className="flex items-center mb-3">
-              <Image
-                src="/idigdata-wordmark-only.svg"
-                alt="idigdata"
-                width={155}
-                height={32}
-                className="h-7 w-auto"
-              />
-            </div>
-            <p className="font-display italic text-warm-gray text-[14px] leading-relaxed">
-              Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
-            </p>
-          </div>
         </div>
 
-        <div className="relative mt-12 pt-8 border-t border-stone/30 overflow-hidden">
-          <Image
-            src="/idigdata-wordmark-only.svg"
-            alt=""
-            aria-hidden
-            width={620}
-            height={130}
-            className="block mx-auto h-[80px] md:h-[120px] w-auto opacity-[0.08] select-none pointer-events-none"
-          />
-          <p className="text-center font-display italic text-warm-gray text-[12px] mt-2">
+        <div className="mt-12 border-t border-porcelain/10 pt-6">
+          <p className="text-center font-body text-[12.5px] text-porcelain/40">
             © idigdata · Data Integration Group · est. 2016
           </p>
         </div>
       </div>
+
+      {/* Oversized brand plate, cropped at the base */}
+      <p
+        aria-hidden="true"
+        className="pointer-events-none -mb-[0.42em] select-none whitespace-nowrap text-center font-vollkorn text-[clamp(120px,17vw,260px)] font-bold leading-none tracking-[-0.02em] text-porcelain/[0.045]"
+      >
+        idig<span className="mx-[6px] inline-block h-[0.16em] w-[0.16em] bg-gold/40 align-baseline" />data
+      </p>
     </footer>
   );
 }

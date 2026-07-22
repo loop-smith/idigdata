@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Lora, Source_Sans_3, Vollkorn } from "next/font/google";
+import { Bricolage_Grotesque, Lora, Source_Sans_3, Vollkorn } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
@@ -20,6 +20,12 @@ const body = Source_Sans_3({
   variable: "--next-font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
+});
+
+const brand = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--next-font-brand",
+  display: "swap",
 });
 
 const vollkorn = Vollkorn({
@@ -106,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable} ${brand.variable}`}>
       <body className="font-body text-ink bg-cream">
         <JsonLd />
         <SiteHeader />
