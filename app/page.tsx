@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "I deliver a living asset the business owns — people, process, and ownership above the vendors, accounted for correctly. Transformational CIO for $100M–$1B operators.",
+    "I build the layer technology spend can't buy — people, process, and ownership above the vendors. Living assets. Agentic AI in production with governance. $100M–$1B operators.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "I deliver a living asset the business owns — the layer technology spend can't buy.",
+      "I build the layer technology spend can't buy — living assets, agentic AI in production with governance, for $100M–$1B operators.",
     images: [
       {
         url: "/og-image.png",
@@ -43,10 +43,10 @@ export default function HomePage() {
     <div className="font-body text-ink">
       {/* Beat 1 — Hero: full-bleed navy plane, strata atmosphere */}
       <section className="grain relative isolate overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_38%,#0E2138_100%)] text-porcelain">
-        <HeroStrata className="absolute inset-x-0 bottom-0 -z-10 h-[38%] w-full md:h-[46%]" />
-        <div className="mx-auto flex min-h-[max(600px,calc(100svh-96px))] max-w-content flex-col justify-center px-6 pt-12 pb-[16vh] md:pt-14 md:pb-[19vh]">
+        <HeroStrata className="absolute inset-x-0 bottom-0 -z-10 h-[40%] w-full md:h-[48%]" />
+        <div className="mx-auto flex min-h-[max(640px,calc(100svh-96px))] max-w-content flex-col justify-center px-6 pt-12 pb-[14vh] md:pt-14 md:pb-[17vh]">
           <p
-            className="hero-rise font-vollkorn text-[32px] font-bold tracking-[-0.02em] md:text-[40px]"
+            className="hero-rise font-vollkorn text-[34px] font-bold tracking-[-0.02em] md:text-[44px]"
             style={rise(0)}
           >
             idig
@@ -57,23 +57,25 @@ export default function HomePage() {
             className="hero-rise mt-6 font-brand text-[11px] font-semibold uppercase tracking-[0.26em] text-gold md:text-[12px]"
             style={rise(1)}
           >
-            Transformational CIO · $100M–$1B operators · applied AI in
+            Transformational CIO · $100M–$1B operators · agentic AI in
             production
           </p>
           <h1
             className="hero-rise mt-5 max-w-[15ch] font-brand text-[clamp(42px,7.4vw,92px)] font-extrabold leading-[0.99] tracking-[-0.025em] text-porcelain"
             style={rise(2)}
           >
-            I deliver <span className="seam-underline">the layer</span>{" "}
+            I build <span className="seam-underline">the layer</span>{" "}
             technology spend can&apos;t buy.
           </h1>
           <p
-            className="hero-rise mt-7 max-w-[52ch] text-[18px] leading-[1.6] text-porcelain/85 md:text-[20px]"
+            className="hero-rise mt-7 max-w-[54ch] text-[18px] leading-[1.6] text-porcelain/85 md:text-[20px]"
             style={rise(3)}
           >
-            Enterprises keep buying technology. Value fails on people, process,
-            and the business system above the vendors. I own that layer — and I
-            deliver it through production.
+            AI and ERP programs fail where people, process, and data don&apos;t
+            fit — and nobody owns the operating map above the vendors. I embed,
+            map it, and leave a living asset the business owns. Right now
+            I&apos;m rebuilding that capability in the open — governed,
+            business-owned, running in production.
           </p>
           <div
             className="hero-rise mt-9 flex flex-col gap-3 sm:flex-row"
@@ -91,13 +93,21 @@ export default function HomePage() {
                 →
               </span>
             </Link>
-            <Link
-              href="/approach/"
+            <a
+              href="#rebuild"
               className="inline-flex items-center justify-center rounded-[3px] border border-porcelain/30 px-7 py-4 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-porcelain transition-colors hover:border-gold hover:text-gold"
             >
-              See how I work
-            </Link>
+              See the rebuild
+            </a>
           </div>
+          <p
+            className="hero-rise mt-10 max-w-[58ch] border-t border-porcelain/15 pt-6 text-[14.5px] leading-[1.55] text-porcelain/65 md:text-[15.5px]"
+            style={rise(5)}
+          >
+            Most recently: CIO, Sierra Nevada Brewing (~$420M) · $15M
+            transformation · client-owned data core · agentic AI in production
+            with governance and ownership.
+          </p>
         </div>
       </section>
 
@@ -125,7 +135,7 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* Beat 3 — Proof */}
+      {/* Beat 3 — Proof + rebuild */}
       <section className="border-t border-navy/10 bg-tint">
         <Reveal className="mx-auto max-w-content px-6 py-16 md:py-20">
           <div className="md:grid md:grid-cols-[230px_1fr] md:gap-12">
@@ -139,24 +149,26 @@ export default function HomePage() {
                 production.
               </h2>
               <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                Most recent — CIO residency, Sierra Nevada Brewing (~$420M).
-                Full member of the executive leadership team; presented in all
-                board meetings; worked across the senior leadership team. Led a
-                $15M enterprise transformation on a client-owned data core,
-                rebuilt the IS function into a purpose-built IT organization,
-                and put enterprise agentic AI into production across real
-                operational workflows — with governance, training, and business
-                ownership.
+                Most recent — CIO, Sierra Nevada Brewing (~$420M). Full member
+                of the executive leadership team; presented in all board
+                meetings; worked across the senior leadership team. Led a $15M
+                enterprise transformation on a client-owned data core, rebuilt
+                the IS function into a purpose-built IT organization, and put
+                enterprise agentic AI into production across real operational
+                workflows — with governance, training, and business ownership.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                Across idigdata — custom fintech solutions spanning banking
-                integration and POS integration; expert in xFP&amp;A platforms
-                including Solver and OneStream. Stakeholder set: C-suite, board,
-                SLT, directors, and managers.
+                Earlier: CEO/CTO, Timberline — scaled $250K → $130M across US
+                and China; operating systems that had to hold in the field.
+              </p>
+              <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
+                Across idigdata engagements — custom fintech spanning banking
+                and POS integration; xFP&amp;A including Solver and OneStream.
+                Stakeholder set: C-suite, board, SLT, directors, and managers.
               </p>
             </div>
           </div>
-          {/* spine — one line, ticker treatment */}
+
           <div className="mt-12 border-y border-navy/15 py-5">
             <p className="flex flex-wrap items-baseline gap-x-4 gap-y-2 font-brand text-[13px] font-semibold uppercase tracking-[0.16em] text-navy md:justify-between">
               {[
@@ -165,7 +177,7 @@ export default function HomePage() {
                 "15 full transformations at scale",
                 "$100M–$1B operators",
                 "fintech · xFP&A",
-                "applied AI in production",
+                "agentic AI in production",
               ].map((item, i) => (
                 <span key={item} className="flex items-baseline gap-x-4">
                   {i > 0 && (
@@ -176,16 +188,56 @@ export default function HomePage() {
               ))}
             </p>
           </div>
+
           <p className="mt-8 max-w-[52ch] font-brand text-[18px] font-medium leading-[1.4] tracking-[-0.01em] text-navy md:ml-[278px] md:text-[20px]">
-            I deliver a living asset the business owns — built to be owned, not
-            rented; a capital asset the CFO can defend, not another expense
-            line.
-          </p>
-          <p className="mt-5 max-w-[46ch] text-[16px] leading-[1.55] text-[#3C4453] md:ml-[278px]">
-            Applied AI is the edge on an operating system I already know how to
-            deliver — not another pilot.
+            Built to be owned, not rented — a capital asset the CFO can defend,
+            not another expense line.
           </p>
         </Reveal>
+
+        {/* Rebuild voltage — secondary CTA lands here */}
+        <div
+          id="rebuild"
+          className="grain relative isolate scroll-mt-28 overflow-hidden bg-[linear-gradient(168deg,#142840_0%,#0E2138_100%)] text-porcelain"
+        >
+          <div
+            aria-hidden="true"
+            className="rebuild-seam pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+          <Reveal className="mx-auto max-w-content px-6 py-14 md:grid md:grid-cols-[230px_1fr] md:gap-12 md:py-16">
+            <p className="mb-6 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-gold md:mb-0 md:pt-2">
+              <GoldSquare className="mr-3 h-[9px] w-[9px]" />
+              The rebuild
+            </p>
+            <div>
+              <p className="max-w-[58ch] font-brand text-[clamp(22px,3.2vw,32px)] font-bold leading-[1.2] tracking-[-0.015em] text-porcelain">
+                Showing the work is how I work.
+              </p>
+              <p className="mt-5 max-w-[58ch] text-[17px] leading-[1.7] text-porcelain/80">
+                Evaluation, knowledge architecture, governed workflows, human
+                accountability — the disciplines that make agentic AI
+                trustworthy in real operations. Inspect the craft on this site;
+                for the full operating map in motion, start a conversation.
+              </p>
+              <p className="mt-6 max-w-[48ch] text-[16px] leading-[1.55] text-porcelain/65">
+                Applied AI is the edge on an operating system I already know
+                how to deliver — not another pilot.
+              </p>
+              <Link
+                href="/contact/"
+                className="group mt-8 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-gold transition-colors hover:text-[#FFD84D]"
+              >
+                Start a conversation
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* Beat 4 — CTA: navy bookend */}

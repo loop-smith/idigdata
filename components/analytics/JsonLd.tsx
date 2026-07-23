@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "Independent practice for enterprise transformation and business systems, led by transformational CIO Robert Paddock — embedded at senior-operator altitude inside $100M–$1B operating companies across architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare, and hospitality/gaming. Applied AI in production is the current edge. System breadth: ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, with a Common Data Model and master-data discipline under every engagement. Business-owned substrate. Vendor-agnostic. Exit-by-design.",
+    "Independent practice for enterprise transformation and business systems, led by transformational CIO Robert Paddock — embedded at senior-operator altitude inside $100M–$1B operating companies across architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare, and hospitality/gaming. Agentic AI in production with governance is the current edge. System breadth: ERP, WMS, MES, EMR, LIMS, QMS, CPQ, CRM, MDM, HRIS, with a Common Data Model and master-data discipline under every engagement. Business-owned substrate. Vendor-agnostic. Exit-by-design.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -24,7 +24,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Transformational Chief Information Officer with 30 years inside mid-market ($100M–$1B) enterprise and business-system transformations — 50+ implementations and 15 full transformations led end-to-end across architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare, and hospitality/gaming — plus applied AI in production. Embeds at senior-operator altitude, owns the transformation path above the vendors, installs a business-owned operating asset, and exits by design. Founder of idigdata.",
+    "Transformational Chief Information Officer with 30 years inside mid-market ($100M–$1B) enterprise and business-system transformations — 50+ implementations and 15 full transformations led end-to-end across architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare, and hospitality/gaming — plus agentic AI in production with governance. Embeds at senior-operator altitude, owns the transformation path above the vendors, installs a business-owned operating asset, and exits by design. Founder of idigdata.",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
@@ -44,7 +44,7 @@ const personSchema = {
     "Laboratory and quality systems (LIMS, QMS)",
     "CRM and CPQ",
     "HRIS",
-    "Applied AI in production",
+    "Agentic AI in production",
     "Decision integrity for agentic AI",
     "Six Process Constellations (P2P, O2C, P2M, S2S, D2R, MDM)",
     "Business-owned operating substrate",

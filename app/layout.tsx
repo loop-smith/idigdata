@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production — data-centric, vendor-agnostic, exit-by-design.",
+    "Enterprises keep buying technology. Value fails where people, process, and data don't fit. Robert Paddock owns that layer — living operating assets, production agentic AI with governance, for $100M–$1B operators.",
   alternates: {
     canonical: "/",
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "idigdata",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production.",
+      "I build the layer technology spend can't buy — living assets, agentic AI in production with governance, for $100M–$1B operators.",
     images: [
       {
         url: "/og-image.png",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Robert Paddock — transformational CIO for $100M–$1B operating companies. Enterprise transformation, business systems, and applied AI in production.",
+      "I build the layer technology spend can't buy — living assets, agentic AI in production with governance, for $100M–$1B operators.",
     images: [
       {
         url: "/og-image.png",
@@ -112,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${vollkorn.variable} ${brand.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable} ${brand.variable}`}>
       <body className="font-body text-ink bg-cream">
         <JsonLd />
         <SiteHeader />
