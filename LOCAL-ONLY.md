@@ -1,18 +1,10 @@
-# LOCAL-ONLY git (DigOps)
+# LOCAL-ONLY — idigdata-site
 
-FlowCraft DigOps on RIG001 is a **disk-isolated estate**.
+This repo is the DigOps **website** on RIG001.
 
-- Commits are for **local history** so rehone edits are not silently destructive.
-- Remotes may still be listed for later Vercel publish, but **push is disabled** until Operator word.
-- Do not `git push`, rename remotes for publish, or open Vercel from this seat without that word.
+- Local commits OK for history.
+- Remote push is **technically enabled** (Vercel-connected `loop-smith/idigdata`).
+- **Never push `working` (or any branch) without Operator word.**
+- Do not change Vercel project / domain / auto-deploy settings from this seat without that word.
 
-Components:
-
-| Folder | Local history purpose |
-|---|---|
-| `brand-content/` | Triad + Capo projects tip |
-| `idigdata-site/` | Website code tip + provenance |
-| `operations/` | App scaffold (dormant this phase) |
-| `intake/` | Quarantine / receipts — not a git home |
-
-Publish path later: local tip → Operator-authorized push to the Vercel-connected GitHub repo → deploy.
+Sibling posture: brand-content + operations are `no_push`. Estate policy: [../LOCAL-ONLY.md](../LOCAL-ONLY.md). Infra open items: [../INFRA-OPEN.md](../INFRA-OPEN.md).

@@ -1,20 +1,18 @@
-# idigdata
+# DigOps website — idigdata-site
 
-Marketing / positioning website for **Data Integration Group** — Robert Paddock's independent consulting practice (Contract CIO, business transformation, agentic adoption).
+**Home:** `C:\rig001\assets\flowcraft\instances\digops\idigdata-site`  
+**Role:** DigOps instance public hookup for **idigdata.com** (Data Integration Group LLC)  
+**Not:** a personal portfolio repo with DigOps footnotes  
+**Git:** independent · remote `loop-smith/idigdata` · **never push `working` without Operator word**  
+**Content twin:** `../brand-content/` (triad + firm ledgers) · **Ops twin:** `../operations/`
 
-Next.js App Router + React + TypeScript + Tailwind 4. Deploys to Vercel. Domain: `idigdata.com`.
+**Keepers:** [../../../organization/KEEPERS.md](../../../organization/KEEPERS.md) · Name map: [../../../organization/NAME-MAP.md](../../../organization/NAME-MAP.md) · Infra (old Supabase = junk): [../INFRA-OPEN.md](../INFRA-OPEN.md)
+
+Copy source of truth for rehones: `../brand-content/triad/`.
 
 ## Stack
 
-See `STACK.md` for pinned versions and migration history. Highlights:
-
-- Next.js 16 (App Router)
-- React 19
-- TypeScript 5
-- Tailwind CSS 4 (CSS-first config in `app/globals.css`)
-- Supabase (cross-codebase bridge to `idigdata-app` CRM intake tables)
-- Resend (transactional email)
-- Vercel Web Analytics
+See [STACK.md](STACK.md). Highlights: Next.js 16 App Router · React 19 · TypeScript · Tailwind 4 · Supabase bridge to **operations** · Resend · Vercel Analytics.
 
 ## Develop
 
@@ -23,9 +21,7 @@ npm install
 npm run dev
 ```
 
-Boots on `http://localhost:3100`. Port assignment is registered at `C:\rig\code\PORTS.md`.
-
-If port 3100 is held by a zombie, Next 16 hard-fails with `EADDRINUSE`. Find and kill:
+Boots on `http://localhost:3100`. Next 16 hard-fails on `EADDRINUSE` — free the port if needed:
 
 ```
 netstat -ano | findstr :3100
@@ -39,62 +35,40 @@ npm run build
 npm run start
 ```
 
-Production output lives in `.next/`. Vercel runs the build natively (no static export).
+## Environment
 
-## Environment variables
+Copy `.env.local.example` → `.env.local` (gitignored).
 
-Copy `.env.local.example` to `.env.local` and fill in the values. `.env.local` is gitignored.
+| Var | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_*` | Website’s own Supabase `adkwtkhvbntreznhwzxu` (reserved / light use) |
+| `IDIGDATA_APP_SUPABASE_*` | **Bridge to operations** Supabase `dvjrmozeoakmcaccqqld` (env prefix is Capo-era; means DigOps ops) |
+| `RESEND_API_KEY` / `EMAIL_NOTIFY_*` | Contact notification mail |
+| `WEBSITE_ALLOWED_ORIGINS` | Optional extra POST origins |
 
-| Var | Purpose | Where it comes from |
-|---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | Website's own Supabase project (currently unused; reserved) | Supabase dashboard for project `adkwtkhvbntreznhwzxu` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Website's own anon key (public-by-design; RLS-protected) | Supabase dashboard for project `adkwtkhvbntreznhwzxu` |
-| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console meta verification token | GSC property setup |
-| `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Bing Webmaster Tools meta verification token | BWT property setup |
-| `WEBSITE_ALLOWED_ORIGINS` | Optional comma-separated extension to the built-in same-origin allowlist for POST routes. | Only needed for extra deployed hostnames |
-| `NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL` | Optional credential-free analytics event collector used by `websiteEvents.ts`. | Internal website events ingest endpoint |
-| `NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC` | Optional `1` to include Vercel preview traffic in telemetry. Defaults to suppressing previews. | Only for intentional preview instrumentation |
-| `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION` | Optional `1` to re-enable client-side page-to-page pageview beacons. Defaults off because entrance capture is primary. | Only if internal journey telemetry becomes useful |
-| `IDIGDATA_APP_SUPABASE_URL` | **Cross-codebase bridge.** URL of the `idigdata-app` Supabase project where contact submissions and article requests land. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
-| `IDIGDATA_APP_SUPABASE_ANON_KEY` | Anon key for `idigdata-app` Supabase. RLS must allow insert-only writes from the website origin. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
-| `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY` | Optional server-only key. Enables `/api/contact` to return inserted CRM row IDs. Never expose with `NEXT_PUBLIC_`. | Supabase dashboard for project `dvjrmozeoakmcaccqqld` |
-| `RESEND_API_KEY` | Resend API key for transactional email (contact-form notifications). | https://resend.com/api-keys |
-| `EMAIL_NOTIFY_TO` | Address that receives the lead-notification email. | `robert@idigdata.com` |
-| `EMAIL_NOTIFY_FROM` | Optional verified sender override. Defaults to `idigdata website <noreply@idigdata.com>`. | Resend verified domain |
+Mirror load-bearing vars in Vercel (production + preview) when publishing — Operator-gated.
 
-For Vercel, mirror the same vars in **Project Settings → Environment Variables** (production + preview).
+## Copy ownership
 
-## Traffic telemetry
+Do **not** invent marketing copy only in React. Edit hunt messaging in `../brand-content/triad/`, firm ledger in `../brand-content/firm/`, then sync into site code when shipping.
 
-The primary signal is server-side entrance capture in `proxy.ts`. It records the first meaningful document request in a 30-minute browser window, plus bot/headless document requests, before client JavaScript is involved.
+## Deploy posture
 
-Captured fields include landing path, sanitized URL/query, referrer, UTM params, user agent, selected proxy/IP headers, Vercel/Cloudflare geo headers when present, fetch metadata headers, request IDs, and traffic classification. Cookie, authorization, and secret-like URL params are not recorded.
-
-`PageviewBeacon` no longer sends page-to-page navigation beacons by default. Set `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION=1` only if internal journey telemetry becomes useful again.
-
-To mark internal traffic, open the site once with `?internal=1`. That stores a browser-local marker and suppresses future beacons from that browser. Clear it with `?internal=0` or `?clear_internal=1`.
-
-The server writes rich rows to `site_hits` when that table exists in `idigdata-app`. If it does not exist yet, it falls back to `pageviews` with `source = "idigdata-door-knock"` so entrance capture can start immediately. Apply `scripts/sql/idigdata-app-site-hits.sql` to `idigdata-app` to store the full door-knock payload.
-
-## Deploy
-
-Vercel project: `idigdata`. Production deploys land at `idigdata.com`. Production deploys auto-fire on push to `main`.
+Vercel project historically `idigdata` → `idigdata.com`. Auto-deploy on `main` is Capo-era behavior — **confirm before any push**. See [LOCAL-ONLY.md](LOCAL-ONLY.md) and [INFRA-OPEN.md](../INFRA-OPEN.md).
 
 ## Layout
 
 ```
-app/                 — App Router routes + /api/contact and /api/pageview serverless POST handlers
-components/          — shared UI (SiteHeader, SiteFooter, ContactForm, JsonLdScript, ...)
-lib/                 — utilities and server-side request guards
-public/              — favicon, og-image, resume PDF, etc.
-proxy.ts             — server-side entrance/door-knock capture before route handling
-scripts/sql/         — SQL contracts for cross-codebase Supabase tables
-supabase/            — migrations for the website's own Supabase project (currently empty)
-STACK.md             — pinned versions + migration history
-CHANGELOG.md         — append-only history of stack moves + verification checkpoints
-.claude/CLAUDE.md    — agent rules (project-specific; cascades with tree-level CLAUDE.md)
+app/           — routes + /api/contact, /api/pageview
+components/    — shared UI
+lib/           — utilities + request guards
+public/        — static assets
+proxy.ts       — entrance / door-knock capture
+scripts/sql/   — SQL contracts for ops Supabase tables
+supabase/      — website-owned migrations (mostly empty)
+STACK.md       — pins + migration history
 ```
 
-## Cross-codebase context
+## Provenance
 
-This website depends on the `idigdata-app` Supabase project for contact submissions, article requests, and pageview telemetry. See `STACK.md` "Cross-codebase dependencies" for the schema contract.
+Promoted from CapoXP `C:\rig\code\idigdata` — [PROVENANCE.md](PROVENANCE.md).
