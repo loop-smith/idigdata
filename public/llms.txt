@@ -13,7 +13,7 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 - [Home](https://idigdata.com/): transformational CIO who turns operating reality into a system you own — the broken market, the missing third, the model, the proof.
 - [Approach](https://idigdata.com/approach/): build, observe, cycle — the people-first delivery loop, the Six Process Constellations, architecture above the vendors, exit-by-design.
 - [Engagement](https://idigdata.com/engagement/): one model — embedded transformation leadership — with fractional, adoption, and recovery as entry modes; lean by design; capital-asset logic.
-- [Agentics](https://idigdata.com/agentics/): applied AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
+- [Agentic AI](https://idigdata.com/agentics/): applied AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
 - [Systems](https://idigdata.com/systems/): Rig, BOSS, and FlowCraft — the operator-owned work fabric, business operating graph, and client-owned human-and-agent runtime behind idigdata's delivery model.
 - [Contact](https://idigdata.com/contact/): first-conversation surface — no deck, no proposal theater.
 

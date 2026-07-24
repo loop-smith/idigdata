@@ -22,7 +22,7 @@ const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
   { value: "cio_search", label: "CIO / executive search" },
   { value: "embedded", label: "Embedded engagement" },
   { value: "fractional", label: "Fractional engagement" },
-  { value: "agentics", label: "Agentics engagement" },
+  { value: "agentics", label: "Agentic AI engagement" },
   { value: "speaking", label: "Speaking / advisory" },
 ];
 
@@ -263,7 +263,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-3.5 rounded-full font-body text-[13px] font-semibold uppercase tracking-[0.18em] hover:bg-aubergine transition-colors focus:outline-2 focus:outline-stone focus:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 rounded-[3px] bg-navy px-8 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-cream transition-colors hover:bg-aubergine focus:outline-2 focus:outline-offset-2 focus:outline-stone disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "submitting" ? "Sending…" : "Send"}
         </button>

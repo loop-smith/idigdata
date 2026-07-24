@@ -48,19 +48,19 @@ const breadcrumbJsonLd = {
 
 const authorityDoors = [
   {
-    name: "Fractional force",
+    name: "Fractional embed",
     question: "One lever needs senior force.",
     body: "I step inside a specific transformation lever before the full mandate is clear: readiness, adoption, recovery triage, decision framing, or vendor-overwatch that needs an operator above the work.",
   },
   {
-    name: "Full-time embedded owner",
+    name: "Permanent / full-time embed",
     question: "The whole transformation needs one owner.",
-    body: "I carry the mandate from inside the business: vendors, executives, operators, delivery state, adoption, capital logic, and the business-owned asset that remains when I exit.",
+    body: "I carry the mandate from inside the business: vendors, executives, operators, delivery state, adoption, capital logic, and the business-owned asset that remains when I exit. Ownership standard unchanged either way.",
   },
 ];
 
 const flavors = [
-  "Agentics adoption becomes a fractional or embedded path depending on how much ownership the business needs.",
+  "Agentic AI adoption becomes a fractional or embedded path depending on how much ownership the business needs.",
   "Recovery becomes the same question: is the stalled program one lever, or does the whole transformation need an owner?",
 ];
 
@@ -114,7 +114,7 @@ export default function EngagementPage() {
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Authority axis</SectionKicker>
         <h2 className="max-w-[900px] text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-          Fractional force or full-time embedded owner.
+          Fractional embed or permanent seat — same ownership standard.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           Adoption and recovery are not separate shelves. They are flavors under
@@ -253,7 +253,7 @@ export default function EngagementPage() {
           </p>
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition-all duration-200 hover:bg-[#FFD740] hover:shadow-lg md:text-[14px]"
+            className="inline-flex items-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition-all duration-200 hover:bg-[#FFD740] hover:shadow-lg md:text-[14px]"
           >
             Start a conversation <span aria-hidden>&rarr;</span>
           </Link>

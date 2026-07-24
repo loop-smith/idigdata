@@ -7,14 +7,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Reach out",
   description:
-    "Send Robert Paddock a note about a CIO search, embedded transformation, stalled systems work, or agentic-era operating change.",
+    "Start a direct conversation with Robert Paddock about embedded transformation, stalled systems work, or agentic AI that needs an owner.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
     title: "Reach out | idigdata",
     description:
-      "A direct note about a CIO search, embedded transformation, stalled systems work, or agentic-era operating change.",
+      "A direct note about embedded transformation, stalled systems work, or agentic AI that needs an owner — permanent or fractional.",
     images: [
       {
         url: "/og-image.png",
@@ -61,8 +61,8 @@ export default function ContactPage() {
         <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,
           the agentic question, the CFO concern, or the operating knot that
-          keeps resurfacing. Running a CIO search? A sentence about the mandate
-          is enough. I read these myself.
+          keeps resurfacing. Permanent seat or fractional embed — the ownership
+          standard is the same. I read these myself.
         </p>
       </section>
 

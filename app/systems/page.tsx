@@ -4,22 +4,22 @@ import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
-  title: "Systems in Production",
+  title: "Architecture behind the work",
   description:
-    "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
+    "How ownership becomes real: a portable work fabric, a client-owned operating map, and a live runtime for people and agents — not rented SaaS.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
-    title: "Systems in Production | idigdata",
+    title: "Architecture behind the work | idigdata",
     description:
-      "The systems behind the work: Rig, BOSS, and FlowCraft turn transformation into governed, inspectable, client-owned operating capability.",
+      "How ownership becomes real: work fabric, client-owned operating map, and live runtime for people and agents — evidence of the living asset, not a product shelf.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata - Systems in Production",
+        alt: "idigdata — architecture behind the work",
       },
     ],
   },
@@ -60,7 +60,7 @@ const operatingProof = [
     alt: "FlowCraft logo",
     accent: "#3ce624",
     body: "The isolated firm runtime that turns the BOSS graph into live workflows. FlowCraft gives a specific firm controlled human-and-agent execution, evidence trails, and support routines around how the work really moves.",
-    note: "DigOps is the first live FlowCraft instance: idigdata's own operating system proving the pattern at practice scale.",
+    note: "DigOps is the first FlowCraft instance — idigdata's own operating system in active build, headed toward third-party review at practice scale.",
   },
 ];
 
@@ -101,23 +101,23 @@ export default function SystemsPage() {
     <div className="mx-auto max-w-content bg-cream px-6 font-body text-navy">
       <section className="relative pt-10 pb-20 md:pt-16 md:pb-24">
         <M4Watermark position="top-right" />
-        <SectionKicker className="mb-7">The systems behind the work</SectionKicker>
+        <SectionKicker className="mb-7">Proof of ownership</SectionKicker>
         <div className="max-w-[880px]">
           <h1 className="max-w-full text-wrap break-words font-vollkorn text-[42px] font-bold leading-[1.08] text-navy sm:text-[54px] md:text-[70px]">
-            Three systems. One way to build, own, and run change.
+            The architecture that makes ownership real.
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
-            Rig, BOSS, and FlowCraft are not a SaaS trap or an advisory deck.
-            They are the working architecture I use to turn transformation into
-            governed, inspectable, client-owned operating capability.
+            Rig, BOSS, and FlowCraft are load-bearing infrastructure — not a
+            product shelf. They are how I turn an unowned data mess into a
+            governed, inspectable, client-owned operating asset.
           </p>
           <p className="mt-6 max-w-[760px] border-t border-navy/15 pt-6 font-body text-[16px] leading-[1.65] text-navy">
             I run the model before I bring it to anyone else. Rig is the
             operator-owned work fabric where the build is specified, routed, and
             proven. BOSS is the business operating graph clients own. FlowCraft
             is the runtime that turns the graph into live human-and-agent work.
-            DigOps is the first live FlowCraft instance, running idigdata at
-            practice scale.
+            DigOps is the first FlowCraft instance — idigdata&apos;s own
+            operating system in active build, headed toward third-party review.
           </p>
         </div>
       </section>
@@ -159,7 +159,7 @@ export default function SystemsPage() {
         <SectionKicker className="mb-5">The industry break</SectionKicker>
         <div className="max-w-[840px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            Agentics should make companies more sovereign, not more dependent.
+            Agentic AI should make companies more sovereign, not more dependent.
           </h2>
           <p className="mt-5 font-body text-[15.5px] leading-[1.65] text-navy">
             Much of the software market still tries to convert capability
@@ -200,8 +200,8 @@ export default function SystemsPage() {
         <SectionKicker className="mb-5">Operating proof</SectionKicker>
         <div className="mb-9 max-w-[860px]">
           <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-            Three systems, each with a job. Together they turn change into an
-            operating asset.
+            Three layers of one ownership stack. Together they turn change into
+            an operating asset the business keeps.
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
@@ -272,7 +272,7 @@ export default function SystemsPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <h2 className="font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-              I am not selling access to software. I am building ownership.
+              The business keeps the asset. That is the commercial model.
             </h2>
           </div>
           <div className="space-y-5 font-body text-[15.5px] leading-[1.65] text-navy">
@@ -365,7 +365,7 @@ export default function SystemsPage() {
           </div>
           <Link
             href="/contact/"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
+            className="mt-8 inline-flex items-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
           >
             Start a conversation <span aria-hidden="true">→</span>
           </Link>

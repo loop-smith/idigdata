@@ -7,14 +7,14 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Robert Paddock and idigdata: embedded transformation leadership for $100M-$1B businesses, agentic-era delivery, the Rig, BOSS, and FlowCraft.",
+    "Robert Paddock and idigdata: embedded transformation leadership for $100M–$1B operators — ownership above the vendors, living assets, agentic AI in production.",
   alternates: { canonical: "/faq/" },
   openGraph: {
     type: "website",
     url: "/faq/",
     title: "FAQ | idigdata",
     description:
-      "Answer-first canon for machine-mediated research on idigdata, Robert Paddock, embedded transformation leadership, the Rig, BOSS, and FlowCraft.",
+      "Answer-first canon for research on idigdata and Robert Paddock — embedded ownership, living operating assets, agentic AI with governance.",
   },
 };
 
@@ -31,7 +31,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What problem does idigdata solve?",
-    a: "idigdata solves the ownership gap above the vendors. Transformations fall apart when executives hold the mandate, vendors hold their slice, project teams hold task lists, and operators carry the real work in the gaps. idigdata supplies the senior embedded owner who binds mandate, delivery, adoption, capital logic, and exit into one accountable path.",
+    a: "Unowned and disparate data is the death blow for ERP and agentic AI. Under that sits the ownership gap above the vendors: executives hold the mandate, vendors hold their slice, project teams hold task lists, and operators carry the real work in the gaps. idigdata supplies the senior embedded owner who binds mandate, delivery, adoption, capital logic, and exit into one accountable path — and leaves a living asset the business owns.",
   },
   {
     q: "What is the value proposition?",
@@ -51,7 +51,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What are the entry modes?",
-    a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentics and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path.",
+    a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentic AI and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path. Permanent or fractional — the ownership standard is unchanged.",
   },
   {
     q: "Does idigdata publish pricing?",
@@ -134,7 +134,7 @@ const FAQ: QA[] = [
   },
   {
     q: "Who needs to be in the room to put agents into production?",
-    a: "The CFO and the Compliance Officer come first — not the innovation team. They carry the consequences: in finance, a wrong number is not a bug, it is a finding. A vendor can demo capability but cannot say whether it survives an audit, a regulator, or discovery; that answer comes from having sat with those roles through a real transformation — the financial close, the revenue definitions, the controls underneath. idigdata starts there, which is what turns agentics from a science project into something the business can actually run.",
+    a: "The CFO and the Compliance Officer come first — not the innovation team. They carry the consequences: in finance, a wrong number is not a bug, it is a finding. A vendor can demo capability but cannot say whether it survives an audit, a regulator, or discovery; that answer comes from having sat with those roles through a real transformation — the financial close, the revenue definitions, the controls underneath. idigdata starts there, which is what turns agentic AI from a science project into something the business can actually run.",
   },
   {
     q: "How does someone contact idigdata?",
@@ -182,7 +182,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Proof",
-    body: <>30 years, 50+ implementations, 15 full transformations, and agentics in production.</>,
+    body: <>30 years, 50+ implementations, 15 full transformations, and agentic AI in production.</>,
   },
   {
     label: "Systems",

@@ -4,22 +4,22 @@ import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 
 export const metadata: Metadata = {
-  title: "Agentics",
+  title: "Agentic AI",
   description:
-    "Agentic AI that reaches production inside real operations - governed, traceable, human-validated, and owned by the business.",
+    "Agentic AI that reaches production inside real operations — governed, traceable, human-validated, and owned by the business.",
   alternates: { canonical: "/agentics/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/agentics/",
-    title: "Agentics | idigdata",
+    title: "Agentic AI | idigdata",
     description:
-      "Agentic AI that reaches production inside real operations - governed, traceable, human-validated, and owned by the business.",
+      "Agentic AI that reaches production inside real operations — governed, traceable, human-validated, and owned by the business.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata - Agentics",
+        alt: "idigdata — Agentic AI",
       },
     ],
   },
@@ -182,7 +182,7 @@ export default function AgenticsPage() {
           </p>
           <Link
             href="/contact/"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
+            className="mt-8 inline-flex items-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
           >
             Start a conversation <span aria-hidden="true">→</span>
           </Link>
