@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Lora, Source_Sans_3, Vollkorn } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
 import PageviewBeacon from "@/components/analytics/PageviewBeacon";
 import SiteNotice from "@/components/analytics/SiteNotice";
+import VercelAnalytics from "@/components/analytics/VercelAnalytics";
 
 const display = Lora({
   subsets: ["latin"],
