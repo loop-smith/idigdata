@@ -1,5 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
 import type { NextRequest } from "next/server";
+import { getDigOpsSupabase } from "@/lib/server/digopsSupabase";
 import { classifyWebsiteSignal, isAssetPath } from "@/lib/traffic/websiteSignals";
 
 type UtmFields = {
@@ -47,19 +47,6 @@ const HEADER_ALLOWLIST = [
   "x-vercel-ip-longitude",
 ];
 
-function getIdigdataAppSupabase() {
-  const url = process.env.IDIGDATA_APP_SUPABASE_URL;
-  const serviceRoleKey = process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY;
-  const anonKey = process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
-  const key = serviceRoleKey ?? anonKey;
-
-  if (!url || !key) return null;
-
-  return createClient(url, key, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-}
-
 export function shouldCaptureDoorKnock(req: NextRequest): boolean {
   if (req.method !== "GET" && req.method !== "HEAD") return false;
 
@@ -80,7 +67,7 @@ export async function recordDoorKnock(
   req: NextRequest,
   options: DoorKnockOptions,
 ): Promise<void> {
-  const supabase = getIdigdataAppSupabase();
+  const supabase = getDigOpsSupabase();
   if (!supabase) return;
 
   const referrer = req.headers.get("referer");

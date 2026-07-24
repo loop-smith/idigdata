@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import { getDigOpsSupabase } from "@/lib/server/digopsSupabase";
 import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
 import { classifyWebsiteSignal } from "@/lib/traffic/websiteSignals";
 
@@ -32,19 +32,6 @@ type UtmFields = {
   utm_term: string | null;
   utm_content: string | null;
 };
-
-function getIdigdataAppSupabase() {
-  const url = process.env.IDIGDATA_APP_SUPABASE_URL;
-  const serviceRoleKey = process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY;
-  const anonKey = process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
-  const key = serviceRoleKey ?? anonKey;
-
-  if (!url || !key) return null;
-
-  return createClient(url, key, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-}
 
 function emptyUtms(): UtmFields {
   return {
@@ -110,9 +97,9 @@ export async function POST(req: NextRequest) {
   });
   if (signal.suppress_pageview) return NO_CONTENT;
 
-  const supabase = getIdigdataAppSupabase();
+  const supabase = getDigOpsSupabase();
   if (!supabase) {
-    console.warn("pageview: idigdata-app Supabase env not configured");
+    console.warn("pageview: DigOps Supabase env not configured");
     return NO_CONTENT;
   }
 

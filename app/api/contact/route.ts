@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { Resend } from "resend";
+import { getDigOpsSupabaseForContact } from "@/lib/server/digopsSupabase";
 import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
 
 export const runtime = "nodejs";
@@ -47,32 +47,13 @@ type CrmInsertResult =
 
 const KNOWN_ARTICLE_SLUGS = new Set(Object.keys(ARTICLE_TITLES));
 
-function getIdigdataAppSupabase() {
-  const url = process.env.IDIGDATA_APP_SUPABASE_URL;
-  const serviceRoleKey = process.env.IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY;
-  const anonKey = process.env.IDIGDATA_APP_SUPABASE_ANON_KEY;
-  const key = serviceRoleKey ?? anonKey;
-
-  if (!url || !key) return null;
-
-  return {
-    canReturnInsertedId: Boolean(serviceRoleKey),
-    client: createClient(url, key, {
-      auth: {
-        persistSession: false,
-        autoRefreshToken: false,
-      },
-    }),
-  };
-}
-
 async function insertCrmRow(
   table: "article_requests" | "contact_submissions",
   row: Record<string, unknown>,
 ): Promise<CrmInsertResult> {
-  const supabase = getIdigdataAppSupabase();
+  const supabase = getDigOpsSupabaseForContact();
   if (!supabase) {
-    console.warn("contact form: idigdata-app Supabase env not configured");
+    console.warn("contact form: DigOps Supabase env not configured");
     return { ok: false, error: "not_configured" };
   }
 

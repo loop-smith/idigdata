@@ -26,20 +26,19 @@ Serverful App Router on Vercel (Fluid Compute). `output: "export"` was dropped t
 
 ## Website Supabase (own)
 
-- **Project ref:** `adkwtkhvbntreznhwzxu`
-- **Env:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- **Role:** website-scoped / mostly reserved empty `public`
+- **Reserved:** optional `NEXT_PUBLIC_SUPABASE_*` for future site-only use. Not the DigOps beacon sink.
+- Capo website project `adkwtkh…` was deleted (2026-07-22).
 
-## Bridge → DigOps operations Supabase
+## Bridge → DigOps (operations) Supabase
 
-Site writes into the **operations** project (Capo name idigdata-app):
+Site writes into the **DigOps** project (FlowCraft instance app / CRM / beacon sink):
 
-- **Project ref:** `dvjrmozeoakmcaccqqld`
-- **Tables (contract):** `contact_submissions`, `article_requests`, `pageviews`, optional `site_hits`
-- **Env on site (historical names):** `IDIGDATA_APP_SUPABASE_URL`, `IDIGDATA_APP_SUPABASE_ANON_KEY`, optional `IDIGDATA_APP_SUPABASE_SERVICE_ROLE_KEY`
-- **RLS:** anon insert-only from website origin; service role server-only if present
+- **Project:** `digops` · ref `emwhsenwinqrgtyavpee` · region us-west-1
+- **Tables (contract):** `contact_submissions`, `article_requests`, `pageviews`, `site_hits`
+- **Env on site:** `DIGOPS_SUPABASE_URL`, `DIGOPS_SUPABASE_ANON_KEY`, optional `DIGOPS_SUPABASE_SERVICE_ROLE_KEY`
+- **RLS:** anon insert for website bridge; authenticated select for DigOps operators; service role server-only if present
 
-Schema changes on operations require a coordinated site update. Open hygiene: [../INFRA-OPEN.md](../INFRA-OPEN.md).
+Schema: `../operations/supabase/migrations/20260724213000_digops_website_bridge.sql`. Open hygiene: [../INFRA-OPEN.md](../INFRA-OPEN.md).
 
 ## Layer posture
 

@@ -25,8 +25,8 @@ Authoritative hunt edit surface: `..\brand-content\triad\`. Firm ledger: `..\bra
 
 ## Data plane
 
-- Intake + telemetry bridge → **operations** Supabase (`dvjrmozeoakmcaccqqld`) via `IDIGDATA_APP_SUPABASE_*` (name is historical).
-- Website-own Supabase `adkwtkhvbntreznhwzxu` — reserved / light use.
+- Intake + telemetry bridge → **DigOps** Supabase (`emwhsenwinqrgtyavpee`) via `DIGOPS_SUPABASE_*`.
+- Website-own `NEXT_PUBLIC_SUPABASE_*` — reserved / light use (not the beacon sink).
 - Open Vercel/Supabase hygiene: `..\INFRA-OPEN.md`.
 
 ## Ports

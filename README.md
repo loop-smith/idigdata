@@ -6,13 +6,13 @@
 **Git:** independent · remote `loop-smith/idigdata` · **never push `working` without Operator word**  
 **Content twin:** `../brand-content/` (triad + firm ledgers) · **Ops twin:** `../operations/`
 
-**Keepers:** [../../../organization/KEEPERS.md](../../../organization/KEEPERS.md) · Name map: [../../../organization/NAME-MAP.md](../../../organization/NAME-MAP.md) · Infra (old Supabase = junk): [../INFRA-OPEN.md](../INFRA-OPEN.md)
+**Keepers:** [../../../organization/KEEPERS.md](../../../organization/KEEPERS.md) · Name map: [../../../organization/NAME-MAP.md](../../../organization/NAME-MAP.md) · Infra: [../INFRA-OPEN.md](../INFRA-OPEN.md)
 
 Copy source of truth for rehones: `../brand-content/triad/`.
 
 ## Stack
 
-See [STACK.md](STACK.md). Highlights: Next.js 16 App Router · React 19 · TypeScript · Tailwind 4 · Supabase bridge to **operations** · Resend · Vercel Analytics.
+See [STACK.md](STACK.md). Highlights: Next.js 16 App Router · React 19 · TypeScript · Tailwind 4 · Supabase bridge to **DigOps** · Resend · Vercel Analytics.
 
 ## Develop
 
@@ -37,12 +37,12 @@ npm run start
 
 ## Environment
 
-Copy `.env.local.example` → `.env.local` (gitignored).
+Copy `.env.example` → `.env.local` (gitignored).
 
 | Var | Purpose |
 |---|---|
-| `NEXT_PUBLIC_SUPABASE_*` | Website’s own Supabase `adkwtkhvbntreznhwzxu` (reserved / light use) |
-| `IDIGDATA_APP_SUPABASE_*` | **Bridge to operations** Supabase `dvjrmozeoakmcaccqqld` (env prefix is Capo-era; means DigOps ops) |
+| `NEXT_PUBLIC_SUPABASE_*` | Optional website-own Supabase (reserved; not the DigOps sink) |
+| `DIGOPS_SUPABASE_*` | **Bridge to DigOps** Supabase `emwhsenwinqrgtyavpee` (contact + beacon) |
 | `RESEND_API_KEY` / `EMAIL_NOTIFY_*` | Contact notification mail |
 | `WEBSITE_ALLOWED_ORIGINS` | Optional extra POST origins |
 
