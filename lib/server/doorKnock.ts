@@ -135,16 +135,35 @@ export async function recordDoorKnock(
     buyer_signal: signal.buyer_signal,
   };
 
+  // Rich store first (DigOps ops can query site_hits later).
   const siteHit = await supabase.from("site_hits").insert(enriched);
-  if (!siteHit.error) return;
+  if (siteHit.error) {
+    console.error(`door knock site_hits insert failed: ${siteHit.error.message}`);
+  }
 
-  const pageviewRich = await supabase.from("pageviews").insert(enriched);
+  // Always mirror a row into pageviews — DigOps /website panel reads this table.
+  const pageviewSignal = {
+    ...baseRow,
+    occurred_at: enriched.occurred_at,
+    traffic_class: signal.traffic_class,
+    source_kind: signal.source_kind,
+    source_channel: signal.source_channel,
+    source_medium: signal.source_medium,
+    source_campaign: signal.source_campaign,
+    attribution_confidence: signal.attribution_confidence,
+    source_refs: signal.source_refs,
+    is_internal: signal.is_internal,
+    is_bot: signal.is_bot,
+    is_asset: signal.is_asset,
+    buyer_signal: signal.buyer_signal,
+  };
+  const pageviewRich = await supabase.from("pageviews").insert(pageviewSignal);
   if (!pageviewRich.error) return;
 
   const pageviewBase = await supabase.from("pageviews").insert(baseRow);
   if (pageviewBase.error) {
     console.error(
-      `door knock insert failed: ${siteHit.error.message}; fallback failed: ${pageviewBase.error.message}`,
+      `door knock pageviews insert failed: ${pageviewRich.error.message}; fallback failed: ${pageviewBase.error.message}`,
     );
   }
 }
