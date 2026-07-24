@@ -6,6 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
 import PageviewBeacon from "@/components/analytics/PageviewBeacon";
+import SiteNotice from "@/components/analytics/SiteNotice";
 
 const display = Lora({
   subsets: ["latin"],
@@ -118,7 +119,8 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
-        <Analytics />
+        <SiteNotice />
+        <VercelAnalytics />
         <PageviewBeacon />
       </body>
     </html>

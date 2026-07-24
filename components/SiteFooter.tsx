@@ -65,10 +65,16 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-porcelain/10 pt-6">
-          <p className="text-center font-body text-[12.5px] text-porcelain/40">
+        <div className="mt-12 flex flex-col items-center gap-2 border-t border-porcelain/10 pt-6 sm:flex-row sm:justify-between">
+          <p className="font-body text-[12.5px] text-porcelain/40">
             © idigdata · Data Integration Group · est. 2016
           </p>
+          <Link
+            href="/privacy/"
+            className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+          >
+            Privacy
+          </Link>
         </div>
       </div>
 
