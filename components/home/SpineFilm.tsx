@@ -14,35 +14,48 @@ import { useEffect, useRef, useState } from "react";
  * prefers-reduced-motion → static beat 06 end-state. Mobile → stacked frames 01/03/05/06.
  */
 
-const BEATS = [
+type Beat = {
+  n: string;
+  chip: string;
+  label: string;
+  line: string;
+};
+
+const BEATS: Beat[] = [
   {
     n: "01",
-    label: "That's our mess",
-    line: "Excel and Power BI bandaids, vendor blocks, line spaghetti. No center. Peak entropy.",
+    chip: "Mess",
+    label: "The mess",
+    line: "Excel and Power BI bandaids, vendor blocks, line spaghetti. No owned center — peak entropy. This is what kills the program.",
   },
   {
     n: "02",
-    label: "Start with the data",
-    line: "About 80% of the noise purged. The sovereign data core assembles center-stage from data building blocks.",
+    chip: "Data",
+    label: "Data core",
+    line: "Noise comes down. The sovereign data core seats from building blocks — Common Data Model the business owns.",
   },
   {
     n: "03",
-    label: "The people",
-    line: "The beehive builds around the data core — human functional groups docked straight onto the spine.",
+    chip: "People",
+    label: "People — functional groups",
+    line: "Human work docks onto the spine: functional groups organized by workflow requirement, not org chart or vendor module.",
   },
   {
     n: "04",
-    label: "Project management + change",
-    line: "A governance rail locks over the top. Clear ownership and execution — not a vendor software install.",
+    chip: "Control",
+    label: "Project management — control center",
+    line: "The rail over the build: ownership, execution, and observability for every well-run program — not a vendor software install.",
   },
   {
     n: "05",
-    label: "Make it stick",
-    line: "Training, SOPs, UAT. Three locks down the spine so adoption lasts long after go-live.",
+    chip: "Adopt",
+    label: "Adoption locks",
+    line: "Training, SOPs, UAT. Three locks down the spine so people are set up to succeed after go-live.",
   },
   {
     n: "06",
-    label: "The living asset",
+    chip: "Asset",
+    label: "Living asset",
     line: "Six process constellations — D2R, O2C, P2M, MDM, P2P, S2S — around the data-centric core. Owned, not rented.",
   },
 ];
@@ -50,22 +63,22 @@ const BEATS = [
 const MOBILE_BEATS: Array<{ beat: number; label: string; line: string }> = [
   {
     beat: 1,
-    label: "That's our mess",
-    line: "Excel and Power BI bandaids, vendor blocks, line spaghetti. No center — this is what kills the program.",
+    label: "The mess",
+    line: "Excel and Power BI bandaids, vendor blocks, line spaghetti. No owned center — peak entropy. This is what kills the program.",
   },
   {
     beat: 3,
-    label: "The data core seats; the beehive builds",
-    line: "The noise purges; the data core assembles from building blocks and human work docks straight onto it.",
+    label: "Data core · People — functional groups",
+    line: "Noise comes down; the data core seats from building blocks. Human work docks onto the spine by workflow requirement.",
   },
   {
     beat: 5,
-    label: "Governance + make it stick",
-    line: "A governance rail locks over the top; training, SOPs, and UAT pin adoption down the spine.",
+    label: "Control center · Adoption locks",
+    line: "Project management rail: ownership, execution, observability. Then training, SOPs, and UAT so people succeed after go-live.",
   },
   {
     beat: 6,
-    label: "The living asset",
+    label: "Living asset",
     line: "Six process constellations around the data-centric core. Owned, not rented.",
   },
 ];
@@ -234,10 +247,26 @@ function AssemblySvg() {
         </g>
       </g>
 
-      {/* Beat-02 label only — not carried into later frames (avoids collisions) */}
-      <text className="sf-beat-label sf-label2" x="360" y="136">
-        DATA
-      </text>
+      {/* ===== Beat 02: ingest buses — geometry only; BeatPanel owns the words ===== */}
+      <g className="sf-schema2">
+        <g stroke="rgba(247,245,238,0.22)" strokeWidth="1" strokeDasharray="3 5">
+          <path d="M100 280 H346" />
+          <path d="M100 340 H346" />
+          <path d="M100 400 H346" />
+          <path d="M620 280 H374" />
+          <path d="M620 340 H374" />
+          <path d="M620 400 H374" />
+        </g>
+        {/* Source endpoints — unmarked nodes, not acronym badges */}
+        <g fill="#16304D" stroke="rgba(247,245,238,0.45)" strokeWidth="1.2">
+          <circle cx="92" cy="280" r="5" />
+          <circle cx="92" cy="340" r="5" />
+          <circle cx="92" cy="400" r="5" />
+          <circle cx="628" cy="280" r="5" />
+          <circle cx="628" cy="340" r="5" />
+          <circle cx="628" cy="400" r="5" />
+        </g>
+      </g>
 
       {/* ===== Dual-rail spine (beats 02–05) ===== */}
       <g className="sf-spine">
@@ -260,19 +289,38 @@ function AssemblySvg() {
 
       {/* inbound data chips — beat 02 frame only */}
       <g className="sf-chips2">
-        <g stroke="rgba(247,245,238,0.35)" strokeWidth="1.2">
-          <path d="M262 322 H 340" />
-          <path d="M458 358 H 380" />
-          <path d="M268 398 H 340" />
+        <g stroke="rgba(247,245,238,0.4)" strokeWidth="1.2">
+          <path d="M108 280 H346" />
+          <path d="M612 320 H374" />
+          <path d="M108 360 H346" />
+          <path d="M612 400 H374" />
+          <path d="M108 440 H346" />
         </g>
-        <g fill="#FACC15" opacity="0.9">
-          <rect x="244" y="316" width="18" height="12" rx="2" />
-          <rect x="458" y="352" width="18" height="12" rx="2" />
-          <rect x="250" y="392" width="18" height="12" rx="2" />
+        {/* Ingest stream arrowheads */}
+        <g stroke="#FACC15" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
+          <path d="M336 276 l6 4 -6 4" />
+          <path d="M384 316 l-6 4 6 4" />
+          <path d="M336 356 l6 4 -6 4" />
+          <path d="M384 396 l-6 4 6 4" />
+          <path d="M336 436 l6 4 -6 4" />
+        </g>
+        <g fill="#FACC15" opacity="0.95">
+          <rect x="210" y="274" width="26" height="12" rx="2" />
+          <rect x="480" y="314" width="26" height="12" rx="2" />
+          <rect x="230" y="354" width="26" height="12" rx="2" />
+          <rect x="460" y="394" width="26" height="12" rx="2" />
+          <rect x="200" y="434" width="26" height="12" rx="2" />
+        </g>
+        <g fill="#142840" fontSize="7.5" fontWeight="800" letterSpacing="0.08em" style={{ fontFamily: "var(--font-brand)" }}>
+          <text x="223" y="283" textAnchor="middle">CDM</text>
+          <text x="493" y="323" textAnchor="middle">TXN</text>
+          <text x="243" y="363" textAnchor="middle">MST</text>
+          <text x="473" y="403" textAnchor="middle">REF</text>
+          <text x="213" y="443" textAnchor="middle">LOG</text>
         </g>
       </g>
 
-      {/* snap streaks — beat 02 frame only */}
+      {/* snap streaks & seating guide jig — beat 02 frame only */}
       <g className="sf-seat2">
         <g stroke="rgba(247,245,238,0.28)" strokeWidth="2" strokeLinecap="round">
           <path d="M346 96 v26" />
@@ -282,50 +330,85 @@ function AssemblySvg() {
         <path d="M334 484 l12 -10 M386 484 l-12 -10" stroke="#FACC15" strokeWidth="2" />
       </g>
 
-      {/* gold seat: the spine's only gold before the core arrives */}
+      {/* gold seat foundation: the spine's structural dock */}
       <g className="sf-seat">
         <circle className="sf-seat-glow" cx="360" cy="474" r="52" fill="url(#sf-seat-g)" />
-        <path d="M326 474 h68" stroke="#FACC15" strokeWidth="3.5" />
+        <path d="M310 474 h100" stroke="#FACC15" strokeWidth="3.5" strokeLinecap="round" />
+        <g stroke="rgba(250,204,21,0.6)" strokeWidth="1.5">
+          <path d="M320 480 h80 M330 486 h60" />
+        </g>
       </g>
 
-      {/* Beat-03 label — left of the comb, never on the spine/check column */}
-      <text className="sf-beat-label sf-label3" x="248" y="248" textAnchor="end">
-        PEOPLE
-      </text>
-
-      {/* ===== Beehive — the people, combed around the data core (beats 03–05) ===== */}
+      {/* ===== Beehive — people docked to the core (beats 03–05) ===== */}
       <g className="sf-hive3">
-        <g fill="rgba(27,58,92,0.7)" stroke="rgba(247,245,238,0.55)" strokeWidth="1.5">
-          {/* left comb: inner column flush on the rail, outer column tessellated */}
+        <g stroke="#FACC15" strokeWidth="1.5" strokeOpacity="0.8">
+          <path d="M311.4 280 H 346" />
+          <path d="M311.4 340 H 346" />
+          <path d="M408.6 280 H 374" />
+          <path d="M408.6 340 H 374" />
+        </g>
+
+        <g stroke="rgba(247,245,238,0.3)" strokeWidth="1.2" strokeDasharray="3 4">
+          <path d="M260 250 C 240 300, 240 340, 260 380" fill="none" />
+          <path d="M460 250 C 480 300, 480 340, 460 380" fill="none" />
+        </g>
+
+        <g fill="rgba(27,58,92,0.85)" stroke="rgba(247,245,238,0.7)" strokeWidth="1.5">
           <polygon points="328.7,260 346,270 346,290 328.7,300 311.4,290 311.4,270" />
           <polygon points="328.7,320 346,330 346,350 328.7,360 311.4,350 311.4,330" />
           <polygon points="311.4,230 328.7,240 328.7,260 311.4,270 294.1,260 294.1,240" />
           <polygon points="311.4,290 328.7,300 328.7,320 311.4,330 294.1,320 294.1,300" />
           <polygon points="311.4,350 328.7,360 328.7,380 311.4,390 294.1,380 294.1,360" />
-          {/* right comb, mirrored */}
           <polygon points="391.3,260 374,270 374,290 391.3,300 408.6,290 408.6,270" />
           <polygon points="391.3,320 374,330 374,350 391.3,360 408.6,350 408.6,330" />
           <polygon points="408.6,230 391.3,240 391.3,260 408.6,270 425.9,260 425.9,240" />
           <polygon points="408.6,290 391.3,300 391.3,320 408.6,330 425.9,320 425.9,300" />
           <polygon points="408.6,350 391.3,360 391.3,380 408.6,390 425.9,380 425.9,360" />
         </g>
-      </g>
 
-      {/* Beat-04 label — above the rail only on the governance intro frame */}
-      <text className="sf-beat-label sf-label4" x="360" y="78">
-        GOVERNANCE
-      </text>
-
-      {/* ===== Governance rail — locks over the top (beats 04–05) ===== */}
-      <g className="sf-rail4">
-        <rect x="210" y="94" width="300" height="22" rx="6" fill="none" stroke="rgba(247,245,238,0.75)" strokeWidth="2" />
-        <g stroke="rgba(247,245,238,0.5)" strokeWidth="1.5">
-          <path d="M285 99 v12 M360 99 v12 M435 99 v12" />
+        {/* Short role marks inside hexes — not workflow essay labels */}
+        <g fill="rgba(247,245,238,0.9)" fontSize="8" fontWeight="800" letterSpacing="0.08em" style={{ fontFamily: "var(--font-brand)" }}>
+          <text x="311.4" y="253" textAnchor="middle">OPS</text>
+          <text x="311.4" y="313" textAnchor="middle">FIN</text>
+          <text x="311.4" y="373" textAnchor="middle">SCM</text>
+          <text x="408.6" y="253" textAnchor="middle">REV</text>
+          <text x="408.6" y="313" textAnchor="middle">SVC</text>
+          <text x="408.6" y="373" textAnchor="middle">EXEC</text>
         </g>
-        <path d="M346 116 v18 M374 116 v18" stroke="rgba(247,245,238,0.35)" strokeWidth="1.5" />
       </g>
 
-      {/* ===== Make-it-stick check-locks — right of the spine, clear of gold blocks ===== */}
+      {/* ===== PM control canopy (beats 04–05) — three pods only ===== */}
+      <g className="sf-rail4">
+        <rect x="130" y="68" width="460" height="44" rx="6" fill="#142840" stroke="rgba(247,245,238,0.85)" strokeWidth="2" />
+        <path d="M130 82 H590" stroke="rgba(250,204,21,0.6)" strokeWidth="1.5" />
+        <g stroke="rgba(247,245,238,0.4)" strokeWidth="1.2">
+          <path d="M180 68 v6 M230 68 v6 M280 68 v6 M360 68 v6 M440 68 v6 M490 68 v6 M540 68 v6" />
+        </g>
+        <g stroke="rgba(247,245,238,0.3)" strokeWidth="1">
+          <line x1="270" y1="82" x2="270" y2="112" />
+          <line x1="450" y1="82" x2="450" y2="112" />
+        </g>
+        <circle cx="152" cy="97" r="3.5" fill="#FACC15" />
+        <circle cx="288" cy="97" r="3.5" fill="#FACC15" />
+        <circle cx="468" cy="97" r="3.5" fill="#FACC15" />
+        <g fill="rgba(247,245,238,0.95)" fontSize="9" fontWeight="700" letterSpacing="0.14em" style={{ fontFamily: "var(--font-brand)" }}>
+          <text x="164" y="100">OWNERSHIP</text>
+          <text x="300" y="100">EXECUTION</text>
+          <text x="480" y="100">OBSERVABILITY</text>
+        </g>
+        <path d="M346 112 v28 M374 112 v28" stroke="#FACC15" strokeWidth="2" />
+        {/* Flank rails — structure only, no probe essay */}
+        <g stroke="rgba(250,204,21,0.35)" strokeWidth="1.5" strokeDasharray="4 4">
+          <path d="M144 112 V 460" />
+          <path d="M576 112 V 460" />
+        </g>
+        <g fill="#142840" stroke="#FACC15" strokeWidth="1.5">
+          <circle cx="144" cy="310" r="4" />
+          <circle cx="576" cy="310" r="4" />
+        </g>
+      </g>
+
+      {/* ===== Adoption locks (beat 05) — mechanical plates, short tags ===== */}
       <g className="sf-checks5">
         {(
           [
@@ -335,25 +418,27 @@ function AssemblySvg() {
           ] as const
         ).map(({ y, tag }) => (
           <g key={y}>
-            <circle cx="448" cy={y} r="13" fill="#142840" stroke="#FACC15" strokeWidth="2" />
+            <path d={`M294.1 ${y} H 326`} stroke="#FACC15" strokeWidth="1.8" strokeDasharray="2 3" />
+            <circle cx="294.1" cy={y} r="3" fill="#FACC15" />
+            <rect x="326" y={y - 15} width="118" height="30" rx="4" fill="#0C1A2C" stroke="#FACC15" strokeWidth="1.8" />
+            <path d={`M330 ${y} H 438`} stroke="#FACC15" strokeWidth="2.5" strokeLinecap="round" />
+            <circle cx="448" cy={y} r="14" fill="#142840" stroke="#FACC15" strokeWidth="2.2" />
             <path
-              d={`M442 ${y} l4.5 5 8 -9.5`}
+              d={`M441.5 ${y} l4.5 5 9.5 -10`}
               fill="none"
-              stroke="rgba(247,245,238,0.95)"
-              strokeWidth="2.2"
+              stroke="#F7F5EE"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <path
-              d={`M426 ${y} H 434`}
-              stroke="rgba(247,245,238,0.35)"
-              strokeWidth="1.2"
-            />
+            <rect x="470" y={y - 10} width="72" height="20" rx="3" fill="#142840" stroke="rgba(247,245,238,0.35)" strokeWidth="1" />
             <text
-              x="468"
+              x="506"
               y={y + 4}
-              fill="rgba(247,245,238,0.75)"
-              fontSize="10"
+              textAnchor="middle"
+              fill="#FACC15"
+              fontSize="9"
+              fontWeight="800"
               letterSpacing="0.14em"
               style={{ fontFamily: "var(--font-brand)" }}
             >
@@ -483,6 +568,26 @@ function AssemblySvg() {
   );
 }
 
+function BeatPanel({ beat }: { beat: number }) {
+  const b = BEATS[Math.max(0, Math.min(BEATS.length, beat) - 1)] ?? BEATS[0];
+  return (
+    <div
+      className="beat-panel mt-7 border-t border-porcelain/20 pt-5"
+      aria-live="polite"
+    >
+      <p className="font-brand text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+        {b.n} / 06 · {b.chip}
+      </p>
+      <h2 className="mt-2 font-brand text-[clamp(22px,2.2vw,28px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-porcelain">
+        {b.label}
+      </h2>
+      <p className="mt-2.5 max-w-[42ch] text-[15px] leading-[1.5] text-porcelain/80 md:text-[15.5px] md:leading-[1.55]">
+        {b.line}
+      </p>
+    </div>
+  );
+}
+
 function HeroCopy({
   onSeeMap,
   withRise = true,
@@ -524,7 +629,7 @@ function HeroCopy({
         Unowned data kills ERP. It kills agentic AI faster.
       </h1>
       <p
-        className={`${r2.className}hero-dek mt-4 max-w-[46ch] text-[15.5px] leading-[1.55] text-porcelain/80 md:text-[16.5px] md:leading-[1.6]`}
+        className={`${r2.className}hero-dek mt-3 max-w-[44ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
         Programs fail below the software line, in disparate systems nobody
@@ -532,7 +637,7 @@ function HeroCopy({
         inside the business, left as a living asset you own.
       </p>
       <div
-        className={`${r3.className}mt-5 flex flex-col gap-2.5 sm:flex-row md:mt-6`}
+        className={`${r3.className}mt-4 flex flex-col gap-2.5 sm:flex-row md:mt-5`}
         style={r3.style}
       >
         <Link
@@ -784,17 +889,19 @@ export default function SpineFilm() {
           <div data-beat="6" className="film-fixed mx-auto mt-10 max-w-[760px]">
             <AssemblySvg />
           </div>
-          <ol className="mx-auto mt-8 grid max-w-[760px] gap-3 sm:grid-cols-2">
+          <ol className="mx-auto mt-8 grid max-w-[760px] gap-4 sm:grid-cols-2">
             {BEATS.map((b) => (
               <li
                 key={b.n}
                 className="text-[14.5px] leading-[1.5] text-porcelain/75"
               >
                 <span className="font-brand text-[11px] font-bold tracking-[0.18em] text-gold">
-                  {b.n}
-                </span>{" "}
-                <span className="font-semibold text-porcelain">{b.label}.</span>{" "}
-                {b.line}
+                  {b.n} · {b.chip}
+                </span>
+                <span className="mt-1 block font-semibold text-porcelain">
+                  {b.label}
+                </span>
+                <span className="mt-1 block">{b.line}</span>
               </li>
             ))}
           </ol>
@@ -817,70 +924,57 @@ export default function SpineFilm() {
           data-film-active="true"
           className="film-root grain sticky top-[var(--site-header-h)] isolate flex h-[calc(100svh-var(--site-header-h))] flex-col overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain"
         >
-          <div className="mx-auto grid min-h-0 w-full max-w-[1320px] flex-1 grid-cols-[minmax(300px,38%)_1fr] items-center gap-6 overflow-hidden px-6 pb-2 pt-5 lg:gap-10 lg:pt-6">
-            <div className="min-h-0">
+          <div className="mx-auto grid min-h-0 w-full max-w-[1320px] flex-1 grid-cols-[minmax(320px,40%)_1fr] items-start gap-6 overflow-hidden px-6 pb-2 pt-5 lg:gap-10 lg:pt-6">
+            <div className="film-story min-h-0 overflow-y-auto overscroll-contain pr-1">
               <HeroCopy onSeeMap={scrollToMap} />
+              <BeatPanel beat={beat} />
             </div>
-            <div className="film-stage h-full self-stretch">
+            <div className="film-stage h-full min-h-0 self-stretch">
               <AssemblySvg />
             </div>
           </div>
 
-          {/* Cinema chrome — full-width so short viewports keep the tale readable */}
+          {/* Cinema chrome — controls only; story lives in BeatPanel */}
           <div
             className="film-chrome shrink-0 border-t border-porcelain/15 bg-[#0C1A2C]/75"
             role="group"
             aria-label="Film beats"
           >
-            <div className="mx-auto flex max-w-[1320px] flex-col gap-2.5 px-6 py-3 xl:flex-row xl:items-end xl:gap-8">
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={runFilm}
-                  aria-pressed={running}
-                  className={`film-run-btn rounded-[3px] px-3 py-1.5 font-brand text-[11px] font-bold tracking-[0.14em] transition-colors ${
-                    running
-                      ? "bg-gold text-navy"
-                      : "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10"
-                  }`}
-                >
-                  {running ? "■ STOP" : "▶ RUN"}
-                </button>
-                {BEATS.map((b, i) => {
-                  const n = i + 1;
-                  const active = beat === n;
-                  return (
-                    <button
-                      key={b.n}
-                      type="button"
-                      onClick={() => scrollToBeat(n)}
-                      aria-pressed={active}
-                      className={`rounded-[3px] px-2.5 py-1.5 font-brand text-[11px] font-bold tracking-[0.14em] transition-colors ${
-                        active
-                          ? "bg-gold text-navy"
-                          : "border border-porcelain/25 text-porcelain/70 hover:border-gold hover:text-gold"
-                      }`}
-                    >
-                      {b.n}
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="relative min-h-[44px] flex-1" aria-live="polite">
-                {BEATS.map((b, i) => (
-                  <div
+            <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-2 px-6 py-2.5">
+              <button
+                type="button"
+                onClick={runFilm}
+                aria-pressed={running}
+                className={`film-run-btn rounded-[3px] px-3 py-1.5 font-brand text-[11px] font-bold tracking-[0.14em] transition-colors ${
+                  running
+                    ? "bg-gold text-navy"
+                    : "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10"
+                }`}
+              >
+                {running ? "■ STOP" : "▶ RUN"}
+              </button>
+              {BEATS.map((b, i) => {
+                const n = i + 1;
+                const active = beat === n;
+                return (
+                  <button
                     key={b.n}
-                    className={`film-cap film-cap-${i + 1} absolute inset-x-0 top-0`}
+                    type="button"
+                    onClick={() => scrollToBeat(n)}
+                    aria-pressed={active}
+                    aria-label={`${b.n} ${b.label}`}
+                    title={b.label}
+                    className={`rounded-[3px] px-2.5 py-1.5 font-brand text-[11px] font-bold tracking-[0.12em] transition-colors ${
+                      active
+                        ? "bg-gold text-navy"
+                        : "border border-porcelain/25 text-porcelain/70 hover:border-gold hover:text-gold"
+                    }`}
                   >
-                    <p className="font-brand text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
-                      {b.n} / 06 · {b.label}
-                    </p>
-                    <p className="mt-1 max-w-[64ch] text-[13.5px] leading-[1.4] text-porcelain/70 line-clamp-2 xl:text-[14px]">
-                      {b.line}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                    <span className="text-[10px] opacity-80">{b.n}</span>{" "}
+                    {b.chip}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

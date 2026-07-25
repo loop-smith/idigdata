@@ -97,13 +97,23 @@ body {
   justify-content: center;
   min-height: 0;
   min-width: 0;
+  padding-top: 0.25rem;
 }
 
 .film-stage svg {
   display: block;
   width: 100%;
   height: auto;
-  max-height: calc(100svh - var(--site-header-h) - 120px);
+  /* Chrome is controls-only; leave room for left BeatPanel */
+  max-height: calc(100svh - var(--site-header-h) - 72px);
+}
+
+.film-story {
+  max-height: calc(100svh - var(--site-header-h) - 72px);
+}
+
+.beat-panel h2 {
+  text-wrap: balance;
 }
 
 .film-fixed {
@@ -131,23 +141,7 @@ body {
   text-anchor: middle;
 }
 
-/* Intro-only callouts — never stack DATA/PEOPLE/GOVERNANCE on later beats */
-.sf-label2,
-.sf-label3,
-.sf-label4 {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.18s ease;
-}
-[data-beat="2"] .sf-label2,
-[data-beat="3"] .sf-label3,
-[data-beat="4"] .sf-label4 {
-  opacity: 1;
-  visibility: visible;
-}
-.sf-label3 {
-  text-anchor: end;
-}
+/* BeatPanel owns layer titles — no stacked SVG banners. */
 
 .sf-constellation-label {
   font-size: 16px;
@@ -208,6 +202,7 @@ body {
 .sf-remnants,
 .sf-spine,
 .sf-blocks,
+.sf-schema2,
 .sf-chips2,
 .sf-seat,
 .sf-seat2,
@@ -225,6 +220,7 @@ body {
 .sf-remnants,
 .sf-spine,
 .sf-blocks,
+.sf-schema2,
 .sf-chips2,
 .sf-seat,
 .sf-seat2,
@@ -264,6 +260,7 @@ body {
    assembles from gold building blocks; chips feed the build */
 [data-beat="2"] .sf-remnants,
 [data-beat="2"] .sf-blocks,
+[data-beat="2"] .sf-schema2,
 [data-beat="2"] .sf-chips2,
 [data-beat="2"] .sf-seat,
 [data-beat="2"] .sf-seat2 {
@@ -289,6 +286,7 @@ body {
 [data-beat="5"] .sf-seat {
   opacity: 1;
 }
+/* Schema buses stay beat-02 only — don’t stack source clutter into 03–05 */
 [data-beat="3"] .sf-seat-glow,
 [data-beat="4"] .sf-seat-glow,
 [data-beat="5"] .sf-seat-glow {
@@ -313,21 +311,7 @@ body {
   opacity: 1;
 }
 
-/* Caption rail — one visible caption */
-.film-cap {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.18s ease;
-}
-[data-beat="1"] .film-cap-1,
-[data-beat="2"] .film-cap-2,
-[data-beat="3"] .film-cap-3,
-[data-beat="4"] .film-cap-4,
-[data-beat="5"] .film-cap-5,
-[data-beat="6"] .film-cap-6 {
-  opacity: 1;
-  visibility: visible;
-}
+/* Beat story lives in .beat-panel (left column); chrome is controls only. */
 
 /* Home header over the pinned navy film (class toggled by SiteHeader) */
 header.header-on-film {
@@ -428,8 +412,7 @@ header.header-on-film button {
     animation: none;
     opacity: 1;
   }
-  .fv *,
-  .film-cap {
+  .fv * {
     transition: none !important;
   }
   .seam-rule,
