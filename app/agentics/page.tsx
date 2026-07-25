@@ -120,10 +120,11 @@ export default function AgenticsPage() {
             build an agent for themselves. The part that goes missing is the
             operator who owns the whole arc and pushes it to done, who has
             shipped production agentic systems. Getting business-system
-            transformations across the finish line is the part I take. I
-            started running projects at eighteen, on construction sites; that
-            finishing discipline is older than the technology, and it&apos;s what
-            agentic work is actually missing.
+            transformations across the finish line is the part I take — same
+            ownership layer as the systems work: people, data, workflows — not
+            a separate AI product line. I started running projects at eighteen,
+            on construction sites; that finishing discipline is older than the
+            technology, and it&apos;s what agentic work is actually missing.
           </p>
         </div>
       </section>

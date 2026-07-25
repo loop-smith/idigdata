@@ -63,8 +63,8 @@ export default function HomePage() {
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
               Diagnosers explain the failure. Vendors implement their slice. AI
               builders rent you tools. None of them owns the transformation as
-              a business system — the people, the workflows, the ownership
-              above the vendors.{" "}
+              a business system — systems and agentic AI on the same ownership
+              layer: people, data, workflows, above the vendors.{" "}
               <span className="font-semibold text-navy">
                 That is the scarce work. That is what I execute.
               </span>
