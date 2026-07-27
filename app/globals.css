@@ -204,11 +204,12 @@ body {
 .sf-blocks,
 .sf-schema2,
 .sf-chips2,
+.sf-core2,
 .sf-seat,
 .sf-seat2,
 .sf-hive3,
-.sf-rail4,
-.sf-checks5,
+.sf-pm4,
+.sf-adopt5,
 .sf-asset {
   transition:
     transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
@@ -222,11 +223,12 @@ body {
 .sf-blocks,
 .sf-schema2,
 .sf-chips2,
+.sf-core2,
 .sf-seat,
 .sf-seat2,
 .sf-hive3,
-.sf-rail4,
-.sf-checks5 {
+.sf-pm4,
+.sf-adopt5 {
   opacity: 0;
 }
 .sf-asset {
@@ -262,6 +264,7 @@ body {
 [data-beat="2"] .sf-blocks,
 [data-beat="2"] .sf-schema2,
 [data-beat="2"] .sf-chips2,
+[data-beat="2"] .sf-core2,
 [data-beat="2"] .sf-seat,
 [data-beat="2"] .sf-seat2 {
   opacity: 1;
@@ -271,7 +274,7 @@ body {
   transform: none;
 }
 
-/* Beats 3–5 — the built core carries; work builds over it */
+/* Beats 3–5 — built core / spine carries under people, control, adopt */
 [data-beat="3"] .sf-spine,
 [data-beat="4"] .sf-spine,
 [data-beat="5"] .sf-spine {
@@ -286,7 +289,7 @@ body {
 [data-beat="5"] .sf-seat {
   opacity: 1;
 }
-/* Schema buses stay beat-02 only — don’t stack source clutter into 03–05 */
+/* Schema buses stay beat-02 only — don’t stack source clutter into later frames */
 [data-beat="3"] .sf-seat-glow,
 [data-beat="4"] .sf-seat-glow,
 [data-beat="5"] .sf-seat-glow {
@@ -294,20 +297,41 @@ body {
 }
 
 /* Beat 3 — the people: the beehive combs around the data core */
-[data-beat="3"] .sf-hive3,
+[data-beat="3"] .sf-hive3 {
+  opacity: 1;
+}
+/* Beats 4–5 — spine stays (film language); hive clears so rail / locks read */
 [data-beat="4"] .sf-hive3,
 [data-beat="5"] .sf-hive3 {
-  opacity: 1;
+  opacity: 0;
+}
+/* Beat-02 CDM pop must not bleed into people / control / adopt frames */
+[data-beat="3"] .sf-core2,
+[data-beat="4"] .sf-core2,
+[data-beat="5"] .sf-core2,
+[data-beat="6"] .sf-core2 {
+  opacity: 0;
+}
+/* Beats 3–5 — top-align stage; viewBox crops so the frame fills the column */
+.film-root[data-beat="3"] .film-stage,
+.film-root[data-beat="4"] .film-stage,
+.film-root[data-beat="5"] .film-stage {
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.15rem;
+}
+.film-root[data-beat="3"] .film-stage svg,
+.film-root[data-beat="4"] .film-stage svg,
+.film-root[data-beat="5"] .film-stage svg {
+  width: 100%;
+  max-height: calc(100svh - var(--site-header-h) - 80px);
 }
 
-/* Beat 4 — project management + change: governance rail locks over the top */
-[data-beat="4"] .sf-rail4,
-[data-beat="5"] .sf-rail4 {
+/* Beat 4 — PM board; beat 5 — adoption runway */
+[data-beat="4"] .sf-pm4 {
   opacity: 1;
 }
-
-/* Beat 5 — make it stick: training/SOP/UAT check-locks down the spine */
-[data-beat="5"] .sf-checks5 {
+[data-beat="5"] .sf-adopt5 {
   opacity: 1;
 }
 

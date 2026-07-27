@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "Unowned data kills ERP and agentic AI. Robert Paddock seats a sovereign data core inside the business — living assets for $100M–$1B operators.",
+    "Modernize legacy systems while operations keep running. Robert Paddock seats a sovereign data core — a living asset for $100M–$1B operators.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Unowned data kills ERP and agentic AI. Sovereign data core. Living asset the business owns.",
+      "Legacy modernization without a hard stop. Sovereign data core. Living asset the business owns.",
     images: [
       {
         url: "/og-image.png",
@@ -61,10 +61,11 @@ export default function HomePage() {
               The technology works. People and process decide whether it pays.
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-              Diagnosers explain the failure. Vendors implement their slice. AI
-              builders rent you tools. None of them owns the transformation as
-              a business system — systems and agentic AI on the same ownership
-              layer: people, data, workflows, above the vendors.{" "}
+              Diagnosers explain the failure. Vendors sell rip-and-replace or
+              their slice. AI builders rent you tools. None of them owns
+              continuity-safe transformation as a business system — people,
+              data, and workflows above the vendors, while operations keep
+              running.{" "}
               <span className="font-semibold text-navy">
                 That is the scarce work. That is what I execute.
               </span>
@@ -89,10 +90,10 @@ export default function HomePage() {
                 Most recent — CIO, Sierra Nevada Brewing (~$420M). Full member
                 of the executive leadership team; presented in all board
                 meetings; worked across the senior leadership team. Led a $15M
-                enterprise transformation on a client-owned data core, rebuilt
-                the IS function into a purpose-built IT organization, and put
-                enterprise agentic AI into production across real operational
-                workflows — with governance, training, and business ownership.
+                enterprise transformation on a client-owned data core and
+                rebuilt the IS function into a purpose-built IT organization —
+                with enterprise agentic AI in production under governance,
+                training, and business ownership.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
                 Earlier: CEO/CTO, Timberline — scaled $250K → $130M across US
@@ -153,9 +154,10 @@ export default function HomePage() {
           </h2>
           <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-porcelain/75 md:text-[18px]">
             No deck. No proposal theater. Bring the real situation — the
-            systems, the stalled decision, the agentic ambition — and
-            I&apos;ll walk you through exactly how I&apos;d own it. Permanent
-            or fractional — the ownership standard does not change.
+            legacy stack, the stalled modernization, the keep-running
+            constraint — and I&apos;ll walk you through exactly how I&apos;d
+            own it. Permanent or fractional — the ownership standard does not
+            change.
           </p>
           <Link
             href="/contact/"
