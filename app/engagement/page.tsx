@@ -46,6 +46,38 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const professionalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "idigdata — Embedded transformation leadership",
+  url: "https://idigdata.com/engagement/",
+  description:
+    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional, adoption, and recovery are entry modes into the same operator-led work — ownership above the vendors, living operating asset, exit-by-design. For $100M–$1B operators.",
+  serviceType: [
+    "Embedded transformation leadership",
+    "Transformational CIO",
+    "Legacy ERP modernization",
+    "Agentic AI in production",
+  ],
+  provider: {
+    "@type": "Person",
+    name: "Robert Paddock",
+    jobTitle: "Transformational Chief Information Officer",
+    url: "https://idigdata.com",
+    sameAs: ["https://www.linkedin.com/in/robertpaddock"],
+  },
+  brand: {
+    "@type": "Organization",
+    name: "Data Integration Group",
+    alternateName: "idigdata",
+    url: "https://idigdata.com",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
+};
+
 const authorityDoors = [
   {
     name: "Fractional embed",
@@ -68,6 +100,7 @@ export default function EngagementPage() {
   return (
     <div className="mx-auto max-w-content bg-cream px-6 font-body text-navy">
       <JsonLdScript data={breadcrumbJsonLd} />
+      <JsonLdScript data={professionalServiceJsonLd} />
 
       <section className="relative bg-cream pt-20 pb-10 md:pt-24 md:pb-14">
         <M4Watermark position="top-right" />

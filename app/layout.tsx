@@ -45,9 +45,12 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Enterprises keep buying technology. Value fails where people, process, and data don't fit. Robert Paddock owns that layer — living operating assets, production agentic AI with governance, for $100M–$1B operators.",
+    "Enterprises keep buying technology. AI and ERP fail where people, process, and data don't fit. Robert Paddock owns that layer — business transformation through systems and agentic AI, legacy ERP keep-running, living assets for $100M–$1B operators.",
   alternates: {
     canonical: "/",
+    types: {
+      "text/plain": "https://idigdata.com/llms.txt",
+    },
   },
   icons: {
     icon: [
