@@ -1,5 +1,12 @@
 import { NextResponse, type NextFetchEvent, type NextRequest } from "next/server";
 import { recordDoorKnock, shouldCaptureDoorKnock } from "@/lib/server/doorKnock";
+import {
+  ATTRIBUTION_COOKIE,
+  ATTRIBUTION_SECONDS,
+  buildAttributionFromRequest,
+  decodeAttributionCookie,
+  encodeAttributionCookie,
+} from "@/lib/traffic/attribution";
 import { parseInternalIpAllowlist } from "@/lib/traffic/websiteSignals";
 
 const DOOR_SESSION_COOKIE = "idig_door_sid";
@@ -12,6 +19,7 @@ const MARKER_SECONDS = 365 * 24 * 60 * 60;
 export function proxy(req: NextRequest, event: NextFetchEvent) {
   const response = NextResponse.next();
   syncTrafficCookies(req, response);
+  syncAttributionCookie(req, response);
 
   if (!shouldCaptureDoorKnock(req)) return response;
 
@@ -62,7 +70,10 @@ function syncTrafficCookies(req: NextRequest, response: NextResponse) {
   }
 
   if (fleet === "1") {
-    setMarkerCookie(response, FLEET_COOKIE, "1", secure);
+    // Production: URL alone cannot mint fleet — requires DIGOPS_FLEET_BEACON_SECRET header.
+    if (process.env.NODE_ENV !== "production" || isFleetHeaderAuthorized(req)) {
+      setMarkerCookie(response, FLEET_COOKIE, "1", secure);
+    }
   }
   if (fleet === "0" || clearFleet === "1") {
     setMarkerCookie(response, FLEET_COOKIE, "", secure, 0);
@@ -72,6 +83,39 @@ function syncTrafficCookies(req: NextRequest, response: NextResponse) {
   if (isFleetHeaderAuthorized(req)) {
     setMarkerCookie(response, FLEET_COOKIE, "1", secure);
   }
+}
+
+function syncAttributionCookie(req: NextRequest, response: NextResponse) {
+  const secure = process.env.NODE_ENV === "production";
+  if (req.nextUrl.searchParams.get("clear_attr") === "1") {
+    setMarkerCookie(response, ATTRIBUTION_COOKIE, "", secure, 0);
+    return;
+  }
+
+  const existing = decodeAttributionCookie(req.cookies.get(ATTRIBUTION_COOKIE)?.value);
+  const next = buildAttributionFromRequest({
+    path: req.nextUrl.pathname,
+    search: req.nextUrl.search,
+    referrer: req.headers.get("referer"),
+    existing,
+  });
+  if (!next) return;
+  if (
+    existing &&
+    existing.utm_source === next.utm_source &&
+    existing.utm_medium === next.utm_medium &&
+    existing.utm_campaign === next.utm_campaign &&
+    existing.gclid === next.gclid
+  ) {
+    return;
+  }
+  setMarkerCookie(
+    response,
+    ATTRIBUTION_COOKIE,
+    encodeAttributionCookie(next),
+    secure,
+    ATTRIBUTION_SECONDS,
+  );
 }
 
 function resolveTrafficMarks(req: NextRequest): {
@@ -94,8 +138,10 @@ function resolveTrafficMarks(req: NextRequest): {
   else isInternalMarked = req.cookies.get(INTERNAL_COOKIE)?.value === "1";
 
   let isFleetMarked = false;
-  if (fleetParam === "1" || isFleetHeaderAuthorized(req)) isFleetMarked = true;
-  else if (fleetParam === "0" || clearFleet) isFleetMarked = false;
+  if (isFleetHeaderAuthorized(req)) isFleetMarked = true;
+  else if (fleetParam === "1" && process.env.NODE_ENV !== "production") {
+    isFleetMarked = true;
+  } else if (fleetParam === "0" || clearFleet) isFleetMarked = false;
   else isFleetMarked = req.cookies.get(FLEET_COOKIE)?.value === "1";
 
   return { isInternalMarked, isFleetMarked };
@@ -134,8 +180,14 @@ function stampDoorCookies(response: NextResponse, doorSessionId: string) {
     maxAge: DOOR_SESSION_SECONDS,
   };
 
-  response.cookies.set(DOOR_SESSION_COOKIE, doorSessionId, common);
-  response.cookies.set(DOOR_SEEN_COOKIE, "1", common);
+  response.cookies.set(DOOR_SESSION_COOKIE, doorSessionId, {
+    ...common,
+    httpOnly: true,
+  });
+  response.cookies.set(DOOR_SEEN_COOKIE, "1", {
+    ...common,
+    httpOnly: true,
+  });
 }
 
 function getClientIp(req: NextRequest): string | null {

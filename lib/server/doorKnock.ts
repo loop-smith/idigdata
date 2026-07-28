@@ -1,6 +1,12 @@
 import type { NextRequest } from "next/server";
 import { getDigOpsSupabase } from "@/lib/server/digopsSupabase";
 import {
+  ATTRIBUTION_COOKIE,
+  decodeAttributionCookie,
+  mergeAttributionSearch,
+  parseAttributionSearch,
+} from "@/lib/traffic/attribution";
+import {
   classifyWebsiteSignal,
   isAssetPath,
   parseInternalIpAllowlist,
@@ -21,35 +27,19 @@ type DoorKnockOptions = {
 };
 
 const HEADER_ALLOWLIST = [
-  "accept",
   "accept-language",
-  "cf-connecting-ip",
   "cf-ipcountry",
-  "cf-ray",
-  "forwarded",
   "host",
-  "origin",
   "referer",
-  "sec-ch-ua",
   "sec-ch-ua-mobile",
   "sec-ch-ua-platform",
   "sec-fetch-dest",
   "sec-fetch-mode",
   "sec-fetch-site",
-  "true-client-ip",
   "user-agent",
-  "x-forwarded-for",
-  "x-forwarded-host",
-  "x-forwarded-proto",
-  "x-real-ip",
-  "x-vercel-deployment-url",
-  "x-vercel-forwarded-for",
-  "x-vercel-id",
   "x-vercel-ip-city",
   "x-vercel-ip-country",
   "x-vercel-ip-country-region",
-  "x-vercel-ip-latitude",
-  "x-vercel-ip-longitude",
 ];
 
 export function shouldCaptureDoorKnock(req: NextRequest): boolean {
@@ -78,9 +68,13 @@ export async function recordDoorKnock(
   const referrer = req.headers.get("referer");
   const userAgent = req.headers.get("user-agent");
   const clientIp = getClientIp(req);
+  const attribution = decodeAttributionCookie(
+    req.cookies.get(ATTRIBUTION_COOKIE)?.value,
+  );
+  const attributedSearch = mergeAttributionSearch(req.nextUrl.search, attribution);
   const signal = classifyWebsiteSignal({
     path: req.nextUrl.pathname,
-    search: req.nextUrl.search,
+    search: attributedSearch,
     referrer,
     userAgent,
     hostname: req.nextUrl.hostname,
@@ -97,7 +91,8 @@ export async function recordDoorKnock(
 
   if (signal.suppress_pageview) return;
 
-  const utms = parseUtms(req.nextUrl.search);
+  const utms = resolveUtms(req.nextUrl.search, attribution);
+  const hashedIp = await hashClientIp(getClientIp(req));
   const baseRow = {
     source: "idigdata-door-knock",
     path: req.nextUrl.pathname,
@@ -116,21 +111,18 @@ export async function recordDoorKnock(
     protocol:
       req.headers.get("x-forwarded-proto")?.slice(0, 40) ||
       req.nextUrl.protocol.replace(":", ""),
-    client_ip: getClientIp(req),
-    client_ip_chain: req.headers.get("x-forwarded-for")?.slice(0, 1024) || null,
+    client_ip: hashedIp,
+    client_ip_chain: null,
     geo_country: pickHeader(req, "x-vercel-ip-country", "cf-ipcountry"),
     geo_region: pickHeader(req, "x-vercel-ip-country-region"),
     geo_city: pickHeader(req, "x-vercel-ip-city"),
-    geo_latitude: pickHeader(req, "x-vercel-ip-latitude"),
-    geo_longitude: pickHeader(req, "x-vercel-ip-longitude"),
-    accept_language: req.headers.get("accept-language")?.slice(0, 512) || null,
+    geo_latitude: null,
+    geo_longitude: null,
+    accept_language: req.headers.get("accept-language")?.slice(0, 80) || null,
     sec_fetch_site: req.headers.get("sec-fetch-site")?.slice(0, 80) || null,
     sec_fetch_mode: req.headers.get("sec-fetch-mode")?.slice(0, 80) || null,
     sec_fetch_dest: req.headers.get("sec-fetch-dest")?.slice(0, 80) || null,
-    request_id:
-      req.headers.get("x-vercel-id")?.slice(0, 255) ||
-      req.headers.get("cf-ray")?.slice(0, 255) ||
-      null,
+    request_id: null,
     headers_json: collectSafeHeaders(req),
     traffic_class: signal.traffic_class,
     source_kind: signal.source_kind,
@@ -178,33 +170,17 @@ export async function recordDoorKnock(
   }
 }
 
-function parseUtms(search: string | null | undefined): UtmFields {
-  if (!search) return emptyUtms();
-  try {
-    const params = new URLSearchParams(search.startsWith("?") ? search.slice(1) : search);
-    const pick = (key: string) => {
-      const value = params.get(key);
-      return value && value.length > 0 && value.length <= 512 ? value : null;
-    };
-    return {
-      utm_source: pick("utm_source"),
-      utm_medium: pick("utm_medium"),
-      utm_campaign: pick("utm_campaign"),
-      utm_term: pick("utm_term"),
-      utm_content: pick("utm_content"),
-    };
-  } catch {
-    return emptyUtms();
-  }
-}
-
-function emptyUtms(): UtmFields {
+function resolveUtms(
+  search: string | null | undefined,
+  attribution: ReturnType<typeof decodeAttributionCookie>,
+): UtmFields {
+  const live = parseAttributionSearch(search);
   return {
-    utm_source: null,
-    utm_medium: null,
-    utm_campaign: null,
-    utm_term: null,
-    utm_content: null,
+    utm_source: live.utm_source ?? attribution?.utm_source ?? null,
+    utm_medium: live.utm_medium ?? attribution?.utm_medium ?? null,
+    utm_campaign: live.utm_campaign ?? attribution?.utm_campaign ?? null,
+    utm_term: live.utm_term ?? attribution?.utm_term ?? null,
+    utm_content: live.utm_content ?? attribution?.utm_content ?? null,
   };
 }
 
@@ -214,11 +190,23 @@ function getClientIp(req: NextRequest): string | null {
     req.headers.get("cf-connecting-ip") ||
     req.headers.get("true-client-ip") ||
     req.headers.get("x-vercel-forwarded-for");
-  if (direct) return direct.slice(0, 128);
+  if (direct) return direct.split(",")[0]?.trim().slice(0, 128) || null;
 
   const forwarded = req.headers.get("x-forwarded-for");
   const first = forwarded?.split(",")[0]?.trim();
   return first ? first.slice(0, 128) : null;
+}
+
+/** One-way truncate+hash so DigOps can correlate without storing raw IP. */
+async function hashClientIp(ip: string | null): Promise<string | null> {
+  if (!ip) return null;
+  const salt = process.env.DIGOPS_IP_HASH_SALT?.trim() || "idigdata-door-knock";
+  const data = new TextEncoder().encode(`${salt}:${ip}`);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  const hex = Array.from(new Uint8Array(digest), (b) =>
+    b.toString(16).padStart(2, "0"),
+  ).join("");
+  return `h:${hex.slice(0, 32)}`;
 }
 
 function pickHeader(req: NextRequest, ...names: string[]): string | null {

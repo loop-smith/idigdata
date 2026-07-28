@@ -1,56 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 import { Resend } from "resend";
+import {
+  ContactSchema,
+  sanitizeHeaderField,
+  type ContactPayload,
+} from "@/lib/contact/schema";
 import { getDigOpsSupabaseForContact } from "@/lib/server/digopsSupabase";
 import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
 
 export const runtime = "nodejs";
 
-const ContactSchema = z.object({
-  name: z.string().min(1).max(120),
-  email: z.string().email().max(200),
-  role: z.string().max(120).optional().default(""),
-  company: z.string().max(200).optional().default(""),
-  message: z.string().max(4000).optional().default(""),
-  interestType: z
-    .enum([
-      "general",
-      "cio_search",
-      "embedded",
-      "fractional",
-      "agentics",
-      "speaking",
-      "article_request",
-    ])
-    .optional()
-    .default("general"),
-  articleSlug: z.string().max(80).optional(),
-  articleSlugs: z.array(z.string().max(80)).max(10).optional(),
-  _hp: z.string().max(0).optional(),
-});
-
-const ARTICLE_TITLES: Record<string, string> = {
-  "transformation-and-the-people-of-it":
-    "You Don't Buy a Transformation. Your People Build One.",
-  "the-mechanics": "You Don't Run a Project. You Build an Asset.",
-  "production-agentics": "Production Agentic AI: The Business Asset",
-};
-
-function humanTitleFor(slug: string): string {
-  return ARTICLE_TITLES[slug] ?? slug;
-}
-
-type ParsedContact = z.infer<typeof ContactSchema>;
 type CrmInsertResult =
   | { ok: true; id: string | null }
   | { ok: false; error: "not_configured" | "insert_failed" };
 
-const KNOWN_ARTICLE_SLUGS = new Set(Object.keys(ARTICLE_TITLES));
-
-async function insertCrmRow(
-  table: "article_requests" | "contact_submissions",
-  row: Record<string, unknown>,
-): Promise<CrmInsertResult> {
+async function insertContactRow(row: Record<string, unknown>): Promise<CrmInsertResult> {
   const supabase = getDigOpsSupabaseForContact();
   if (!supabase) {
     console.warn("contact form: DigOps Supabase env not configured");
@@ -59,14 +23,14 @@ async function insertCrmRow(
 
   if (supabase.canReturnInsertedId) {
     const { data: inserted, error } = await supabase.client
-      .from(table)
+      .from("contact_submissions")
       .insert(row)
       .select("id")
       .single();
 
     if (error || !inserted) {
       console.error(
-        `contact form: ${table} insert failed: ${
+        `contact form: contact_submissions insert failed: ${
           error?.message ?? "no row returned"
         }`,
       );
@@ -76,10 +40,9 @@ async function insertCrmRow(
     return { ok: true, id: inserted.id as string };
   }
 
-  const { error } = await supabase.client.from(table).insert(row);
-
+  const { error } = await supabase.client.from("contact_submissions").insert(row);
   if (error) {
-    console.error(`contact form: ${table} insert failed: ${error.message}`);
+    console.error(`contact form: contact_submissions insert failed: ${error.message}`);
     return { ok: false, error: "insert_failed" };
   }
 
@@ -87,33 +50,19 @@ async function insertCrmRow(
 }
 
 async function writeCrmIntake(
-  data: ParsedContact,
-  normalizedSlugs: string[],
+  data: ContactPayload,
   req: NextRequest,
 ): Promise<CrmInsertResult> {
-  const sourceUrl = req.headers.get("referer");
-  const userAgent = req.headers.get("user-agent");
-
-  if (data.interestType === "article_request") {
-    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-    return insertCrmRow("article_requests", {
-      requester_name: data.name,
-      requester_email: data.email,
-      requester_company: data.company.trim() || null,
-      requested_articles: normalizedSlugs,
-      expires_at: expiresAt,
-    });
-  }
-
-  return insertCrmRow("contact_submissions", {
+  return insertContactRow({
     name: data.name,
     email: data.email,
     role: data.role.trim() || "(not supplied)",
     company: data.company.trim() || null,
     message: data.message.trim() || "(no message supplied)",
     source: `website-${data.interestType}`,
-    source_url: sourceUrl,
-    user_agent: userAgent,
+    source_url: req.headers.get("referer"),
+    user_agent: req.headers.get("user-agent"),
+    anon_session_id: data.anon_session_id?.trim() || null,
   });
 }
 
@@ -121,6 +70,7 @@ export async function POST(req: NextRequest) {
   const guard = guardJsonPost(req, {
     maxBytes: 16 * 1024,
     rateLimits: [
+      { name: "contact-1m", windowMs: 60 * 1000, max: 3 },
       { name: "contact-10m", windowMs: 10 * 60 * 1000, max: 6 },
       { name: "contact-hour", windowMs: 60 * 60 * 1000, max: 20 },
     ],
@@ -138,79 +88,24 @@ export async function POST(req: NextRequest) {
 
   const parsed = ContactSchema.safeParse(body);
   if (!parsed.success) {
-    return NextResponse.json(
-      { ok: false, error: "validation_failed", issues: parsed.error.flatten() },
-      { status: 400 },
-    );
+    return NextResponse.json({ ok: false, error: "validation_failed" }, { status: 400 });
   }
 
-  const {
-    name,
-    email,
-    role,
-    company,
-    message,
-    interestType,
-    articleSlug,
-    articleSlugs,
-  } = parsed.data;
-
-  const isArticleRequest = interestType === "article_request";
-
-  let normalizedSlugs: string[] = [];
-  if (articleSlugs && articleSlugs.length > 0) {
-    normalizedSlugs = articleSlugs;
-  } else if (articleSlug) {
-    normalizedSlugs = [articleSlug];
-  }
-  normalizedSlugs = Array.from(new Set(normalizedSlugs));
-
-  if (isArticleRequest && normalizedSlugs.length === 0) {
-    return NextResponse.json(
-      { ok: false, error: "no_articles_specified" },
-      { status: 400 },
-    );
-  }
-
-  if (
-    isArticleRequest &&
-    normalizedSlugs.some((slug) => !KNOWN_ARTICLE_SLUGS.has(slug))
-  ) {
-    return NextResponse.json(
-      { ok: false, error: "unknown_article" },
-      { status: 400 },
-    );
-  }
+  const { name, email, role, company, message, interestType } = parsed.data;
+  const safeName = sanitizeHeaderField(name);
+  const safeEmail = sanitizeHeaderField(email);
 
   const apiKey = process.env.RESEND_API_KEY;
   const notifyTo = process.env.EMAIL_NOTIFY_TO ?? "robert@idigdata.com";
   const fromAddr =
     process.env.EMAIL_NOTIFY_FROM ?? "idigdata website <noreply@idigdata.com>";
 
-  let subject: string;
-  if (isArticleRequest) {
-    if (normalizedSlugs.length === 1) {
-      subject = `[idigdata] Article request: ${normalizedSlugs[0]} — ${name}`;
-    } else {
-      subject = `[idigdata] Article request: ${normalizedSlugs.length} articles — ${name}`;
-    }
-  } else {
-    subject = `[idigdata] Reach out: ${name} / ${email}`;
-  }
-
-  const articleLines = normalizedSlugs.map(
-    (slug) => `  • ${humanTitleFor(slug)} (${slug})`,
-  );
-
+  const subject = `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
   const lines = [
-    `From: ${name} <${email}>`,
-    role ? `Role: ${role}` : null,
-    company ? `Company: ${company}` : null,
+    `From: ${safeName} <${safeEmail}>`,
+    role ? `Role: ${sanitizeHeaderField(role)}` : null,
+    company ? `Company: ${sanitizeHeaderField(company)}` : null,
     `Interest: ${interestType}`,
-    isArticleRequest && normalizedSlugs.length > 0
-      ? `Articles requested (${normalizedSlugs.length}):`
-      : null,
-    ...(isArticleRequest ? articleLines : []),
     ``,
     `Message:`,
     message.trim().length > 0 ? message : "(no message supplied)",
@@ -218,15 +113,13 @@ export async function POST(req: NextRequest) {
     `---`,
     `Source: ${req.headers.get("referer") ?? "unknown"}`,
     `User-Agent: ${req.headers.get("user-agent") ?? "unknown"}`,
+    `Session: ${parsed.data.anon_session_id ?? "none"}`,
     `Timestamp: ${new Date().toISOString()}`,
   ].filter((l): l is string => l !== null);
 
-  const crm = await writeCrmIntake(parsed.data, normalizedSlugs, req);
+  const crm = await writeCrmIntake(parsed.data, req);
   if (!crm.ok) {
-    return NextResponse.json(
-      { ok: false, error: "crm_failed" },
-      { status: 500 },
-    );
+    return NextResponse.json({ ok: false, error: "crm_failed" }, { status: 500 });
   }
 
   let notification: "sent" | "not_configured" | "failed" = "sent";
@@ -239,7 +132,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: fromAddr,
         to: notifyTo,
-        replyTo: email,
+        replyTo: safeEmail,
         subject,
         text: lines.join("\n"),
       });

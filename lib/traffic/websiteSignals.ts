@@ -124,6 +124,7 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
   const utmSource = clean(params.get("utm_source"));
   const utmMedium = clean(params.get("utm_medium"));
   const utmCampaign = clean(params.get("utm_campaign"));
+  const gclid = clean(params.get("gclid"));
 
   if (isAsset) {
     return suppressed("asset", "asset", "asset_path", {
@@ -194,12 +195,14 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
     });
   }
 
-  if (utmSource) {
+  if (utmSource || gclid) {
     return tracked("campaign", "campaign", {
-      source_channel: utmSource,
-      source_medium: utmMedium,
-      source_campaign: utmCampaign,
-      source_refs: [{ type: "utm_source", value: utmSource }],
+      source_channel: utmSource ?? "gclid",
+      source_medium: utmMedium ?? (gclid ? "cpc" : null),
+      source_campaign: utmCampaign ?? gclid,
+      source_refs: utmSource
+        ? [{ type: "utm_source", value: utmSource }]
+        : [{ type: "gclid", value: gclid ?? "1" }],
     });
   }
 

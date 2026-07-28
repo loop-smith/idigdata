@@ -22,6 +22,7 @@
 .DS_Store
 Thumbs.db
 *.pem
+*.bak
 
 # debug
 npm-debug.log*
@@ -30,12 +31,13 @@ yarn-error.log*
 .pnpm-debug.log*
 .dev.log
 
-# env files
+# env files — keep examples tracked
 .env
-.env*.local
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.local.*
 !.env.example
 !.env.template
 
@@ -50,7 +52,6 @@ yarn-error.log*
 .claude/settings.local.json
 /_emit/
 .codex/
-.env.local.*
 
 # lighthouse — ephemeral score JSONs from launch dispatch
 /lighthouse-*.json
@@ -60,5 +61,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
-.env*
+# supabase CLI scratch (never commit Capo/project refs)
+/supabase/.temp/

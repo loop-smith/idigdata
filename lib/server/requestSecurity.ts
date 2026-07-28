@@ -1,3 +1,10 @@
+/**
+ * API request guards for public website POSTs.
+ *
+ * Rate limits are in-process Map buckets — soft on multi-isolate serverless.
+ * Keep as defense-in-depth; same-origin + body caps + honeypot are primary.
+ * Escalate to Vercel WAF / Upstash if contact spam rises (see docs/TELEMETRY.md).
+ */
 import { NextRequest, NextResponse } from "next/server";
 
 type RateLimit = {

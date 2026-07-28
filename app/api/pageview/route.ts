@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { getDigOpsSupabase } from "@/lib/server/digopsSupabase";
 import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
+import {
+  ATTRIBUTION_COOKIE,
+  decodeAttributionCookie,
+  mergeAttributionSearch,
+  parseAttributionSearch,
+} from "@/lib/traffic/attribution";
 import { classifyWebsiteSignal } from "@/lib/traffic/websiteSignals";
 
 export const runtime = "nodejs";
@@ -33,36 +39,18 @@ type UtmFields = {
   utm_content: string | null;
 };
 
-function emptyUtms(): UtmFields {
+function resolveUtms(
+  search: string | null | undefined,
+  attribution: ReturnType<typeof decodeAttributionCookie>,
+): UtmFields {
+  const live = parseAttributionSearch(search);
   return {
-    utm_source: null,
-    utm_medium: null,
-    utm_campaign: null,
-    utm_term: null,
-    utm_content: null,
+    utm_source: live.utm_source ?? attribution?.utm_source ?? null,
+    utm_medium: live.utm_medium ?? attribution?.utm_medium ?? null,
+    utm_campaign: live.utm_campaign ?? attribution?.utm_campaign ?? null,
+    utm_term: live.utm_term ?? attribution?.utm_term ?? null,
+    utm_content: live.utm_content ?? attribution?.utm_content ?? null,
   };
-}
-
-function parseUtms(search: string | null | undefined): UtmFields {
-  if (!search) return emptyUtms();
-  try {
-    const params = new URLSearchParams(
-      search.startsWith("?") ? search.slice(1) : search,
-    );
-    const pick = (k: string) => {
-      const v = params.get(k);
-      return v && v.length > 0 && v.length <= 512 ? v : null;
-    };
-    return {
-      utm_source: pick("utm_source"),
-      utm_medium: pick("utm_medium"),
-      utm_campaign: pick("utm_campaign"),
-      utm_term: pick("utm_term"),
-      utm_content: pick("utm_content"),
-    };
-  } catch {
-    return emptyUtms();
-  }
 }
 
 export async function POST(req: NextRequest) {
@@ -86,10 +74,14 @@ export async function POST(req: NextRequest) {
   const ua = req.headers.get("user-agent");
   const cookieInternal = req.cookies.get("idig_internal_traffic")?.value === "1";
   const cookieFleet = req.cookies.get("idig_fleet_traffic")?.value === "1";
+  const attribution = decodeAttributionCookie(
+    req.cookies.get(ATTRIBUTION_COOKIE)?.value,
+  );
+  const attributedSearch = mergeAttributionSearch(parsed.data.search, attribution);
   const signal = classifyWebsiteSignal({
     path: parsed.data.path,
     referrer: parsed.data.referrer,
-    search: parsed.data.search,
+    search: attributedSearch,
     userAgent: ua,
     hostname: req.nextUrl.hostname,
     isInternalMarked: parsed.data.is_internal === true || cookieInternal,
@@ -106,7 +98,7 @@ export async function POST(req: NextRequest) {
     return NO_CONTENT;
   }
 
-  const utms = parseUtms(parsed.data.search);
+  const utms = resolveUtms(parsed.data.search, attribution);
 
   const baseRow = {
     source: "idigdata-website",

@@ -48,9 +48,13 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
         <p className="mb-3">
           When someone opens a page on idigdata.com, we record a first-party
           &ldquo;door-knock&rdquo; for DigOps (our operating system): path, time,
-          referrer, basic device/browser signals, optional UTM parameters, and
-          coarse location fields provided by the host (for example country). We use
-          this to see who is finding the practice and to keep the site healthy.
+          referrer, basic device/browser signals, optional UTM / click-id
+          parameters (also kept in a short first-party attribution cookie), and
+          coarse host location (country / region / city). We store a{" "}
+          <span className="font-semibold text-ink">hashed</span> visitor IP
+          fingerprint — not the raw address — plus a small allowlisted set of
+          request metadata (for example accept-language and fetch-site). We do
+          not keep precise latitude/longitude or full proxy header dumps.
         </p>
         <p>
           We also use Vercel Analytics for aggregate, privacy-oriented visit
@@ -69,13 +73,18 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
           short-lived markers so we do not double-count the same entrance window.
         </li>
         <li>
+          <span className="font-semibold text-ink">Attribution cookie</span> —
+          remembers UTM / gclid from a campaign landing for about 30 days so later
+          pages in the same browser still attribute correctly.
+        </li>
+        <li>
           <span className="font-semibold text-ink">Analytics preference</span> —
           remembers if you opted out of Vercel Analytics.
         </li>
         <li>
-          <span className="font-semibold text-ink">Internal marker</span> — only if
-          Rob or DigOps agents deliberately mark a browser as internal so operator
-          traffic can be filtered out of DigOps.
+          <span className="font-semibold text-ink">Internal / fleet markers</span>{" "}
+          — only if Rob or DigOps agents deliberately mark a browser so operator
+          and automation traffic can be filtered in DigOps.
         </li>
       </ul>
     ),

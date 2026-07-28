@@ -2,6 +2,27 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-07-28 — Harden pass (agency-grade build)
+
+Sequence: `docs/HARDEN-SEQUENCE.md`. Telemetry map: `docs/TELEMETRY.md`.
+
+- **Supply chain:** Next `16.2.12`, PostCSS `8.5.18`, sharp override `0.35.0` — `npm audit --omit=dev` clean.
+- **PII:** door-knock stores hashed IP only; drops lat/long, XFF chain, request ids; shrinks header allowlist. Privacy copy updated.
+- **Least privilege:** DigOps writes prefer anon key; insert-only RLS policies on bridge tables; service role optional for contact id return.
+- **Fleet integrity:** production fleet mint requires `x-digops-traffic: fleet:<secret>` (bare `?fleet=1` no longer stamps).
+- **Failure UX:** `app/error.tsx`, `not-found.tsx`, `global-error.tsx`.
+- **Contact contract:** shared `lib/contact/schema.ts`; retired `article_request` ghost path; email header CRLF sanitization; tighter contact rate buckets.
+- **Hygiene:** DigOps-only env templates; gitignore `supabase/.temp` + `*.bak`; removed public `.bak` diagram; door session cookies `httpOnly`; `/api/pageview/` trailing slash; package renamed `idigdata-site`.
+- **Tests:** `npm run typecheck` / `npm test` for contact schema, attribution, websiteSignals.
+- **SpineFilm split:** controller shell + `spineFilmBeats` / `spineFilmTiles` / `AssemblySvg` / `spineFilmChrome` (no behavior change).
+
+## 2026-07-28 — Attribution cookie + contact session bridge + engagement hooks
+
+- **First-party attribution:** `idig_attr` cookie (30d) stamps on UTM/gclid landings via `proxy.ts`; door-knock and `/api/pageview` fill UTMs from cookie when the URL no longer has them. Clear with `?clear_attr=1`.
+- **gclid → campaign:** classifier treats `gclid` as campaign even without `utm_source`.
+- **Contact ↔ session:** contact / article-request intake accepts `anon_session_id` (DigOps Supabase columns added). Contact form sends sessionStorage id.
+- **Engagement (opt-in):** with `NEXT_PUBLIC_TRACK_PAGE_NAVIGATION=1`, PageviewBeacon emits dwell + max scroll via website event ingest (CTA clicks already tracked).
+
 ## 2026-07-27 — Beacon identity for Real hits
 
 - **Operator stamp:** `?internal=1` now **records** door-knock rows with `is_internal=true` / `source_kind=rob_internal` (year cookie). Previously suppressed so DigOps never saw an Internal bucket.

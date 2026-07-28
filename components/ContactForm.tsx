@@ -1,30 +1,19 @@
 "use client";
 
 import { useId, useState } from "react";
-import { trackWebsiteEvent } from "./analytics/websiteEvents";
+import {
+  INTEREST_OPTIONS,
+  type InterestType,
+} from "@/lib/contact/schema";
+import { getAnonSessionId, trackWebsiteEvent } from "@/components/analytics/websiteEvents";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export type InterestType =
-  | "general"
-  | "cio_search"
-  | "embedded"
-  | "fractional"
-  | "agentics"
-  | "speaking";
+export type { InterestType };
 
 type Props = {
   showInterestSelect?: boolean;
 };
-
-const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
-  { value: "general", label: "General" },
-  { value: "cio_search", label: "CIO / executive search" },
-  { value: "embedded", label: "Embedded engagement" },
-  { value: "fractional", label: "Fractional engagement" },
-  { value: "agentics", label: "Agentic AI engagement" },
-  { value: "speaking", label: "Speaking / advisory" },
-];
 
 export default function ContactForm({ showInterestSelect = false }: Props) {
   const [name, setName] = useState("");
@@ -61,6 +50,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         role,
         message,
         interestType: interest,
+        anon_session_id: getAnonSessionId(),
         _hp: hp,
       };
       const res = await fetch("/api/contact/", {

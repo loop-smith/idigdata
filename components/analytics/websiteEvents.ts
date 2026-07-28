@@ -1,5 +1,14 @@
 "use client";
 
+import {
+  ATTRIBUTION_COOKIE,
+  decodeAttributionCookie,
+  encodeAttributionCookie,
+  hasCampaignSignal,
+  mergeAttributionSearch,
+  parseAttributionSearch,
+  type AttributionPayload,
+} from "@/lib/traffic/attribution";
 import { classifyWebsiteSignal, normalizePath, type WebsiteSignal } from "@/lib/traffic/websiteSignals";
 
 export type WebsiteEventType =
@@ -8,7 +17,8 @@ export type WebsiteEventType =
   | "article_request"
   | "cta_click"
   | "mailto_click"
-  | "dwell";
+  | "dwell"
+  | "scroll";
 
 type WebsiteEventInput = {
   event_type: WebsiteEventType;
@@ -48,16 +58,45 @@ export function getCurrentTrafficSignal(
   referrer: string | null = document.referrer || null,
 ): WebsiteSignal {
   syncTrafficMarkersFromLocation();
+  syncAttributionFromLocation();
   return classifyWebsiteSignal({
     path,
     referrer,
-    search: window.location.search || null,
+    search: getAttributionSearch() || window.location.search || null,
     userAgent: navigator.userAgent,
     hostname: window.location.hostname,
     isInternalMarked: hasMarker(INTERNAL_MARKER_KEY),
     isFleetMarked: hasMarker(FLEET_MARKER_KEY),
     trackPreviewTraffic: TRACK_PREVIEW_TRAFFIC,
   });
+}
+
+/** Synthetic search string with live UTMs filled from attribution cookie. */
+export function getAttributionSearch(): string | null {
+  if (typeof window === "undefined") return null;
+  return mergeAttributionSearch(window.location.search, readAttributionCookie());
+}
+
+export function syncAttributionFromLocation() {
+  if (typeof window === "undefined") return;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("clear_attr") === "1") {
+      writeAttributionCookie(null);
+      return;
+    }
+    const live = parseAttributionSearch(window.location.search);
+    if (!hasCampaignSignal(live)) return;
+    const next: AttributionPayload = {
+      ...live,
+      landing_path: window.location.pathname.slice(0, 512),
+      referrer_host: referrerHost(document.referrer),
+      captured_at: new Date().toISOString(),
+    };
+    writeAttributionCookie(next);
+  } catch {
+    // Storage failures should not affect page behavior.
+  }
 }
 
 export function trackWebsiteEvent(input: WebsiteEventInput) {
@@ -88,6 +127,7 @@ export function trackWebsiteEvent(input: WebsiteEventInput) {
     payload: {
       ...input.payload,
       location_search: window.location.search || null,
+      attribution_search: getAttributionSearch(),
     },
   });
 
@@ -114,7 +154,8 @@ function syncTrafficMarkersFromLocation() {
       window.localStorage.removeItem(INTERNAL_MARKER_KEY);
     }
     const fleet = params.get("fleet") ?? params.get("agent");
-    if (fleet === "1") {
+    // Production fleet mint is header-only (proxy). Do not let URL stamp localStorage.
+    if (fleet === "1" && process.env.NODE_ENV !== "production") {
       window.localStorage.setItem(FLEET_MARKER_KEY, "1");
     }
     if (fleet === "0" || params.get("clear_fleet") === "1") {
@@ -135,5 +176,44 @@ function hasMarker(key: string): boolean {
     return document.cookie.split(";").some((part) => part.trim() === `${key}=1`);
   } catch {
     return false;
+  }
+}
+
+function readAttributionCookie(): AttributionPayload | null {
+  try {
+    const match = document.cookie
+      .split(";")
+      .map((part) => part.trim())
+      .find((part) => part.startsWith(`${ATTRIBUTION_COOKIE}=`));
+    if (!match) return null;
+    return decodeAttributionCookie(
+      decodeURIComponent(match.slice(ATTRIBUTION_COOKIE.length + 1)),
+    );
+  } catch {
+    return null;
+  }
+}
+
+function writeAttributionCookie(payload: AttributionPayload | null) {
+  try {
+    if (!payload) {
+      document.cookie = `${ATTRIBUTION_COOKIE}=; Path=/; Max-Age=0; SameSite=Lax`;
+      return;
+    }
+    const secure = window.location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${ATTRIBUTION_COOKIE}=${encodeURIComponent(
+      encodeAttributionCookie(payload),
+    )}; Path=/; Max-Age=${30 * 24 * 60 * 60}; SameSite=Lax${secure}`;
+  } catch {
+    // ignore
+  }
+}
+
+function referrerHost(value: string | null | undefined): string | null {
+  if (!value) return null;
+  try {
+    return new URL(value).hostname.replace(/^www\./, "").slice(0, 255);
+  } catch {
+    return null;
   }
 }

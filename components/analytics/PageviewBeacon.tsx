@@ -2,11 +2,18 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { getAnonSessionId, getCurrentTrafficSignal, trackWebsiteEvent } from "./websiteEvents";
+import {
+  getAnonSessionId,
+  getAttributionSearch,
+  getCurrentTrafficSignal,
+  syncAttributionFromLocation,
+  trackWebsiteEvent,
+} from "./websiteEvents";
 
 const TRACK_PAGE_NAVIGATION = process.env.NEXT_PUBLIC_TRACK_PAGE_NAVIGATION === "1";
+const TRACK_ENGAGEMENT = process.env.NEXT_PUBLIC_TRACK_PAGE_NAVIGATION === "1";
 
-function send(path: string) {
+function sendPageview(path: string) {
   if (typeof window === "undefined") return;
   if (!TRACK_PAGE_NAVIGATION) return;
 
@@ -22,7 +29,7 @@ function send(path: string) {
   const payload = JSON.stringify({
     path,
     referrer: document.referrer || null,
-    search: window.location.search || null,
+    search: getAttributionSearch() || window.location.search || null,
     anon_session_id: getAnonSessionId(),
     traffic_class: signal.traffic_class,
     source_kind: signal.source_kind,
@@ -40,10 +47,10 @@ function send(path: string) {
   try {
     if (navigator.sendBeacon) {
       const blob = new Blob([payload], { type: "application/json" });
-      const ok = navigator.sendBeacon("/api/pageview", blob);
+      const ok = navigator.sendBeacon("/api/pageview/", blob);
       if (ok) return;
     }
-    fetch("/api/pageview", {
+    fetch("/api/pageview/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: payload,
@@ -54,15 +61,56 @@ function send(path: string) {
   }
 }
 
+function sendEngagement(
+  eventType: "dwell" | "scroll",
+  path: string,
+  payload: Record<string, unknown>,
+) {
+  if (!TRACK_ENGAGEMENT) return;
+  const signal = getCurrentTrafficSignal(path);
+  if (signal.suppress_pageview) return;
+
+  trackWebsiteEvent({
+    event_type: eventType === "dwell" ? "dwell" : "scroll",
+    path,
+    payload: {
+      ...payload,
+      engagement_kind: eventType,
+    },
+  });
+}
+
 export default function PageviewBeacon() {
   const pathname = usePathname();
   const lastPath = useRef<string | null>(null);
+  const maxScroll = useRef(0);
+  const enteredAt = useRef(Date.now());
+  const lastDwellSent = useRef(0);
+
+  useEffect(() => {
+    syncAttributionFromLocation();
+  }, [pathname]);
 
   useEffect(() => {
     if (!pathname) return;
     if (lastPath.current === pathname) return;
+
+    // Flush dwell for previous path before switching.
+    if (lastPath.current) {
+      const dwellMs = Date.now() - enteredAt.current;
+      if (dwellMs >= 3000) {
+        sendEngagement("dwell", lastPath.current, {
+          dwell_ms: dwellMs,
+          max_scroll_pct: maxScroll.current,
+        });
+      }
+    }
+
     lastPath.current = pathname;
-    send(pathname);
+    enteredAt.current = Date.now();
+    maxScroll.current = 0;
+    lastDwellSent.current = 0;
+    sendPageview(pathname);
   }, [pathname]);
 
   useEffect(() => {
@@ -90,6 +138,49 @@ export default function PageviewBeacon() {
 
     document.addEventListener("click", handleClick, { capture: true });
     return () => document.removeEventListener("click", handleClick, true);
+  }, []);
+
+  useEffect(() => {
+    if (!TRACK_ENGAGEMENT) return;
+
+    function onScroll() {
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - doc.clientHeight;
+      if (scrollable <= 0) {
+        maxScroll.current = 100;
+        return;
+      }
+      const pct = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+      if (pct > maxScroll.current) maxScroll.current = pct;
+    }
+
+    function flushDwell(reason: string) {
+      const path = lastPath.current ?? window.location.pathname;
+      const dwellMs = Date.now() - enteredAt.current;
+      if (dwellMs < 3000) return;
+      // Throttle beacon spam on visibility flips.
+      if (Date.now() - lastDwellSent.current < 15000 && reason !== "pagehide") return;
+      lastDwellSent.current = Date.now();
+      sendEngagement("dwell", path, {
+        dwell_ms: dwellMs,
+        max_scroll_pct: maxScroll.current,
+        reason,
+      });
+    }
+
+    function onVisibility() {
+      if (document.visibilityState === "hidden") flushDwell("hidden");
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pagehide", () => flushDwell("pagehide"));
+    onScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, []);
 
   return null;
