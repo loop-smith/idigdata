@@ -19,6 +19,7 @@ type WebsiteEventInput = {
 
 const SESSION_KEY = "idig_anon_sid";
 const INTERNAL_MARKER_KEY = "idig_internal_traffic";
+const FLEET_MARKER_KEY = "idig_fleet_traffic";
 const INGEST_URL = process.env.NEXT_PUBLIC_WEBSITE_EVENT_INGEST_URL;
 const TRACK_PREVIEW_TRAFFIC = process.env.NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC === "1";
 
@@ -46,14 +47,15 @@ export function getCurrentTrafficSignal(
   path = window.location.pathname,
   referrer: string | null = document.referrer || null,
 ): WebsiteSignal {
-  syncInternalMarkerFromLocation();
+  syncTrafficMarkersFromLocation();
   return classifyWebsiteSignal({
     path,
     referrer,
     search: window.location.search || null,
     userAgent: navigator.userAgent,
     hostname: window.location.hostname,
-    isInternalMarked: hasInternalMarker(),
+    isInternalMarked: hasMarker(INTERNAL_MARKER_KEY),
+    isFleetMarked: hasMarker(FLEET_MARKER_KEY),
     trackPreviewTraffic: TRACK_PREVIEW_TRAFFIC,
   });
 }
@@ -102,7 +104,7 @@ export function trackWebsiteEvent(input: WebsiteEventInput) {
   }
 }
 
-function syncInternalMarkerFromLocation() {
+function syncTrafficMarkersFromLocation() {
   try {
     const params = new URLSearchParams(window.location.search);
     if (params.get("internal") === "1") {
@@ -111,14 +113,26 @@ function syncInternalMarkerFromLocation() {
     if (params.get("internal") === "0" || params.get("clear_internal") === "1") {
       window.localStorage.removeItem(INTERNAL_MARKER_KEY);
     }
+    const fleet = params.get("fleet") ?? params.get("agent");
+    if (fleet === "1") {
+      window.localStorage.setItem(FLEET_MARKER_KEY, "1");
+    }
+    if (fleet === "0" || params.get("clear_fleet") === "1") {
+      window.localStorage.removeItem(FLEET_MARKER_KEY);
+    }
   } catch {
     // Storage failures should not affect page behavior.
   }
 }
 
-function hasInternalMarker(): boolean {
+function hasMarker(key: string): boolean {
   try {
-    return window.localStorage.getItem(INTERNAL_MARKER_KEY) === "1";
+    if (window.localStorage.getItem(key) === "1") return true;
+  } catch {
+    // ignore
+  }
+  try {
+    return document.cookie.split(";").some((part) => part.trim() === `${key}=1`);
   } catch {
     return false;
   }

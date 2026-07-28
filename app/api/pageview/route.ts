@@ -84,13 +84,16 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) return NO_CONTENT;
 
   const ua = req.headers.get("user-agent");
+  const cookieInternal = req.cookies.get("idig_internal_traffic")?.value === "1";
+  const cookieFleet = req.cookies.get("idig_fleet_traffic")?.value === "1";
   const signal = classifyWebsiteSignal({
     path: parsed.data.path,
     referrer: parsed.data.referrer,
     search: parsed.data.search,
     userAgent: ua,
     hostname: req.nextUrl.hostname,
-    isInternalMarked: parsed.data.is_internal,
+    isInternalMarked: parsed.data.is_internal === true || cookieInternal,
+    isFleetMarked: cookieFleet || parsed.data.source_kind === "agent",
     trackPreviewTraffic:
       process.env.NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC === "1" ||
       process.env.TRACK_PREVIEW_TRAFFIC === "1",

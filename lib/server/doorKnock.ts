@@ -1,6 +1,10 @@
 import type { NextRequest } from "next/server";
 import { getDigOpsSupabase } from "@/lib/server/digopsSupabase";
-import { classifyWebsiteSignal, isAssetPath } from "@/lib/traffic/websiteSignals";
+import {
+  classifyWebsiteSignal,
+  isAssetPath,
+  parseInternalIpAllowlist,
+} from "@/lib/traffic/websiteSignals";
 
 type UtmFields = {
   utm_source: string | null;
@@ -13,6 +17,7 @@ type UtmFields = {
 type DoorKnockOptions = {
   doorSessionId: string;
   isInternalMarked: boolean;
+  isFleetMarked?: boolean;
 };
 
 const HEADER_ALLOWLIST = [
@@ -72,16 +77,21 @@ export async function recordDoorKnock(
 
   const referrer = req.headers.get("referer");
   const userAgent = req.headers.get("user-agent");
+  const clientIp = getClientIp(req);
   const signal = classifyWebsiteSignal({
     path: req.nextUrl.pathname,
     search: req.nextUrl.search,
     referrer,
     userAgent,
     hostname: req.nextUrl.hostname,
+    clientIp,
     isInternalMarked: options.isInternalMarked,
+    isFleetMarked: options.isFleetMarked === true,
+    internalIps: parseInternalIpAllowlist(process.env.DIGOPS_INTERNAL_IPS),
     trackPreviewTraffic:
       process.env.NEXT_PUBLIC_TRACK_PREVIEW_TRAFFIC === "1" ||
       process.env.TRACK_PREVIEW_TRAFFIC === "1",
+    // Keep probes/bots in DigOps noise tabs; classification marks is_bot / buyer_signal.
     suppressBotTraffic: false,
   });
 

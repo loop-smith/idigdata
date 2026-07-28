@@ -7,6 +7,7 @@ export type TrafficClass =
   | "campaign"
   | "external_referral"
   | "direct"
+  | "probe"
   | "unknown";
 
 export type SourceKind =
@@ -18,6 +19,7 @@ export type SourceKind =
   | "campaign"
   | "external_referral"
   | "direct"
+  | "probe"
   | "unknown";
 
 export type AttributionConfidence = "exact" | "labeled_fallback" | "unknown";
@@ -44,8 +46,16 @@ type ClassifyInput = {
   referrer?: string | null;
   userAgent?: string | null;
   hostname?: string | null;
+  clientIp?: string | null;
   isInternalMarked?: boolean;
+  isFleetMarked?: boolean;
+  /** Comma-separated IPs/CIDR-ish exact IPs from DIGOPS_INTERNAL_IPS. */
+  internalIps?: string[] | null;
   trackPreviewTraffic?: boolean;
+  /**
+   * When true (default), clear bots are not written.
+   * Door-knock sets false so probes still land in DigOps for noise review.
+   */
   suppressBotTraffic?: boolean;
 };
 
@@ -59,8 +69,31 @@ const ASSET_PREFIXES = [
   "/brand/",
 ];
 
+const DIGOPS_SITE_PATHS = new Set([
+  "/",
+  "/agentics",
+  "/agentics/",
+  "/approach",
+  "/approach/",
+  "/contact",
+  "/contact/",
+  "/engagement",
+  "/engagement/",
+  "/faq",
+  "/faq/",
+  "/privacy",
+  "/privacy/",
+  "/systems",
+  "/systems/",
+]);
+
 const ASSET_EXTENSIONS = /\.(avif|css|gif|ico|jpg|jpeg|js|json|map|pdf|png|svg|txt|webmanifest|webp|xml)$/i;
-const BOT_USER_AGENT = /curl|wget|python|node-fetch|headless|playwright|puppeteer|bot|spider|crawl|x11; linux/i;
+
+/** Broader than the original list — scanners + common automation UAs. */
+const BOT_USER_AGENT =
+  /(bot|crawler|spider|crawl|slurp|curl\/|wget|python|node-fetch|axios\/|headless|playwright|puppeteer|vercel-screenshot|censys|domainscores|wp2shell|internet-measurement|cms-checker|powershell|facebookexternalhit|twitterbot|linkedinbot|slackbot|bingpreview|preview|x11; linux x86_64)/i;
+
+const FINGERPRINT_IPHONE = /iPhone OS 13_2_3/i;
 
 export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
   const path = normalizePath(input.path);
@@ -68,10 +101,24 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
   const hostname = cleanHostname(input.hostname);
   const referrerHost = referrerHostname(input.referrer);
   const userAgent = input.userAgent ?? "";
-  const isInternal =
-    input.isInternalMarked === true || params.get("internal") === "1";
+  const clientIp = cleanIp(input.clientIp);
+  const ipAllowlisted =
+    Boolean(clientIp) &&
+    Array.isArray(input.internalIps) &&
+    input.internalIps.some((ip) => ip === clientIp);
+
+  const isInternalMarked =
+    input.isInternalMarked === true ||
+    params.get("internal") === "1" ||
+    ipAllowlisted;
+  const isFleetMarked =
+    input.isFleetMarked === true ||
+    params.get("fleet") === "1" ||
+    params.get("agent") === "1";
+
   const isAsset = isAssetPath(path);
   const isBot = isBotUserAgent(userAgent);
+  const isProbePath = isProbePathName(path);
   const isDevHost = isLocalHost(hostname);
   const isPreviewHost = hostname.endsWith(".vercel.app");
   const utmSource = clean(params.get("utm_source"));
@@ -80,19 +127,29 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
 
   if (isAsset) {
     return suppressed("asset", "asset", "asset_path", {
-      is_internal: isInternal,
+      is_internal: isInternalMarked || isFleetMarked,
       is_bot: isBot,
       is_asset: true,
       source_refs: [{ type: "path_class", value: path }],
     });
   }
 
-  if (isInternal) {
-    return suppressed("internal", "rob_internal", "internal_marker", {
+  // Operator + fleet: record (do not suppress) so DigOps Internal tab can show them,
+  // while Real hits exclude is_internal.
+  if (isInternalMarked || isFleetMarked) {
+    const kind: SourceKind = isFleetMarked ? "agent" : "rob_internal";
+    const traffic: TrafficClass = isFleetMarked ? "agent" : "internal";
+    return tracked(traffic, kind, {
       is_internal: true,
-      is_bot: isBot,
-      is_asset: false,
-      source_refs: [{ type: "internal_marker", value: "true" }],
+      is_bot: isFleetMarked || isBot,
+      buyer_signal: false,
+      source_channel: isFleetMarked ? "fleet_marker" : "internal_marker",
+      source_refs: [
+        {
+          type: isFleetMarked ? "fleet_marker" : "internal_marker",
+          value: ipAllowlisted ? `ip:${clientIp}` : "true",
+        },
+      ],
     });
   }
 
@@ -123,10 +180,15 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
     });
   }
 
-  if (isBot) {
-    return tracked("agent", "agent", {
-      source_channel: "bot_like_user_agent",
-      source_refs: [{ type: "user_agent_class", value: "agent" }],
+  if (isBot || isProbePath) {
+    return tracked(isProbePath ? "probe" : "agent", isProbePath ? "probe" : "agent", {
+      source_channel: isProbePath ? "non_site_path" : "bot_like_user_agent",
+      source_refs: [
+        {
+          type: isProbePath ? "path_class" : "user_agent_class",
+          value: isProbePath ? path : "agent",
+        },
+      ],
       is_bot: true,
       buyer_signal: false,
     });
@@ -174,8 +236,29 @@ export function isAssetPath(path: string): boolean {
   return ASSET_EXTENSIONS.test(normalized);
 }
 
+export function isDigOpsSitePath(path: string): boolean {
+  return DIGOPS_SITE_PATHS.has(normalizePath(path));
+}
+
+/** Non-marketing paths that scanners hammer — never buyer_signal. */
+export function isProbePathName(path: string): boolean {
+  const normalized = normalizePath(path).toLowerCase();
+  if (isDigOpsSitePath(normalized)) return false;
+  if (normalized.endsWith(".php")) return true;
+  if (normalized.startsWith("/wp-") || normalized.includes("/wp-admin")) return true;
+  if (normalized.startsWith("/.env") || normalized.startsWith("/.git")) return true;
+  if (normalized.includes("phpmyadmin") || normalized.includes("xmlrpc")) return true;
+  // Anything outside the known DigOps route set is probe/noise for this site.
+  return !isDigOpsSitePath(normalized);
+}
+
 export function isBotUserAgent(userAgent: string): boolean {
-  return BOT_USER_AGENT.test(userAgent);
+  const ua = userAgent.trim();
+  if (!ua) return true;
+  if (ua === "Mozilla/5.0") return true;
+  if (BOT_USER_AGENT.test(ua)) return true;
+  if (FINGERPRINT_IPHONE.test(ua)) return true;
+  return false;
 }
 
 export function isLocalHost(hostname: string): boolean {
@@ -185,6 +268,14 @@ export function isLocalHost(hostname: string): boolean {
 export function normalizePath(path: string): string {
   if (!path.startsWith("/")) return "/";
   return path.slice(0, 2048);
+}
+
+export function parseInternalIpAllowlist(raw: string | null | undefined): string[] {
+  if (!raw) return [];
+  return raw
+    .split(/[,\s]+/)
+    .map((part) => cleanIp(part))
+    .filter((part): part is string => Boolean(part));
 }
 
 function tracked(
@@ -258,4 +349,14 @@ function cleanHostname(value: string | null | undefined): string {
 function clean(value: string | null): string | null {
   const cleaned = value?.trim();
   return cleaned ? cleaned.slice(0, 160) : null;
+}
+
+function cleanIp(value: string | null | undefined): string | null {
+  const cleaned = value?.trim();
+  if (!cleaned) return null;
+  // Strip :port from IPv4 host:port forms.
+  if (/^\d+\.\d+\.\d+\.\d+:\d+$/.test(cleaned)) {
+    return cleaned.split(":")[0] ?? null;
+  }
+  return cleaned.slice(0, 128);
 }

@@ -2,6 +2,14 @@
 
 Append-only history of stack moves + verification checkpoints. Newest first.
 
+## 2026-07-27 — Beacon identity for Real hits
+
+- **Operator stamp:** `?internal=1` now **records** door-knock rows with `is_internal=true` / `source_kind=rob_internal` (year cookie). Previously suppressed so DigOps never saw an Internal bucket.
+- **Fleet stamp:** `?fleet=1` / `?agent=1` cookie, plus optional header `x-digops-traffic: fleet:<DIGOPS_FLEET_BEACON_SECRET>` for Playwright.
+- **IP allowlist:** optional `DIGOPS_INTERNAL_IPS` (comma-separated) marks Operator IPs internal at ingest.
+- **Probe/bot hardening:** non-DigOps paths and expanded automation UAs land as `is_bot` with `buyer_signal=false` (`probe` / `agent` classes).
+- **Clear:** `?clear_internal=1`, `?clear_fleet=1`.
+
 ## 2026-06-10 — Entrance telemetry pivot
 
 - **Door-knock capture:** added Next 16 `proxy.ts` entrance telemetry before route handling, focused on first meaningful document request rather than inside-site movement.
