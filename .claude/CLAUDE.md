@@ -15,6 +15,10 @@ Next.js marketing / positioning website for the **DigOps** FlowCraft instance (D
 
 Retired Capo homes: `C:\rig\code\idigdata`, `k2s\idigdata\…`.
 
+## Isolation
+
+Pre-admission DigOps product repo. Do not edit RIG source, Rail, Glass, or doctrine. Git only from this root (`git -C` + `rev-parse --show-toplevel`). Never run Git from DigOps container paths — they resolve into the estate repo.
+
 ## Stack
 
 Pinned versions + Supabase bridge: [STACK.md](../STACK.md). Design tokens live in `app/globals.css` `@theme`.
