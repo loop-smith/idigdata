@@ -37,6 +37,12 @@ Authoritative hunt edit surface: `..\brand-content\triad\`. Firm ledger: `..\bra
 
 `npm run dev` → **3100**. On `EADDRINUSE`: `netstat -ano | findstr :3100` then `taskkill //F //PID <pid>`.
 
-## Push
+## Ship / settle / push
 
-Remote push enabled (Vercel-connected). **Never push `working` without Operator word.** See [LOCAL-ONLY.md](../LOCAL-ONLY.md).
+Remote push enabled (Vercel → **idigdata.com**).
+
+- **ship / settle / no dirt / close out** on site work ⇒ commit **and** push in the same turn. No second confirmation.
+- Do **not** push this repo on a brand-only or ops-only settle — Vercel ships production. Push here when the session’s outcome includes the site.
+- Real stops only: auth fail, divergent remote, secrets, merge conflict — name the block.
+
+See [LOCAL-ONLY.md](../LOCAL-ONLY.md) (instance copy may lag; this seat rule wins for this repo).
