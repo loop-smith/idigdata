@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "Modernize legacy systems while operations keep running. Robert Paddock seats a sovereign data core — a living asset for $100M–$1B operators.",
+    "Robert Paddock leads enterprise transformation from inside the business: 30 years, 50+ implementations, a $15M CIO program, and agentic AI in production.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Legacy modernization without a hard stop. Sovereign data core. Living asset the business owns.",
+      "Change the company without losing control. Builder · embedded operator · CIO — agentic AI in production.",
     images: [
       {
         url: "/og-image.png",
@@ -44,8 +44,8 @@ export default function HomePage() {
       <section className="border-t border-gold/40 bg-cream">
         <Reveal className="mx-auto max-w-content px-6 py-8 md:py-10">
           <p className="mx-auto max-w-[52ch] border-l-[3px] border-gold pl-5 font-brand text-[18px] font-medium leading-[1.4] tracking-[-0.01em] text-navy md:mx-0 md:text-[20px]">
-            Built to be owned, not rented — a capital asset the CFO can defend,
-            not another expense line.
+            Built to be owned, not rented — a capability the business can run,
+            govern, and keep improving.
           </p>
         </Reveal>
       </section>
@@ -58,16 +58,15 @@ export default function HomePage() {
           </p>
           <div>
             <h2 className="max-w-[19ch] font-brand text-[clamp(30px,4.2vw,46px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-navy">
-              The technology works. People and process decide whether it pays.
+              The technology works. People and systems decide whether it pays.
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-              Diagnosers explain the failure. Vendors sell rip-and-replace or
-              their slice. AI builders rent you tools. None of them owns
-              continuity-safe transformation as a business system — people,
-              data, and workflows above the vendors, while operations keep
-              running.{" "}
+              Vendors sell their slice. Platforms provide powerful tools. Neither
+              owns the transformation across people, data, systems, delivery,
+              and adoption through cutover.{" "}
               <span className="font-semibold text-navy">
-                That is the scarce work. That is what I execute.
+                That missing ownership layer is the scarce work. That is what I
+                execute.
               </span>
             </p>
           </div>
@@ -87,21 +86,22 @@ export default function HomePage() {
                 production.
               </h2>
               <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                Most recent — CIO, Sierra Nevada Brewing (~$420M). Full member
-                of the executive leadership team; presented in all board
-                meetings; worked across the senior leadership team. Led a $15M
-                enterprise transformation on a client-owned data core and
-                rebuilt the IS function into a purpose-built IT organization —
-                with enterprise agentic AI in production under governance,
-                training, and business ownership.
+                <span className="font-semibold text-navy">Builder — </span>
+                CEO/CTO, Timberline: scaled $250K → $130M on operating systems
+                we owned, not rented.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                Earlier: CEO/CTO, Timberline — scaled $250K → $130M across US
-                and China; operating systems that had to hold in the field.
+                <span className="font-semibold text-navy">Embedded — </span>
+                Through idigdata: 50+ full-cycle implementations for $100M–$1B
+                operating companies — keep-running modernization across ERP and
+                the systems around them.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                Across idigdata engagements — custom fintech spanning banking
-                and POS integration; xFP&amp;A including Solver and OneStream.
+                <span className="font-semibold text-navy">CIO — </span>
+                Sierra Nevada Brewing (~$420M): $15M enterprise transformation;
+                rebuilt legacy IS into a purpose-built IT organization;
+                company-owned data core; agentic AI in production under
+                governance, training, and business ownership.
               </p>
             </div>
           </div>
@@ -114,14 +114,6 @@ export default function HomePage() {
                   { key: "impl", node: "50+ implementations" },
                   { key: "transform", node: "15 full transformations at scale" },
                   { key: "operators", node: "$100M–$1B operators" },
-                  {
-                    key: "fintech",
-                    node: (
-                      <>
-                        fintech · <span className="normal-case">xFP&amp;A</span>
-                      </>
-                    ),
-                  },
                   { key: "agentic", node: "agentic AI in production" },
                 ] as const
               ).map((item, i) => (
@@ -140,6 +132,40 @@ export default function HomePage() {
         </Reveal>
       </section>
 
+      <section className="border-t border-navy/10 bg-cream">
+        <Reveal className="mx-auto max-w-content px-6 py-14 md:grid md:grid-cols-[230px_1fr] md:gap-12 md:py-16">
+          <p className="mb-5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-warm-gray md:mb-0 md:pt-3">
+            <GoldSquare className="mr-3 h-[9px] w-[9px]" />
+            How I deliver
+          </p>
+          <div>
+            <p className="max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
+              I don&apos;t just claim ownership of people, data, and systems.
+              Here&apos;s how that ownership is built and left with the
+              business — proof, not a product shelf.
+            </p>
+            <Link
+              href="/systems/"
+              className="group mt-6 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:text-gold"
+            >
+              How I deliver
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+            <Link
+              href="/agentics/"
+              className="mt-3 block font-brand text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-gray transition-colors hover:text-navy"
+            >
+              Agentic AI in production →
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
       <section
         id="contact"
         className="grain relative isolate overflow-hidden bg-[linear-gradient(180deg,#142840_0%,#0E2138_100%)] text-porcelain"
@@ -153,11 +179,11 @@ export default function HomePage() {
             If the work needs an owner, start there.
           </h2>
           <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-porcelain/75 md:text-[18px]">
-            No deck. No proposal theater. Bring the real situation — the
-            legacy stack, the stalled modernization, the keep-running
-            constraint — and I&apos;ll walk you through exactly how I&apos;d
-            own it. Permanent or fractional — the ownership standard does not
-            change.
+            No deck. No proposal theater. Bring the real situation — stalled
+            transformation, ERP mess, keep-running constraint, or an ownership
+            gap above the vendors — and I&apos;ll walk you through exactly how
+            I&apos;d own it. Permanent or fractional — the ownership standard
+            does not change.
           </p>
           <Link
             href="/contact/"

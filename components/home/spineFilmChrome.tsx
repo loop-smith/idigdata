@@ -24,6 +24,15 @@ export function BeatPanel({ beat }: { beat: number }) {
   );
 }
 
+function GoldSquare({ className = "" }: { className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`inline-block bg-gold align-baseline ${className}`}
+    />
+  );
+}
+
 export function HeroCopy({
   onSeeMap,
   withRise = true,
@@ -39,11 +48,11 @@ export function HeroCopy({
         }
       : { className: "", style: undefined };
 
-  /* Header owns the wordmark — no inline brand stutter under SiteHeader. */
   const r0 = rise(0);
   const r1 = rise(1);
   const r2 = rise(2);
   const r3 = rise(3);
+  const r4 = rise(4);
 
   return (
     <>
@@ -51,30 +60,47 @@ export function HeroCopy({
         className={`${r0.className}font-brand text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold md:text-[11px] md:tracking-[0.24em]`}
         style={r0.style}
       >
-        <span className="md:hidden">
-          Transformational CIO · $100M–$1B operators
-        </span>
+        <span className="md:hidden">Robert Paddock · Transformational CIO</span>
         <span className="hidden md:inline">
-          Transformational CIO · $100M–$1B operators · systems you own
+          Robert Paddock · Transformational CIO · Embedded operator
         </span>
       </p>
       <h1
-        className={`${r1.className}mt-3 max-w-[22ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
+        className={`${r1.className}mt-3 max-w-[20ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
         style={r1.style}
       >
-        Modernize the legacy stack while the business keeps running.
+        Change the company without losing control.
       </h1>
       <p
         className={`${r2.className}hero-dek mt-3 max-w-[48ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
-        The company common data model is the cornerstone: an owned data core
-        that turns modernization into a living asset the business can run,
-        govern, and extend.
+        I lead enterprise transformation through people, data, and systems from
+        inside the business—a 30-year arc from CEO/CTO scaling $250K→$130M,
+        through 50+ implementations, to leading a $15M transformation as CIO
+        with agentic AI in production.
+      </p>
+      <p
+        className={`${r3.className}mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-brand text-[11px] font-semibold uppercase tracking-[0.14em] text-porcelain/70 md:text-[11.5px]`}
+        style={r3.style}
+      >
+        {(
+          [
+            "30 years",
+            "50+ implementations",
+            "15 full transformations",
+            "Agentic AI in production",
+          ] as const
+        ).map((item, i) => (
+          <span key={item} className="flex items-baseline gap-x-3 whitespace-nowrap">
+            {i > 0 && <GoldSquare className="h-[5px] w-[5px] self-center" />}
+            <span>{item}</span>
+          </span>
+        ))}
       </p>
       <div
-        className={`${r3.className}mt-4 flex flex-col gap-2.5 sm:flex-row md:mt-5`}
-        style={r3.style}
+        className={`${r4.className}mt-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap md:mt-5`}
+        style={r4.style}
       >
         <Link
           href="/contact/"
@@ -88,14 +114,20 @@ export function HeroCopy({
             →
           </span>
         </Link>
-        <button
-          type="button"
-          onClick={onSeeMap}
+        <Link
+          href="/systems/"
           className="inline-flex items-center justify-center rounded-[3px] border border-porcelain/30 px-6 py-3.5 font-brand text-[12px] font-bold uppercase tracking-[0.15em] text-porcelain transition-colors hover:border-gold hover:text-gold"
         >
-          See the operating map
-        </button>
+          How I deliver
+        </Link>
       </div>
+      <button
+        type="button"
+        onClick={onSeeMap}
+        className="mt-3 text-left font-brand text-[11.5px] font-semibold uppercase tracking-[0.16em] text-porcelain/55 transition-colors hover:text-gold"
+      >
+        Watch the operating map →
+      </button>
     </>
   );
 }
