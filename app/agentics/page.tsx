@@ -156,14 +156,14 @@ export default function AgenticsPage() {
         <p className="max-w-[760px] font-body text-[15.5px] leading-[1.65] text-navy">
           I run the model before I bring it to you: a governed build
           environment, a business-owned transformation asset, and an operations
-          layer with a human on every consequential call. The branded systems
-          and proof live on the Systems page.
+          layer with a human on every consequential call. How ownership is
+          installed — Control · Map · Run — lives on How I deliver.
         </p>
         <Link
           href="/systems/"
           className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
         >
-          See the systems I run on <span aria-hidden="true" className="ml-2">→</span>
+          How I deliver <span aria-hidden="true" className="ml-2">→</span>
         </Link>
       </section>
 

@@ -13,7 +13,8 @@ import {
 const VIEWBOX_FULL = "36 18 660 612";
 const VIEWBOX_PEOPLE = "168 88 384 450";
 /** Spine-centered crops — same film language as 03, not dashboard panels */
-const VIEWBOX_CONTROL = "100 50 520 500";
+/** Wide enough for TASKERS / EXECS flanks (was cropping to ERS / EX). */
+const VIEWBOX_CONTROL = "80 48 560 510";
 const VIEWBOX_ADOPT = "150 70 420 480";
 
 export function AssemblySvg({ frame = 0 }: { frame?: number }) {
@@ -139,7 +140,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         </g>
       </g>
 
-      {/* ===== Dual-rail spine (beats 02â€“05) ===== */}
+      {/* ===== Dual-rail spine (beats 02—05) ===== */}
       <g className="sf-spine">
         <path d="M346 150 v320 M374 150 v320" stroke="rgba(247,245,238,0.9)" strokeWidth="3" />
         <path d="M346 150 h28" stroke="rgba(247,245,238,0.9)" strokeWidth="3" />
@@ -148,7 +149,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         </g>
       </g>
 
-      {/* ===== Data building blocks — the core assembling between the rails (beats 02â€“05) ===== */}
+      {/* ===== Data building blocks — the core assembling between the rails (beats 02—05) ===== */}
       <g className="sf-blocks">
         {[296, 330, 364, 398, 432].map((y) => (
           <g key={y}>
@@ -189,7 +190,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         </text>
       </g>
 
-      {/* inbound data chips — beat 02 frame only Â· operator keys â†’ owned core */}
+      {/* inbound data chips — beat 02 frame only · operator keys → owned core */}
       <g className="sf-chips2">
         <g stroke="rgba(247,245,238,0.45)" strokeWidth="1.35">
           <path d="M108 280 H346" />
@@ -282,7 +283,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         </g>
       </g>
 
-      {/* ===== Beehive — people docked to the core (beats 03â€“05) ===== */}
+      {/* ===== Beehive — people docked to the core (beats 03—05) ===== */}
       <g className="sf-hive3">
         <g stroke="#FACC15" strokeWidth="1.5" strokeOpacity="0.8">
           <path d="M311.4 280 H 346" />
@@ -309,7 +310,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
           <polygon points="408.6,350 391.3,360 391.3,380 408.6,390 425.9,380 425.9,360" />
         </g>
 
-        {/* System / group marks — align to beehive frame (ERP Â· WMS Â· CRM Â· PLM Â· MES Â· MDM) */}
+        {/* System / group marks — align to beehive frame (ERP · WMS · CRM · PLM · MES · MDM) */}
         <g fill="rgba(247,245,238,0.9)" fontSize="8" fontWeight="800" letterSpacing="0.08em" style={{ fontFamily: "var(--font-brand)" }}>
           <text x="311.4" y="253" textAnchor="middle">ERP</text>
           <text x="311.4" y="313" textAnchor="middle">WMS</text>
@@ -322,21 +323,21 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
 
       {/* ===== Beat 04 — control rail over the spine (roadmap above, agile lanes beside) ===== */}
       <g className="sf-pm4">
-        {/* Roadmap canopy — timeline, not a dashboard panel */}
+        {/* Roadmap canopy — stage labels stay INSIDE the frame (below dots, above bottom stroke) */}
         <rect
           x="120"
-          y="72"
+          y="68"
           width="480"
-          height="52"
+          height="70"
           rx="8"
           fill="none"
           stroke="rgba(247,245,238,0.85)"
           strokeWidth="2"
         />
-        <path d="M120 90 H600" stroke="rgba(250,204,21,0.55)" strokeWidth="1.4" />
+        <path d="M120 86 H600" stroke="rgba(250,204,21,0.55)" strokeWidth="1.4" />
         <text
           x="360"
-          y="88"
+          y="82"
           textAnchor="middle"
           fill="rgba(247,245,238,0.55)"
           fontSize="8"
@@ -348,36 +349,37 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         </text>
         {(
           [
-            { x: 180, label: "KICKOFF" },
-            { x: 300, label: "BUILD" },
+            { x: 180, label: "Kickoff" },
+            { x: 300, label: "Build" },
             { x: 420, label: "UAT" },
-            { x: 540, label: "GO-LIVE" },
+            { x: 540, label: "Go-live" },
           ] as const
         ).map((m) => (
           <g key={m.label}>
-            <circle cx={m.x} cy="108" r="5" fill="#FACC15" />
+            <circle cx={m.x} cy="104" r="5" fill="#FACC15" />
             <text
               x={m.x}
-              y="126"
+              y="124"
               textAnchor="middle"
-              fill="rgba(247,245,238,0.88)"
-              fontSize="7.5"
+              fill="rgba(247,245,238,0.9)"
+              fontSize="8"
               fontWeight="700"
-              letterSpacing="0.1em"
+              letterSpacing="0.04em"
               style={{ fontFamily: "var(--font-brand)" }}
             >
               {m.label}
             </text>
           </g>
         ))}
-        <path d="M346 124 v26 M374 124 v26" stroke="#FACC15" strokeWidth="2" />
+        {/* Drop from roadmap frame bottom (y=138) into the control spine */}
+        <path d="M346 138 v28 M374 138 v28" stroke="#FACC15" strokeWidth="2" />
 
-        {/* Open lanes — original glass-film language */}
+        {/* Open lanes — sit below roadmap frame; room for flank labels outside */}
         <rect
-          x="118"
-          y="168"
-          width="168"
-          height="300"
+          x="128"
+          y="176"
+          width="158"
+          height="292"
           rx="12"
           fill="none"
           stroke="rgba(247,245,238,0.75)"
@@ -385,40 +387,40 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         />
         <rect
           x="434"
-          y="168"
-          width="168"
-          height="300"
+          y="176"
+          width="158"
+          height="292"
           rx="12"
           fill="none"
           stroke="rgba(247,245,238,0.75)"
           strokeWidth="2"
         />
         <path
-          d="M286 318 H346 M374 318 H434"
+          d="M286 324 H346 M374 324 H434"
           stroke="rgba(247,245,238,0.55)"
           strokeWidth="1.8"
         />
 
         <text
-          x="202"
-          y="192"
+          x="207"
+          y="198"
           textAnchor="middle"
           fill="rgba(247,245,238,0.55)"
           fontSize="8"
           fontWeight="700"
-          letterSpacing="0.14em"
+          letterSpacing="0.12em"
           style={{ fontFamily: "var(--font-brand)" }}
         >
-          AGILE Â· STORIES
+          AGILE / STORIES
         </text>
         <text
-          x="518"
-          y="192"
+          x="513"
+          y="198"
           textAnchor="middle"
           fill="rgba(247,245,238,0.55)"
           fontSize="8"
           fontWeight="700"
-          letterSpacing="0.14em"
+          letterSpacing="0.12em"
           style={{ fontFamily: "var(--font-brand)" }}
         >
           STAKEHOLDERS
@@ -427,16 +429,16 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         {/* Story / task chips — gold pills, not cards */}
         {(
           [
-            { y: 220, label: "Item master" },
-            { y: 258, label: "Integrations" },
-            { y: 296, label: "Close path" },
-            { y: 334, label: "Cutover run" },
-            { y: 372, label: "Training pack" },
+            { y: 228, label: "Item master" },
+            { y: 266, label: "Integrations" },
+            { y: 304, label: "Close path" },
+            { y: 342, label: "Cutover run" },
+            { y: 380, label: "Training pack" },
           ] as const
         ).map((chip) => (
           <g key={chip.label}>
             <rect
-              x="138"
+              x="142"
               y={chip.y}
               width="128"
               height="22"
@@ -445,9 +447,9 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
               stroke="rgba(247,245,238,0.55)"
               strokeWidth="1.3"
             />
-            <circle cx="152" cy={chip.y + 11} r="3" fill="#FACC15" />
+            <circle cx="156" cy={chip.y + 11} r="3" fill="#FACC15" />
             <text
-              x="164"
+              x="168"
               y={chip.y + 15}
               fill="rgba(247,245,238,0.92)"
               fontSize="10"
@@ -461,15 +463,15 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
 
         {(
           [
-            { y: 230, label: "SLT / Board" },
-            { y: 278, label: "Finance Â· Ops" },
-            { y: 326, label: "IT Â· PMO" },
-            { y: 374, label: "Deliverables" },
+            { y: 238, label: "SLT / Board" },
+            { y: 286, label: "Finance / Ops" },
+            { y: 334, label: "IT / PMO" },
+            { y: 382, label: "Deliverables" },
           ] as const
         ).map((node) => (
           <g key={node.label}>
             <circle
-              cx="468"
+              cx="458"
               cy={node.y + 8}
               r="5"
               fill="#142840"
@@ -477,7 +479,7 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
               strokeWidth="1.6"
             />
             <text
-              x="484"
+              x="474"
               y={node.y + 12}
               fill="rgba(247,245,238,0.9)"
               fontSize="11"
@@ -489,35 +491,35 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
           </g>
         ))}
 
-        {/* Exec / tasker visibility marks on the flanks */}
-        <g stroke="rgba(250,204,21,0.4)" strokeWidth="1.5" strokeDasharray="4 5">
-          <path d="M108 200 V 430" />
-          <path d="M612 200 V 430" />
+        {/* Flank altitude marks — inside widened viewBox, outside lane frames */}
+        <g stroke="rgba(250,204,21,0.45)" strokeWidth="1.5" strokeDasharray="4 5">
+          <path d="M108 214 V 448" />
+          <path d="M612 214 V 448" />
         </g>
-        <circle cx="108" cy="240" r="4" fill="#FACC15" />
-        <circle cx="108" cy="390" r="4" fill="#FACC15" />
-        <circle cx="612" cy="240" r="4" fill="#FACC15" />
-        <circle cx="612" cy="390" r="4" fill="#FACC15" />
+        <circle cx="108" cy="250" r="4" fill="#FACC15" />
+        <circle cx="108" cy="400" r="4" fill="#FACC15" />
+        <circle cx="612" cy="250" r="4" fill="#FACC15" />
+        <circle cx="612" cy="400" r="4" fill="#FACC15" />
         <text
           x="108"
-          y="188"
+          y="204"
           textAnchor="middle"
-          fill="rgba(247,245,238,0.45)"
+          fill="rgba(247,245,238,0.65)"
           fontSize="7"
           fontWeight="700"
-          letterSpacing="0.12em"
+          letterSpacing="0.08em"
           style={{ fontFamily: "var(--font-brand)" }}
         >
           TASKERS
         </text>
         <text
           x="612"
-          y="188"
+          y="204"
           textAnchor="middle"
-          fill="rgba(247,245,238,0.45)"
+          fill="rgba(247,245,238,0.65)"
           fontSize="7"
           fontWeight="700"
-          letterSpacing="0.12em"
+          letterSpacing="0.08em"
           style={{ fontFamily: "var(--font-brand)" }}
         >
           EXECS

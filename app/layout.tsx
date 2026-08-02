@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Enterprises keep buying technology. AI and ERP fail where people, process, and data don't fit. Robert Paddock owns that layer — business transformation through systems and agentic AI, legacy ERP keep-running, living assets for $100M–$1B operators.",
+    "Robert Paddock leads enterprise transformation through people, data, and systems — owned change for $100M–$1B operators. Builder, embedded operator, and CIO altitude, with agentic AI in production when it earns its place.",
   alternates: {
     canonical: "/",
     types: {

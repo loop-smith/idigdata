@@ -6,16 +6,16 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Approach",
+  title: "How Robert Paddock Approaches Enterprise Transformation | idigdata",
   description:
-    "How I turn transformation into a business-owned operating asset: build, observe, cycle, and transfer the system to the people who run the work.",
+    "People, data, and systems as one ownership job — keep-running delivery, vendor control, and change that sticks.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/approach/",
-    title: "Approach | idigdata",
+    title: "How Robert Paddock Approaches Enterprise Transformation | idigdata",
     description:
-      "A delivery frame for business-system transformation: ownership above vendors, people-centered validation, and a business-owned asset at exit.",
+      "People, data, and systems as one ownership job — keep-running delivery, vendor control, and change that sticks.",
     images: [
       {
         url: "/og-image.png",
@@ -55,17 +55,16 @@ export default function ApproachPage() {
         <M4Watermark position="top-right" />
         <SectionKicker className="mb-4">Approach</SectionKicker>
         <h1 className="text-balance font-vollkorn text-[46px] font-bold leading-[1.02] tracking-normal text-navy md:text-[62px] lg:text-[74px]">
-          I build the transformation as a system the business can own.
+          People, data, and systems — one ownership job.
         </h1>
         <p className="mt-6 max-w-[820px] font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
-          You have probably already been sold the fix. What broke wasn&apos;t the
-          software; it was ownership, governance, and decision logic. That&apos;s
-          the part I take.
+          I embed inside the business, own the build above the vendors, and
+          leave capability that runs after I leave.
         </p>
         <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
-          I start inside the operating business, bind the people, workflows,
-          systems, vendors, and decisions into one delivery frame, then keep
-          cycling until the result holds without me.
+          I start inside the operating company — bind people, data, systems,
+          vendors, and decisions into one delivery frame, then cycle until the
+          result holds without me.
         </p>
       </section>
 
@@ -104,14 +103,13 @@ export default function ApproachPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.9fr)]">
           <div>
             <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-              I design above the vendors.
+              I hold the layer above any one platform.
             </h2>
             <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
               <p>
-                The vendor stack matters, but it cannot be the
-                transformation&apos;s owner. I make the business architecture
-                explicit: systems in their places, data governed as a core
-                asset, workflows mapped to the operating reality, and decisions
+                Platforms matter; they cannot own the transformation. I make
+                people, data, and systems explicit — workflows mapped to
+                operating reality, data governed as a core asset, and decisions
                 visible enough for executives and operators to act on the same
                 truth.
               </p>
@@ -164,7 +162,7 @@ export default function ApproachPage() {
           href="/systems/"
           className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
         >
-          See the systems I run on <span aria-hidden="true" className="ml-2">→</span>
+          How I deliver <span aria-hidden="true" className="ml-2">→</span>
         </Link>
       </section>
 
