@@ -8,14 +8,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Engagement",
   description:
-    "One engagement model: embedded transformation leadership, with fractional, adoption, and recovery paths into the same operator-led work.",
+    "Embedded transformation leadership — permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
   alternates: { canonical: "/engagement/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/engagement/",
     title: "Engagement | idigdata",
     description:
-      "Embedded transformation leadership for businesses ready to own the result.",
+      "Embedded transformation leadership — permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
     images: [
       {
         url: "/og-image.png",
@@ -52,11 +52,11 @@ const professionalServiceJsonLd = {
   name: "idigdata — Embedded transformation leadership",
   url: "https://idigdata.com/engagement/",
   description:
-    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional, adoption, and recovery are entry modes into the same operator-led work — ownership above the vendors, living operating asset, exit-by-design. For $100M–$1B operators.",
+    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional or permanent — same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M–$1B operators.",
   serviceType: [
     "Embedded transformation leadership",
     "Transformational CIO",
-    "Legacy ERP modernization",
+    "Enterprise transformation through people, data, and systems",
     "Agentic AI in production",
   ],
   provider: {
@@ -87,12 +87,12 @@ const authorityDoors = [
   {
     name: "Permanent / full-time embed",
     question: "The whole transformation needs one owner.",
-    body: "I carry the mandate from inside the business: vendors, executives, operators, delivery state, adoption, capital logic, and the business-owned asset that remains when I exit. Ownership standard unchanged either way.",
+    body: "I carry the mandate from inside the business: people, data, systems, vendors, executives, delivery state, adoption, capital logic, and the owned change that remains when I exit. Ownership standard unchanged either way.",
   },
 ];
 
 const flavors = [
-  "Agentic AI adoption becomes a fractional or embedded path depending on how much ownership the business needs.",
+  "Agentic AI sits on the same ownership layer as the systems work — a fractional or embedded path depending on how much owner the business needs, not a second brand.",
   "Recovery becomes the same question: is the stalled program one lever, or does the whole transformation need an owner?",
 ];
 
@@ -113,9 +113,9 @@ export default function EngagementPage() {
           much owner the work needs.
         </p>
         <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
-          I work inside the business at senior-operator altitude, own the
-          transformation path above the vendors, install the operating asset,
-          and leave by design when the business can carry it.
+          I embed inside the business at senior-operator altitude, own people,
+          data, and systems above the vendors, and leave owned change the
+          company can keep.
         </p>
       </section>
 
@@ -131,13 +131,16 @@ export default function EngagementPage() {
             Most business-system work has no true owner above the vendor plan.
             Executives sponsor it, vendors implement pieces of it, project
             teams chase it, and operators absorb the consequences. I take the
-            missing role: the senior embedded owner who binds mandate, delivery,
-            adoption, capital logic, and exit into one accountable path.
+            missing role: the senior embedded owner who binds mandate,
+            delivery, adoption, capital logic, and exit into one accountable
+            path — keep-running through cutover, not a vendor plan with no
+            owner.
           </p>
           <p>
-            The owned asset layer underneath the work makes delivery visible,
-            turns validation into operating knowledge, and gives the business
-            something durable to own when I leave.
+            People, data, and systems stay explicit in that path. The owned
+            asset underneath the work makes delivery visible, turns validation
+            into operating knowledge, and gives the business something durable
+            to keep when I leave.
           </p>
         </div>
       </section>
@@ -214,19 +217,21 @@ export default function EngagementPage() {
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Fit</SectionKicker>
         <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-          Best fit is a business ready to lead with technology now.
+          Best fit is a mid-market operator ready to own the result.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           The work fits mid-market operators with enough complexity to justify
           senior embedded ownership: multi-entity, multi-platform, vendor-heavy
-          environments across ERP, WMS, MES, EMR, CRM/CPQ, LIMS, QMS, MDM, or
-          HRIS. AEC, beverage CPG, healthcare, and hospitality/gaming are the
-          strongest pattern matches.
+          environments across ERP, WMS, MES, CRM/CPQ, MDM, EMR, LIMS, QMS,
+          HRIS, and the adjacent fabric — with multi-system integration the
+          business owns. AEC, beverage CPG, wellness/fitness, and
+          hospitality/gaming are the strongest pattern matches.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           The buyer is not waiting for the market to settle. The buyer wants to
-          lead with technology, land the work in the operating business, and own
-          the result instead of renting dependency.
+          lead with technology across people, data, and systems, land the work
+          in the operating business, and own the result instead of renting
+          dependency.
         </p>
       </section>
 

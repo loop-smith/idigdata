@@ -52,7 +52,7 @@ const personSchema = {
     "Exit-by-design engagements",
     "Architecture-engineering-construction (AEC)",
     "Beverage consumer packaged goods (CPG)",
-    "Healthcare operations",
+    "Wellness and fitness operations",
     "Hospitality and gaming operations",
     "Fintech banking and POS integration",
   ],

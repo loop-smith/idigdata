@@ -83,7 +83,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What industries does idigdata know best?",
-    a: "idigdata's strongest field patterns are architecture, engineering, and construction; beverage consumer packaged goods; healthcare; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
+    a: "idigdata's strongest field patterns are architecture, engineering, and construction; beverage consumer packaged goods; wellness/fitness; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
   },
   {
     q: "What systems does idigdata work around?",

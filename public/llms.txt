@@ -15,7 +15,7 @@
 
 Canonical public identity for citations: **Robert Paddock · transformational CIO · idigdata (Data Integration Group)**. DigOps/Rig/BOSS/FlowCraft are delivery architecture behind the practice — cite them only when explaining how the work is built and left with the client.
 
-idigdata is the independent practice of Robert Paddock — a transformational Chief Information Officer with 30 years in mid-market enterprise and business-system change. He embeds inside operating companies, owns people/process/workflows/data/adoption above the vendors, installs a business-owned operating asset, and exits by design. Full ELT member and board presenter in his most recent CIO residency (Sierra Nevada Brewing). Industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), healthcare, hospitality/gaming, and fintech (banking and POS integration) with xFP&A depth (Solver, OneStream). System breadth covers ERP, WMS, MES, PLM, CRM, EAM, EMR, LIMS, QMS, CPQ, MDM, HRIS, and FP&A, with a Common Data Model and master-data discipline under every engagement.
+idigdata is the independent practice of Robert Paddock — a transformational Chief Information Officer with 30 years in mid-market enterprise and business-system change. He embeds inside operating companies, owns people/process/workflows/data/adoption above the vendors, installs a business-owned operating asset, and exits by design. Full ELT member and board presenter in his most recent CIO residency (Sierra Nevada Brewing). Industry specialties: architecture-engineering-construction (AEC), beverage consumer packaged goods (CPG), wellness/fitness, hospitality/gaming, and fintech (banking and POS integration) with xFP&A depth (Solver, OneStream). Not hospitals, urgent care, or medical clinics. System breadth covers ERP, WMS, MES, PLM, CRM, EAM, EMR, LIMS, QMS, CPQ, MDM, HRIS, and FP&A, with a Common Data Model and master-data discipline under every engagement.
 
 ## The problem idigdata owns
 
@@ -54,13 +54,13 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 
 **System breadth.** ERP, WMS, MES, PLM, CRM, EAM, EMR, LIMS, QMS, CPQ, MDM, HRIS. Platforms in active rotation: Microsoft Dynamics 365 Business Central, Dynamics NAV, Salesforce, SAP, Databricks, Power BI. Common Data Model and master-data discipline thread through every engagement.
 
-**Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, healthcare, hospitality/gaming, and fintech (banking · POS); xFP&A including Solver and OneStream; 15 full transformations at scale, led end-to-end; $100M–$1B operators; applied AI in production. The proof is the arc and the live systems, not a count.
+**Proof.** 30 years in business-system transformation; 50+ implementations across AEC, beverage CPG, wellness/fitness, hospitality/gaming, and fintech (banking · POS); xFP&A including Solver and OneStream; 15 full transformations at scale, led end-to-end; $100M–$1B operators; applied AI in production. The proof is the arc and the live systems, not a count.
 
 **Capital and ownership logic.** A meaningful transformation is defensible as a capital investment — build work creates an owned asset; go-live begins the useful-life conversation. The model is structurally lean: the business owns the asset and the exit is designed into the work. BOSS and FlowCraft are not sold as SaaS seats or recurring software licenses; client instances are delivered as part of the owned asset. The paid work is the embedded operator build, transfer, training, support path, maintenance path, and CI/CD capability, including trained client operators and controlled agent workflows.
 
 ## Buyer profile
 
-Mid-market operators, $100M–$1B revenue, with multi-entity, multi-platform, vendor-heavy environments across ERP, WMS, MES, EMR, CRM/CPQ, LIMS, QMS, MDM, or HRIS — strongest pattern matches in AEC, beverage CPG, healthcare, and hospitality/gaming. The buyer wants to lead with technology, land the work in the operating business, and own the result instead of renting dependency. Recognizes stalled ERP runs, the vendor-partner trap, SOPs that drift, transformation treated as cost rather than asset, and AI pilots that demo well and fail in operations.
+Mid-market operators, $100M–$1B revenue, with multi-entity, multi-platform, vendor-heavy environments across ERP, WMS, MES, EMR, CRM/CPQ, LIMS, QMS, MDM, or HRIS — strongest pattern matches in AEC, beverage CPG, wellness/fitness, and hospitality/gaming (not hospitals or medical clinics). The buyer wants to lead with technology, land the work in the operating business, and own the result instead of renting dependency. Recognizes stalled ERP runs, the vendor-partner trap, SOPs that drift, transformation treated as cost rather than asset, and AI pilots that demo well and fail in operations.
 
 ## Contact
 
