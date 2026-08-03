@@ -75,10 +75,10 @@ export function HeroCopy({
         className={`${r2.className}hero-dek mt-3 max-w-[48ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
-        I lead enterprise transformation through people, data, and systems from
-        inside the business—a 30-year arc from CEO/CTO scaling $250K→$130M,
-        through 50+ implementations, to leading a $15M transformation as CIO
-        with agentic AI in production.
+        Too many enterprise systems fail because nobody owns the work across
+        people, data, systems, and the vendors that often end up managing
+        themselves. I lead that ownership from inside the business - 30 years,
+        50+ implementations, a $15M CIO program, and agentic AI in production.
       </p>
       <p
         className={`${r3.className}mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-brand text-[11px] font-semibold uppercase tracking-[0.14em] text-porcelain/70 md:text-[11.5px]`}
@@ -115,10 +115,10 @@ export function HeroCopy({
           </span>
         </Link>
         <Link
-          href="/systems/"
+          href="/applied-agentics/"
           className="inline-flex items-center justify-center rounded-[3px] border border-porcelain/30 px-6 py-3.5 font-brand text-[12px] font-bold uppercase tracking-[0.15em] text-porcelain transition-colors hover:border-gold hover:text-gold"
         >
-          How I deliver
+          Applied Agentics
         </Link>
       </div>
       <button

@@ -8,20 +8,20 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "Robert Paddock leads enterprise transformation from inside the business: 30 years, 50+ implementations, a $15M CIO program, and agentic AI in production.",
+    "Robert Paddock leads enterprise transformation from inside the business: ownership across people, data, systems, and vendors - 30 years, 50+ implementations, a $15M CIO program, and agentic AI in production.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Change the company without losing control. Builder · embedded operator · CIO — agentic AI in production.",
+      "Change the company without losing control. Builder · embedded operator · CIO - agentic AI in production.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "idigdata — Transformational CIO",
+        alt: "idigdata - Transformational CIO",
       },
     ],
   },
@@ -44,7 +44,7 @@ export default function HomePage() {
       <section className="border-t border-gold/40 bg-cream">
         <Reveal className="mx-auto max-w-content px-6 py-8 md:py-10">
           <p className="mx-auto max-w-[52ch] border-l-[3px] border-gold pl-5 font-brand text-[18px] font-medium leading-[1.4] tracking-[-0.01em] text-navy md:mx-0 md:text-[20px]">
-            Built to be owned, not rented — a capability the business can run,
+            Built to be owned, not rented - a capability the business can run,
             govern, and keep improving.
           </p>
         </Reveal>
@@ -57,17 +57,26 @@ export default function HomePage() {
             The real bottleneck
           </p>
           <div>
-            <h2 className="max-w-[19ch] font-brand text-[clamp(30px,4.2vw,46px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-navy">
-              The technology works. People and systems decide whether it pays.
+            <h2 className="max-w-[22ch] font-brand text-[clamp(30px,4.2vw,46px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-navy">
+              The ownership gap is the same problem it has always been.
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-              Vendors sell their slice. Platforms provide powerful tools. Neither
-              owns the transformation across people, data, systems, delivery,
-              and adoption through cutover.{" "}
+              Vendors sell their slice. Platforms provide powerful tools.
+              Forward-deployed engineers from frontier-model and platform
+              companies often look new - same motion as System Integrators (SI)
+              and the old vendor network. They bill on top while the duct tape
+              stays underneath. Neither owns the transformation across people,
+              data, systems, delivery, and adoption through cutover.{" "}
               <span className="font-semibold text-navy">
-                That missing ownership layer is the scarce work. That is what I
+                Not another overlay. The owned truth the business runs on -
+                that missing ownership layer is the scarce work. That is what I
                 execute.
               </span>
+            </p>
+            <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
+              The era of agentic AI amplifies it. Governed, adopted, and owned,
+              those workflows become an advantage. Left unmanaged, the gap
+              widens faster.
             </p>
           </div>
         </Reveal>
@@ -86,22 +95,24 @@ export default function HomePage() {
                 production.
               </h2>
               <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                <span className="font-semibold text-navy">Builder — </span>
-                CEO/CTO, Timberline: scaled $250K → $130M on operating systems
+                <span className="font-semibold text-navy">Builder - </span>
+                CEO/CTO, Timberline: scaled $250K to $130M on operating systems
                 we owned, not rented.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                <span className="font-semibold text-navy">Embedded — </span>
-                Through idigdata: 50+ full-cycle implementations for $100M–$1B
-                operating companies — keep-running modernization across ERP and
-                the systems around them.
+                <span className="font-semibold text-navy">Embedded - </span>
+                Through idigdata: 50+ full-cycle implementations for $100M-$1B
+                operating companies - keep-running modernization, plus
+                instrument craft when agentics earns its place: token and model
+                optimization, discovery loops, human-validated production paths.
               </p>
               <p className="mt-5 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-                <span className="font-semibold text-navy">CIO — </span>
+                <span className="font-semibold text-navy">CIO - </span>
                 Sierra Nevada Brewing (~$420M): $15M enterprise transformation;
                 rebuilt legacy IS into a purpose-built IT organization;
-                company-owned data core; agentic AI in production under
-                governance, training, and business ownership.
+                company-owned data core; what the market now calls agentic AI
+                in production under governance, training, and business ownership
+                - before the term was common.
               </p>
             </div>
           </div>
@@ -113,7 +124,7 @@ export default function HomePage() {
                   { key: "years", node: "30 years" },
                   { key: "impl", node: "50+ implementations" },
                   { key: "transform", node: "15 full transformations at scale" },
-                  { key: "operators", node: "$100M–$1B operators" },
+                  { key: "operators", node: "$100M-$1B operators" },
                   { key: "agentic", node: "agentic AI in production" },
                 ] as const
               ).map((item, i) => (
@@ -136,19 +147,20 @@ export default function HomePage() {
         <Reveal className="mx-auto max-w-content px-6 py-14 md:grid md:grid-cols-[230px_1fr] md:gap-12 md:py-16">
           <p className="mb-5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-warm-gray md:mb-0 md:pt-3">
             <GoldSquare className="mr-3 h-[9px] w-[9px]" />
-            How I deliver
+            Applied Agentics
           </p>
           <div>
             <p className="max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
               I don&apos;t just claim ownership of people, data, and systems.
               Here&apos;s how that ownership is built and left with the
-              business — proof, not a product shelf.
+              business - proof, not a product shelf. Ethos lives on Approach;
+              the instrument and leave-behinds live here.
             </p>
             <Link
-              href="/systems/"
+              href="/applied-agentics/"
               className="group mt-6 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:text-gold"
             >
-              How I deliver
+              Applied Agentics
               <span
                 aria-hidden="true"
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -157,10 +169,10 @@ export default function HomePage() {
               </span>
             </Link>
             <Link
-              href="/agentics/"
+              href="/approach/"
               className="mt-3 block font-brand text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-gray transition-colors hover:text-navy"
             >
-              Agentic AI in production →
+              Approach →
             </Link>
           </div>
         </Reveal>
@@ -179,11 +191,14 @@ export default function HomePage() {
             If the work needs an owner, start there.
           </h2>
           <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-porcelain/75 md:text-[18px]">
-            No deck. No proposal theater. Bring the real situation — stalled
-            transformation, ERP mess, keep-running constraint, or an ownership
-            gap above the vendors — and I&apos;ll walk you through exactly how
-            I&apos;d own it. Permanent or fractional — the ownership standard
-            does not change.
+            Businesses always need to transform. Too often they wait until pain
+            funds a cost carve-out while capability erodes - and agentic AI
+            compresses the time between delay and consequence. No deck. No
+            proposal theater. Bring the real situation - ERP mess, keep-running
+            constraint, vendor sprawl, or pressure to put agentic AI into
+            production without losing control - and I&apos;ll walk you through
+            how I&apos;d own it. Permanent or fractional - the ownership
+            standard does not change.
           </p>
           <Link
             href="/contact/"

@@ -3,14 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { PRIMARY_NAV } from "@/lib/nav";
 
-const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/approach/", label: "Approach" },
-  { href: "/systems/", label: "How I deliver" },
-  { href: "/engagement/", label: "Engagement" },
-  { href: "/contact/", label: "Reach out" },
-];
+const NAV = PRIMARY_NAV;
 
 function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
   const ink = onFilm ? "#F7F5EE" : "#142840";

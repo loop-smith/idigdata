@@ -8,14 +8,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Engagement",
   description:
-    "Embedded transformation leadership — permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
+    "Embedded transformation leadership - permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
   alternates: { canonical: "/engagement/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/engagement/",
     title: "Engagement | idigdata",
     description:
-      "Embedded transformation leadership — permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
+      "Embedded transformation leadership - permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
     images: [
       {
         url: "/og-image.png",
@@ -49,10 +49,10 @@ const breadcrumbJsonLd = {
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "idigdata — Embedded transformation leadership",
+  name: "idigdata - Embedded transformation leadership",
   url: "https://idigdata.com/engagement/",
   description:
-    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional or permanent — same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M–$1B operators.",
+    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional or permanent - same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M-$1B operators.",
   serviceType: [
     "Embedded transformation leadership",
     "Transformational CIO",
@@ -92,7 +92,7 @@ const authorityDoors = [
 ];
 
 const flavors = [
-  "Agentic AI sits on the same ownership layer as the systems work — a fractional or embedded path depending on how much owner the business needs, not a second brand.",
+  "Agentic AI sits on the same ownership layer as the systems work - a fractional or embedded path depending on how much owner the business needs, not a second brand.",
   "Recovery becomes the same question: is the stalled program one lever, or does the whole transformation need an owner?",
 ];
 
@@ -114,8 +114,10 @@ export default function EngagementPage() {
         </p>
         <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
           I embed inside the business at senior-operator altitude, own people,
-          data, and systems above the vendors, and leave owned change the
-          company can keep.
+          data, and systems above the vendors - including vendors that often
+          end up managing themselves - and leave owned change the company can
+          keep. Not another System Integrator (SI) or forward-deployed billing
+          path. The owned truth the business runs on.
         </p>
       </section>
 
@@ -133,7 +135,7 @@ export default function EngagementPage() {
             teams chase it, and operators absorb the consequences. I take the
             missing role: the senior embedded owner who binds mandate,
             delivery, adoption, capital logic, and exit into one accountable
-            path — keep-running through cutover, not a vendor plan with no
+            path - keep-running through cutover, not a vendor plan with no
             owner.
           </p>
           <p>
@@ -150,7 +152,7 @@ export default function EngagementPage() {
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Authority axis</SectionKicker>
         <h2 className="max-w-[900px] text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-          Fractional embed or permanent seat — same ownership standard.
+          Fractional embed or permanent seat - same ownership standard.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           Adoption and recovery are not separate shelves. They are flavors under
@@ -223,7 +225,7 @@ export default function EngagementPage() {
           The work fits mid-market operators with enough complexity to justify
           senior embedded ownership: multi-entity, multi-platform, vendor-heavy
           environments across ERP, WMS, MES, CRM/CPQ, MDM, EMR, LIMS, QMS,
-          HRIS, and the adjacent fabric — with multi-system integration the
+          HRIS, and the adjacent fabric - with multi-system integration the
           business owns. Manufacturing (discrete and process), AEC, beverage
           CPG, wellness/fitness, and hospitality/gaming are the strongest
           pattern matches.
@@ -286,9 +288,9 @@ export default function EngagementPage() {
             Tell me what needs to be owned.
           </h2>
           <p className="mb-8 font-vollkorn text-[14.5px] font-normal italic leading-[1.6] text-[#DCD9CC] md:text-[15.5px]">
-            The stalled transformation, the board pressure, the agentic
-            question, the vendor knot, the CFO concern. One conversation will
-            tell us whether this is a real fit.
+            Pressure to transform, the board ask, the agentic question, the
+            vendor knot, the cost carve-out that never quite funds. One
+            conversation will tell us whether this is a real fit.
           </p>
           <Link
             href="/contact/"

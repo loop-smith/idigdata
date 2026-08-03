@@ -37,17 +37,42 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/boss",
-        destination: "/agentics/",
+        destination: "/applied-agentics/",
         permanent: true,
       },
       {
         source: "/boss/",
-        destination: "/agentics/",
+        destination: "/applied-agentics/",
         permanent: true,
       },
       {
         source: "/boss/:path*",
-        destination: "/agentics/",
+        destination: "/applied-agentics/",
+        permanent: true,
+      },
+      {
+        source: "/systems",
+        destination: "/applied-agentics/",
+        permanent: true,
+      },
+      {
+        source: "/systems/",
+        destination: "/applied-agentics/",
+        permanent: true,
+      },
+      {
+        source: "/agentics",
+        destination: "/applied-agentics/",
+        permanent: true,
+      },
+      {
+        source: "/agentics/",
+        destination: "/applied-agentics/",
+        permanent: true,
+      },
+      {
+        source: "/agentics/:path*",
+        destination: "/applied-agentics/",
         permanent: true,
       },
       {

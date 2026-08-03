@@ -8,14 +8,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "How Robert Paddock Approaches Enterprise Transformation | idigdata",
   description:
-    "People, data, and systems as one ownership job — keep-running delivery, vendor control, and change that sticks.",
+    "People, data, and systems as one ownership job - keep-running delivery, vendor control, and change that sticks.",
   alternates: { canonical: "/approach/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/approach/",
     title: "How Robert Paddock Approaches Enterprise Transformation | idigdata",
     description:
-      "People, data, and systems as one ownership job — keep-running delivery, vendor control, and change that sticks.",
+      "People, data, and systems as one ownership job - keep-running delivery, vendor control, and change that sticks.",
     images: [
       {
         url: "/og-image.png",
@@ -55,17 +55,36 @@ export default function ApproachPage() {
         <M4Watermark position="top-right" />
         <SectionKicker className="mb-4">Approach</SectionKicker>
         <h1 className="text-balance font-vollkorn text-[46px] font-bold leading-[1.02] tracking-normal text-navy md:text-[62px] lg:text-[74px]">
-          People, data, and systems — one ownership job.
+          People, data, and systems - one ownership job.
         </h1>
         <p className="mt-6 max-w-[820px] font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
-          I embed inside the business, own the build above the vendors, and
-          leave capability that runs after I leave.
+          I embed inside the business, own the build above the vendors
+          (including the ones that often end up managing themselves), and leave
+          capability that runs after I leave.
         </p>
         <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
-          I start inside the operating company — bind people, data, systems,
+          I start inside the operating company - bind people, data, systems,
           vendors, and decisions into one delivery frame, then cycle until the
-          result holds without me.
+          result holds without me. Not another System Integrator (SI) or
+          forward-deployed overlay. The owned truth the business runs on.
         </p>
+      </section>
+
+      <section className="bg-cream px-0 pb-16 pt-6 md:px-8 md:pb-20">
+        <figure className="mx-auto w-full max-w-[680px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/diagrams/substrate-triangle.svg"
+            alt="People at the top, Data and Systems at the base, Workflows at the center - one ownership job"
+            width={700}
+            height={480}
+            className="mx-auto block h-auto w-full max-w-[560px]"
+          />
+          <figcaption className="mx-auto mt-4 max-w-[46ch] text-center font-vollkorn text-[13px] italic leading-[1.5] text-warm-gray">
+            The repeating ethos - people, data, and systems - meeting in the
+            workflows the business actually runs.
+          </figcaption>
+        </figure>
       </section>
 
       <AccentRule className="mt-4" />
@@ -108,7 +127,7 @@ export default function ApproachPage() {
             <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
               <p>
                 Platforms matter; they cannot own the transformation. I make
-                people, data, and systems explicit — workflows mapped to
+                people, data, and systems explicit - workflows mapped to
                 operating reality, data governed as a core asset, and decisions
                 visible enough for executives and operators to act on the same
                 truth.
@@ -159,16 +178,105 @@ export default function ApproachPage() {
           agentic workflow stack alongside it.
         </p>
         <Link
-          href="/systems/"
+          href="/applied-agentics/"
           className="mt-6 inline-flex font-body text-[13px] font-semibold uppercase tracking-[0.16em] text-navy underline decoration-navy/35 underline-offset-4 hover:decoration-navy"
         >
-          How I deliver <span aria-hidden="true" className="ml-2">→</span>
+          Applied Agentics <span aria-hidden="true" className="ml-2">→</span>
         </Link>
       </section>
 
       <AccentRule className="mt-4" />
 
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+        <SectionKicker className="mb-4">Capability map</SectionKicker>
+        <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
+          What I bring to the ownership job.
+        </h2>
+        <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
+          A briefed map of the capability bands - not a resume dump. Depth and
+          Match live in DigOps; this is what buyers should feel on the site.
+        </p>
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {(
+            [
+              {
+                band: "Altitude",
+                lines: [
+                  "Transformational CIO / CTO / embedded seats",
+                  "ELT and board altitude",
+                  "Permanent or fractional, same standard",
+                ],
+              },
+              {
+                band: "Enterprise systems",
+                lines: [
+                  "ERP catch-all + D365 / Business Central",
+                  "WMS, MES, CRM/CPQ, MDM, integration",
+                  "Cyber and data platforms in the fabric",
+                ],
+              },
+              {
+                band: "Leadership & change",
+                lines: [
+                  "People, data, systems as one job",
+                  "Change and adoption ownership",
+                  "Stakeholders and vendor / SI control",
+                ],
+              },
+              {
+                band: "Delivery mechanics",
+                lines: [
+                  "Deep PM through cutover",
+                  "Program ownership end-to-end",
+                  "Keep-running, multi-entity, Control · Map · Run",
+                ],
+              },
+              {
+                band: "Reach",
+                lines: [
+                  "$100M-$1B operators",
+                  "Manufacturing (discrete + process)",
+                  "AEC, beverage CPG, wellness/fitness, hospitality",
+                ],
+              },
+              {
+                band: "Builder",
+                lines: [
+                  "Owned stack and scale proof",
+                  "Instrument craft on the same ownership layer",
+                  "Build it, own it, run it",
+                ],
+              },
+              {
+                band: "Agentics",
+                lines: [
+                  "Agentic AI in production with governance",
+                  "HOLD / ABSORB before the model",
+                  "Craft: token/model optimization, discovery loops",
+                ],
+              },
+            ] as const
+          ).map((item) => (
+            <article
+              key={item.band}
+              className="border border-navy/15 border-l-[3px] border-l-gold bg-white px-5 py-5"
+            >
+              <p className="font-body text-[10.5px] font-semibold uppercase tracking-[0.2em] text-warm-gray">
+                {item.band}
+              </p>
+              <ul className="mt-3 space-y-2 text-[14.5px] leading-[1.5] text-navy">
+                {item.lines.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">The loop</SectionKicker>
         <p className="max-w-[840px] font-vollkorn text-[22px] leading-[1.32] tracking-normal text-navy md:text-[27px]">
           Transformations fail when delivery splits into disconnected
@@ -184,7 +292,7 @@ export default function ApproachPage() {
 
       <AccentRule className="mt-4" />
 
-      <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+      <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">People</SectionKicker>
         <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
           The people who run the work are the system&apos;s center.
@@ -223,7 +331,7 @@ export default function ApproachPage() {
 
       <AccentRule className="mt-4" />
 
-      <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+      <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Six constellations</SectionKicker>
         <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
           Every operating business runs on the same six.

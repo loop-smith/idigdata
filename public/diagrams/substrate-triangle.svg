@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ethos triangle for /approach/. People · Data · Systems at the apexes; Workflows at the center.
+     Datum / HITL scaffolding removed 2026-08-03 - triangle is the mark. -->
+<svg
+  viewBox="0 0 700 480"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="tri-title tri-desc"
+>
+  <title id="tri-title">People, data, and systems - workflows at the center</title>
+  <desc id="tri-desc">
+    Triangle with People at the top apex, Data at lower left, Systems at lower right.
+    Gold center disk labeled Workflows - where the three meet in the work.
+  </desc>
+  <defs>
+    <radialGradient id="goldOrb" cx="36%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#FFF0A8" />
+      <stop offset="38%" stop-color="#FACC15" />
+      <stop offset="85%" stop-color="#D9A800" />
+      <stop offset="100%" stop-color="#9E7900" />
+    </radialGradient>
+    <radialGradient id="navyOrb" cx="34%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#4A6788" />
+      <stop offset="55%" stop-color="#1F3D5C" />
+      <stop offset="100%" stop-color="#08182C" />
+    </radialGradient>
+    <linearGradient id="triFace" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF5" />
+      <stop offset="60%" stop-color="#F3EBD7" />
+      <stop offset="100%" stop-color="#E5DBC0" />
+    </linearGradient>
+    <linearGradient id="goldHighlight" x1="20%" y1="15%" x2="50%" y2="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shifted up ~100px from historic canvas after removing datum band -->
+  <g transform="translate(0,-100)">
+    <polygon points="354,186 84,526 624,526" fill="#08182C" opacity="0.12" />
+    <polygon
+      points="350,180 80,520 620,520"
+      fill="url(#triFace)"
+      stroke="#142840"
+      stroke-width="1.6"
+    />
+
+    <line x1="350" y1="180" x2="350" y2="407" stroke="#142840" stroke-width="0.9" stroke-dasharray="3,5" opacity="0.45" />
+    <line x1="80" y1="520" x2="350" y2="407" stroke="#142840" stroke-width="0.9" stroke-dasharray="3,5" opacity="0.45" />
+    <line x1="620" y1="520" x2="350" y2="407" stroke="#142840" stroke-width="0.9" stroke-dasharray="3,5" opacity="0.45" />
+
+    <circle cx="350" cy="180" r="12" fill="url(#navyOrb)" stroke="#08182C" stroke-width="0.8" />
+    <circle cx="345" cy="176" r="4" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="80" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" stroke-width="0.8" />
+    <circle cx="75" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="620" cy="520" r="12" fill="url(#navyOrb)" stroke="#08182C" stroke-width="0.8" />
+    <circle cx="615" cy="516" r="4" fill="#FFFFFF" opacity="0.4" />
+
+    <text x="350" y="143" text-anchor="middle" font-family="Vollkorn, Georgia, serif" font-size="26" font-weight="700" fill="#142840">
+      People
+    </text>
+    <text x="350" y="163" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-style="italic" fill="#6B6860">
+      who run the work
+    </text>
+
+    <text x="80" y="558" text-anchor="middle" font-family="Vollkorn, Georgia, serif" font-size="22" font-weight="700" fill="#142840">
+      Data
+    </text>
+    <text x="80" y="576" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-style="italic" fill="#6B6860">
+      the substrate
+    </text>
+
+    <text x="620" y="558" text-anchor="middle" font-family="Vollkorn, Georgia, serif" font-size="22" font-weight="700" fill="#142840">
+      Systems
+    </text>
+    <text x="620" y="576" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-style="italic" fill="#6B6860">
+      the stack
+    </text>
+
+    <circle cx="354" cy="410" r="95" fill="#08182C" opacity="0.14" />
+    <circle cx="350" cy="407" r="95" fill="url(#goldOrb)" stroke="#142840" stroke-width="1.8" />
+    <ellipse cx="322" cy="378" rx="48" ry="30" fill="url(#goldHighlight)" />
+    <text x="350" y="403" text-anchor="middle" font-family="Vollkorn, Georgia, serif" font-size="26" font-weight="700" fill="#142840">
+      Workflows
+    </text>
+    <text x="350" y="425" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-style="italic" fill="#142840">
+      where the three meet
+    </text>
+  </g>
+</svg>

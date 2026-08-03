@@ -7,14 +7,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Reach out",
   description:
-    "Start a direct conversation with Robert Paddock about embedded transformation, stalled systems work, or agentic AI that needs an owner.",
+    "Start a direct conversation with Robert Paddock about embedded transformation, ownership above the vendors, or agentic AI that needs an owner.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/contact/",
     title: "Reach out | idigdata",
     description:
-      "A direct note about embedded transformation, stalled systems work, or agentic AI that needs an owner — permanent or fractional.",
+      "A direct note about embedded transformation, ownership above the vendors, or agentic AI that needs an owner - permanent or fractional.",
     images: [
       {
         url: "/og-image.png",
@@ -49,19 +49,21 @@ export default function ContactPage() {
           Send the real shape.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          A quick, direct read on whether this is a real fit — no deck, no
+          A quick, direct read on whether this is a real fit - no deck, no
           proposal theater.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
-          If the work needs an owner above the vendors, send a note. The first
-          conversation is not a deck ritual — it&apos;s a working call where I walk
-          you through how I&apos;d actually own your situation: a quick read on
-          mandate, systems, people, timing, and whether I can be useful.
+          Businesses always need to transform. If the work needs an owner above
+          the vendors - or pressure to put agentic AI into production without
+          losing control - send a note. The first conversation is not a deck
+          ritual. It&apos;s a working call where I walk you through how I&apos;d
+          actually own your situation: mandate, systems, people, timing, and
+          whether I can be useful.
         </p>
         <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,
           the agentic question, the CFO concern, or the operating knot that
-          keeps resurfacing. Permanent seat or fractional embed — the ownership
+          keeps resurfacing. Permanent seat or fractional embed - the ownership
           standard is the same. I read these myself.
         </p>
       </section>

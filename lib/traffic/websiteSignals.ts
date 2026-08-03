@@ -73,6 +73,8 @@ const DIGOPS_SITE_PATHS = new Set([
   "/",
   "/agentics",
   "/agentics/",
+  "/applied-agentics",
+  "/applied-agentics/",
   "/approach",
   "/approach/",
   "/contact",

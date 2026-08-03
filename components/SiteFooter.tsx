@@ -1,12 +1,7 @@
 import Link from "next/link";
+import { PRIMARY_NAV } from "@/lib/nav";
 
-const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/approach/", label: "Approach" },
-  { href: "/systems/", label: "How I deliver" },
-  { href: "/engagement/", label: "Engagement" },
-  { href: "/contact/", label: "Reach out" },
-];
+const NAV = PRIMARY_NAV;
 
 export default function SiteFooter() {
   return (

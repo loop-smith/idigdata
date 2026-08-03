@@ -1,0 +1,153 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1060" width="1400" height="1060" font-family="'Bradley Hand','Segoe Print','Chalkduster',cursive">
+
+  <defs>
+    <filter id="chalk" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="chalkText" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.15" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="smudge" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <radialGradient id="vig" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#1a2f3d"/>
+      <stop offset="100%" stop-color="#0E2138"/>
+    </radialGradient>
+  </defs>
+
+  <!-- board - edge-bleed fill; page chrome supplies the frame -->
+  <rect width="1400" height="1060" fill="url(#vig)"/>
+  <g fill="#EDEAE0" opacity="0.045" filter="url(#smudge)">
+    <ellipse cx="300" cy="880" rx="230" ry="45"/>
+    <ellipse cx="1090" cy="200" rx="190" ry="60"/>
+    <ellipse cx="720" cy="520" rx="300" ry="40"/>
+  </g>
+
+  <!-- header - gold cube + title (page carries Applied Agentics kicker) -->
+  <g filter="url(#chalkText)">
+    <rect x="74" y="72" width="14" height="14" fill="#FACC15"/>
+    <text x="100" y="86" fill="#9DA89E" font-size="20" letter-spacing="6" font-family="Georgia,serif">idigdata</text>
+    <text x="74" y="148" fill="#EDEAE0" font-size="46">the neuron, and the same neuron in math</text>
+  </g>
+  <path d="M74 172 C 380 166, 700 178, 1010 170" stroke="#EDEAE0" stroke-opacity="0.35" stroke-width="2" fill="none" filter="url(#chalk)"/>
+
+  <!-- ============ NEURON DRAWING ============ -->
+  <g filter="url(#chalk)" stroke="#EDEAE0" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- dendrites -->
+    <path d="M232 288 L176 236 M176 236 L130 208 M176 236 L162 186 M130 208 L96 196"/>
+    <path d="M224 330 L162 330 M162 330 L114 312 M162 330 L118 352"/>
+    <path d="M240 372 L198 424 M198 424 L166 452 M198 424 L208 468"/>
+    <!-- soma -->
+    <path d="M236 288 C 262 268, 300 274, 314 300 C 328 326, 320 358, 296 372 C 270 388, 236 380, 224 354 C 213 330, 217 302, 236 288 Z" stroke-width="4"/>
+    <circle cx="270" cy="328" r="13" stroke-width="2.4"/>
+    <!-- axon -->
+    <path d="M316 322 C 400 312, 470 340, 548 326 C 600 316, 640 330, 676 328" stroke-width="3.6"/>
+    <!-- myelin -->
+    <g stroke-width="2.2" stroke-opacity="0.7">
+      <ellipse cx="392" cy="317" rx="30" ry="15" transform="rotate(-4 392 317)"/>
+      <ellipse cx="474" cy="333" rx="30" ry="15" transform="rotate(6 474 333)"/>
+      <ellipse cx="576" cy="323" rx="30" ry="15" transform="rotate(-5 576 323)"/>
+    </g>
+    <!-- terminal bouton -->
+    <path d="M676 328 C 692 310, 722 312, 730 330 C 738 349, 722 366, 702 364 C 684 362, 670 346, 676 328 Z" stroke-width="3.4"/>
+    <g stroke-width="2" stroke-opacity="0.85">
+      <circle cx="694" cy="330" r="5"/><circle cx="710" cy="342" r="5"/><circle cx="698" cy="350" r="4.5"/>
+    </g>
+    <!-- receiving dendrite + soma 2 -->
+    <path d="M770 336 L840 336" stroke-width="3.4"/>
+    <path d="M840 316 C 866 300, 900 308, 910 332 C 920 356, 904 380, 878 382 C 852 384, 830 364, 834 342 Z" stroke-width="4" stroke-opacity="0.85"/>
+    <path d="M912 340 C 960 336, 1000 350, 1040 344" stroke-width="3" stroke-opacity="0.6"/>
+    <!-- cleft neurotransmitter -->
+    <g stroke-width="2" stroke-opacity="0.9">
+      <circle cx="742" cy="326" r="3.4"/><circle cx="754" cy="340" r="3.4"/><circle cx="744" cy="352" r="3.4"/><circle cx="760" cy="322" r="3"/>
+    </g>
+    <!-- callout leaders -->
+    <path d="M736 306 L 848 214" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M760 356 L 856 300" stroke-opacity="0.45" stroke-width="2"/>
+    <!-- magnifier -->
+    <circle cx="1010" cy="286" r="112" stroke-opacity="0.55" stroke-width="2.6"/>
+    <path d="M948 224 C 972 250, 986 268, 990 288" stroke-width="3.4"/>
+    <path d="M1030 288 C 1036 312, 1050 334, 1074 350" stroke-width="3.4"/>
+    <g stroke-width="2.2">
+      <circle cx="962" cy="252" r="6"/><circle cx="978" cy="268" r="6"/><circle cx="958" cy="274" r="5"/>
+    </g>
+    <path d="M994 296 L1024 312 M1014 306 L1024 312 L1013 318" stroke-width="2.4" stroke-opacity="0.9"/>
+  </g>
+
+  <!-- drawing labels -->
+  <g filter="url(#chalkText)" fill="#9DA89E" font-size="25">
+    <text x="72" y="176" opacity="0">.</text>
+    <text x="86" y="500" fill="#9DA89E">dendrites - what's coming in</text>
+    <text x="252" y="428" fill="#EDEAE0" font-size="27">soma</text>
+    <text x="398" y="286" fill="#9DA89E">axon</text>
+    <text x="646" y="424" fill="#9DA89E">the gap</text>
+    <text x="928" y="428" fill="#EDEAE0" font-size="27">synapse</text>
+  </g>
+  <g filter="url(#chalk)" stroke="#9DA89E" stroke-width="2" fill="none" stroke-opacity="0.6">
+    <path d="M212 490 L164 452"/>
+    <path d="M274 414 L272 386"/>
+    <path d="M690 412 L734 366"/>
+    <path d="M982 414 L1004 400"/>
+  </g>
+
+  <!-- state / weight callouts in chalk-blue -->
+  <g filter="url(#chalkText)" fill="#E8C547" font-size="30" font-family="Georgia,serif">
+    <text x="248" y="466">h(t)</text>
+    <text x="960" y="466">W</text>
+  </g>
+
+  <path d="M74 546 C 420 540, 900 554, 1326 544" stroke="#EDEAE0" stroke-opacity="0.35" stroke-width="2.5" fill="none" filter="url(#chalk)"/>
+
+  <!-- ============ EQUATION ============ -->
+  <g filter="url(#chalkText)" fill="#EDEAE0" font-family="Georgia,serif">
+    <!-- tau -->
+    <text x="152" y="672" font-size="62" fill="#C8836F">τ(x,t)</text>
+    <text x="316" y="672" font-size="52">·</text>
+    <!-- dh/dt -->
+    <text x="352" y="646" font-size="46" text-anchor="middle" transform="translate(60,0)">dh</text>
+    <text x="352" y="712" font-size="46" text-anchor="middle" transform="translate(60,0)">dt</text>
+    <text x="556" y="672" font-size="56">=</text>
+    <text x="626" y="672" font-size="62">−h(t)</text>
+    <text x="800" y="672" font-size="56">+</text>
+    <text x="866" y="672" font-size="62">f(x, h, W, b)</text>
+  </g>
+  <path d="M356 662 L 472 660" stroke="#EDEAE0" stroke-width="3" fill="none" filter="url(#chalk)"/>
+
+  <!-- red chalk circle on tau -->
+  <path d="M258 634 C 258 596, 196 588, 152 600 C 108 612, 100 668, 128 692 C 158 718, 244 714, 260 678 C 268 660, 262 640, 250 626"
+        stroke="#C8836F" stroke-width="3.4" fill="none" stroke-linecap="round" filter="url(#chalk)" opacity="0.95"/>
+
+  <!-- underbraces -->
+  <g filter="url(#chalk)" stroke="#9DA89E" stroke-width="2.4" fill="none" stroke-opacity="0.75" stroke-linecap="round">
+    <path d="M624 706 C 624 726, 700 720, 700 738 C 700 720, 774 726, 774 706"/>
+    <path d="M864 706 C 864 726, 986 720, 986 738 C 986 720, 1110 726, 1110 706"/>
+    <path d="M186 726 C 186 760, 150 758, 150 790"/>
+  </g>
+
+  <g filter="url(#chalkText)" font-size="25" fill="#9DA89E" text-anchor="middle">
+    <text x="700" y="778">the leak -</text>
+    <text x="700" y="810">it decays toward rest</text>
+    <text x="986" y="778">the drive -</text>
+    <text x="986" y="810">what the inputs pull toward</text>
+  </g>
+
+  <!-- the punchline -->
+  <g filter="url(#chalkText)">
+    <text x="112" y="836" font-size="30" fill="#C8836F">the response time.</text>
+    <text x="112" y="878" font-size="30" fill="#C8836F">not a constant -</text>
+    <text x="112" y="920" font-size="30" fill="#C8836F">it flexes with the signal.</text>
+  </g>
+
+  <!-- footer -->
+  <path d="M112 962 C 420 958, 900 970, 1290 960" stroke="#EDEAE0" stroke-opacity="0.22" stroke-width="2" fill="none" filter="url(#chalk)"/>
+  <g filter="url(#chalkText)" fill="#9DA89E">
+    <text x="112" y="1004" font-size="26">C. elegans has 302 neurons.  19 of them drove the car.</text>
+    <text x="1290" y="1004" font-size="20" text-anchor="end" font-family="Georgia,serif" letter-spacing="3">HASANI · LECHNER · AMINI · RUS · GROSU</text>
+  </g>
+
+</svg>
+
+
