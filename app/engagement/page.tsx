@@ -224,8 +224,9 @@ export default function EngagementPage() {
           senior embedded ownership: multi-entity, multi-platform, vendor-heavy
           environments across ERP, WMS, MES, CRM/CPQ, MDM, EMR, LIMS, QMS,
           HRIS, and the adjacent fabric — with multi-system integration the
-          business owns. AEC, beverage CPG, wellness/fitness, and
-          hospitality/gaming are the strongest pattern matches.
+          business owns. Manufacturing (discrete and process), AEC, beverage
+          CPG, wellness/fitness, and hospitality/gaming are the strongest
+          pattern matches.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           The buyer is not waiting for the market to settle. The buyer wants to

@@ -50,6 +50,8 @@ const personSchema = {
     "Embedded transformation leadership",
     "Vendor-agnostic transformation",
     "Exit-by-design engagements",
+    "Discrete manufacturing",
+    "Process manufacturing",
     "Architecture-engineering-construction (AEC)",
     "Beverage consumer packaged goods (CPG)",
     "Wellness and fitness operations",

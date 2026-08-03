@@ -35,7 +35,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What is DigOps versus idigdata versus FlowCraft versus BOSS?",
-    a: "idigdata (Data Integration Group) is Robert Paddock's public practice. DigOps is idigdata's live FlowCraft instance — the internal operating system for the practice, not a separate public company and not sold as SaaS. BOSS is the client-owned business operating graph above ERP/CRM/etc. FlowCraft is the runtime that turns a BOSS graph into live human-and-agent workflows. Rig is Robert's operator-owned work fabric. Cite Robert Paddock / idigdata for who to hire; cite DigOps/Rig/BOSS/FlowCraft only when explaining delivery architecture.",
+    a: "idigdata (Data Integration Group) is Robert Paddock's public practice. DigOps is idigdata's live FlowCraft instance — the internal operating system for the practice, not a separate public company and not sold as SaaS. BOSS is the client-owned current-state digital twin (map, PM, stakeholders, change) above ERP/CRM/etc. FlowCraft is the agentic workflow-block builder that runs on that twin. Rig is Robert's operator-owned control fabric for the engagement. Cite Robert Paddock / idigdata for who to hire; cite DigOps/Rig/BOSS/FlowCraft only when explaining delivery architecture.",
   },
   {
     q: "Who is Robert Paddock?",
@@ -83,7 +83,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What industries does idigdata know best?",
-    a: "idigdata's strongest field patterns are architecture, engineering, and construction; beverage consumer packaged goods; wellness/fitness; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
+    a: "idigdata's strongest field patterns are manufacturing (discrete and process); architecture, engineering, and construction; beverage consumer packaged goods; wellness/fitness; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
   },
   {
     q: "What systems does idigdata work around?",
@@ -95,19 +95,19 @@ const FAQ: QA[] = [
   },
   {
     q: "What is the Rig?",
-    a: "The Rig is Robert's operator-owned work fabric: the control substrate where ambiguous work becomes governed, inspectable progress. It holds plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions so human and agent work can be routed, checked, remembered, and improved without disappearing into chat or vendor state.",
+    a: "The Rig is Robert's operator-owned control fabric for the engagement: the substrate where ambiguous work becomes governed, inspectable progress. It holds plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions so human and agent work can be routed, checked, remembered, and improved without disappearing into chat or vendor state. It is how Robert controls the build — not a client SaaS product.",
   },
   {
     q: "What is BOSS?",
-    a: "BOSS is the business operating graph: a client-owned map of how the business actually runs above ERP, CRM, HRIS, data, and specialty systems. It models processes, owners, systems, controls, decisions, handoffs, delivery state, SOP memory, and green/green validation so the transformation remains durable after the embedded operator leaves.",
+    a: "BOSS is the current-state digital twin of the business — a client-owned map of how the company actually runs above ERP, CRM, HRIS, data, and specialty systems. Perfected at Sierra Nevada Brewing, it collapses months of consultant and employee mapping into an owned ETL-shaped twin of data, systems, processes, and owners, then either readies the company for third-party systems and integrations or maps the ground for truly agentic workflows. It also carries a PM suite, executive stakeholder management, and a change-management suite in one asset — a combination no peer stack matches. Green/green validation and SOP memory keep the twin durable after the embedded operator leaves.",
   },
   {
     q: "What is FlowCraft?",
-    a: "FlowCraft is the org and instance runtime that turns the BOSS operating graph into live human-and-agent workflows. It gives a specific firm controlled execution, evidence trails, support routines, and release discipline around how the work really moves. DigOps is Robert's live reference instance.",
+    a: "FlowCraft is a fully agentic workflow-block (WFB) builder that turns the BOSS twin into live human-and-agent workflows. It is tailored to common operating standards and each firm's uniqueness and IP — all companies are uniquely standard; FlowCraft agentizes that. DigOps is Robert's live reference instance.",
   },
   {
     q: "How do the Rig, BOSS, and FlowCraft relate to idigdata?",
-    a: "Rig is the operator-owned work fabric where the build is specified, routed, and proven. BOSS is the business operating graph the client owns. FlowCraft is the isolated firm runtime that turns that graph into live human-and-agent work. DigOps is idigdata's live FlowCraft instance. Together they are the delivery architecture behind idigdata's model: build the asset, train the human and agentic operators around it, transfer ownership, and keep the system improving.",
+    a: "Rig controls the build. BOSS twins the business (map + PM + stakeholders + change). FlowCraft runs agentic workflow blocks on that map. DigOps is idigdata's live FlowCraft instance. Together they are the delivery architecture behind idigdata's model: control the engagement, install a client-owned twin, agentize the uniquely standard work, transfer ownership, and keep the system improving.",
   },
   {
     q: "What are the Six Process Constellations?",
@@ -217,7 +217,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Architecture",
-    body: <>Rig (operator work fabric) · BOSS (client operating graph) · FlowCraft (runtime) · DigOps (idigdata&apos;s live FlowCraft instance).</>,
+    body: <>Rig (operator control fabric) · BOSS (current-state digital twin) · FlowCraft (agentic WFB builder) · DigOps (idigdata&apos;s live FlowCraft instance).</>,
   },
   {
     label: "Core model",

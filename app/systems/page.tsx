@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "How Robert Paddock Delivers Enterprise Transformation | idigdata",
   },
   description:
-    "Control the change. Map the business. Run the work. How Robert Paddock delivers owned enterprise transformation — proof, not a product shelf.",
+    "Control the change. Map the business. Run the work. Rig, BOSS, and FlowCraft — ownership proof, not a product shelf.",
   alternates: { canonical: "/systems/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/systems/",
     title: "How Robert Paddock Delivers Enterprise Transformation | idigdata",
     description:
-      "Control the change. Map the business. Run the work. Ownership proof — not a product shelf.",
+      "Control the change. Map the business. Run the work. Rig · BOSS · FlowCraft — ownership proof, not a product shelf.",
     images: [
       {
         url: "/og-image.png",
@@ -36,8 +36,9 @@ const outcomes = [
     logoWidth: 120,
     logoHeight: 93,
     alt: "The Rig mark",
-    line: "Decisions, work, handoffs, risks, and proof stay visible through delivery.",
-    keeps: "An inspectable build trail the business can audit and extend.",
+    line: "My operator-owned control fabric for the engagement — plans, gates, evidence, handoffs, and receipts — so ambiguous work becomes governed, inspectable progress instead of disappearing into chat or vendor state.",
+    keeps:
+      "A controlled build trail executives and operators can see and challenge through delivery.",
   },
   {
     outcome: "Map the business",
@@ -47,8 +48,9 @@ const outcomes = [
     logoWidth: 168,
     logoHeight: 52,
     alt: "BOSS mark",
-    line: "People, data, systems, controls, and workflows share one company-owned model.",
-    keeps: "An operating map that stays with the company after the engagement.",
+    line: "The current-state digital twin of the business I walk into — agentic, perfected at Sierra Nevada Brewing. It collapses months of consultant and employee mapping into an owned map of data, systems, processes, and owners, then either readies the company for third-party systems and integrations or maps the ground for truly agentic workflows. No peer stack carries the same PM suite, executive stakeholder management, and change-management suite in one twin.",
+    keeps:
+      "A client-owned twin that shortens discovery, steers delivery, and holds adoption — the foundation for modernization or agentics.",
   },
   {
     outcome: "Run the work",
@@ -58,9 +60,9 @@ const outcomes = [
     logoWidth: 140,
     logoHeight: 100,
     alt: "FlowCraft mark",
-    line: "Trained people and governed agents operate from that same map.",
+    line: "A fully agentic workflow-block builder on the BOSS map — common standards and each firm's uniqueness and IP. All companies are uniquely standard; FlowCraft agentizes that. DigOps is where I run this model in my own practice.",
     keeps:
-      "DigOps is where I run this model in my own practice — then bring the same standard to client work.",
+      "A firm runtime of human-and-agent workflow blocks the business owns — proven first in DigOps, then brought to client work.",
   },
 ];
 
@@ -75,9 +77,10 @@ export default function SystemsPage() {
             The business should be stronger after I leave.
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
-            I use three connected capabilities to hold transformation together
-            from mandate through handoff — so people, data, and systems stay
-            owned by the company, not by a vendor or a platform.
+            Three connected capabilities hold transformation from mandate
+            through handoff — Rig controls the build, BOSS twins the business,
+            FlowCraft runs agentic workflow blocks — so people, data, and
+            systems stay owned by the company, not by a vendor or a platform.
           </p>
         </div>
       </section>
