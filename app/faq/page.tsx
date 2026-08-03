@@ -95,19 +95,19 @@ const FAQ: QA[] = [
   },
   {
     q: "What is the Rig?",
-    a: "The Rig is Robert's operator-owned control fabric for the engagement: the substrate where ambiguous work becomes governed, inspectable progress. It holds plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions so human and agent work can be routed, checked, remembered, and improved without disappearing into chat or vendor state. It is how Robert controls the build — not a client SaaS product.",
+    a: "The Rig is Robert's builder shop — the collective and control fabric that designs and builds BOSS and FlowCraft engagements. It holds plans, gates, source, evidence, handoffs, and receipts so work stays inspectable. Clients do not buy or keep the Rig; they hire the engagement it makes possible.",
   },
   {
     q: "What is BOSS?",
-    a: "BOSS is the current-state digital twin of the business — a client-owned map of how the company actually runs above ERP, CRM, HRIS, data, and specialty systems. Perfected at Sierra Nevada Brewing, it collapses months of consultant and employee mapping into an owned ETL-shaped twin of data, systems, processes, and owners, then either readies the company for third-party systems and integrations or maps the ground for truly agentic workflows. It also carries a PM suite, executive stakeholder management, and a change-management suite in one asset — a combination no peer stack matches. Green/green validation and SOP memory keep the twin durable after the embedded operator leaves.",
+    a: "BOSS is a client-owned current-state digital twin of the business — a map of how the company actually runs above ERP, CRM, HRIS, data, and specialty systems. Perfected at Sierra Nevada Brewing, it collapses months of consultant and employee mapping into an owned twin of data, systems, processes, and owners, then either readies the company for third-party systems and integrations or maps the ground for truly agentic workflows. It also carries a PM suite, executive stakeholder management, and a change-management suite in one asset — a combination no peer stack matches. Delivered through engagement, not as SaaS seats.",
   },
   {
     q: "What is FlowCraft?",
-    a: "FlowCraft is a fully agentic workflow-block (WFB) builder that turns the BOSS twin into live human-and-agent workflows. It is tailored to common operating standards and each firm's uniqueness and IP — all companies are uniquely standard; FlowCraft agentizes that. DigOps is Robert's live reference instance.",
+    a: "FlowCraft is a fully agentic workflow-block (WFB) builder that turns the BOSS twin into live human-and-agent workflows the business owns. It is tailored to common operating standards and each firm's uniqueness and IP — all companies are uniquely standard; FlowCraft agentizes that. DigOps is Robert's live reference instance — proof in his practice, not a product you rent.",
   },
   {
     q: "How do the Rig, BOSS, and FlowCraft relate to idigdata?",
-    a: "Rig controls the build. BOSS twins the business (map + PM + stakeholders + change). FlowCraft runs agentic workflow blocks on that map. DigOps is idigdata's live FlowCraft instance. Together they are the delivery architecture behind idigdata's model: control the engagement, install a client-owned twin, agentize the uniquely standard work, transfer ownership, and keep the system improving.",
+    a: "Robert engages to turn operating knowledge into living software assets the business can own, govern, operate, and evolve. The Rig is his builder shop (not a client SKU). BOSS and FlowCraft client instances are engagement deliverables. DigOps is idigdata's live FlowCraft proof instance. The commercial unit is the engagement and transfer — not metering seats.",
   },
   {
     q: "What are the Six Process Constellations?",
@@ -217,7 +217,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Architecture",
-    body: <>Rig (operator control fabric) · BOSS (current-state digital twin) · FlowCraft (agentic WFB builder) · DigOps (idigdata&apos;s live FlowCraft instance).</>,
+    body: <>Rig (builder shop — not a client SKU) · BOSS (client-owned twin) · FlowCraft (client-owned WFB runtime) · DigOps (idigdata&apos;s live FlowCraft proof).</>,
   },
   {
     label: "Core model",

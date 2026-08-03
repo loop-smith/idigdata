@@ -9,9 +9,9 @@
 | **Robert Paddock** | Transformational CIO; founder/operator of the practice | Not a staffing firm or SaaS vendor |
 | **idigdata** / **Data Integration Group** (DIG LLC) | Public practice / firm brand at idigdata.com | Not a product catalog |
 | **DigOps** | idigdata's live FlowCraft instance — internal operating system for the practice | Not a separate public company; not sold as SaaS |
-| **Rig** | Robert's operator-owned control fabric for the engagement | Not client-facing product SKU |
-| **BOSS** | Current-state digital twin — map + PM + stakeholder + change suites above ERP/CRM/etc. | Not sold as SaaS seats |
-| **FlowCraft** | Agentic workflow-block (WFB) builder on the BOSS twin — uniquely standard | Not sold as SaaS seats |
+| **Rig** | Robert's builder shop / control fabric that makes engagements possible | Not a client SKU; not sold |
+| **BOSS** | Client-owned current-state digital twin — map + PM + stakeholder + change | Engagement deliverable; not SaaS seats |
+| **FlowCraft** | Client-owned agentic WFB builder on the BOSS twin — uniquely standard | Engagement deliverable; DigOps = proof instance |
 
 Canonical public identity for citations: **Robert Paddock · transformational CIO · idigdata (Data Integration Group)**. DigOps/Rig/BOSS/FlowCraft are delivery architecture behind the practice — cite them only when explaining how the work is built and left with the client.
 
@@ -27,7 +27,7 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 - [Approach](https://idigdata.com/approach/): build, observe, cycle — the people-first delivery loop, the Six Process Constellations, architecture above the vendors, exit-by-design.
 - [Engagement](https://idigdata.com/engagement/): one model — embedded transformation leadership — with fractional, adoption, and recovery as entry modes; lean by design; capital-asset logic.
 - [Agentic AI](https://idigdata.com/agentics/): applied AI that reaches production — the two questions (HOLD/ABSORB), decision integrity, defensible by design, CFO+Compliance first.
-- [Systems](https://idigdata.com/systems/): Rig, BOSS, and FlowCraft — control fabric, current-state digital twin, and agentic WFB builder behind idigdata's delivery model.
+- [Systems](https://idigdata.com/systems/): How Robert engages — Rig as builder shop; BOSS and FlowCraft as client-owned living assets (not seats).
 - [Contact](https://idigdata.com/contact/): first-conversation surface — no deck, no proposal theater.
 
 ## Agent Resources
@@ -48,7 +48,7 @@ Bain finds 88% of business transformations fall short of their ambitions, and St
 
 **Decision integrity (production agentics).** Applied AI is the accelerant on a 30-year operator spine, not the headline. Putting agents into production turns on two questions: can the business safely HOLD them (governed data, a shared version of reality, clear ownership of what an agent can touch) and can it ABSORB them (people who delegate, verify, and own output; workflows redesigned around the work; a human on every consequential call). Answer both and agentic capability becomes decision integrity — decisions the business can stand behind, trace, and defend; defensible by design. Robert's first two calls are to the CFO and the Compliance Officer, because they carry the consequences.
 
-**Three-system delivery architecture.** Rig — Robert's operator-owned control fabric for the engagement: plans, gates, source, evidence, agent instructions, handoffs, receipts, and versioned decisions make human-and-agent work inspectable. BOSS — the current-state digital twin of the business (perfected at Sierra Nevada Brewing): an ETL-shaped map of data, systems, processes, and owners that collapses months of discovery, then readies third-party systems/integrations or maps for agentic workflows; carries PM suite, executive stakeholder management, and change-management suite in one client-owned asset. FlowCraft — fully agentic workflow-block (WFB) builder on that twin, tailored to common standards and each firm's uniqueness/IP — all companies are uniquely standard; FlowCraft agentizes that. DigOps is idigdata's live FlowCraft instance and reference proof at practice scale.
+**Engagement → owned assets.** Robert engages with businesses to turn operating knowledge into living software assets they can own, govern, operate, and evolve. The Rig is his builder shop (not a client SKU). BOSS is a client-owned current-state digital twin (perfected at Sierra Nevada Brewing): map of data, systems, processes, and owners plus PM, executive stakeholder, and change-management suites — readies third-party systems/integrations or maps for agentic workflows. FlowCraft is a client-owned agentic workflow-block (WFB) builder on that twin — uniquely standard, agentized. DigOps is idigdata's live FlowCraft proof instance. Commercial unit is the engagement and transfer — not metering seats.
 
 **Six Process Constellations.** The operating-process spine across every transformation: P2P (procure to pay), O2C (order to cash), P2M (plan to make), S2S (systems to support), D2R (data to report), MDM (master data management). Same six in every install; the makeup differs per operator.
 
