@@ -19,7 +19,7 @@ export default function GlobalError({
       >
         <main style={{ maxWidth: 720, margin: "0 auto", padding: "6rem 1.5rem" }}>
           <p style={{ fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-            DigOps site
+            idigdata site
           </p>
           <h1 style={{ fontSize: 36, fontWeight: 500, marginTop: 12 }}>
             The site hit a hard failure.

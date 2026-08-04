@@ -194,7 +194,7 @@ export default function ApproachPage() {
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           A briefed map of the capability bands - not a resume dump. Depth and
-          Match live in DigOps; this is what buyers should feel on the site.
+          Catalog depth stays internal; this is what buyers should feel on the site.
         </p>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {(

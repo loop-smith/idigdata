@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Retired URL - Applied Agentics is the flagship page. */
+/** Retired URL - systems proof lives on The Work. */
 export default function SystemsRedirectPage() {
-  permanentRedirect("/applied-agentics/");
+  permanentRedirect("/work/");
 }

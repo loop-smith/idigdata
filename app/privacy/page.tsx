@@ -35,7 +35,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         This notice covers idigdata.com, operated by Data Integration Group LLC
-        (doing business as idigdata / DigOps) in the United States. It is not legal
+        (doing business as idigdata) in the United States. It is not legal
         advice for your company — it is how this practice site handles visitors and
         inbound notes.
       </>

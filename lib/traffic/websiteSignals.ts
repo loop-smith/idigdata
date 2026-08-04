@@ -87,6 +87,14 @@ const DIGOPS_SITE_PATHS = new Set([
   "/privacy/",
   "/systems",
   "/systems/",
+  "/work",
+  "/work/",
+  "/boss",
+  "/boss/",
+  "/rig",
+  "/rig/",
+  "/flowcraft",
+  "/flowcraft/",
 ]);
 
 const ASSET_EXTENSIONS = /\.(avif|css|gif|ico|jpg|jpeg|js|json|map|pdf|png|svg|txt|webmanifest|webp|xml)$/i;

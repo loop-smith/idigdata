@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Business transformation through systems and agentic AI — one ownership job on people, data, and workflows above the vendors. Embeds inside $100M–$1B operators to modernize legacy ERP and the wider systems stack while the business keeps running, seat a sovereign data core, and leave a living operating asset. DigOps is idigdata's live FlowCraft instance (not a separate public company). Vendor-agnostic. Exit-by-design.",
+    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Customer-side enterprise transformation and Applied Agentics - modernize the core, put agents into production, keep the business in control. Embeds inside $100M-$1B operators above the vendors; delivery architecture includes BOSS, The Rig, and FlowCraft as owned operating systems, not SaaS seats. Vendor-agnostic. Exit-by-design.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -25,7 +25,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Transformational CIO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. Business transformation through systems and agentic AI — legacy ERP keep-running modernization included. 30 years inside mid-market ($100M–$1B) enterprise change; embeds, installs a business-owned operating asset, exits by design. Recent CIO residency: Sierra Nevada Brewing. DigOps is his live FlowCraft operating instance for the practice.",
+    "Transformational CIO/CTO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 enterprise transformations at scale; embeds, installs a business-owned operating asset, exits by design. Recent CIO residency: Sierra Nevada Brewing (~$420M).",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",

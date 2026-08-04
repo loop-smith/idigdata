@@ -60,25 +60,28 @@ export function HeroCopy({
         className={`${r0.className}font-brand text-[10.5px] font-semibold uppercase tracking-[0.22em] text-gold md:text-[11px] md:tracking-[0.24em]`}
         style={r0.style}
       >
-        <span className="md:hidden">Robert Paddock · Transformational CIO</span>
+        <span className="md:hidden">
+          Robert Paddock · Transformational CIO/CTO
+        </span>
         <span className="hidden md:inline">
-          Robert Paddock · Transformational CIO · Embedded operator
+          Robert Paddock · Transformational CIO/CTO · Customer-side operator
         </span>
       </p>
       <h1
-        className={`${r1.className}mt-3 max-w-[20ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
+        className={`${r1.className}mt-3 max-w-[22ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
         style={r1.style}
       >
-        Change the company without losing control.
+        Modernize the core. Put agents into production. Keep control.
       </h1>
       <p
         className={`${r2.className}hero-dek mt-3 max-w-[48ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
-        Too many enterprise systems fail because nobody owns the work across
-        people, data, systems, and the vendors that often end up managing
-        themselves. I lead that ownership from inside the business - 30 years,
-        50+ implementations, a $15M CIO program, and agentic AI in production.
+        Enterprise systems fail when nobody owns the whole business system
+        above the vendors. I embed on the customer side - 30 years, 50+
+        implementations, 15 enterprise transformations at scale - and put
+        governed agentic AI into production without another uncontrolled vendor
+        dependency.
       </p>
       <p
         className={`${r3.className}mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-brand text-[11px] font-semibold uppercase tracking-[0.14em] text-porcelain/70 md:text-[11.5px]`}
@@ -88,7 +91,7 @@ export function HeroCopy({
           [
             "30 years",
             "50+ implementations",
-            "15 full transformations",
+            "15 enterprise transformations",
             "Agentic AI in production",
           ] as const
         ).map((item, i) => (
@@ -115,10 +118,10 @@ export function HeroCopy({
           </span>
         </Link>
         <Link
-          href="/applied-agentics/"
+          href="/work/"
           className="inline-flex items-center justify-center rounded-[3px] border border-porcelain/30 px-6 py-3.5 font-brand text-[12px] font-bold uppercase tracking-[0.15em] text-porcelain transition-colors hover:border-gold hover:text-gold"
         >
-          Applied Agentics
+          See the work
         </Link>
       </div>
       <button

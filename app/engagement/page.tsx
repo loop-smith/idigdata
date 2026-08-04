@@ -91,6 +91,21 @@ const authorityDoors = [
   },
 ];
 
+const situations = [
+  {
+    name: "Core transformation",
+    body: "ERP, systems, data, vendors, or delivery need one customer-side owner.",
+  },
+  {
+    name: "Transformation recovery",
+    body: "The program is stalled, overrun, vendor-controlled, or approaching a dangerous cutover.",
+  },
+  {
+    name: "Applied Agentics",
+    body: "Agents must reach production across real workflows without losing control of data, decisions, or ownership.",
+  },
+] as const;
+
 const flavors = [
   "Agentic AI sits on the same ownership layer as the systems work - a fractional or embedded path depending on how much owner the business needs, not a second brand.",
   "Recovery becomes the same question: is the stalled program one lever, or does the whole transformation need an owner?",
@@ -150,6 +165,28 @@ export default function EngagementPage() {
       <AccentRule className="mt-4" />
 
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+        <SectionKicker className="mb-4">Entry situations</SectionKicker>
+        <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
+          Three situations. One ownership seat.
+        </h2>
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          {situations.map((s) => (
+            <article
+              key={s.name}
+              className="border border-navy/15 border-l-[4px] border-l-gold bg-white px-5 py-6"
+            >
+              <h3 className="font-vollkorn text-[22px] font-bold leading-[1.2] text-navy">
+                {s.name}
+              </h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink">{s.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Authority axis</SectionKicker>
         <h2 className="max-w-[900px] text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
           Fractional embed or permanent seat - same ownership standard.
@@ -198,10 +235,11 @@ export default function EngagementPage() {
         </h2>
         <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
           <p>
-            I do not carry a standing bench. When the work needs specialist
-            capacity, I bring known senior independents into scoped work
-            packages, and they come off when the package is done. No pyramid,
-            no overhead you carry, no dependency by design.
+            No standing delivery pyramid. I bring the specialists the mandate
+            requires and remain accountable for the whole result. When the work
+            needs specialist capacity, known senior independents enter scoped
+            work packages and come off when the package is done - no overhead
+            you carry, no dependency by design.
           </p>
           <p>
             The one-person question deserves a real answer, so here it is. The
@@ -222,13 +260,12 @@ export default function EngagementPage() {
           Best fit is a mid-market operator ready to own the result.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
-          The work fits mid-market operators with enough complexity to justify
-          senior embedded ownership: multi-entity, multi-platform, vendor-heavy
-          environments across ERP, WMS, MES, CRM/CPQ, MDM, EMR, LIMS, QMS,
-          HRIS, and the adjacent fabric - with multi-system integration the
-          business owns. Manufacturing (discrete and process), AEC, beverage
-          CPG, wellness/fitness, and hospitality/gaming are the strongest
-          pattern matches.
+          Best fit: $100M-$1B operators - manufacturing, distribution, CPG,
+          construction and engineered products, multi-entity services -
+          PE-backed, founder-led, and family-owned - with material ERP,
+          integration, data, vendor, or agentic complexity. Multi-entity,
+          multi-platform, vendor-heavy environments where the business must own
+          the integration fabric.
         </p>
         <p className="mt-4 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
           The buyer is not waiting for the market to settle. The buyer wants to

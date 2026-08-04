@@ -48,18 +48,18 @@ export default function AppliedAgenticsPage() {
         <SectionKicker className="mb-7">Applied Agentics</SectionKicker>
         <div className="max-w-[880px]">
           <h1 className="max-w-full text-wrap break-words font-vollkorn text-[42px] font-bold leading-[1.08] text-navy sm:text-[54px] md:text-[70px]">
-            An industry-leading approach to delivering transformation.
+            Agents on the same ownership layer.
           </h1>
           <p className="mt-7 max-w-[760px] text-wrap break-words font-vollkorn text-[20px] italic leading-[1.42] text-warm-gray md:text-[26px]">
-            Ownership of the work across people, data, systems, and the vendors
-            that often end up managing themselves - with agentic AI landed on
-            that same layer.
+            Applied Agentics means people, data, systems, and agents designed,
+            governed, and operated as one production system - not four
+            disconnected vendor relationships.
           </p>
           <p className="mt-5 max-w-[760px] text-[16px] leading-[1.65] text-navy">
             The paid work is the engagement - design, build, training, and
-            transfer. What stays is owned capability. Software is the instrument
-            of that engagement when it earns its place. That has been my
-            approach with or without agentics.
+            transfer. What stays is owned capability. Agentic AI is the newest
+            instrument on the same customer-side ownership job - not a second
+            career.
           </p>
         </div>
       </section>
@@ -102,8 +102,7 @@ export default function AppliedAgenticsPage() {
             The public spine is the six process constellations: how work moves
             across the company. Under each cluster hang the real workflows and
             workflow blocks. A constellation only lights when those are green on
-            both axes - happy systems, happy people - in one visual. DigOps runs
-            this on its own first constellation today as practice proof.
+            both axes - happy systems, happy people - in one visual.
           </p>
         </div>
       </section>
@@ -219,13 +218,19 @@ export default function AppliedAgenticsPage() {
             green visibility, living SOPs, and the map of constellations down to
             workflows. When the business is ready, that map becomes the ground
             for agentic workflow applications - humans and agents working in
-            synthesis on firm-specific workflow IP - with DigOps as practice
-            proof of the direction, not a seat you rent.
+            synthesis on firm-specific workflow IP.
           </p>
           <p className="mt-5 max-w-[62ch] text-[15px] leading-[1.6] text-navy/70">
-            Names, if useful later: the Rig is the studio; the approach asset is
-            the twin and control frame you keep; FlowCraft is the agentic
-            workflow runtime on that map.
+            Delivery architecture behind the work: BOSS (client-owned twin), The
+            Rig (governed build and evidence environment), FlowCraft
+            (human-and-agent workflow runtime). Depth and receipts live on{" "}
+            <Link
+              href="/work/"
+              className="font-semibold text-navy underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+            >
+              The Work
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -291,12 +296,20 @@ export default function AppliedAgenticsPage() {
             without losing control? Bring the real situation. Practical path,
             owned landing.
           </p>
-          <Link
-            href="/contact/"
-            className="mt-8 inline-flex items-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
-          >
-            Start a conversation <span aria-hidden="true">→</span>
-          </Link>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <Link
+              href="/contact/"
+              className="inline-flex items-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-navy transition hover:bg-[#FFD740]"
+            >
+              Start a conversation <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/work/"
+              className="font-body text-[12px] font-semibold uppercase tracking-[0.16em] text-gold hover:text-cream"
+            >
+              See the work →
+            </Link>
+          </div>
         </div>
       </section>
     </div>

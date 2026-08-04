@@ -10,37 +10,37 @@ export const BEATS: Beat[] = [
     n: "01",
     chip: "Mess",
     label: "The mess",
-    line: "Disparate systems, vendors that manage themselves, half-finished implementations, undocumented customizations, duct tape - and people doing heroic work to make it all hold. No owned truth the business runs on. That is the mess.",
+    line: "Disparate systems, vendors that manage themselves, half-finished programs, and people as duct tape. No owned truth the business runs on.",
   },
   {
     n: "02",
     chip: "Data",
     label: "Data core",
-    line: "Noise comes down as the sovereign data core seats. One owned truth every vendor writes to - and a control layer the close and the audit can trust.",
+    line: "One company-owned data and integration spine - every system writes to a truth the close and the audit can trust.",
   },
   {
     n: "03",
     chip: "People",
-    label: "People - functional groups",
-    line: "Workflows are for the people who run them. Groups dock onto the spine by how work actually moves - not the org chart, not the vendor module. Happy systems, happy people.",
+    label: "People who run it",
+    line: "Workflows mapped to how work actually moves - warehouse floor to boardroom - not the vendor module chart.",
   },
   {
     n: "04",
     chip: "Control",
-    label: "Project management - control center",
-    line: "Most transformations rent project management from the partner. The business has to own it. Roadmap and timeline above; agile tasks and stories at the execution level - visibility for the people doing the work and the executives steering it. Stakeholders, milestones, deliverables - one control rail.",
+    label: "Control above vendors",
+    line: "Program control the business owns - roadmap, delivery state, SI and vendor orchestration under one accountable rail.",
   },
   {
     n: "05",
     chip: "Adopt",
-    label: "Adoption locks",
-    line: "Go-live is not adoption. The business owns an ordered path: order, test, train, SOP, UAT, go-live - then continuous improvement. Without those locks, the system is installed and people stay the duct tape.",
+    label: "Keep running",
+    line: "Transformation while the company still operates - adoption locks, training, continuous improvement - not go-live theater.",
   },
   {
     n: "06",
     chip: "Asset",
-    label: "Living asset",
-    line: "A living asset is what the business keeps when the program ends - a sovereign data core with the six process constellations running around it. Owned, not rented: you can run it, extend it, and the CFO can defend it as capital - not another expense line.",
+    label: "Owned production",
+    line: "A living operating asset the business keeps - and agents that run under boundaries, human validation, and named owners.",
   },
 ];
 
@@ -48,22 +48,22 @@ export const MOBILE_BEATS: Array<{ beat: number; label: string; line: string }> 
   {
     beat: 1,
     label: "The mess",
-    line: "Disparate systems, vendors that manage themselves, half-finished implementations, undocumented customizations, duct tape - and people doing heroic work to make it all hold. No owned truth the business runs on. That is the mess.",
+    line: "Disparate systems, vendors that manage themselves, half-finished programs, and people as duct tape. No owned truth the business runs on.",
   },
   {
     beat: 3,
-    label: "Data core · People - functional groups",
-    line: "The sovereign data core seats - one owned truth with a control layer the close and audit can trust. Workflows are for the people who run them. Happy systems, happy people.",
+    label: "Data core · People who run it",
+    line: "Company-owned data spine the close and audit can trust. Workflows mapped to how work actually moves - floor to boardroom.",
   },
   {
     beat: 5,
-    label: "Control center · Adoption locks",
-    line: "Business-owned project control - then adoption: order, test, train, SOP, UAT, go-live, continuous improvement. Go-live is not adoption.",
+    label: "Control above vendors · Keep running",
+    line: "Business-owned program control - then keep the company running while transforming. Continuous improvement, not go-live theater.",
   },
   {
     beat: 6,
-    label: "Living asset",
-    line: "What the business keeps when the program ends - sovereign data core, six constellations, owned not rented. Runnable, extendable, CFO-defensible as capital.",
+    label: "Owned production",
+    line: "A living operating asset the business keeps - agents under boundaries, human validation, and named owners.",
   },
 ];
 
