@@ -188,8 +188,8 @@ export default function AppliedAgenticsPage() {
           </p>
           <p className="mt-5 text-[16px] leading-[1.65] text-navy">
             <span className="font-semibold">idigdata - </span>
-            token and model optimization, discovery loops, human-validated
-            production paths - so agentics lands as owned capability, not a
+            governed production paths with human validation, training, and named
+            business ownership - so agentics lands as owned capability, not a
             billed overlay.
           </p>
           <p className="mt-8 max-w-[62ch] font-vollkorn text-[22px] italic leading-[1.4] text-navy">

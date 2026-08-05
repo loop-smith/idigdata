@@ -101,8 +101,8 @@ export default function ApproachPage() {
             </p>
             <p>
               Thirty years in business-system transformation, 50+
-              implementations, and 15 full transformations at scale trained the
-              same reflex from the systems side: read the room, find the real
+              implementations, and 15 enterprise transformations at scale trained
+              the same reflex from the systems side: read the room, find the real
               decision path, hold the line above the subcontractors, and leave
               the owner with something they can operate.
             </p>

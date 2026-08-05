@@ -52,17 +52,17 @@ const professionalServiceJsonLd = {
   name: "idigdata - Embedded transformation leadership",
   url: "https://idigdata.com/engagement/",
   description:
-    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Permanent, interim, or fractional - same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M-$1B operators.",
+    "One engagement model: embedded transformation leadership by transformational CIO/CTO Robert Paddock. Permanent, interim, or fractional - same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M-$1B operators.",
   serviceType: [
     "Embedded transformation leadership",
-    "Transformational CIO",
+    "Transformational CIO/CTO",
     "Enterprise transformation through people, data, and systems",
     "Agentic AI in production",
   ],
   provider: {
     "@type": "Person",
     name: "Robert Paddock",
-    jobTitle: "Transformational Chief Information Officer",
+    jobTitle: "Transformational CIO/CTO",
     url: "https://idigdata.com",
     sameAs: ["https://www.linkedin.com/in/robertpaddock"],
   },

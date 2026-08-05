@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
     default:
-      "Robert Paddock · Transformational CIO | idigdata",
+      "Robert Paddock · Transformational CIO/CTO | idigdata",
     template: "%s | idigdata",
   },
   description:
-    "Robert Paddock leads enterprise transformation through people, data, and systems — owned change for $100M–$1B operators. Builder, embedded operator, and CIO altitude, with agentic AI in production when it earns its place.",
+    "Customer-side enterprise transformation and Applied Agentics - modernize the core, put agents into production, keep the business in control.",
   alternates: {
     canonical: "/",
     types: {
@@ -66,23 +66,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "Robert Paddock · Transformational CIO | idigdata",
+    title: "Robert Paddock · Transformational CIO/CTO | idigdata",
     description:
-      "I build the layer technology spend can't buy — living assets, agentic AI in production with governance, for $100M–$1B operators.",
+      "Customer-side ownership across people, data, systems, and vendors - with Applied Agentics on the same layer.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Robert Paddock — Transformational CIO, idigdata",
+        alt: "Robert Paddock - Transformational CIO/CTO, idigdata",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robert Paddock · Transformational CIO | idigdata",
+    title: "Robert Paddock · Transformational CIO/CTO | idigdata",
     description:
-      "I build the layer technology spend can't buy — living assets, agentic AI in production with governance, for $100M–$1B operators.",
+      "Customer-side ownership across people, data, systems, and vendors - with Applied Agentics on the same layer.",
     images: [
       {
         url: "/og-image.png",

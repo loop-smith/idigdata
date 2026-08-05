@@ -34,7 +34,7 @@ const personSchema = {
   },
   knowsAbout: [
     "Business transformation",
-    "Transformational CIO leadership",
+    "Transformational CIO/CTO leadership",
     "Legacy ERP modernization",
     "Enterprise resource planning (ERP)",
     "Warehouse management system (WMS)",

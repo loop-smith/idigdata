@@ -128,7 +128,7 @@ const FAQ: QA[] = [
   },
   {
     q: "How is idigdata different from AI advisory firms?",
-    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. Advisors diagnose and specialists accelerate; production still requires an operator accountable for the finish, transfer, and operating result. idigdata owns that arc: sponsorship, workflows, data, validation, controls, and adoption on one path, with instrument craft (token and model optimization, discovery loops) when agentics earns its place. Production receipt: Sierra Nevada Brewing under governance, training, and business ownership.",
+    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. Advisors diagnose and specialists accelerate; production still requires an operator accountable for the finish, transfer, and operating result. idigdata owns that arc: sponsorship, workflows, data, validation, controls, and adoption on one path, with instrument craft when agentics earns its place. Production receipt: Sierra Nevada Brewing under governance, training, and business ownership.",
   },
   {
     q: "How is idigdata different from System Integrators or forward-deployed engineer teams?",
