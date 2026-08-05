@@ -9,28 +9,24 @@ import {
 } from "./spineFilmTiles";
 
 
-/** Beat 3 hive / beat 4 PM board sit in a narrow strip of the full viewBox — crop so they fill the stage. */
-const VIEWBOX_FULL = "36 18 660 612";
-const VIEWBOX_PEOPLE = "168 88 384 450";
-/** Spine-centered crops — same film language as 03, not dashboard panels */
-/** Wide enough for TASKERS / EXECS flanks (was cropping to ERS / EX). */
-const VIEWBOX_CONTROL = "80 48 560 510";
-const VIEWBOX_ADOPT = "150 70 420 480";
+/**
+ * Single film box for every beat — 01 Mess is the lock.
+ * Per-beat crops (People/Control/Adopt) were zooming 03–05 and shifting
+ * stage weight; layers toggle inside this fixed frame instead.
+ */
+export const FILM_VIEWBOX = "36 18 660 612";
+/** viewBox width / height — keep CSS film-box in lockstep */
+export const FILM_ASPECT = 660 / 612;
 
 export function AssemblySvg({ frame = 0 }: { frame?: number }) {
-  const viewBox =
-    frame === 3
-      ? VIEWBOX_PEOPLE
-      : frame === 4
-        ? VIEWBOX_CONTROL
-        : frame === 5
-          ? VIEWBOX_ADOPT
-          : VIEWBOX_FULL;
+  /* `frame` kept for call-site clarity; visibility is CSS [data-beat] on ancestors. */
+  void frame;
   return (
     <svg
       aria-hidden="true"
-      className="h-auto w-full"
-      viewBox={viewBox}
+      className="h-full w-full"
+      viewBox={FILM_VIEWBOX}
+      preserveAspectRatio="xMidYMid meet"
       fill="none"
     >
       <defs>
@@ -310,14 +306,14 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
           <polygon points="408.6,350 391.3,360 391.3,380 408.6,390 425.9,380 425.9,360" />
         </g>
 
-        {/* System / group marks — align to beehive frame (ERP · WMS · CRM · PLM · MES · MDM) */}
-        <g fill="rgba(247,245,238,0.9)" fontSize="8" fontWeight="800" letterSpacing="0.08em" style={{ fontFamily: "var(--font-brand)" }}>
-          <text x="311.4" y="253" textAnchor="middle">ERP</text>
-          <text x="311.4" y="313" textAnchor="middle">WMS</text>
-          <text x="311.4" y="373" textAnchor="middle">CRM</text>
-          <text x="408.6" y="253" textAnchor="middle">PLM</text>
-          <text x="408.6" y="313" textAnchor="middle">MES</text>
-          <text x="408.6" y="373" textAnchor="middle">MDM</text>
+        {/* System / group marks — readable after beat-03 aperture scale */}
+        <g fill="rgba(247,245,238,0.95)" fontSize="11" fontWeight="800" letterSpacing="0.08em" style={{ fontFamily: "var(--font-brand)" }}>
+          <text x="311.4" y="254" textAnchor="middle">ERP</text>
+          <text x="311.4" y="314" textAnchor="middle">WMS</text>
+          <text x="311.4" y="374" textAnchor="middle">CRM</text>
+          <text x="408.6" y="254" textAnchor="middle">PLM</text>
+          <text x="408.6" y="314" textAnchor="middle">MES</text>
+          <text x="408.6" y="374" textAnchor="middle">MDM</text>
         </g>
       </g>
 

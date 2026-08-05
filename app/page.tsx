@@ -74,8 +74,8 @@ export default function HomePage() {
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
               Vendors sell their slice. Platforms provide tools. Forward-deployed
-              engineers often replay the SI motion - bill on top, duct tape
-              underneath. Nobody owns people, data, systems, delivery, and
+              teams can accelerate a workstream. The business still needs one
+              customer-side owner across people, data, systems, delivery, and
               adoption through cutover.{" "}
               <span className="font-semibold text-navy">
                 Agentic AI amplifies the gap.
@@ -103,7 +103,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/work/"
-              className="group mt-6 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:text-gold"
+              className="group mt-6 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:text-navy/70"
             >
               See the work
               <span
@@ -154,10 +154,9 @@ export default function HomePage() {
             Provenance
           </p>
           <p className="max-w-[62ch] text-[17px] leading-[1.65] text-[#3C4453]">
-            Field project delivery → founder/operator ($250K to $130M) → SI-side
-            ERP architect → customer-side transformation → enterprise CIO →
-            Applied Agentics builder. One doctrine: the owner holds the whole
-            build.
+            Field project delivery → founder/operator → SI-side ERP architect →
+            customer-side transformation leader → enterprise CIO → Applied
+            Agentics builder. One doctrine: the owner holds the whole build.
           </p>
         </Reveal>
       </section>
@@ -175,13 +174,13 @@ export default function HomePage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-8">
               <Link
                 href="/approach/"
-                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-gold"
+                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-navy/70"
               >
                 Enterprise transformation →
               </Link>
               <Link
                 href="/applied-agentics/"
-                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-gold"
+                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-navy/70"
               >
                 Applied Agentics →
               </Link>
@@ -214,8 +213,8 @@ export default function HomePage() {
           </h2>
           <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-porcelain/75 md:text-[18px]">
             ERP mess, keep-running constraint, vendor sprawl, or pressure to put
-            agents into production without losing control. Permanent or
-            fractional - the ownership standard does not change.
+            agents into production without losing control. Permanent, interim, or
+            fractional - same ownership standard.
           </p>
           <Link
             href="/contact/"

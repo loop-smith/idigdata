@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://idigdata.com/contact/",
     title: "Reach out | idigdata",
     description:
-      "A direct note about embedded transformation, ownership above the vendors, or agentic AI that needs an owner - permanent or fractional.",
+      "A direct note about embedded transformation, ownership above the vendors, or agentic AI that needs an owner - permanent, interim, or fractional.",
     images: [
       {
         url: "/og-image.png",
@@ -63,8 +63,8 @@ export default function ContactPage() {
         <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
           A sentence or two is enough: the stalled program, the board pressure,
           the agentic question, the CFO concern, or the operating knot that
-          keeps resurfacing. Permanent seat or fractional embed - the ownership
-          standard is the same. I read these myself.
+          keeps resurfacing. Open to permanent, interim, and fractional
+          executive mandates. I read these myself.
         </p>
       </section>
 

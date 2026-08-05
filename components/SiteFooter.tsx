@@ -57,6 +57,9 @@ export default function SiteFooter() {
               <br />
               Pacific Time
             </p>
+            <p className="mt-4 font-body text-[13px] leading-relaxed text-porcelain/55">
+              Open to permanent, interim, and fractional executive mandates.
+            </p>
           </div>
         </div>
 

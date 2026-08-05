@@ -131,9 +131,7 @@ export default function AppliedAgenticsPage() {
             The era of agentic AI amplifies the ownership gap.
           </h2>
           <p className="mt-5 max-w-[62ch] text-[16px] leading-[1.65] text-navy">
-            The newest fix only looks new: forward-deployed engineers from
-            frontier-model and platform companies - same motion as System
-            Integrators (SI). They bill on top while the duct tape stays. You
+            Platform teams and specialists can accelerate a workstream. You still
             cannot automate dysfunction, and you cannot overlay your way past
             ungoverned data. That is why the ownership layer is the prerequisite,
             not the upsell.
@@ -195,7 +193,9 @@ export default function AppliedAgenticsPage() {
             billed overlay.
           </p>
           <p className="mt-8 max-w-[62ch] font-vollkorn text-[22px] italic leading-[1.4] text-navy">
-            Diagnosers explain. Overlay teams bill. Operators finish.
+            Advisors diagnose. Specialists accelerate. Production still requires
+            an operator accountable for the finish, transfer, and operating
+            result.
           </p>
         </div>
       </section>

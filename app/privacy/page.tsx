@@ -153,7 +153,7 @@ export default function PrivacyPage() {
         <div className="max-w-[720px] space-y-10">
           {SECTIONS.map((section) => (
             <div key={section.title} className="border-t border-navy/10 pt-6">
-              <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
+              <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-navy">
                 {section.title}
               </h2>
               <div className="mt-3 font-body text-[15.5px] leading-relaxed text-warm-gray">
@@ -163,7 +163,7 @@ export default function PrivacyPage() {
           ))}
 
           <div className="border-t border-navy/10 pt-6">
-            <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
+            <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-navy">
               Analytics opt-out
             </h2>
             <p className="mt-3 font-body text-[15.5px] leading-relaxed text-warm-gray">

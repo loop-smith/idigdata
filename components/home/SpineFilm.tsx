@@ -147,17 +147,6 @@ export default function SpineFilm() {
     window.scrollTo({ top, behavior: "smooth" });
   };
 
-  /* Same timed beat sequence as footer RUN — never smooth-scroll race to 06. */
-  const scrollToMap = () => {
-    if (window.matchMedia("(max-width: 767px)").matches) {
-      document
-        .getElementById("operating-map-m")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    startFilmRun();
-  };
-
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setReduced(true);
@@ -244,7 +233,7 @@ export default function SpineFilm() {
         className="grain relative isolate overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain"
       >
         <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-14">
-          <HeroCopy onSeeMap={() => {}} withRise={false} />
+          <HeroCopy withRise={false} />
           <div data-beat="6" className="film-fixed mx-auto mt-10 max-w-[760px]">
             <AssemblySvg frame={6} />
           </div>
@@ -285,11 +274,13 @@ export default function SpineFilm() {
         >
           <div className="mx-auto grid min-h-0 w-full max-w-[1320px] flex-1 grid-cols-[minmax(320px,40%)_1fr] items-start gap-6 overflow-hidden px-6 pb-2 pt-5 lg:gap-10 lg:pt-6">
             <div className="film-story min-h-0 overflow-y-auto overscroll-contain pr-1">
-              <HeroCopy onSeeMap={scrollToMap} />
+              <HeroCopy />
               <BeatPanel beat={beat} />
             </div>
             <div className="film-stage h-full min-h-0 self-stretch">
-              <AssemblySvg frame={beat} />
+              <div className="film-box">
+                <AssemblySvg frame={beat} />
+              </div>
             </div>
           </div>
 
@@ -345,7 +336,7 @@ export default function SpineFilm() {
         className="grain relative isolate overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain md:hidden"
       >
         <div className="mx-auto max-w-content px-6 pb-20 pt-8">
-          <HeroCopy onSeeMap={scrollToMap} />
+          <HeroCopy />
           <div className="mt-12 flex flex-col gap-14 border-t border-porcelain/15 pt-10">
             {MOBILE_BEATS.map((b) => (
               <figure

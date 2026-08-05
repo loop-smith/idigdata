@@ -33,7 +33,7 @@ export default function ConditionsAccordion({ conditions }: { conditions: Condit
               aria-controls={`condition-body-${c.n}`}
               className="w-full grid grid-cols-[56px_1fr_36px] md:grid-cols-[72px_1fr_44px] gap-4 md:gap-6 py-5 md:py-6 text-left items-start hover:bg-navy/[0.02] transition-colors"
             >
-              <span className="font-vollkorn font-bold text-gold text-[26px] md:text-[30px] leading-none pt-1">
+              <span className="font-vollkorn font-bold text-navy text-[26px] md:text-[30px] leading-none pt-1">
                 {c.n}
               </span>
               <span className="self-center">

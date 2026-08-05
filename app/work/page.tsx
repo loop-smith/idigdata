@@ -48,6 +48,12 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const defects = [
+  "Transformation knowledge is scattered across decks, vendor tools, and people's heads.",
+  "Human and agent work disappears into threads; authority and completion are difficult to verify.",
+  "Automations produce output without an owned operating path the business can run Monday morning.",
+] as const;
+
 const systems = [
   {
     id: "boss",
@@ -166,9 +172,26 @@ export default function WorkPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">Why they exist</SectionKicker>
+        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Knowledge walks out. Work disappears. Automation stops at output.
+        </h2>
+        <ul className="mt-8 max-w-[62ch] space-y-3">
+          {defects.map((line) => (
+            <li
+              key={line}
+              className="border-l-[3px] border-gold pl-4 text-[16px] leading-[1.65] text-ink"
+            >
+              {line}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">Present systems</SectionKicker>
-        <h2 className="max-w-[22ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Three operating systems built to close the ownership gap.
+        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Three working systems. One customer-side operating architecture.
         </h2>
         <div className="mt-12 space-y-14">
           {systems.map((s) => (
@@ -184,19 +207,19 @@ export default function WorkPage() {
                 {s.job}
               </h3>
               <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">Holds: </span>
+                <span className="font-semibold text-navy">Why it had to exist: </span>
+                {s.defect}
+              </p>
+              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+                <span className="font-semibold text-navy">What it holds: </span>
                 {s.holds}
               </p>
               <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">Client owns: </span>
+                <span className="font-semibold text-navy">What the client owns: </span>
                 {s.owns}
               </p>
-              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">Why it exists: </span>
-                {s.defect}
-              </p>
               <p className="mt-3 max-w-[62ch] text-[15px] leading-[1.6] text-warm-gray">
-                <span className="font-semibold">Frontier: </span>
+                <span className="font-semibold">Where the frontier remains: </span>
                 {s.frontier}
               </p>
             </article>
@@ -219,29 +242,9 @@ export default function WorkPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Provenance</SectionKicker>
-        <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Thirty years underneath the systems.
-        </h2>
-        <ol className="mt-10 space-y-5">
-          {provenance.map((p) => (
-            <li
-              key={p.stage}
-              className="grid gap-2 border-b border-navy/10 pb-5 md:grid-cols-[160px_1fr] md:gap-8"
-            >
-              <p className="font-brand text-[12px] font-bold uppercase tracking-[0.16em] text-gold">
-                {p.stage}
-              </p>
-              <p className="text-[16px] leading-[1.65] text-ink">{p.lesson}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">Enterprise field validation</SectionKicker>
-        <h2 className="max-w-[22ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Validated inside a ~$420M operating company.
+        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          The ownership doctrine was validated inside a ~$420M operating company.
         </h2>
         <div className="mt-6 max-w-[62ch] space-y-4 text-[16px] leading-[1.65] text-ink">
           <p>
@@ -329,6 +332,26 @@ export default function WorkPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
+        <SectionKicker className="mb-5">Provenance</SectionKicker>
+        <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Thirty years underneath the systems.
+        </h2>
+        <ol className="mt-10 space-y-5">
+          {provenance.map((p) => (
+            <li
+              key={p.stage}
+              className="grid gap-2 border-b border-navy/10 pb-5 md:grid-cols-[160px_1fr] md:gap-8"
+            >
+              <p className="font-brand text-[12px] font-bold uppercase tracking-[0.16em] text-navy">
+                {p.stage}
+              </p>
+              <p className="text-[16px] leading-[1.65] text-ink">{p.lesson}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
         <SectionKicker className="mb-5">What you keep</SectionKicker>
         <h2 className="max-w-[22ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
           Owned capability after the engagement.
@@ -363,13 +386,13 @@ export default function WorkPage() {
           </Link>
           <Link
             href="/approach/"
-            className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-gold"
+            className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-navy/70"
           >
             Approach →
           </Link>
           <Link
             href="/applied-agentics/"
-            className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-gold"
+            className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-navy/70"
           >
             Applied Agentics →
           </Link>

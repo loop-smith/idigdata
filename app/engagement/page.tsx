@@ -8,14 +8,14 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 export const metadata: Metadata = {
   title: "Engagement",
   description:
-    "Embedded transformation leadership - permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
+    "Embedded transformation leadership - permanent, interim, or fractional. Same ownership standard. People, data, and systems owned by the business.",
   alternates: { canonical: "/engagement/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/engagement/",
     title: "Engagement | idigdata",
     description:
-      "Embedded transformation leadership - permanent or fractional, same ownership standard. People, data, and systems owned by the business.",
+      "Permanent, interim, or fractional - same ownership standard. How much owner does the mandate need?",
     images: [
       {
         url: "/og-image.png",
@@ -52,7 +52,7 @@ const professionalServiceJsonLd = {
   name: "idigdata - Embedded transformation leadership",
   url: "https://idigdata.com/engagement/",
   description:
-    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Fractional or permanent - same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M-$1B operators.",
+    "One engagement model: embedded transformation leadership by transformational CIO Robert Paddock. Permanent, interim, or fractional - same ownership standard. People, data, and systems owned by the business; agentic AI as instrument on that layer. For $100M-$1B operators.",
   serviceType: [
     "Embedded transformation leadership",
     "Transformational CIO",
@@ -80,14 +80,19 @@ const professionalServiceJsonLd = {
 
 const authorityDoors = [
   {
-    name: "Fractional embed",
-    question: "One lever needs senior force.",
-    body: "I step inside a specific transformation lever before the full mandate is clear: readiness, adoption, recovery triage, decision framing, or vendor-overwatch that needs an operator above the work.",
+    name: "Enterprise mandate",
+    question: "The transformation needs one executive owner across the whole operating system.",
+    body: "I carry the mandate from inside the business: people, data, systems, vendors, executives, delivery state, adoption, and the owned change that remains when I exit.",
   },
   {
-    name: "Permanent / full-time embed",
-    question: "The whole transformation needs one owner.",
-    body: "I carry the mandate from inside the business: people, data, systems, vendors, executives, delivery state, adoption, capital logic, and the owned change that remains when I exit. Ownership standard unchanged either way.",
+    name: "Fractional executive mandate",
+    question: "A defined portfolio or business lever needs senior customer-side ownership without a permanent executive seat.",
+    body: "I embed around a defined transformation portfolio - readiness, adoption, recovery, decision framing, or vendor-overwatch - with the same ownership standard as a full seat.",
+  },
+  {
+    name: "Recovery or build mandate",
+    question: "A stalled transformation, dangerous cutover, or production-agentics build needs focused authority through stabilization and transfer.",
+    body: "I enter with enough authority to stabilize, finish, transfer, and leave owned capability - not another overlay that evaporates at go-live.",
   },
 ];
 
@@ -107,7 +112,7 @@ const situations = [
 ] as const;
 
 const flavors = [
-  "Agentic AI sits on the same ownership layer as the systems work - a fractional or embedded path depending on how much owner the business needs, not a second brand.",
+  "Agentic AI sits on the same ownership layer as the systems work - not a second brand.",
   "Recovery becomes the same question: is the stalled program one lever, or does the whole transformation need an owner?",
 ];
 
@@ -121,18 +126,11 @@ export default function EngagementPage() {
         <M4Watermark position="top-right" />
         <SectionKicker className="mb-4">How I plug in</SectionKicker>
         <h1 className="text-balance font-vollkorn text-[46px] font-bold leading-[1.02] tracking-normal text-navy md:text-[62px] lg:text-[74px]">
-          One model: embedded transformation leadership.
+          How much ownership does the mandate need?
         </h1>
         <p className="mt-6 max-w-[820px] font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
-          The buyer question is not which service line sounds right. It is how
-          much owner the work needs.
-        </p>
-        <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
-          I embed inside the business at senior-operator altitude, own people,
-          data, and systems above the vendors - including vendors that often
-          end up managing themselves - and leave owned change the company can
-          keep. Not another System Integrator (SI) or forward-deployed billing
-          path. The owned truth the business runs on.
+          Core transformation, recovery, or Applied Agentics - the entry point
+          changes. The customer-side ownership standard does not.
         </p>
       </section>
 
@@ -189,14 +187,16 @@ export default function EngagementPage() {
       <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <SectionKicker className="mb-4">Authority axis</SectionKicker>
         <h2 className="max-w-[900px] text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-          Fractional embed or permanent seat - same ownership standard.
+          Permanent, interim, or fractional - the ownership standard does not
+          change.
         </h2>
         <p className="mt-5 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
-          Adoption and recovery are not separate shelves. They are flavors under
-          the same authority decision: does one lever need senior force, or does
-          the whole transformation need one owner carrying the line?
+          The mandate determines the seat. I can take the full executive
+          mandate, embed fractionally around a defined transformation portfolio,
+          or enter to recover and transfer a specific build. Employment
+          mechanics follow the work; accountability does not.
         </p>
-        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {authorityDoors.map((door) => (
             <article
               key={door.name}
@@ -205,7 +205,7 @@ export default function EngagementPage() {
               <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-warm-gray">
                 {door.name}
               </p>
-              <h3 className="font-vollkorn text-[26px] font-bold leading-[1.18] tracking-normal text-navy">
+              <h3 className="font-vollkorn text-[22px] font-bold leading-[1.18] tracking-normal text-navy md:text-[24px]">
                 {door.question}
               </h3>
               <p className="mt-4 text-[15px] leading-relaxed text-ink">

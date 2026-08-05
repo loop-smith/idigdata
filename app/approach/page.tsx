@@ -57,16 +57,11 @@ export default function ApproachPage() {
         <h1 className="text-balance font-vollkorn text-[46px] font-bold leading-[1.02] tracking-normal text-navy md:text-[62px] lg:text-[74px]">
           People, data, and systems - one ownership job.
         </h1>
-        <p className="mt-6 max-w-[820px] font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
-          I embed inside the business, own the build above the vendors
-          (including the ones that often end up managing themselves), and leave
-          capability that runs after I leave.
-        </p>
-        <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink">
-          I start inside the operating company - bind people, data, systems,
-          vendors, and decisions into one delivery frame, then cycle until the
-          result holds without me. Not another System Integrator (SI) or
-          forward-deployed overlay. The owned truth the business runs on.
+        <p className="mt-6 max-w-[820px] text-[16px] leading-relaxed text-ink md:text-[17px]">
+          I start inside the operating company, make the real workflows and
+          decision paths visible, establish authority above platforms and
+          workstreams, and carry the transformation through adoption and stable
+          operations.
         </p>
       </section>
 
@@ -145,18 +140,15 @@ export default function ApproachPage() {
               Where I start
             </SectionKicker>
             <h3 className="font-vollkorn text-[27px] font-bold leading-[1.15] text-cream md:text-[34px]">
-              My first two calls are to the CFO and the Compliance Officer.
+              Two of my earliest calls are to finance and control.
             </h3>
             <p className="mt-5 text-[15.5px] leading-[1.68] text-[#DCD9CC]">
-              Not the innovation team, the people who carry the consequences. A
-              vendor can demo capability; they can&apos;t tell you whether it
-              survives an audit, a regulator, or discovery. That answer comes
-              from having sat with those roles through a real transformation:
-              the financial close, the revenue definitions, the controls
-              underneath. Get those two in the room first and the work stops
-              being a science project and becomes something the business can
-              actually run. This is sharpest in finance, where a wrong number
-              isn&apos;t a bug; it&apos;s a finding.
+              I bring the CFO and the executive who owns compliance or control
+              into the work early. They carry the consequences of bad data, weak
+              controls, and unowned decisions. That is how transformation and
+              agentic AI stop being demonstrations and become capabilities the
+              business can run, defend, and audit. This is sharpest in finance,
+              where a wrong number isn&apos;t a bug; it&apos;s a finding.
             </p>
           </div>
         </div>

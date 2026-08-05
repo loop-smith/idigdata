@@ -33,13 +33,7 @@ function GoldSquare({ className = "" }: { className?: string }) {
   );
 }
 
-export function HeroCopy({
-  onSeeMap,
-  withRise = true,
-}: {
-  onSeeMap: () => void;
-  withRise?: boolean;
-}) {
+export function HeroCopy({ withRise = true }: { withRise?: boolean }) {
   const rise = (n: number) =>
     withRise
       ? {
@@ -71,17 +65,17 @@ export function HeroCopy({
         className={`${r1.className}mt-3 max-w-[22ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
         style={r1.style}
       >
-        Modernize the core. Put agents into production. Keep control.
+        Modernize the core. Put agents into production. Keep the business in
+        control.
       </h1>
       <p
         className={`${r2.className}hero-dek mt-3 max-w-[48ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
-        Enterprise systems fail when nobody owns the whole business system
-        above the vendors. I embed on the customer side - 30 years, 50+
-        implementations, 15 enterprise transformations at scale - and put
-        governed agentic AI into production without another uncontrolled vendor
-        dependency.
+        Enterprise systems fail when no one owns the whole business system above
+        the vendors. I embed with $100M-$1B operators as that customer-side
+        owner - backed by 30 years, 50+ implementations, 15 transformations at
+        scale, and enterprise agents in production.
       </p>
       <p
         className={`${r3.className}mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-brand text-[11px] font-semibold uppercase tracking-[0.14em] text-porcelain/70 md:text-[11.5px]`}
@@ -124,13 +118,6 @@ export function HeroCopy({
           See the work
         </Link>
       </div>
-      <button
-        type="button"
-        onClick={onSeeMap}
-        className="mt-3 text-left font-brand text-[11.5px] font-semibold uppercase tracking-[0.16em] text-porcelain/55 transition-colors hover:text-gold"
-      >
-        Watch the operating map →
-      </button>
     </>
   );
 }

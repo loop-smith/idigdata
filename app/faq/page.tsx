@@ -67,7 +67,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What are the entry modes?",
-    a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentic AI and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path. Permanent or fractional - the ownership standard is unchanged.",
+    a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentic AI and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path. Permanent, interim, or fractional - the ownership standard is unchanged.",
   },
   {
     q: "Does idigdata publish pricing?",
@@ -128,11 +128,11 @@ const FAQ: QA[] = [
   },
   {
     q: "How is idigdata different from AI advisory firms?",
-    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection - diagnosers explain why programs fail and builders demo an agent, but neither owns the whole arc to production. Forward-deployed engineer plays from frontier-model and platform companies often look new; same motion as System Integrators (SI) - bill on top while the duct tape stays. idigdata is the operator who finishes: sponsorship, workflows, data, validation, controls, and adoption on one path, with instrument craft (token and model optimization, discovery loops) when agentics earns its place. Production receipt: Sierra Nevada Brewing under governance, training, and business ownership.",
+    a: "Most AI advisory stops at literacy, policy, pilots, or tool selection. Advisors diagnose and specialists accelerate; production still requires an operator accountable for the finish, transfer, and operating result. idigdata owns that arc: sponsorship, workflows, data, validation, controls, and adoption on one path, with instrument craft (token and model optimization, discovery loops) when agentics earns its place. Production receipt: Sierra Nevada Brewing under governance, training, and business ownership.",
   },
   {
     q: "How is idigdata different from System Integrators or forward-deployed engineer teams?",
-    a: "System Integrators (SI) and forward-deployed engineer teams often manage the billing path on the customer's dime and build over the foundation. idigdata manages the ownership path: the owned truth the business runs on across people, data, and systems - including vendors that often end up managing themselves - then leaves capability the company can keep. Software is the instrument of the engagement, not a seat product and not an overlay that evaporates when the team leaves.",
+    a: "SI and forward-deployed teams can accelerate a workstream. idigdata holds the customer-side ownership path: the owned truth the business runs on across people, data, and systems - including vendors that often end up managing themselves - then leaves capability the company can keep. Software is the instrument of the engagement, not a seat product and not an overlay that evaporates when the team leaves.",
   },
   {
     q: "Can a business actually put AI agents into production?",

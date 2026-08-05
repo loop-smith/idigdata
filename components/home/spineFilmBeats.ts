@@ -16,7 +16,7 @@ export const BEATS: Beat[] = [
     n: "02",
     chip: "Data",
     label: "Data core",
-    line: "One company-owned data and integration spine - every system writes to a truth the close and the audit can trust.",
+    line: "One company-owned data and integration spine - every system reconciles to a truth the close and the audit can trust.",
   },
   {
     n: "03",
