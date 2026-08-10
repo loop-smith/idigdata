@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import AccentRule from "@/components/AccentRule";
+import ProofFigure from "@/components/ProofFigure";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
@@ -141,6 +142,13 @@ export default function MethodPage() {
             </li>
           ))}
         </ol>
+
+        <ProofFigure
+          src="/diagrams/beehive.svg"
+          alt="The Beehive - operating fabric of process flows crossing functional groups before any one platform"
+          kicker="Operating fabric"
+          caption="The Beehive - how work actually moves across functional groups before platforms. Universal frame; bespoke fill per operator. The operating fabric I map before we modernize or land agents."
+        />
       </section>
 
       <AccentRule className="mt-4" />

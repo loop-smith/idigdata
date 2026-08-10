@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
+import ProofFigure from "@/components/ProofFigure";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
@@ -161,6 +162,13 @@ export default function WorkPage() {
             </article>
           ))}
         </div>
+
+        <ProofFigure
+          src="/diagrams/system-verse.svg"
+          alt="The Systemverse - future-state systems map with a company-owned data core at the center and the application layer around it"
+          kicker="Future-state systems map"
+          caption="The Systemverse - future-state systems map beside BOSS, The Rig, and FlowCraft. Same shape every install; bespoke fill per operator. Not three products for sale - the estate picture the company keeps."
+        />
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
