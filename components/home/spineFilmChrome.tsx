@@ -65,17 +65,15 @@ export function HeroCopy({ withRise = true }: { withRise?: boolean }) {
         className={`${r1.className}mt-3 max-w-[22ch] font-brand text-[clamp(30px,3.4vw,48px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain`}
         style={r1.style}
       >
-        Modernize the core. Put agents into production. Keep the business in
-        control.
+        Digital change fails when nobody owns the whole.
       </h1>
       <p
         className={`${r2.className}hero-dek mt-3 max-w-[48ch] text-[15px] leading-[1.5] text-porcelain/80 md:mt-3.5 md:text-[15.5px] md:leading-[1.55]`}
         style={r2.style}
       >
-        Enterprise systems fail when no one owns the whole business system above
-        the vendors. I embed with $100M-$1B operators as that customer-side
-        owner - backed by 30 years, 50+ implementations, 15 transformations at
-        scale, and enterprise agents in production.
+        I own it from inside the company, with the people who do the work,
+        because transformation has to be built with the business - not done to
+        it.
       </p>
       <p
         className={`${r3.className}mt-3.5 flex flex-wrap items-baseline gap-x-3 gap-y-1.5 font-brand text-[11px] font-semibold uppercase tracking-[0.14em] text-porcelain/70 md:text-[11.5px]`}
@@ -86,7 +84,7 @@ export function HeroCopy({ withRise = true }: { withRise?: boolean }) {
             "30 years",
             "50+ implementations",
             "15 enterprise transformations",
-            "Agentic AI in production",
+            "Agents in production",
           ] as const
         ).map((item, i) => (
           <span key={item} className="flex items-baseline gap-x-3 whitespace-nowrap">

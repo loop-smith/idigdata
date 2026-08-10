@@ -20,7 +20,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
-  const [interest, setInterest] = useState<InterestType>("general");
+  const [interest, setInterest] = useState<InterestType>("not_sure");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
 
@@ -86,8 +86,8 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
     return (
       <div className="space-y-3">
         <p className="font-display text-navy text-[22px] leading-snug">
-          Got it. This lands straight in my inbox &mdash; no bot, no queue. I
-          read every one.
+          Got it. This lands straight in my inbox - no bot, no queue. I read
+          every one.
         </p>
         {leadId && leadId !== "silenced" ? (
           <p className="font-body text-[13px] text-warm-gray">
@@ -206,7 +206,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
       {showInterestSelect ? (
         <div>
           <label htmlFor={interestId} className={labelClasses}>
-            Interest
+            What needs to be owned?
           </label>
           <select
             id={interestId}
@@ -244,8 +244,8 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           id={messageHelpId}
           className="mt-1.5 font-body text-[13px] text-warm-gray"
         >
-          A sentence about the situation. The systems knot, the transformation
-          mandate, the agentic question &mdash; whatever&rsquo;s true.
+          The real operating problem - shape, stakes, constraints. We shape the
+          mandate from there.
         </p>
       </div>
 
@@ -255,7 +255,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           disabled={status === "submitting"}
           className="inline-flex items-center gap-2 rounded-[3px] bg-navy px-8 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-cream transition-colors hover:bg-aubergine focus:outline-2 focus:outline-offset-2 focus:outline-stone disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Sending…" : "Send"}
+          {status === "submitting" ? "Sending…" : "Start a conversation"}
         </button>
       </div>
     </form>

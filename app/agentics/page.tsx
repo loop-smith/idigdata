@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Folded into Applied Agentics. */
+/** Nested under Method 2026-08-09. */
 export default function AgenticsRedirectPage() {
-  permanentRedirect("/applied-agentics/");
+  permanentRedirect("/method/#agentics");
 }

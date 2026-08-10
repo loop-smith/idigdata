@@ -42,10 +42,10 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Reach out */}
+          {/* Contact */}
           <div>
             <p className="mb-4 font-brand text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
-              Reach out
+              Contact
             </p>
             <p className="font-body text-[15px] leading-relaxed text-porcelain/70">
               <a
@@ -58,7 +58,7 @@ export default function SiteFooter() {
               Pacific Time
             </p>
             <p className="mt-4 font-body text-[13px] leading-relaxed text-porcelain/55">
-              Open to permanent, interim, and fractional executive mandates.
+              That is the work I want next - owning a real transformation from inside.
             </p>
           </div>
         </div>

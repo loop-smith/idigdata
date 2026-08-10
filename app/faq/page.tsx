@@ -62,13 +62,14 @@ const FAQ: QA[] = [
     a: "Embedded transformation leadership is idigdata's primary model. Robert works inside the business at senior-operator altitude, owns the transformation path above vendors, runs the delivery frame, develops the people who will carry the result, and exits when the operating asset can survive without him.",
   },
   {
-    q: "Is idigdata a fractional CIO, contract CIO, or transformation lead?",
-    a: "Yes, those familiar labels can describe the seat. The more precise description is embedded transformation leadership: a senior operator brought in to land a business-system transformation and leave the business stronger, not to hold a chair forever.",
+    q: "What seat does the mandate determine?",
+    a: "Employment mechanics follow the work; accountability does not. Full-time or contract are conversation settings after the mission is real - not the public product. The offer is customer-side ownership of a real transformation.",
   },
   {
-    q: "What are the entry modes?",
-    a: "Fractional, adoption, and recovery are entry modes into the same operator model. Fractional work fits a specific lever before the full mandate is clear. Adoption fits agentic AI and readiness work. Recovery fits stalled ERP, systems, or transformation programs that need an owner above the vendor path. Permanent, interim, or fractional - the ownership standard is unchanged.",
+    q: "What are the situations Robert takes on?",
+    a: "Core transformation, transformation recovery, and Applied Agentics nested on the same ownership seat. The customer-side ownership standard does not change.",
   },
+
   {
     q: "Does idigdata publish pricing?",
     a: "No. idigdata does not publish a rate sheet. Engagement shape and business fit are discussed directly with Robert Paddock after the mandate, scope, urgency, and ownership conditions are clear.",
@@ -83,7 +84,7 @@ const FAQ: QA[] = [
   },
   {
     q: "What industries does idigdata know best?",
-    a: "idigdata's strongest field patterns are manufacturing (discrete and process); architecture, engineering, and construction; beverage consumer packaged goods; wellness/fitness; and hospitality/gaming. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together.",
+    a: "Lead fit is CPG and AEC, plus manufacturing, distribution, logistics, DTC, construction and engineered products, and multi-entity services. The common thread is operations-heavy work where systems, data, finance, compliance, and frontline adoption all have to hold together. Hospitals and medical clinics are a non-fit.",
   },
   {
     q: "What systems does idigdata work around?",
@@ -220,7 +221,7 @@ const KEY_FACTS: Fact[] = [
   },
   {
     label: "Core model",
-    body: <>embedded transformation leadership, with fractional, adoption, and recovery as entry modes.</>,
+    body: <>customer-side ownership - core transformation, recovery, and Applied Agentics on the same seat.</>,
   },
   {
     label: "Asset",

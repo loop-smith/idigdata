@@ -12,17 +12,47 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/atlas",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/method/",
         permanent: true,
       },
       {
         source: "/atlas/",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/method/",
         permanent: true,
       },
       {
         source: "/atlas/:path*",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/method/",
+        permanent: true,
+      },
+      {
+        source: "/approach",
+        destination: "/method/",
+        permanent: true,
+      },
+      {
+        source: "/approach/",
+        destination: "/method/",
+        permanent: true,
+      },
+      {
+        source: "/approach/:path*",
+        destination: "/method/",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics",
+        destination: "/method/#agentics",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics/",
+        destination: "/method/#agentics",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics/:path*",
+        destination: "/method/#agentics",
         permanent: true,
       },
       {
@@ -62,17 +92,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/agentics",
-        destination: "/applied-agentics/",
+        destination: "/method/#agentics",
         permanent: true,
       },
       {
         source: "/agentics/",
-        destination: "/applied-agentics/",
+        destination: "/method/#agentics",
         permanent: true,
       },
       {
         source: "/agentics/:path*",
-        destination: "/applied-agentics/",
+        destination: "/method/#agentics",
         permanent: true,
       },
       {
@@ -97,12 +127,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/capabilities",
-        destination: "/approach/",
+        destination: "/method/",
         permanent: true,
       },
       {
         source: "/capabilities/",
-        destination: "/approach/",
+        destination: "/method/",
+        permanent: true,
+      },
+      {
+        source: "/engagement",
+        destination: "/contact/",
+        permanent: true,
+      },
+      {
+        source: "/engagement/",
+        destination: "/contact/",
+        permanent: true,
+      },
+      {
+        source: "/engagement/:path*",
+        destination: "/contact/",
         permanent: true,
       },
       {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
@@ -10,14 +9,14 @@ export const metadata: Metadata = {
     absolute: "The Work · Built · Operated · Proven | idigdata",
   },
   description:
-    "BOSS, The Rig, and FlowCraft - the customer-side operating systems behind enterprise transformation and Applied Agentics - with enterprise field validation and 30 years of operator provenance.",
+    "Field receipts, provenance, and the customer-side operating architecture behind transformation and Applied Agentics.",
   alternates: { canonical: "/work/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/work/",
     title: "The Work · Built · Operated · Proven | idigdata",
     description:
-      "Systems, scar tissue, enterprise validation, and the judgment underneath - not a product shelf.",
+      "Field receipts, provenance, and the customer-side operating architecture behind transformation and Applied Agentics.",
     images: [
       {
         url: "/og-image.png",
@@ -48,110 +47,51 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const defects = [
-  "Transformation knowledge is scattered across decks, vendor tools, and people's heads.",
-  "Human and agent work disappears into threads; authority and completion are difficult to verify.",
-  "Automations produce output without an owned operating path the business can run Monday morning.",
-] as const;
-
 const systems = [
   {
     id: "boss",
     name: "BOSS",
-    job: "Client-owned transformation twin",
+    why: "The business needs a twin of the transformation it can own - not a binder the SI leaves behind.",
     holds:
-      "Workflows, decisions, dependencies, systems, ownership, delivery state, and institutional memory held as one durable business asset.",
-    owns: "The twin and the operating knowledge - not a rented PMO artifact.",
-    frontier: "Continuous enrichment of the twin as the business changes.",
-    defect:
-      "Transformation knowledge lives in slide decks, partner tools, and people's heads - then walks out the door.",
+      "Operating model, workflows, decisions, delivery state, and the evidence trail the company keeps.",
+    owns: "The twin. The history. The next cycle.",
+    frontier:
+      "Deeper coupling to live estate data without becoming another platform the business rents.",
   },
   {
     id: "rig",
     name: "The Rig",
-    job: "Governed build and evidence environment",
+    why: "Agents and integrations need a governed place to be built, tested, and evidenced - not laptop demos.",
     holds:
-      "Work routing, validation gates, evidence trails, and human authority over agent action - inspectable, not chat-ephemeral.",
-    owns: "The engagement evidence trail and the standards used to build.",
-    frontier: "Tighter observability and handoff discipline under real load.",
-    defect:
-      "Agent and human work disappears into threads. Completion is unverifiable. Authority is unclear.",
+      "Builder environment, controls, observability, and proof that production path is real.",
+    owns: "The method and the artifacts that survive the engagement.",
+    frontier:
+      "Faster path from validated pattern to floor-safe production without losing governance.",
   },
   {
     id: "flowcraft",
     name: "FlowCraft",
-    job: "Human-and-agent workflow runtime",
-    holds:
-      "Live workflows across people, enterprise systems, data, and agents - with state, boundaries, handoffs, and validation made explicit.",
-    owns: "Runnable workflow capability transferred with the team.",
-    frontier: "Broader workflow coverage without losing named ownership.",
-    defect:
-      "Automations and agents produce output without an owned operating path the business can run Monday morning.",
+    why: "Human and agent work has to run as one workflow the business can see and improve.",
+    holds: "Runtime for people-and-agent processes under named ownership.",
+    owns: "The operating rhythm - not a black-box automation vendor.",
+    frontier:
+      "Broader production patterns without turning the runtime into a second ERP.",
   },
 ] as const;
 
-const provenance = [
-  {
-    stage: "PCD",
-    lesson:
-      "Vendors are trades; someone on the owner's side must hold the whole build.",
-  },
-  {
-    stage: "Timberline",
-    lesson:
-      "Systems must work inside the operating business - founder/CEO/CTO scale from $250K to $130M, national US and China.",
-  },
-  {
-    stage: "AccessIT",
-    lesson:
-      "The partner and SI model has natural boundaries and incentives - later governed from the customer side.",
-  },
-  {
-    stage: "idigdata",
-    lesson:
-      "The customer needs authority above platforms and workstreams.",
-  },
-  {
-    stage: "Sierra Nevada",
-    lesson:
-      "Transformation, data ownership, and production AI can operate as one mandate.",
-  },
-  {
-    stage: "Now",
-    lesson:
-      "BOSS, The Rig, and FlowCraft turn that operating model into working systems.",
-  },
+const receipts = [
+  "$350M post-M&A estate in 11 months - close cycle 18→4 days · 30K+ SKUs under one operating picture",
+  "Stalled $8M ERP recovered - client-owned API bridge registered as IP",
+  "$8M-$10M vendor ask delivered for under $2M - company ownership preserved",
 ] as const;
 
-const digCases = [
-  {
-    title: "Post-M&A consolidation",
-    situation: "$350M post-M&A systems estate across entities and currencies.",
-    stakes: "Close cycle, master data, WMS, and SKU chaos blocking the operating company.",
-    seat: "Customer-side transformation ownership above the vendors.",
-    changed:
-      "Reconciled master data, unified chart of accounts and WMS, rationalized 30K+ SKUs.",
-    result: "Period close cut from 18 to 4 days in 11 months.",
-    kept: "A business-owned consolidated operating fabric.",
-  },
-  {
-    title: "ERP recovery",
-    situation: "Stalled $8M ERP program under partner-led delivery.",
-    stakes: "Spend continuing without an owned outcome path.",
-    seat: "Reset partner governance from the customer side.",
-    changed: "Recovered the program; delivered a client-owned API bridge.",
-    result: "Bridge later registered as IP.",
-    kept: "Company-owned integration capability - not partner lock-in.",
-  },
-  {
-    title: "Vendor cost reset",
-    situation: "$8M-$10M vendor proposal for required capability.",
-    stakes: "Capital and ownership at risk of vendor-shaped spend.",
-    seat: "Reframe the ask from the customer's authority.",
-    changed: "Delivered the required capability for under $2M.",
-    result: "Material capital preserved.",
-    kept: "Company ownership of the result.",
-  },
+const mandateCovers = [
+  "ERP and estate modernization",
+  "Data and integration spine the business owns",
+  "Vendor and SI governance under one accountable seat",
+  "Keep-running change through cutover and adoption",
+  "Applied Agentics in production on that same layer",
+  "Transfer - team capability and owned operating asset",
 ] as const;
 
 export default function WorkPage() {
@@ -166,18 +106,83 @@ export default function WorkPage() {
           Built. Operated. Proven.
         </h1>
         <p className="mt-6 max-w-[820px] font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
-          The systems, the scar tissue, the enterprise validation, and the
-          judgment underneath.
+          Scar tissue, enterprise validation, and the systems built so the next
+          mandate does not start from zero.
         </p>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Why they exist</SectionKicker>
         <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
           Knowledge walks out. Work disappears. Automation stops at output.
         </h2>
+        <p className="mt-8 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+          Transformations fail in the seams - between vendors, between systems,
+          between the program and the people who have to run Monday morning. The
+          architecture below exists because those seams kept repeating across 30
+          years of customer-side work.
+        </p>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Three working systems. One customer-side operating architecture.
+        </h2>
+        <p className="mt-8 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+          These are not three software products looking for a problem. They are
+          receipts and templates from 30 years of seeing where transformations -
+          and now production agentics - break.
+        </p>
+        <div className="mt-12 space-y-14">
+          {systems.map((s) => (
+            <article
+              key={s.id}
+              id={s.id}
+              className="scroll-mt-28 border-l-[3px] border-gold pl-5 md:pl-7"
+            >
+              <p className="font-brand text-[12px] font-bold uppercase tracking-[0.18em] text-warm-gray">
+                {s.name}
+              </p>
+              <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+                <span className="font-semibold text-navy">Why: </span>
+                {s.why}
+              </p>
+              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+                <span className="font-semibold text-navy">Holds: </span>
+                {s.holds}
+              </p>
+              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+                <span className="font-semibold text-navy">Owns: </span>
+                {s.owns}
+              </p>
+              <p className="mt-3 max-w-[62ch] text-[15px] leading-[1.6] text-warm-gray">
+                <span className="font-semibold">Frontier: </span>
+                {s.frontier}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          The ownership doctrine was validated inside a ~$420M operating company.
+        </h2>
+        <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+          As CIO at Sierra Nevada Brewing, I led a $15M transformation with 150+
+          internal and external participants. Siloed legacy technology became a
+          business-owned function. One governance model. Company-owned data
+          platform. Enterprise agentic AI in production - with training,
+          controls, and named business ownership. Capability transferred to
+          internal teams.
+        </p>
+      </section>
+
+      <section className="border-t border-navy/15 py-14 md:py-20">
+        <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Selected customer-side receipts
+        </h2>
         <ul className="mt-8 max-w-[62ch] space-y-3">
-          {defects.map((line) => (
+          {receipts.map((line) => (
             <li
               key={line}
               className="border-l-[3px] border-gold pl-4 text-[16px] leading-[1.65] text-ink"
@@ -189,188 +194,41 @@ export default function WorkPage() {
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Present systems</SectionKicker>
-        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Three working systems. One customer-side operating architecture.
+        <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+          Thirty years on the customer side of the work
         </h2>
-        <div className="mt-12 space-y-14">
-          {systems.map((s) => (
-            <article
-              key={s.id}
-              id={s.id}
-              className="scroll-mt-28 border-l-[3px] border-gold pl-5 md:pl-7"
-            >
-              <p className="font-brand text-[12px] font-bold uppercase tracking-[0.18em] text-warm-gray">
-                {s.name}
-              </p>
-              <h3 className="mt-2 font-vollkorn text-[28px] font-bold leading-[1.15] text-navy md:text-[34px]">
-                {s.job}
-              </h3>
-              <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">Why it had to exist: </span>
-                {s.defect}
-              </p>
-              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">What it holds: </span>
-                {s.holds}
-              </p>
-              <p className="mt-3 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
-                <span className="font-semibold text-navy">What the client owns: </span>
-                {s.owns}
-              </p>
-              <p className="mt-3 max-w-[62ch] text-[15px] leading-[1.6] text-warm-gray">
-                <span className="font-semibold">Where the frontier remains: </span>
-                {s.frontier}
-              </p>
-            </article>
-          ))}
-        </div>
-        <p className="mt-12 max-w-[62ch] border-l-[3px] border-navy/20 pl-5 text-[17px] leading-[1.65] text-navy">
-          These are not three software products looking for a problem. They are
-          the systems built after 30 years of seeing where transformations - and
-          now production agentics - break.
+        <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+          SI floors → embedded customer-side mandates → CIO altitude. Pattern
+          recognition from owning the whole under pressure - warehouse floor to
+          boardroom - long before the vocabulary was fashionable.
         </p>
-        <div className="mt-10 max-w-[720px]">
-          <Image
-            src="/diagrams/system-verse.svg"
-            alt="Operating architecture spanning people, data, systems, and agents"
-            width={720}
-            height={400}
-            className="h-auto w-full"
-          />
-        </div>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Enterprise field validation</SectionKicker>
-        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          The ownership doctrine was validated inside a ~$420M operating company.
-        </h2>
-        <div className="mt-6 max-w-[62ch] space-y-4 text-[16px] leading-[1.65] text-ink">
-          <p>
-            Embedded through idigdata as CIO and full member of the executive
-            leadership team at Sierra Nevada Brewing - accountable for a $15M
-            enterprise transformation portfolio across strategy, architecture,
-            operations, cybersecurity, vendors, and governance.
-          </p>
-          <p>
-            Consolidated siloed legacy technology into a cohesive, business-owned
-            function; reduced consulting dependency; governed 150+ internal and
-            external participants under one operating model; kept the business
-            running while transforming.
-          </p>
-          <p>
-            Established a company-owned data core and integration architecture
-            spanning 50+ enterprise systems. Put enterprise agentic systems into
-            production with training, security controls, human validation, and
-            named business owners - then transferred the platform and operating
-            discipline to internal teams.
-          </p>
-          <p className="font-semibold text-navy">
-            BOSS, The Rig, and FlowCraft are the present operating answer that
-            emerged from 30 years of customer-side work - including the
-            enterprise lessons validated at Sierra Nevada.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Transformation receipts</SectionKicker>
         <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Selected idigdata outcomes.
+          What the mandate covers
         </h2>
-        <div className="mt-10 space-y-10">
-          {digCases.map((c) => (
-            <article
-              key={c.title}
-              className="max-w-[720px] border border-navy/10 bg-white px-6 py-7 md:px-8"
-            >
-              <h3 className="font-vollkorn text-[24px] font-bold text-navy">
-                {c.title}
-              </h3>
-              <dl className="mt-5 space-y-3 text-[15px] leading-[1.55] text-ink">
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    Situation
-                  </dt>
-                  <dd className="mt-1">{c.situation}</dd>
-                </div>
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    Stakes
-                  </dt>
-                  <dd className="mt-1">{c.stakes}</dd>
-                </div>
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    Seat
-                  </dt>
-                  <dd className="mt-1">{c.seat}</dd>
-                </div>
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    What changed
-                  </dt>
-                  <dd className="mt-1">{c.changed}</dd>
-                </div>
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    Result
-                  </dt>
-                  <dd className="mt-1 font-semibold text-navy">{c.result}</dd>
-                </div>
-                <div>
-                  <dt className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-warm-gray">
-                    What remained
-                  </dt>
-                  <dd className="mt-1">{c.kept}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">Provenance</SectionKicker>
-        <h2 className="max-w-[20ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Thirty years underneath the systems.
-        </h2>
-        <ol className="mt-10 space-y-5">
-          {provenance.map((p) => (
+        <ul className="mt-8 max-w-[62ch] space-y-3">
+          {mandateCovers.map((line) => (
             <li
-              key={p.stage}
-              className="grid gap-2 border-b border-navy/10 pb-5 md:grid-cols-[160px_1fr] md:gap-8"
+              key={line}
+              className="border-l-[3px] border-gold pl-4 text-[16px] leading-[1.65] text-ink"
             >
-              <p className="font-brand text-[12px] font-bold uppercase tracking-[0.16em] text-navy">
-                {p.stage}
-              </p>
-              <p className="text-[16px] leading-[1.65] text-ink">{p.lesson}</p>
+              {line}
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       <section className="border-t border-navy/15 py-14 md:py-20">
-        <SectionKicker className="mb-5">What you keep</SectionKicker>
         <h2 className="max-w-[22ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
-          Owned capability after the engagement.
+          Built to be owned, not rented.
         </h2>
-        <ul className="mt-8 max-w-[62ch] space-y-3 text-[16px] leading-[1.65] text-ink">
-          <li className="border-l-[3px] border-gold pl-4">
-            Mapped workflows and operating knowledge the business can run
-          </li>
-          <li className="border-l-[3px] border-gold pl-4">
-            Governed data and visible delivery state
-          </li>
-          <li className="border-l-[3px] border-gold pl-4">
-            People developed to carry the next cycle
-          </li>
-          <li className="border-l-[3px] border-gold pl-4">
-            Agents under boundaries with named owners - when the mandate calls
-            for them
-          </li>
-        </ul>
+        <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.65] text-ink">
+          Mapped workflows. Governed data. Visible delivery state. People able
+          to carry the next cycle. Agents under boundaries with named owners. I
+          leave; the asset stays.
+        </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
           <Link
             href="/contact/"
@@ -385,16 +243,10 @@ export default function WorkPage() {
             </span>
           </Link>
           <Link
-            href="/approach/"
+            href="/method/"
             className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-navy/70"
           >
-            Approach →
-          </Link>
-          <Link
-            href="/applied-agentics/"
-            className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-navy/70"
-          >
-            Applied Agentics →
+            How I work →
           </Link>
         </div>
       </section>

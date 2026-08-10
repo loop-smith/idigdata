@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO/CTO | idigdata",
   },
   description:
-    "Modernize the core. Put agents into production. Keep the business in control - 30 years, 50+ implementations, a $15M CIO program, and governed agentic AI in production.",
+    "Digital change fails when nobody owns the whole. Customer-side transformation for $100M-$1B operators - 30 years, 50+ implementations, agents in production.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO/CTO | idigdata",
     description:
-      "Customer-side ownership across people, data, systems, and vendors - with Applied Agentics on the same layer.",
+      "Digital change fails when nobody owns the whole. Customer-side transformation for $100M-$1B operators - 30 years, 50+ implementations, agents in production.",
     images: [
       {
         url: "/og-image.png",
@@ -36,23 +36,8 @@ function GoldSquare({ className = "" }: { className?: string }) {
   );
 }
 
-const systems = [
-  {
-    name: "BOSS",
-    lead: "A client-owned transformation twin",
-  },
-  {
-    name: "The Rig",
-    lead: "A governed build and evidence environment",
-  },
-  {
-    name: "FlowCraft",
-    lead: "A human-and-agent workflow runtime",
-  },
-] as const;
-
 const digReceipts = [
-  "$350M post-M&A estate in 11 months - close 18 to 4 days · 30K+ SKUs",
+  "$350M post-M&A estate in 11 months - close 18→4 days · 30K+ SKUs",
   "Stalled $8M ERP recovered - client-owned API bridge registered as IP",
   "$8M-$10M vendor ask delivered for under $2M - company ownership preserved",
 ] as const;
@@ -73,39 +58,23 @@ export default function HomePage() {
               Same problem. Faster consequences.
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-              Vendors sell their slice. Platforms provide tools. Forward-deployed
-              teams can accelerate a workstream. The business still needs one
-              customer-side owner across people, data, systems, delivery, and
-              adoption through cutover.{" "}
+              Vendors sell their slice. Platforms provide tools. The business
+              still needs one customer-side owner across people, data, systems,
+              delivery, and adoption through cutover.{" "}
               <span className="font-semibold text-navy">
-                Agentic AI amplifies the gap.
+                Agentic AI amplifies the gap - it does not invent a second
+                product.
               </span>
             </p>
-
-            <h3 className="mt-10 font-brand text-[13px] font-bold uppercase tracking-[0.18em] text-navy">
-              The answer has been built
-            </h3>
-            <ul className="mt-5 space-y-3">
-              {systems.map((s) => (
-                <li
-                  key={s.name}
-                  className="max-w-[62ch] border-l-[3px] border-gold pl-4 text-[17px] leading-[1.55] text-[#3C4453]"
-                >
-                  <span className="font-semibold text-navy">{s.lead}</span>
-                  {" - "}
-                  {s.name}
-                </li>
-              ))}
-            </ul>
             <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.65] text-[#3C4453]">
-              Built to solve the ownership gap across enterprise transformation
-              and production agentics - not three products looking for a problem.
+              I fit the foundation to proven standard and protect what makes the
+              company unique.
             </p>
             <Link
-              href="/work/"
+              href="/method/"
               className="group mt-6 inline-flex items-center gap-2 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:text-navy/70"
             >
-              See the work
+              How I work
               <span
                 aria-hidden="true"
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -128,10 +97,11 @@ export default function HomePage() {
               Proven inside the operating company.
             </h2>
             <p className="mt-6 max-w-[62ch] text-[17.5px] leading-[1.7] text-[#3C4453]">
-              As CIO at Sierra Nevada Brewing (~$420M), led a $15M transformation
-              portfolio - business-owned function, company-owned data across 50+
-              systems, enterprise agentic systems in production, transferred to
-              internal teams.
+              As CIO at Sierra Nevada Brewing (~$420M), I led a $15M
+              transformation portfolio - consolidated siloed technology into a
+              business-owned function, established company-owned data across 50+
+              systems, put enterprise agentic systems into production, and
+              transferred the capability to internal teams.
             </p>
             <ul className="mt-8 space-y-3">
               {digReceipts.map((line) => (
@@ -148,52 +118,24 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-navy/10 bg-cream">
-        <Reveal className="mx-auto max-w-content px-6 py-12 md:grid md:grid-cols-[230px_1fr] md:gap-12 md:py-14">
-          <p className="mb-5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-warm-gray md:mb-0 md:pt-2">
-            <GoldSquare className="mr-3 h-[9px] w-[9px]" />
-            Provenance
-          </p>
-          <p className="max-w-[62ch] text-[17px] leading-[1.65] text-[#3C4453]">
-            Field project delivery → founder/operator → SI-side ERP architect →
-            customer-side transformation leader → enterprise CIO → Applied
-            Agentics builder. One doctrine: the owner holds the whole build.
-          </p>
-        </Reveal>
-      </section>
-
-      <section className="border-t border-navy/10 bg-tint">
         <Reveal className="mx-auto max-w-content px-6 py-14 md:grid md:grid-cols-[230px_1fr] md:gap-12 md:py-16">
           <p className="mb-5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-warm-gray md:mb-0 md:pt-3">
             <GoldSquare className="mr-3 h-[9px] w-[9px]" />
-            How to engage
+            The work I want
           </p>
           <div>
-            <h2 className="max-w-[18ch] font-brand text-[clamp(30px,4.2vw,46px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-navy">
-              Two mandates. One ownership model.
+            <h2 className="max-w-[22ch] font-brand text-[clamp(30px,4.2vw,46px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-navy">
+              That is the work I want next.
             </h2>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-8">
-              <Link
-                href="/approach/"
-                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-navy/70"
-              >
-                Enterprise transformation →
-              </Link>
-              <Link
-                href="/applied-agentics/"
-                className="font-brand text-[13px] font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:text-navy/70"
-              >
-                Applied Agentics →
-              </Link>
-            </div>
             <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.65] text-[#3C4453]">
-              Core transformation · Transformation recovery · Applied Agentics -
-              same embed standard.{" "}
-              <Link
-                href="/engagement/"
-                className="font-semibold text-navy underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
-              >
-                How I plug in
-              </Link>
+              Owning a real transformation from inside the company, with the
+              people who do the work - landing Applied Agentics where it earns,
+              transferring the capability, and leaving you running what we
+              build.
+            </p>
+            <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.65] text-[#3C4453]">
+              Core transformation · Transformation recovery · Applied Agentics
+              nested on the same seat
             </p>
           </div>
         </Reveal>
@@ -205,16 +147,12 @@ export default function HomePage() {
       >
         <Reveal className="mx-auto max-w-content px-6 py-20 text-center md:py-24">
           <div aria-hidden="true" className="mx-auto mb-8 h-[3px] w-16 bg-gold" />
-          <p className="font-brand text-[11.5px] font-semibold uppercase tracking-[0.26em] text-gold">
-            Operator to operator
-          </p>
-          <h2 className="mx-auto mt-6 max-w-[18ch] font-brand text-[clamp(32px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-porcelain">
+          <h2 className="mx-auto max-w-[18ch] font-brand text-[clamp(32px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.02em] text-porcelain">
             Bring the real operating problem.
           </h2>
           <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-porcelain/75 md:text-[18px]">
-            ERP mess, keep-running constraint, vendor sprawl, or pressure to put
-            agents into production without losing control. Permanent, interim, or
-            fractional - same ownership standard.
+            If your company needs someone to own a real transformation from the
+            inside, let&apos;s talk.
           </p>
           <Link
             href="/contact/"

@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Customer-side enterprise transformation and Applied Agentics - modernize the core, put agents into production, keep the business in control. Embeds inside $100M-$1B operators above the vendors; delivery architecture includes BOSS, The Rig, and FlowCraft as owned operating systems, not SaaS seats. Vendor-agnostic. Exit-by-design.",
+    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Digital change fails when nobody owns the whole. Customer-side enterprise transformation with Applied Agentics on the same layer - own the change, transfer the capability, leave you running it. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic. Exit-by-design.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
