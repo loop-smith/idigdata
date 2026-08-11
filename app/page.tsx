@@ -8,14 +8,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO/CTO | idigdata",
   },
   description:
-    "Digital transformation fails when nobody owns the whole. Customer-side transformation for $100M-$1B operators - 30 years, 50+ implementations, agents in production.",
+    "Digital transformation fails when nobody owns the whole. Protect Operating Income (OI) while the business runs - customer-side transformation for $100M-$1B operators.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO/CTO | idigdata",
     description:
-      "Digital transformation fails when nobody owns the whole. Customer-side transformation for $100M-$1B operators - 30 years, 50+ implementations, agents in production.",
+      "Digital transformation fails when nobody owns the whole. Protect Operating Income (OI) while the business runs - customer-side transformation for $100M-$1B operators.",
     images: [
       {
         url: "/og-image.png",
@@ -28,13 +28,12 @@ export const metadata: Metadata = {
 };
 
 const proof = [
-  "30 years",
   "50+ implementations",
-  "15 enterprise transformations",
-  "Agents in production",
+  "15 enterprise transformations at scale",
+  "Agentics in production",
 ] as const;
 
-/** Home = double hook. Motion: data-core globe. Film retired. CX nits 2026-08-10. */
+/** Home = double hook. Capo LOCK 2026-08-11 — LI About lockstep (pressure + OI + who). */
 export default function HomePage() {
   return (
     <div className="font-body text-ink">
@@ -49,37 +48,64 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid max-w-content gap-12 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-16 md:py-24 lg:py-28">
           <div>
-            <p className="font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-gold/90">
-              <span className="mr-3 inline-block h-[9px] w-[9px] bg-gold align-baseline" />
-              <span className="md:hidden">
-                Robert Paddock · Transformational CIO/CTO
-              </span>
-              <span className="hidden md:inline">
-                Robert Paddock · Transformational CIO/CTO · Customer-side
-                operator
-              </span>
+            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-gold">
+              {(
+                [
+                  { label: "Robert Paddock", mobile: true },
+                  { label: "Transformational CIO/CTO", mobile: true },
+                  { label: "Customer-side operator", mobile: false },
+                ] as const
+              ).map((part) => (
+                <span
+                  key={part.label}
+                  className={
+                    part.mobile
+                      ? "inline-flex items-center gap-2 whitespace-nowrap"
+                      : "hidden items-center gap-2 whitespace-nowrap md:inline-flex"
+                  }
+                >
+                  <span
+                    aria-hidden="true"
+                    className="inline-block h-[7px] w-[7px] shrink-0 rotate-45 bg-gold shadow-[0_0_14px_rgba(250,204,21,0.75)]"
+                  />
+                  <span>{part.label}</span>
+                </span>
+              ))}
             </p>
             <h1 className="mt-6 max-w-[16ch] font-brand text-[clamp(34px,5.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain">
               Digital transformation fails when nobody owns the whole.
             </h1>
             <p className="mt-6 max-w-[52ch] text-[17.5px] leading-[1.65] text-porcelain/85 md:text-[18px]">
-              I lead customer-side ERP, business systems, and Applied Agentics
-              transformations for $100M-$1B operators. From inside the company,
-              with the people who run it - built with the business, not done to
-              it.
+              A company can get the system it asked for and still miss the
+              business result. Software can go live while costs, risk,
+              workarounds, and dependency move the wrong way. The system is a
+              deliverable. The outcome is how the business runs.
+            </p>
+            <p className="mt-4 max-w-[52ch] text-[15.5px] leading-[1.6] text-porcelain/70">
+              I take Operating Income (OI) seriously. Technology should protect
+              and enable OI while the business keeps running. People, workflows,
+              data, integrations, vendors, decisions, and adoption have to work
+              as one operating whole.
             </p>
             <p className="mt-4 max-w-[52ch] text-[15.5px] leading-[1.6] text-porcelain/65">
-              The job is bigger than software: people, workflows, data,
-              integrations, vendors, decisions, and adoption as one operating
-              whole - warehouse floor to executive suite.
+              I lead customer-side ERP, business systems, and Applied Agentics
+              transformations for $100M-$1B operators. I work from inside the
+              company, alongside the people who run it, because transformation
+              must be built with the business - not done to it.
             </p>
-            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2">
+            <ul className="mt-8 flex flex-col items-center gap-y-2.5">
               {proof.map((chip) => (
                 <li
                   key={chip}
-                  className="font-brand text-[11.5px] font-bold uppercase tracking-[0.12em] text-gold"
+                  className="inline-flex items-center gap-2 whitespace-nowrap"
                 >
-                  {chip}
+                  <span
+                    aria-hidden="true"
+                    className="inline-block h-[6px] w-[6px] shrink-0 rotate-45 bg-porcelain/55"
+                  />
+                  <span className="font-brand text-[11.5px] font-bold uppercase tracking-[0.12em] text-gold">
+                    {chip}
+                  </span>
                 </li>
               ))}
             </ul>

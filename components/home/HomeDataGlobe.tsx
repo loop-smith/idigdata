@@ -59,8 +59,14 @@ function shuffleLabels(seed: number, count: number): number[] {
 export default function HomeDataGlobe() {
   const uid = useId().replace(/:/g, "");
   const rootAttr = `hg-${uid}`;
-  const captionKicker = estateNodesDoc.captionKicker;
   const caption = estateNodesDoc.caption;
+  const [captionLead, captionTrailRaw = ""] = caption.split(" - ");
+  const captionTrail = (() => {
+    // Emphasize "shared data" to echo the gold DATA core — content stays Capo-locked.
+    const m = captionTrailRaw.match(/^(.*?)(shared data)(.*)$/i);
+    if (!m) return { before: captionTrailRaw, emphasis: "", after: "" };
+    return { before: m[1], emphasis: m[2], after: m[3] };
+  })();
 
   const initial = useMemo(() => {
     const sphere = fibSphere(NODE_COUNT);
@@ -88,7 +94,7 @@ export default function HomeDataGlobe() {
     <div
       data-hg-root={rootAttr}
       className="relative mx-auto w-full max-w-[420px] md:max-w-none"
-      aria-label={`${captionKicker}. ${caption}`}
+      aria-label={caption}
       role="img"
     >
       <Script src="/js/home-data-globe.js" strategy="afterInteractive" />
@@ -223,26 +229,31 @@ export default function HomeDataGlobe() {
       </svg>
       </div>
 
-      {/* Legend plaque — reads as part of the motion, not ghost text on navy. */}
-      <div className="relative z-10 mx-auto mt-4 w-full max-w-[22rem] md:mt-5 md:max-w-none">
-        <div className="relative overflow-hidden rounded-[3px] border border-porcelain/20 bg-[linear-gradient(165deg,rgba(20,40,64,0.92)_0%,rgba(10,18,32,0.88)_100%)] px-4 py-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-md md:px-5 md:py-4">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 rounded-full bg-gold/10 blur-2xl"
-          />
-          <p className="relative flex items-center justify-center gap-2.5 font-brand text-[10.5px] font-bold uppercase tracking-[0.22em] text-gold md:text-[11px]">
-            <span className="inline-block h-[8px] w-[8px] bg-gold" />
-            {captionKicker}
+      {/* Caption — composition under the sphere: gold seam + DATA echo. No card. */}
+      <figcaption
+        className="hero-rise relative mx-auto mt-6 w-full max-w-[28rem] md:mt-7"
+        style={{ ["--rise" as string]: 3 }}
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-[42%] h-24 w-[min(100%,22rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(250,204,21,0.18)_0%,transparent_70%)] blur-md"
+        />
+        <div className="relative flex flex-col items-center px-2">
+          <div aria-hidden="true" className="mb-3.5 flex items-center gap-3">
+            <span className="h-px w-10 bg-gradient-to-r from-transparent via-gold/70 to-gold/90 md:w-14" />
+            <span className="h-[7px] w-[7px] rotate-45 bg-gold shadow-[0_0_14px_rgba(250,204,21,0.75)]" />
+            <span className="h-px w-10 bg-gradient-to-l from-transparent via-gold/70 to-gold/90 md:w-14" />
+          </div>
+          <p className="max-w-[36ch] text-center font-brand text-[14px] font-semibold leading-[1.4] tracking-[-0.015em] text-porcelain/90 md:text-[15px]">
+            {captionLead}
           </p>
-          <p className="relative mt-2 text-center font-brand text-[12.5px] font-semibold leading-[1.45] tracking-[-0.01em] text-porcelain/90 md:text-[13.5px]">
-            {caption}
+          <p className="mt-2 max-w-[36ch] text-center font-brand text-[12.5px] font-medium leading-[1.45] tracking-[-0.01em] text-porcelain/55 md:text-[13px]">
+            {captionTrail.before}
+            <span className="font-bold text-gold">{captionTrail.emphasis}</span>
+            {captionTrail.after}
           </p>
         </div>
-      </div>
+      </figcaption>
     </div>
   );
 }
