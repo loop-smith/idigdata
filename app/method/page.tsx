@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     absolute: "Method · How Robert Owns the Change | idigdata",
   },
   description:
-    "People, data, systems, and workflows as one ownership job - with Applied Agentics nested on the same layer.",
+    "People, data, systems, and workflows as one ownership job - Operating Income protected, Applied Agentics nested on the same layer.",
   alternates: { canonical: "/method/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/method/",
     title: "Method · How Robert Owns the Change | idigdata",
     description:
-      "People, data, systems, and workflows as one ownership job - with Applied Agentics nested on the same layer.",
+      "People, data, systems, and workflows as one ownership job - Operating Income protected, Applied Agentics nested on the same layer.",
     images: [
       {
         url: "/og-image.png",
@@ -74,7 +74,7 @@ export default function MethodPage() {
           I start inside the operating company, make the real workflows and
           decision paths visible, establish authority above platforms and
           workstreams, and carry the change through adoption and stable
-          operations.
+          operations. The method has to protect the business while we change it.
         </p>
       </section>
 
@@ -95,9 +95,41 @@ export default function MethodPage() {
             </p>
           </div>
         </div>
-        <div className="mt-10 border-l-[4px] border-l-gold bg-navy px-7 py-8 text-cream md:max-w-[720px] md:px-8">
-          <p className="font-vollkorn text-[22px] font-bold leading-[1.2] text-cream md:text-[26px]">
-            Two of my earliest calls are to finance and control.
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+        <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
+          I take Operating Income (OI) seriously.
+        </h2>
+        <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
+          <p>
+            Technology should protect and enable OI while the company keeps
+            running. That means cutting waste and risk in the seams, reducing
+            unnecessary dependency, and leaving capability the business owns and
+            can extend. Two of my earliest calls are to finance and control -
+            not as a courtesy, as the scoreboard.
+          </p>
+        </div>
+      </section>
+
+      <AccentRule className="mt-4" />
+
+      <section className="bg-pale-navy px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
+        <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
+          I hold the layer above any one platform.
+        </h2>
+        <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
+          <p>
+            ERP is usually the center of gravity, never the whole system. The
+            surrounding applications, data, integrations, and controls still
+            have to reconcile to a truth the business can run and the audit can
+            trust.
+          </p>
+          <p className="text-[15px] leading-[1.6] text-warm-gray">
+            Dynamics 365 and Business Central deep; peer-literate across other
+            major estates when the mandate requires it.
           </p>
         </div>
       </section>
@@ -106,19 +138,16 @@ export default function MethodPage() {
 
       <section className="bg-cream px-0 pt-16 pb-20 md:px-8 md:pt-20 md:pb-24">
         <h2 className="text-balance font-vollkorn text-[34px] font-extrabold leading-[1.06] tracking-normal text-navy md:text-[48px]">
-          I hold the layer above any one platform.
+          Governance should speed delivery - not perform theater.
         </h2>
         <div className="mt-5 max-w-[820px] space-y-4 text-[16px] leading-relaxed text-ink md:text-[17px]">
           <p>
-            ERP is usually the center of gravity - never the whole system. WMS,
-            MES, CRM/CPQ, EAM, MDM, PLM, APIs, and integration have to
-            reconcile to a truth the business can run and the audit can trust.
-            Keep-running discipline through cutover, adoption, and multi-entity
-            complexity.
-          </p>
-          <p className="text-[15px] leading-[1.6] text-warm-gray">
-            Dynamics 365 and Business Central deep; peer-literate across other
-            major estates when the mandate requires it.
+            Architecture, data, and AI governance belong in one control frame
+            the company owns: principles, standards, security, risk, reviews,
+            and named ownership. Good governance reduces repeated decisions,
+            stops unnecessary technology proliferation, and lets teams move
+            faster inside clear guardrails. Bad governance is a slide deck that
+            arrives after the damage.
           </p>
         </div>
       </section>
@@ -147,7 +176,7 @@ export default function MethodPage() {
           src="/diagrams/beehive.svg"
           alt="The Beehive - operating fabric of process flows crossing functional groups before any one platform"
           kicker="Operating fabric"
-          caption="The Beehive - how work actually moves across functional groups before platforms. Universal frame; bespoke fill per operator. The operating fabric I map before we modernize or land agents."
+          caption="The Beehive - how work actually moves across functional groups before platforms. The operating fabric I map before we modernize or land agents."
         />
       </section>
 
@@ -167,40 +196,26 @@ export default function MethodPage() {
         </p>
         <div className="mt-8 max-w-[820px] space-y-5 text-[16px] leading-relaxed text-ink md:text-[17px]">
           <p>
-            <span className="font-semibold text-navy">Why nested: </span>
-            Transform opens the door. Agentics is today&apos;s power toolset on
-            that same layer - not a second equal offer.
+            Agentics belongs inside the transformation, governed against the
+            same people, data, systems, workflows, and operating outcomes. A
+            pilot beside a broken estate is still a broken estate.
           </p>
           <p>
-            <span className="font-semibold text-navy">Production means: </span>
-            Boundaries. Human validation. Observability. Security. Training.
-            Named business ownership. The standard is production capability,
-            not demonstration.
+            Production requires boundaries, human validation, observability,
+            security, training, and named business ownership.
           </p>
           <p>
-            <span className="font-semibold text-navy">Field receipt: </span>
             At Sierra Nevada Brewing, enterprise agentic AI ran in production on
             a company-owned data platform - with training, controls, and named
             business ownership - not a lab pilot.
           </p>
           <p>
-            <span className="font-semibold text-navy">
-              Build environment (named once):{" "}
-            </span>
-            BOSS · The Rig · FlowCraft - receipts and templates for how that
-            work gets built and evidenced. See{" "}
-            <Link
-              href="/work/"
-              className="font-semibold text-navy underline decoration-gold/60 underline-offset-4"
-            >
-              /work/
-            </Link>
-            .
+            BOSS, The Rig, and FlowCraft are the delivery architecture used to
+            build, govern, and evidence that production path.
           </p>
           <p>
-            <span className="font-semibold text-navy">What you own: </span>
-            Transferred platform discipline and internal capacity to run and
-            extend what we build.
+            What the company keeps: the operating discipline and internal
+            capacity to run and extend what we build.
           </p>
         </div>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">

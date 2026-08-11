@@ -27,7 +27,7 @@ export const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
   { value: "transformation_recovery", label: "Transformation recovery" },
   {
     value: "applied_agentics",
-    label: "Applied Agentics on the same seat",
+    label: "Applied Agentics inside the same mandate",
   },
   {
     value: "not_sure",

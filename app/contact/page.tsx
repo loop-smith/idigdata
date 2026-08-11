@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
@@ -36,12 +35,6 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const situations = [
-  "Core transformation",
-  "Transformation recovery",
-  "Applied Agentics nested on the same ownership seat",
-] as const;
-
 function ContentSection({
   title,
   children,
@@ -73,64 +66,36 @@ export default function ContactPage() {
           Bring the real operating problem.
         </h1>
         <p className="mt-5 max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          If your company needs someone to own a real transformation from the
-          inside, let&apos;s talk.
+          If your company needs a real transformation owned from inside the
+          business, let&apos;s talk.
+        </p>
+        <p className="mt-4 max-w-[760px] font-body text-[15px] leading-relaxed text-ink">
+          Come with the real problem - shape, stakes, constraints. We will know
+          quickly if I am the fit.
         </p>
       </section>
 
       <section className="pb-12 md:pb-16">
         <div className="max-w-[760px] space-y-8">
-          <ContentSection title="What needs to be owned?">
+          <ContentSection title="What operating problem needs to be owned?">
             <p>
-              Core transformation, recovery, or Applied Agentics on the same
-              seat. The customer-side ownership standard does not change.
-            </p>
-            <ul className="list-disc space-y-2 pl-5">
-              {situations.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </ContentSection>
-
-          <ContentSection title="The mandate determines the seat.">
-            <p>
-              Employment mechanics follow the work; accountability does not.
-              Wrapper menus stay out of the public offer. Full-time or contract
-              are conversation settings after the mission is real - not the
-              homepage product.
+              I take on core transformation and recovery. Applied Agentics
+              belongs inside that same ownership mandate when the production
+              path is real.
             </p>
           </ContentSection>
 
-          <ContentSection title="How the bench works">
+          <ContentSection title="Accountability stays in one place.">
             <p>
-              No standing delivery pyramid. I bring the specialists the mandate
-              requires and remain accountable for the whole result.
+              I remain accountable for the operating result across platforms,
+              vendors, workstreams, and adoption.
             </p>
           </ContentSection>
 
-          <ContentSection title="Where I do my best work">
+          <ContentSection title="Where I fit best">
             <p>
-              $100M-$1B operators - CPG and AEC first, plus manufacturing,
-              distribution, logistics, DTC, construction and engineered products,
-              multi-entity services. PE-backed, founder-led, family-owned.
-              Material ERP, integration, data, vendor, or agentic complexity.
-            </p>
-            <p className="text-warm-gray">
-              Non-fit: Hospitals and medical clinics -{" "}
-              <Link
-                href="/faq/"
-                className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
-              >
-                see FAQ
-              </Link>
-              .
-            </p>
-          </ContentSection>
-
-          <ContentSection title="What to bring">
-            <p>
-              The real operating problem - shape, stakes, constraints. We shape
-              the mandate from there.
+              $100M-$1B operators, with CPG and AEC first and relevant
+              experience across adjacent operating environments.
             </p>
           </ContentSection>
         </div>
@@ -180,11 +145,8 @@ export default function ContactPage() {
 
       <section className="border-t border-stone/40 pb-20 pt-10">
         <p className="max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          If your company needs someone to own a real transformation from the
-          inside, let&apos;s talk.
-        </p>
-        <p className="mt-6 font-body text-[13px] text-warm-gray/80">
-          No permanent / interim / fractional laundry on this page.
+          If your company needs a real transformation owned from inside the
+          business, let&apos;s talk.
         </p>
       </section>
     </div>
