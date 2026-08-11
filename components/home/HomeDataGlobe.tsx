@@ -2,46 +2,15 @@
 
 import Script from "next/script";
 import { useId, useMemo } from "react";
+import { estateLabelPool, estateNodesDoc } from "@/lib/home/estateNodes";
 
 /**
  * Home motion v1 (Capo brief 2026-08-10):
  * Gold DATA core · obsidian nodes · true 3D yaw.
- * React paints the initial sphere; /js/home-data-globe.js drives motion so
- * labels ride nodes, fade behind, and only re-roll on re-emerge.
+ * Label pool + caption from /data/estate-nodes.json (shared SoT).
  */
 
-const LABEL_POOL = [
-  "ERP",
-  "WMS",
-  "MES",
-  "CRM",
-  "EAM",
-  "PLM",
-  "API",
-  "SQL",
-  "MDM",
-  "Data",
-  "Integration",
-  "Cutover",
-  "Adoption",
-  "Stakeholders",
-  "Vendors",
-  "SI",
-  "Governance",
-  "Workflows",
-  "Users",
-  "Agents",
-  "Agentics",
-  "Controls",
-  "Training",
-  "Ownership",
-  "Floor",
-  "Board",
-  "Security",
-  "Observability",
-  "Transfer",
-] as const;
-
+const LABEL_POOL = estateLabelPool();
 const NODE_COUNT = 16;
 const SIZE = 420;
 const CX = SIZE / 2;
@@ -76,8 +45,8 @@ function project(theta: number, phi: number, spin: number) {
   };
 }
 
-function shuffleLabels(seed: number): number[] {
-  const idx = LABEL_POOL.map((_, i) => i);
+function shuffleLabels(seed: number, count: number): number[] {
+  const idx = Array.from({ length: count }, (_, i) => i);
   let s = seed;
   for (let i = idx.length - 1; i > 0; i--) {
     s = (s * 1664525 + 1013904223) >>> 0;
@@ -90,22 +59,25 @@ function shuffleLabels(seed: number): number[] {
 export default function HomeDataGlobe() {
   const uid = useId().replace(/:/g, "");
   const rootAttr = `hg-${uid}`;
+  const captionKicker = estateNodesDoc.captionKicker;
+  const caption = estateNodesDoc.caption;
 
   const initial = useMemo(() => {
     const sphere = fibSphere(NODE_COUNT);
-    const labels = shuffleLabels(42);
+    const labels = shuffleLabels(42, LABEL_POOL.length);
     return sphere
       .map((n, i) => {
         const p = project(n.theta, n.phi, 0);
         const depth = (p.z + 1) / 2;
+        const labelIndex = labels[i % labels.length];
         return {
           ...n,
           ...p,
           depth,
           sx: CX + p.x * RADIUS,
           sy: CY + p.y * RADIUS * 0.92,
-          labelIndex: labels[i % labels.length],
-          label: LABEL_POOL[labels[i % labels.length] % LABEL_POOL.length],
+          labelIndex,
+          label: LABEL_POOL[labelIndex % LABEL_POOL.length],
           front: p.z > LABEL_Z,
         };
       })
@@ -115,11 +87,12 @@ export default function HomeDataGlobe() {
   return (
     <div
       data-hg-root={rootAttr}
-      className="relative mx-auto aspect-square w-full max-w-[420px] md:max-w-none"
-      aria-label="Data-centric operating globe — rotating estate nodes"
+      className="relative mx-auto w-full max-w-[420px] md:max-w-none"
+      aria-label={`${captionKicker}. ${caption}`}
       role="img"
     >
       <Script src="/js/home-data-globe.js" strategy="afterInteractive" />
+      <div className="relative aspect-square w-full">
       <svg
         viewBox={`0 0 ${SIZE} ${SIZE}`}
         className="h-full w-full overflow-visible"
@@ -248,9 +221,28 @@ export default function HomeDataGlobe() {
           );
         })}
       </svg>
-      <p className="pointer-events-none absolute bottom-1 left-0 right-0 text-center font-brand text-[9px] font-semibold uppercase tracking-[0.18em] text-porcelain/35">
-        Data core · estate nodes
-      </p>
+      </div>
+
+      {/* Legend plaque — reads as part of the motion, not ghost text on navy. */}
+      <div className="relative z-10 mx-auto mt-4 w-full max-w-[22rem] md:mt-5 md:max-w-none">
+        <div className="relative overflow-hidden rounded-[3px] border border-porcelain/20 bg-[linear-gradient(165deg,rgba(20,40,64,0.92)_0%,rgba(10,18,32,0.88)_100%)] px-4 py-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-md md:px-5 md:py-4">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 rounded-full bg-gold/10 blur-2xl"
+          />
+          <p className="relative flex items-center justify-center gap-2.5 font-brand text-[10.5px] font-bold uppercase tracking-[0.22em] text-gold md:text-[11px]">
+            <span className="inline-block h-[8px] w-[8px] bg-gold" />
+            {captionKicker}
+          </p>
+          <p className="relative mt-2 text-center font-brand text-[12.5px] font-semibold leading-[1.45] tracking-[-0.01em] text-porcelain/90 md:text-[13.5px]">
+            {caption}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
