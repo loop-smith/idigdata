@@ -19,6 +19,8 @@ export type FieldMark = {
   /** True when the lockup already includes the word - do not repeat the name. */
   includesWord?: boolean;
   href?: string;
+  /** Crest / square lockups need more chip height than a wide wordmark. */
+  fit?: "wide" | "mark";
 };
 
 const sys = (file: string) => `/brand/field/systems/${file}`;
@@ -42,7 +44,7 @@ export const MARQUEE_CPG: FieldMark[] = [
 
 export const MARQUEE_AEC: FieldMark[] = [
   { name: "SOM", src: op("som.svg"), includesWord: true },
-  { name: "HOK", src: op("hok.svg"), includesWord: true },
+  { name: "HOK", src: op("hok.svg"), includesWord: true, fit: "mark" },
   { name: "Turner Construction", src: op("turner.svg"), includesWord: true },
   {
     name: "PCL Construction",
@@ -51,17 +53,27 @@ export const MARQUEE_AEC: FieldMark[] = [
   },
 ];
 
-/** Mixed types on purpose - CPG, AEC, food, wine, hospitality. Not a clump. */
+/** Mixed types on purpose - CPG, AEC, food, wine, hospitality, sport. Not a clump. */
 export const MARQUEE_OPERATORS: FieldMark[] = [
   MARQUEE_CPG[0],
   MARQUEE_AEC[0],
-  { name: "Everytable" },
+  { name: "Everytable", src: op("everytable.svg"), includesWord: true },
   MARQUEE_AEC[2],
-  { name: "Foley Family Wine & Spirits" },
+  {
+    name: "Foley Family Wine & Spirits",
+    src: op("foley-family-wines.png"),
+    includesWord: true,
+  },
+  {
+    name: "San Jose Sharks",
+    src: op("san-jose-sharks-wordmark.png"),
+    includesWord: true,
+  },
   MARQUEE_AEC[1],
   MARQUEE_CPG[1],
-  { name: "MGM Resorts" },
+  { name: "MGM Resorts", src: op("mgm-resorts.svg"), includesWord: true },
   MARQUEE_CPG[2],
+  { name: "Wynn Resorts", src: op("wynn-resorts.svg"), includesWord: true },
   MARQUEE_AEC[3],
 ];
 

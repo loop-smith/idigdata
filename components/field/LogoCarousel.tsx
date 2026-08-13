@@ -17,14 +17,16 @@ function Chip({ mark, mono }: { mark: FieldMark; mono: boolean }) {
   }
 
   return (
-    <span className="inline-flex h-12 w-full items-center justify-center gap-2 border border-navy/15 bg-paper px-3 sm:w-auto sm:justify-start">
+    <span className="inline-flex h-12 w-full items-center justify-center gap-2 overflow-visible border border-navy/15 bg-paper px-3 sm:w-auto sm:justify-start">
       {/* eslint-disable-next-line @next/next/no-img-element -- static brand lockups */}
       <img
         src={mark.src}
         alt={mark.includesWord ? mark.name : ""}
-        className={`h-7 w-auto max-w-[9.5rem] object-contain object-center sm:object-left ${
-          mono ? "grayscale contrast-125" : ""
-        }`}
+        className={`w-auto object-contain object-center sm:object-left ${
+          mark.fit === "mark"
+            ? "h-8 max-w-[5.75rem]"
+            : "h-8 max-w-[13rem]"
+        } ${mono ? "grayscale contrast-125" : ""}`}
       />
       {mark.includesWord ? null : (
         <span className="font-brand text-[11px] font-semibold uppercase tracking-[0.12em] text-navy">
@@ -61,11 +63,11 @@ export default function LogoCarousel({
       </ul>
 
       <div className="hidden overflow-hidden border-y border-navy/10 py-3 sm:block">
-        <div className="field-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none motion-reduce:flex-wrap">
+        <div className="field-marquee flex w-max motion-reduce:w-full motion-reduce:animate-none motion-reduce:flex-wrap">
           {[0, 1].map((copy) => (
             <ul
               key={copy}
-              className={`flex gap-2 pr-2 motion-reduce:flex-wrap motion-reduce:pr-0 ${
+              className={`flex shrink-0 gap-2 pr-2 motion-reduce:flex-wrap motion-reduce:pr-0 ${
                 copy === 1 ? "motion-reduce:hidden" : ""
               }`}
               aria-hidden={copy === 1}
