@@ -40,6 +40,11 @@ export const MARQUEE_CPG: FieldMark[] = [
     src: op("greenham.svg"),
     includesWord: true,
   },
+  {
+    name: "Valley Fine Foods",
+    src: op("valley-fine-foods.png"),
+    includesWord: true,
+  },
 ];
 
 export const MARQUEE_AEC: FieldMark[] = [
@@ -70,6 +75,7 @@ export const MARQUEE_OPERATORS: FieldMark[] = [
     includesWord: true,
   },
   MARQUEE_AEC[1],
+  MARQUEE_CPG[3],
   MARQUEE_CPG[1],
   { name: "MGM Resorts", src: op("mgm-resorts.svg"), includesWord: true },
   MARQUEE_CPG[2],
