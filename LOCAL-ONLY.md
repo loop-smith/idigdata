@@ -7,11 +7,13 @@ This repo is the DigOps **website** on RIG001.
 | Place | Job |
 |---|---|
 | Disk + `npm run dev` | Craft. Capo-eyes `http://localhost:3100` |
-| GitHub `rigorg/idigdata` | Same Git repo (old name `loop-smith/idigdata`) |
-| Vercel project `idigdata` | **Host**, not a second repo. Builds from that GitHub repo |
-| idigdata.com | Live. Today this moves when branch `working` is pushed |
+| GitHub `rigorg/idigdata` | Git custody (old name `loop-smith/idigdata`). Push does **not** move the live site. |
+| Vercel project `idigdata` (`loop-smith/idigdata`) | **Host**. Vercel Git is disconnected. |
+| idigdata.com | Live. Moves only when Capo Ships a CLI prod deploy, then aliases. |
 
-`working` is the live branch. `main` is behind. **A push is a publish.** Local commits are not.
+`working` is the live branch. `main` is behind. **GitHub push is not a publish.** Local commits are not.
+
+**Publish path (Capo Ship only):** `npx vercel --prod --yes` from this repo, then alias `idigdata.com` + `www.idigdata.com` onto that deployment. Do not reconnect Vercel Git or change project/domain settings unless Capo names it.
 
 ## Fence (mechanical — not honor system)
 
@@ -27,7 +29,9 @@ Install / re-apply on this checkout:
 powershell -File scripts/install-local-fence.ps1
 ```
 
-Capo Ship (only): `scripts/capo-ship-unlock.ps1` then `IDIGDATA_SHIP=1 git push -u origin HEAD`.
+Capo Ship (live site): `npx vercel --prod --yes`, then alias `idigdata.com` + `www.idigdata.com`. GitHub push is custody only - it does not publish.
+
+Capo Ship (git custody, only if Capo names it): `scripts/capo-ship-unlock.ps1` then `IDIGDATA_SHIP=1 git push -u origin HEAD`.
 
 Do not change Vercel project / domain / auto-deploy settings without Capo word.
 
