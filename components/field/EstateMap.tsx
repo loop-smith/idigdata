@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 
-type RailNode = {
+type EstateNode = {
   id: string;
   label: string;
   vendor: string;
@@ -10,7 +10,7 @@ type RailNode = {
   angle: number;
 };
 
-const NODES: RailNode[] = [
+const NODES: EstateNode[] = [
   { id: "erp", label: "ERP", vendor: "Dynamics 365 · Business Central", href: "#estate", angle: -90 },
   { id: "items", label: "Items", vendor: "1WorldSync", href: "#items", angle: -60 },
   { id: "guest", label: "Guest", vendor: "Toast", href: "#retail", angle: -30 },
@@ -38,13 +38,13 @@ function polar(angleDeg: number, radius: number) {
   };
 }
 
-export default function PaleRailsMap() {
+export default function EstateMap() {
   const [activeId, setActiveId] = useState<string>("erp");
   const titleId = useId();
   const descId = useId();
   const active = NODES.find((n) => n.id === activeId) ?? NODES[0];
 
-  function select(node: RailNode) {
+  function select(node: EstateNode) {
     setActiveId(node.id);
     const target = document.getElementById(node.href.slice(1));
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -53,7 +53,7 @@ export default function PaleRailsMap() {
   return (
     <figure className="mt-10">
       <p className="mb-4 font-brand text-[11.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-        Pale Rails · command map
+        Command map · data core
       </p>
       <div className="overflow-x-auto overscroll-x-contain">
         <svg
@@ -63,7 +63,7 @@ export default function PaleRailsMap() {
           aria-labelledby={titleId}
           aria-describedby={descId}
         >
-          <title id={titleId}>Pale Rails - the operating estate picture</title>
+          <title id={titleId}>The operating estate - data core and the systems under command</title>
           <desc id={descId}>
             Every circle is a contract negotiated and a vendor run. Select a
             circle to jump to that chamber.
@@ -191,9 +191,9 @@ export default function PaleRailsMap() {
         })}
       </div>
       <p className="mx-auto mt-5 max-w-[62ch] font-display text-[15px] italic leading-snug text-warm-gray md:text-[16px]">
-        Pale Rails - the operating estate picture. Not a slide. The command map.
-        Selected: {active.label} · {active.vendor}. 150+ people under one
-        command.
+        The operating estate picture. Not a slide. The command map, with shared
+        data at the core. Selected: {active.label} · {active.vendor}. 150+
+        people under one command.
       </p>
     </figure>
   );

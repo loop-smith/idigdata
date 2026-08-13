@@ -6,7 +6,7 @@ import JsonLdScript from "@/components/analytics/JsonLdScript";
 import FieldChamber from "@/components/field/FieldChamber";
 import FieldCta from "@/components/field/FieldCta";
 import FieldJump from "@/components/field/FieldJump";
-import PaleRailsMap from "@/components/field/PaleRailsMap";
+import EstateMap from "@/components/field/EstateMap";
 import ProofRail from "@/components/field/ProofRail";
 import {
   ESTATE_APPS,
@@ -141,7 +141,7 @@ export default function TransformationsPage() {
           architecture behind the mandate - working receipts, not products for
           sale. That production path lives on Agentics.
         </p>
-        <PaleRailsMap />
+        <EstateMap />
         <ProofRail
           marks={[...ESTATE_APPS, ...PARTNERS]}
           markLabel="Estate command · partners"
