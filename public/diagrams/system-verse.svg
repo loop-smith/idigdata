@@ -47,8 +47,8 @@
     <line x1="321.5" y1="280.5" x2="400" y2="470"/>
   </g>
 
-  <!-- Integration fabric label (single, BOSS vocabulary) · drawn above spokes so it stays readable -->
-  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">INTEGRATION FABRIC</text>
+  <!-- Integration backbone label · drawn above spokes so it stays readable -->
+  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="2.2" font-family="Georgia, 'Times New Roman', serif">INTEGRATION BACKBONE</text>
 
   <!-- Data Core · sun-gold fill (matches AV-02 v2 treatment); charcoal text inside -->
   <circle cx="400" cy="470" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>

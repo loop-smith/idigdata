@@ -80,15 +80,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robert Paddock · Transformational CIO/CTO | idigdata",
-    description:
-      "Customer-side ownership across people, data, systems, and vendors - with Applied Agentics on the same layer.",
-    images: [
-      {
-        url: "/og-image.png",
-        alt: "idigdata",
-      },
-    ],
   },
   robots: {
     index: true,

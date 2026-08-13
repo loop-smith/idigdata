@@ -4,38 +4,69 @@ type ProofFigureProps = {
   caption: string;
   /** Optional short label above the figure */
   kicker?: string;
+  /** pan = Field default (wide diagrams). contain = tall figures. measure = copy-column width. */
+  fit?: "pan" | "contain" | "measure";
 };
 
 /**
- * Full-bleed-within-content proof diagram: scrollable on narrow viewports,
- * no card chrome, figure caption under the asset.
+ * Proof diagram: keeps a readable native width and pans on narrow
+ * viewports instead of shrinking labels to fit. Tall figures use contain.
+ * Measure fills the Field well (same box as the header).
  */
 export default function ProofFigure({
   src,
   alt,
   caption,
   kicker,
+  fit = "pan",
 }: ProofFigureProps) {
+  const pan = fit === "pan";
+  const measure = fit === "measure";
+
   return (
-    <figure className="mt-12">
+    <figure className="mt-8">
       {kicker ? (
-        <p className="mb-4 font-brand text-[11.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+        <p className="field-measure mb-2 font-brand text-[11.5px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
           {kicker}
         </p>
       ) : null}
-      <div className="-mx-2 overflow-x-auto overscroll-x-contain px-2 sm:mx-0 sm:px-0">
-        <div className="mx-auto min-w-[min(100%,520px)] max-w-[720px]">
+      {pan ? (
+        <div className="-mx-6 overflow-x-auto overscroll-x-contain px-6 md:mx-0 md:overflow-visible md:px-0">
+          <div className="w-[720px] md:mx-auto md:w-full md:max-w-none">
+            {/* eslint-disable-next-line @next/next/no-img-element -- static SVG proof assets */}
+            <img
+              src={src}
+              alt={alt}
+              className="mx-auto h-auto w-[720px] max-w-none select-none md:w-full md:max-w-full"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      ) : measure ? (
+        <div className="field-measure">
           {/* eslint-disable-next-line @next/next/no-img-element -- static SVG proof assets */}
           <img
             src={src}
             alt={alt}
-            className="h-auto w-full max-w-full select-none"
+            className="mx-auto h-auto w-full select-none"
             loading="lazy"
             decoding="async"
           />
         </div>
-      </div>
-      <figcaption className="mx-auto mt-5 max-w-[62ch] font-display text-[15px] italic leading-snug text-warm-gray md:text-[16px]">
+      ) : (
+        <div className="flex justify-center">
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG proof assets */}
+          <img
+            src={src}
+            alt={alt}
+            className="h-auto max-h-[36rem] w-auto max-w-full select-none"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      )}
+      <figcaption className="field-measure mt-3 font-display text-[15px] italic leading-snug text-warm-gray md:text-[16px]">
         {caption}
       </figcaption>
     </figure>

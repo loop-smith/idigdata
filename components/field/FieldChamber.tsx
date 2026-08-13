@@ -5,6 +5,8 @@ type Props = {
   kicker?: string;
   title: string;
   tone?: "cream" | "pale";
+  /** Optional lockup or figure between kicker and title. */
+  lead?: ReactNode;
   children: ReactNode;
 };
 
@@ -13,6 +15,7 @@ export default function FieldChamber({
   kicker,
   title,
   tone = "cream",
+  lead,
   children,
 }: Props) {
   return (
@@ -24,11 +27,12 @@ export default function FieldChamber({
     >
       <div className="mx-auto max-w-content px-6">
         {kicker ? (
-          <p className="mb-3 font-brand text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
+          <p className="field-measure mb-3 font-brand text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
             {kicker}
           </p>
         ) : null}
-        <h2 className="max-w-[24ch] font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
+        {lead ? <div className="field-measure mb-6">{lead}</div> : null}
+        <h2 className="field-measure font-vollkorn text-[33px] font-bold leading-[1.12] text-navy md:text-[46px]">
           {title}
         </h2>
         <div className="mt-8">{children}</div>

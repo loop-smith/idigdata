@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Digital change fails when nobody owns the whole. Customer-side enterprise transformation with Applied Agentics on the same layer - own the change, transfer the capability, leave you running it. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic. Exit-by-design.",
+    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Digital change fails when nobody owns the whole. Customer-side enterprise transformation with Applied Agentics on the same layer - own the change inside the business, capability the company can run and extend. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -25,7 +25,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Transformational CIO/CTO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 enterprise transformations at scale; embeds, installs a business-owned operating asset, exits by design. Recent CIO residency: Sierra Nevada Brewing (~$420M).",
+    "Transformational CIO/CTO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 enterprise transformations at scale; embeds and installs a business-owned operating asset the company can run and extend. Recent CIO residency: Sierra Nevada Brewing (~$420M).",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
@@ -49,7 +49,7 @@ const personSchema = {
     "Decision integrity for agentic AI",
     "Embedded transformation leadership",
     "Vendor-agnostic transformation",
-    "Exit-by-design engagements",
+    "Business-owned operating assets",
     "Discrete manufacturing",
     "Process manufacturing",
     "Architecture-engineering-construction (AEC)",

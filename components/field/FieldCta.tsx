@@ -7,7 +7,7 @@ type Props = {
 
 export default function FieldCta({ secondaryHref, secondaryLabel }: Props) {
   return (
-    <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+    <div className="field-measure mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
       <Link
         href="/contact/"
         className="group inline-flex items-center justify-center gap-2 rounded-[3px] bg-gold px-7 py-3.5 font-brand text-[12px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:bg-[#FFD84D]"

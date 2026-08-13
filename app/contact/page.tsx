@@ -5,7 +5,7 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 
 export const metadata: Metadata = {
-  title: "Contact | idigdata",
+  title: "Contact",
   description:
     "Start a direct conversation with Robert Paddock about a real transformation to own.",
   alternates: { canonical: "/contact/" },

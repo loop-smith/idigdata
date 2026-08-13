@@ -12,6 +12,7 @@ type Props = {
   scene?: SceneKind;
   sceneSrc?: string;
   quote?: string;
+  mono?: boolean;
 };
 
 export default function ProofRail({
@@ -20,6 +21,7 @@ export default function ProofRail({
   scene,
   sceneSrc,
   quote,
+  mono = false,
 }: Props) {
   const hasMarks = Boolean(marks && marks.length > 0);
   const hasScene = Boolean(scene);
@@ -28,7 +30,11 @@ export default function ProofRail({
 
   return (
     <div className="mt-10 space-y-6">
-      {hasMarks ? <LogoStrip marks={marks!} label={markLabel} /> : null}
+      {hasMarks ? (
+        <div className="field-measure">
+          <LogoStrip marks={marks!} label={markLabel} mono={mono} />
+        </div>
+      ) : null}
       {scene ? (
         <SceneSlot
           kind={scene}
@@ -37,7 +43,7 @@ export default function ProofRail({
         />
       ) : null}
       {quote ? (
-        <blockquote className="border-l-[3px] border-gold pl-4 font-vollkorn text-[18px] font-medium italic leading-snug text-navy md:text-[20px]">
+        <blockquote className="field-measure border-l-[3px] border-gold pl-4 font-vollkorn text-[18px] font-medium italic leading-snug text-navy md:text-[20px]">
           {quote}
         </blockquote>
       ) : null}

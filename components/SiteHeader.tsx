@@ -107,7 +107,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b backdrop-blur-md transition-colors duration-300 ${
+      className={`relative sticky top-0 z-40 border-b backdrop-blur-md transition-colors duration-300 ${
         onFilm
           ? "header-on-film border-porcelain/15"
           : "border-navy/10 bg-cream/85"
@@ -117,7 +117,7 @@ export default function SiteHeader() {
         <Link
           href="/"
           className="flex items-center"
-          aria-label="idigdata — home"
+          aria-label="idigdata - home"
         >
           <HeaderWordmark onFilm={onFilm} />
         </Link>
@@ -152,34 +152,22 @@ export default function SiteHeader() {
           })}
         </nav>
 
-        {/* Mobile hamburger toggle (below md) */}
-        <button
-          type="button"
-          className={`-mr-2 inline-flex h-11 w-11 items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:hidden ${
-            onFilm ? "text-porcelain" : "text-navy"
-          }`}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
+        {/* Mobile nav: native details so one tap works without client state. */}
+        <details
+          className="group md:hidden"
+          open={open}
+          onToggle={(e) => {
+            setOpen((e.currentTarget as HTMLDetailsElement).open);
+          }}
         >
-          {open ? (
+          <summary
+            className={`-mr-2 inline-flex h-11 w-11 cursor-pointer list-none items-center justify-center marker:content-none focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden ${
+              onFilm ? "text-porcelain" : "text-navy"
+            }`}
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
             <svg
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 4 L18 18 M18 4 L4 18"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-              />
-            </svg>
-          ) : (
-            <svg
+              className="group-open:hidden"
               width="22"
               height="18"
               viewBox="0 0 22 18"
@@ -193,24 +181,31 @@ export default function SiteHeader() {
                 strokeLinecap="round"
               />
             </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile panel + backdrop */}
-      {open ? (
-        <>
+            <svg
+              className="hidden group-open:block"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 4 L18 18 M18 4 L4 18"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+              />
+            </svg>
+          </summary>
           <div
-            className="absolute inset-x-0 top-full z-20 h-screen bg-navy/50 md:hidden"
+            className="fixed inset-x-0 top-[var(--site-header-h)] z-20 h-screen bg-navy/50 md:hidden"
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
           <nav
             id="mobile-nav"
-            className="absolute left-0 right-0 top-full z-30 border-b border-navy/15 bg-cream shadow-lg md:hidden"
+            className="absolute left-0 right-0 top-full z-30 border-b border-navy/15 bg-cream shadow-lg"
             aria-label="Primary"
-            role="dialog"
-            aria-modal="true"
           >
             <ul className="mx-auto flex max-w-content flex-col px-6 py-4">
               {NAV.map((item) => {
@@ -237,8 +232,8 @@ export default function SiteHeader() {
               })}
             </ul>
           </nav>
-        </>
-      ) : null}
+        </details>
+      </div>
     </header>
   );
 }

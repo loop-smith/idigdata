@@ -19,7 +19,7 @@ export default function SiteFooter() {
               data
             </p>
             <p className="mt-3 font-display text-[14px] italic leading-relaxed text-porcelain/50">
-              Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
+              Data-centric &middot; Vendor-agnostic
             </p>
           </div>
 
@@ -63,16 +63,24 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-2 border-t border-porcelain/10 pt-6 sm:flex-row sm:justify-between">
-          <p className="font-body text-[12.5px] text-porcelain/40">
-            © idigdata · Data Integration Group · est. 2016
+        <div className="mt-12 border-t border-porcelain/10 pt-6">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+            <p className="font-body text-[12.5px] text-porcelain/40">
+              © idigdata · Data Integration Group · est. 2016
+            </p>
+            <Link
+              href="/privacy/"
+              className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+            >
+              Privacy
+            </Link>
+          </div>
+          <p className="mt-4 max-w-[62ch] font-body text-[11.5px] leading-relaxed text-porcelain/35">
+            All product names, logos, and brands are property of their
+            respective owners and are used for identification purposes only.
+            Reference to past clients does not imply their endorsement of
+            idigdata.
           </p>
-          <Link
-            href="/privacy/"
-            className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
-          >
-            Privacy
-          </Link>
         </div>
       </div>
 

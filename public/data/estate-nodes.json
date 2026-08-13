@@ -10,7 +10,7 @@
     "OI on Home fold + sphere (Capo love language) — never EBIT",
     "Floor = plant & warehouse floor",
     "SI = system integrator",
-    "Handoff = outcome / ownership leave-behind (not transfer orders)"
+    "Handoff = capability the company can run and extend (not transfer orders)"
   ],
   "categories": [
     {
@@ -147,7 +147,7 @@
         {
           "id": "handoff",
           "label": "Handoff",
-          "gloss": "Outcome / ownership leave-behind — exit-by-design"
+          "gloss": "Capability the company can run and extend"
         }
       ]
     },

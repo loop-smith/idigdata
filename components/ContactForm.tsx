@@ -1,19 +1,29 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useState, type FormEvent } from "react";
 import {
   INTEREST_OPTIONS,
   type InterestType,
 } from "@/lib/contact/schema";
 import { getAnonSessionId, trackWebsiteEvent } from "@/components/analytics/websiteEvents";
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "recorded" | "error";
 
 export type { InterestType };
 
 type Props = {
   showInterestSelect?: boolean;
 };
+
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  role?: string;
+};
+
+function isEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
 export default function ContactForm({ showInterestSelect = false }: Props) {
   const [name, setName] = useState("");
@@ -26,6 +36,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
 
   const [status, setStatus] = useState<Status>("idle");
   const [leadId, setLeadId] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   const idBase = useId();
   const nameId = `${idBase}-name`;
@@ -36,10 +47,28 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   const messageId = `${idBase}-message`;
   const messageHelpId = `${idBase}-message-help`;
   const hpId = `${idBase}-hp`;
+  const formErrorId = `${idBase}-form-error`;
 
-  async function handleSubmit(e: React.FormEvent) {
+  function validate(): FieldErrors {
+    const next: FieldErrors = {};
+    if (!name.trim()) next.name = "Name is required.";
+    if (!email.trim()) next.email = "Email is required.";
+    else if (!isEmail(email.trim())) next.email = "Enter a working email.";
+    if (!role.trim()) next.role = "Role / title is required.";
+    return next;
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
+
+    const nextErrors = validate();
+    setFieldErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      setStatus("idle");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -67,9 +96,10 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             interest_type: interest,
             lead_id: data.lead_id ?? null,
             company_present: Boolean(company.trim()),
+            notification: data.notification ?? null,
           },
         });
-        setStatus("success");
+        setStatus(data.notification === "sent" ? "success" : "recorded");
       } else {
         setStatus("error");
       }
@@ -82,12 +112,13 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
     "w-full bg-white text-ink font-body text-[16px] px-3 py-3 border border-stone/60 focus:outline-none focus:border-navy focus:border-2 focus:px-[11px] focus:py-[11px] transition-colors";
   const labelClasses = "block font-body text-[14px] text-ink mb-1.5";
 
-  if (status === "success") {
+  if (status === "success" || status === "recorded") {
     return (
       <div className="space-y-3">
         <p className="font-display text-navy text-[22px] leading-snug">
-          Got it. This lands straight in my inbox - no bot, no queue. I read
-          every one.
+          {status === "success"
+            ? "Got it. This lands straight in my inbox - no bot, no queue. I read every one."
+            : "Got it. The note is recorded. Email notify did not fire - write robert@idigdata.com if you need a same-day reply."}
         </p>
         {leadId && leadId !== "silenced" ? (
           <p className="font-body text-[13px] text-warm-gray">
@@ -99,13 +130,30 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      method="post"
+      action="/contact/"
+      noValidate
+      className="space-y-6"
+    >
+      <noscript>
+        <p className="border-l-2 border-gold bg-gold/10 px-4 py-3 font-body text-[14px] text-ink">
+          JavaScript is off. Email{" "}
+          <a className="font-semibold text-navy" href="mailto:robert@idigdata.com">
+            robert@idigdata.com
+          </a>{" "}
+          with the operating problem.
+        </p>
+      </noscript>
       {status === "error" ? (
         <div
+          id={formErrorId}
           role="alert"
           className="border-l-2 border-aubergine bg-aubergine/5 px-4 py-3 font-body text-[14px] text-ink"
         >
-          Something went wrong. Try the direct email above, or try again.
+          Something went wrong. Try the direct email above, or try again. Your
+          note is still in the form.
         </div>
       ) : null}
 
@@ -147,10 +195,22 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           required
           autoComplete="name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          aria-invalid={fieldErrors.name ? true : undefined}
+          aria-describedby={fieldErrors.name ? `${nameId}-error` : undefined}
+          onChange={(e) => {
+            setName(e.target.value);
+            if (fieldErrors.name) {
+              setFieldErrors((prev) => ({ ...prev, name: undefined }));
+            }
+          }}
           className={inputClasses}
           disabled={status === "submitting"}
         />
+        {fieldErrors.name ? (
+          <p id={`${nameId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
+            {fieldErrors.name}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -164,10 +224,22 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           required
           autoComplete="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          aria-invalid={fieldErrors.email ? true : undefined}
+          aria-describedby={fieldErrors.email ? `${emailId}-error` : undefined}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            if (fieldErrors.email) {
+              setFieldErrors((prev) => ({ ...prev, email: undefined }));
+            }
+          }}
           className={inputClasses}
           disabled={status === "submitting"}
         />
+        {fieldErrors.email ? (
+          <p id={`${emailId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
+            {fieldErrors.email}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -181,10 +253,22 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           required
           autoComplete="organization-title"
           value={role}
-          onChange={(e) => setRole(e.target.value)}
+          aria-invalid={fieldErrors.role ? true : undefined}
+          aria-describedby={fieldErrors.role ? `${roleId}-error` : undefined}
+          onChange={(e) => {
+            setRole(e.target.value);
+            if (fieldErrors.role) {
+              setFieldErrors((prev) => ({ ...prev, role: undefined }));
+            }
+          }}
           className={inputClasses}
           disabled={status === "submitting"}
         />
+        {fieldErrors.role ? (
+          <p id={`${roleId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
+            {fieldErrors.role}
+          </p>
+        ) : null}
       </div>
 
       <div>

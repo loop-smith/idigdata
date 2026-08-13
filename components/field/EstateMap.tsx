@@ -1,5 +1,7 @@
 "use client";
 
+/** Parked 2026-08-12 — Capo: uglier duplicate of Systemverse. Do not wire back onto Transformations without GO. */
+
 import { useId, useState } from "react";
 
 type EstateNode = {
@@ -13,12 +15,12 @@ type EstateNode = {
 const NODES: EstateNode[] = [
   { id: "erp", label: "ERP", vendor: "Dynamics 365 · Business Central", href: "#estate", angle: -90 },
   { id: "items", label: "Items", vendor: "1WorldSync", href: "#items", angle: -60 },
-  { id: "guest", label: "Guest", vendor: "Toast", href: "#retail", angle: -30 },
-  { id: "commerce", label: "Commerce", vendor: "Shopify", href: "#retail", angle: 0 },
-  { id: "wms", label: "Warehouse", vendor: "Infios / Korber · HighJump", href: "#logistics", angle: 30 },
-  { id: "plant", label: "Plant", vendor: "Ignition", href: "#plant", angle: 60 },
-  { id: "eam", label: "Maintain", vendor: "Brightly", href: "#plant", angle: 90 },
-  { id: "market", label: "Market", vendor: "Nielsen · VIP", href: "#feeds", angle: 120 },
+  { id: "guest", label: "Guest", vendor: "Toast", href: "#estate", angle: -30 },
+  { id: "commerce", label: "Commerce", vendor: "Shopify", href: "#estate", angle: 0 },
+  { id: "wms", label: "Warehouse", vendor: "Infios / Korber · HighJump", href: "#estate", angle: 30 },
+  { id: "plant", label: "Plant", vendor: "Ignition", href: "#estate", angle: 60 },
+  { id: "eam", label: "Maintain", vendor: "Brightly", href: "#estate", angle: 90 },
+  { id: "market", label: "Market", vendor: "Nielsen · VIP", href: "#estate", angle: 120 },
   { id: "itsm", label: "Service", vendor: "ServiceNow", href: "#estate", angle: 150 },
   { id: "hr", label: "HR", vendor: "UKG", href: "#estate", angle: 180 },
   { id: "crm", label: "CRM", vendor: "Salesforce", href: "#estate", angle: 210 },
@@ -65,8 +67,8 @@ export default function EstateMap() {
         >
           <title id={titleId}>The operating estate - data core and the systems under command</title>
           <desc id={descId}>
-            Every circle is a contract negotiated and a vendor run. Select a
-            circle to jump to that chamber.
+            Every circle is a contract negotiated and a vendor run. Items opens
+            the item-truth receipt; the rest stay on this command map.
           </desc>
           <rect width="800" height="680" fill="#FBF9F4" />
           <circle

@@ -36,7 +36,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
       <>
         This notice covers idigdata.com, operated by Data Integration Group LLC
         (doing business as idigdata) in the United States. It is not legal
-        advice for your company — it is how this practice site handles visitors and
+        advice for your company - it is how this practice site handles visitors and
         inbound notes.
       </>
     ),
@@ -47,12 +47,12 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
       <>
         <p className="mb-3">
           When someone opens a page on idigdata.com, we record a first-party
-          &ldquo;door-knock&rdquo; for DigOps (our operating system): path, time,
-          referrer, basic device/browser signals, optional UTM / click-id
-          parameters (also kept in a short first-party attribution cookie), and
-          coarse host location (country / region / city). We store a{" "}
+          entrance event for operating this practice: path, time, referrer,
+          basic device/browser signals, optional UTM / click-id parameters
+          (also kept in a short first-party attribution cookie), and coarse
+          host location (country / region / city). We store a{" "}
           <span className="font-semibold text-ink">hashed</span> visitor IP
-          fingerprint — not the raw address — plus a small allowlisted set of
+          fingerprint - not the raw address - plus a small allowlisted set of
           request metadata (for example accept-language and fetch-site). We do
           not keep precise latitude/longitude or full proxy header dumps.
         </p>
@@ -69,22 +69,26 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <span className="font-semibold text-ink">Session door cookies</span> —
+          <span className="font-semibold text-ink">Session door cookies</span>
+          {" - "}
           short-lived markers so we do not double-count the same entrance window.
         </li>
         <li>
-          <span className="font-semibold text-ink">Attribution cookie</span> —
+          <span className="font-semibold text-ink">Attribution cookie</span>
+          {" - "}
           remembers UTM / gclid from a campaign landing for about 30 days so later
           pages in the same browser still attribute correctly.
         </li>
         <li>
-          <span className="font-semibold text-ink">Analytics preference</span> —
+          <span className="font-semibold text-ink">Analytics preference</span>
+          {" - "}
           remembers if you opted out of Vercel Analytics.
         </li>
         <li>
-          <span className="font-semibold text-ink">Internal / fleet markers</span>{" "}
-          — only if Rob or DigOps agents deliberately mark a browser so operator
-          and automation traffic can be filtered in DigOps.
+          <span className="font-semibold text-ink">Internal / fleet markers</span>
+          {" - "}
+          only if this practice deliberately marks a browser so operator and
+          automation traffic can be filtered from buyer traffic.
         </li>
       </ul>
     ),
@@ -97,9 +101,9 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
         <Link href="/contact/" className="font-semibold text-navy border-b border-navy/30 hover:border-navy">
           /contact
         </Link>
-        , we store the fields you send (name, email, optional role/company/message,
-        interest) in DigOps and send a notification email so Robert can reply. We do
-        not sell form submissions.
+        , we store the fields you send (name, email, optional role/company/message)
+        in our operating records and send a notification email so Robert can reply.
+        We do not sell form submissions.
       </>
     ),
   },
@@ -107,9 +111,9 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "Who processes data",
     body: (
       <>
-        Hosting and edge delivery: Vercel. DigOps database: Supabase. Transactional
-        notify mail from the contact form: Resend. Each is under their own terms;
-        we configure them for this practice site.
+        Hosting and edge delivery: Vercel. Operating database: Supabase.
+        Transactional notify mail from the contact form: Resend. Each is under
+        their own terms; we configure them for this practice site.
       </>
     ),
   },
@@ -117,9 +121,9 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "Retention and requests",
     body: (
       <>
-        Traffic rows are kept for operating DigOps, not forever theater. Contact
-        notes stay while they are useful to the conversation. To ask about access,
-        correction, or deletion of a note you sent, email{" "}
+        Traffic rows are kept for operating this practice, not forever theater.
+        Contact notes stay while they are useful to the conversation. To ask
+        about access, correction, or deletion of a note you sent, email{" "}
         <a
           href="mailto:robert@idigdata.com?subject=Privacy%20request"
           className="font-semibold text-navy border-b border-navy/30 hover:border-navy"
@@ -144,8 +148,8 @@ export default function PrivacyPage() {
           Plain notice. No theater.
         </h1>
         <p className="mt-5 max-w-[720px] font-display italic text-warm-gray text-[18px] leading-snug">
-          What this site measures, why DigOps sees visits, and how to opt out of
-          aggregate analytics.
+          What this site measures, why entrance traffic is recorded, and how to
+          opt out of aggregate analytics.
         </p>
       </section>
 
@@ -168,8 +172,8 @@ export default function PrivacyPage() {
             </h2>
             <p className="mt-3 font-body text-[15.5px] leading-relaxed text-warm-gray">
               Prefer no Vercel Analytics from this browser? Use the site notice, or
-              turn it off here. DigOps first-party entrance telemetry for operating
-              the practice still runs; this control only stops the Vercel Analytics
+              turn it off here. First-party entrance telemetry for operating the
+              practice still runs; this control only stops the Vercel Analytics
               layer.
             </p>
             <p className="mt-4 font-body text-[14px] text-navy">
@@ -183,7 +187,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="font-body text-[13px] text-warm-gray/80">
-            Last updated July 24, 2026.
+            Last updated August 13, 2026.
           </p>
         </div>
       </section>

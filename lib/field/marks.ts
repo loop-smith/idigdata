@@ -1,42 +1,233 @@
-/** Field ProofRail marks - vendor command / hands-on, not endorsement theater. */
+/**
+ * Field ProofRail marks - vendor command / hands-on, not endorsement theater.
+ *
+ * First-paint placement (Transformations):
+ *   operators → hero once (grayscale identification; Capo permitted 2026-08-13)
+ *   systems → ESTATE_APP_GROUPS under Systemverse (same)
+ *   partners → ownership chamber only
+ *   items → ITEM_FLAGSHIP (1WorldSync) only
+ * Full arrays below stay inventory for licensed lockups / add-back chambers.
+ *
+ * System and model marks in public/brand/field/ are identification use
+ * (grayscale). Capo permitted that use 2026-08-13. Not endorsement.
+ */
 
 export type FieldMark = {
   name: string;
-  /** Optional owned lockup. Third-party marks stay typographic until Capo drops licensed files. */
+  /** Optional owned lockup. Third-party marks stay typographic until a file is wired. */
   src?: string;
   /** True when the lockup already includes the word - do not repeat the name. */
   includesWord?: boolean;
   href?: string;
 };
 
+const sys = (file: string) => `/brand/field/systems/${file}`;
+const op = (file: string) => `/brand/field/operators/${file}`;
+const par = (file: string) => `/brand/field/partners/${file}`;
+const mod = (file: string) => `/brand/field/models/${file}`;
+
 export const MARQUEE_CPG: FieldMark[] = [
-  { name: "Sierra Nevada Brewing" },
-  { name: "Duckhorn" },
-  { name: "H.W. Greenham & Sons" },
+  {
+    name: "Sierra Nevada Brewing",
+    src: op("sierra-nevada.svg"),
+    includesWord: true,
+  },
+  { name: "Duckhorn", src: op("duckhorn.webp"), includesWord: true },
+  {
+    name: "H.W. Greenham & Sons",
+    src: op("greenham.svg"),
+    includesWord: true,
+  },
 ];
 
 export const MARQUEE_AEC: FieldMark[] = [
-  { name: "SOM" },
-  { name: "HOK" },
-  { name: "Turner Construction" },
-  { name: "PCL Construction" },
+  { name: "SOM", src: op("som.svg"), includesWord: true },
+  { name: "HOK", src: op("hok.svg"), includesWord: true },
+  { name: "Turner Construction", src: op("turner.svg"), includesWord: true },
+  {
+    name: "PCL Construction",
+    src: op("pcl.svg"),
+    includesWord: true,
+  },
+];
+
+/** Mixed types on purpose - CPG, AEC, food, wine, hospitality. Not a clump. */
+export const MARQUEE_OPERATORS: FieldMark[] = [
+  MARQUEE_CPG[0],
+  MARQUEE_AEC[0],
+  { name: "Everytable" },
+  MARQUEE_AEC[2],
+  { name: "Foley Family Wine & Spirits" },
+  MARQUEE_AEC[1],
+  MARQUEE_CPG[1],
+  { name: "MGM Resorts" },
+  MARQUEE_CPG[2],
+  MARQUEE_AEC[3],
 ];
 
 export const PARTNERS: FieldMark[] = [
-  { name: "Accenture" },
-  { name: "RSM" },
+  { name: "Accenture", src: par("accenture2.svg"), includesWord: true },
+  { name: "RSM", src: par("rsm.png"), includesWord: true },
 ];
 
-export const ESTATE_APPS: FieldMark[] = [
-  { name: "Dynamics 365" },
-  { name: "Business Central" },
-  { name: "Azure" },
-  { name: "Databricks" },
-  { name: "Fivetran" },
-  { name: "Boomi" },
-  { name: "UKG" },
-  { name: "Salesforce" },
-  { name: "ServiceNow" },
+export type FieldMarkGroup = {
+  label: string;
+  marks: FieldMark[];
+  /** Even grid. 4 = wrap and center leftovers. 3 = even threes. */
+  columns?: 2 | 3 | 4;
+};
+
+const d365: FieldMark = { name: "Dynamics 365", src: sys("dynamics365.svg") };
+const bc: FieldMark = { name: "Business Central", src: sys("dynamics365.svg") };
+const azure: FieldMark = { name: "Azure", src: sys("microsoftazure.svg") };
+const powerBi: FieldMark = { name: "Power BI", src: sys("powerbi.svg") };
+const fabric: FieldMark = { name: "Microsoft Fabric", src: sys("fabric.svg") };
+const teams: FieldMark = {
+  name: "Teams",
+  src: sys("microsoftteams.svg"),
+};
+const sharePoint: FieldMark = {
+  name: "SharePoint",
+  src: sys("microsoftsharepoint.svg"),
+};
+const activeDirectory: FieldMark = { name: "Active Directory" };
+const slack: FieldMark = {
+  name: "Slack",
+  src: sys("slack.svg"),
+  includesWord: true,
+};
+const zoom: FieldMark = {
+  name: "Zoom",
+  src: sys("zoom-wordmark.svg"),
+  includesWord: true,
+};
+const databricks: FieldMark = { name: "Databricks", src: sys("databricks.svg") };
+const fivetran: FieldMark = {
+  name: "Fivetran",
+  src: sys("fivetran.svg"),
+  includesWord: true,
+};
+const boomi: FieldMark = { name: "Boomi", src: sys("boomi.svg") };
+const oneStream: FieldMark = {
+  name: "OneStream",
+  src: sys("onestream.svg"),
+};
+const solver: FieldMark = {
+  name: "Solver",
+  src: sys("solver.svg"),
+  includesWord: true,
+};
+const johnGalt: FieldMark = {
+  name: "John Galt Solutions",
+  src: sys("johngalt.svg"),
+  includesWord: true,
+};
+const ukg: FieldMark = { name: "UKG", src: sys("ukg.svg"), includesWord: true };
+const salesforce: FieldMark = {
+  name: "Salesforce",
+  src: sys("salesforce.svg"),
+  includesWord: true,
+};
+const serviceNow: FieldMark = {
+  name: "ServiceNow",
+  src: sys("servicenow.svg"),
+  includesWord: true,
+};
+const shopify: FieldMark = { name: "Shopify", src: sys("shopify.svg") };
+const toast: FieldMark = {
+  name: "Toast",
+  src: sys("toast.svg"),
+  includesWord: true,
+};
+const worldSync: FieldMark = {
+  name: "1WorldSync",
+  src: sys("1worldsync.svg"),
+  includesWord: true,
+};
+const infios: FieldMark = {
+  name: "Infios",
+  src: sys("infios.svg"),
+  includesWord: true,
+};
+const ignition: FieldMark = {
+  name: "Ignition",
+  src: sys("ignition.svg"),
+  includesWord: true,
+};
+const brightly: FieldMark = {
+  name: "Brightly",
+  src: sys("brightly-logo.svg"),
+  includesWord: true,
+};
+const nielsen: FieldMark = {
+  name: "NielsenIQ",
+  src: sys("niq.svg"),
+  includesWord: true,
+};
+const vip: FieldMark = {
+  name: "Vermont Information Processing",
+  src: sys("vip.svg"),
+  includesWord: true,
+};
+const aras: FieldMark = {
+  name: "Aras",
+  src: sys("aras.png"),
+  includesWord: true,
+};
+const procore: FieldMark = {
+  name: "Procore",
+  src: sys("procore.svg"),
+  includesWord: true,
+};
+
+/** Grouped board under Systemverse. Platform first, then how the estate actually runs. */
+export const ESTATE_APP_GROUPS: FieldMarkGroup[] = [
+  {
+    label: "Microsoft",
+    marks: [d365, bc, azure, powerBi, fabric, sharePoint, activeDirectory],
+    columns: 4,
+  },
+  {
+    label: "Data",
+    marks: [databricks, fivetran, boomi],
+  },
+  {
+    label: "Finance and planning",
+    marks: [oneStream, solver, johnGalt],
+    columns: 3,
+  },
+  {
+    label: "Work and guest",
+    marks: [ukg, salesforce, serviceNow, shopify, toast],
+    columns: 3,
+  },
+  {
+    label: "Collaboration",
+    marks: [slack, teams, zoom],
+    columns: 3,
+  },
+  {
+    label: "Item, plant, and market",
+    marks: [
+      worldSync,
+      infios,
+      ignition,
+      brightly,
+      aras,
+      procore,
+      nielsen,
+      vip,
+    ],
+    columns: 4,
+  },
+];
+
+export const ESTATE_APPS: FieldMark[] = ESTATE_APP_GROUPS.flatMap(
+  (group) => group.marks,
+);
+
+export const ITEM_FLAGSHIP: FieldMark[] = [
+  { name: "1WorldSync", src: sys("1worldsync.svg"), includesWord: true },
 ];
 
 export const ITEM_APPS: FieldMark[] = [
@@ -52,35 +243,43 @@ export const RETAIL_APPS: FieldMark[] = [
 ];
 
 export const MARKET_APPS: FieldMark[] = [
-  { name: "Nielsen" },
-  { name: "VIP" },
+  { name: "NielsenIQ" },
+  { name: "Vermont Information Processing" },
   { name: "Power BI" },
-  { name: "Fabric" },
+  { name: "Microsoft Fabric" },
   { name: "Databricks" },
 ];
 
 export const LOGISTICS_APPS: FieldMark[] = [
-  { name: "Infios / Korber" },
-  { name: "HighJump" },
+  { name: "Infios" },
 ];
 
 export const PLANT_APPS: FieldMark[] = [
   { name: "Ignition" },
   { name: "Brightly" },
+  { name: "Aras" },
 ];
 
 export const FRONTIER_MODELS: FieldMark[] = [
-  { name: "Anthropic" },
-  { name: "OpenAI" },
-  { name: "Gemini" },
-  { name: "xAI" },
-  { name: "Kimi" },
+  { name: "Anthropic", src: mod("anthropic.svg") },
+  { name: "OpenAI", src: mod("openai.svg") },
+  { name: "Gemini", src: mod("gemini.svg") },
+  { name: "xAI", src: mod("xai.svg") },
+  { name: "Kimi", src: mod("kimi.svg") },
   { name: "Thinking Machines Lab" },
 ];
 
 export const BUILDER_STACK: FieldMark[] = [
-  { name: "BOSS", src: "/brand/boss/boss-mark.svg" },
-  { name: "The Rig", src: "/brand/rig/mark.svg" },
+  {
+    name: "BOSS",
+    src: "/brand/systems/boss-banner-logo.png",
+    includesWord: true,
+  },
+  {
+    name: "The Rig",
+    src: "/brand/systems/rig-banner-logo.png",
+    includesWord: true,
+  },
   {
     name: "FlowCraft",
     src: "/brand/systems/flowcraft-banner-logo.png",

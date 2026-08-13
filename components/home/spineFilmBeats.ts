@@ -34,13 +34,13 @@ export const BEATS: Beat[] = [
     n: "05",
     chip: "Run",
     label: "Keep running",
-    line: "Transformation while the company still operates - adoption, training, continuous improvement - not go-live theater that leaves the floor holding duct tape.",
+    line: "Transformation while the company still operates - adoption, training, continuous improvement - not go-live theater that hands the floor duct tape.",
   },
   {
     n: "06",
     chip: "Keep",
     label: "What you keep",
-    line: "A living operating asset the business owns - and agents that run under boundaries, human validation, and named owners. Capability transfers. I leave.",
+    line: "A living operating asset the business owns - and agents that run under boundaries, human validation, and named owners. Capability the company can run and extend.",
   },
 ];
 
@@ -63,7 +63,7 @@ export const MOBILE_BEATS: Array<{ beat: number; label: string; line: string }> 
   {
     beat: 6,
     label: "What you keep",
-    line: "A living operating asset the business owns - agents under boundaries, human validation, and named owners. Capability transfers. I leave.",
+    line: "A living operating asset the business owns - agents under boundaries, human validation, and named owners. Capability the company can run and extend.",
   },
 ];
 

@@ -30,6 +30,13 @@
   max-width: 1040px;
 }
 
+/* Same well as the header (logo left, nav right). Not a nested 42rem column. */
+.field-measure {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
 :root {
   --navy: #142840;
   --gold: #FACC15;
@@ -447,7 +454,23 @@ header.header-on-film button {
     seam-rule-breathe 5.5s ease-in-out 1.5s infinite;
 }
 
+@keyframes field-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.field-marquee {
+  animation: field-marquee 42s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .field-marquee {
+    animation: none;
+  }
   .hero-rise {
     animation: none;
     opacity: 1;
