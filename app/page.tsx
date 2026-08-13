@@ -123,10 +123,10 @@ export default function HomePage() {
                 </span>
               </Link>
               <Link
-                href="/work/"
+                href="/transformations/"
                 className="font-brand text-[12.5px] font-bold uppercase tracking-[0.14em] text-porcelain/80 transition-colors hover:text-porcelain"
               >
-                See the work →
+                See transformations →
               </Link>
             </div>
           </div>
@@ -160,10 +160,10 @@ export default function HomePage() {
               </span>
             </Link>
             <Link
-              href="/work/"
+              href="/transformations/"
               className="font-brand text-[12px] font-bold uppercase tracking-[0.14em] text-navy hover:text-navy/70"
             >
-              See the work →
+              See transformations →
             </Link>
           </div>
         </Reveal>

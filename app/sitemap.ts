@@ -7,8 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-07-20");
   return [
     { url: `${base}/`, lastModified, changeFrequency: "monthly", priority: 1.0 },
-    { url: `${base}/work/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/method/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/transformations/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/agentics/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/contact/`, lastModified, changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/faq/`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privacy/`, lastModified, changeFrequency: "yearly", priority: 0.3 },

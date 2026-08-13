@@ -110,7 +110,7 @@ export function HeroCopy({ withRise = true }: { withRise?: boolean }) {
           </span>
         </Link>
         <Link
-          href="/work/"
+          href="/transformations/"
           className="inline-flex items-center justify-center rounded-[3px] border border-porcelain/30 px-6 py-3.5 font-brand text-[12px] font-bold uppercase tracking-[0.15em] text-porcelain transition-colors hover:border-gold hover:text-gold"
         >
           See the work

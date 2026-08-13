@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Retired URL - systems proof lives on The Work. */
+/** Alias → Transformations. */
 export default function SystemsRedirectPage() {
-  permanentRedirect("/work/");
+  permanentRedirect("/transformations/");
 }

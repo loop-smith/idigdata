@@ -104,7 +104,7 @@ const FAQ: QA[] = [
   },
   {
     q: "How do BOSS, The Rig, and FlowCraft relate to idigdata?",
-    a: "Robert engages to turn operating knowledge into living software assets the business can own, govern, operate, and evolve. BOSS, The Rig, and FlowCraft are the delivery architecture and owned leave-behinds behind Applied Agentics. The commercial unit is the engagement and transfer - not metering seats. See idigdata.com/work/.",
+    a: "Robert engages to turn operating knowledge into living software assets the business can own, govern, operate, and evolve. BOSS, The Rig, and FlowCraft are the delivery architecture and owned leave-behinds behind Applied Agentics. The commercial unit is the engagement and transfer - not metering seats. See idigdata.com/transformations/.",
   },
   {
     q: "Does idigdata work with hospitals or medical clinics?",

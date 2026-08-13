@@ -104,7 +104,7 @@ export default function ContactPage() {
       <section className="pt-2 pb-16 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
           <div className="md:col-span-2">
-            <ContactForm showInterestSelect />
+            <ContactForm />
           </div>
 
           <aside className="md:col-span-1">

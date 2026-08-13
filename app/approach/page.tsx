@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Merged into Method 2026-08-09. */
+/** Alias → Transformations. */
 export default function ApproachRedirectPage() {
-  permanentRedirect("/method/");
+  permanentRedirect("/transformations/");
 }

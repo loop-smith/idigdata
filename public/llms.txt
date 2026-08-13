@@ -19,14 +19,14 @@ idigdata is the independent practice of Robert Paddock - a transformational Chie
 
 ## The problem idigdata owns
 
-Enterprise transformation and agentic AI fail for the same reason: nobody owns the whole business system above the vendors. idigdata is the customer-side operator who owns that gap - with BOSS, The Rig, and FlowCraft as receipts and templates on the Work page.
+Enterprise transformation and agentic AI fail for the same reason: nobody owns the whole business system above the vendors. idigdata is the customer-side operator who owns that gap - with BOSS, The Rig, and FlowCraft as receipts on the Agentics page.
 
 ## Primary Pages
 
-- [Home](https://idigdata.com/): ownership kill-shot - film arc, field validation, path to conversation. Systems names live on Work only.
-- [Work](https://idigdata.com/work/): Built · Operated · Proven - BOSS · The Rig · FlowCraft as receipts, scar tissue, enterprise field validation, provenance.
-- [Method](https://idigdata.com/method/): ownership method - people, data, systems, workflows as one job; Applied Agentics nested at /method/#agentics.
-- [Contact](https://idigdata.com/contact/): situations, fit, and first conversation - core transformation, recovery, Applied Agentics on the same seat.
+- [Home](https://idigdata.com/): ownership kill-shot - hook, field validation, path to conversation.
+- [Transformations](https://idigdata.com/transformations/): Built · Operated · Proven - partners, systems, clients, estate receipts. Legacy /work/ redirects here.
+- [Agentics](https://idigdata.com/agentics/): Applied Agentics production path - frontier models with Rig, BOSS, FlowCraft. Legacy /method/ redirects here.
+- [Contact](https://idigdata.com/contact/): situations, fit, and first conversation - Transformations, Agentics, or both.
 
 ## Agent Resources
 
@@ -44,7 +44,7 @@ Enterprise transformation and agentic AI fail for the same reason: nobody owns t
 
 **Model.** Customer-side ownership of a real transformation. Employment mechanics follow the mission; they are not the public product. Exit-by-design.
 
-**Proof hierarchy.** (1) BOSS · The Rig · FlowCraft as present systems (Work). (2) Scar tissue that required them. (3) Enterprise field validation at Sierra Nevada Brewing plus selected idigdata transformation receipts. (4) Thirty-year operator provenance.
+**Proof hierarchy.** (1) BOSS · The Rig · FlowCraft as present systems (Agentics). (2) Scar tissue that required them. (3) Enterprise field validation at Sierra Nevada Brewing plus selected idigdata transformation receipts. (4) Thirty-year operator provenance.
 
 **SNB field validation.** ~$420M operator; $15M transformation portfolio; business-owned function; company-owned data across 50+ systems; enterprise agentic systems in production with training, controls, human validation, named owners; transferred to internal teams. Does not imply the complete current named stack was installed at SNB.
 
