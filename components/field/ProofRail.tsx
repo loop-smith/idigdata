@@ -9,7 +9,7 @@ function slug(value: string) {
 type Props = {
   marks?: FieldMark[];
   markLabel?: string;
-  scene: SceneKind;
+  scene?: SceneKind;
   sceneSrc?: string;
   quote?: string;
 };
@@ -21,16 +21,21 @@ export default function ProofRail({
   sceneSrc,
   quote,
 }: Props) {
+  const hasMarks = Boolean(marks && marks.length > 0);
+  const hasScene = Boolean(scene);
+  const hasQuote = Boolean(quote);
+  if (!hasMarks && !hasScene && !hasQuote) return null;
+
   return (
     <div className="mt-10 space-y-6">
-      {marks && marks.length > 0 ? (
-        <LogoStrip marks={marks} label={markLabel} />
+      {hasMarks ? <LogoStrip marks={marks!} label={markLabel} /> : null}
+      {scene ? (
+        <SceneSlot
+          kind={scene}
+          src={sceneSrc}
+          plateId={`${scene}-${slug(markLabel ?? marks?.[0]?.name ?? "scene")}`}
+        />
       ) : null}
-      <SceneSlot
-        kind={scene}
-        src={sceneSrc}
-        plateId={`${scene}-${slug(markLabel ?? marks?.[0]?.name ?? "scene")}`}
-      />
       {quote ? (
         <blockquote className="border-l-[3px] border-gold pl-4 font-vollkorn text-[18px] font-medium italic leading-snug text-navy md:text-[20px]">
           {quote}

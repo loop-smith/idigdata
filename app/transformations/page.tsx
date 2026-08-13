@@ -5,6 +5,7 @@ import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
 import FieldChamber from "@/components/field/FieldChamber";
 import FieldCta from "@/components/field/FieldCta";
+import FieldJump from "@/components/field/FieldJump";
 import PaleRailsMap from "@/components/field/PaleRailsMap";
 import ProofRail from "@/components/field/ProofRail";
 import {
@@ -99,9 +100,8 @@ export default function TransformationsPage() {
         <ProofRail
           marks={[...MARQUEE_CPG, ...MARQUEE_AEC]}
           markLabel="Operators I have worked alongside"
-          scene="whiteboard"
-          quote="Every circle is a contract I negotiated and a vendor I ran."
         />
+        <FieldJump />
       </section>
 
       <FieldChamber
@@ -145,7 +145,7 @@ export default function TransformationsPage() {
         <ProofRail
           marks={[...ESTATE_APPS, ...PARTNERS]}
           markLabel="Estate command · partners"
-          scene="whiteboard"
+          quote="Every circle is a contract I negotiated and a vendor I ran."
         />
         <ProofFigure
           src="/diagrams/system-verse.svg"
@@ -314,7 +314,6 @@ export default function TransformationsPage() {
             </li>
           ))}
         </ul>
-        <ProofRail marks={PARTNERS} markLabel="Partners on the receipts" scene="meeting" />
       </FieldChamber>
 
       <FieldChamber
@@ -330,7 +329,6 @@ export default function TransformationsPage() {
         <ProofRail
           marks={[...MARQUEE_CPG, ...MARQUEE_AEC]}
           markLabel="CPG · AEC"
-          scene="meeting"
         />
       </FieldChamber>
 

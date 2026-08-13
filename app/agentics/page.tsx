@@ -89,10 +89,7 @@ export default function AgenticsPage() {
           workflows, and operating outcomes. A pilot beside a broken estate is
           still a broken estate.
         </p>
-        <ProofRail
-          scene="workshop"
-          quote="Models are instruments. Ownership is the job."
-        />
+        <ProofRail quote="Models are instruments. Ownership is the job." />
       </section>
 
       <FieldChamber
@@ -143,7 +140,6 @@ export default function AgenticsPage() {
         <ProofRail
           marks={BUILDER_STACK}
           markLabel="Delivery architecture"
-          scene="whiteboard"
         />
       </FieldChamber>
 
@@ -162,10 +158,7 @@ export default function AgenticsPage() {
           a company-owned data platform - with training, controls, and named
           business ownership - not a lab pilot.
         </p>
-        <ProofRail
-          scene="workshop"
-          quote="A pilot beside a broken estate is still a broken estate."
-        />
+        <ProofRail quote="A pilot beside a broken estate is still a broken estate." />
       </FieldChamber>
 
       <FieldChamber title="What the company keeps.">
