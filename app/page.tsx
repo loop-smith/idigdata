@@ -46,7 +46,7 @@ export default function HomePage() {
               "radial-gradient(ellipse 80% 60% at 70% 40%, #D4A017 0%, transparent 55%), radial-gradient(circle at 20% 80%, #2A4A6A 0%, transparent 40%)",
           }}
         />
-        <div className="relative mx-auto grid max-w-content gap-12 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-16 md:py-24 lg:py-28">
+        <div className="relative mx-auto grid max-w-content gap-8 px-6 py-8 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-16 md:py-16 lg:py-20">
           <div>
             <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-brand text-[11.5px] font-semibold uppercase tracking-[0.24em] text-gold">
               {(
@@ -72,28 +72,28 @@ export default function HomePage() {
                 </span>
               ))}
             </p>
-            <h1 className="mt-6 max-w-[16ch] font-brand text-[clamp(34px,5.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain">
+            <h1 className="mt-4 max-w-[16ch] font-brand text-[clamp(30px,5.2vw,56px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-porcelain">
               Digital transformation fails when nobody owns the whole.
             </h1>
-            <p className="mt-6 max-w-[52ch] text-[17.5px] leading-[1.65] text-porcelain/85 md:text-[18px]">
+            <p className="mt-4 max-w-[52ch] text-[16px] leading-[1.5] text-porcelain/85 md:text-[18px] md:leading-[1.65]">
               A company can get the system it asked for and still miss the
               business result. Software can go live while costs, risk,
               workarounds, and dependency move the wrong way. The system is a
               deliverable. The outcome is how the business runs.
             </p>
-            <p className="mt-4 max-w-[52ch] text-[15.5px] leading-[1.6] text-porcelain/70">
+            <p className="mt-3 max-w-[52ch] text-[14.5px] leading-[1.5] text-porcelain/70 md:text-[15.5px] md:leading-[1.6]">
               I take Operating Income (OI) seriously. Technology should protect
               and enable OI while the business keeps running. People, workflows,
               data, integrations, vendors, decisions, and adoption have to work
               as one operating whole.
             </p>
-            <p className="mt-4 max-w-[52ch] text-[15.5px] leading-[1.6] text-porcelain/65">
+            <p className="mt-3 max-w-[52ch] text-[14.5px] leading-[1.5] text-porcelain/65 md:text-[15.5px] md:leading-[1.6]">
               I lead customer-side ERP, business systems, and Applied Agentics
               transformations for $100M-$1B operators. I work from inside the
               company, alongside the people who run it, because transformation
               must be built with the business - not done to it.
             </p>
-            <ul className="mt-8 flex flex-col items-center gap-y-2.5">
+            <ul className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
               {proof.map((chip) => (
                 <li
                   key={chip}
@@ -103,13 +103,13 @@ export default function HomePage() {
                     aria-hidden="true"
                     className="inline-block h-[6px] w-[6px] shrink-0 rotate-45 bg-porcelain/55"
                   />
-                  <span className="font-brand text-[11.5px] font-bold uppercase tracking-[0.12em] text-gold">
+                  <span className="font-brand text-[11px] font-bold uppercase tracking-[0.12em] text-gold md:text-[11.5px]">
                     {chip}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
               <Link
                 href="/contact/"
                 className="group inline-flex items-center justify-center gap-2 rounded-[3px] bg-gold px-8 py-4 font-brand text-[12.5px] font-bold uppercase tracking-[0.15em] text-navy transition-colors hover:bg-[#FFD84D]"
@@ -132,7 +132,6 @@ export default function HomePage() {
           </div>
 
           <HomeDataGlobe />
-          <script src="/js/home-data-globe.js" defer />
         </div>
       </section>
 

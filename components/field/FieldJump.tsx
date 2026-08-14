@@ -1,9 +1,9 @@
 const TRANSFORMATIONS_JUMP = [
   { href: "#estate", label: "Estate" },
+  { href: "#receipts", label: "Receipts" },
   { href: "#walk", label: "Walk" },
   { href: "#items", label: "Items" },
   { href: "#ownership", label: "Ownership" },
-  { href: "#receipts", label: "Receipts" },
 ] as const;
 
 type JumpItem = { href: string; label: string };

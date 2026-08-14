@@ -9,7 +9,13 @@ import FieldJump from "@/components/field/FieldJump";
 import ScanBand from "@/components/field/ScanBand";
 import LogoCarousel from "@/components/field/LogoCarousel";
 import LogoStrip from "@/components/field/LogoStrip";
+import FieldKey from "@/components/field/FieldKey";
 import ProofRail from "@/components/field/ProofRail";
+import {
+  BEEHIVE_SYSTEM_KEY,
+  BPF_KEY,
+  SYSTEMVERSE_KEY,
+} from "@/lib/field/keys";
 import {
   ESTATE_APP_GROUPS,
   MARQUEE_OPERATORS,
@@ -68,15 +74,15 @@ const receipts = [
 const walk = [
   {
     name: "Stakeholder management",
-    job: "Who is in the room, who can halt, who has to live with the result. Embed on the customer side. Authority above vendors and workstreams. Built with the people who run it - not done to them.",
+    job: "Who is in the room, who can halt, who has to live with the result. I embed on the customer side. Authority above vendors and workstreams. Built with the people who run it - not done to them.",
   },
   {
     name: "Program management",
-    job: "The work stays dated, owned, and visible. Hybrid agile and waterfall - from the task list to a roadmap with timelines. Not a PMO slide after kickoff. The bench walks in on day one.",
+    job: "I keep the work dated, owned, and visible. Hybrid agile and waterfall - from the task list to a roadmap with timelines. Not a PMO slide after kickoff. I walk that in on day one.",
   },
   {
     name: "Change management",
-    job: "Adoption is the result, not a workstream parked at the end. Train the people who will run it. The company keeps the next cycle.",
+    job: "Adoption is the result, not a workstream parked at the end. I train the people who will run it. The company keeps the next cycle.",
   },
   {
     name: "Map the work",
@@ -104,14 +110,14 @@ export default function TransformationsPage() {
           </h1>
           <p className="mt-6 font-vollkorn text-[20px] font-medium italic leading-snug text-warm-gray md:text-[22px]">
             The company keeps running. People, data, systems, and workflows
-            become one operating whole. Operating Income stays the scoreboard.
+            become one operating whole. OI stays the scoreboard.
           </p>
           <p className="mt-6 text-[16px] leading-[1.65] text-ink">
-            What you get is a walk-in with a plan: program, stakeholders, and
-            change as a real system - what to standardize, what is actually the
-            sauce, a roadmap with timelines, trained people, vendors as trades.
-            Hire for the transformation. Add Agentics on the same path when the
-            production bar is real. Companies that do both lead.
+            I walk in with a plan: program, stakeholders, and change as a real
+            system - what to standardize, what is actually the sauce, a roadmap
+            with timelines, trained people, vendors as trades. Hire me for the
+            transformation. Add Agentics on the same path when the production
+            bar is real.
           </p>
           <ScanBand
             className="mt-6"
@@ -124,7 +130,7 @@ export default function TransformationsPage() {
         <LogoCarousel
           marks={MARQUEE_OPERATORS}
           label="Operators alongside the work"
-          dek="I sit alongside the people who already run it - not instead of them. Every company has incredible people. We work with those strengths."
+          dek="I sit alongside the people who already run it - not instead of them. Every company has incredible people. I work with those strengths."
           mono
         />
         <FieldJump />
@@ -138,14 +144,13 @@ export default function TransformationsPage() {
         <p className={body}>
           The company keeps one picture of how the estate actually runs - data
           core, ERP, plant, warehouse, guest, commerce, HR, spend, compliance -
-          under one customer-side command. Capability stays inside. Consulting
-          dependency comes down.
+          under one customer-side command. I hold that command. The company
+          keeps the capability.
         </p>
         <p className={`mt-5 ${body}`}>
-          As CIO of Sierra Nevada Brewing (~$420M), that picture was a $15M
-          transformation with more than 150 people in the program. Every major
-          system here was a contract negotiated and a vendor run from the
-          owner seat. Dynamics 365 and Business Central deep; hands-on across
+          As CIO of Sierra Nevada Brewing (~$420M), I ran a $15M estate
+          transformation - more than 150 people, 50+ systems under one
+          command. Dynamics 365 and Business Central deep; hands-on across
           the Field app shelf; peer-literate across SAP / Oracle / NetSuite /
           JDE when the mandate requires it. The production path for agents
           lives on Agentics.
@@ -155,6 +160,9 @@ export default function TransformationsPage() {
           alt="The Systemverse - future-state systems map with a company-owned data core at the center and the application layer around it"
           kicker="The estate picture"
           caption="The Systemverse is the estate picture the company keeps: a governed view of how data, applications, workflows, controls, and ownership fit together."
+          legend={
+            <FieldKey label="Systems" items={SYSTEMVERSE_KEY} />
+          }
         />
         <div className="mt-5">
           <LogoStrip
@@ -170,24 +178,38 @@ export default function TransformationsPage() {
       </FieldChamber>
 
       <FieldChamber
+        id="receipts"
+        kicker="Receipts"
+        title="Selected customer-side receipts"
+      >
+        <ul className="field-measure space-y-3">
+          {receipts.map((line) => (
+            <li
+              key={line}
+              className="border-l-[3px] border-gold pl-4 text-[16px] leading-[1.65] text-ink"
+            >
+              {line}
+            </li>
+          ))}
+        </ul>
+      </FieldChamber>
+
+      <FieldChamber
         id="walk"
         kicker="Uniquely standard"
         title="Best practice where you are standard. Your sauce where you are not."
         tone="pale"
       >
         <p className={body}>
-          Every company thinks it is a snowflake. Every company also wants it
-          simple: what are other companies doing, what is best practice. Most
-          of the estate should look like a well-run peer. A thin slice should
-          not. That slice is how the company makes money. It does not get
-          flattened into someone else's template.
+          Every company thinks it is a snowflake. Every company also wants
+          best practice. Most of the estate should look like a well-run peer.
+          A thin slice should not. That slice is how the company makes money.
         </p>
         <p className={`mt-5 ${body}`}>
-          All companies are uniquely standard. The walk is how that becomes an
-          engagement instead of a discovery theater. Program management,
-          stakeholder management, and change management are not decorations.
-          They are how a 30-year arc shows up on day one: a tool bench that
-          runs hybrid agile and waterfall, from the task to the dated roadmap.
+          I walk that in on day one: map the work, date the roadmap, first
+          owned decision. Program, stakeholders, and change are the system -
+          not decorations. Hybrid agile and waterfall, from the task to a
+          dated roadmap.
         </p>
         <ScanBand
           className="mt-6"
@@ -211,6 +233,16 @@ export default function TransformationsPage() {
           kicker="How work actually moves"
           caption="The Beehive is people and process on the same frame: the flows that run the company crossing the functions that own them."
           fit="contain"
+          legend={
+            <>
+              <FieldKey label="Business process flows" items={BPF_KEY} />
+              <FieldKey
+                className="mt-5"
+                label="Systems"
+                items={BEEHIVE_SYSTEM_KEY}
+              />
+            </>
+          }
         />
       </FieldChamber>
 
@@ -222,9 +254,9 @@ export default function TransformationsPage() {
         <p className={body}>
           Thirty thousand SKUs do not forgive a soft master. Local item
           numbers, global identifiers, schemas that disagree, and trade
-          partners that need one truth. Hands-on 1WorldSync / GDSN-class item
-          discipline - so the warehouse, ERP, commerce, and syndicated world
-          stop arguing about what a thing is.
+          partners that need one truth. I bring hands-on 1WorldSync /
+          GDSN-class item discipline - so the warehouse, ERP, commerce, and
+          the syndicated world stop arguing about what a thing is.
         </p>
       </FieldChamber>
 
@@ -236,34 +268,21 @@ export default function TransformationsPage() {
       >
         <p className={body}>
           Platforms and SIs deliver scope. They do not own the operating
-          result. Someone on the customer side still has to hold people, data,
-          systems, vendors, and adoption as one job through cutover.
+          result. I hold people, data, systems, vendors, and adoption as one
+          job through cutover.
         </p>
         <p className={`mt-5 ${body}`}>
-          Operating Income is the scoreboard. Technology should protect and
-          enable OI while the company keeps running - the expense carve
-          finance can see, and the operating result the business can run.
-          Two of the earliest calls are to finance and control. The roadmap
-          is how strategy becomes execution on the estate. Agentics lands on
-          that roadmap. It does not replace it.
+          OI is the scoreboard. Technology should protect and enable OI while
+          the company keeps running - the expense carve finance can see, and
+          the operating result the business can run. Two of my earliest calls
+          are to finance and control. The roadmap is how strategy becomes
+          execution on the estate. I land Agentics on that roadmap. It does
+          not replace it.
         </p>
         <ProofRail marks={PARTNERS} markLabel="Partners / SI" mono />
       </FieldChamber>
 
-      <FieldChamber id="receipts" title="Selected customer-side receipts">
-        <ul className="field-measure space-y-3">
-          {receipts.map((line) => (
-            <li
-              key={line}
-              className="border-l-[3px] border-gold pl-4 text-[16px] leading-[1.65] text-ink"
-            >
-              {line}
-            </li>
-          ))}
-        </ul>
-      </FieldChamber>
-
-      <FieldChamber title="What the company keeps.">
+      <FieldChamber kicker="Outcome" title="What the company keeps.">
         <p className={body}>
           Mapped workflows. Governed data. Visible delivery state. People able
           to carry the next cycle. The sauce still theirs. The operating

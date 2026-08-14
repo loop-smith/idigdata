@@ -8,9 +8,9 @@
 |---|---|---|
 | **Robert Paddock** | Transformational CIO/CTO; founder/operator of the practice | Not a staffing firm or SaaS vendor |
 | **idigdata** / **Data Integration Group** (DIG LLC) | Public practice / firm brand at idigdata.com | Not a product catalog |
-| **BOSS** | Client-owned transformation twin - workflows, decisions, systems, ownership, delivery state, institutional memory | Not a SaaS seat product |
-| **The Rig** | Governed build and evidence environment across humans and agents | Not a client SKU sold separately |
-| **FlowCraft** | Human-and-agent workflow runtime with explicit state, handoffs, boundaries, validation | Not a rented automation overlay |
+| **BOSS** | Command and control center / digital twin - lessons from every transformation, design workshops to green/green | Not a SaaS seat product |
+| **The Rig** | Agentic builder suite - three years in the builder's seat; template of possibility | Not a SaaS seat product |
+| **FlowCraft** | Ready-made agentic workflow-block builder - helps a company see what its own uniquely standard blocks can look like, through the MDM | Not a rented automation overlay |
 | **Applied Agentics** | Category: people, data, systems, workflows, and agents as one owned production system | Not a lab or tool-tag brand |
 | **The Field** | Public depth: Transformations + Agentics after the Home hook | Not a third nav item |
 

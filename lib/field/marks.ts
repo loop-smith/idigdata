@@ -19,8 +19,10 @@ export type FieldMark = {
   /** True when the lockup already includes the word - do not repeat the name. */
   includesWord?: boolean;
   href?: string;
-  /** Crest / square lockups need more chip height than a wide wordmark. */
-  fit?: "wide" | "mark";
+  /** Crest / square lockups need more chip height than a wide wordmark. Long = extra-wide wordmark, capped so it does not dominate. */
+  fit?: "wide" | "mark" | "long";
+  /** Thin lockups that wash out under grayscale. */
+  ink?: "heavy";
 };
 
 const sys = (file: string) => `/brand/field/systems/${file}`;
@@ -31,7 +33,7 @@ const mod = (file: string) => `/brand/field/models/${file}`;
 export const MARQUEE_CPG: FieldMark[] = [
   {
     name: "Sierra Nevada Brewing",
-    src: op("sierra-nevada.svg"),
+    src: op("sierra-nevada.png"),
     includesWord: true,
   },
   { name: "Duckhorn", src: op("duckhorn.webp"), includesWord: true },
@@ -39,6 +41,7 @@ export const MARQUEE_CPG: FieldMark[] = [
     name: "H.W. Greenham & Sons",
     src: op("greenham.svg"),
     includesWord: true,
+    fit: "long",
   },
   {
     name: "Valley Fine Foods",
@@ -75,7 +78,6 @@ export const MARQUEE_OPERATORS: FieldMark[] = [
     includesWord: true,
   },
   MARQUEE_AEC[1],
-  MARQUEE_CPG[3],
   MARQUEE_CPG[1],
   { name: "MGM Resorts", src: op("mgm-resorts.svg"), includesWord: true },
   MARQUEE_CPG[2],
@@ -108,7 +110,11 @@ const sharePoint: FieldMark = {
   name: "SharePoint",
   src: sys("microsoftsharepoint.svg"),
 };
-const activeDirectory: FieldMark = { name: "Active Directory" };
+const activeDirectory: FieldMark = {
+  name: "Active Directory",
+  src: sys("activedirectory.png"),
+  includesWord: true,
+};
 const slack: FieldMark = {
   name: "Slack",
   src: sys("slack.svg"),
@@ -118,6 +124,7 @@ const zoom: FieldMark = {
   name: "Zoom",
   src: sys("zoom-wordmark.svg"),
   includesWord: true,
+  fit: "long",
 };
 const databricks: FieldMark = { name: "Databricks", src: sys("databricks.svg") };
 const fivetran: FieldMark = {

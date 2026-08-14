@@ -1,7 +1,6 @@
 "use client";
 
-import Script from "next/script";
-import { useId, useMemo } from "react";
+import { useEffect, useId, useMemo } from "react";
 import { estateLabelPool, estateNodesDoc } from "@/lib/home/estateNodes";
 
 /**
@@ -68,6 +67,16 @@ export default function HomeDataGlobe() {
     return { before: m[1], emphasis: m[2], after: m[3] };
   })();
 
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.src = "/js/home-data-globe.js";
+    s.async = true;
+    document.body.appendChild(s);
+    return () => {
+      s.remove();
+    };
+  }, []);
+
   const initial = useMemo(() => {
     const sphere = fibSphere(NODE_COUNT);
     const labels = shuffleLabels(42, LABEL_POOL.length);
@@ -93,11 +102,10 @@ export default function HomeDataGlobe() {
   return (
     <div
       data-hg-root={rootAttr}
-      className="relative mx-auto w-full max-w-[420px] md:max-w-none"
+      className="relative mx-auto mt-2 w-full max-w-[280px] md:mt-0 md:max-w-none"
       aria-label={caption}
       role="img"
     >
-      <Script src="/js/home-data-globe.js" strategy="afterInteractive" />
       <div className="relative aspect-square w-full">
       <svg
         viewBox={`0 0 ${SIZE} ${SIZE}`}

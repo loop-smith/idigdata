@@ -80,22 +80,21 @@ export default function ContactPage() {
           <ContentSection title="What operating problem needs to be owned?">
             <p>
               I take on core transformation and recovery. Applied Agentics
-              belongs inside that same ownership mandate when the production
-              path is real.
+              rides the same seat - hire for one or both.
             </p>
           </ContentSection>
 
           <ContentSection title="Accountability stays in one place.">
             <p>
-              I remain accountable for the operating result across platforms,
+              I stay accountable for the operating result across platforms,
               vendors, workstreams, and adoption.
             </p>
           </ContentSection>
 
           <ContentSection title="Where I fit best">
             <p>
-              $100M-$1B operators, with CPG and AEC first and relevant
-              experience across adjacent operating environments.
+              I fit $100M-$1B operators best - CPG and AEC first, with
+              relevant experience across adjacent operating environments.
             </p>
           </ContentSection>
         </div>
@@ -143,12 +142,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-stone/40 pb-20 pt-10">
-        <p className="max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          If your company needs a real transformation owned from inside the
-          business, let&apos;s talk.
-        </p>
-      </section>
     </div>
   );
 }

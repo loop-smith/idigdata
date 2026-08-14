@@ -328,8 +328,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           id={messageHelpId}
           className="mt-1.5 font-body text-[13px] text-warm-gray"
         >
-          The real operating problem - shape, stakes, constraints. We shape the
-          mandate from there.
+          The real operating problem in your own words. We take it from there.
         </p>
       </div>
 

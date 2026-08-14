@@ -37,9 +37,15 @@ function Chip({
       <img
         src={mark.src}
         alt={mark.includesWord ? mark.name : ""}
-        className={`h-7 w-auto max-w-[10.5rem] object-contain ${
-          fill ? "object-center" : "object-left"
-        } ${mono ? "grayscale contrast-150" : ""}`}
+        className={`w-auto object-contain ${
+          mark.fit === "mark"
+            ? "h-7 max-w-[5.75rem]"
+            : mark.fit === "long"
+              ? "h-6 max-w-[5.75rem]"
+              : "h-7 max-w-[10.5rem]"
+        } ${fill ? "object-center" : "object-left"} ${
+          mono ? "grayscale contrast-150" : ""
+        }`}
       />
       {mark.includesWord ? null : (
         <span className="font-brand text-[11px] font-semibold uppercase tracking-[0.12em] text-navy">
