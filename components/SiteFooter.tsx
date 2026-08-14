@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PRIMARY_NAV } from "@/lib/nav";
+import OrgAdminLink from "@/components/OrgAdminLink";
 
 const NAV = PRIMARY_NAV;
 
@@ -69,12 +70,15 @@ export default function SiteFooter() {
             <p className="font-body text-[12.5px] text-porcelain/40">
               © idigdata · Data Integration Group · est. 2016
             </p>
-            <Link
-              href="/privacy/"
-              className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
-            >
-              Privacy
-            </Link>
+            <div className="flex items-center gap-4">
+              <OrgAdminLink />
+              <Link
+                href="/privacy/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                Privacy
+              </Link>
+            </div>
           </div>
           <p className="mt-4 max-w-[62ch] font-body text-[11.5px] leading-relaxed text-porcelain/35">
             All product names, logos, and brands are property of their
