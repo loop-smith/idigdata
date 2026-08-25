@@ -50,9 +50,8 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
           entrance event for operating this practice: path, time, referrer,
           basic device/browser signals, optional UTM / click-id parameters
           (also kept in a short first-party attribution cookie), and coarse
-          host location (country / region / city). We store a{" "}
-          <span className="font-semibold text-ink">hashed</span> visitor IP
-          fingerprint - not the raw address - plus a small allowlisted set of
+          host location (country / region / city). We store a keyed HMAC of the
+          visitor IP - not the raw address - plus a small allowlisted set of
           request metadata (for example accept-language and fetch-site). We do
           not keep precise latitude/longitude or full proxy header dumps.
         </p>

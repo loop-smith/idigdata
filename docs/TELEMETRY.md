@@ -25,10 +25,9 @@ Clear: `?clear_internal=1`, `?clear_fleet=1`, `?clear_attr=1`.
 
 ## PII posture (door-knock)
 
-- IP stored as salted SHA-256 prefix (`h:…`), not raw
+- IP stored as HMAC-SHA-256 prefix (`h:…`) using `DIGOPS_IP_HASH_SALT`. No raw IP. If the secret is unset, the fingerprint is skipped.
 - Coarse geo only (country / region / city) — no lat/long
 - `headers_json` allowlist excludes IP / forwarded / ray ids
-- Optional salt: `DIGOPS_IP_HASH_SALT`
 
 ## Rate limits
 
