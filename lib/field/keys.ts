@@ -28,6 +28,15 @@ export const BEEHIVE_SYSTEM_KEY: FieldKeyItem[] = [
   { code: "IT/IS", name: "Information Technology / Information Systems" },
 ];
 
+/** Applied Agentics path. Spoken method, not a product SKU. */
+export const AGENTICS_METHOD: FieldKeyItem[] = [
+  { code: "01", name: "Train" },
+  { code: "02", name: "Deploy" },
+  { code: "03", name: "Monitor" },
+  { code: "04", name: "Govern" },
+  { code: "05", name: "Adopt" },
+];
+
 /** Acronyms on the Systemverse ring and data core, clockwise from PLM. */
 export const SYSTEMVERSE_KEY: FieldKeyItem[] = [
   { code: "PLM", name: "Product Lifecycle Management" },

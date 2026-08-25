@@ -17,7 +17,7 @@ export default function NotFound() {
       </h1>
       <p className="mt-4 max-w-xl font-body text-[17px] leading-relaxed text-warm-gray">
         The URL may be old, mistyped, or never existed. Known routes live under
-        Home, Transformations, Agentics, and Contact.
+        Home, Application layer, Agentic layer, and Contact.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link

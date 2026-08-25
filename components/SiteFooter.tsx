@@ -6,7 +6,7 @@ const NAV = PRIMARY_NAV;
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-porcelain/10 bg-navy-deep text-porcelain">
-      <div className="mx-auto max-w-content px-6 pt-14 pb-10">
+      <div className="page-well pt-14 pb-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
@@ -69,12 +69,20 @@ export default function SiteFooter() {
             <p className="font-body text-[12.5px] text-porcelain/40">
               © idigdata · Data Integration Group · est. 2016
             </p>
-            <Link
-              href="/privacy/"
-              className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
-            >
-              Privacy
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/faq/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/privacy/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                Privacy
+              </Link>
+            </div>
           </div>
           <p className="mt-4 max-w-[62ch] font-body text-[11.5px] leading-relaxed text-porcelain/35">
             All product names, logos, and brands are property of their

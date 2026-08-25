@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Lora, Source_Sans_3, Vollkorn } from "next/font/google";
+import { Lora, Source_Sans_3, Vollkorn } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -23,12 +23,6 @@ const body = Source_Sans_3({
   weight: ["400", "500", "600", "700"],
 });
 
-const brand = Bricolage_Grotesque({
-  subsets: ["latin"],
-  variable: "--next-font-brand",
-  display: "swap",
-});
-
 const vollkorn = Vollkorn({
   subsets: ["latin"],
   variable: "--next-font-vollkorn",
@@ -40,12 +34,11 @@ const vollkorn = Vollkorn({
 export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
-    default:
-      "Robert Paddock · Transformational CIO/CTO | idigdata",
+    default: "Robert Paddock · Transformational CIO | idigdata",
     template: "%s | idigdata",
   },
   description:
-    "Customer-side enterprise transformation and Applied Agentics - modernize the core, put agents into production, keep the business in control.",
+    "Your transformation gets an owner. Both layers, application and agentic, while the business keeps running.",
   alternates: {
     canonical: "/",
     types: {
@@ -66,15 +59,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "Robert Paddock · Transformational CIO/CTO | idigdata",
+    title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Customer-side ownership across people, data, systems, and vendors - with Applied Agentics on the same layer.",
+      "Your transformation gets an owner. You keep what we build. The plant stays up.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Robert Paddock - Transformational CIO/CTO, idigdata",
+        alt: "Robert Paddock - Transformational CIO, idigdata",
       },
     ],
   },
@@ -107,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable} ${brand.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable}`}>
       <body className="font-body text-ink bg-cream">
         <JsonLd />
         <SiteHeader />

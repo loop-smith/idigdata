@@ -109,8 +109,8 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   }
 
   const inputClasses =
-    "w-full bg-white text-ink font-body text-[16px] px-3 py-3 border border-stone/60 focus:outline-none focus:border-navy focus:border-2 focus:px-[11px] focus:py-[11px] transition-colors";
-  const labelClasses = "block font-body text-[14px] text-ink mb-1.5";
+    "w-full bg-paper text-ink font-body text-[16px] px-3 py-3 border border-navy/15 focus:outline-none focus:border-navy focus:border-2 focus:px-[11px] focus:py-[11px] transition-colors";
+  const labelClasses = "block font-vollkorn text-[14px] font-bold text-navy mb-1.5";
 
   if (status === "success" || status === "recorded") {
     return (
@@ -311,7 +311,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
 
       <div>
         <label htmlFor={messageId} className={labelClasses}>
-          What brings you?{" "}
+          The operating problem{" "}
           <span className="text-warm-gray text-[13px]">(optional)</span>
         </label>
         <textarea
@@ -336,9 +336,13 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 rounded-[3px] bg-navy px-8 py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.18em] text-cream transition-colors hover:bg-aubergine focus:outline-2 focus:outline-offset-2 focus:outline-stone disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center gap-2.5 rounded-[2px] bg-navy px-7 py-3.5 font-vollkorn text-[15px] font-bold tracking-[0.04em] text-porcelain hover:bg-navy-deep focus:outline-2 focus:outline-offset-2 focus:outline-navy disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Sending…" : "Start a conversation"}
+          <span
+            aria-hidden="true"
+            className="inline-block h-[7px] w-[7px] bg-gold"
+          />
+          {status === "submitting" ? "Sending…" : "Bring the problem"}
         </button>
       </div>
     </form>
