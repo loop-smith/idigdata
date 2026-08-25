@@ -7,7 +7,7 @@ const NAV = PRIMARY_NAV;
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-porcelain/10 bg-navy-deep text-porcelain">
-      <div className="mx-auto max-w-content px-6 pt-14 pb-10">
+      <div className="page-well pt-14 pb-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
@@ -72,6 +72,12 @@ export default function SiteFooter() {
             </p>
             <div className="flex items-center gap-4">
               <OrgAdminLink />
+              <Link
+                href="/faq/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                FAQ
+              </Link>
               <Link
                 href="/privacy/"
                 className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"

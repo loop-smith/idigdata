@@ -1,29 +1,14 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import M4Watermark from "@/components/M4Watermark";
-import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
+import HaloFilm from "@/components/presence/HaloFilm";
+import PresenceShell from "@/components/presence/PresenceShell";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: { absolute: "Contact | idigdata" },
   description:
-    "Start a direct conversation with Robert Paddock about a real transformation to own.",
+    "Bring the real operating problem. Permanent or fractional. The ownership standard does not change.",
   alternates: { canonical: "/contact/" },
-  openGraph: {
-    type: "website",
-    url: "https://idigdata.com/contact/",
-    title: "Contact | idigdata",
-    description:
-      "Start a direct conversation with Robert Paddock about a real transformation to own.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "idigdata - Contact",
-      },
-    ],
-  },
 };
 
 const breadcrumbJsonLd = {
@@ -31,104 +16,69 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
-    { "@type": "ListItem", position: 2, name: "Contact", item: "https://idigdata.com/contact/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: "https://idigdata.com/contact/",
+    },
   ],
 };
 
-function ContentSection({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="border-t border-stone/40 pt-8 first:border-t-0 first:pt-0">
-      <h2 className="font-vollkorn font-bold text-navy text-[26px] md:text-[30px] leading-tight tracking-tight">
-        {title}
-      </h2>
-      <div className="mt-4 space-y-4 font-body text-[15px] md:text-[16px] text-ink leading-relaxed">
-        {children}
-      </div>
-    </div>
-  );
-}
-
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-content px-6">
+    <PresenceShell>
       <JsonLdScript data={breadcrumbJsonLd} />
-
-      <section className="relative pt-20 pb-10 md:pt-24 md:pb-12">
-        <M4Watermark position="top-right" />
-        <SectionKicker className="mb-5">Contact</SectionKicker>
-        <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Bring the real operating problem.
-        </h1>
-        <p className="mt-5 max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          If your company needs a real transformation owned from inside the
-          business, let&apos;s talk.
-        </p>
-        <p className="mt-4 max-w-[760px] font-body text-[15px] leading-relaxed text-ink">
-          Come with the real problem - shape, stakes, constraints. We will know
-          quickly if I am the fit.
-        </p>
-      </section>
-
-      <section className="pb-12 md:pb-16">
-        <div className="max-w-[760px] space-y-8">
-          <ContentSection title="What operating problem needs to be owned?">
+      <header className="p-section p-section--hire">
+        <div className="page-well">
+          <p className="p-kicker">Contact</p>
+          <h1 className="p-h1">Bring the real operating problem.</h1>
+          <p className="p-dek">
+            Come with the shape, the stakes, and the constraints. We will know
+            quickly if I am the fit.
+          </p>
+          <div className="p-lead">
             <p>
-              I take on core transformation and recovery. Applied Agentics
-              rides the same seat - hire for one or both.
+              I take on the application layer, the agentic layer, or both. One
+              owner. Permanent or fractional embed. The ownership standard does
+              not change.
             </p>
-          </ContentSection>
-
-          <ContentSection title="Accountability stays in one place.">
             <p>
-              I stay accountable for the operating result across platforms,
-              vendors, workstreams, and adoption.
+              Built for enterprise and mid-market operators ($100M–$1B+) focused
+              on protecting and expanding Operating Income.
             </p>
-          </ContentSection>
-
-          <ContentSection title="Where I fit best">
-            <p>
-              I fit $100M-$1B operators best - CPG and AEC first, with
-              relevant experience across adjacent operating environments.
-            </p>
-          </ContentSection>
-        </div>
-      </section>
-
-      <section className="pt-2 pb-16 md:pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          <div className="md:col-span-2">
-            <ContactForm />
           </div>
+        </div>
+      </header>
 
-          <aside className="md:col-span-1">
-            <div className="border-t border-navy pt-6 space-y-3">
-              <p className="font-body uppercase tracking-section text-[12px] text-warm-gray">
+      <section className="p-section p-section--job">
+        <div className="page-well">
+          <p className="p-kicker">The note</p>
+          <h2 className="p-h2">Write it in your own words.</h2>
+          <p className="p-prose">
+            If the fit is wrong, I will say so plainly. If the mandate is real,
+            we will know the next useful step.
+          </p>
+          <div className="form-grid">
+            <ContactForm />
+            <aside>
+              <p className="font-vollkorn text-[16px] font-bold text-navy">
                 Direct
               </p>
-              <p className="font-body text-[16px] text-ink leading-relaxed">
+              <p className="mt-3 text-[16px] leading-[1.65]">
                 Pacific Time
                 <br />
                 <a
                   href="mailto:robert@idigdata.com"
-                  className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                  className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
                 >
                   robert@idigdata.com
                 </a>
               </p>
-              <p className="font-body text-[14px] text-warm-gray leading-relaxed">
-                If the fit is wrong, I will say so plainly. If the mandate is
-                real, we will know the next useful step.
-              </p>
-              <p className="font-body text-[14px] text-warm-gray leading-relaxed pt-2">
+              <p className="mt-4 text-[15px] leading-[1.65]">
                 <a
                   href="https://www.linkedin.com/in/robertpaddock"
-                  className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                  className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -137,11 +87,38 @@ export default function ContactPage() {
                 {" · "}
                 Robert Paddock
               </p>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 
-    </div>
+      <section className="p-section" style={{ borderBottom: 0 }}>
+        <div className="page-well">
+          <div className="lastmove-plate">
+            <HaloFilm
+              src="/media/threshold-loop.mp4?c=1"
+              poster="/media/threshold-poster.png?c=1"
+              label="One real problem crosses the threshold and lands with an owner."
+              size={220}
+            />
+            <div>
+              <p className="font-vollkorn text-[13px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                Direct
+              </p>
+              <h3 className="mt-1 font-vollkorn text-[clamp(24px,3vw,32px)] font-extrabold text-navy">
+                You speak with the person who does the work.
+              </h3>
+              <p className="mt-3 text-[17px] leading-[1.65]">
+                No account executives, no junior bench, no pitch decks. One
+                real problem lands with an accountable owner.
+              </p>
+              <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
+                Pacific Time
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </PresenceShell>
   );
 }

@@ -58,31 +58,86 @@ export const MARQUEE_AEC: FieldMark[] = [
     name: "PCL Construction",
     src: op("pcl.svg"),
     includesWord: true,
+    fit: "mark",
+    ink: "heavy",
   },
 ];
 
-/** Mixed types on purpose - CPG, AEC, food, wine, hospitality, sport. Not a clump. */
+const EVERYTABLE: FieldMark = {
+  name: "Everytable",
+  src: op("everytable.svg"),
+  includesWord: true,
+};
+const FOLEY: FieldMark = {
+  name: "Foley Family Wine & Spirits",
+  src: op("foley-family-wines.png"),
+  includesWord: true,
+};
+const MGM: FieldMark = {
+  name: "MGM Resorts",
+  src: op("mgm-resorts.svg"),
+  includesWord: true,
+};
+const SHARKS: FieldMark = {
+  name: "San Jose Sharks",
+  src: op("san-jose-sharks-wordmark.png"),
+  includesWord: true,
+};
+const WYNN: FieldMark = {
+  name: "Wynn Resorts",
+  src: op("wynn-resorts.svg"),
+  includesWord: true,
+  fit: "wide",
+  ink: "heavy",
+};
+const HCA: FieldMark = {
+  name: "HCA Healthcare",
+  src: op("hca-healthcare.svg"),
+  includesWord: true,
+};
+
+export const MARQUEE_HOSPITALITY: FieldMark[] = [MGM, WYNN, HCA, SHARKS];
+
+/** Mixed types - CPG, AEC, food, wine, sports and entertainment, healthcare. */
 export const MARQUEE_OPERATORS: FieldMark[] = [
   MARQUEE_CPG[0],
   MARQUEE_AEC[0],
-  { name: "Everytable", src: op("everytable.svg"), includesWord: true },
+  EVERYTABLE,
   MARQUEE_AEC[2],
-  {
-    name: "Foley Family Wine & Spirits",
-    src: op("foley-family-wines.png"),
-    includesWord: true,
-  },
-  {
-    name: "San Jose Sharks",
-    src: op("san-jose-sharks-wordmark.png"),
-    includesWord: true,
-  },
+  FOLEY,
+  SHARKS,
   MARQUEE_AEC[1],
   MARQUEE_CPG[1],
-  { name: "MGM Resorts", src: op("mgm-resorts.svg"), includesWord: true },
+  MGM,
   MARQUEE_CPG[2],
-  { name: "Wynn Resorts", src: op("wynn-resorts.svg"), includesWord: true },
+  WYNN,
   MARQUEE_AEC[3],
+];
+
+/** Labeled board for the application-layer hang. Same two-tone lockups. */
+export const MARQUEE_OPERATOR_GROUPS: FieldMarkGroup[] = [
+  {
+    label: "CPG, wine, and food",
+    marks: [
+      MARQUEE_CPG[0],
+      MARQUEE_CPG[1],
+      FOLEY,
+      MARQUEE_CPG[2],
+      MARQUEE_CPG[3],
+      EVERYTABLE,
+    ],
+    columns: 3,
+  },
+  {
+    label: "Architecture and construction",
+    marks: MARQUEE_AEC,
+    columns: 4,
+  },
+  {
+    label: "Sports, entertainment, and healthcare",
+    marks: MARQUEE_HOSPITALITY,
+    columns: 4,
+  },
 ];
 
 export const PARTNERS: FieldMark[] = [
@@ -213,23 +268,14 @@ export const ESTATE_APP_GROUPS: FieldMarkGroup[] = [
     columns: 4,
   },
   {
-    label: "Data",
-    marks: [databricks, fivetran, boomi],
-  },
-  {
-    label: "Finance and planning",
-    marks: [oneStream, solver, johnGalt],
+    label: "Data and finance",
+    marks: [databricks, fivetran, boomi, oneStream, solver, johnGalt],
     columns: 3,
   },
   {
-    label: "Work and guest",
-    marks: [ukg, salesforce, serviceNow, shopify, toast],
-    columns: 3,
-  },
-  {
-    label: "Collaboration",
-    marks: [slack, teams, zoom],
-    columns: 3,
+    label: "Work, guest, and collaboration",
+    marks: [ukg, salesforce, serviceNow, shopify, toast, slack, teams, zoom],
+    columns: 4,
   },
   {
     label: "Item, plant, and market",
@@ -241,7 +287,7 @@ export const ESTATE_APP_GROUPS: FieldMarkGroup[] = [
       aras,
       procore,
       nielsen,
-      vip,
+      { ...vip, fit: "mark" },
     ],
     columns: 4,
   },

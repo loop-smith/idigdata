@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Alias → Transformations. */
+/** Alias → Application layer. */
 export default function SystemsRedirectPage() {
-  permanentRedirect("/transformations/");
+  permanentRedirect("/application-layer/");
 }

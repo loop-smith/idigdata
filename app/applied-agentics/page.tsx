@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Alias → Agentics. */
+/** Alias → Agentic layer. */
 export default function AppliedAgenticsRedirectPage() {
-  permanentRedirect("/agentics/");
+  permanentRedirect("/agentic-layer/");
 }

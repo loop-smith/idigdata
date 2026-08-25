@@ -7,8 +7,7 @@ import { PRIMARY_NAV } from "@/lib/nav";
 
 const NAV = PRIMARY_NAV;
 
-function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
-  const ink = onFilm ? "#F7F5EE" : "#142840";
+function HeaderWordmark() {
   return (
     <svg
       viewBox="0 0 620 130"
@@ -21,7 +20,7 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
       <text
         x="322"
         y="100"
-        fill={ink}
+        fill="#142840"
         textAnchor="end"
         letterSpacing="-1"
         style={{
@@ -36,7 +35,7 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
       <text
         x="346"
         y="100"
-        fill={ink}
+        fill="#142840"
         textAnchor="start"
         letterSpacing="-1"
         style={{
@@ -54,30 +53,8 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [onFilm, setOnFilm] = useState(false);
 
-  useEffect(() => {
-    // Desktop + mobile each render a film surface; only one is display:block
-    // per breakpoint. Observe all so the cream header never sits on navy.
-    const films = document.querySelectorAll("[data-film-active]");
-    if (films.length === 0) {
-      setOnFilm(false);
-      return;
-    }
-    const visible = new Set<Element>();
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) visible.add(entry.target);
-          else visible.delete(entry.target);
-        }
-        setOnFilm(visible.size > 0);
-      },
-      { threshold: 0.05 }
-    );
-    films.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, [pathname]);
+  const path = (pathname ?? "/").replace(/\/+$/, "") || "/";
 
   useEffect(() => {
     if (!open) return;
@@ -102,31 +79,24 @@ export default function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname?.startsWith(href);
+  const isActive = (href: string) => {
+    const target = href.replace(/\/+$/, "") || "/";
+    return target === "/" ? path === "/" : path === target || path.startsWith(`${target}/`);
+  };
 
   return (
-    <header
-      className={`relative sticky top-0 z-40 border-b backdrop-blur-md transition-colors duration-300 ${
-        onFilm
-          ? "header-on-film border-porcelain/15"
-          : "border-navy/10 bg-cream/85"
-      }`}
-    >
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:py-5">
+    <header className="relative sticky top-0 z-40 border-b border-navy/10 bg-cream/85 backdrop-blur-md">
+      <div className="page-well flex items-center justify-between py-4 md:py-5">
         <Link
           href="/"
           className="flex items-center"
           aria-label="idigdata - home"
         >
-          <HeaderWordmark onFilm={onFilm} />
+          <HeaderWordmark />
         </Link>
 
-        {/* Desktop nav (md and up) */}
         <nav
-          className={`hidden items-center gap-8 font-body text-[14.5px] md:flex ${
-            onFilm ? "text-porcelain" : "text-navy"
-          }`}
+          className="hidden items-center gap-8 font-vollkorn text-[15px] font-semibold text-navy md:flex"
           aria-label="Primary"
         >
           {NAV.map((item) => {
@@ -137,13 +107,9 @@ export default function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={`nav-underline transition-colors ${
-                  onFilm
-                    ? active
-                      ? "font-semibold text-porcelain"
-                      : "text-porcelain/75 hover:text-porcelain"
-                    : active
-                      ? "font-semibold text-navy"
-                      : "text-navy/75 hover:text-navy"
+                  active
+                    ? "font-semibold text-navy"
+                    : "text-navy/75 hover:text-navy"
                 }`}
               >
                 {item.label}
@@ -161,9 +127,7 @@ export default function SiteHeader() {
           }}
         >
           <summary
-            className={`-mr-2 inline-flex h-11 w-11 cursor-pointer list-none items-center justify-center marker:content-none focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden ${
-              onFilm ? "text-porcelain" : "text-navy"
-            }`}
+            className="-mr-2 inline-flex h-11 w-11 cursor-pointer list-none items-center justify-center text-navy marker:content-none focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
           >
             <svg
@@ -207,7 +171,7 @@ export default function SiteHeader() {
             className="absolute left-0 right-0 top-full z-30 border-b border-navy/15 bg-cream shadow-lg"
             aria-label="Primary"
           >
-            <ul className="mx-auto flex max-w-content flex-col px-6 py-4">
+            <ul className="page-well flex flex-col py-4">
               {NAV.map((item) => {
                 const active = isActive(item.href);
                 return (

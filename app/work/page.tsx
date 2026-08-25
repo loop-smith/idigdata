@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Legacy route — permanent home is /transformations/. */
+/** Legacy route — public name is Application layer. */
 export default function WorkRedirectPage() {
-  permanentRedirect("/transformations/");
+  permanentRedirect("/application-layer/");
 }

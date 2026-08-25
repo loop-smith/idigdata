@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Digital change fails when nobody owns the whole. Customer-side enterprise transformation with Applied Agentics on the same layer - own the change inside the business, capability the company can run and extend. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic.",
+    "idigdata is the independent practice of transformational CIO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Both layers under one owner: the application layer that keeps the business running, and Enterprise-Agentics the company owns. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -25,7 +25,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Transformational CIO/CTO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 enterprise transformations at scale; embeds and installs a business-owned operating asset the company can run and extend. Recent CIO residency: Sierra Nevada Brewing (~$420M).",
+    "Transformational CIO and founder of idigdata. Owns delivery on both layers: the application estate and Enterprise-Agentics in production. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 full transformations; recent CIO residency at Sierra Nevada Brewing (~$420M).",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
@@ -34,7 +34,7 @@ const personSchema = {
   },
   knowsAbout: [
     "Business transformation",
-    "Transformational CIO/CTO leadership",
+    "Transformational CIO leadership",
     "Legacy ERP modernization",
     "Enterprise resource planning (ERP)",
     "Warehouse management system (WMS)",
@@ -55,6 +55,8 @@ const personSchema = {
     "Architecture-engineering-construction (AEC)",
     "Beverage consumer packaged goods (CPG)",
     "Wellness and fitness operations",
+    "Healthcare operations",
+    "Electronic medical records (EMR)",
     "Hospitality and gaming operations",
     "Fintech banking and POS integration",
   ],
