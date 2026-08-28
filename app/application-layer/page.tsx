@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PresenceShell from "@/components/presence/PresenceShell";
 import HaloFilm from "@/components/presence/HaloFilm";
+import ConstellationsFilm from "@/components/presence/ConstellationsFilm";
+import BeehiveFilm from "@/components/presence/BeehiveFilm";
 
 export const metadata: Metadata = {
   title: { absolute: "Application layer | idigdata" },
@@ -133,6 +135,45 @@ const estate = [
   },
 ] as const;
 
+const constellations = [
+  {
+    code: "P2P",
+    name: "Procure to Pay",
+    tagline: "Inbound value chain",
+    desc: "Supplier lifecycle, purchase requisitions, PO dispatch, three-way matching, receiving, and accounts payable.",
+  },
+  {
+    code: "O2C",
+    name: "Order to Cash",
+    tagline: "Outbound value chain",
+    desc: "Customer master, pricing engines, order entry, depletions, fulfillment, billing, and accounts receivable.",
+  },
+  {
+    code: "P2M",
+    name: "Plan to Manufacture",
+    tagline: "Transformation core",
+    desc: "Demand planning (S&OP), MRP, BOMs, plant SCADA/MES automation, scheduling, and batch traceability.",
+  },
+  {
+    code: "S2S",
+    name: "Systems that Support",
+    tagline: "ERP + HR",
+    desc: "The ERP side and the HR side. ERP runs all three primaries; HR/HCM is the people side none of those chains own. IT, cybersecurity, and productivity span with them.",
+  },
+  {
+    code: "D2R",
+    name: "Data to Report",
+    tagline: "Analytics + awareness",
+    desc: "Corporate planning, executive BI, financial consolidation, margin telemetry, and statutory reporting. Every enterprise has this — the old record-to-report spine, widened to the data that steers the company.",
+  },
+  {
+    code: "MDM",
+    name: "Master Data Management",
+    tagline: "Cross-cutting foundation",
+    desc: "Item master, customer master, vendor master, chart of accounts, and governance across the estate. The missing link I keep finding on transformations.",
+  },
+] as const;
+
 export default function ApplicationLayerPage() {
   return (
     <PresenceShell>
@@ -163,38 +204,117 @@ export default function ApplicationLayerPage() {
 
       <section className="p-section p-section--job">
         <div className="page-well">
-          <p className="p-kicker">The Systemverse</p>
-          <h2 className="p-h2">Named systems. Customer-side command.</h2>
-          <p className="p-prose">
-            Dynamics 365 and Business Central deep. Hands-on across the estate.
-            I run SAP, Oracle, NetSuite, and JDE from the customer side when
-            the mandate requires it.
+          <p className="p-kicker">Core Architecture</p>
+          <h2 className="p-h2">All companies are uniquely standard.</h2>
+          <p className="mt-4 font-vollkorn text-[20px] italic leading-[1.45]">
+            Best practice where you are standard. Your sauce where you are not.
+            The work is knowing which is which, then anchoring the systems and
+            processes to a sovereign company core.
           </p>
-          <div className="command-plate">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/diagrams/system-verse.svg"
-              alt="The Systemverse: company-owned data core at the center, systems around it"
-            />
-            <div className="telemetry-badge">
-              <HaloFilm
-                src="/media/systemverse-loop.mp4?c=2"
-                poster="/media/systemverse-poster.png?c=2"
-                label="Systemverse telemetry loop"
-                size={80}
-              />
-              <div>
-                <p className="font-vollkorn text-[14px] font-bold text-navy">
-                  The estate picture, live
+          <p className="p-prose mt-4">
+            Most of the estate should look like a well-run peer. A thin slice
+            should not. That slice is what makes the company distinct.
+          </p>
+          <p className="p-prose mt-4">
+            Whether an operator runs four platforms or fourteen, the application
+            layer comes down to two structural slices of the same core: the
+            systems that run the estate (The Systemverse) and the universal
+            business process value chains that route through them (The Six
+            Constellations).
+          </p>
+
+          <div className="twin-command-grid">
+            {/* Left Column: The Systemverse (The Systems Slice) */}
+            <div className="command-plate">
+              <div className="mb-3 text-left">
+                <p className="font-vollkorn text-[17px] font-bold text-navy">
+                  I. The Systemverse
                 </p>
-                <p className="mt-1 text-[14px] text-[#243345]">
-                  Gold routes from the data core to the systems that run the work.
+                <p className="text-[13px] text-[#5A6978]">
+                  Named systems · customer-side command
                 </p>
               </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/diagrams/system-verse.svg"
+                alt="The Systemverse: company-owned data core at the center, systems around it"
+              />
+              <div className="telemetry-badge">
+                <HaloFilm
+                  src="/media/systemverse-loop.mp4?c=2"
+                  poster="/media/systemverse-poster.png?c=2"
+                  label="Systemverse telemetry loop"
+                  size={72}
+                />
+                <div>
+                  <p className="font-vollkorn text-[13.5px] font-bold text-navy">
+                    The estate picture, live
+                  </p>
+                  <p className="mt-0.5 text-[13px] text-[#243345]">
+                    Gold routes from the data core to the systems that run the
+                    work.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="mt-4 font-display text-[15.5px] italic text-warm-gray">
-              The estate picture: data, applications, workflows, and ownership
-              as one view.
+
+            {/* Right Column: The Six Process Constellations (The Workflow Slice) */}
+            <div className="command-plate">
+              <div className="mb-3 text-left">
+                <p className="font-vollkorn text-[17px] font-bold text-navy">
+                  II. The Six Constellations
+                </p>
+                <p className="text-[13px] text-[#5A6978]">
+                  Universal process frame · bespoke fill
+                </p>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/diagrams/six-constellations.svg"
+                alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core"
+              />
+              <div className="telemetry-badge">
+                <ConstellationsFilm size={72} />
+                <div>
+                  <p className="font-vollkorn text-[13.5px] font-bold text-navy">
+                    The process telemetry, live
+                  </p>
+                  <p className="mt-0.5 text-[13px] text-[#243345]">
+                    Transactions route through the six universal constellations
+                    to the sovereign core.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="constellations-grid mt-10">
+            {constellations.map((c) => (
+              <article key={c.code} className="constellation-card">
+                <div className="flex items-baseline justify-between gap-2 border-b border-[#142840]/10 pb-2">
+                  <span className="font-vollkorn text-[20px] font-black text-navy">
+                    {c.code}
+                  </span>
+                  <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                    {c.tagline}
+                  </span>
+                </div>
+                <h3 className="mt-3 font-vollkorn text-[16px] font-bold text-navy">
+                  {c.name}
+                </h3>
+                <p className="mt-2 text-[14.5px] leading-[1.55] text-[#334155]">
+                  {c.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 border-l-2 border-[#FACC15] pl-4">
+            <p className="text-[15.5px] italic leading-[1.6] text-[#475569]">
+              The Systemverse maps the software. The Constellations map the
+              process flows. The Beehive carries the people. The six flows
+              cross the functional groups so accountability never falls
+              between vendor cracks.
             </p>
           </div>
         </div>
@@ -263,59 +383,84 @@ export default function ApplicationLayerPage() {
 
       <section className="p-section">
         <div className="page-well">
-          <p className="p-kicker">The Beehive</p>
-          <h2 className="p-h2">All companies are uniquely standard.</h2>
-          <p className="mt-4 font-vollkorn text-[20px] italic leading-[1.45]">
-            Best practice where you are standard. Your sauce where you are not.
-            The work is knowing which is which, then carrying people and process
-            through the change.
+          <p className="p-kicker">The Human Operating Model</p>
+          <h2 className="p-h2">Data is the crown asset. People are the juice.</h2>
+
+          <div className="mt-4 border-l-3 border-[#FACC15] pl-4 py-1">
+            <p className="font-vollkorn text-[22px] font-bold italic leading-[1.4] text-navy">
+              &ldquo;Happy systems, happy people.&rdquo;
+            </p>
+            <p className="mt-1 font-brand text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B48A05]">
+              Core Operating Doctrine
+            </p>
+          </div>
+
+          <p className="p-prose mt-6">
+            The market is consumed with whether AI agents will replace jobs.
+            Tools shift and routine toil disappears, but people remain the
+            unmistakable soul and competitive edge of any enterprise.
           </p>
-          <p className="p-prose">
-            Most of the estate should look like a well-run peer. A thin slice
-            should not. That slice is what makes the company distinct, and the
-            systems have to fit the people and process that carry it.
+          <p className="p-prose mt-3">
+            When systems fight the frontline with bad data and fragmented silos,
+            people spend their days firefighting. When systems are unified,
+            governed, and joyful to use, the friction vanishes—and the business
+            sings. That is the Beehive.
           </p>
+
           <div className="command-plate mt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/diagrams/beehive.svg"
-              alt="The Beehive process flow map"
+              alt="The Beehive process flow map: 6 BPFs crossing functional groups"
             />
-            <p className="mt-3 font-display text-[15.5px] italic text-warm-gray">
-              How work actually moves across functions.
+            <div className="telemetry-badge">
+              <BeehiveFilm size={80} />
+              <div>
+                <p className="font-vollkorn text-[14px] font-bold text-navy">
+                  The human operating engine, live
+                </p>
+                <p className="mt-1 text-[14px] text-[#243345]">
+                  The six process flows crossing the functional groups.
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 font-display text-[15.5px] italic text-warm-gray">
+              How work actually moves across functions · from floor to board.
             </p>
           </div>
 
           <p className="mt-10 font-brand text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-            Delivery mechanics
+            Human delivery mechanics
           </p>
           <ul className="mechanics-grid">
             <li className="mechanic-card">
               <p className="font-vollkorn text-[18px] font-bold text-navy">
-                Project management
+                Sovereign ownership
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
-                I hold the roadmap, decisions, timeline, and execution on one
-                customer-side rail. Partners deliver into it. The business does
-                not rent command.
+                I hold the roadmap, decisions, and timeline on one customer-side
+                rail. Partners deliver into it, but your team holds the keys from
+                day one. The business does not rent command.
               </p>
             </li>
             <li className="mechanic-card">
               <p className="font-vollkorn text-[18px] font-bold text-navy">
-                Stakeholder management
+                Frontline respect
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
-                I name who decides, who does the work, and who has to live with
-                the change. Floor to board, nobody is assumed.
+                From warehouse bays and plant floors to the executive boardroom,
+                nobody is assumed. We build alongside the operators who carry
+                the daily reality of the company.
               </p>
             </li>
             <li className="mechanic-card">
               <p className="font-vollkorn text-[18px] font-bold text-navy">
-                Change management
+                Cultural adoption
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
-                I carry the new way through order, test, train, SOP, UAT, and
-                adoption. Go-live is a milestone, not the finish.
+                Go-live is a milestone, not the finish line. Training, SOPs,
+                and adoption are designed so the team feels empowered, confident,
+                and proud to run the new way.
               </p>
             </li>
           </ul>

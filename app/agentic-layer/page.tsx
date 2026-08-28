@@ -149,8 +149,9 @@ export default function AgenticLayerPage() {
           </p>
           <p className="p-prose">
             A person keeps the last move on anything that matters. People and
-            agents in the same work. Then we reuse the pattern, or we stop. The
-            people doing the work leave more able to run it.
+            agents in the same work — on the same six constellations, not in a
+            seventh bucket. Then we reuse the pattern, or we stop. The people
+            doing the work leave more able to run it.
           </p>
 
           <div className="lastmove-plate">

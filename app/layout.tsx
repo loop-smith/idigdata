@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Your transformation gets an owner. Both layers, application and agentic, while the business keeps running.",
+    "Your transformation gets an owner. Both layers, application and agentic. You keep what we build. The operation stays up.",
   alternates: {
     canonical: "/",
     types: {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "idigdata",
     title: "Robert Paddock · Transformational CIO | idigdata",
     description:
-      "Your transformation gets an owner. You keep what we build. The plant stays up.",
+      "Your transformation gets an owner. You keep what we build. The operation stays up.",
     images: [
       {
         url: "/og-image.png",

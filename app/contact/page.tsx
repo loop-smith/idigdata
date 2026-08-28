@@ -31,22 +31,30 @@ export default function ContactPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
       <header className="p-section p-section--hire">
         <div className="page-well">
-          <p className="p-kicker">Contact</p>
-          <h1 className="p-h1">Bring the real operating problem.</h1>
-          <p className="p-dek">
-            Come with the shape, the stakes, and the constraints. We will know
-            quickly if I am the fit.
-          </p>
-          <div className="p-lead">
-            <p>
-              I take on the application layer, the agentic layer, or both. One
-              owner. Permanent or fractional embed. The ownership standard does
-              not change.
-            </p>
-            <p>
-              Built for enterprise and mid-market operators ($100M–$1B+) focused
-              on protecting and expanding Operating Income.
-            </p>
+          <div className="hero-split">
+            <div>
+              <p className="p-kicker">Contact</p>
+              <h1 className="p-h1">Bring the real operating problem.</h1>
+              <p className="p-dek">
+                Come with the shape, the stakes, and the constraints. We will know
+                quickly if I am the fit.
+              </p>
+              <div className="p-lead">
+                <p>
+                  I take on the application layer, the agentic layer, or both. One
+                  owner. Permanent or fractional embed. The ownership standard does
+                  not change.
+                </p>
+                <p>
+                  Built for enterprise and mid-market operators ($100M–$1B+) focused
+                  on protecting and expanding Operating Income.
+                </p>
+              </div>
+            </div>
+            <div className="home-watermark" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/idigdata-mark.svg" alt="" />
+            </div>
           </div>
         </div>
       </header>

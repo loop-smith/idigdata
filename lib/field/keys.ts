@@ -10,7 +10,7 @@ export const BPF_KEY: FieldKeyItem[] = [
   { code: "P2P", name: "Procure to Pay" },
   { code: "O2C", name: "Order to Cash" },
   { code: "P2M", name: "Plan to Manufacture" },
-  { code: "S2S", name: "Systems to Support" },
+  { code: "S2S", name: "Systems that Support" },
   { code: "D2R", name: "Data to Report" },
   { code: "MDM", name: "Master Data Management" },
 ];
@@ -25,7 +25,7 @@ export const BEEHIVE_SYSTEM_KEY: FieldKeyItem[] = [
   { code: "WMS", name: "Warehouse Management System" },
   { code: "HRIS", name: "Human Resource Information System" },
   { code: "ERP", name: "Enterprise Resource Planning" },
-  { code: "IT/IS", name: "Information Technology / Information Systems" },
+  { code: "IT", name: "Information Technology" },
 ];
 
 /** Applied Agentics path. Spoken method, not a product SKU. */

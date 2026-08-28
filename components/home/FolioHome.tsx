@@ -12,8 +12,8 @@ export default function FolioHome() {
               <h1 className="p-h1">Your transformation gets an owner.</h1>
               <p className="p-dek">
                 Application systems and agentic AI. I have done both layers, and
-                I come inside to own delivery. You keep what we build while the
-                business runs.
+                I come inside to own delivery. You keep what we build. The
+                operation stays up.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <Link href="/contact/" className="p-btn">
@@ -46,8 +46,10 @@ export default function FolioHome() {
               <p className="p-prose">
                 Everyone owns their piece. Vendors own the product map. SIs own
                 the delivery map for their mandate. The company rarely owns the
-                operating map above them. I have spent 30 years doing exactly
-                that: keeping the business running while the stack moves.
+                operating map above them. Systems, six process constellations,
+                and people on a company-owned data core. I have spent 30 years
+                doing exactly that: keeping the operation up while the stack
+                moves.
               </p>
             </div>
           </article>
@@ -168,7 +170,7 @@ export default function FolioHome() {
                   </h3>
                   <p className="mt-2.5 text-[16.5px] leading-[1.6] text-[#243345]">
                     Every square already has a vendor. The seams are where it
-                    fails. I sit there while the business runs.
+                    fails. I sit there while the operation stays up.
                   </p>
                 </div>
               </div>
