@@ -320,6 +320,65 @@ export default function ApplicationLayerPage() {
         </div>
       </section>
 
+      <section className="p-section" style={{ background: "#F3ECE0" }}>
+        <div className="page-well">
+          <p className="p-kicker">Controls</p>
+          <h2 className="p-h2" style={{ maxWidth: "18ch" }}>
+            The estate has to hold under scrutiny.
+          </h2>
+          <p className="p-prose">
+            At the application layer, cyber is not a product next to the ERP.
+            It is who can get in, what they can reach, what can write, and
+            whether you can prove it. Same rail as the books. A SOX look asks
+            who can change the ledger and whether the record would hold. If
+            you cannot answer that, you do not own the map.
+          </p>
+          <ul className="mechanics-grid">
+            <li className="mechanic-card">
+              <p className="font-vollkorn text-[18px] font-bold text-navy">
+                Identity
+              </p>
+              <p className="mt-2 text-[15.5px] leading-[1.6]">
+                Who is on the estate. Named people, not a shared login next to
+                the general ledger.
+              </p>
+            </li>
+            <li className="mechanic-card">
+              <p className="font-vollkorn text-[18px] font-bold text-navy">
+                Access
+              </p>
+              <p className="mt-2 text-[15.5px] leading-[1.6]">
+                What they can reach across ERP, WMS, and the rest of the stack,
+                and what they cannot.
+              </p>
+            </li>
+            <li className="mechanic-card">
+              <p className="font-vollkorn text-[18px] font-bold text-navy">
+                Segregation of duties
+              </p>
+              <p className="mt-2 text-[15.5px] leading-[1.6]">
+                Who can change the books. Posting, approving, and paying are
+                not the same hand.
+              </p>
+            </li>
+            <li className="mechanic-card">
+              <p className="font-vollkorn text-[18px] font-bold text-navy">
+                An evidence trail
+              </p>
+              <p className="mt-2 text-[15.5px] leading-[1.6]">
+                What ran, what was touched, and whether it finished. A record
+                that would stand a SOX look.
+              </p>
+            </li>
+          </ul>
+          <p className="p-prose">
+            The operation stays up while those hold. Once agents can reach
+            the same estate, last move and prove-what-happened sit on this
+            rail. That is not a second program.
+          </p>
+        </div>
+      </section>
+
       <section className="p-section">
         <div className="page-well">
           <p className="p-kicker">Who I have sat with</p>
