@@ -45,12 +45,39 @@ export default function DirectSignalObject({ size = 220 }: { size?: number }) {
           <line x1="154" y1="154" x2="110" y2="110" stroke="rgba(250, 204, 21, 0.5)" strokeWidth="1.2" />
         </g>
 
-        {/* Traveling Golden Pulse Packets along Seams */}
+        {/* Traveling Golden Pulse Packets along Seams (Inward Stream) */}
         <g className="seam-pulses">
-          <circle className="seam-pulse-tl" cx="66" cy="66" r="3" fill="#FACC15" filter="url(#goldGlow)" />
-          <circle className="seam-pulse-tr" cx="154" cy="66" r="3" fill="#FACC15" filter="url(#goldGlow)" />
-          <circle className="seam-pulse-bl" cx="66" cy="154" r="3" fill="#FACC15" filter="url(#goldGlow)" />
-          <circle className="seam-pulse-br" cx="154" cy="154" r="3" fill="#FACC15" filter="url(#goldGlow)" />
+          {/* Top-Left to Center */}
+          <circle cx="66" cy="66" r="3.5" fill="#FACC15" filter="url(#goldGlow)">
+            <animate attributeName="cx" values="66; 110" dur="2.8s" repeatCount="indefinite" begin="0s" />
+            <animate attributeName="cy" values="66; 110" dur="2.8s" repeatCount="indefinite" begin="0s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="0s" />
+            <animate attributeName="r" values="2; 3.5; 3.5; 2" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="0s" />
+          </circle>
+
+          {/* Top-Right to Center */}
+          <circle cx="154" cy="66" r="3.5" fill="#FACC15" filter="url(#goldGlow)">
+            <animate attributeName="cx" values="154; 110" dur="2.8s" repeatCount="indefinite" begin="0.7s" />
+            <animate attributeName="cy" values="66; 110" dur="2.8s" repeatCount="indefinite" begin="0.7s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="0.7s" />
+            <animate attributeName="r" values="2; 3.5; 3.5; 2" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="0.7s" />
+          </circle>
+
+          {/* Bottom-Left to Center */}
+          <circle cx="66" cy="154" r="3.5" fill="#FACC15" filter="url(#goldGlow)">
+            <animate attributeName="cx" values="66; 110" dur="2.8s" repeatCount="indefinite" begin="1.4s" />
+            <animate attributeName="cy" values="154; 110" dur="2.8s" repeatCount="indefinite" begin="1.4s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="1.4s" />
+            <animate attributeName="r" values="2; 3.5; 3.5; 2" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="1.4s" />
+          </circle>
+
+          {/* Bottom-Right to Center */}
+          <circle cx="154" cy="154" r="3.5" fill="#FACC15" filter="url(#goldGlow)">
+            <animate attributeName="cx" values="154; 110" dur="2.8s" repeatCount="indefinite" begin="2.1s" />
+            <animate attributeName="cy" values="154; 110" dur="2.8s" repeatCount="indefinite" begin="2.1s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="2.1s" />
+            <animate attributeName="r" values="2; 3.5; 3.5; 2" keyTimes="0; 0.2; 0.8; 1" dur="2.8s" repeatCount="indefinite" begin="2.1s" />
+          </circle>
         </g>
 
         {/* 3x3 Lattice Blocks (The Authentic idigdata M4 Mark Geometry) */}
@@ -69,7 +96,9 @@ export default function DirectSignalObject({ size = 220 }: { size?: number }) {
         {/* Center Accountable Gold Sovereign Core */}
         <g className="kinetic-gold-core">
           {/* Subtle Expanding Gold Radiance */}
-          <rect className="core-ping" x="91" y="91" width="38" height="38" rx="4" fill="none" stroke="#FACC15" strokeWidth="2" />
+          <rect x="91" y="91" width="38" height="38" rx="4" fill="none" stroke="#FACC15" strokeWidth="2">
+            <animate attributeName="opacity" values="0.8; 0; 0.8" dur="2.8s" repeatCount="indefinite" />
+          </rect>
           
           {/* Solid Gold Owner Cube with Navy Precision Seat */}
           <rect x="94" y="94" width="32" height="32" rx="3" fill="#FACC15" stroke="#142840" strokeWidth="2.5" />

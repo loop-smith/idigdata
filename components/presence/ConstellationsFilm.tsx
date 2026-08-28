@@ -36,20 +36,49 @@ export default function ConstellationsFilm({ size = 80 }: { size?: number }) {
           <line x1="50" y1="50" x2="20.6" y2="33" />
         </g>
 
-        {/* Traveling Golden Pulse Packets (Continuous Radial Traffic) */}
+        {/* Traveling Golden Pulse Packets (Continuous Radial Flow from Data Core Outward) */}
         <g className="spoke-packets">
-          {/* Spoke 0 (P2P · 12 o'clock) */}
-          <circle className="c-pkt c-pkt-0" cx="50" cy="50" r="2.2" fill="#FFFBEB" />
-          {/* Spoke 1 (O2C) */}
-          <circle className="c-pkt c-pkt-1" cx="50" cy="50" r="2.2" fill="#FACC15" />
-          {/* Spoke 2 (P2M) */}
-          <circle className="c-pkt c-pkt-2" cx="50" cy="50" r="2.2" fill="#FACC15" />
-          {/* Spoke 3 (S2S) */}
-          <circle className="c-pkt c-pkt-3" cx="50" cy="50" r="2.2" fill="#FFFBEB" />
-          {/* Spoke 4 (D2R) */}
-          <circle className="c-pkt c-pkt-4" cx="50" cy="50" r="2.2" fill="#FACC15" />
-          {/* Spoke 5 (MDM) */}
-          <circle className="c-pkt c-pkt-5" cx="50" cy="50" r="2.2" fill="#FACC15" />
+          {/* Spoke 0 (P2P · 12 o'clock: 50,50 -> 50,16) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FFFBEB">
+            <animate attributeName="cx" values="50; 50" dur="2.4s" repeatCount="indefinite" begin="0s" />
+            <animate attributeName="cy" values="50; 16" dur="2.4s" repeatCount="indefinite" begin="0s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="0s" />
+          </circle>
+
+          {/* Spoke 1 (O2C · 2 o'clock: 50,50 -> 79.4,33) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FACC15">
+            <animate attributeName="cx" values="50; 79.4" dur="2.4s" repeatCount="indefinite" begin="0.4s" />
+            <animate attributeName="cy" values="50; 33" dur="2.4s" repeatCount="indefinite" begin="0.4s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="0.4s" />
+          </circle>
+
+          {/* Spoke 2 (P2M · 4 o'clock: 50,50 -> 79.4,67) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FACC15">
+            <animate attributeName="cx" values="50; 79.4" dur="2.4s" repeatCount="indefinite" begin="0.8s" />
+            <animate attributeName="cy" values="50; 67" dur="2.4s" repeatCount="indefinite" begin="0.8s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="0.8s" />
+          </circle>
+
+          {/* Spoke 3 (S2S · 6 o'clock: 50,50 -> 50,84) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FFFBEB">
+            <animate attributeName="cx" values="50; 50" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+            <animate attributeName="cy" values="50; 84" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="1.2s" />
+          </circle>
+
+          {/* Spoke 4 (D2R · 8 o'clock: 50,50 -> 20.6,67) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FACC15">
+            <animate attributeName="cx" values="50; 20.6" dur="2.4s" repeatCount="indefinite" begin="1.6s" />
+            <animate attributeName="cy" values="50; 67" dur="2.4s" repeatCount="indefinite" begin="1.6s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="1.6s" />
+          </circle>
+
+          {/* Spoke 5 (MDM · 10 o'clock: 50,50 -> 20.6,33) */}
+          <circle cx="50" cy="50" r="2.4" fill="#FACC15">
+            <animate attributeName="cx" values="50; 20.6" dur="2.4s" repeatCount="indefinite" begin="2.0s" />
+            <animate attributeName="cy" values="50; 33" dur="2.4s" repeatCount="indefinite" begin="2.0s" />
+            <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="2.4s" repeatCount="indefinite" begin="2.0s" />
+          </circle>
         </g>
 
         {/* 6 Outer Process Constellation Nodes */}
@@ -90,7 +119,10 @@ export default function ConstellationsFilm({ size = 80 }: { size?: number }) {
         </g>
 
         {/* Central Sovereign Data Core */}
-        <circle cx="50" cy="50" r="14" fill="url(#coreGlow)" className="c-core-glow" />
+        <circle cx="50" cy="50" r="14" fill="url(#coreGlow)">
+          <animate attributeName="r" values="12; 15; 12" dur="2.8s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.4; 0.9; 0.4" dur="2.8s" repeatCount="indefinite" />
+        </circle>
         <circle cx="50" cy="50" r="9.5" fill="#FACC15" stroke="#142840" strokeWidth="1.8" />
         <rect x="47.5" y="47.5" width="5" height="5" fill="#142840" />
       </svg>
