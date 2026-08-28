@@ -38,22 +38,22 @@ export default function ConstellationsFilm({ size = 80 }: { size?: number }) {
 
         {/* Traveling Golden Pulse Packets (Continuous Radial Traffic) */}
         <g className="spoke-packets">
-          {/* Spoke 0 (D2R) */}
+          {/* Spoke 0 (P2P · 12 o'clock) */}
           <circle className="c-pkt c-pkt-0" cx="50" cy="50" r="2.2" fill="#FFFBEB" />
           {/* Spoke 1 (O2C) */}
           <circle className="c-pkt c-pkt-1" cx="50" cy="50" r="2.2" fill="#FACC15" />
           {/* Spoke 2 (P2M) */}
           <circle className="c-pkt c-pkt-2" cx="50" cy="50" r="2.2" fill="#FACC15" />
-          {/* Spoke 3 (MDM) */}
+          {/* Spoke 3 (S2S) */}
           <circle className="c-pkt c-pkt-3" cx="50" cy="50" r="2.2" fill="#FFFBEB" />
-          {/* Spoke 4 (P2P) */}
+          {/* Spoke 4 (D2R) */}
           <circle className="c-pkt c-pkt-4" cx="50" cy="50" r="2.2" fill="#FACC15" />
-          {/* Spoke 5 (S2S) */}
+          {/* Spoke 5 (MDM) */}
           <circle className="c-pkt c-pkt-5" cx="50" cy="50" r="2.2" fill="#FACC15" />
         </g>
 
         {/* 6 Outer Process Constellation Nodes */}
-        {/* D2R · 12 o'clock */}
+        {/* P2P · 12 o'clock */}
         <g className="c-node c-node-0">
           <circle cx="50" cy="16" r="6" fill="#142840" stroke="#FACC15" strokeWidth="1.2" />
           <circle cx="50" cy="16" r="2.5" fill="#FBF9F4" />
@@ -71,19 +71,19 @@ export default function ConstellationsFilm({ size = 80 }: { size?: number }) {
           <circle cx="79.4" cy="67" r="2.5" fill="#FBF9F4" />
         </g>
 
-        {/* MDM · 6 o'clock */}
+        {/* S2S · 6 o'clock */}
         <g className="c-node c-node-3">
           <circle cx="50" cy="84" r="6" fill="#142840" stroke="#FACC15" strokeWidth="1.2" />
           <circle cx="50" cy="84" r="2.5" fill="#FBF9F4" />
         </g>
 
-        {/* P2P · 8 o'clock */}
+        {/* D2R · 8 o'clock */}
         <g className="c-node c-node-4">
           <circle cx="20.6" cy="67" r="6" fill="#142840" stroke="#FACC15" strokeWidth="1.2" />
           <circle cx="20.6" cy="67" r="2.5" fill="#FBF9F4" />
         </g>
 
-        {/* S2S · 10 o'clock */}
+        {/* MDM · 10 o'clock */}
         <g className="c-node c-node-5">
           <circle cx="20.6" cy="33" r="6" fill="#142840" stroke="#FACC15" strokeWidth="1.2" />
           <circle cx="20.6" cy="33" r="2.5" fill="#FBF9F4" />

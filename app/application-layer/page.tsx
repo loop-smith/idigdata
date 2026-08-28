@@ -270,7 +270,7 @@ export default function ApplicationLayerPage() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/diagrams/six-constellations.svg"
+                src="/diagrams/six-constellations.svg?c=3"
                 alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core"
               />
               <div className="telemetry-badge">
