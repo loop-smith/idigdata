@@ -270,18 +270,18 @@ export default function ApplicationLayerPage() {
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/diagrams/six-constellations.svg?c=3"
-                alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core"
+                src="/diagrams/six-constellations.svg?c=4"
+                alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core. Outer rings are the workflow blocks in each constellation."
               />
               <div className="telemetry-badge">
                 <ConstellationsFilm size={72} />
                 <div>
                   <p className="font-vollkorn text-[13.5px] font-bold text-navy">
-                    The process telemetry, live
+                    The workflow rings, live
                   </p>
                   <p className="mt-0.5 text-[13px] text-[#243345]">
-                    Transactions route through the six universal constellations
-                    to the sovereign core.
+                    Each outer band is the workflow blocks in that
+                    constellation. Same six every company. The mix is yours.
                   </p>
                 </div>
               </div>
