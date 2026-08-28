@@ -34,6 +34,7 @@ export default function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    prefetch={false}
                     className="text-porcelain/70 transition-colors hover:text-gold"
                   >
                     {item.label}

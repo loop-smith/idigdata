@@ -63,7 +63,47 @@ async function writeCrmIntake(
     source_url: req.headers.get("referer"),
     user_agent: req.headers.get("user-agent"),
     anon_session_id: data.anon_session_id?.trim() || null,
+    status: "received",
   });
+}
+
+async function stampNotifyStatus(
+  id: string | null,
+  status: "notified" | "notify_failed" | "notify_not_configured",
+) {
+  if (!id) return;
+  const supabase = getDigOpsSupabaseForContact();
+  if (!supabase) return;
+  const { error } = await supabase.client
+    .from("contact_submissions")
+    .update({ status })
+    .eq("id", id);
+  if (error) {
+    console.error(`contact form: notify status stamp failed: ${error.message}`);
+  }
+}
+
+async function sendNotifyEmail(input: {
+  apiKey: string;
+  fromAddr: string;
+  notifyTo: string;
+  replyTo: string;
+  subject: string;
+  text: string;
+}): Promise<boolean> {
+  const resend = new Resend(input.apiKey);
+  const { error } = await resend.emails.send({
+    from: input.fromAddr,
+    to: input.notifyTo,
+    replyTo: input.replyTo,
+    subject: input.subject,
+    text: input.text,
+  });
+  if (error) {
+    console.error("contact form email error:", error);
+    return false;
+  }
+  return true;
 }
 
 export async function POST(req: NextRequest) {
@@ -126,19 +166,28 @@ export async function POST(req: NextRequest) {
   if (!apiKey) {
     notification = "not_configured";
     console.error("contact form: RESEND_API_KEY not set");
+    await stampNotifyStatus(crm.id, "notify_not_configured");
   } else {
+    const payload = {
+      apiKey,
+      fromAddr,
+      notifyTo,
+      replyTo: safeEmail,
+      subject,
+      text: lines.join("\n"),
+    };
+    let sent = false;
     try {
-      const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: fromAddr,
-        to: notifyTo,
-        replyTo: safeEmail,
-        subject,
-        text: lines.join("\n"),
-      });
+      sent = await sendNotifyEmail(payload);
+      if (!sent) sent = await sendNotifyEmail(payload);
     } catch (err) {
-      notification = "failed";
       console.error("contact form email error:", err);
+    }
+    if (sent) {
+      await stampNotifyStatus(crm.id, "notified");
+    } else {
+      notification = "failed";
+      await stampNotifyStatus(crm.id, "notify_failed");
     }
   }
 

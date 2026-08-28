@@ -95,6 +95,7 @@ export default function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 aria-current={active ? "page" : undefined}
                 className={`nav-underline transition-colors ${
                   active
@@ -173,6 +174,7 @@ export default function SiteHeader() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      prefetch={false}
                       onClick={() => setOpen(false)}
                       aria-current={active ? "page" : undefined}
                       className={`flex items-center gap-3 border-b border-navy/10 py-3.5 font-body text-[18px] text-navy transition-colors last:border-b-0 ${

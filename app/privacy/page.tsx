@@ -46,14 +46,16 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <p className="mb-3">
-          When someone opens a page on idigdata.com, we record a first-party
-          entrance event for operating this practice: path, time, referrer,
-          basic device/browser signals, optional UTM / click-id parameters
-          (also kept in a short first-party attribution cookie), and coarse
-          host location (country / region / city). We store a keyed HMAC of the
-          visitor IP - not the raw address - plus a small allowlisted set of
-          request metadata (for example accept-language and fetch-site). We do
-          not keep precise latitude/longitude or full proxy header dumps.
+          When someone opens a page on idigdata.com, we record one first-party
+          entrance (the door-knock) for operating this practice: path, time,
+          referrer, basic device/browser signals, optional UTM / click-id
+          parameters (also kept in a short first-party attribution cookie), and
+          coarse host location (country / region / city). Application Layer and
+          Agentic Layer are live pages, same as Home and Contact. We store a
+          keyed HMAC of the visitor IP - not the raw address - plus a small
+          allowlisted set of request metadata (for example accept-language and
+          fetch-site). We do not keep precise latitude/longitude or full proxy
+          header dumps.
         </p>
         <p>
           We also use Vercel Analytics for aggregate, privacy-oriented visit

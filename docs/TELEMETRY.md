@@ -13,6 +13,8 @@ Entrance truth lives in DigOps Supabase. Client beacons are opt-in.
 
 Default production posture: **door-knock only** + Vercel Analytics. Do not turn on page navigation tracking without Operator word.
 
+DigOps `/website` Real hits means a person on a live page. Live pages include Home, Application Layer, Agentic Layer, and Contact — not only the old IA routes. Vercel Analytics does not write into DigOps.
+
 ## Markers
 
 | Marker | How | Notes |
