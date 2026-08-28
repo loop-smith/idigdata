@@ -1001,54 +1001,60 @@
   display: block;
 }
 
-.presence .seal-orbit {
+.presence .wave-navy {
   transform-origin: 110px 110px;
-  animation: p-seal-orbit 12s linear infinite;
+  animation: p-wave-navy-undulate 4.5s ease-in-out infinite alternate;
 }
 
-.presence .seal-counter-ring {
+.presence .wave-gold {
   transform-origin: 110px 110px;
-  animation: p-seal-counter 18s linear infinite;
+  animation: p-wave-gold-undulate 4.5s ease-in-out infinite alternate;
 }
 
-.presence .seal-ping {
+.presence .wave-ping {
   transform-origin: 110px 110px;
-  animation: p-seal-ping 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  animation: p-wave-ping 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
 }
 
-@keyframes p-seal-orbit {
-  from {
-    transform: rotate(0deg);
+@keyframes p-wave-navy-undulate {
+  0% {
+    transform: scaleY(1) translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scaleY(0.7) translateY(-6px);
   }
-}
-
-@keyframes p-seal-counter {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
+  100% {
+    transform: scaleY(1.15) translateY(4px);
   }
 }
 
-@keyframes p-seal-ping {
+@keyframes p-wave-gold-undulate {
+  0% {
+    transform: scaleY(1) translateY(0);
+  }
+  50% {
+    transform: scaleY(1.2) translateY(6px);
+  }
+  100% {
+    transform: scaleY(0.65) translateY(-4px);
+  }
+}
+
+@keyframes p-wave-ping {
   0% {
     transform: scale(0.9);
     opacity: 0.8;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(2.2);
     opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .presence .seal-orbit,
-  .presence .seal-counter-ring,
-  .presence .seal-ping {
+  .presence .wave-navy,
+  .presence .wave-gold,
+  .presence .wave-ping {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
