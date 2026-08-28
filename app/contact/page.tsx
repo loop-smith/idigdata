@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
-import HaloFilm from "@/components/presence/HaloFilm";
+import DirectSignalObject from "@/components/presence/DirectSignalObject";
 import PresenceShell from "@/components/presence/PresenceShell";
 
 export const metadata: Metadata = {
@@ -95,12 +95,7 @@ export default function ContactPage() {
       <section className="p-section" style={{ borderBottom: 0 }}>
         <div className="page-well">
           <div className="lastmove-plate">
-            <HaloFilm
-              src="/media/threshold-loop.mp4?c=1"
-              poster="/media/threshold-poster.png?c=1"
-              label="One real problem crosses the threshold and lands with an owner."
-              size={220}
-            />
+            <DirectSignalObject size={220} />
             <div>
               <p className="font-vollkorn text-[13px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
                 Direct
