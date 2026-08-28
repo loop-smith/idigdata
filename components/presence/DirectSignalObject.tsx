@@ -6,7 +6,7 @@ export default function DirectSignalObject({ size = 220 }: { size?: number }) {
       className="direct-signal-console"
       style={{ width: size, height: size }}
       role="img"
-      aria-label="Harmonic Resonance Dual-Layer Waveform"
+      aria-label="The Kinetic Lattice Matrix: Direct Owner Core"
     >
       <svg
         className="direct-signal-svg"
@@ -15,56 +15,66 @@ export default function DirectSignalObject({ size = 220 }: { size?: number }) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="navyWaveGrad" x1="0" y1="110" x2="220" y2="110" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#142840" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#142840" stopOpacity="1" />
-            <stop offset="100%" stopColor="#142840" stopOpacity="0.2" />
-          </linearGradient>
-          <linearGradient id="goldWaveGrad" x1="0" y1="110" x2="220" y2="110" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#FACC15" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#FACC15" stopOpacity="1" />
-            <stop offset="100%" stopColor="#FACC15" stopOpacity="0.3" />
-          </linearGradient>
+          <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
         </defs>
 
         {/* Architectural Paper Plate */}
         <rect width="220" height="220" rx="110" fill="#F3ECE0" stroke="rgba(20, 40, 64, 0.18)" strokeWidth="1.5" />
         
-        {/* Subtle Horizontal & Vertical Equilibrium Axis */}
-        <line x1="20" y1="110" x2="200" y2="110" stroke="rgba(20, 40, 64, 0.15)" strokeWidth="1" strokeDasharray="3,3" />
-        <line x1="110" y1="20" x2="110" y2="200" stroke="rgba(20, 40, 64, 0.12)" strokeWidth="1" strokeDasharray="3,3" />
-        <circle cx="110" cy="110" r="92" stroke="rgba(20, 40, 64, 0.1)" strokeWidth="1" />
+        {/* Subtle Outer Calibration Ring */}
+        <circle cx="110" cy="110" r="98" stroke="rgba(20, 40, 64, 0.08)" strokeWidth="1" />
+        <circle cx="110" cy="110" r="80" stroke="rgba(20, 40, 64, 0.12)" strokeWidth="1" strokeDasharray="2,3" />
 
-        {/* Deep Navy Application Foundation Wave */}
-        <path
-          className="wave-navy"
-          d="M 15 110 Q 62.5 70 110 110 T 205 110"
-          stroke="url(#navyWaveGrad)"
-          strokeWidth="3"
-          strokeLinecap="round"
-          fill="none"
-        />
+        {/* Golden Seam Channels (The Joints Where the Business Runs) */}
+        <g className="lattice-seams">
+          {/* Horizontal Seams */}
+          <line x1="50" y1="88" x2="170" y2="88" stroke="#FACC15" strokeWidth="2" strokeDasharray="4,4" opacity="0.7" />
+          <line x1="50" y1="132" x2="170" y2="132" stroke="#FACC15" strokeWidth="2" strokeDasharray="4,4" opacity="0.7" />
+          
+          {/* Vertical Seams */}
+          <line x1="88" y1="50" x2="88" y2="170" stroke="#FACC15" strokeWidth="2" strokeDasharray="4,4" opacity="0.7" />
+          <line x1="132" y1="50" x2="132" y2="170" stroke="#FACC15" strokeWidth="2" strokeDasharray="4,4" opacity="0.7" />
 
-        {/* Sun Gold Agentics Wave (Phase-Shifted Harmonic) */}
-        <path
-          className="wave-gold"
-          d="M 15 110 Q 62.5 150 110 110 T 205 110"
-          stroke="url(#goldWaveGrad)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          fill="none"
-        />
+          {/* Diagonal Energy Vectors Converging on Center */}
+          <line x1="66" y1="66" x2="110" y2="110" stroke="rgba(250, 204, 21, 0.5)" strokeWidth="1.2" />
+          <line x1="154" y1="66" x2="110" y2="110" stroke="rgba(250, 204, 21, 0.5)" strokeWidth="1.2" />
+          <line x1="66" y1="154" x2="110" y2="110" stroke="rgba(250, 204, 21, 0.5)" strokeWidth="1.2" />
+          <line x1="154" y1="154" x2="110" y2="110" stroke="rgba(250, 204, 21, 0.5)" strokeWidth="1.2" />
+        </g>
 
-        {/* Center Convergence Calibration Crosshairs */}
-        <circle cx="110" cy="110" r="32" stroke="rgba(20, 40, 64, 0.2)" strokeWidth="1" strokeDasharray="2,2" />
-        <circle cx="110" cy="110" r="22" stroke="rgba(250, 204, 21, 0.4)" strokeWidth="1.2" />
+        {/* Traveling Golden Pulse Packets along Seams */}
+        <g className="seam-pulses">
+          <circle className="seam-pulse-tl" cx="66" cy="66" r="3" fill="#FACC15" filter="url(#goldGlow)" />
+          <circle className="seam-pulse-tr" cx="154" cy="66" r="3" fill="#FACC15" filter="url(#goldGlow)" />
+          <circle className="seam-pulse-bl" cx="66" cy="154" r="3" fill="#FACC15" filter="url(#goldGlow)" />
+          <circle className="seam-pulse-br" cx="154" cy="154" r="3" fill="#FACC15" filter="url(#goldGlow)" />
+        </g>
 
-        {/* Expanding Gold Center Resonance Wave */}
-        <circle className="wave-ping" cx="110" cy="110" r="16" fill="none" stroke="#FACC15" strokeWidth="1.5" />
+        {/* 3x3 Lattice Blocks (The Authentic idigdata M4 Mark Geometry) */}
+        {/* 4 Navy Corner Blocks (Filled Structure) */}
+        <rect x="52" y="52" width="28" height="28" rx="2" fill="#142840" stroke="#0B1624" strokeWidth="1.5" />
+        <rect x="140" y="52" width="28" height="28" rx="2" fill="#142840" stroke="#0B1624" strokeWidth="1.5" />
+        <rect x="52" y="140" width="28" height="28" rx="2" fill="#142840" stroke="#0B1624" strokeWidth="1.5" />
+        <rect x="140" y="140" width="28" height="28" rx="2" fill="#142840" stroke="#0B1624" strokeWidth="1.5" />
 
-        {/* Center Sovereign Gold Owner Mark */}
-        <rect x="98" y="98" width="24" height="24" rx="3" fill="#FACC15" stroke="#142840" strokeWidth="2.5" />
-        <rect x="106" y="106" width="8" height="8" fill="#142840" />
+        {/* 4 Navy Middle Frames (Outlined Open Connectors) */}
+        <rect x="96" y="54" width="28" height="24" rx="2" fill="#FBF9F4" stroke="#142840" strokeWidth="2" />
+        <rect x="54" y="96" width="24" height="28" rx="2" fill="#FBF9F4" stroke="#142840" strokeWidth="2" />
+        <rect x="142" y="96" width="24" height="28" rx="2" fill="#FBF9F4" stroke="#142840" strokeWidth="2" />
+        <rect x="96" y="142" width="28" height="24" rx="2" fill="#FBF9F4" stroke="#142840" strokeWidth="2" />
+
+        {/* Center Accountable Gold Sovereign Core */}
+        <g className="kinetic-gold-core">
+          {/* Subtle Expanding Gold Radiance */}
+          <rect className="core-ping" x="91" y="91" width="38" height="38" rx="4" fill="none" stroke="#FACC15" strokeWidth="2" />
+          
+          {/* Solid Gold Owner Cube with Navy Precision Seat */}
+          <rect x="94" y="94" width="32" height="32" rx="3" fill="#FACC15" stroke="#142840" strokeWidth="2.5" />
+          <rect x="104" y="104" width="12" height="12" fill="#142840" />
+        </g>
       </svg>
     </div>
   );
