@@ -1001,57 +1001,57 @@
   display: block;
 }
 
-.presence .signal-packet-1 {
-  animation: p-signal-travel 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+.presence .seal-orbit {
+  transform-origin: 110px 110px;
+  animation: p-seal-orbit 12s linear infinite;
 }
 
-.presence .signal-packet-2 {
-  animation: p-signal-travel 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.35s;
+.presence .seal-counter-ring {
+  transform-origin: 110px 110px;
+  animation: p-seal-counter 18s linear infinite;
 }
 
-@keyframes p-signal-travel {
-  0% {
-    cx: 45px;
-    opacity: 0;
-    r: 3px;
+.presence .seal-ping {
+  transform-origin: 110px 110px;
+  animation: p-seal-ping 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+@keyframes p-seal-orbit {
+  from {
+    transform: rotate(0deg);
   }
-  15% {
-    opacity: 1;
-    r: 5px;
-  }
-  85% {
-    opacity: 1;
-    r: 5px;
-  }
-  100% {
-    cx: 175px;
-    opacity: 0;
-    r: 3px;
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.presence .owner-pulse-wave {
-  transform-origin: 175px 110px;
-  animation: p-owner-ping 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 1.8s;
+@keyframes p-seal-counter {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
-@keyframes p-owner-ping {
+@keyframes p-seal-ping {
   0% {
     transform: scale(0.9);
-    opacity: 0.9;
+    opacity: 0.8;
   }
   100% {
-    transform: scale(1.6);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .presence .signal-packet-1,
-  .presence .signal-packet-2,
-  .presence .owner-pulse-wave {
+  .presence .seal-orbit,
+  .presence .seal-counter-ring,
+  .presence .seal-ping {
     animation: none !important;
     opacity: 1 !important;
+    transform: none !important;
   }
 }
 
