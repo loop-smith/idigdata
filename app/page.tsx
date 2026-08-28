@@ -6,20 +6,20 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "Your transformation gets an owner. Both layers, application and agentic. You keep what we build. The operation stays up.",
+    "Your transformation gets an owner. The business keeps running.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "Robert Paddock · Transformational CIO | idigdata",
+    title: "Robert Paddock · Transformational CIO",
     description:
-      "Your transformation gets an owner. You keep what we build. The operation stays up.",
+      "Your transformation gets an owner. The business keeps running.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=20260828",
         width: 1200,
         height: 630,
-        alt: "idigdata - Transformational CIO",
+        alt: "Your transformation gets an owner. The business keeps running.",
       },
     ],
   },

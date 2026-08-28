@@ -85,6 +85,8 @@ const DIGOPS_SITE_PATHS = new Set([
   "/faq/",
   "/privacy",
   "/privacy/",
+  "/hold",
+  "/hold/",
   "/systems",
   "/systems/",
   "/work",
@@ -175,10 +177,11 @@ export function classifyWebsiteSignal(input: ClassifyInput): WebsiteSignal {
   }
 
   if (isDevHost) {
-    return suppressed("dev", "dev", "dev_host", {
-      is_internal: false,
+    return tracked("internal", "rob_internal", {
+      is_internal: true,
       is_bot: isBot,
-      is_asset: false,
+      buyer_signal: false,
+      source_channel: "dev_host",
       source_refs: [{ type: "host_class", value: hostname || "local" }],
     });
   }
