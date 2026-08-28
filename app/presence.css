@@ -98,9 +98,11 @@
 
 .presence .p-lead {
   margin-top: 28px;
-  border: 1px solid var(--p-border-md);
+  border: 1px solid rgba(20, 40, 64, 0.14);
   border-left: 4px solid var(--p-navy);
-  background: var(--p-paper);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F2EBE0 100%);
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 8px rgba(20, 40, 64, 0.03);
   padding: 24px 28px;
   font-size: 18px;
   line-height: 1.65;
@@ -191,10 +193,12 @@
 }
 
 .presence .manifesto-plaque {
-  background: var(--p-paper);
-  border: 1px solid var(--p-border-md);
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 16px 36px -8px rgba(20, 40, 64, 0.05);
   padding: 32px 28px;
-  box-shadow: 0 16px 36px rgba(20, 40, 64, 0.06);
 }
 
 .presence .plaque-header {
@@ -295,13 +299,15 @@
   background: #142840;
   color: #fff;
   padding: 12px 18px;
-  border-radius: 2px;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
-  gap: 12px;
   align-items: center;
-  font-size: 13px;
-  flex-wrap: wrap;
+  font-family: var(--font-brand);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  box-shadow: 0 4px 12px rgba(20, 40, 64, 0.2);
 }
 
 .presence .plaque-footer-left {
@@ -318,6 +324,7 @@
 }
 
 .presence .beats {
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -325,13 +332,13 @@
 
 .presence .beat {
   display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 48px;
-  padding-bottom: 48px;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  padding: 36px 0;
   border-bottom: 1px solid var(--p-border);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .presence .beat {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -354,16 +361,22 @@
 }
 
 .presence .beat-gold {
-  border: 1px solid var(--p-border-md);
-  border-left: 4px solid var(--p-gold);
-  background: var(--p-paper);
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-left: 4.5px solid var(--p-gold);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 8px rgba(20, 40, 64, 0.04), 0 12px 28px -6px rgba(20, 40, 64, 0.04);
   padding: 36px;
 }
 
 .presence .lattice-object {
   margin: 16px 0;
-  background: var(--p-paper);
-  border: 1px solid var(--p-border-md);
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 14px 32px -6px rgba(20, 40, 64, 0.04);
   padding: 36px;
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -395,8 +408,10 @@
 }
 
 .presence .dossier-spine {
-  border: 1px solid var(--p-border-md);
-  background: #fff;
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
   padding: 14px 20px;
   text-align: center;
   font-family: var(--font-vollkorn);
@@ -416,8 +431,8 @@
   font-size: 13.5px;
   font-weight: 800;
   color: var(--p-navy);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -438,8 +453,10 @@
 }
 
 .presence .sector-block {
-  background: #faf7f0;
-  border: 1px solid var(--p-border);
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
   padding: 16px 20px;
   margin-top: 16px;
 }
@@ -463,11 +480,19 @@
 .presence .logo-card {
   background: #fff;
   border: 1px solid rgba(20, 40, 64, 0.12);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 1px 3px rgba(20, 40, 64, 0.03);
   height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.presence .logo-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(20, 40, 64, 0.06);
 }
 
 .presence .logo-card img {
@@ -490,8 +515,11 @@
 
 .presence .command-plate {
   margin-top: 32px;
-  background: var(--p-paper);
-  border: 1px solid var(--p-border-md);
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 16px 36px -8px rgba(20, 40, 64, 0.05);
   padding: 24px;
   text-align: center;
 }
@@ -531,9 +559,11 @@
   gap: 16px;
   text-align: left;
   margin-top: 20px;
-  padding: 16px;
-  background: #fff;
-  border: 1px solid var(--p-border);
+  padding: 16px 20px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid rgba(20, 40, 64, 0.13);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03), 0 6px 16px -4px rgba(20, 40, 64, 0.03);
 }
 
 .presence .estate-grid {
@@ -544,9 +574,17 @@
 }
 
 .presence .estate-card {
-  background: #fff;
-  border: 1px solid var(--p-border-md);
-  padding: 18px 16px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 5px;
+  padding: 20px 18px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.presence .estate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 22px rgba(20, 40, 64, 0.08);
 }
 
 .presence .estate-head {
@@ -578,8 +616,10 @@
 
 .presence .glossary-plate {
   margin-top: 36px;
-  border: 1px solid var(--p-border-md);
-  background: var(--p-paper);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 5px;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 8px rgba(20, 40, 64, 0.03);
   padding: 20px 24px;
 }
 
@@ -613,10 +653,18 @@
 }
 
 .presence .mechanic-card {
-  background: #fff;
-  border: 1px solid var(--p-border-md);
-  border-top: 3px solid var(--p-navy);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-top: 3.5px solid var(--p-navy);
+  border-radius: 5px;
   padding: 24px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.presence .mechanic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 22px rgba(20, 40, 64, 0.08);
 }
 
 .presence .hero-split {
@@ -633,18 +681,24 @@
 }
 
 .presence .mandate-card {
-  border: 1px solid var(--p-border-md);
-  border-left: 3px solid var(--p-gold);
-  background: var(--p-paper);
-  padding: 14px 16px;
-  max-width: 28ch;
+  position: relative;
+  background: linear-gradient(135deg, #FFFDF9 0%, #F5EFE3 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-left: 3.5px solid #FACC15;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 8px rgba(20, 40, 64, 0.04), 0 10px 24px -6px rgba(20, 40, 64, 0.04);
+  padding: 16px 18px;
+  max-width: 30ch;
 }
 
 .presence .waves-doc {
   margin-top: 36px;
-  background: var(--p-paper);
-  border: 1px solid var(--p-border-md);
-  padding: 28px 24px 22px;
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 16px 36px -8px rgba(20, 40, 64, 0.05);
+  padding: 32px 28px 26px;
 }
 
 .presence .waves-doc .p-h2 {
@@ -720,19 +774,38 @@
 
 .presence .arch-card,
 .presence .pillar,
-.presence .spec-card,
-.presence .model-card {
-  background: #fff;
-  border: 1px solid var(--p-border-md);
+.presence .spec-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 5px;
   padding: 18px 16px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.presence .arch-card:hover,
+.presence .pillar:hover,
+.presence .spec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 22px rgba(20, 40, 64, 0.08);
 }
 
 .presence .model-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+  border: 1px solid rgba(20, 40, 64, 0.14);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 14px 8px;
+  padding: 16px 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.presence .model-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 20px rgba(20, 40, 64, 0.07);
 }
 
 .presence .model-card img {
@@ -757,8 +830,11 @@
   grid-template-columns: 260px 1fr;
   gap: 32px;
   align-items: stretch;
-  background: #fff;
-  border: 1px solid var(--p-border-md);
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 8px rgba(20, 40, 64, 0.04), 0 12px 28px -6px rgba(20, 40, 64, 0.04);
 }
 
 .presence .build-mark {
@@ -799,8 +875,11 @@
 
 .presence .lastmove-plate {
   margin-top: 32px;
-  background: var(--p-paper);
-  border: 1px solid var(--p-border-md);
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 16px 36px -8px rgba(20, 40, 64, 0.05);
   padding: 28px;
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -1182,16 +1261,17 @@
 }
 
 .constellation-card {
-  background: var(--p-paper);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
   border: 1px solid rgba(20, 40, 64, 0.14);
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 20px 22px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 6px rgba(20, 40, 64, 0.03);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .constellation-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(20, 40, 64, 0.08);
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 22px rgba(20, 40, 64, 0.08);
 }
 
 @media (max-width: 900px) {
@@ -1364,6 +1444,70 @@
     transform: scale(0.7);
   }
 }
+
+/* ==========================================================================
+   MOBILE & IPHONE RESPONSIVE POLISH
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .presence .command-plate {
+    padding: 18px 14px;
+    margin-top: 24px;
+  }
+
+  .presence .waves-doc {
+    padding: 22px 16px 18px;
+    margin-top: 24px;
+  }
+
+  .presence .manifesto-plaque {
+    padding: 24px 18px;
+  }
+
+  .presence .plaque-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 10px 14px;
+  }
+
+  .presence .beat-gold {
+    padding: 24px 18px;
+  }
+
+  .presence .lattice-object {
+    padding: 24px 18px;
+    gap: 20px;
+  }
+
+  .presence .telemetry-badge {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .presence .p-lead {
+    padding: 18px 18px;
+    font-size: 16.5px;
+  }
+
+  .presence .lastmove-plate {
+    padding: 22px 16px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .presence .model-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .presence .telemetry-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 
 
 
