@@ -284,17 +284,25 @@ export default function AgenticLayerPage() {
 
       <section className="p-section" style={{ background: "#F3ECE0" }}>
         <div className="page-well">
-          <p className="p-kicker">How I deliver</p>
+          <div className="flex items-center gap-3">
+            <p className="p-kicker">How I deliver</p>
+            <span className="inline-block rounded-full bg-[#142840]/10 px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#142840]">
+              In production
+            </span>
+          </div>
           <h2 className="p-h2" style={{ maxWidth: "18ch" }}>
             This is the build. Not software for sale.
           </h2>
           <p className="p-prose">
-            Receipts and templates from work already running. A company with a
-            builder role that wants to start now does not wait for a lab. They
-            start on The Rig. I walk in with this. The company keeps what we
-            stand up.
+            I don&apos;t sell SaaS subscriptions or partner markups. I walk into
+            your company with an earned mountain of production-tested templates,
+            patterns, and receipts from day one. Whether you want all three
+            systems working in concert or a single capability to solve an
+            immediate bottleneck, you get an instant jump start. Your company
+            keeps what we stand up.
           </p>
           <div className="build-stack">
+            {/* The Rig */}
             <article className="build-row">
               <div className="build-mark">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -304,21 +312,19 @@ export default function AgenticLayerPage() {
                 />
               </div>
               <div className="build-copy">
-                <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#B48A05]">
-                  The builder suite
+                <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#B48A05]">
+                  PLAN · ORCHESTRATE · BUILD · SHIP
                 </p>
                 <h3 className="mt-1 font-vollkorn text-[28px] font-extrabold text-navy">
                   The Rig
                 </h3>
                 <p className="mt-3 text-[17px] leading-[1.65]">
-                  This is what a builder role starts on when the company wants
-                  to build now. Named work a person can stand behind.
-                  Orchestrate, monitor, invent. Plans, gates, and a trail you
-                  can inspect. I walk in with this. A change does not go live
-                  until the work still holds.
+                  The human-directed build platform for companies that want to build now without waiting for a lab. Gated plans, verifiable steps, and a complete audit trail where no change goes live until the work holds. Your team gets an immediate jump start on day one, and the company keeps the engine.
                 </p>
               </div>
             </article>
+
+            {/* The BOSS */}
             <article className="build-row">
               <div className="build-mark">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -328,21 +334,19 @@ export default function AgenticLayerPage() {
                 />
               </div>
               <div className="build-copy">
-                <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#B48A05]">
-                  The digital twin
+                <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#B48A05]">
+                  DISCOVER · MAP · TWIN · GOVERN
                 </p>
                 <h3 className="mt-1 font-vollkorn text-[28px] font-extrabold text-navy">
                   The BOSS
                 </h3>
                 <p className="mt-3 text-[17px] leading-[1.65]">
-                  Command and control of how the company actually runs.
-                  Systems, owners, workflows, and the path through the
-                  transformation, above the vendors. Lessons from every
-                  engagement, not a dashboard a partner rented you. Design
-                  workshops to green on green. The company owns the twin.
+                  Thirty years of enterprise transformation craft distilled into a living digital twin, the tool of tools for business transformation. Maps your systems to the six process constellations, connects the people and agents in the Beehive, and proves every workflow through to green on green. Because it is a permanent living twin, the BOSS never goes away: it stays running as the real-time operating map of how your business actually runs.
                 </p>
               </div>
             </article>
+
+            {/* FlowCraft */}
             <article className="build-row">
               <div className="build-mark">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -352,20 +356,36 @@ export default function AgenticLayerPage() {
                 />
               </div>
               <div className="build-copy">
-                <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#B48A05]">
-                  The workflow the company keeps
+                <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#B48A05]">
+                  COMPOSE · EXECUTE · MONITOR · GOVERN
                 </p>
                 <h3 className="mt-1 font-vollkorn text-[28px] font-extrabold text-navy">
                   FlowCraft
                 </h3>
                 <p className="mt-3 text-[17px] leading-[1.65]">
-                  Ready-made agentic workflow blocks, uniquely standard to
-                  this company, through the master data. A real workflow the
-                  team can see, run, and keep. Not a rented automation
-                  overlay. When I leave, they still have the blocks.
+                  The 100% agentic workflow building machine, operating in production today on live firms like DigOps. Composes, executes, and governs autonomous AI workflows across your enterprise with deterministic human authorization on every consequential move. Not an automation overlay or rented subscription, but a full agentic operating system your company owns and runs.
                 </p>
               </div>
             </article>
+          </div>
+
+          {/* Schedule a Call CTA */}
+          <div className="mt-10 rounded-xl border border-[#142840]/15 bg-[#FBF9F4] p-6 text-center md:p-8">
+            <h4 className="font-vollkorn text-[22px] font-extrabold text-navy">
+              See these systems in action.
+            </h4>
+            <p className="mx-auto mt-2 max-w-[54ch] text-[16px] text-[#475569]">
+              Whether you need the full operating stack or a single capability,
+              we can walk through live production architecture and receipts.
+            </p>
+            <div className="mt-5">
+              <Link
+                href="/contact/"
+                className="inline-block rounded-md bg-navy px-6 py-3 font-vollkorn text-[15px] font-bold text-cream transition hover:bg-navy/90 hover:text-gold"
+              >
+                Schedule a call →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
